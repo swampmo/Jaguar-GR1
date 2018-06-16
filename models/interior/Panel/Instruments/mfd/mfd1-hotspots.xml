@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<!-- This part should be the same for any 3D panel.  Customize the actions section -->
+<PropertyList>
+
+	<name>MFD Hotspots</name>
+	<background>Aircraft/Generic/Panels/Textures/transparent-bg.rgb</background>
+	<!-- Aircraft/bf109/Models/transparent-bg.rgb -->
+	<w>512</w>
+	<h>512</h>
+	<y-offset>0</y-offset>
+
+	<instruments>
+		<instrument>
+			<name>MFD Buttons</name>
+			<x>256</x>
+			<y>256</y>
+			<w>512</w>
+			<h>512</h>
+			<w-base>512</w-base>
+			<h-base>512</h-base>
+
+<!-- define hotspot actions below -->
+		<actions>
+<!-- left Buttons 
+			<action>
+				<name>L1</name>
+				<button>0</button>
+				<x>-252</x>
+				<y>134</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	
+
+			<action>
+				<name>L2</name>
+				<button>0</button>
+				<x>-252</x>
+				<y>78</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	
+			<action>
+				<name>L3</name>
+				<button>0</button>
+				<x>-252</x>
+				<y>21</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>
+			<action>
+				<name>L4</name>
+				<button>0</button>
+				<x>-252</x>
+				<y>-40</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	
+			<action>
+				<name>L5</name>
+				<button>0</button>
+				<x>-252</x>
+				<y>-100</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	
+			<action>
+				<name>L6</name>
+				<button>0</button>
+				<x>-252</x>
+				<y>-157</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	 -->
+
+<!-- right Buttons
+			<action>
+				<name>R1</name>
+				<button>0</button>
+				<x>202</x>
+				<y>134</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	
+
+			<action>
+				<name>R2</name>
+				<button>0</button>
+				<x>202</x>
+				<y>78</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	
+			<action>
+				<name>R3</name>
+				<button>0</button>
+				<x>202</x>
+				<y>21</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>
+			<action>
+				<name>R4</name>
+				<button>0</button>
+				<x>202</x>
+				<y>-40</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	
+			<action>
+				<name>R5</name>
+				<button>0</button>
+				<x>202</x>
+				<y>-100</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	
+			<action>
+				<name>R6</name>
+				<button>0</button>
+				<x>202</x>
+				<y>-157</y>
+				<w>50</w>
+				<h>45</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	-->
+
+
+
+<!-- Center Buttons 
+			<action>
+				<name>C1</name>
+				<button>0</button>
+				<x>98</x>
+				<y>-235</y>
+				<w>49</w>
+				<h>49</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	
+			<action>
+				<name>C2</name>
+				<button>0</button>
+				<x>38</x>
+				<y>-235</y>
+				<w>49</w>
+				<h>49</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action> -->
+			<action>
+				<name>C3</name>
+				<button>0</button>
+				<x>-24</x>
+				<y>-235</y>
+				<w>49</w>
+				<h>49</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/enav[0]/selected</property>
+					<step>1</step>
+					<min>0</min>
+					<max>4</max>
+					<wrap>true</wrap>
+				</binding>
+			</action> 
+			<!--
+			<action>
+				<name>C4</name>
+				<button>0</button>
+				<x>-87</x>
+				<y>-235</y>
+				<w>49</w>
+				<h>49</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>	
+			<action>
+				<name>C5</name>
+				<button>0</button>
+				<x>-147</x>
+				<y>-235</y>
+				<w>49</w>
+				<h>49</h>
+				<binding>
+					<command>property-adjust</command>
+					<property>instrumentation/heading-indicator/offset-deg</property>
+					<step>-1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action> -->	
+
+	 	</actions>
+
+		</instrument>
+	</instruments>
+
+</PropertyList>
+
+
+

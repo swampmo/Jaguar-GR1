@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>Aircraft/Jaguar/Models/weapons/gbu16.ac</path>
+
+  <animation>
+    <object-name>gbu16</object-name>
+  </animation>
+
+</PropertyList>

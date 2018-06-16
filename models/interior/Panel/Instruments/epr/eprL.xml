@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Engine Pressure Ratio Gage -->
+<PropertyList>
+
+  <path>epr.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>/engines/engine[0]/epr</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1.4 </ind><dep>  66 </dep></entry>
+      <entry><ind> 1.6 </ind><dep> 101 </dep></entry>
+      <entry><ind> 1.8 </ind><dep> 135 </dep></entry>
+      <entry><ind> 2.0 </ind><dep> 168 </dep></entry>
+      <entry><ind> 2.2 </ind><dep> 201 </dep></entry>
+      <entry><ind> 2.4 </ind><dep> 233 </dep></entry>
+      <entry><ind> 2.6 </ind><dep> 266 </dep></entry>
+      <entry><ind> 2.8 </ind><dep> 299 </dep></entry>
+      <entry><ind> 3.0 </ind><dep> 332 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

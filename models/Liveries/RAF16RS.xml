@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">RAF 16(R) Sqdn </name>
+        <texture>Liveries/RAF16RS.png</texture>
+
+      </livery>
+    </model>
+  </sim>
+
+</PropertyList>

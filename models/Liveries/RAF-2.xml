@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">16-Squadron type 2</name>
+        <texture>Liveries/16-squadron-raf-2.png</texture>
+
+      </livery>
+    </model>
+  </sim>
+
+</PropertyList>

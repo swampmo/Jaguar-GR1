@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<model>
+		<name>enav</name>
+		<path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/enav.xml</path>
+		<offsets>
+			<x-m>0.015</x-m>
+			<y-m>0.001</y-m>
+			<z-m>0.019</z-m>
+		</offsets>
+	</model>
+
+	<animation>
+		<type>scale</type>
+		<object-name>enav</object-name>
+		<x-factor>1.0</x-factor>
+		<x-offset>1.0</x-offset>
+		<y-factor>1.0</y-factor>
+		<y-offset>0.6</y-offset>
+		<z-factor>1.0</z-factor>
+		<z-offset>0.6</z-offset>
+		<center>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</center>
+	</animation>
+
+<!-- Buttons -->
+
+	<animation>
+		<object-name>enav</object-name>
+		<type>material</type>
+		<emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.7</red>
+			<green>0.7</green>
+			<blue>0.7</blue>
+		</emission>
+		<diffuse>
+			<red>0.1</red>
+			<green>0.1</green>
+			<blue>0.1</blue>
+		</diffuse>
+	</animation>
+</PropertyList>
+
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <!-- Braking Chute -->
+  <path>chute.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object-name>parachute</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/model/lightning/controls/flight/chute_deployed</property>
+          <value type="int">1</value>
+        </equals>
+        <equals>
+          <property>sim/model/lightning/controls/flight/chute_jettisoned</property>
+          <value type="int">0</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>parachute</object-name>
+    <property>sim/model/lightning/orientation/chute_pitch</property>
+    <center>
+      <x-m> 15.092100 </x-m>
+      <y-m>  0.000000 </y-m>
+      <z-m>  0.941944 </z-m>
+    </center>
+    <axis>	
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>	
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>parachute</object-name>
+    <property>sim/model/lightning/orientation/chute_yaw</property>
+    <center>
+      <x-m> 15.092100 </x-m>
+      <y-m>  0.000000 </y-m>
+      <z-m>  0.941944 </z-m>
+    </center>
+    <axis>	
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>	
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>parachute</object-name>
+    <property>sim/model/lightning/orientation/chute_roll</property>
+    <center>
+      <x-m> 15.092100 </x-m>
+      <y-m>  0.000000 </y-m>
+      <z-m>  0.941944 </z-m>
+    </center>
+    <axis>	
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>	
+  </animation>
+
+</PropertyList>
+

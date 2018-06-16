@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+<path>Jag-ils.ac</path>
+
+
+<animation>
+  <type>textranslate</type>
+  <object-name>drum-5</object-name>
+  <property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>10</factor>
+		<offset>-0.01</offset>
+		<step>0.01</step>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>drum-4</object-name>
+  <property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>1</factor>
+		<offset>-0.10</offset>
+		<step>0.1</step>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>drum-3</object-name>
+  <property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>0.1</factor>
+		<offset>-1</offset>
+		<step>1</step>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>drum-2</object-name>
+  <property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>0.01</factor>
+		<offset>-10</offset>
+		<step>10</step>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>drum-1</object-name>
+  <property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>0.001</factor>
+		<offset>-100</offset>
+		<step>100</step>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>units-knob</object-name>
+		<property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<axis>
+			<x1-m>-0.00069</x1-m>
+			<y1-m>-0.03564</y1-m>
+			<z1-m> 0.02266</z1-m>
+			<x2-m>-0.00069</x2-m>
+			<y2-m>-0.03564</y2-m>
+			<z2-m> 0.00600</z2-m>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>units-knob</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+				<step>1</step>
+				<min>108</min>
+				<max>118</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>4</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+				<step>1</step>
+				<min>108</min>
+				<max>118</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>units-knob</object-name>
+		<action>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+				<step>-1</step>
+				<max>118</max>
+				<min>108</min>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>3</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+				<step>-1</step>
+				<max>118</max>
+				<min>108</min>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>deci-knob</object-name>
+		<property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<axis>
+			<x1-m>-0.00069</x1-m>
+			<y1-m> 0.03788</y1-m>
+			<z1-m> 0.02266</z1-m>
+			<x2-m>-0.00069</x2-m>
+			<y2-m> 0.03788</y2-m>
+			<z2-m> 0.00600</z2-m>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>deci-knob</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+				<step>0.05</step>
+				<min>108.00</min>
+				<max>118.00</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>4</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+				<step>0.05</step>
+				<min>108.00</min>
+				<max>118.00</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>deci-knob</object-name>
+		<action>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+				<step>-0.05</step>
+				<max>118.00</max>
+				<min>108.00</min>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>3</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+				<step>-0.05</step>
+				<max>118.00</max>
+				<min>108.00</min>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+
+<!-- lighting -->
+  <animation>
+   <object-name>mount</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.44</red>
+        <green>0.27</green>
+        <blue>0.15</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>deci-knob</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.22</red>
+        <green>0.14</green>
+        <blue>0.08</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>units-knob</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.22</red>
+        <green>0.14</green>
+        <blue>0.08</blue>
+      </emission>
+  </animation>
+  
+
+
+  <animation>
+    <object-name>drum-1</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>drum-2</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>drum-3</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>drum-4</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>drum-5</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>deci-point</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+
+</PropertyList>

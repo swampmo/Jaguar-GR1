@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+
+<!--
+**********************************************************************
+This file selects the instrumentation modules that should be available.
+**********************************************************************
+-->
+
+<PropertyList>
+
+  <!--navigation-display>
+    <name>nd</name>
+    <number>0</number>
+    <symbols include="nav-display.xml"/>
+  </navigation-display>
+    
+   <navigation-display>
+        <name>tcas-display</name>
+        <number>0</number>
+        <symbols include="tcas-display.xml"/>
+    </navigation-display-->
+
+    <adf>
+        <name>adf</name>
+        <number>0</number>
+    </adf>
+
+    <adf>
+        <name>adf</name>
+        <number>1</number>
+    </adf>
+
+	<comm-radio>
+		<name>comm</name>
+		<number>0</number>
+	</comm-radio>
+
+	<comm-radio>
+		<name>comm</name>
+		<number>1</number>
+	</comm-radio>
+
+    <nav-radio>
+        <name>nav</name>
+        <number>0</number>
+    </nav-radio>
+
+    <nav-radio>
+        <name>nav</name>
+        <number>1</number>
+    </nav-radio>
+
+    <tacan>
+        <name>tacan</name>
+        <number>0</number>
+    </tacan>
+
+    <dme>
+        <name>dme</name>
+        <number>0</number>
+    </dme>
+
+    <dme>
+        <name>dme</name>
+        <number>1</number>
+    </dme>
+
+     <!--tcas>
+        <name>tcas</name>
+        <number>0</number>
+     </tcas-->
+
+  <clock>
+    <name>clock</name>
+    <number>0</number>
+  </clock>
+
+  <altimeter>
+    <name>altimeter</name>
+    <number>0</number>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
+  </altimeter>
+  
+  <altimeter>
+    <name>encoder</name>
+    <number>0</number>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    <quantum>10</quantum>
+    <tau>0.1</tau>
+  </altimeter>
+
+  <heading-indicator>
+    <name>heading-indicator</name>
+    <number>0</number>
+  </heading-indicator>
+
+  <marker-beacon>
+    <name>marker-beacon</name>
+    <number>0</number>
+  </marker-beacon>
+    
+  <transponder>
+    <name>transponder</name>
+    <number>0</number>
+    <mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
+  </transponder>
+
+</PropertyList>

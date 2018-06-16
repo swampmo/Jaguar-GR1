@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">RAF 226 OCU</name>
+        <texture>Liveries/RAF226OCU.png</texture>
+
+            
+      </livery>
+    </model>
+  </sim>
+
+</PropertyList>

@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+ 
+    <description>Jaguar (JSBsim)</description>
+    <flight-model>jsb</flight-model>
+    <aero>Jaguar</aero>
+
+    <fuel-fraction>1</fuel-fraction>
+
+    <model>
+      <path>Aircraft/Jaguar/Models/Jaguar-GR3.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Jaguar/Models/Effects/guns/submodels.xml</path>
+      <path>Aircraft/Jaguar/Models/weapons/loads.xml</path>
+      <path>Aircraft/Jaguar/Models/weapons/pylons.xml</path>
+      <path>Aircraft/Jaguar/Systems/sub_lancer.xml</path>
+    </submodels>
+
+	<instrumentation>
+		<path>Aircraft/Jaguar/System/instrumentation.xml</path>
+	</instrumentation>
+
+    <hud>
+      <path n="1">Aircraft/Jaguar/Hud/hud.xml</path>
+      <visibility n="1">true</visibility>
+	  <palette>
+    <color n="0">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">0.38</red>
+     <green type="float">1.0</green>
+     <blue type="float">0.22</blue>
+    </color>
+    <color n="1">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">1.0</red>
+     <green type="float">0.2</green>
+     <blue type="float">0.0</blue>
+    </color>
+   </palette>
+     <clipping>
+            <left type="double">-65</left>
+            <right type="double">65</right>
+            <top type="double">40</top>
+            <bottom type="double">-100</bottom>
+         </clipping>
+    </hud>
+
+    <startup>
+      <splash-texture>Aircraft/Jaguar/jaguar-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
+    </sound>
+
+<flaps>
+<setting>0.0</setting>
+<setting>0.15</setting>
+<setting>0.25</setting>
+<setting>0.5</setting>
+<setting>1.0</setting>
+</flaps>
+
+    <ai>
+      <scenario>refueling_demo_2</scenario>
+    </ai>
+
+    <help>
+      <title>Jaguar</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+	   <key>
+        <name>]</name>
+        <desc>Start/Stop engines</desc>
+      </key>
+	   <key>
+        <name>w</name>
+        <desc>Weapons mode</desc>
+      </key>
+	   <key>
+        <name>e</name>
+        <desc>Fire guns</desc>
+      </key>
+	  <key>
+        <name>q</name>
+        <desc>Toggle Radar standby</desc>
+      </key>   
+	   <key>
+        <name>T</name>
+        <desc>Toggle RWR</desc>
+      </key>
+      <key>
+        <name>t</name>
+        <desc>Change Radar Distances (10, 20 40)</desc>
+      </key>
+      <key>
+        <name>R</name>
+        <desc>Activate/desactivate targeting the nearest</desc>
+      </key>     
+	   <key>
+        <name>n</name>
+        <desc>Next Target</desc>
+      </key>
+      <key>
+        <name>Ctrl-n</name>
+        <desc>Previous Target</desc>
+      </key>  
+      <key>
+        <name>u</name>
+        <desc>Toggle Refueling Probe</desc>
+      </key>  
+      <line>Afterburners engage when</line>
+      <line>throttle moves past 75%</line>
+	  <line>Hard manouvering at speeds over 450kt may result in</line>
+      <line>unexpected pitch behaviour.</line>
+	  <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
+      <line>Cannons carry 150 rounds each. These can be reloaded  while on the ground by using the Jaguar menu.</line>
+	  <line>Droptanks will automatically switch when empty.</line>
+      <line>Takeoff with one click on the flaps at</line>
+	  <line>170 - 210 kt depending on payload.</line>
+      <line></line>
+    </help>
+  
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <!-- Nav lights on -->
+      <int n="0" alias="/controls/switches/nav-lights" />
+      <!-- Beacon on -->
+      <int n="1" alias="/controls/switches/anti-collision-lights" />
+      
+      <!-- int[2] reserved for radar -->
+      
+      <!-- Landing lights on -->
+      <int n="3" alias="/controls/switches/landing-light" />
+	    <!-- Taxi light on -->
+      <int n="4" alias="/controls/switches/taxi-light" />
+	  
+        <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
+        <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
+        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
+        <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
+        <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/> 
+		<float n="6" type="double">0</float><!-- refuel probe   -->
+        <float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat Left Engine -->
+	    <float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat Right Engine -->	
+        <float n="15" alias="/velocities/mach" /> <!-- Mach for Multiplayer Sound -->
+	    <float n="16" alias="/engines/engine[0]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
+	    <float n="17" alias="/engines/engine[1]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->		
+      </generic>
+    </multiplay>
+
+    <systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+      <autopilot>
+        <path>Aircraft/Jaguar/System/autopilot5.xml</path>
+      </autopilot>
+    </systems> 
+
+    <mp-systems>
+      <radar-enabled type="bool">true</radar-enabled>
+      <ecm-rwr-enabled type="bool">true</ecm-rwr-enabled>
+      <combat-enabled type="bool">true</combat-enabled>
+    </mp-systems>		
+
+    <!--
+                   (0)             (6) 
+                   1.L     /-\     1.R
+           _________|_____/top\_____|_________
+              |     |     \___/     |    |  
+             2.L   3.L      |      3.R  2.R
+             (1)   (2)   Center    (4)  (5)
+                           (3) 
+    -->
+    <weight n="0">
+      <name>pylon1.L</name>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
+      </opt>
+      <opt>
+        <name>ALQ-101 ECM pod</name>
+        <lbs>335.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="1">
+      <name>pylon2.L</name>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1094.0</lbs>
+      </opt>
+      <opt>
+        <name>MK-82</name>
+        <lbs>500.0</lbs>
+      </opt>
+      <opt>
+        <name>ALARM</name>
+        <lbs>590.0</lbs>
+      </opt>
+      <opt>
+        <name>ALQ-101 ECM pod</name>
+        <lbs>335.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="2">
+      <name>pylon3.L</name>
+      <tank>5</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>1000 l Droptank</name>
+        <lbs>204.0</lbs>
+        <gals>211</gals>
+      </opt>
+      <opt>
+        <name>1500 l Droptank</name>
+        <lbs>645.0</lbs>
+      <gals>396</gals>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1094.0</lbs>
+      </opt>
+      <opt>
+        <name>MK-82</name>
+        <lbs>500.0</lbs>
+      </opt>
+      <opt>
+        <name>2x-MK-82</name>
+        <lbs>1000.0</lbs>
+      </opt>
+      <opt>
+        <name>ALARM</name>
+        <lbs>590.0</lbs>C:\AeromatiC++\Jaguar\Systems
+      </opt>
+      <opt>
+        <name>SeaEagle</name>
+        <lbs>1276.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="3">
+      <name>pylon.C</name>
+      <tank>6</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>1000 l Droptank</name>
+        <lbs>204.0</lbs>
+        <gals>211</gals>
+      </opt>
+      <opt>
+        <name>2x-MK-82</name>
+        <lbs>1000.0</lbs>
+      </opt>
+      <opt>
+        <name>ALARM</name>
+        <lbs>590.0</lbs>
+      </opt>
+      <opt>
+        <name>SeaEagle</name>
+        <lbs>1276.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="4">
+      <name>pylon3.R</name>
+      <tank>7</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1094.0</lbs>
+      </opt>
+      <opt>
+        <name>1000 l Droptank</name>
+        <lbs>204.0</lbs>
+        <gals>211</gals>
+      </opt>
+      <opt>
+        <name>1500 l Droptank</name>
+        <lbs>645.0</lbs>
+        <gals>396</gals>
+      </opt>
+      <opt>
+        <name>MK-82</name>
+        <lbs>500.0</lbs>
+      </opt>
+      <opt>
+        <name>2x-MK-82</name>
+        <lbs>1000.0</lbs>
+      </opt>
+      <opt>
+        <name>ALARM</name>
+        <lbs>590.0</lbs>
+      </opt>
+      <opt>
+        <name>SeaEagle</name>
+        <lbs>1276.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="5">
+      <name>pylon2.R</name>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1094.0</lbs>
+      </opt>
+      <opt>
+        <name>MK-82</name>
+        <lbs>500.0</lbs>
+      </opt>
+      <opt>
+        <name>ALARM</name>
+        <lbs>590.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="6">
+      <name>pylon1.R</name>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="5">
+      <name>pylon2.R</name>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1094.0</lbs>
+      </opt>
+      <opt>
+        <name>MK-82</name>
+        <lbs>500.0</lbs>
+      </opt>
+      <opt>
+        <name>ALARM</name>
+        <lbs>590.0</lbs>
+      </opt>
+      <opt>
+        <name>ALQ-101 ECM pod</name>
+        <lbs>335.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="6">
+      <name>pylon1.R</name>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
+      </opt>
+      <opt>
+        <name>ALQ-101 ECM pod</name>
+        <lbs>335.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="7">
+      <name>Crew</name>
+      <weight-lb>200</weight-lb> 
+      <min-lb>200</min-lb>
+      <max-lb>400</max-lb>
+    </weight> 
+
+    <current-view>
+      <field-of-view>73.5</field-of-view>
+    </current-view>
+
+    <replay>
+      <disable>0</disable>
+    </replay>
+
+    <menubar include="Dialogs/jaguar-menu.xml"/>
+
+  </sim>
+
+  <systems>
+   <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+   </electrical>
+      <autopilot>
+        <path>Aircraft/Jaguar/System/autopilot5.xml</path>
+      </autopilot>
+    <refuel>
+      <type>probe</type>
+      <serviceable type="bool">true</serviceable>
+    </refuel>
+  </systems> 
+
+  
+
+  <instrumentation>
+	<airspeed-indicator>
+		<speed-limit-bug type="double">420</speed-limit-bug>
+	</airspeed-indicator>
+	<radar-altimeter>
+		<decision-height type="double">200</decision-height>
+		<flag-display type="int">0</flag-display>
+	</radar-altimeter>
+    <rwr>
+      <display-lighting-intens type="double">0.4</display-lighting-intens>
+      <symbology-lighting-intens type="double">1</symbology-lighting-intens>
+    </rwr>
+    <enav n="0"><selected type="int">3</selected></enav>
+    <enav n="1">
+		<wind-display type="int">1</wind-display>
+	</enav>
+					<tacan>
+						<xy-switch type="bool">0</xy-switch>
+						<nogo-lamp type="bool">false</nogo-lamp>
+						<go-lamp type="bool">true</go-lamp>
+						<mode type="int">2</mode>
+					</tacan>
+
+    <radar>
+      <range type="int" archive="y">40</range>
+      <range-factor type="double" archive="n">0.001888</range-factor>
+      <minimized type="bool" archive="y">false</minimized>
+      <selected type="int">3</selected>
+      <!-- inicio en pruebas -->
+      <enabled type="bool">true</enabled>
+      <az-field type="double">120</az-field>
+      <range type="double">150</range>
+      <range-selected type="double">50</range-selected>
+      <radar2-range type="double">150</radar2-range>
+      <display-rdr type="bool">true</display-rdr>
+      <radar-standby type="int">3</radar-standby>
+      <mode>
+        <rws type="bool">true</rws>
+        <tws-auto type="bool">false</tws-auto>
+      </mode>
+    </radar> 
+		<radar2>
+			<sweep-width-m type="double">0.0844</sweep-width-m>
+			<range-width-m type="double">0.0846</range-width-m>
+			<radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+			<hud-eye-dist-m type="double">0.6705</hud-eye-dist-m>
+			<hud-radius-m type="double">0.071</hud-radius-m>
+		</radar2>
+    <terrain-radar>
+      <hi-elev>
+        <alt-ft type="double">-9999.9</alt-ft>
+        <lat-deg type="double">-9999.9</lat-deg>
+        <lon-deg type="double">-9999.9</lon-deg>
+        <dist-m type="double">-9999.9</dist-m>
+        <collision-status type="string">initialised</collision-status>
+      </hi-elev>
+      <settings>
+        <mode type="string">extend</mode>
+        <state type="string">off</state>
+        <range-m type="double">2500</range-m>
+        <step-m type="double">250</step-m>
+        <max-climb-rate-fps type="double">120</max-climb-rate-fps>
+        <hi-elev-markers type="bool">false</hi-elev-markers>
+      </settings>
+    </terrain-radar>
+		<dme n="0">
+			<serviceable>true</serviceable>
+			<frequencies>
+				<source>/instrumentation/nav[0]/frequencies/selected-mhz</source>
+			</frequencies>
+		</dme>
+		<dme n="1">
+			<serviceable>true</serviceable>
+			<frequencies>
+				<source>/instrumentation/nav[1]/frequencies/selected-mhz</source>
+			</frequencies>
+		</dme>
+  </instrumentation>
+
+  <!-- set up control properties for YASim -->
+  <controls>
+    <gear>
+      <brake-parking type="double">1.0</brake-parking>
+    </gear>
+   
+    <lighting>
+		<!--landing-lights-switch type="bool">false</landing-lights-switch>
+		<taxi-light-switch type="bool">false</taxi-light-switch>
+		<nav-lights-switch type="bool">false</nav-lights-switch>
+		<beacon-switch type="bool">false</beacon-switch>
+		<strobe-switch type="bool">false</strobe-switch-->
+			<instruments-norm type="double">0.6</instruments-norm>
+			<panel-norm type="double">0.3</panel-norm>
+    </lighting>
+    <armament>
+      <station n="0">
+        <release type="bool">false</release>
+      </station>
+      <station n="1">
+        <release type="bool">false</release>
+      </station>
+      <station n="2">
+        <release type="bool">false</release>
+      </station>
+      <station n="3">
+        <release type="bool">false</release>
+      </station>
+      <station n="4">
+        <release type="bool">false</release>
+      </station>
+      <station n="5">
+        <release type="bool">false</release>
+      </station>
+      <station n="6">
+        <release type="bool">false</release>
+      </station>
+    </armament>
+		<switches>
+			<fuel-probe type="bool">false</fuel-probe>
+			<nav-lights type="bool">false</nav-lights>
+			<gear-lights type="int">1</gear-lights>
+			<landlight1 alias="/sim/rendering/als-secondary-lights/use-landing-light"/>
+			<landlight1 type="bool">false</landlight1>
+			<taxilight1 alias="/sim/rendering/als-secondary-lights/use-landing-light"/>
+			<taxilight1 type="bool">false</taxilight1>
+			<landing-light type="bool">false</landing-light>
+			<taxi-light type="bool">false</taxi-light>
+			<anti-collision-lights type="bool">false</anti-collision-lights>
+			<strobe-lights type="bool">false</strobe-lights>
+		</switches>
+  </controls>
+
+  <environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+
+  <engines>
+    <engine n="0">
+      <engine-num type="int">0</engine-num>
+      <running>false</running>
+    </engine>
+    <engine n="2">
+      <engine-num type="int">1</engine-num>
+      <running>false</running>
+    </engine>
+  </engines>
+
+  <input>
+    <keyboard include="Nasal/jaguar-keyboard.xml"/>
+  </input>
+ 
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <tank-num type="int">0</tank-num>
+        <level-gal_us archive="y">2200</level-gal_us>
+      </tank>
+      <tank n="1">
+        <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">2200</level-gal_us>
+      </tank>
+      <tank n="2">
+        <tank-num type="int">2</tank-num>
+        <level-gal_us archive="y">1031</level-gal_us>
+      </tank>
+      <tank n="3">
+        <tank-num type="int">3</tank-num>
+        <level-gal_us archive="y">1031</level-gal_us>
+      </tank>
+      <tank n="4">
+        <tank-num type="int">4</tank-num>
+        <level-gal_us archive="y">1031</level-gal_us>
+      </tank>
+      <tank n="5">
+        <name>left-Tank</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="6">
+        <name>Center-tank</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="7">
+        <name>right-Tank</name>
+        <selected type="bool">false</selected>
+      </tank>
+    </fuel>
+  </consumables>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Jaguar/Nasal/doors.nas</file>
+    </doors>
+    <jaguar>
+      <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
+      <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
+      <file>Aircraft/Jaguar/Nasal/doors.nas</file>
+    
+    </jaguar>
+	
+	 <lights>
+      <file>Aircraft/Jaguar/Nasal/Lights.nas</file>
+    </lights>
+	
+    <low>
+      <file>Aircraft/Jaguar/Nasal/low.nas</file>
+    </low>
+    <guns>
+      <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
+      <file>Aircraft/Jaguar/Nasal/revi.nas</file>
+    </guns>
+		<chronograph>
+			<file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/clock/chronograph.nas</file>
+		</chronograph>
+    <aar> 
+      <file>Aircraft/Generic/aar.nas</file>
+    </aar>
+    <rwr>
+      <!-- <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> -->
+      <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
+    </rwr>
+	
+	 <hud>
+      <file>Aircraft/Jaguar/Nasal/MiscRwr.nas</file>
+    </hud>
+   
+    <radardist>
+      <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+    </radardist>
+   
+    <radarAltimeter>
+      <file>Aircraft/Jaguar/Nasal/radaralt.nas</file> 
+    </radarAltimeter>
+
+    <radar>
+      <file>Aircraft/Jaguar/Nasal/radar.nas</file> 
+    </radar>
+    <radar2>
+      <file>Aircraft/Jaguar/Nasal/radar2.nas</file>
+    </radar2>
+    <enav>
+      <file>Aircraft/Jaguar/Nasal/enav.nas</file>
+    </enav>
+	
+    <tfs>
+		  <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
+    </tfs>
+	
+    <weapons>
+		  <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
+		 
+  	</weapons>	
+	
+	 <engines>
+   <file>Aircraft/Jaguar/Nasal/generic-yasim-engine.nas</file>
+  </engines>
+  
+  <emu>
+   <file>Aircraft/Jaguar/Nasal/emu.nas</file>
+  </emu>
+  
+  <fuel>
+   <file>Aircraft/Jaguar/Nasal/fuel.nas</file>
+  </fuel>
+	
+		
+	  <load>
+      <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
+    </load>
+  </nasal>
+
+</PropertyList>
+

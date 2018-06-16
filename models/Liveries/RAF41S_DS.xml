@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">RAF 41 Sqdn "Diplomatic Service"</name>
+        <texture>Liveries/RAF41S_DS.png</texture>
+
+      </livery>
+    </model>
+  </sim>
+
+</PropertyList>

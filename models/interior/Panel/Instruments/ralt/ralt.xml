@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>ralt.ac</path>
+
+  <animation>
+    <object-name>KRA.fond</object-name>
+    <object-name>KRA.push</object-name>
+    <object-name>KRA.DHoff</object-name>
+    <object-name>KRA.face</object-name>
+    <object-name>KRA.flag</object-name>
+    <object-name>KRA.knob</object-name>
+    <object-name>KRA.needle</object-name>
+    <object-name>KRA.bug</object-name>
+    <object-name>KRA.cache</object-name>
+
+    <object-name>KRA.vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>KRA.vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>KRA.face</object-name>
+    <object-name>KRA.knob</object-name>
+    <object-name>KRA.needle</object-name>
+    <object-name>KRA.flag</object-name>
+    <object-name>KRA.bug</object-name>
+    <object-name>KRA.cache</object-name>
+    <emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>KRA.flag</object-name>
+    <property>instrumentation/radar-altimeter/flag-display</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>  70 </dep></entry>
+      <entry><ind> 1.0 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.00076 </x-m>
+      <y-m>  0.01810 </y-m>
+      <z-m>  0.00220 </z-m>
+    </center>
+    <axis>
+      <x>  1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>KRA.needle</object-name>
+    <property>position/altitude-agl-ft</property>
+    <interpolation>
+      <entry><ind>    0 </ind><dep>   0 </dep></entry>
+      <entry><ind>   50 </ind><dep>  45 </dep></entry>
+      <entry><ind>  100 </ind><dep>  90 </dep></entry>
+      <entry><ind>  150 </ind><dep> 135 </dep></entry>
+      <entry><ind>  200 </ind><dep> 180 </dep></entry>
+      <entry><ind>  500 </ind><dep> 215 </dep></entry>
+      <entry><ind> 2500 </ind><dep> 270 </dep></entry>
+      <!--entry><ind>    0 </ind><dep>   0.00 </dep></entry>
+      <entry><ind>   25 </ind><dep> 342.07 </dep></entry>
+      <entry><ind>   50 </ind><dep> 322.30 </dep></entry>
+      <entry><ind>  100 </ind><dep> 282.88 </dep></entry>
+      <entry><ind>  150 </ind><dep> 237.00 </dep></entry>
+      <entry><ind>  200 </ind><dep>  93.00 </dep></entry>
+      <entry><ind>  400 </ind><dep> 127.00 </dep></entry>
+      <entry><ind>  500 </ind><dep> 200.00 </dep></entry>
+      <entry><ind> 1000 </ind><dep> 180.00 </dep></entry>
+      <entry><ind> 1500 </ind><dep> 160.00 </dep></entry>
+      <entry><ind> 2000 </ind><dep> 140.00 </dep></entry>
+      <entry><ind> 2500 </ind><dep> 120.00 </dep></entry>
+      <entry><ind> 2700 </ind><dep>  90.00 </dep></entry-->
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>KRA.bug</object-name>
+    <property>instrumentation/radar-altimeter/decision-height</property>
+    <interpolation>
+      <entry><ind>    0 </ind><dep>   0 </dep></entry>
+      <entry><ind>   50 </ind><dep>  45 </dep></entry>
+      <entry><ind>  100 </ind><dep>  90 </dep></entry>
+      <entry><ind>  150 </ind><dep> 135 </dep></entry>
+      <entry><ind>  200 </ind><dep> 180 </dep></entry>
+      <entry><ind>  500 </ind><dep> 215 </dep></entry>
+      <entry><ind> 2500 </ind><dep> 270 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+<!-- Rad Alt's Bug Setting -->
+	<animation>
+		<name>RALTbugL</name>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>ralt-bug-left</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<interval-sec>0.2</interval-sec>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/radar-altimeter/decision-height</property>
+				<step>-5</step>
+				<min>0</min>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>RALTbugLcoarse</name>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>ralt-bug-left</object-name>
+		<action>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<interval-sec>0.2</interval-sec>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/radar-altimeter/decision-height</property>
+				<step>-50</step>
+				<min>0</min>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<name>RALTbugR</name>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>ralt-bug-right</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<interval-sec>0.2</interval-sec>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/radar-altimeter/decision-height</property>
+				<step>5</step>
+				<max>2500</max>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>RALTbugRcoarse</name>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>ralt-bug-right</object-name>
+		<action>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<interval-sec>0.2</interval-sec>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/radar-altimeter/decision-height</property>
+				<step>50</step>
+				<max>2500</max>
+			</binding>
+		</action>
+	</animation>
+
+</PropertyList>
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <!-- Gauche -->
+  <submodel>
+    <name>left</name>
+    <model>Aircraft/Jaguar/Models/Effects/guns/apibullet-tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2460.0</speed>
+    <repeat>true</repeat>
+    <delay>0.6</delay>
+    <count>-1</count>
+    <x-offset>  7.76 </x-offset>    <!-- -2.364 m =  7.76 ft -->
+    <y-offset>  1.87 </y-offset>    <!-- -0.569 m =  1.87 ft -->
+    <z-offset> -3.07 </z-offset>    <!-- -0.936 m = -3.07 ft -->
+    <yaw-offset> 0.0 </yaw-offset>
+    <pitch-offset> 0.1 </pitch-offset>
+    <life>4.0</life>
+    <wind>false</wind>
+    <weight>0.07495</weight>
+    <cd>0.193</cd>
+    <eda>0.00571198</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/gun</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
+    <submodel-path>Aircraft/Jaguar/Models/Effects/guns/bullet-submodel.xml</submodel-path>
+  </submodel>
+
+  <!--Droit -->
+  <submodel>
+    <name>right</name>
+    <model>Aircraft/Jaguar/Models/Effects/guns/apibullet-tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2460.0</speed>
+    <repeat>true</repeat>
+    <delay>0.62</delay>
+    <count>-1</count>
+    <x-offset>  7.76 </x-offset>    <!-- -2.364 m =  7.76 ft -->
+    <y-offset> -1.87 </y-offset>    <!--  0.569 m = -1.87 ft -->
+    <z-offset> -3.07 </z-offset>    <!-- -0.936 m = -3.07 ft -->
+    <yaw-offset> 0.0 </yaw-offset>
+    <pitch-offset> 0.1 </pitch-offset>
+    <life>4.0</life>
+    <wind>false</wind>
+    <weight>0.07495</weight>
+    <cd>0.193</cd>
+    <eda>0.00571198</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/gun</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
+    <submodel-path>Aircraft/Jaguar/Models/Effects/guns/bullet-submodel.xml</submodel-path>
+  </submodel>
+
+</PropertyList>
+

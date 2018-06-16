@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<system name="Drag Chute">
+  <property value="0">systems/chute/chute-cmd-norm</property>
+  <property value="0">systems/chute/chute-released</property>
+
+  <channel name="Drag Chute">
+   <kinematic name="Drag Chute Control">
+     <input>systems/chute/chute-cmd-norm</input>
+     <traverse>
+       <setting>
+          <position> 0 </position>
+          <time>     0 </time>
+       </setting>
+       <setting>
+          <position> 1 </position>
+          <time>     1.5 </time>
+       </setting>
+     </traverse>
+     <output>systems/chute/chute-reef-pos-norm</output>
+   </kinematic>
+
+   <switch name="Drag Chute Availability">
+     <default value="0"/>
+     <test logic="OR" value="1">
+       <test logic="AND" value="1">
+          systems/chute/chute-available eq 1
+          systems/chute/chute-reef-pos-norm lt 1
+       </test>
+       <test logic="AND" value="1">
+          systems/chute/chute-released eq 0
+          systems/chute/chute-reef-pos-norm eq 1
+       </test>
+     </test>
+     <output>systems/chute/chute-available</output>
+   </switch>
+
+   <switch name="Drag Chute Released Inverted">
+     <default value="1"/>
+     <test logic="AND" value="0">
+         systems/chute/chute-released eq 1
+     </test>
+     <output>systems/chute/chute-not-released</output>
+   </switch>
+
+   <switch name="Drogue Drag Chute Deployed">
+     <default value="0"/>
+     <test logic="OR" value="1">
+       <test logic="AND" value="1">
+          gear/unit[1]/WOW eq 1
+          gear/unit[2]/WOW eq 1
+          systems/chute/chute-available eq 1
+       </test>
+       systems/chute/drogue-chute-deployed eq 1
+     </test>
+     <output>systems/chute/drogue-chute-deployed</output>
+   </switch>
+
+   <switch name="Drag Chute Deployed">
+     <default value="0"/>
+     <test logic="OR" value="1">
+       <test logic="AND" value="1">
+          gear/unit[0]/WOW eq 1
+          systems/chute/drogue-chute-deployed eq 1
+       </test>
+       systems/chute/drag-chute-deployed eq 1
+     </test>
+     <output>systems/chute/drag-chute-deployed</output>
+   </switch>
+
+   <summer name="Drag Chute Position">
+      <input>systems/chute/drag-chute-deployed</input>
+      <bias>0.111111111</bias>
+      <output>systems/chute/drag-chute-offset</output>
+   </summer>
+
+   <fcs_function name="Drag Chute Scaling">
+     <function>
+       <product name="Drag Chute Scaling">
+         <property>systems/chute/drag-chute-offset</property>
+         <property>systems/chute/chute-not-released</property>
+         <value>0.9</value>
+       </product>
+      </function>
+     <output>systems/chute/drag-chute-pos-norm</output>
+   </fcs_function>
+
+   <kinematic name="Drogue Drag Chute Control">
+     <input>systems/chute/drag-chute-pos-norm</input>
+     <traverse>
+       <setting>
+          <position> 0 </position>
+          <time>     0 </time>
+       </setting>
+       <setting>
+          <position> 1 </position>
+          <time>     1.5 </time>
+       </setting>
+     </traverse>
+     <output>systems/chute/chute-size-factor</output>
+   </kinematic>
+  </channel>
+
+</system>

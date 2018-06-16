@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<!-- refuel system arm switch, by Dave Culp -->
+
+<PropertyList>
+
+ <path>refuel.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>placard</object-name>
+   <emission>
+     <red>0.6</red>
+     <green>0.3</green>
+     <blue>0.3</blue>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+   </emission> 
+ </animation>  
+
+ <animation>
+  <type>select</type>
+  <object-name>switch-down</object-name>
+  <condition>
+   <equals>
+    <property>fdm/jsbsim/systems/refuel/armed</property>
+    <value type="bool">false</value>
+   </equals>
+  </condition>
+ </animation>  
+ <animation>
+  <type>select</type>
+  <object-name>switch-up</object-name>
+  <condition>
+   <equals>
+    <property>fdm/jsbsim/systems/refuel/armed</property>
+    <value type="bool">true</value>
+   </equals>
+  </condition>
+ </animation>  
+
+  <!-- Hot Spots -->
+  <animation>
+   <type>pick</type>
+   <object-name>placard</object-name>
+   <visible>true</visible>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+     <command>property-toggle</command>
+     <property>fdm/jsbsim/systems/refuel/armed</property>
+    </binding>
+   </action>
+  </animation>
+
+
+ <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+</PropertyList>
+
