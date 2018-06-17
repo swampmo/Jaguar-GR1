@@ -116,7 +116,8 @@
         <yaw>     0.00 </yaw>
     </orient>
     <feed> 0 </feed>
-
+    <feed> 1 </feed>
+    <feed> 2 </feed>
     <thruster file="direct">
      <sense> 1 </sense>
      <location unit="IN">
@@ -143,8 +144,9 @@
        <roll>     0.00 </roll>
         <yaw>     0.00 </yaw>
     </orient>
+    <feed> 0 </feed>
     <feed> 1 </feed>
-
+    <feed> 2 </feed>
     <thruster file="direct">
      <sense> 1 </sense>
      <location unit="IN">
@@ -296,10 +298,28 @@
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
-              -0.20   -0.620
-               0.00    0.280
-               0.26    1.000
-               0.60    0.548
+              -0.314    -0.8
+              -0.279    -0.81
+              -0.244    -1.2
+              -0.209    -1.25
+              -0.175    -0.95
+              -0.140    -0.7
+              -0.105    -0.5
+              -0.070    -0.3
+              -0.035    -0.1
+               0.000     0.1
+               0.035     0.3
+               0.070     0.55
+               0.105     0.8
+               0.140     1
+               0.175     1.2
+               0.209     1.4
+               0.244     1.56
+               0.279     1.6
+               0.314     1.7
+               0.349     1.6
+               0.436     1.5
+               0.546		 1.4
             </tableData>
           </table>
       </product>
@@ -554,7 +574,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
            <property>aero/alpha-rad</property>
-           <value> -0.6650 </value>
+           <value> -0.330 </value>
        </product>
     </function>
 
@@ -568,7 +588,7 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -1.7415
+              0.0    -0.7415
               2.0    -0.4354
             </tableData>
           </table>
@@ -583,7 +603,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>velocities/q-aero-rad_sec</property>
-           <value> -8.7050 </value>
+           <value> -11.7050 </value>
        </product>
     </function>
 
