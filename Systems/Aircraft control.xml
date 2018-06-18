@@ -15,7 +15,7 @@
    <aerosurface_scale name="Elevator Control">
       <input>fcs/pitch-trim-sum</input>
       <range>
-        <min> -0.35 </min>
+        <min> -0.25 </min>
         <max>  0.35 </max>
       </range>
       <output>fcs/elevator-pos-rad</output>
@@ -24,7 +24,7 @@
    <aerosurface_scale name="Elevator Normalization">
       <input>fcs/elevator-pos-rad</input>
       <domain>
-        <min> -0.35 </min>
+        <min> -0.25 </min>
         <max>  0.35 </max>
       </domain>
       <range>
@@ -48,8 +48,8 @@
    <aerosurface_scale name="Left Aileron Control">
       <input>fcs/roll-trim-sum</input>
       <range>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min> -0.30 </min>
+        <max>  0.30 </max>
       </range>
       <output>fcs/left-aileron-pos-rad</output>
    </aerosurface_scale>
@@ -57,8 +57,8 @@
    <aerosurface_scale name="Right Aileron Control">
       <input>fcs/roll-trim-sum</input>
       <range>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min> -0.30 </min>
+        <max>  0.30 </max>
       </range>
       <output>fcs/right-aileron-pos-rad</output>
    </aerosurface_scale>
@@ -66,8 +66,8 @@
    <aerosurface_scale name="Left Aileron Normalization">
       <input>fcs/left-aileron-pos-rad</input>
       <domain>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min> -0.30 </min>
+        <max>  0.30 </max>
       </domain>
       <range>
         <min> -1 </min>
@@ -79,8 +79,8 @@
    <aerosurface_scale name="Right Aileron Normalization">
       <input>fcs/right-aileron-pos-rad</input>
       <domain>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min> -0.30 </min>
+        <max>  0.30 </max>
       </domain>
       <range>
         <min> -1 </min>
