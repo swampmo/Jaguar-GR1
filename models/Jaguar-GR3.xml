@@ -1069,7 +1069,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorR1</object-name>
-	<property>/controls/engines/engine[1]/throttle</property>
+	<property>/controls/engines/engine[1]/thrust-lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>   0 </dep></entry>
@@ -1093,7 +1093,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorR2</object-name>
-	<property>/controls/engines/engine[1]/throttle</property>
+	<property>/controls/engines/engine[1]/thrust-lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>   0 </dep></entry>
@@ -1117,7 +1117,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorL1</object-name>
-	<property>/controls/engines/engine[0]/throttle</property>
+	<property>/controls/engines/engine[0]/thrust-lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>    0 </dep></entry>
@@ -1141,7 +1141,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorL2</object-name>
-	<property>/controls/engines/engine[0]/throttle</property>
+	<property>/controls/engines/engine[0]/thrust-lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>    0 </dep></entry>

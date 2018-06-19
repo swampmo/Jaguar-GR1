@@ -45,8 +45,8 @@
  <animation>
   <object-name>ExternalFlame</object-name>
   <type>spin</type>
-  <property>engines/engine[0]/n1</property>
-  <factor>259</factor>
+  <property>engines/engine[0]/augmentation</property>
+  <factor>true</factor>
   <!--center>
    <x-m>0</x-m>
    <y-m>0</y-m>
@@ -71,8 +71,8 @@
   <object-name>ReheatOuter</object-name>
   <object-name>ReheatInner</object-name>
   <type>spin</type>
-  <property>engines/engine[0]/n1</property>
-  <factor>437</factor>
+  <property>engines/engine[0]/augmentation</property>
+  <factor>true</factor>
   <center>
    <x-m>0</x-m>
    <y-m>0</y-m>

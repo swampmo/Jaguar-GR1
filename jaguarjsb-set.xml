@@ -695,7 +695,7 @@
       <file>Aircraft/Generic/aar.nas</file>
     </aar>
     <rwr>
-      <!-- <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> -->
+       <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> 
       <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
     </rwr>
 	
@@ -746,10 +746,10 @@
   </fuel> -->
 	
 		
-<!-- 
+ 
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
-    </load> -->
+    </load>
   </nasal> 
 
 </PropertyList>

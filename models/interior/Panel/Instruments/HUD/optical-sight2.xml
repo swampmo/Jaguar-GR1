@@ -3,7 +3,7 @@
 
 	<path>hudunit.ac</path>
 
-	<!--animation> 
+	<animation> 
 		<object-name>Cube</object-name>
 		<object-name>Cube.001</object-name>
 		<object-name>Cube.002</object-name>
@@ -17,7 +17,7 @@
 			<green>0.05</green>
 			<blue>0.03</blue>
 		</emission>
-	</animation-->
+	</animation>
 
 	
 
