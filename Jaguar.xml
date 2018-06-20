@@ -65,7 +65,7 @@
    <vtailarea  unit="FT2">   70.00 </vtailarea>
    <vtailarm  unit="FT" >    16.50 </vtailarm>
    <location name="AERORP" unit="IN">
-     <x>   -30.60 </x>
+     <x>   70.60 </x>
      <y>     0.00 </y>
      <z>     0.00 </z>
    </location>
@@ -87,7 +87,7 @@
    <izz unit="SLUG*FT2">  35370.12 </izz>
    <emptywt unit="LBS" >  15400.00 </emptywt>
    <location name="CG" unit="IN">
-     <x>   -20.60 </x>
+     <x>   50.60 </x>
      <y>     0.00 </y>
      <z>   -16.59 </z>
    </location>
@@ -550,29 +550,10 @@
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
-           <!--    -0.314    -0.8
-              -0.279    -0.81
-              -0.244    -1.2
-              -0.209    -1.25
-              -0.175    -0.95-->
-            
-            -11.46 -0.5650
-               0.00   0.1100
-                7.50  0.450
-               11.00  0.6500
-               16.04  0.900
-                22.91  0.952
-               34.38  0.7000
-         <!--  
-      0.140     1
-               0.175     1.2
-               0.209     1.4
-               0.244     1.56
-               0.279     1.6
-               0.314     1.7
-               0.349     1.6
-               0.436     1.5
-               0.546		 1.4 -->
+              -0.20   -0.620
+               0.00    0.250
+               0.26    1.000
+               0.60    0.848
             </tableData>
           </table>
       </product>
@@ -585,7 +566,7 @@
           <property>metrics/Sw-sqft</property>
           <property>velocities/q-aero-rad_sec</property>
           <property>aero/ci2vel</property>
-          <value> 4.5 </value>
+          <value> 5.5 </value>
         </product>
       </function>
 
@@ -596,7 +577,7 @@
            <property>metrics/Sw-sqft</property>
            <property>aero/alphadot-rad_sec</property>
            <property>aero/ci2vel</property>
-           <value> 2.388 </value>
+           <value> 3.588 </value>
         </product>
       </function>
 
@@ -827,7 +808,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
            <property>aero/alpha-rad</property>
-           <value> -0.330 </value>
+           <value> -0.30 </value>
        </product>
     </function>
 
@@ -856,7 +837,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>velocities/q-aero-rad_sec</property>
-           <value> -11.7050 </value>
+           <value> -11.9050 </value>
        </product>
     </function>
 
@@ -868,7 +849,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>aero/alphadot-rad_sec</property>
-           <value> -6.8008 </value>
+           <value> -7.8008 </value>
        </product>
     </function>
 
