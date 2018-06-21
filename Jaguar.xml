@@ -87,7 +87,7 @@
    <izz unit="SLUG*FT2">  35370.12 </izz>
    <emptywt unit="LBS" >  15400.00 </emptywt>
    <location name="CG" unit="IN">
-     <x>   50.60 </x>
+     <x>   65.60 </x>
      <y>     0.00 </y>
      <z>   -16.59 </z>
    </location>
@@ -206,7 +206,7 @@
       <spring_coeff unit="LBS/FT"> 30000 </spring_coeff><!-- hardness of spring. Low value means gear collapses more per energy applied. High value might give jsbsim trouble. -->
       <damping_coeff unit="LBS/FT/SEC"> 7500 </damping_coeff><!-- higher value slows down how fast the gear absorbs energy -->
       <damping_coeff_rebound unit="LBS/FT/SEC"> 20000 </damping_coeff_rebound><!-- high value means the gear is slower to release the energy it stored when collapsed --> <!--  Nikolai V. Chr.  -->
-    <max_steer unit="DEG"> 5.00 </max_steer>
+    <max_steer unit="DEG"> 15.00 </max_steer>
     <brake_group> NONE </brake_group>
     <retractable> 1 </retractable>
   </contact>
@@ -217,11 +217,11 @@
       <y>   -1.47652 </y>
       <z>   -2.3523 </z>
     </location>
-    <static_friction>  0.80 </static_friction>
+    <static_friction>  0.90 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
-      <spring_coeff unit="LBS/FT"> 34600 </spring_coeff>
-      <damping_coeff unit="LBS/FT/SEC"> 7000 </damping_coeff>
+      <spring_coeff unit="LBS/FT"> 25000 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 6000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 30000 </damping_coeff_rebound>
     <max_steer unit="DEG">0</max_steer>
     <brake_group> LEFT </brake_group>
@@ -234,11 +234,11 @@
       <y>  1.47652 </y>
       <z>   -2.3523 </z>
     </location>
-    <static_friction>  0.80 </static_friction>
+    <static_friction>  0.90 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
-      <spring_coeff unit="LBS/FT"> 34600 </spring_coeff>
-      <damping_coeff unit="LBS/FT/SEC"> 7000 </damping_coeff>
+      <spring_coeff unit="LBS/FT"> 25600 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 6000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 30000 </damping_coeff_rebound>
     <max_steer unit="DEG">0</max_steer>
     <brake_group> RIGHT </brake_group>
@@ -550,10 +550,22 @@
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
-              -0.20   -0.620
-               0.00    0.250
-               0.26    1.000
-               0.60    0.848
+
+              -0.209    -1.25
+              -0.175    -0.95
+              -0.140    -0.7
+              -0.105    -0.5
+              -0.070    -0.3
+              -0.035    -0.1
+               0.000     0.1
+               0.035     0.3
+               0.070     0.55
+               0.105     0.8
+               0.140     1
+               0.175     1.2
+               0.209     1.4
+               0.244     1.55
+
             </tableData>
           </table>
       </product>
@@ -566,7 +578,7 @@
           <property>metrics/Sw-sqft</property>
           <property>velocities/q-aero-rad_sec</property>
           <property>aero/ci2vel</property>
-          <value> 5.5 </value>
+          <value> 5.9 </value>
         </product>
       </function>
 
@@ -587,7 +599,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/elevator-pos-rad</property>
-           <value> 1.1955 </value>
+           <value> 2.1955 </value>
        </product>
     </function>
 
@@ -698,7 +710,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <abs><property>fcs/elevator-pos-rad</property></abs>
-           <value> 0.0400 </value>
+           <value> 0.0300 </value>
        </product>
     </function>
 
@@ -718,7 +730,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.0020 </value>
+           <value> 0.0025 </value>
          </product>
     </function>
 
@@ -730,7 +742,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/spoilers-pos-norm</property>
-           <value> 0.0143 </value>
+           <value> 0.0 </value>
          </product>
     </function> 
 
@@ -740,7 +752,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/speedbrake-pos-norm</property>
-           <value> 0.0800 </value>
+           <value> 0.0830 </value>
          </product>
     </function>
 
@@ -822,7 +834,7 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.7415
+              0.0    -0.6415
               2.0    -0.4354
             </tableData>
           </table>
@@ -837,7 +849,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>velocities/q-aero-rad_sec</property>
-           <value> -11.9050 </value>
+           <value> -9.9050 </value>
        </product>
     </function>
 
@@ -849,7 +861,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>aero/alphadot-rad_sec</property>
-           <value> -7.8008 </value>
+           <value> -5.8008 </value>
        </product>
     </function>
 
@@ -920,7 +932,7 @@
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
               0.0    0.1200
-              2.0    0.0300
+              2.0    0.0320
             </tableData>
           </table>
        </product>
