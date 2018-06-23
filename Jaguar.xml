@@ -599,7 +599,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/elevator-pos-rad</property>
-           <value> 2.1955 </value>
+           <value> 1.7955 </value>
        </product>
     </function>
 
