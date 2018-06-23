@@ -7,7 +7,7 @@
       <input>fcs/elevator-cmd-norm</input>
       <input>fcs/pitch-trim-cmd-norm</input>
       <clipto>
-        <min> -1 </min>
+        <min> -0.75 </min>
         <max>  1 </max>
       </clipto>
    </summer>
@@ -28,7 +28,7 @@
         <max>  0.35 </max>
       </domain>
       <range>
-        <min> -1 </min>
+        <min> -0.75 </min>
         <max>  1 </max>
       </range>
       <output>fcs/elevator-pos-norm</output>

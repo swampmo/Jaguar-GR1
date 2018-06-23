@@ -457,6 +457,10 @@
 
     <menubar include="Dialogs/jaguar-menu.xml"/>
 
+  <autopilot n="0">
+                <path>Aircraft/Jaguar/Systems/generic-autopilot.xml</path>
+  </autopilot>
+
   </sim>
 
   <systems>
