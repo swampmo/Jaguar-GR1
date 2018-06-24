@@ -552,7 +552,7 @@
 		<dme n="1">
 			<serviceable>true</serviceable>
 			<frequencies>
-				<source>/instrumentation/nav[1]/frequencies/selected-mhz</source>
+				<source>/Instrumentation/nav[1]/frequencies/selected-mhz</source>
 			</frequencies>
 		</dme>
   </instrumentation>

@@ -198,7 +198,7 @@
         <x>41</x>
         <y>-15</y>
         <width>24</width>
-        <height>8</height>
+        <height>9</height>
         <input>
             <property>/position/altitude-ft</property>
         </input>
@@ -213,7 +213,7 @@
         <x>41</x>
         <y>-45</y>
         <width>24</width>
-        <height>8</height>
+        <height>9</height>
         <condition>
             <less-than>
                 <property>/position/altitude-agl-ft</property>
@@ -229,7 +229,7 @@
         </input>
         <format>%4.0f</format>
         <halign>right</halign>
-        <box>false</box>
+        <box>ytue</box>
         <option>left</option>
     </label>
 

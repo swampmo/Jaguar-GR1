@@ -599,7 +599,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/elevator-pos-rad</property>
-           <value> 1.7955 </value>
+           <value> 1.6955 </value>
        </product>
     </function>
 
@@ -609,7 +609,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.0202 </value>
+           <value> 0.0185 </value>
        </product>
     </function>
 
@@ -679,7 +679,7 @@
             <tableData>
                 0.00    0.0000
                 0.81    0.0000
-                1.10    0.0230
+                1.10    0.0185
                 1.80    0.0150
             </tableData>
           </table>
@@ -730,7 +730,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.0025 </value>
+           <value> 0.0028 </value>
          </product>
     </function>
 
@@ -752,7 +752,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/speedbrake-pos-norm</property>
-           <value> 0.0830 </value>
+           <value> 0.0850 </value>
          </product>
     </function>
 
@@ -897,7 +897,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/p-aero-rad_sec</property>
-           <value> -0.4441 </value>
+           <value> -0.4241 </value>
        </product>
     </function>
 

@@ -649,7 +649,7 @@ if(navStillOn) {
 -->
   <!-- Armament  -->
   <model>
-    <path>Aircraft/Jaguar/Models/weapons/loads.xml</path>
+    <path>Aircraft/Jaguar/Models/Weapons/loads.xml</path>
   </model> 
 
   <!-- Interieur -->
@@ -1774,7 +1774,7 @@ if(navStillOn) {
  
   
 
-  <!-- chute
+ chute
   <model>
     <name>Chute</name>
     <path>Aircraft/Jaguar/Models/Effects/chute/chute.xml</path>
@@ -1786,7 +1786,7 @@ if(navStillOn) {
       <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
-  -->
+ 
 
   <!-- aircraft wash modeled in the lines below -->
   <model>
