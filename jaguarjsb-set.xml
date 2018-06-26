@@ -706,6 +706,14 @@
 	 <hud>
       <file>Aircraft/Jaguar/Nasal/MiscRwr.nas</file>
     </hud>
+ 
+   <damage>
+     <file>Aircraft/Jaguar/Nasal/damage.nas</file>
+   </damage>
+
+   <blackout>
+     <file>Aircraft/Jaguar/Nasal/blackout.nas</file>
+   </blackout> 
    
     <radardist>
       <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>

@@ -599,7 +599,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/elevator-pos-rad</property>
-           <value> 1.6955 </value>
+           <value> 1.4955 </value>
        </product>
     </function>
 
@@ -609,7 +609,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.0185 </value>
+           <value> 0.0155 </value>
        </product>
     </function>
 
