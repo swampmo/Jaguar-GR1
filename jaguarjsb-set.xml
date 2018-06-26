@@ -20,8 +20,8 @@
     <submodels> 
       <serviceable type="bool">true</serviceable>
       <path>Aircraft/Jaguar/Models/Effects/guns/submodels.xml</path>
-      <path>Aircraft/Jaguar/Models/weapons/loads.xml</path>
-      <path>Aircraft/Jaguar/Models/weapons/pylons.xml</path>
+      <path>Aircraft/Jaguar/Models/Weapons/loads.xml</path>
+      <path>Aircraft/Jaguar/Models/Weapons/pylons.xml</path>
       <path>Aircraft/Jaguar/Systems/sub_lancer.xml</path>
     </submodels>
 
