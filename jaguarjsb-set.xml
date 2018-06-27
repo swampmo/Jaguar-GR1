@@ -461,6 +461,28 @@
                 <path>Aircraft/Jaguar/Systems/generic-autopilot.xml</path>
   </autopilot>
 
+		<flight-recorder>
+            <replay-config type="int">0</replay-config>
+            <config n="0">
+        <signals include="/Aircraft/Generic/flightrecorder/components/environment.xml"/>
+        <signals include="/Aircraft/Generic/flightrecorder/components/position.xml"/>
+        <signals include="/Aircraft/Generic/flightrecorder/components/controls.xml"/>
+        <signals include="/Aircraft/Generic/flightrecorder/components/engine-jet.xml">
+            <count type="int">2</count>
+        </signals>
+        <signals include="/Aircraft/Generic/flightrecorder/components/faults-engines.xml">
+            <count type="int">2</count>
+        </signals>
+        <signals include="/Aircraft/Generic/flightrecorder/components/tanks.xml">
+            <count type="int">3</count>
+        </signals>
+        <signals include="/Aircraft/Generic/flightrecorder/components/gear-retractable.xml">
+            <count type="int">3</count>
+        </signals>
+			<name type="string">Sepecat Jaguar</name>
+            </config>
+        </flight-recorder>
+
   </sim>
 
   <systems>
@@ -668,6 +690,14 @@
       </tank>
     </fuel>
   </consumables> -->
+
+	
+
+    <limits>
+        <max-positive-g>9.0</max-positive-g>  
+        <max-negative-g>-3.0</max-negative-g> 
+        <vroll>180.5</vroll> 
+    </limits>
 
   <nasal>
     <doors>

@@ -12,8 +12,13 @@
       </clipto>
    </summer>
 
+        <lag_filter name="fcs/elevator-speed">
+            <input>fcs/pitch-trim-sum</input>
+            <c1>22.4</c1>
+        </lag_filter>
+
    <aerosurface_scale name="Elevator Control">
-      <input>fcs/pitch-trim-sum</input>
+      <input>fcs/elevator-speed</input>
       <range>
         <min>  -0.35 </min>
         <max>  0.35 </max>
@@ -116,16 +121,21 @@
       <input>fcs/rudder-command-sum</input>
       <input>fcs/yaw-damper-rate</input>
       <clipto>
-        <min> -1.1 </min>
-        <max>  1.1 </max>
+        <min> -1 </min>
+        <max>  1 </max>
       </clipto>
    </summer>
 
-   <aerosurface_scale name="Rudder Control">
+    <lag_filter name="fcs/rudder-speed">
       <input>fcs/rudder-sum</input>
+        <c1>22.4</c1>
+    </lag_filter>
+
+   <aerosurface_scale name="Rudder Control">
+      <input>fcs/rudder-speed</input>
       <domain>
-        <min> -1.1 </min>
-        <max>  1.1 </max>
+        <min> -1 </min>
+        <max>  1 </max>
       </domain>
       <range>
         <min> -0.35 </min>
@@ -148,19 +158,6 @@
    </aerosurface_scale>
   </channel>
 
-<kinematic name="elevator_slow">
-<noscale/>
-<input>elevator_fast</input>
-<traverse>
-<setting>
-<position>-30</position>
-<time>0</time>
-</setting>
-<setting>
-<position>30</position>
-<time>3</time>
-</setting>
-</traverse>
-</kinematic>
+
 
 </system>
