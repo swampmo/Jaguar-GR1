@@ -835,26 +835,12 @@ if(navStillOn) {
   </animation>
 
   <!-- Gouverne de profondeur -->
-  <animation>
-    <type>rotate</type>
-    <object-name>profondeurG</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <factor>-9</factor>
-    <axis>
-      <x1-m>  6.433 </x1-m>
-      <y1-m> -0.254 </y1-m>
-      <z1-m>  0.074 </z1-m>
-      <x2-m>  7.548 </x2-m>
-      <y2-m> -2.253 </y2-m>
-      <z2-m> -0.380 </z2-m>
-    </axis>
-  </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>profondeurG</object-name>
-    <property>surface-positions/left-aileron-pos-norm</property>
-    <factor>-3</factor>
+    <property>fdm/jsbsim/fcs/elevon-left-deg</property>
+    <factor>-1</factor>
     <axis>
       <x1-m>  6.433 </x1-m>
       <y1-m> -0.254 </y1-m>
@@ -868,8 +854,8 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>profondeurD</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <factor>-9</factor>
+    <property>fdm/jsbsim/fcs/elevon-right-deg</property>
+    <factor>-1</factor>
     <axis>
       <x1-m>  7.548 </x1-m>
       <y1-m>  2.253 </y1-m>
@@ -880,20 +866,7 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>profondeurD</object-name>
-    <property>surface-positions/right-aileron-pos-norm</property>
-    <factor>-3</factor>
-    <axis>
-      <x1-m>  7.548 </x1-m>
-      <y1-m>  2.253 </y1-m>
-      <z1-m> -0.380 </z1-m>
-      <x2-m>  6.433 </x2-m>
-      <y2-m>  0.254 </y2-m>
-      <z2-m>  0.074 </z2-m>
-    </axis>
-  </animation>
+
 
   <!-- Animations des ailerons -->
   <animation>
