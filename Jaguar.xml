@@ -55,6 +55,9 @@
     max. turn rate:     0.27 deg/s
 -->
 
+<!-- Test -->
+
+
  <metrics>
    <wingarea  unit="FT2">   258.00 </wingarea>
    <wingspan  unit="FT" >    28.60 </wingspan>
