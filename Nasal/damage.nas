@@ -1,7 +1,16 @@
+#
+# Install: Include this code into an aircraft to make it damagable. (remember to add it to the -set file)
+#
+# Author: Nikolai V. Chr. (with some improvement by Onox and Pinto)
+#
+#
+
+
 var clamp = func(v, min, max) { v < min ? min : v > max ? max : v }
 
 var TRUE  = 1;
 var FALSE = 0;
+
 
 var cannon_types = {
     " M70 rocket hit":        0.25, #135mm
@@ -15,6 +24,7 @@ var cannon_types = {
     " GSh-23 hit":            0.065,# 23mm
     " 7.62 hit":              0.005,# 7.62mm
     " 50 BMG hit":            0.015,# 12.7mm
+    " S-5 rocket hit":        0.20, #55mm
 };
     
     
@@ -46,10 +56,14 @@ var warhead_lbs = {
     "SCALP":               992.00,
     "KN-06":               315.00,
     "GBU12":               190.00,
+    "GBU-12":              190.00,
     "GBU16":               450.00,
     "Sea Eagle":           505.00,
     "SeaEagle":            505.00,
     "AGM65":               200.00,
+    "AGM-65":              126.00,
+    "AGM-84":              488.00,
+    "AGM-88":              146.00,
     "RB-04E":              661.00,
     "RB-05A":              353.00,
     "RB-75":               126.00,
@@ -63,11 +77,32 @@ var warhead_lbs = {
     "AIM132":               22.05,
     "ALARM":               450.00,
     "STORMSHADOW":         850.00,
+    "S-21":                245.00,
+    "S-24":                271.00,
+    "Kh-66":               244.71,
+    "RS-2US":               28.66,
+    "R-55":                 20.06,
+    "R-3S":                 16.31,
+    "R-3R":                 16.31,
+    "R-13M":                16.31,
     "R-60":                  6.60,
+    "R-60M":                 7.70,
     "R-27R1":               85.98,
     "R-27T1":               85.98,
-    "FAB-500":             564.00,
+    "R-73E":                16.31,
+    "R-77":                 49.60,
+    "RN-14T":              800.00, #fictional, thermobaeric replacement for the RN-24 nuclear bomb
+    "RN-18T":             1200.00, #fictional, thermobaeric replacement for the RN-28 nuclear bomb
+    "ZB-250":              236.99,
+    "ZB-500":              473.99,
+    "KH-25MP":             197.53,
+    "FAB-100":              92.59,
+    "OFAB-100":             92.59,
+    "FAB-250":             202.85,
+    "FAB-500":             564.38,
+    "KAB-500":             564.38,
     "Exocet":              364.00,
+    "HVAR":                  7.50,#P51
 };
 
 var fireMsgs = {
@@ -85,6 +120,7 @@ var fireMsgs = {
     " Bombs away at": nil, # bombs
     " Bruiser at":    nil, # anti-ship
     " Rifle at":      nil, # TV guided
+    " Sniper at":     nil, # anti-radiation
 
     # SAM and missile frigate
     " Bird away at":  nil, # G/A
@@ -111,6 +147,8 @@ var incoming_listener = func {
       if (find(" at " ~ callsign ~ ". Release ", last_vector[1]) != -1) {
         # a m2000 is firing at us
         m2000 = TRUE;
+      } elsif (find(" Maddog released", last_vector[1]) != -1) {
+        m2000 = TRUE;
       }
       if (contains(fireMsgs, last_vector[1]) or m2000 == TRUE) {
         # air2air being fired
@@ -119,9 +157,6 @@ var incoming_listener = func {
           if (m2000 == TRUE or last_vector[2] == " "~callsign) {
             # its being fired at me
             #print("Incoming!");
-            if (last_vector[1] == " Bird away at") {
-              doSAMLight();
-            }
             var enemy = getCallsign(author);
             if (enemy != nil) {
               #print("enemy identified");
@@ -165,12 +200,13 @@ var incoming_listener = func {
                 } else {
                   playIncomingSound("");
                 }
+                setLaunch(author);
                 return;
               }
             }
           }
         }
-      } elsif (getprop("sim/model/f15/systems/armament/mp-messaging") == TRUE) { # mirage: getprop("/controls/armament/mp-messaging")
+      } elsif (getprop("payload/armament/msg")) { # mirage: getprop("/controls/armament/mp-messaging")
         # latest version of failure manager and taking damage enabled
         #print("damage enabled");
         var last1 = split(" ", last_vector[1]);
@@ -279,15 +315,6 @@ var fail_systems = func (probability) {
     return failed;
 };
 
-var doSAMLight = func () {
-  setprop("sim/model/f15/instrumentation/warnings/ac-sam", 1);
-  settimer(func {stopSAM();},15);
-}
-
-var stopSAM = func () {
-  setprop("sim/model/f15/instrumentation/warnings/ac-sam", 0);
-}
-
 var playIncomingSound = func (clock) {
   setprop("sound/incoming"~clock, 1);
   settimer(func {stopIncomingSound(clock);},3);
@@ -295,6 +322,15 @@ var playIncomingSound = func (clock) {
 
 var stopIncomingSound = func (clock) {
   setprop("sound/incoming"~clock, 0);
+}
+
+var setLaunch = func (e) {
+  setprop("sound/rwr-launch", e);
+  settimer(func {stopLaunch();},7);
+}
+
+var stopLaunch = func () {
+  setprop("sound/rwr-launch", "");
 }
 
 var callsign_struct = {};
@@ -331,242 +367,9 @@ var processCallsigns = func () {
 
 processCallsigns();
 
-var logTime = func{
-  #log time and date for outputing ucsv files for converting into KML files for google earth.
-  if (getprop("logging/log[0]/enabled") == TRUE and getprop("sim/time/utc/year") != nil) {
-    var date = getprop("sim/time/utc/year")~"/"~getprop("sim/time/utc/month")~"/"~getprop("sim/time/utc/day");
-    var time = getprop("sim/time/utc/hour")~":"~getprop("sim/time/utc/minute")~":"~getprop("sim/time/utc/second");
-
-    setprop("logging/date-log", date);
-    setprop("logging/time-log", time);
-  }
-}
-
-var ct = func (type) {
-  if (type == "c-u") {
-    setprop("sim/ct/c-u", 1);
-  }
-  if (type == "rl" and getprop("fdm/jsbsim/gear/unit[0]/WOW") != TRUE) {
-    setprop("sim/ct/rl", 1);
-  }
-  if (type == "rp" and getprop("fdm/jsbsim/gear/unit[0]/WOW") != TRUE) {
-    setprop("sim/ct/rp", 1);
-  }
-  if (type == "a") {
-    setprop("sim/ct/a", 1);
-  }
-  if (type == "lst") {
-    setprop("sim/ct/list", 1);
-  }
-  if (type == "ifa" and getprop("fdm/jsbsim/gear/unit[0]/WOW") != TRUE) {
-    setprop("sim/ct/ifa", 1);
-  }
-  if (type == "sf" and getprop("fdm/jsbsim/gear/unit[0]/WOW") != TRUE) {
-    setprop("sim/ct/sf", 1);
-  }
-}
-
-var lf = -1;
-var ll = 0;
-
-var code_ct = func () {
-  var cu = getprop("sim/ct/c-u");
-  if (cu == nil or cu != 1) {
-    cu = 0;
-  }
-  var a = getprop("sim/ct/a");
-  if (a == nil or a != 1) {
-    a = 0;
-  }
-  var ff = getprop("sim/freeze/fuel");
-  if (ff == nil) {
-    ff = 0;
-  } elsif (ff == 1) {
-    setprop("sim/ct/ff", 1);
-  }
-  ff = getprop("sim/ct/ff");
-  if (ff == nil or ff != 1) {
-    ff = 0;
-  }
-  var cl =  getprop("payload/weight[0]/weight-lb")+getprop("payload/weight[1]/weight-lb")
-           +getprop("payload/weight[2]/weight-lb")+getprop("payload/weight[3]/weight-lb")
-           +getprop("payload/weight[4]/weight-lb")+getprop("payload/weight[5]/weight-lb")
-           +getprop("payload/weight[6]/weight-lb")+getprop("payload/weight[7]/weight-lb")
-           +getprop("payload/weight[8]/weight-lb")+getprop("payload/weight[9]/weight-lb")
-           +getprop("payload/weight[10]/weight-lb");
-  if (cl > (ll*1.05) and getprop("fdm/jsbsim/gear/unit[0]/WOW") != TRUE) {
-    setprop("sim/ct/rl", 1);
-  }
-  ll = cl;
-  var rl = getprop("sim/ct/rl");
-  if (rl == nil or rl != 1) {
-    rl = 0;
-  }
-  var rp = getprop("sim/ct/rp");
-  if (rp == nil or rp != 1) {
-    rp = 0;
-  }
-  var cf =   getprop("/consumables/fuel/tank[0]/level-gal_us")
-            +getprop("/consumables/fuel/tank[1]/level-gal_us")
-            +getprop("/consumables/fuel/tank[2]/level-gal_us")
-            +getprop("/consumables/fuel/tank[3]/level-gal_us")
-            +getprop("/consumables/fuel/tank[4]/level-gal_us")
-            +getprop("/consumables/fuel/tank[5]/level-gal_us")
-            +getprop("/consumables/fuel/tank[6]/level-gal_us")
-            +getprop("/consumables/fuel/tank[7]/level-gal_us")
-            +getprop("/consumables/fuel/tank[8]/level-gal_us")
-            +getprop("/consumables/fuel/tank[9]/level-gal_us");
-  if (cf != nil and lf != -1 and cf > (lf*1.1) and getprop("fdm/jsbsim/gear/unit[0]/WOW") != TRUE and getprop("/systems/refuel/contact") == FALSE) {
-    setprop("sim/ct/rf", 1);
-  }
-  var rf = getprop("sim/ct/rf");
-  if (rf == nil or rf != 1) {
-    rf = 0;
-  }
-  lf = cf == nil?0:cf;
-  var dm = !getprop("sim/model/f15/systems/armament/mp-messaging");
-  if (dm == nil or dm != 1) {
-    dm = 0;
-  }
-  var tm = 0;#getprop("sim/ja37/radar/look-through-terrain");
-  if (tm == nil or tm != 1) {
-    tm = 0;
-  }
-  var rd = 0;#!getprop("sim/ja37/radar/doppler-enabled");
-  if (rd == nil or rd != 1) {
-    rd = 0;
-  }  
-  var ml = getprop("sim/ct/list");
-  if (ml == nil or ml != 1) {
-    ml = 0;
-  }
-  var sf = getprop("sim/ct/sf");
-  if (sf == nil or sf != 1) {
-    sf = 0;
-  }
-  var ifa = getprop("sim/ct/ifa");
-  if (ifa == nil or ifa != 1) {
-    ifa = 0;
-  }
-  var final = "ct"~cu~ff~rl~rf~rp~a~dm~tm~rd~ml~sf~ifa;
-  setprop("sim/multiplay/generic/string[15]", final);
-  settimer(code_ct, 2);
-}
-
-var not = func {
-  if (getprop("sim/model/f15/systems/armament/mp-messaging") == TRUE and getprop("fdm/jsbsim/gear/unit[0]/WOW") != TRUE) {
-    var ct = getprop("sim/multiplay/generic/string[15]") ;
-    var msg = "I might be chea"~"ting..";
-    if (ct != nil) {
-      msg = "I might be chea"~"ting.."~ct;
-      var spl = split("ct", ct);
-      if (size(spl) > 1) {
-        var bits = spl[1];
-        msg = "I ";
-        if (bits == "000000000000") {
-          settimer(not, 60);
-          return;
-        }
-        if (substr(bits,0,1) == "1") {
-          msg = msg~"Used CT"~"RL-U..";
-        }
-        if (substr(bits,1,1) == "1") {
-          msg = msg~"Use fuelf"~"reeze..";
-        }
-        if (substr(bits,2,1) == "1") {
-          msg = msg~"Relo"~"aded in air..";
-        }
-        if (substr(bits,3,1) == "1") {
-          msg = msg~"Refue"~"led in air..";
-        }
-        if (substr(bits,4,1) == "1") {
-          msg = msg~"Repa"~"ired not on ground..";
-        }
-        if (substr(bits,5,1) == "1") {
-          msg = msg~"Used time"~"warp..";
-        }
-        if (getprop("sim/model/f15/systems/armament/mp-messaging") == FALSE and substr(bits,6,1) == "1") {
-          msg = msg~"Have dam"~"age off..";
-        }
-        if (substr(bits,7,1) == "1") {
-          msg = msg~"Have Ter"~"rain mask. off..";
-        }
-        if (substr(bits,8,1) == "1") {
-          msg = msg~"Have Dop"~"pler off..";
-        }
-        if (substr(bits,9,1) == "1") {
-          msg = msg~"Had mp-l"~"ist on..";
-        }
-        if (substr(bits,10,1) == "1") {
-          msg = msg~"Had s-fai"~"lures open..";
-        }
-        if (substr(bits,11,1) == "1") {
-          msg = msg~"Had i-fa"~"ilures open..";
-        }
-      }
-    }
-    setprop("/sim/multiplay/chat", msg);
-  }
-  settimer(not, 60);
-}
-
-var changeGuiLoad = func()
-{#return;
-    var searchname1 = "mp-list";
-    var searchname2 = "instrument-failures";
-    var searchname3 = "system-failures";
-    var state = 0;
-    
-    foreach(var menu ; props.globals.getNode("/sim/menubar/default").getChildren("menu")) {
-        foreach(var item ; menu.getChildren("item")) {
-            foreach(var name ; item.getChildren("name")) {
-                if(name.getValue() == searchname1) {
-                    #var e = item.getNode("enabled").getValue();
-                    #var path = item.getPath();
-                    #item.remove();
-                    #item = props.globals.getNode(path,1);
-                    #item.getNode("enabled",1).setBoolValue(FALSE);
-                    #item.getNode("binding").remove();
-                    #item.getNode("name",1).setValue(searchname1);
-                    item.getNode("binding/command").setValue("nasal");
-                    item.getNode("binding/script").setValue("aircraft.loadMPList()");
-                    #item.getNode("enabled",1).setBoolValue(TRUE);
-                }
-                if(name.getValue() == searchname2) {
-                    item.getNode("binding/command").setValue("nasal");
-                    item.getNode("binding/dialog-name").remove();
-                    item.getNode("binding/script",1).setValue("aircraft.loadIFail()");
-                }
-                if(name.getValue() == searchname3) {
-                    item.getNode("binding/command").setValue("nasal");
-                    item.getNode("binding/dialog-name").remove();
-                    item.getNode("binding/script",1).setValue("aircraft.loadSysFail()");
-                }
-            }
-        }
-    }
-    fgcommand("reinit", props.Node.new({"subsystem":"gui"}));
-}
-
-var loadMPList = func () {
-  ct("lst");multiplayer.dialog.show();
-}
-
-var loadSysFail = func () {
-  ct("sf");fgcommand("dialog-show", props.Node.new({"dialog-name":"system-failures"}));
-}
-
-var loadIFail = func () {
-  ct("ifa");fgcommand("dialog-show", props.Node.new({"dialog-name":"instrument-failures"}));
-}
-
 setlistener("/sim/multiplay/chat-history", incoming_listener, 0, 0);
 
-setprop("/sim/failure-manager/display-on-screen", FALSE);
-
-changeGuiLoad();
-settimer(code_ct, 5);
-settimer(not, 11);
+#setprop("/sim/failure-manager/display-on-screen", FALSE);
 
 var re_init = func {
   # repair the aircraft
@@ -577,8 +380,6 @@ var re_init = func {
   foreach(var failure_mode_id; mode_list) {
     FailureMgr.set_failure_level(failure_mode_id, 0);
   }
-  setprop("ai/submodels/submodel[5]/count", 100);
-  setprop("ai/submodels/submodel[6]/count", 100);
 }
 
-setlistener("/sim/signals/reinit", re_init, 0, 0);
+#setlistener("/sim/signals/reinit", re_init, 0, 0);
