@@ -754,25 +754,23 @@
          </product>
     </function>
 
-
-
-    <function name="aero/force/Drag_spoilers">
-       <description>Drag due to spoilers</description>
+    <function name="aero/force/Drag_left_spoiler">
+       <description>Drag due to left spoiler</description>
          <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/spoilers-pos-norm</property>
-           <value> 0.0 </value>
+           <toradians><property>fcs/spoiler-left-deg</property></toradians>
+           <value> 0.0296 </value>
          </product>
-    </function> 
+    </function>
 
-    <function name="aero/force/Drag_speedbrake">
-       <description>Drag due to speedbrakes</description>
+    <function name="aero/force/Drag_right_spoiler">
+       <description>Drag due to right spoiler</description>
          <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/speedbrake-pos-norm</property>
-           <value> 0.0850 </value>
+           <toradians><property>fcs/spoiler-right-deg</property></toradians>
+           <value> 0.0296 </value>
          </product>
     </function>
 
@@ -987,6 +985,40 @@
             <tableData>
               0.0    -0.0576
               2.0    -0.0153
+            </tableData>
+          </table>
+       </product>
+    </function>
+
+    <function name="aero/moment/Roll_left_spoiler">
+       <description>Roll moment due to left spoiler</description>
+       <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <property>metrics/bw-ft</property>
+          <toradians><property>fcs/spoiler-left-deg</property></toradians>
+           <table>
+            <independentVar lookup="row">velocities/mach</independentVar>
+            <tableData>
+              0.0    -0.0383
+              2.0    -0.0102
+            </tableData>
+          </table>
+       </product>
+    </function>
+
+    <function name="aero/moment/Roll_right_spoiler">
+       <description>Roll moment due to right spoiler</description>
+       <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <property>metrics/bw-ft</property>
+          <toradians><property>fcs/spoiler-right-deg</property></toradians>
+           <table>
+            <independentVar lookup="row">velocities/mach</independentVar>
+            <tableData>
+              0.0    0.0383
+              2.0    0.0102
             </tableData>
           </table>
        </product>
