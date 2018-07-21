@@ -78,6 +78,36 @@
 
   </channel>
 
+  <channel name="Spoilers">
+      <pure_gain name="fcs/spoiler-left-cmd">
+        <input>fcs/aileron-cmd-norm</input>
+        <gain>-40</gain>
+        <clipto>
+          <min>  0 </min>
+          <max>  40 </max>
+        </clipto>
+      </pure_gain>
+
+        <lag_filter name="fcs/spoiler-left-deg">
+            <input>fcs/spoiler-left-cmd</input>
+            <c1>25</c1>
+        </lag_filter>
+
+      <pure_gain name="fcs/spoiler-right-cmd">
+        <input>fcs/aileron-cmd-norm</input>
+        <gain>40</gain>
+        <clipto>
+          <min>  0 </min>
+          <max>  40 </max>
+        </clipto>
+      </pure_gain>
+
+        <lag_filter name="fcs/spoiler-right-deg">
+            <input>fcs/spoiler-right-cmd</input>
+            <c1>25</c1>
+        </lag_filter>
+                  
+  </channel>
 
   <channel name="Yaw">
    <summer name="fcs/rudder-sum">

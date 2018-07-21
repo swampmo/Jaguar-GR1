@@ -872,12 +872,8 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
-    <property>surface-positions/left-aileron-pos-norm</property>
-    <interpolation>
-      <entry><ind>  0.75 </ind><dep>  0 </dep></entry>
-      <entry><ind>  0.00 </ind><dep>  0 </dep></entry>
-      <entry><ind> -0.75 </ind><dep> 45 </dep></entry>
-    </interpolation>
+    <property>fdm/jsbsim/fcs/spoiler-left-deg</property>
+    <factor>1</factor>
     <axis>
       <x1-m>  3.075 </x1-m>
       <y1-m> -2.104 </y1-m>
@@ -891,12 +887,8 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>
-    <property>surface-positions/right-aileron-pos-norm</property>
-    <interpolation>
-      <entry><ind>  0.75 </ind><dep>  0 </dep></entry>
-      <entry><ind>  0.00 </ind><dep>  0 </dep></entry>
-      <entry><ind> -0.75 </ind><dep> 45 </dep></entry>
-    </interpolation>
+    <property>fdm/jsbsim/fcs/spoiler-right-deg</property>
+    <factor>1</factor>
     <axis>
       <x1-m>  3.696 </x1-m>
       <y1-m>  3.616 </y1-m>
