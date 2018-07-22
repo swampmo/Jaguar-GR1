@@ -32,8 +32,8 @@
    <aerosurface_scale name="fcs/roll-pos-deg">
       <input>fcs/roll-sum</input>
       <range>
-        <min>  -12.5 </min>
-        <max>   12.5 </max>
+        <min>  -15 </min>
+        <max>   15 </max>
       </range>
    </aerosurface_scale>
 
@@ -80,30 +80,9 @@
 
 
   <channel name="Yaw">
-   <summer name="Rudder Command Sum">
-      <input>fcs/rudder-cmd-norm</input>
-      <input>fcs/yaw-trim-cmd-norm</input>
-      <clipto>
-        <min> -1 </min>
-        <max>  1 </max>
-      </clipto>
-   </summer>
-
-   <scheduled_gain name="Yaw Damper Rate">
-      <input>velocities/r-aero-rad_sec</input>
-      <table>
-        <independentVar lookup="row">velocities/ve-kts</independentVar>
-         <tableData>
-            30     0.00
-            60     2.00
-         </tableData>
-      </table>
-      <gain>fcs/yaw-damper-enable</gain>
-   </scheduled_gain>
-
-   <summer name="Rudder Sum">
-      <input>fcs/rudder-command-sum</input>
-      <input>fcs/yaw-damper-rate</input>
+   <summer name="fcs/rudder-sum">
+      <input>/controls/flight/rudder</input>
+      <input>/controls/flight/rudder-trim</input>
       <clipto>
         <min> -1 </min>
         <max>  1 </max>
@@ -115,33 +94,18 @@
         <c1>20</c1>
     </lag_filter>
 
-   <aerosurface_scale name="Rudder Control">
+   <aerosurface_scale name="fcs/rudder-deg">
       <input>fcs/rudder-speed</input>
       <domain>
         <min> -1 </min>
         <max>  1 </max>
       </domain>
       <range>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min> -25 </min>
+        <max>  25 </max>
       </range>
-      <output>fcs/rudder-pos-rad</output>
    </aerosurface_scale>
 
-   <aerosurface_scale name="Rudder Normalization">
-      <input>fcs/rudder-pos-rad</input>
-      <domain>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
-      </domain>
-      <range>
-        <min> -1 </min>
-        <max>  1 </max>
-      </range>
-      <output>fcs/rudder-pos-norm</output>
-   </aerosurface_scale>
   </channel>
-
-
 
 </system>
