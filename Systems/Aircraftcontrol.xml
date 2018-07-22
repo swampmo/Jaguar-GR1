@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<system name="Aircraft control">
+  <property value="1">fcs/yaw-damper-enable</property>
+
+  <channel name="Elevon">
+   <summer name="fcs/pitch-sum">
+      <input>fcs/elevator-cmd-norm</input>
+      <input>fcs/pitch-trim-cmd-norm</input>
+      <clipto>
+        <min> -1 </min>
+        <max>  1 </max>
+      </clipto>
+   </summer>
+
+   <aerosurface_scale name="fcs/pitch-pos-deg">
+      <input>fcs/pitch-sum</input>
+      <range>
+        <min>  -25 </min>
+        <max>   15 </max>
+      </range>
+   </aerosurface_scale>
+
+   <summer name="fcs/roll-sum">
+      <input>fcs/aileron-cmd-norm</input>
+      <input>fcs/roll-trim-cmd-norm</input>
+      <clipto>
+        <min> -1 </min>
+        <max>  1 </max>
+      </clipto>
+   </summer>
+
+   <aerosurface_scale name="fcs/roll-pos-deg">
+      <input>fcs/roll-sum</input>
+      <range>
+        <min>  -15 </min>
+        <max>   15 </max>
+      </range>
+   </aerosurface_scale>
+
+  <fcs_function name="fcs/elevon-left-cmd">
+      <function>
+          <sum>
+              <property>fcs/roll-pos-deg</property>
+              <property>fcs/pitch-pos-deg</property>
+          </sum>
+      </function> 
+        <clipto>
+          <min> -25 </min>
+          <max>  25 </max>       
+        </clipto>
+  </fcs_function>
+
+        <lag_filter name="fcs/elevon-left-deg">
+            <input>fcs/elevon-left-cmd</input>
+            <c1>17</c1>
+        </lag_filter>
+
+  <fcs_function name="fcs/elevon-right-cmd">
+      <function>
+          <sum>
+              <product>
+                  <property>fcs/roll-pos-deg</property>
+                  <value> -1 </value>
+              </product>
+              <property>fcs/pitch-pos-deg</property>
+          </sum>
+      </function> 
+        <clipto>
+          <min> -25 </min>
+          <max>  25 </max>       
+        </clipto>
+  </fcs_function>
+
+        <lag_filter name="fcs/elevon-right-deg">
+            <input>fcs/elevon-right-cmd</input>
+            <c1>17</c1>
+        </lag_filter>
+
+  </channel>
+
+  <channel name="Spoilers">
+      <pure_gain name="fcs/spoiler-left-cmd">
+        <input>fcs/aileron-cmd-norm</input>
+        <gain>-40</gain>
+        <clipto>
+          <min>  0 </min>
+          <max>  40 </max>
+        </clipto>
+      </pure_gain>
+
+        <lag_filter name="fcs/spoiler-left-deg">
+            <input>fcs/spoiler-left-cmd</input>
+            <c1>17</c1>
+        </lag_filter>
+
+      <pure_gain name="fcs/spoiler-right-cmd">
+        <input>fcs/aileron-cmd-norm</input>
+        <gain>40</gain>
+        <clipto>
+          <min>  0 </min>
+          <max>  40 </max>
+        </clipto>
+      </pure_gain>
+
+        <lag_filter name="fcs/spoiler-right-deg">
+            <input>fcs/spoiler-right-cmd</input>
+            <c1>17</c1>
+        </lag_filter>
+                  
+  </channel>
+
+  <channel name="Yaw">
+   <summer name="fcs/rudder-sum">
+      <input>/controls/flight/rudder</input>
+      <input>/controls/flight/rudder-trim</input>
+      <clipto>
+        <min> -1 </min>
+        <max>  1 </max>
+      </clipto>
+   </summer>
+
+    <lag_filter name="fcs/rudder-speed">
+      <input>fcs/rudder-sum</input>
+        <c1>20</c1>
+    </lag_filter>
+
+   <aerosurface_scale name="fcs/rudder-deg">
+      <input>fcs/rudder-speed</input>
+      <domain>
+        <min> -1 </min>
+        <max>  1 </max>
+      </domain>
+      <range>
+        <min> -25 </min>
+        <max>  25 </max>
+      </range>
+   </aerosurface_scale>
+
+  </channel>
+
+  <channel name="Flaps">
+   <kinematic name="Flaps Control">
+    <input>fcs/flap-cmd-norm</input>
+    <traverse>
+      <setting>
+         <position>  0 </position>
+         <time>      0 </time>
+      </setting>
+      <setting>
+         <position> 15 </position>
+         <time>      4 </time>
+      </setting>
+      <setting>
+         <position> 30 </position>
+         <time>      3 </time>
+      </setting>
+    </traverse>
+    <output>fcs/flap-pos-deg</output>
+   </kinematic>
+
+   <aerosurface_scale name="Flap Normalization">
+    <input>fcs/flap-pos-deg</input>
+    <domain>
+      <min>  0 </min>
+      <max> 30 </max>
+    </domain>
+    <range>
+      <min> 0 </min>
+      <max> 1 </max>
+    </range>
+    <output>fcs/flap-pos-norm</output>
+   </aerosurface_scale>
+  </channel>
+
+  <channel name="Landing Gear">
+   <switch name="fcs/gear-no-wow">
+     <default value="1"/>
+     <test logic="AND" value="0">
+         gear/unit[1]/WOW eq 1
+         gear/unit[2]/WOW eq 1
+     </test>
+   </switch>
+
+   <kinematic name="Landing Gear Control">
+     <input>gear/gear-cmd-norm</input>
+     <traverse>
+       <setting>
+          <position> 0 </position>
+          <time>     0 </time>
+       </setting>
+       <setting>
+          <position> 1 </position>
+          <time>     5 </time>
+       </setting>
+     </traverse>
+     <output>gear/gear-pos-norm</output>
+   </kinematic>
+  </channel>
+
+  <channel name="Speedbrake">
+   <kinematic name="Speedbrake Control">
+     <input>fcs/speedbrake-cmd-norm</input>
+     <traverse>
+       <setting>
+          <position> 0 </position>
+          <time>     0 </time>
+       </setting>
+       <setting>
+          <position> 1 </position>
+          <time>     1 </time>
+       </setting>
+     </traverse>
+     <output>fcs/speedbrake-pos-norm</output>
+   </kinematic>
+  </channel>
+
+</system>
