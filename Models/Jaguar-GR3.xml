@@ -822,8 +822,8 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>direction</object-name>
-    <property>surface-positions/rudder-pos-norm</property>
-    <factor> 15 </factor>
+    <property>fdm/jsbsim/fcs/rudder-deg</property>
+    <factor> 1 </factor>
     <axis>
       <x1-m>  7.033 </x1-m>
       <y1-m>  0.000 </y1-m>

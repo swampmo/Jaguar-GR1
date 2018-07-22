@@ -520,22 +520,14 @@
 
  </ground_reactions>
 
- <system file="Propulsion.xml"/>
- <system file="Aircraft control.xml"/>
- <system file="Landing Gear.xml"/>
- <system file="Flaps.xml"/>
- 
- <system file="Spoilers.xml"/>  
+ <system file="Propulsion"/>
+ <system file="Aircraftcontrol"/>
+<!-- <system file="ArrestorHook"/>
+ <system file="DragChute"/>
+ <system file="Catapult"/> -->
 
-  
- <system file="Speedbrake.xml"/>  
-<!-- <system file="Arrestor Hook.xml"/>
- <system file="Drag Chute.xml"/>
- <system file="Catapult.xml"/> -->
+ <flight_control name="none"/>
 
- <flight_control name="FCS: Jaguar">
-
- </flight_control>
 
  <aerodynamics>
 
@@ -625,12 +617,22 @@
 
 
 
-    <function name="aero/force/Lift_spoilers">
-       <description>Delta Lift due to spoilers</description>
+    <function name="aero/force/Lift_left_spoiler">
+       <description>Delta Lift due to left spoiler</description>
        <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/spoilers-pos-norm</property>
+           <property>fcs/spoiler-left-deg</property>
+           <value> 0.0000 </value>
+       </product>
+    </function>  
+
+    <function name="aero/force/Lift_right_spoiler">
+       <description>Delta Lift due to right spoiler</description>
+       <product>
+           <property>aero/qbar-psf</property>
+           <property>metrics/Sw-sqft</property>
+           <property>fcs/spoiler-right-deg</property>
            <value> 0.0000 </value>
        </product>
     </function>  
@@ -1031,29 +1033,9 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <toradians><property>fcs/rudder-deg</property></toradians>
-           <value> 0.005 </value>
+           <value> 0.0012 </value>
        </product>
     </function>
-
-  
-    <function name="aero/moment/Roll_spoilers">
-       <description>Roll moment due to spoilers</description>
-       <product>
-          <property>aero/qbar-psf</property>
-          <property>metrics/Sw-sqft</property>
-          <property>metrics/bw-ft</property>
-          <property>fcs/spoilers-pos-norm</property>
-          <property>fcs/left-aileron-pos-rad</property>
-          <table>
-            <independentVar lookup="row">aero/alpha-rad</independentVar>
-            <tableData>
-             -0.175   0.0000
-              0.0     0.2400
-              0.175   0.0000
-            </tableData>
-          </table>
-       </product>
-    </function> 
 
   </axis>
 
@@ -1130,7 +1112,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <toradians><property>fcs/rudder-deg</property></toradians>
-           <value> 0.1101 </value>
+           <value> 0.0968 </value>
        </product>
     </function>
 
