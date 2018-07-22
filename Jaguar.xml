@@ -521,22 +521,14 @@
 
  </ground_reactions>
 
- <system file="Propulsion.xml"/>
- <system file="Aircraft control.xml"/>
- <system file="Landing Gear.xml"/>
- <system file="Flaps.xml"/>
- 
- <system file="Spoilers.xml"/>  
+ <system file="Propulsion"/>
+ <system file="Aircraftcontrol"/>
+<!-- <system file="ArrestorHook"/>
+ <system file="DragChute"/>
+ <system file="Catapult"/> -->
 
-  
- <system file="Speedbrake.xml"/>  
-<!-- <system file="Arrestor Hook.xml"/>
- <system file="Drag Chute.xml"/>
- <system file="Catapult.xml"/> -->
+ <flight_control name="none"/>
 
- <flight_control name="FCS: Jaguar">
-
- </flight_control>
 
  <aerodynamics>
 
@@ -558,9 +550,9 @@
               -0.105    -0.45
               -0.070    -0.2
               -0.035    -0.1
-               0.000     0.1
-               0.035     0.2
-               0.070     0.45
+               0.000     0.15
+               0.035     0.17
+               0.070     0.35
                0.105     0.6
                0.140     1
                0.175     1.1
@@ -594,13 +586,23 @@
         </product>
       </function>
 
-    <function name="aero/force/Lift_elevator">
-       <description>Lift due to Elevator Deflection</description>
+    <function name="aero/force/Lift_left_elevon">
+       <description>Lift due to left elevon Deflection</description>
        <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/elevator-pos-rad</property>
-           <value> 1.055 </value>
+           <toradians><property>fcs/elevon-left-deg</property></toradians>
+           <value> 0.5275 </value>
+       </product>
+    </function>
+
+    <function name="aero/force/Lift_right_elevon">
+       <description>Lift due to right elevon Deflection</description>
+       <product>
+           <property>aero/qbar-psf</property>
+           <property>metrics/Sw-sqft</property>
+           <toradians><property>fcs/elevon-right-deg</property></toradians>
+           <value> 0.5275 </value>
        </product>
     </function>
 
@@ -610,18 +612,28 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.0155 </value>
+           <value> 0.019 </value>
        </product>
     </function>
 
 
 
-    <function name="aero/force/Lift_spoilers">
-       <description>Delta Lift due to spoilers</description>
+    <function name="aero/force/Lift_left_spoiler">
+       <description>Delta Lift due to left spoiler</description>
        <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/spoilers-pos-norm</property>
+           <property>fcs/spoiler-left-deg</property>
+           <value> 0.0000 </value>
+       </product>
+    </function>  
+
+    <function name="aero/force/Lift_right_spoiler">
+       <description>Delta Lift due to right spoiler</description>
+       <product>
+           <property>aero/qbar-psf</property>
+           <property>metrics/Sw-sqft</property>
+           <property>fcs/spoiler-right-deg</property>
            <value> 0.0000 </value>
        </product>
     </function>  
@@ -705,13 +717,23 @@
        </product>
     </function>
 
-    <function name="aero/force/Drag_elevator">
-       <description>Drag due to Elevator Deflection</description>
+    <function name="aero/force/Drag_left_elevon">
+       <description>Drag due to left elevon Deflection</description>
        <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <abs><property>fcs/elevator-pos-rad</property></abs>
-           <value> 0.0300 </value>
+           <abs><toradians><property>fcs/elevon-left-deg</property></toradians></abs>
+           <value> 0.015 </value>
+       </product>
+    </function>
+
+    <function name="aero/force/Drag_right_elevon">
+       <description>Drag due to right elevon Deflection</description>
+       <product>
+           <property>aero/qbar-psf</property>
+           <property>metrics/Sw-sqft</property>
+           <abs><toradians><property>fcs/elevon-right-deg</property></toradians></abs>
+           <value> 0.015 </value>
        </product>
     </function>
 
@@ -731,29 +753,27 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.0028 </value>
+           <value> 0.0048 </value>
          </product>
     </function>
 
-
-
-    <function name="aero/force/Drag_spoilers">
-       <description>Drag due to spoilers</description>
+    <function name="aero/force/Drag_left_spoiler">
+       <description>Drag due to left spoiler</description>
          <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/spoilers-pos-norm</property>
-           <value> 0.0 </value>
+           <toradians><property>fcs/spoiler-left-deg</property></toradians>
+           <value> 0.0296 </value>
          </product>
-    </function> 
+    </function>
 
-    <function name="aero/force/Drag_speedbrake">
-       <description>Drag due to speedbrakes</description>
+    <function name="aero/force/Drag_right_spoiler">
+       <description>Drag due to right spoiler</description>
          <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/speedbrake-pos-norm</property>
-           <value> 0.0850 </value>
+           <toradians><property>fcs/spoiler-right-deg</property></toradians>
+           <value> 0.0296 </value>
          </product>
     </function>
 
@@ -805,7 +825,7 @@
        <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/rudder-pos-rad</property>
+           <toradians><property>fcs/rudder-deg</property></toradians>
            <value> 0.3816 </value>
        </product>
     </function>
@@ -825,18 +845,35 @@
        </product>
     </function>
 
-    <function name="aero/moment/Pitch_elevator">
-       <description>Pitch moment due to elevator</description>
+    <function name="aero/moment/Pitch_left_elevon">
+       <description>Pitch moment due to left elevon</description>
        <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>metrics/cbarw-ft</property>
-          <property>fcs/elevator-pos-rad</property>
+          <toradians><property>fcs/elevon-left-deg</property></toradians>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.6415
-              2.0    -0.4354
+              0.0    -0.3207
+              2.0    -0.2177
+            </tableData>
+          </table>
+       </product>
+    </function>
+
+    <function name="aero/moment/Pitch_right_elevon">
+       <description>Pitch moment due to right elevon</description>
+       <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <property>metrics/cbarw-ft</property>
+          <toradians><property>fcs/elevon-right-deg</property></toradians>
+          <table>
+            <independentVar lookup="row">velocities/mach</independentVar>
+            <tableData>
+              0.0    -0.3207
+              2.0    -0.2177
             </tableData>
           </table>
        </product>
@@ -922,18 +959,69 @@
        </product>
     </function>
 
-    <function name="aero/moment/Roll_aileron">
-       <description>Roll moment due to aileron</description>
+    <function name="aero/moment/Roll_left_elevon">
+       <description>Roll moment due to left elevon</description>
        <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>metrics/bw-ft</property>
-          <property>fcs/left-aileron-pos-rad</property>
+          <toradians><property>fcs/elevon-left-deg</property></toradians>
            <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    0.1200
-              2.0    0.0320
+              0.0    0.0576
+              2.0    0.0153
+            </tableData>
+          </table>
+       </product>
+    </function>
+
+    <function name="aero/moment/Roll_right_elevon">
+       <description>Roll moment due to right elevon</description>
+       <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <property>metrics/bw-ft</property>
+          <toradians><property>fcs/elevon-right-deg</property></toradians>
+           <table>
+            <independentVar lookup="row">velocities/mach</independentVar>
+            <tableData>
+              0.0    -0.0576
+              2.0    -0.0153
+            </tableData>
+          </table>
+       </product>
+    </function>
+
+    <function name="aero/moment/Roll_left_spoiler">
+       <description>Roll moment due to left spoiler</description>
+       <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <property>metrics/bw-ft</property>
+          <toradians><property>fcs/spoiler-left-deg</property></toradians>
+           <table>
+            <independentVar lookup="row">velocities/mach</independentVar>
+            <tableData>
+              0.0    -0.0383
+              2.0    -0.0102
+            </tableData>
+          </table>
+       </product>
+    </function>
+
+    <function name="aero/moment/Roll_right_spoiler">
+       <description>Roll moment due to right spoiler</description>
+       <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <property>metrics/bw-ft</property>
+          <toradians><property>fcs/spoiler-right-deg</property></toradians>
+           <table>
+            <independentVar lookup="row">velocities/mach</independentVar>
+            <tableData>
+              0.0    0.0383
+              2.0    0.0102
             </tableData>
           </table>
        </product>
@@ -945,30 +1033,10 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
-           <property>fcs/rudder-pos-rad</property>
-           <value> 0.0100 </value>
+           <toradians><property>fcs/rudder-deg</property></toradians>
+           <value> 0.0012 </value>
        </product>
     </function>
-
-  
-    <function name="aero/moment/Roll_spoilers">
-       <description>Roll moment due to spoilers</description>
-       <product>
-          <property>aero/qbar-psf</property>
-          <property>metrics/Sw-sqft</property>
-          <property>metrics/bw-ft</property>
-          <property>fcs/spoilers-pos-norm</property>
-          <property>fcs/left-aileron-pos-rad</property>
-          <table>
-            <independentVar lookup="row">aero/alpha-rad</independentVar>
-            <tableData>
-             -0.175   0.0000
-              0.0     0.2400
-              0.175   0.0000
-            </tableData>
-          </table>
-       </product>
-    </function> 
 
   </axis>
 
@@ -1044,19 +1112,8 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
-           <property>fcs/rudder-pos-rad</property>
-           <value> -0.2202 </value>
-       </product>
-    </function>
-
-    <function name="aero/moment/Yaw_aileron">
-       <description>Adverse yaw</description>
-       <product>
-           <property>aero/qbar-psf</property>
-           <property>metrics/Sw-sqft</property>
-           <property>metrics/bw-ft</property>
-           <property>fcs/left-aileron-pos-rad</property>
-           <value> 0.0000 </value>
+           <toradians><property>fcs/rudder-deg</property></toradians>
+           <value> 0.0968 </value>
        </product>
     </function>
 
