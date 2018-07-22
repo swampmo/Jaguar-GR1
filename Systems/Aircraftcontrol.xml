@@ -52,7 +52,7 @@
 
         <lag_filter name="fcs/elevon-left-deg">
             <input>fcs/elevon-left-cmd</input>
-            <c1>30</c1>
+            <c1>17</c1>
         </lag_filter>
 
   <fcs_function name="fcs/elevon-right-cmd">
@@ -73,7 +73,7 @@
 
         <lag_filter name="fcs/elevon-right-deg">
             <input>fcs/elevon-right-cmd</input>
-            <c1>30</c1>
+            <c1>17</c1>
         </lag_filter>
 
   </channel>
@@ -90,7 +90,7 @@
 
         <lag_filter name="fcs/spoiler-left-deg">
             <input>fcs/spoiler-left-cmd</input>
-            <c1>25</c1>
+            <c1>17</c1>
         </lag_filter>
 
       <pure_gain name="fcs/spoiler-right-cmd">
@@ -104,7 +104,7 @@
 
         <lag_filter name="fcs/spoiler-right-deg">
             <input>fcs/spoiler-right-cmd</input>
-            <c1>25</c1>
+            <c1>17</c1>
         </lag_filter>
                   
   </channel>
