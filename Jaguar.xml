@@ -824,18 +824,35 @@
        </product>
     </function>
 
-    <function name="aero/moment/Pitch_elevator">
-       <description>Pitch moment due to elevator</description>
+    <function name="aero/moment/Pitch_left_elevon">
+       <description>Pitch moment due to left elevon</description>
        <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>metrics/cbarw-ft</property>
-          <property>fcs/elevator-pos-rad</property>
+          <toradians><property>fcs/elevon-left-deg</property></toradians>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.6415
-              2.0    -0.4354
+              0.0    -0.3207
+              2.0    -0.2177
+            </tableData>
+          </table>
+       </product>
+    </function>
+
+    <function name="aero/moment/Pitch_right_elevon">
+       <description>Pitch moment due to right elevon</description>
+       <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <property>metrics/cbarw-ft</property>
+          <toradians><property>fcs/elevon-right-deg</property></toradians>
+          <table>
+            <independentVar lookup="row">velocities/mach</independentVar>
+            <tableData>
+              0.0    -0.3207
+              2.0    -0.2177
             </tableData>
           </table>
        </product>
@@ -921,18 +938,35 @@
        </product>
     </function>
 
-    <function name="aero/moment/Roll_aileron">
-       <description>Roll moment due to aileron</description>
+    <function name="aero/moment/Roll_left_elevon">
+       <description>Roll moment due to left elevon</description>
        <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>metrics/bw-ft</property>
-          <property>fcs/left-aileron-pos-rad</property>
+          <property>fcs/elevon-left-deg</property>
            <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    0.1200
-              2.0    0.0320
+              0.0    0.036
+              2.0    0.0096
+            </tableData>
+          </table>
+       </product>
+    </function>
+
+    <function name="aero/moment/Roll_right_elevon">
+       <description>Roll moment due to right elevon</description>
+       <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <property>metrics/bw-ft</property>
+          <property>fcs/elevon-right-deg</property>
+           <table>
+            <independentVar lookup="row">velocities/mach</independentVar>
+            <tableData>
+              0.0    0.036
+              2.0    0.0096
             </tableData>
           </table>
        </product>
