@@ -19,7 +19,7 @@
 
     <submodels> 
       <serviceable type="bool">true</serviceable>
-      <path>Aircraft/Jaguar/Models/Effects/guns/submodels.xml</path>
+      <path>Aircraft/Jaguar/Models/Effects/Guns/submodels.xml</path>
       <path>Aircraft/Jaguar/Models/Weapons/loads.xml</path>
       <path>Aircraft/Jaguar/Models/Weapons/pylons.xml</path>
       <path>Aircraft/Jaguar/Systems/sub_lancer.xml</path>
@@ -162,8 +162,8 @@
         <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
         <float n="1" alias="/instrumentation/doors/passenger/position-norm"/> 
 		<float n="6" type="double">0</float><!-- refuel probe   -->
-        <float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat Left Engine -->
-	    <float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat Right Engine -->	
+        <float n="8" alias="/engines/engine[0]/augmentation" /> <!-- Reheat Left Engine -->
+	    <float n="9" alias="/engines/engine[1]/augmentation" /> <!-- Reheat Right Engine -->	
         <float n="15" alias="/velocities/mach" /> <!-- Mach for Multiplayer Sound -->
 	    <float n="16" alias="/engines/engine[0]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
 	    <float n="17" alias="/engines/engine[1]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->		

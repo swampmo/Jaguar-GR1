@@ -660,7 +660,7 @@ if(navStillOn) {
   <!-- Effets de tir -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/guns/fire.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Guns/fire.xml</path>
     <offsets>
       <x-m> -2.364 </x-m>
       <y-m> -0.569 </y-m>
@@ -673,7 +673,7 @@ if(navStillOn) {
 
   <!-- Droit -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/guns/fire.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Guns/fire.xml</path>
     <offsets>
       <x-m> -2.364 </x-m>
       <y-m>  0.569 </y-m>
@@ -687,7 +687,7 @@ if(navStillOn) {
   <!-- Effets sur le sol -->
   <!-- Roue avant -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/ground/ground0.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Ground/ground0.xml</path>
     <offsets>
       <x-m> -3.570 </x-m>
       <y-m>  0.000 </y-m>
@@ -697,7 +697,7 @@ if(navStillOn) {
 
   <!-- Roue gauche -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/ground/ground1.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Ground/ground1.xml</path>
     <offsets>
       <x-m> -2.086 </x-m>
       <y-m> -1.251 </y-m>
@@ -707,7 +707,7 @@ if(navStillOn) {
 
   <!-- Roue droite -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/ground/ground2.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Ground/ground2.xml</path>
     <offsets>
       <x-m> -2.086 </x-m>
       <y-m>  1.251 </y-m>
@@ -718,7 +718,7 @@ if(navStillOn) {
   <!-- Poussière -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/smoke/smokeL.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Smoke/smokeL.xml</path>
     <offsets>
       <x-m>  5.561 </x-m>
       <y-m> -0.483 </y-m>
@@ -728,7 +728,7 @@ if(navStillOn) {
 
   <!-- Droite -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/smoke/smokeR.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Smoke/smokeR.xml</path>
     <offsets>
       <x-m>  5.561 </x-m>
       <y-m>  0.483 </y-m>
@@ -759,7 +759,7 @@ if(navStillOn) {
 
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/tiptrail/tiptrail.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Tiptrail/tiptrail.xml</path>
     <offsets>
       <x-m>  4.332 </x-m>
       <y-m> -4.267 </y-m>
@@ -769,7 +769,7 @@ if(navStillOn) {
 
   <!-- Droite -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/tiptrail/tiptrail.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Tiptrail/tiptrail.xml</path>
     <offsets>
       <x-m>  4.332 </x-m>
       <y-m>  4.267 </y-m>
@@ -779,7 +779,7 @@ if(navStillOn) {
 
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/trail/trailL.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Trail/trailL.xml</path>
     <offsets>
       <x-m>  5.561 </x-m>
       <y-m> -0.483 </y-m>
@@ -789,7 +789,7 @@ if(navStillOn) {
 
   <!-- Droite -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/trail/trailR.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Trail/trailR.xml</path>
     <offsets>
       <x-m>  5.561 </x-m>
       <y-m>  0.483 </y-m>
@@ -1742,7 +1742,7 @@ if(navStillOn) {
  chute
   <model>
     <name>Chute</name>
-    <path>Aircraft/Jaguar/Models/Effects/chute/chute.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Chute/chute.xml</path>
     <offsets>
       <x-m>        -8 </x-m>
       <y-m>         0 </y-m>
@@ -1756,7 +1756,7 @@ if(navStillOn) {
   <!-- aircraft wash modeled in the lines below -->
   <model>
     <name>aircraft_wash_l</name>
-    <path>Aircraft/Jaguar/Models/Effects/wash/aircraft_wash.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Wash/aircraft_wash.xml</path>
     <condition>
     <equals>
     <property>controls/state/low_level</property>
@@ -1773,7 +1773,7 @@ if(navStillOn) {
  
   <model>
     <name>aircraft_wash_r</name>
-    <path>Aircraft/Jaguar/Models/Effects/wash/aircraft_wash.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Wash/aircraft_wash.xml</path>
     <condition>
       <equals>
         <property>controls/state/low_level</property>
