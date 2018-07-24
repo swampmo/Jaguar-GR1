@@ -66,9 +66,9 @@
    <vtailarea  unit="FT2">   70.00 </vtailarea>
    <vtailarm  unit="FT" >    16.50 </vtailarm>
    <location name="AERORP" unit="IN">
-     <x>   70.60 </x>
-     <y>     0.00 </y>
-     <z>     0.00 </z>
+     <x>   65.80 </x>
+     <y>    0.00 </y>
+     <z>  -16.59 </z>
    </location>
    <location name="EYEPOINT" unit="IN">
      <x>   132.72 </x>
