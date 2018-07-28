@@ -110,9 +110,27 @@
   </channel>
 
   <channel name="Yaw">
+	<scheduled_gain name="fcs/yaw-damper"> <!-- Joshua Davidson (it0uchpods) -->
+		<input>velocities/r-rad_sec</input>
+		<table>
+			<independentVar lookup="row">velocities/mach</independentVar>
+			<independentVar lookup="column">fcs/yaw-damper-enable</independentVar>
+			<tableData>
+				     0    1
+				0.2  0.0 -8.0
+				0.9  0.0 -2.0
+			</tableData>
+		</table>
+		<clipto>
+			<min>-0.1</min>
+			<max>0.1</max>
+		</clipto>
+	</scheduled_gain>
+
    <summer name="fcs/rudder-sum">
       <input>/controls/flight/rudder</input>
       <input>/controls/flight/rudder-trim</input>
+      <input>fcs/yaw-damper</input>
       <clipto>
         <min> -1 </min>
         <max>  1 </max>
