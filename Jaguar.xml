@@ -551,9 +551,9 @@
               -0.070    -0.2
               -0.035    -0.1
                0.000     0.15
-               0.035     0.17
+               0.035     0.19
                0.070     0.30
-               0.105     0.5
+               0.105     0.7
                0.140     0.8
                0.175     0.9
                0.209     0.95
@@ -582,7 +582,7 @@
            <property>metrics/Sw-sqft</property>
            <property>aero/alphadot-rad_sec</property>
            <property>aero/ci2vel</property>
-           <value> 2.05 </value>
+           <value> 3.05 </value>
         </product>
       </function>
 
@@ -592,7 +592,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <toradians><property>fcs/elevon-left-deg</property></toradians>
-           <value> 0.1975 </value>
+           <value> 0.2975 </value>
        </product>
     </function>
 
@@ -602,7 +602,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <toradians><property>fcs/elevon-right-deg</property></toradians>
-           <value> 0.1975 </value>
+           <value> 0.2975 </value>
        </product>
     </function>
 
@@ -723,7 +723,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <abs><toradians><property>fcs/elevon-left-deg</property></toradians></abs>
-           <value> 0.015 </value>
+           <value> 0.010 </value>
        </product>
     </function>
 
@@ -733,7 +733,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <abs><toradians><property>fcs/elevon-right-deg</property></toradians></abs>
-           <value> 0.015 </value>
+           <value> 0.010 </value>
        </product>
     </function>
 
@@ -841,7 +841,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
            <property>aero/alpha-rad</property>
-           <value> -0.30 </value>
+           <value> -0.25 </value>
        </product>
     </function>
 
@@ -1042,30 +1042,15 @@
 
   <axis name="YAW">
 
-    <!-- Stall initiator -->
-    <function name="aero/moment/Yaw_alpha">
-       <description>Yaw moment due to alpha</description>
-       <product>
-           <property>aero/qbar-psf</property>
-           <property>metrics/Sw-sqft</property>
-           <property>metrics/bw-ft</property>
-           <property>aero/alpha-rad</property>
-           <property>fcs/gear-no-wow</property>
-           <table>
-             <independentVar lookup="row">aero/beta-rad</independentVar>
-             <independentVar lookup="column">aero/Re</independentVar>
-             <tableData>
-                         17307328 19038060
-                 -0.3491  -1.0000   0.0000
-                  0.3491   1.0000   0.0000
-             </tableData>
-           </table>
-       </product>
-    </function>
 
     <function name="aero/moment/Yaw_beta">
        <description>Yaw moment due to beta</description>
-       <product>
+       <product> 2012 FOUNDED
+PRIVATE STATUS
+61-70 EMPLOYEES
+Series F LATEST DEAL TYPE
+$50M LATEST DEAL AMOUNT
+17 INVESTOR
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>

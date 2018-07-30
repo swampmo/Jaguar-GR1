@@ -170,13 +170,17 @@
       </generic>
     </multiplay>
 
-    <systems>
-      <electrical>
+    <systems n="0">
+      <electrical n="0">
         <path>Aircraft/Generic/generic-electrical.xml</path>
       </electrical>
-      <autopilot>
-        <path>Aircraft/Jaguar/System/autopilot5.xml</path>
+      <autopilot n="0">
+        <path>Aircraft/Jaguar/Systems/generic-autopilot.xml</path>
       </autopilot>
+      <refuel n="0">
+        <type>probe</type>
+        <serviceable type="bool">true</serviceable>
+      </refuel>
     </systems> 
 
     <mp-systems>
@@ -484,21 +488,6 @@
         </flight-recorder>
 
   </sim>
-
-  <systems>
-   <electrical>
-        <path>Aircraft/Generic/generic-electrical.xml</path>
-   </electrical>
-      <autopilot>
-        <path>Aircraft/Jaguar/System/autopilot5.xml</path>
-      </autopilot>
-    <refuel>
-      <type>probe</type>
-      <serviceable type="bool">true</serviceable>
-    </refuel>
-  </systems> 
-
-  
 
   <instrumentation>
 	<airspeed-indicator>
