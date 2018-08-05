@@ -521,6 +521,7 @@
  </ground_reactions>
 
  <system file="Propulsion"/>
+ <system file="autoflight"/>
  <system file="Aircraftcontrol"/>
 <!-- <system file="ArrestorHook"/>
  <system file="DragChute"/>
@@ -691,8 +692,8 @@
             <tableData>
                 0.00    0.0000
                 0.81    0.0000
-                1.10    0.0185
-                1.80    0.0150
+                1.10    0.0145
+                1.80    0.0120
             </tableData>
           </table>
         </product>

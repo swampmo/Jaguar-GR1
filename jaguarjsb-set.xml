@@ -25,11 +25,7 @@
       <path>Aircraft/Jaguar/Systems/sub_lancer.xml</path>
     </submodels>
 
-	<instrumentation>
-		<path>Aircraft/Jaguar/System/instrumentation.xml</path>
-	</instrumentation>
-
-    <hud>
+	<hud>
       <path n="1">Aircraft/Jaguar/Hud/hud.xml</path>
       <visibility n="1">true</visibility>
 	  <palette>
@@ -175,7 +171,7 @@
         <path>Aircraft/Generic/generic-electrical.xml</path>
       </electrical>
       <autopilot n="0">
-        <path>Aircraft/Jaguar/Systems/generic-autopilot.xml</path>
+        <path>Aircraft/Jaguar/Systems/autoflight-rules.xml</path>
       </autopilot>
       <refuel n="0">
         <type>probe</type>
@@ -461,10 +457,6 @@
 
     <menubar include="Dialogs/jaguar-menu.xml"/>
 
-  <autopilot n="0">
-                <path>Aircraft/Jaguar/Systems/generic-autopilot.xml</path>
-  </autopilot>
-
 		<flight-recorder>
             <replay-config type="int">0</replay-config>
             <config n="0">
@@ -487,6 +479,10 @@
             </config>
         </flight-recorder>
 
+        <instrumentation>
+            <path>Aircraft/Jaguar/Systems/instrumentation.xml</path>
+        </instrumentation>
+		
   </sim>
 
   <instrumentation>
@@ -697,6 +693,7 @@
       <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>  -->
       <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
       <file>Aircraft/Jaguar/Nasal/doors.nas</file>
+      <file>Aircraft/Jaguar/Nasal/autoflight.nas</file>
     
     </jaguar>
 	
