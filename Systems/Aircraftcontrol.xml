@@ -4,7 +4,8 @@
 
   <channel name="Elevon">
    <summer name="fcs/pitch-sum">
-      <input>fcs/elevator-cmd-norm</input>
+      <!--input>fcs/elevator-cmd-norm</input-->
+      <input>fcs/ap-pitch-cmd-norm</input>
       <input>fcs/pitch-trim-cmd-norm</input>
       <clipto>
         <min> -1 </min>
@@ -21,7 +22,8 @@
    </aerosurface_scale>
 
    <summer name="fcs/roll-sum">
-      <input>fcs/aileron-cmd-norm</input>
+      <!--input>fcs/aileron-cmd-norm</input-->
+	  <input>fcs/ap-roll-cmd-norm</input>
       <input>fcs/roll-trim-cmd-norm</input>
       <clipto>
         <min> -1 </min>
