@@ -9,7 +9,7 @@
   <!-- pylons -->
   
   <model>
-    <path>Aircraft/Jaguar/Models/weapons/pylons.xml</path>
+    <path>Aircraft/Jaguar/Models/Weapons/pylons.xml</path>
     <offsets>
       <x-m> 0 </x-m>
       <y-m> 0 </y-m>
@@ -34,7 +34,7 @@
 
 <model>
 <name>left-AIM-9-pos-1</name>
-<path>Aircraft/Jaguar/Models/weapons/AIM9.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/AIM9.xml</path>
 <offsets>
 <x-m>  2.140 </x-m>
 <y-m> -2.050 </y-m>
@@ -62,7 +62,7 @@
 
 <model>
 <name>left-ALQ-101-pos-1</name>
-<path>Aircraft/Jaguar/Models/weapons/alq101.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/alq101.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m> -2.050 </y-m>
@@ -95,7 +95,7 @@
 
 <model>
 <name>left-AIM-9-pos-2</name>
-<path>Aircraft/Jaguar/Models/weapons/AIM9.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/AIM9.xml</path>
 <offsets>
 <x-m>  2.400 </x-m>
 <y-m> -3.09 </y-m>
@@ -123,7 +123,7 @@
  
 <model>
 <name>left-GBU-pos-2</name>
-<path>Aircraft/Jaguar/Models/weapons/gbu16.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/gbu16.xml</path>
 <offsets>
 <x-m>  2.400 </x-m>
 <y-m> -3.09 </y-m>
@@ -152,7 +152,7 @@
 
 <model>
 <name>left-MK82-pos-2</name>
-<path>Aircraft/Jaguar/Models/weapons/single-MK-82-LD.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/single-MK-82-LD.xml</path>
 <offsets>
 <x-m>  2.400 </x-m>
 <y-m> -3.09 </y-m>
@@ -181,7 +181,7 @@
 
 <model>
 <name>left-ALARM-pos-2</name>
-<path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/alarm.xml</path>
 <offsets>
 <x-m>  2.400 </x-m>
 <y-m> -3.09 </y-m>
@@ -209,7 +209,7 @@
 
 <model>
 <name>left-ALQ-101-pos-2</name>
-<path>Aircraft/Jaguar/Models/weapons/alq101.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/alq101.xml</path>
 <offsets>
 <x-m>  2.400 </x-m>
 <y-m> -3.09 </y-m>
@@ -240,7 +240,7 @@
 
 <model>
 <name>left-Tank</name>
-<path>Aircraft/Jaguar/Models/weapons/tank1000.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/tank1000.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m> -2.050 </y-m>
@@ -268,7 +268,7 @@
 
 <model>
 <name>left-large-Tank</name>
-<path>Aircraft/Jaguar/Models/weapons/tank1500.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/tank1500.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m> -2.050 </y-m>
@@ -296,7 +296,7 @@
 
 <model>
 <name>left-GBU-pos-3</name>
-<path>Aircraft/Jaguar/Models/weapons/gbu16.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/gbu16.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m> -2.050 </y-m>
@@ -324,7 +324,7 @@
 
 <model>
 <name>left-MK-82-pos-3</name>
-<path>Aircraft/Jaguar/Models/weapons/single-MK-82-LD.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/single-MK-82-LD.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m> -2.050 </y-m>
@@ -352,7 +352,7 @@
 
 <model>
 <name>left-MK82x2-pos-3</name>
-<path>Aircraft/Jaguar/Models/weapons/mk82x2w.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/mk82x2w.xml</path>
 <offsets>
 <x-m>  -5.500 </x-m>
 <y-m> -0.35 </y-m>
@@ -380,7 +380,7 @@
 
 <model>
 <name>left-ALARM-pos-3</name>
-<path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/alarm.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m> -2.050 </y-m>
@@ -409,7 +409,7 @@
 
 <model>
 <name>left-SeaEagle-pos-3</name>
-<path>Aircraft/Jaguar/Models/weapons/seaeagle.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/seaeagle.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m> -2.050 </y-m>
@@ -440,7 +440,7 @@
 
 <model>
 <name>1000 l Droptank</name>
-<path>Aircraft/Jaguar/Models/weapons/tank1000.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/tank1000.xml</path>
 <offsets>
 <x-m>  0.100 </x-m>
 <y-m>  0.000 </y-m>
@@ -469,7 +469,7 @@
 
 <model>
 <name>2x-MK-82</name>
-<path>Aircraft/Jaguar/Models/weapons/mk82x2c.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/mk82x2c.xml</path>
 <offsets>
 <x-m> -6.400 </x-m>
 <y-m>  1.400 </y-m>
@@ -498,7 +498,7 @@
 
 <model>
 <name>Center-ALARM</name>
-<path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/alarm.xml</path>
 <offsets>
 <x-m>  0.100 </x-m>
 <y-m>  0.000 </y-m>
@@ -527,7 +527,7 @@
 
 <model>
 <name>Center-SeaEagle</name>
-<path>Aircraft/Jaguar/Models/weapons/seaeagle.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/seaeagle.xml</path>
 <offsets>
 <x-m>  0.100 </x-m>
 <y-m>  0.000 </y-m>
@@ -557,7 +557,7 @@
 
 <model>
 <name>right-Tank</name>
-<path>Aircraft/Jaguar/Models/weapons/tank1000.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/tank1000.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m>  2.050 </y-m>
@@ -585,7 +585,7 @@
 
 <model>
 <name>right-large-Tank</name>
-<path>Aircraft/Jaguar/Models/weapons/tank1500.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/tank1500.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m>  2.050 </y-m>
@@ -614,7 +614,7 @@
 	
  <model>
 <name>right-GBU-pos-3</name>
-<path>Aircraft/Jaguar/Models/weapons/gbu16.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/gbu16.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m>  2.050 </y-m>
@@ -642,7 +642,7 @@
 
 <model>
 <name>right-MK-82-pos-3</name>
-<path>Aircraft/Jaguar/Models/weapons/single-MK-82-LD.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/single-MK-82-LD.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m>  2.050 </y-m>
@@ -670,7 +670,7 @@
 
 <model>
 <name>right-MK82x2-pos-3</name>
-<path>Aircraft/Jaguar/Models/weapons/mk82x2w.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/mk82x2w.xml</path>
 <offsets>
 <x-m>  -5.500 </x-m>
 <y-m> 3.75 </y-m>
@@ -698,7 +698,7 @@
 
 <model>
 <name>Right-ALARM-pos-3</name>
-<path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/alarm.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m>  2.050 </y-m>
@@ -727,7 +727,7 @@
 
 <model>
 <name>right-SeaEagle-pos-3</name>
-<path>Aircraft/Jaguar/Models/weapons/seaeagle.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/seaeagle.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m>  2.050 </y-m>
@@ -758,7 +758,7 @@
   
 <model>
 <name>right-AIM-9-pos-2</name>
-<path>Aircraft/Jaguar/Models/weapons/AIM9.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/AIM9.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m>  3.09 </y-m>
@@ -786,7 +786,7 @@
 
 <model>
 <name>right-GBU-pos-2</name>
-<path>Aircraft/Jaguar/Models/weapons/gbu16.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/gbu16.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m>  3.09 </y-m>
@@ -814,7 +814,7 @@
 
 <model>
 <name>right-MK82-pos-2</name>
-<path>Aircraft/Jaguar/Models/weapons/single-MK-82-LD.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/single-MK-82-LD.xml</path>
 <offsets>
 <x-m>  2.400 </x-m>
 <y-m>  3.09 </y-m>
@@ -843,7 +843,7 @@
 
 <model>
 <name>right-ALARM-pos-2</name>
-<path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/alarm.xml</path>
 <offsets>
 <x-m>  2.400 </x-m>
 <y-m>  3.09 </y-m>
@@ -871,7 +871,7 @@
 
 <model>
 <name>right-ALQ-101-pos-2</name>
-<path>Aircraft/Jaguar/Models/weapons/alq101.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/alq101.xml</path>
 <offsets>
 <x-m>  2.400 </x-m>
 <y-m>  3.09 </y-m>
@@ -902,7 +902,7 @@
   
 <model>
 <name>right-AIM-9-pos-1</name>
-<path>Aircraft/Jaguar/Models/weapons/AIM9.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/AIM9.xml</path>
 <offsets>
 <x-m>  2.140 </x-m>
 <y-m>  2.050 </y-m>
@@ -931,7 +931,7 @@
 
 <model>
 <name>right-ALQ-101-pos-1</name>
-<path>Aircraft/Jaguar/Models/weapons/alq101.xml</path>
+<path>Aircraft/Jaguar/Models/Weapons/alq101.xml</path>
 <offsets>
 <x-m>  2.000 </x-m>
 <y-m>  2.050 </y-m>

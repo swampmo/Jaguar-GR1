@@ -550,7 +550,7 @@
               -0.105    -0.45
               -0.070    -0.2
               -0.035    -0.1
-               0.000     0.1
+               0.000     0.15
                0.035     0.2
                0.070     0.45
                0.105     0.6
@@ -612,7 +612,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.0155 </value>
+           <value> 0.0115 </value>
        </product>
     </function>
 
@@ -753,7 +753,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.0028 </value>
+           <value> 0.00295 </value>
          </product>
     </function>
 

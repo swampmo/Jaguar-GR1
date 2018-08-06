@@ -4,7 +4,7 @@
 
 <PropertyList>
 
-	<path>Aircraft/Jaguar/Models/weapons/MK-82-LD.ac</path>
+	<path>Aircraft/Jaguar/Models/Weapons/MK-82-LD.ac</path>
 	<animation>
     <object-name>MK-82</object-name>
   </animation>

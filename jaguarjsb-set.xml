@@ -752,6 +752,14 @@
     <tfs>
 		  <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
     </tfs>
+
+    <failures>
+        <file>Aircraft/Jaguar/Nasal/failures.nas</file>
+    </failures>
+
+     <crashandstress>
+        <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
+    </crashandstress>   
 	
     <weapons>
 		  <file>Aircraft/Jaguar/Nasal/weapons.nas</file>

@@ -561,7 +561,7 @@ if(navStillOn) {
 -->
   <!-- Armament  -->
   <model>
-    <path>Aircraft/Jaguar/Models/weapons/loads.xml</path>
+    <path>Aircraft/Jaguar/Models/Weapons/loads.xml</path>
   </model> 
 
   <!-- Interieur -->
