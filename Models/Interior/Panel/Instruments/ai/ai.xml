@@ -169,9 +169,9 @@
     <property>orientation/roll-deg</property>
     <factor>1</factor>
     <center>
-      <x-m> -0.036 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.001 </z-m>
+      <x-m> -0.02651 </x-m>
+      <y-m>  0.0001 </y-m>
+      <z-m> -0.0005 </z-m>
     </center>
     <axis>
       <x> 1 </x>
@@ -186,9 +186,9 @@
     <property>orientation/pitch-deg</property>
     <factor>1</factor>
     <center>
-      <x-m> -0.036 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.001 </z-m>
+      <x-m> -0.02651 </x-m>
+      <y-m>  0.0001 </y-m>
+      <z-m> -0.0005 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -203,9 +203,9 @@
     <property>orientation/roll-deg</property>
     <factor>1</factor>
     <center>
-      <x-m> -0.0361 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.001 </z-m>
+      <x-m> -0.02651 </x-m>
+      <y-m>  0.0001 </y-m>
+      <z-m> -0.0005 </z-m>
     </center>
     <axis>
       <x> 1 </x>
@@ -222,9 +222,9 @@
     <min-deg> -13 </min-deg>
     <max-deg>  13 </max-deg>
     <center>
-      <x-m> -0.036 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.001 </z-m>
+      <x-m> -0.02651 </x-m>
+      <y-m>  0.0001 </y-m>
+      <z-m> -0.0005 </z-m>
     </center>
     <axis>
       <x> -1 </x>
@@ -237,17 +237,15 @@
     <type>rotate</type>
     <object-name>bank-index</object-name>
     <property>orientation/roll-deg</property>
-    <min-deg>-120</min-deg>
-    <max-deg>120</max-deg>
     <center>
-      <x-m> -0.036  </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.001 </z-m>
+      <x-m> -0.02651 </x-m>
+      <y-m>  0.0001 </y-m>
+      <z-m> -0.0005 </z-m>
     </center>
     <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 

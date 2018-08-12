@@ -8,9 +8,9 @@
 		<object-name>drum</object-name>
 		<property>orientation/roll-deg</property>
 		<center>
-			<x-m>-0.0113</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.0</z-m>
+			<x-m>-0.00713</x-m>
+			<y-m>0.00315</y-m>
+			<z-m>-0.00278</z-m>
 		</center>
 		<axis>
 			<x>1</x>
@@ -24,9 +24,9 @@
 		<object-name>bkg</object-name>
 		<property>orientation/roll-deg</property>
 		<center>
-			<x-m>0.0</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.0</z-m>
+			<x-m>-0.00713</x-m>
+			<y-m>0.00315</y-m>
+			<z-m>-0.00278</z-m>
 		</center>
 		<axis>
 			<x>1</x>
@@ -41,9 +41,9 @@
 		<property>orientation/pitch-deg</property>
 		<factor>1.5</factor>
 		<center>
-			<x-m>-0.0117</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.0</z-m>
+			<x-m>-0.00713</x-m>
+			<y-m>0.00315</y-m>
+			<z-m>-0.00278</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -57,9 +57,9 @@
 		<object-name>bank-index</object-name>
 		<property>orientation/roll-deg</property>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
+			<x-m>-0.00713</x-m>
+			<y-m>0.00315</y-m>
+			<z-m>-0.00278</z-m>
 		</center>
 		<axis>
 			<x>1</x>
