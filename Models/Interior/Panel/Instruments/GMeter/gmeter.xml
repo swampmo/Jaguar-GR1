@@ -9,7 +9,7 @@
  <animation>
   <type>rotate</type>
   <object-name>needle</object-name>
-  <property>accelerations/pilot-g</property>
+  <property>accelerations/pilot-gdamped</property>
   <factor>1</factor>
  <interpolation>
   <entry><ind>-4</ind><dep>-202.5</dep></entry>
