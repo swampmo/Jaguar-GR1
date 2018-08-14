@@ -3,22 +3,4 @@
 
 	<path>hudunit.ac</path>
 
-	<animation> 
-		<object-name>Cube</object-name>
-		<object-name>Cube.001</object-name>
-		<object-name>Cube.002</object-name>
-		<object-name>Cube.003</object-name>
-		<object-name>Cube.004</object-name>
-		<object-name>Cube.005</object-name>
-		<type>material</type>
-		<emission>
-			<factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
-			<red>0.1</red>
-			<green>0.05</green>
-			<blue>0.03</blue>
-		</emission>
-	</animation>
-
-	
-
 </PropertyList>
