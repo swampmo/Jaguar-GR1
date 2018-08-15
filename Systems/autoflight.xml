@@ -257,10 +257,14 @@
 		<fcs_function name="autoflight/roll/heading/bank-max">
 			<function>
 				<table>
-					<independentVar lookup="row">velocities/mach</independentVar>
+					<independentVar lookup="row">velocities/vc-kts</independentVar>
+					<independentVar lookup="column">inertia/weight-lbs</independentVar>
 					<tableData>
-						0.2  30
-						1.0  60
+						      0 38000 45000 55000 70000
+						  0   0     0     0     0     0
+						150  10    10     5     5     5
+						210  30    30    20    15    15
+						600  60    60    50    50    50 
 					</tableData>
 				</table>
 			</function>
@@ -291,8 +295,10 @@
 		
 		<switch name="autoflight/roll/heading/trigger">
 			<default value="0"/>
-			<test logic="OR" value="1">
+			<test value="-1">
 				autoflight/roll/gain-switch eq 1
+			</test>
+			<test logic="OR" value="1">
 				autoflight/roll/heading/pi le autoflight/roll/heading/bank-trigger-min
 				autoflight/roll/heading/pi ge autoflight/roll/heading/bank-trigger-max
 			</test>
@@ -323,24 +329,42 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="autoflight/pitch/alt/gain">
+        <fcs_function name="autoflight/pitch/alt/gain">
+            <function>
+                <table>
+                    <independentVar lookup="row">velocities/vc-kts</independentVar>
+                    <tableData>
+                        200 -7
+                        600 -5
+                    </tableData>
+                </table>
+            </function>
+        </fcs_function>
+		
+		<fcs_function name="autoflight/pitch/alt/max-rate-fpm">
 			<function>
 				<table>
-					<independentVar lookup="row">velocities/mach</independentVar>
+					<independentVar lookup="row">velocities/vc-kts</independentVar>
+					<independentVar lookup="column">inertia/weight-lbs</independentVar>
 					<tableData>
-						0.3 -7
-						2.4 -5
+						        0 38000 45000 55000 70000
+						300  2000  2000  1500  1000  1000
+						600  6000  6000  3000  3000  2000
 					</tableData>
 				</table>
 			</function>
 		</fcs_function>
-		
-		<pure_gain name="autoflight/pitch/alt/vs-target">
+
+        <pure_gain name="autoflight/pitch/alt/vs-target">
 			<input>autoflight/pitch/alt/error</input>
 			<gain>autoflight/pitch/alt/gain</gain>
 			<clipto>
-				<min>-2000</min>
-				<max>2000</max>
+				<min>
+					<property>-autoflight/pitch/alt/max-rate-fpm</property>
+                </min>
+				<max>
+					<property>autoflight/pitch/alt/max-rate-fpm</property>
+                </max>
 			</clipto>
 		</pure_gain>
 		
@@ -516,8 +540,10 @@
 		
 		<switch name="autoflight/roll/trigger">
 			<default value="0"/>
-			<test logic="OR" value="1">
+			<test value="-1">
 				autoflight/output/roll-master ne 1
+			</test>
+			<test logic="OR" value="1">
 				autoflight/roll/master-pid le -0.999
 				autoflight/roll/master-pid ge 0.999
 			</test>
@@ -696,8 +722,10 @@
 		
 		<switch name="autoflight/pitch/trigger">
 			<default value="0"/>
-			<test logic="OR" value="1">
+			<test value="-1">
 				autoflight/output/pitch-master ne 1
+			</test>
+			<test logic="OR" value="1">
 				autoflight/pitch/master-pid le -0.999
 				autoflight/pitch/master-pid ge 0.999
 			</test>
