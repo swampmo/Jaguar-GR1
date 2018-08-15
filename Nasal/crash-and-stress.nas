@@ -564,8 +564,7 @@ var crashCode = nil;
 var crash_start = func {
 	removelistener(lsnr);
 	if (getprop("ja37/supported/crash-system") == 1) {
-		crashCode = CrashAndStress.new([0,1,2], {"weightLbs":17000, "maxG": 12, "minG": -5.5}, ["controls/gear1", "controls/gear2", "controls/flight/spoiler", "controls/flight/elevon"]);
- "controls/flight/elevon"]);
+		crashCode = CrashAndStress.new([0,1,2], {"weightLbs":17000, "maxG": 12, "minG": -5.5}, ["controls/gear1", "controls/gear2"]);
 		crashCode.start();
 	}
 }
