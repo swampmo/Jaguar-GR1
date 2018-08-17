@@ -544,20 +544,10 @@
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
 
-              -0.209    -1.00
-              -0.175    -0.85
-              -0.140    -0.6
-              -0.105    -0.45
-              -0.070    -0.2
-              -0.035    -0.1
-               0.000     0.15
-               0.035     0.2
-               0.070     0.45
-               0.105     0.6
-               0.140     1
-               0.175     1.1
-               0.209     1.2
-               0.244     1.5
+              -0.28     -1.060
+               0.00      0.100
+               0.28      0.860
+               0.45      1.248
 
             </tableData>
           </table>
@@ -592,7 +582,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <toradians><property>fcs/elevon-left-deg</property></toradians>
-           <value> 0.5275 </value>
+           <value> 0.452 </value>
        </product>
     </function>
 
@@ -602,7 +592,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <toradians><property>fcs/elevon-right-deg</property></toradians>
-           <value> 0.5275 </value>
+           <value> 0.452 </value>
        </product>
     </function>
 
@@ -612,7 +602,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.0115 </value>
+           <value> 0.0185 </value>
        </product>
     </function>
 
@@ -662,11 +652,11 @@
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
-             -1.57       1.000
+             -1.57       0.500
              -0.26       0.027
               0.00       0.021
               0.26       0.027
-              1.57       1.000
+              1.57       0.300
             </tableData>
           </table>
        </product>
@@ -855,7 +845,7 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.3207
+              0.0    -0.4207
               2.0    -0.2177
             </tableData>
           </table>
@@ -872,7 +862,7 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.3207
+              0.0    -0.4207
               2.0    -0.2177
             </tableData>
           </table>
@@ -887,7 +877,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>velocities/q-aero-rad_sec</property>
-           <value> -9.9050 </value>
+           <value> -17.9050 </value>
        </product>
     </function>
 
@@ -899,7 +889,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>aero/alphadot-rad_sec</property>
-           <value> -5.8008 </value>
+           <value> -9.8008 </value>
        </product>
     </function>
 
@@ -969,7 +959,7 @@
            <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    0.0576
+              0.0    0.0476
               2.0    0.0153
             </tableData>
           </table>
@@ -986,7 +976,7 @@
            <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.0576
+              0.0    -0.0476
               2.0    -0.0153
             </tableData>
           </table>
