@@ -544,7 +544,7 @@
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
 
-              -0.28     -1.060
+              -0.28     -0.860
                0.00      0.100
                0.28      0.860
                0.45      1.248
@@ -656,7 +656,7 @@
              -0.26       0.027
               0.00       0.021
               0.26       0.027
-              1.57       0.300
+              1.57       0.100
             </tableData>
           </table>
        </product>
@@ -733,7 +733,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>gear/gear-pos-norm</property>
-           <value> 0.0200 </value>
+           <value> 0.0100 </value>
          </product>
     </function>
 
