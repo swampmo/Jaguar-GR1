@@ -62,13 +62,13 @@
     </ladder>
 
     <tape>
-        <name>Altitude-MSL</name>
+        <name>Altitude-FT</name>
         <x>37</x>
         <y>-36</y>
         <width>7</width>
         <height>50</height>
         <input>
-            <property>/position/altitude-ft</property>
+            <property>/instrumentation/altimeter/indicated-altitude-ft</property>
             <factor>0.001</factor>
             <max>100</max>
             <min>-100</min>
@@ -98,7 +98,7 @@
         <width>7</width>
         <height>50</height>
         <input>
-            <property>/velocities/airspeed-kt</property>
+            <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
             <factor>0.1</factor>
             <max>85</max>
             <min>0</min>
@@ -183,7 +183,7 @@
         <width>18</width>
         <height>8</height>
         <input>
-            <property>/velocities/airspeed-kt</property>
+            <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
         </input>
         <format>%4.0f</format>
         <halign>left</halign>
@@ -198,7 +198,7 @@
         <width>24</width>
         <height>9</height>
         <input>
-            <property>/position/altitude-ft</property>
+            <property>/instrumentation/altimeter/indicated-altitude-ft</property>
         </input>
         <format>%4.0f</format>
         <halign>right</halign>
@@ -218,7 +218,7 @@
                 <value>2000</value>
             </less-than>
             <greater-than-equals>
-                <property>/velocities/groundspeed-kt</property>
+                <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
                 <value>50</value>
             </greater-than-equals>
         </condition>
