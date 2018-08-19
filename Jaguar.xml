@@ -851,8 +851,8 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.4207
-              2.0    -0.2177
+              0.0    -0.3907
+              2.0    -0.0158
             </tableData>
           </table>
        </product>
@@ -868,8 +868,8 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.4207
-              2.0    -0.2177
+              0.0    -0.3907
+              2.0    -0.0158
             </tableData>
           </table>
        </product>
@@ -949,7 +949,7 @@
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
               0.0    0.0476
-              2.0    0.0153
+              2.0    0.0093
             </tableData>
           </table>
        </product>
@@ -966,7 +966,7 @@
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
               0.0    -0.0476
-              2.0    -0.0153
+              2.0    -0.0093
             </tableData>
           </table>
        </product>
