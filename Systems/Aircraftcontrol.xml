@@ -31,8 +31,19 @@
       </clipto>
    </summer>
 
+   <scheduled_gain name="fcs/roll-cmd">
+        <input>fcs/roll-sum</input>
+        <table>
+            <independentVar lookup="row">/velocities/airspeed-kt</independentVar>
+            <tableData>
+                200 1.0
+                450 0.0
+            </tableData>
+        </table>
+    </scheduled_gain> 
+
    <aerosurface_scale name="fcs/roll-pos-deg">
-      <input>fcs/roll-sum</input>
+      <input>fcs/roll-cmd</input>
       <range>
         <min>  -15 </min>
         <max>   15 </max>

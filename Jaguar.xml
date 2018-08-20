@@ -851,8 +851,8 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.3907
-              2.0    -0.0158
+              0.0    -0.3017
+              1.6    -0.0118
             </tableData>
           </table>
        </product>
@@ -868,8 +868,8 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.3907
-              2.0    -0.0158
+              0.0    -0.3017
+              1.6    -0.0118
             </tableData>
           </table>
        </product>
@@ -883,7 +883,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>velocities/q-aero-rad_sec</property>
-           <value> -17.9050 </value>
+           <value> -18.3050 </value>
        </product>
     </function>
 
@@ -948,7 +948,7 @@
            <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    0.0476
+              0.0    0.0486
               2.0    0.0093
             </tableData>
           </table>
@@ -965,7 +965,7 @@
            <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.0476
+              0.0    -0.0486
               2.0    -0.0093
             </tableData>
           </table>
@@ -982,8 +982,8 @@
            <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -0.0187
-              2.0    -0.0057
+              0.0    -0.0287
+              1.8    -0.0097
             </tableData>
           </table>
        </product>
@@ -999,8 +999,8 @@
            <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    0.0187
-              2.0    0.0057
+              0.0    0.0287
+              1.8    0.0097
             </tableData>
           </table>
        </product>
