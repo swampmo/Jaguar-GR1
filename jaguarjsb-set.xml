@@ -714,14 +714,6 @@
     <aar> 
       <file>Aircraft/Generic/aar.nas</file>
     </aar>
-    <rwr>
-       <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> 
-      <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
-    </rwr>
-	
-	 <hud>
-      <file>Aircraft/Jaguar/Nasal/MiscRwr.nas</file>
-    </hud>
  
    <damage>
      <file>Aircraft/Jaguar/Nasal/damage.nas</file>
@@ -739,12 +731,6 @@
       <file>Aircraft/Jaguar/Nasal/radaralt.nas</file> 
     </radarAltimeter>
 
-    <radar>
-      <file>Aircraft/Jaguar/Nasal/radar.nas</file> 
-    </radar>
-    <radar2>
-      <file>Aircraft/Jaguar/Nasal/radar2.nas</file>
-    </radar2>
     <enav>
       <file>Aircraft/Jaguar/Nasal/enav.nas</file>
     </enav>
@@ -765,23 +751,7 @@
 		  <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
 		 
   	</weapons>	
-	
-	 <!-- 
-<engines>
-   <file>Aircraft/Jaguar/Nasal/generic-yasim-engine.nas</file>
-  </engines>  -->
-  
-<!--  
-  <emu>
-   <file>Aircraft/Jaguar/Nasal/emu.nas</file>
-  </emu> -->
-  
-<!--  
-  <fuel>
-   <file>Aircraft/Jaguar/Nasal/fuel.nas</file>
-  </fuel> -->
-	
-		
+
  
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
