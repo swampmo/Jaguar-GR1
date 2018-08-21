@@ -911,7 +911,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>aero/beta-rad</property>
-           <value>-0.09242</value>
+           <value>-0.0265</value>
        </product>
     </function>
 
@@ -935,7 +935,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
-           <value>0.1482</value>
+           <value>0.0978</value>
        </product>
     </function>
 
