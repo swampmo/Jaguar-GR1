@@ -4,12 +4,12 @@
 <PropertyList>
 
 	<path>A-10-sas.ac</path>
-
-	<!-- Pitch SAS switch -->
+	
+	<!-- Yaw SAS switch -->
 	<animation>
-		<object-name>pitch-L-switch</object-name>
+		<object-name>yaw-L-switch</object-name>
 		<type>rotate</type>
-		<property>sim/model/Hawk/controls/sas/pitch-sas-switch</property>
+		<property>fdm/jsbsim/sas/yaw-l</property>
 		<factor>60</factor>
 		<center>
 			<x-m>-0.0213</x-m>
@@ -22,11 +22,24 @@
 			<z>0</z>
 		</axis>
 	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>yaw-L-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>fdm/jsbsim/sas/yaw-l</property>
+			</binding>
+		</action>
+	</animation>
 
 	<animation>
-		<object-name>pitch-R-switch</object-name>
+		<object-name>yaw-R-switch</object-name>
 		<type>rotate</type>
-		<property>sim/model/Hawk/controls/sas/pitch-sas-switch</property>
+		<property>fdm/jsbsim/sas/yaw-r</property>
 		<factor>60</factor>
 		<center>
 			<x-m>-0.0213</x-m>
@@ -39,7 +52,80 @@
 			<z>0</z>
 		</axis>
 	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>yaw-R-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>fdm/jsbsim/sas/yaw-r</property>
+			</binding>
+		</action>
+	</animation>
+	
+	<!-- Pitch SAS switch -->
+	<animation>
+		<object-name>pitch-L-switch</object-name>
+		<type>rotate</type>
+		<property>fdm/jsbsim/sas/pitch-l</property>
+		<factor>60</factor>
+		<center>
+			<x-m>-0.0213</x-m>
+			<y-m>0.0178</y-m>
+			<z-m>0.0000</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>pitch-L-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>fdm/jsbsim/sas/pitch-l</property>
+			</binding>
+		</action>
+	</animation>
 
+	<animation>
+		<object-name>pitch-R-switch</object-name>
+		<type>rotate</type>
+		<property>fdm/jsbsim/sas/pitch-r</property>
+		<factor>60</factor>
+		<center>
+			<x-m>-0.0213</x-m>
+			<y-m>0.0537</y-m>
+			<z-m>0.0000</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>pitch-R-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>fdm/jsbsim/sas/pitch-r</property>
+			</binding>
+		</action>
+	</animation>
 
 	<!-- lighting -->
 

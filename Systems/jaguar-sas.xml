@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<!-- Jaguar SAS System -->
+<!-- (c) 2018 Joshua Davidson (it0uchpods) -->
+<!-- All guesses cause I can't find any data! -->
+
+<system name="SAS">
+	
+	<property value="1">sas/pitch-l</property>
+	<property value="1">sas/pitch-r</property>
+	<property value="1">sas/yaw-l</property>
+	<property value="1">sas/yaw-r</property>
+	
+	<channel name="Logic">
+		
+		<switch name="sas/pitch-switch">
+			<default value="0"/>
+			<test logic="OR" value="0">
+				/controls/flight/elevator lt -0.1
+				/controls/flight/elevator gt 0.1
+				autoflight/input/pitch-switch eq 1
+			</test>
+			<test logic="OR" value="1">
+				sas/pitch-l eq 1
+				sas/pitch-r eq 1
+			</test>
+		</switch>
+		
+		<switch name="sas/yaw-switch">
+			<default value="0"/>
+			<test logic="OR" value="0">
+				/controls/flight/rudder lt -0.1
+				/controls/flight/rudder gt 0.1
+			</test>
+			<test logic="OR" value="1">
+				sas/yaw-l eq 1
+				sas/yaw-r eq 1
+			</test>
+		</switch>
+	
+	</channel>
+	
+	<channel name="Pitch">
+		
+		<scheduled_gain name="sas/q-damp">
+			<input>velocities/q-rad_sec</input>
+			<table>
+				<independentVar lookup="row">velocities/mach</independentVar>
+				<independentVar lookup="column">sas/pitch-switch</independentVar>
+				<tableData>
+						 0    1
+					0.2  0.0  2.0
+					0.9  0.0  0.5
+				</tableData>
+			</table>
+			<clipto>
+				<min>-0.1</min>
+				<max>0.1</max>
+			</clipto>
+		</scheduled_gain>
+		
+		<summer name="sas/pitch-output">
+			<input>sas/q-damp</input>
+			<clipto>
+				<min>-0.1</min>
+				<max>0.1</max>
+			</clipto>
+		</summer>
+	
+	</channel>
+	
+	<channel name="Yaw">
+		
+		<scheduled_gain name="sas/r-damp">
+			<input>velocities/r-rad_sec</input>
+			<table>
+				<independentVar lookup="row">velocities/mach</independentVar>
+				<independentVar lookup="column">sas/yaw-switch</independentVar>
+				<tableData>
+						 0    1
+					0.2  0.0 -7.0
+					0.9  0.0 -1.0
+				</tableData>
+			</table>
+			<clipto>
+				<min>-0.1</min>
+				<max>0.1</max>
+			</clipto>
+		</scheduled_gain>
+		
+		<summer name="sas/yaw-output">
+			<input>sas/r-damp</input>
+			<clipto>
+				<min>-0.1</min>
+				<max>0.1</max>
+			</clipto>
+		</summer>
+	
+	</channel>
+
+</system>

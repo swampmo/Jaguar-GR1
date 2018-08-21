@@ -522,6 +522,7 @@
 
  <system file="Propulsion"/>
  <system file="autoflight"/>
+ <system file="jaguar-sas"/>
  <system file="Aircraftcontrol"/>
 <!-- <system file="ArrestorHook"/>
  <system file="DragChute"/>

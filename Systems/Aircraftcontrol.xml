@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <system name="Aircraft control">
-  <property value="1">fcs/yaw-damper-enable</property>
 
   <channel name="Elevon">
    <summer name="fcs/pitch-sum">
       <!--input>fcs/elevator-cmd-norm</input-->
       <input>fcs/ap-pitch-cmd-norm</input>
       <input>fcs/pitch-trim-cmd-norm</input>
+      <input>sas/pitch-output</input>
       <clipto>
         <min> -1 </min>
         <max>  1 </max>
@@ -126,31 +126,15 @@
             <input>fcs/spoiler-right-cmd</input>
             <c1>17</c1>
         </lag_filter>
-                  
+
   </channel>
 
   <channel name="Yaw">
-	<scheduled_gain name="fcs/yaw-damper"> <!-- Joshua Davidson (it0uchpods) -->
-		<input>velocities/r-rad_sec</input>
-		<table>
-			<independentVar lookup="row">velocities/mach</independentVar>
-			<independentVar lookup="column">fcs/yaw-damper-enable</independentVar>
-			<tableData>
-				     0    1
-				0.2  0.0 -8.0
-				0.9  0.0 -2.0
-			</tableData>
-		</table>
-		<clipto>
-			<min>-0.1</min>
-			<max>0.1</max>
-		</clipto>
-	</scheduled_gain>
 
    <summer name="fcs/rudder-sum">
       <input>/controls/flight/rudder</input>
       <input>/controls/flight/rudder-trim</input>
-      <input>fcs/yaw-damper</input>
+      <input>sas/yaw-output</input>
       <clipto>
         <min> -1 </min>
         <max>  1 </max>
