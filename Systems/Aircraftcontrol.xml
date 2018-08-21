@@ -22,8 +22,7 @@
    </aerosurface_scale>
 
    <summer name="fcs/roll-sum">
-      <!--input>fcs/aileron-cmd-norm</input-->
-	  <input>fcs/ap-roll-cmd-norm</input>
+      <input>fcs/aileron-cmd-norm</input>
       <input>fcs/roll-trim-cmd-norm</input>
       <clipto>
         <min> -1 </min>
@@ -93,7 +92,8 @@
 
   <channel name="Spoilers">
       <pure_gain name="fcs/spoiler-left-cmd">
-        <input>fcs/aileron-cmd-norm</input>
+        <!--input>fcs/aileron-cmd-norm</input-->
+        <input>fcs/ap-roll-cmd-norm</input>
         <gain>-40</gain>
         <clipto>
           <min>  0 </min>
@@ -107,7 +107,8 @@
         </lag_filter>
 
       <pure_gain name="fcs/spoiler-right-cmd">
-        <input>fcs/aileron-cmd-norm</input>
+        <!--input>fcs/aileron-cmd-norm</input-->
+        <input>fcs/ap-roll-cmd-norm</input>
         <gain>40</gain>
         <clipto>
           <min>  0 </min>
