@@ -30,10 +30,13 @@
       </clipto>
    </summer>
 
+    <!-- (Swamps notes) Automatic control of the differential tailplane gearing is by a differential computer having two channels,controls and monitoring, both of which reciec arispeed signals from the Ajax computer and feedback signals from a gain rod position potentiometer. In short below 200 knots is maximum gain and therefore maximum differential tailplane is obtained. Above 200 knots the actuator progressively retracts until, when airspeed reaches 450 knots (and above) the actuator to reduce gain to zero and no differenial tailplane movement occurs. -->    
+
+
    <scheduled_gain name="fcs/roll-cmd">
         <input>fcs/roll-sum</input>
         <table>
-            <independentVar lookup="row">/velocities/airspeed-kt</independentVar>
+            <independentVar lookup="row">/velocities/airspeed-kt</independentVar>  
             <tableData>
                 200 1.0
                 450 0.0
