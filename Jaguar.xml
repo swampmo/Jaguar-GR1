@@ -796,9 +796,9 @@
            <table>
              <independentVar lookup="row">aero/Re</independentVar>
              <tableData>
-                17307328   0.3650
-                19038060   0.0289
-                25960990   0.0129
+                17307328   0.2160
+                19038060   0.0159
+                25960990   0.0069
                 34828468   0.0071
              </tableData>
            </table>
@@ -1028,7 +1028,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>aero/beta-rad</property>
-           <value> 0.3418 </value>
+           <value> 0.05896 </value>
        </product>
     </function>
 
@@ -1043,10 +1043,10 @@
            <table>
              <independentVar lookup="row">aero/Re</independentVar>
              <tableData>
-                17307328  -0.1147
-                19038060  -0.0076
-                25960990  -0.0032
-                34828468  -0.0014
+                17307328  -0.0749
+                19038060  -0.0045
+                25960990  -0.0016
+                34828468  -0.0009
              </tableData>
            </table>
        </product>
@@ -1060,7 +1060,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
-           <value> -0.4074 </value>
+           <value> -0.256 </value>
        </product>
     </function>
 
