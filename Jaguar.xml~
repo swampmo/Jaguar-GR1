@@ -662,8 +662,8 @@
              -1.57       0.500
              -0.26       0.027
               0.00       0.021
-              0.26       0.057
-              1.57       0.120
+              0.26       0.027
+              1.57       0.100
             </tableData>
           </table>
        </product>
@@ -921,7 +921,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>aero/beta-rad</property>
-           <value>-0.0217</value>
+           <value>-0.0118</value>
        </product>
     </function>
 
@@ -945,7 +945,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
-           <value>0.0876</value>
+           <value>0.0765</value>
        </product>
     </function>
 

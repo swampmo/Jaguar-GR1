@@ -234,7 +234,7 @@
      </traverse>
      <output>fcs/speedbrake-pos-norm</output>
    </kinematic>
-      <pure_gain name="fcs-speed-pos-deg">
+      <pure_gain name="fcs.speed-pos-deg">
         <input>fcs/speedbrake-pos-norm</input>
         <gain>65</gain>
       </pure_gain> 
