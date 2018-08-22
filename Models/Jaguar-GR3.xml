@@ -951,7 +951,7 @@ if(navStillOn) {
 	<animation>
 		<type>translate</type>
 		<object-name>slatG</object-name>
-		<property>/surface-positions/slats-pos-norm</property>
+		<property>surface-positions/slats-pos-norm</property>
 		<factor>0.17</factor>
 		<axis>
 			<x>-2.5</x>
@@ -962,7 +962,7 @@ if(navStillOn) {
 	<animation>
 		<type>rotate</type>
 		<object-name>slatG</object-name>
-		<property>/surface-positions/slats-pos-norm</property>
+		<property>surface-positions/slats-pos-norm</property>
 		<factor>23</factor>
     <axis>
       <x1-m>  1.2826 </x1-m>
@@ -976,7 +976,7 @@ if(navStillOn) {
 	<animation><!-- todo best axis -->
 		<type>translate</type>
 		<object-name>slatD</object-name>
-		<property>/surface-positions/slats-pos-norm</property>
+		<property>surface-positions/slats-pos-norm</property>
 		<factor>0.17</factor>
 		<axis>
 			<x>-2.5</x>
@@ -987,7 +987,7 @@ if(navStillOn) {
 	<animation>
 		<type>rotate</type>
 		<object-name>slatD</object-name>
-		<property>/surface-positions/slats-pos-norm</property>
+		<property>surface-positions/slats-pos-norm</property>
 		<factor>-23</factor>
     <axis>
       <x1-m>  1.2194 </x1-m>
@@ -1003,7 +1003,7 @@ if(navStillOn) {
     <type>rotate</type>
     <object-name>freinG</object-name>
     <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
-    <factor> -1 </factor>
+    <factor> -65 </factor>
     <axis>
       <x1-m>  2.655 </x1-m>
       <y1-m> -0.707 </y1-m>
@@ -1018,7 +1018,7 @@ if(navStillOn) {
     <type>rotate</type>
     <object-name>freinD</object-name>
     <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
-    <factor> 1 </factor>
+    <factor> 65 </factor>
     <axis>
       <x1-m>  2.655 </x1-m>
       <y1-m>  0.707 </y1-m>
@@ -1034,7 +1034,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorR1</object-name>
-	<property>/controls/engines/engine[1]/thrust-lb</property>
+	<property>engines/engine[1]/thrust_lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>   0 </dep></entry>
@@ -1058,7 +1058,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorR2</object-name>
-	<property>/controls/engines/engine[1]/thrust-lb</property>
+	<property>engines/engine[1]/thrust_lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>   0 </dep></entry>
@@ -1082,7 +1082,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorL1</object-name>
-	<property>/controls/engines/engine[0]/thrust-lb</property>
+	<property>engines/engine[0]/thrust_lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>    0 </dep></entry>
@@ -1106,7 +1106,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorL2</object-name>
-	<property>/controls/engines/engine[0]/thrust-lb</property>
+	<property>engines/engine[0]/thrust_lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>    0 </dep></entry>
@@ -1683,7 +1683,7 @@ if(navStillOn) {
 	<animation>
 		<type>spin</type>
 		<object-name>heliceL</object-name>
-		<property>engines/engine[0]/rpm</property>
+		<property>engines/engine[0]/n2</property>
 		<factor>5</factor>
 		<center>
 			<x-m> 0.24554</x-m>
@@ -1711,7 +1711,7 @@ if(navStillOn) {
 	<animation>
 		<type>spin</type>
 		<object-name>heliceR</object-name>
-		<property>engines/engine[1]/rpm</property>
+		<property>engines/engine[1]/n2</property>
 		<factor>5</factor>
 		<center>
 			<x-m> 0.24554</x-m>

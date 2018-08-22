@@ -45,7 +45,7 @@
 <animation>
   <type>rotate</type>
   <object-name>FlameModel</object-name>
-  <property>/f-20/rotate-flame</property>
+  <property>engines/engine/augmentation</property>
   <factor>90.0</factor>
   <center>
    <x-m>0</x-m>
@@ -83,7 +83,7 @@
   <animation>
 	<type>scale</type>
 	<object-name>FlameModel</object-name>
-	<property>/f-20/nozzle-pos-norm</property>    
+	<property>engines/engine/augmentation</property>    
   <x-min>1.0</x-min>
   <y-min>1.0</y-min>
   <z-min>0.5</z-min>    
@@ -95,7 +95,7 @@
   <animation>
 	<type>scale</type>
 	<object-name>FlameModel</object-name>
-	<property>engines/engine/n1</property>    
+	<property>engines/engine/augmentation</property>    
   <x-min>1.0</x-min>
   <y-min>1.0</y-min>
   <z-min>0.5</z-min>    
@@ -120,7 +120,7 @@
  	<animation>
 		<type>textranslate</type>
 		<object-name>FlameModel</object-name>
-		<property>/f-20/flame-number</property>
+		<property>engines/engine/augmentation</property>
 		<factor>-0.107421875</factor>
 		<axis>
 			<x>0</x>

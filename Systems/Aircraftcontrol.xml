@@ -232,10 +232,10 @@
           <time>     1 </time>
        </setting>
      </traverse>
-     <output>fcs/speedbrake-pos-norm</output>
+     <output>fcs/speedbrake-pos-deg</output>
    </kinematic>
       <pure_gain name="fcs-speed-pos-deg">
-        <input>fcs/speedbrake-pos-norm</input>
+        <input>fcs/speedbrake-pos-deg</input>
         <gain>65</gain>
       </pure_gain> 
   </channel>
