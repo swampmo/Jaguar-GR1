@@ -304,7 +304,7 @@
       <property>engines/engine/thrust-lbs</property>
       <volume>
         <property>engines/engine/thrust-lbs</property>
-        <factor>0.008</factor>       
+        <factor>0.05</factor>       
         <min>0</min>
         <max>4.9</max>
       </volume>
@@ -327,24 +327,12 @@
         <property>engines/engine/thrust-lbs</property>
         <factor>0.00003</factor>         
         <min>0</min>
-        <max>2.9</max>
+        <max>1</max>
       </volume>		
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </engine>
 	
-    <engine>
-      <name>burner lowfreq</name>
-      <path>Aircraft/Jaguar/Sounds/burner-lowfreq.wav</path>
-      <mode>once</mode>    
-      <property>engines/engine/augmentation</property>
-      <volume>
-        <offset>4.9</offset>
-      </volume> 
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine>
-
     <engine>
       <name>burner lowfreq loop0</name>
       <path>Aircraft/Jaguar/Sounds/engine-lowfreq.wav</path>
