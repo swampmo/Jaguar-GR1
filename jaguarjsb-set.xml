@@ -689,8 +689,7 @@
       <file>Aircraft/Jaguar/Nasal/doors.nas</file>
     </doors>
     <jaguar>
-<!-- 
-      <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>  -->
+
       <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
       <file>Aircraft/Jaguar/Nasal/doors.nas</file>
       <file>Aircraft/Jaguar/Nasal/autoflight.nas</file>

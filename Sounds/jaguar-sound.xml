@@ -337,7 +337,7 @@
       <name>burner lowfreq</name>
       <path>Aircraft/Jaguar/Sounds/burner-lowfreq.wav</path>
       <mode>once</mode>    
-      <property>engines/engine/afterburner</property>
+      <property>engines/engine/augmentation</property>
       <volume>
         <offset>4.9</offset>
       </volume> 
@@ -349,7 +349,7 @@
       <name>burner lowfreq loop0</name>
       <path>Aircraft/Jaguar/Sounds/engine-lowfreq.wav</path>
       <mode>looped</mode>
-      <property>engines/engine[0]/afterburner</property>
+      <property>engines/engine[0]/augmentation</property>
       <volume>
         <offset>-0.2</offset>
       </volume>
@@ -361,7 +361,7 @@
       <name>burner lowfreq loop1</name>
       <path>Aircraft/Jaguar/Sounds/engine-lowfreq.wav</path>
       <mode>looped</mode>
-      <property>engines/engine[1]/afterburner</property>
+      <property>engines/engine[1]/augmentation</property>
       <volume>
         <offset>-0.2</offset>
       </volume>
@@ -380,7 +380,7 @@
         </not>
       </condition>
       <volume>
-        <property>engines/engine[0]/afterburner</property>
+        <property>engines/engine[0]/augmentation</property>
         <factor>2</factor>
         <min>0</min>
         <max>4.5</max>
@@ -408,7 +408,7 @@
         </not>
       </condition>
       <volume>
-        <property>engines/engine[1]/afterburner</property>
+        <property>engines/engine[1]/augmentation</property>
         <factor>2</factor>
         <min>0</min>
         <max>4.5</max>
