@@ -59,11 +59,41 @@
 			</clipto>
 		</scheduled_gain>
 		
+		<fcs_function name="sas/l-g">
+			<function>
+				<product>
+					<table>
+						<independentVar lookup="row">forces/load-factor</independentVar> <!-- Is inverted -->
+						<tableData>
+							-7  0.4
+							-4  0.0
+							 1  0.0
+							 4 -0.4
+						</tableData>
+					</table>
+					<table>
+						<independentVar lookup="row">/controls/flight/elevator</independentVar>
+						<tableData>
+							-1.0  1.000
+							-0.1  0.125
+							 0.1  0.125
+							 1.0  1.000
+						</tableData>
+					</table>
+					<max>
+						<property>sas/pitch-l</property>
+						<property>sas/pitch-r</property>
+					</max>
+				</product>
+			</function>
+		</fcs_function>
+		
 		<summer name="sas/pitch-output">
 			<input>sas/q-damp</input>
+			<input>sas/l-g</input>
 			<clipto>
-				<min>-0.1</min>
-				<max>0.1</max>
+				<min>-0.4</min>
+				<max>0.4</max>
 			</clipto>
 		</summer>
 	
@@ -88,11 +118,46 @@
 			</clipto>
 		</scheduled_gain>
 		
+		<fcs_function name="sas/l-r">
+			<function>
+				<product>
+					<table>
+						<independentVar lookup="row">velocities/r-rad_sec</independentVar>
+						<independentVar lookup="column">attitude/roll-rad</independentVar>
+						<tableData>
+							           -3.141590 -2.356190 -0.785398  0.000000  0.785398  2.356190  3.141590
+							-0.2094390  1.0       0.0       0.0       1.0       0.0       0.0       1.0
+							-0.1396260  0.4       0.0       0.0       0.4       0.0       0.0       0.4
+							-0.1047195  0.0       0.0       0.0       0.0       0.0       0.0       0.0
+							 0.0000000  0.0       0.0       0.0       0.0       0.0       0.0       0.0
+							 0.1047195  0.0       0.0       0.0       0.0       0.0       0.0       0.0
+							 0.1396260 -0.4       0.0       0.0      -0.4       0.0       0.0      -0.4
+							 0.2094390 -1.0       0.0       0.0      -1.0       0.0       0.0      -1.0
+						</tableData>
+					</table>
+					<table>
+						<independentVar lookup="row">velocities/mach</independentVar>
+						<tableData>
+							0.5  0.950
+							1.0  0.450
+							1.5  0.250
+							2.0  0.150
+						</tableData>
+					</table>
+					<max>
+						<property>sas/yaw-l</property>
+						<property>sas/yaw-r</property>
+					</max>
+				</product>
+			</function>
+		</fcs_function>
+		
 		<summer name="sas/yaw-output">
 			<input>sas/r-damp</input>
+			<input>sas/l-r</input>
 			<clipto>
-				<min>-0.1</min>
-				<max>0.1</max>
+				<min>-0.2</min>
+				<max>0.2</max>
 			</clipto>
 		</summer>
 	
