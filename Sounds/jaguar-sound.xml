@@ -301,9 +301,9 @@
           <property>/sim/current-view/internal</property>
         </not>
       </condition>
-      <property>engines/engine/thrust-lbs</property>
+      <property>engines/engine/thrust_lb</property>
       <volume>
-        <property>engines/engine/thrust-lbs</property>
+        <property>engines/engine/thrust_lb</property>
         <factor>0.05</factor>       
         <min>0</min>
         <max>4.9</max>
@@ -322,10 +322,10 @@
           <property>/sim/current-view/internal</property>
         </and>
       </condition>
-      <property>engines/engine/thrust-lbs</property>
+      <property>engines/engine/thrust_lb</property>
       <volume>
-        <property>engines/engine/thrust-lbs</property>
-        <factor>0.00003</factor>         
+        <property>engines/engine/thrust_lb</property>
+        <factor>0.0003</factor>         
         <min>0</min>
         <max>1</max>
       </volume>		
@@ -333,7 +333,7 @@
       <max-dist>1000</max-dist>
     </engine>
 	
-    <engine>
+ <!--   <engine>
       <name>burner lowfreq loop0</name>
       <path>Aircraft/Jaguar/Sounds/engine-lowfreq.wav</path>
       <mode>looped</mode>
@@ -343,7 +343,7 @@
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>5000</max-dist>
-    </engine>
+    </engine> 
 	
 	 <engine>
       <name>burner lowfreq loop1</name>
@@ -355,7 +355,7 @@
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>5000</max-dist>
-    </engine>
+    </engine> -->
 	
     <engine>
       <name>burner loop0</name>
@@ -411,7 +411,7 @@
       </orientation>
       <reference-dist>100</reference-dist>
       <max-dist>7000</max-dist>
-    </engine>
+    </engine> 
 	
     <wind>
       <name>wind</name>
