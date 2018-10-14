@@ -196,7 +196,7 @@
 
   <channel name="Slats">
    <kinematic name="Slats Control">
-    <input>fcs/slats-cmd-norm</input>
+    <input>fcs/flap-cmd-norm</input>
     <traverse>
       <setting>
          <position>  0 </position>
