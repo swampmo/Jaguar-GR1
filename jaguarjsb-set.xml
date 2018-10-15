@@ -72,6 +72,12 @@
 <setting>1.0</setting>
 </flaps>
 
+<slats>
+<setting>0.0</setting>
+<setting>0.09</setting>
+<setting>0.23</setting>
+</slats>
+
     <ai>
       <scenario>refueling_demo_2</scenario>
     </ai>
@@ -635,7 +641,7 @@
   </engines>
 
   <input>
-    <keyboard include="Nasal/jaguar-keyboard.xml"/>
+    <keyboard include="Jaguar/Dialogs/jaguar-keyboard.xml"/>
   </input>
  
 <!--  
@@ -678,22 +684,18 @@
 
 	
 
-    <limits>
-        <max-positive-g>9.0</max-positive-g>  
-        <max-negative-g>-3.0</max-negative-g> 
-        <vroll>180.5</vroll> 
-    </limits>
+
 
   <nasal>
+
     <doors>
       <file>Aircraft/Jaguar/Nasal/doors.nas</file>
     </doors>
-    <jaguar>
 
+    <jaguar>
+      <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
       <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
-      <file>Aircraft/Jaguar/Nasal/doors.nas</file>
       <file>Aircraft/Jaguar/Nasal/autoflight.nas</file>
-    
     </jaguar>
 	
 	 <lights>
@@ -703,13 +705,34 @@
     <low>
       <file>Aircraft/Jaguar/Nasal/low.nas</file>
     </low>
+
     <guns>
       <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
       <file>Aircraft/Jaguar/Nasal/revi.nas</file>
     </guns>
+
 		<chronograph>
 			<file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/clock/chronograph.nas</file>
 		</chronograph>
+ 
+     <rwr>
+      <!-- <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> -->
+      <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
+      <file>Aircraft/Jaguar/Nasal/MiscRwr.nas</file>
+    </rwr>
+
+    <radar>
+      <file>Aircraft/Jaguar/Nasal/radar.nas</file> 
+    </radar>
+
+    <radar2>
+      <file>Aircraft/Jaguar/Nasal/radar2.nas</file>
+    </radar2>
+
+    <radardist>
+      <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+    </radardist> 
+
     <aar> 
       <file>Aircraft/Generic/aar.nas</file>
     </aar>
@@ -722,10 +745,6 @@
      <file>Aircraft/Jaguar/Nasal/blackout.nas</file>
    </blackout> 
    
-    <radardist>
-      <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
-    </radardist>
-   
     <radarAltimeter>
       <file>Aircraft/Jaguar/Nasal/radaralt.nas</file> 
     </radarAltimeter>
@@ -734,6 +753,10 @@
       <file>Aircraft/Jaguar/Nasal/enav.nas</file>
     </enav>
 	
+  <emu>
+   <file>Aircraft/Jaguar/Nasal/emu.nas</file>
+  </emu>
+
     <tfs>
 		  <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
     </tfs>
@@ -748,9 +771,7 @@
 	
     <weapons>
 		  <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
-		 
   	</weapons>	
-
  
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>

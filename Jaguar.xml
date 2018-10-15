@@ -611,7 +611,17 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.0135 </value>
+           <value> 0.00675 </value>
+       </product>
+    </function>
+    
+        <function name="aero/force/Lift_slats">
+       <description>Delta Lift due to slats</description>
+       <product>
+           <property>aero/qbar-psf</property>
+           <property>metrics/Sw-sqft</property>
+           <property>fcs/slats-pos-deg</property>
+           <value> 0.00675 </value>
        </product>
     </function>
 
@@ -750,7 +760,17 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.00295 </value>
+           <value> 0.001475 </value>
+         </product>
+    </function>
+    
+        <function name="aero/force/Drag_slats">
+       <description>Drag due to slats</description>
+         <product>
+           <property>aero/qbar-psf</property>
+           <property>metrics/Sw-sqft</property>
+           <property>fcs/slats-pos-deg</property>
+           <value> 0.001475 </value>
          </product>
     </function>
 
