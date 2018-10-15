@@ -611,7 +611,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
-           <value> 0.00675 </value>
+           <value> 0.0135</value>
        </product>
     </function>
     
@@ -620,7 +620,7 @@
        <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/slats-pos-deg</property>
+           <property>fcs/slats-deg</property>
            <value> 0.00675 </value>
        </product>
     </function>
@@ -769,8 +769,8 @@
          <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/slats-pos-deg</property>
-           <value> 0.001475 </value>
+           <property>fcs/slats-deg</property>
+           <value> 0.00295 </value>
          </product>
     </function>
 

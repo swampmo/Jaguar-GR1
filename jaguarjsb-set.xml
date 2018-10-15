@@ -491,6 +491,15 @@
 		
   </sim>
 
+<fdm>
+  <jsbsim>
+    <fcs>   
+      <slats-deg>0</slats-deg>
+      <slats-cmd-deg>0</slats-cmd-deg>
+    </fcs>
+  </jsbsim>
+</fdm>
+
   <instrumentation>
 	<airspeed-indicator>
 		<speed-limit-bug type="double">420</speed-limit-bug>
