@@ -641,7 +641,7 @@
   </engines>
 
   <input>
-    <keyboard include="Nasal/jaguar-keyboard.xml"/>
+    <keyboard include="Jaguar/Dialogs/jaguar-keyboard.xml"/>
   </input>
  
 <!--  
