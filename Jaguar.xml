@@ -620,7 +620,7 @@
        <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/slats-deg</property>
+           <toradians><property>fcs/slats-deg</property></toradians>
            <value> 0.00675 </value>
        </product>
     </function>
@@ -769,7 +769,7 @@
          <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-           <property>fcs/slats-deg</property>
+           <toradians><property>fcs/slats-deg</property></toradians>
            <value> 0.00295 </value>
          </product>
     </function>

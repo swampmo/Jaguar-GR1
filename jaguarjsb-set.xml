@@ -89,56 +89,36 @@
         <desc>Open/Close canopy</desc>
       </key>
 	   <key>
-        <name>]</name>
-        <desc>Start/Stop engines</desc>
-      </key>
-	   <key>
-        <name>w</name>
-        <desc>Weapons mode</desc>
-      </key>
-	   <key>
         <name>e</name>
         <desc>Fire guns</desc>
       </key>
-	  <key>
+	    <key>
         <name>q</name>
         <desc>Toggle Radar standby</desc>
       </key>   
-	   <key>
-        <name>T</name>
-        <desc>Toggle RWR</desc>
-      </key>
       <key>
         <name>t</name>
         <desc>Change Radar Distances (10, 20 40)</desc>
       </key>
       <key>
-        <name>R</name>
-        <desc>Activate/desactivate targeting the nearest</desc>
-      </key>     
-	   <key>
-        <name>n</name>
-        <desc>Next Target</desc>
+       <name>L</name>
+       <desc>Deploy combat slats once 9 degrees twice 23 degrees</desc>
       </key>
       <key>
-        <name>Ctrl-n</name>
-        <desc>Previous Target</desc>
-      </key>  
+       <name>l</name>
+       <desc>Retract combat slats once 9 degrees twice 0 degrees</desc>
+      </key>
       <key>
-        <name>u</name>
-        <desc>Toggle Refueling Probe</desc>
+       <name>u</name>
+       <desc>Toggle Refueling Probe</desc>
       </key>  
-     <line>Afterburners engage when</line>
-      <line>throttle moves past 75%</line>
-	  <line>Hard manouvering at speeds over 450kt may result in</line>
-      <line>unexpected pitch behaviour.</line>
-	  <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
+      <line>Afterburners engage when throttle moves past 75%</line>
+      <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
       <line>Cannons carry 150 rounds each. These can be reloaded  while on the ground by using the Jaguar menu.</line>
-	  <line>Droptanks will automatically switch when empty.</line>
-      <line>Takeoff with one click on the flaps at</line>
-	  <line>170 - 210 kt depending on payload.</line>
-      <line></line>
-    </help>
+	    <line>Droptanks will automatically switch when empty.</line>
+      <line>Takeoff with at 15 degrees</line>
+	    <line>150 - 185 kt depending on payload.</line>
+      </help>
   
     <multiplay>
       <chat_display>1</chat_display>
