@@ -128,7 +128,7 @@
         <name>u</name>
         <desc>Toggle Refueling Probe</desc>
       </key>  
-      <line>Afterburners engage when</line>
+     <line>Afterburners engage when</line>
       <line>throttle moves past 75%</line>
 	  <line>Hard manouvering at speeds over 450kt may result in</line>
       <line>unexpected pitch behaviour.</line>
@@ -641,7 +641,7 @@
   </engines>
 
   <input>
-    <keyboard include="Jaguar/Dialogs/jaguar-keyboard.xml"/>
+    <keyboard include="/Dialogs/jaguar-keyboard.xml"/>
   </input>
  
 <!--  
@@ -681,9 +681,6 @@
       </tank>
     </fuel>
   </consumables> -->
-
-	
-
 
 
   <nasal>
@@ -753,9 +750,9 @@
       <file>Aircraft/Jaguar/Nasal/enav.nas</file>
     </enav>
 	
-  <emu>
-   <file>Aircraft/Jaguar/Nasal/emu.nas</file>
-  </emu>
+    <emu>
+     <file>Aircraft/Jaguar/Nasal/emu.nas</file>
+    </emu>
 
     <tfs>
 		  <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
