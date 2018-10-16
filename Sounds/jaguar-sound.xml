@@ -161,7 +161,7 @@
           <property>/sim/current-view/internal</property>
         </not>
       </condition>
-      <property>engines/engine/thrust_lbouter-angle</property>
+      <property>engines/engine/thrust_lb</property>
         <orientation>
   	        <x>1</x>
             <y>0</y>
