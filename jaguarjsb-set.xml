@@ -461,6 +461,15 @@
         <signals include="/Aircraft/Generic/flightrecorder/components/gear-retractable.xml">
             <count type="int">3</count>
         </signals>
+            <signal>
+                <type>float</type>
+                <property type="string">engines/engine/augmentation</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property type="string">surface-positions/speedbrake-norm</property>
+            </signal>
+            
 			<name type="string">Sepecat Jaguar</name>
             </config>
         </flight-recorder>

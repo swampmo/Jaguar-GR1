@@ -18,9 +18,9 @@
   	<x>1</x>
     <y>0</y>
     <z>0</z>
-    <inner-angle>90</inner-angle>
-    <outer-angle>180</outer-angle>
-    <outer-gain>0.1</outer-gain>
+    <inner-angle>100</inner-angle>
+    <outer-angle>200</outer-angle>
+    <outer-gain>0.6</outer-gain>
    </orientation>
     <volume>
     <property>engines/engine[0]/n1</property>
@@ -44,9 +44,9 @@
 	  <x>1</x>
     <y>0</y>
     <z>0</z>
-    <inner-angle>90</inner-angle>
-    <outer-angle>180</outer-angle>
-    <outer-gain>0.1</outer-gain>
+    <inner-angle>100</inner-angle>
+    <outer-angle>200</outer-angle>
+    <outer-gain>0.6</outer-gain>
    </orientation>
     <volume>
     <property>engines/engine[1]/n1</property>
@@ -85,8 +85,8 @@
       <pitch>
         <property>engines/engine/n2</property>
         <factor>0.01</factor>
-      	<min>0</min>
-	      <max>0.9</max>
+      	<min>0.5</min>
+	      <max>0.4</max>
       </pitch>
     </engine>
 	
@@ -112,8 +112,8 @@
       <volume>
         <property>engines/engine/n2</property>
         <factor>0.09</factor>
-        <min>0.1</min>
-        <max>0.6</max>
+        <min>0.05</min>
+        <max>0.4</max>
       </volume>
       <pitch>
         <property>engines/engine/n2</property>
@@ -166,15 +166,15 @@
   	        <x>1</x>
             <y>0</y>
             <z>0</z>
-        <inner-angle>90</inner-angle>
+        <inner-angle>100</inner-angle>
         <outer-angle>200</outer-angle>
-        <outer-gain>0.5</outer-gain>
+        <outer-gain>0.8</outer-gain>
        </orientation>
       <volume>
         <property>engines/engine/thrust_lb</property>
         <factor>0.05</factor>       
         <min>0</min>
-        <max>4.9</max>
+        <max>6</max>
       </volume>
     </engine>
 	
@@ -213,15 +213,15 @@
         <property>engines/engine[0]/augmentation</property>
         <factor>2</factor>
         <min>0</min>
-        <max>4.5</max>
+        <max>1</max>
       </volume>
       <orientation>
         <x>1</x>
         <y>0</y>
         <z>0</z>
-        <inner-angle>90</inner-angle>
-        <outer-angle>180</outer-angle>
-        <outer-gain>0.2</outer-gain>
+        <inner-angle>100</inner-angle>
+        <outer-angle>195</outer-angle>
+        <outer-gain>0.5</outer-gain>
       </orientation>
     </engine>
 	
@@ -239,15 +239,15 @@
         <property>engines/engine[1]/augmentation</property>
         <factor>2</factor>
         <min>0</min>
-        <max>4.5</max>
+        <max>1</max>
       </volume>
       <orientation>
-        <x>9</x>
+        <x>1</x>
         <y>0</y>
         <z>0</z>
-        <inner-angle>90</inner-angle>
-        <outer-angle>180</outer-angle>
-        <outer-gain>0.2</outer-gain>
+        <inner-angle>100</inner-angle>
+        <outer-angle>195</outer-angle>
+        <outer-gain>0.5</outer-gain>
       </orientation>
     </engine> 
 	
