@@ -16,8 +16,8 @@
     
     <label>
         <name>G Load</name>
-        <x>-43</x>
-        <y>20</y>
+        <x>-50</x>
+        <y>25</y>
         <width>1</width>
         <height>1</height>
         <input>
@@ -32,8 +32,8 @@
         <type>pitch</type>
         <x>-20</x>
         <y>-124</y>
-        <width>40</width>
-        <height>255</height>
+        <width>30</width>
+        <height>230</height>
         <roll-input>
             <property>/orientation/roll-deg</property>
         </roll-input>
@@ -63,9 +63,9 @@
 
     <tape>
         <name>Altitude-FT</name>
-        <x>37</x>
+        <x>30</x>
         <y>-36</y>
-        <width>7</width>
+        <width>6</width>
         <height>50</height>
         <input>
             <property>/instrumentation/altimeter/indicated-altitude-ft</property>
@@ -75,7 +75,7 @@
         </input>
         <major-divisions>1</major-divisions>
         <minor-divisions>0.1</minor-divisions>
-        <display-span>2.0</display-span>
+        <display-span>1.5</display-span>
         <option>right</option>
         <option>vertical</option>
         <tick-bottom>false</tick-bottom>
@@ -93,7 +93,7 @@
 
     <tape>
         <name>KIAS</name>
-        <x>-50</x>
+        <x>-40</x>
         <y>-36</y>
         <width>7</width>
         <height>50</height>
@@ -125,9 +125,9 @@
     <tape>
         <name>Gyrocompass</name>
         <x>-32</x>
-        <y>-90</y>
+        <y>-95</y>
         <width>60</width>
-        <height>10</height>
+        <height>5</height>
         <input>
             <property>orientation/heading-deg</property>
             <factor>0.1</factor>
@@ -156,7 +156,7 @@
     <label>
         <name>Gyro Heading Marker</name>
         <x>0</x>
-        <y>-78</y>
+        <y>-80</y>
         <width>1</width>
         <height>1</height>
         <format>v</format>
@@ -165,7 +165,7 @@
     <label>
         <name>Gyro Heading Label</name>
         <x>-9</x>
-        <y>-76</y>
+        <y>-72</y>
         <width>18</width>
         <height>8</height>
         <input>
@@ -178,7 +178,7 @@
 
     <label>
         <name>KIAS</name>
-        <x>-65</x>
+        <x>-57</x>
         <y>-15</y>
         <width>18</width>
         <height>8</height>
@@ -193,7 +193,7 @@
 
     <label>
         <name>Altitude</name>
-        <x>41</x>
+        <x>35</x>
         <y>-15</y>
         <width>24</width>
         <height>9</height>
@@ -208,8 +208,8 @@
 
     <label>
         <name>AGL</name>
-        <x>41</x>
-        <y>-45</y>
+        <x>35</x>
+        <y>20</y>
         <width>24</width>
         <height>9</height>
         <condition>
@@ -234,7 +234,7 @@
 
     <label>
         <name>MACH Number</name>
-        <x>-60</x>
+        <x>-58</x>
         <y>-72</y>
        <width>1</width>
         <height>1</height>
