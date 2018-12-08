@@ -174,8 +174,8 @@
 				</sum>
 			</function>
 			<clipto>
-				<min>-0.5</min>
-				<max>0.5</max>
+				<min>-0.3</min>
+				<max>0.3</max>
 			</clipto>
 			<output>/controls/flight/elevator-trim</output>
 		</fcs_function>

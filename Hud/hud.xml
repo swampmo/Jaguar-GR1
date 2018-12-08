@@ -229,6 +229,10 @@
         <halign>right</halign>
         <box>ytue</box>
         <option>left</option>
+   <font>
+    <name type="string">courier-bold.txf</name>
+    <size type="float">12</size>
+   </font>
     </label>
 
 
