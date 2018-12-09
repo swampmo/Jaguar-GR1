@@ -154,8 +154,8 @@ if(navStillOn) {
 	navLights.fadeOut = 0.12;
 }
 #manipulate times if defaults don't fit your needs:
-#fadeLanding.fadeIn = 0.5;
-#fadeLanding.fadeOut = 0.8;
+fadeLanding.fadeIn = 0.5;
+fadeLanding.fadeOut = 0.8;
 
 
 #enable binding to gear
@@ -163,8 +163,8 @@ if(gearBind) {
 	setlistener("/gear/gear/position-norm", func {
 		gearPos = getprop("/gear/gear/position-norm");
 		if(gearPos==1) {
-#			if(landingSwitch!=nil) setprop(landingSwitch, 1);
-#			if(taxiSwitch!=nil) setprop(taxiSwitch, 1);
+			if(landingSwitch!=nil) setprop(landingSwitch, 1);
+			if(taxiSwitch!=nil) setprop(taxiSwitch, 0);
 		}
 		else{
 			if(landingSwitch!=nil) setprop(landingSwitch, 0);
