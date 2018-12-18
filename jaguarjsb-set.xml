@@ -86,7 +86,11 @@
       <title>Jaguar</title>
       <key>
         <name>d</name>
-        <desc>Open/Close canopy</desc>
+        <desc>Open canopy</desc>
+      </key>
+      <key>
+        <name>D</name>
+        <desc>Close canopy</desc>
       </key>
 	   <key>
         <name>e</name>
