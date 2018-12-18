@@ -141,8 +141,6 @@
         <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
         <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
         <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
-        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/> 
 		<float n="6" type="double">0</float><!-- refuel probe   -->
         <float n="8" alias="/engines/engine[0]/augmentation" /> <!-- Reheat Left Engine -->
 	    <float n="9" alias="/engines/engine[1]/augmentation" /> <!-- Reheat Right Engine -->	
@@ -428,7 +426,9 @@
 
     <weight n="7">
       <name>Crew</name>
-      <weight-lb>200</weight-lb> 
+      <weight-lb>200</weight-lb> <canopy>
+         <position-norm type="double">0.0</position-norm>
+</canopy>
       <min-lb>200</min-lb>
       <max-lb>400</max-lb>
     </weight> 
@@ -479,6 +479,10 @@
         </instrumentation>
 		
   </sim>
+
+<canopy>
+         <position-norm type="double">0.0</position-norm>
+</canopy>
 
 <fdm>
   <jsbsim>

@@ -1518,7 +1518,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>Canopy</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>canopy/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1 </ind><dep> 60 </dep></entry>
@@ -1816,7 +1816,7 @@ if(navStillOn) {
   <!-- FX                                                                  -->
   <!-- ******************************************************************* -->
  	<model>
-		<path>Aircraft/Jaguar/Models/Effects/fx/fx.xml</path>
+		<path>Aircraft/Jaguar/Models/Effects/Fx/fx.xml</path>
 		<offsets>
 			<x-m> 2.00 </x-m>
 			<y-m> 0.00 </y-m>
