@@ -772,10 +772,6 @@
         <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
     </crashandstress>   
 	
-    <weapons>
-		  <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
-  	</weapons>	
- 
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
     </load>
