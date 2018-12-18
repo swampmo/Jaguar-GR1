@@ -274,8 +274,8 @@ if(navStillOn) {
       
       ### the rest of your model unload embedded Nasal code ###
       livery_update.stop();
-      crew_door.unalias();
-      passenger_door.unalias();
+ #     crew_door.unalias();
+ #     passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -554,17 +554,17 @@ if(navStillOn) {
   </animation>
   
     <!-- Transparent Surfaces for Rembrandt rendering -->
-   <effect>
+ <!--  <effect>
       <inherits-from>Effects/model-transparent</inherits-from>
 		<object-name>intverriere</object-name>
 		<object-name>intvitres</object-name>
 		<object-name>intverriere</object-name>
 	    <object-name>porteAvitres</object-name>
 		<object-name>hud</object-name>
-   </effect>
+   </effect> -->
    
   <!-- Suppress in Cockpit View -->
- <animation>
+<!-- <animation>
   <type>select</type>
     <object-name>intverriere</object-name>
 	     <object-name>intvitres</object-name>
@@ -577,7 +577,7 @@ if(navStillOn) {
    </equals>
    </not>
   </condition>
- </animation>
+ </animation> -->
 
 
    <!-- Solid Surfaces for Rembrandt rendering -->

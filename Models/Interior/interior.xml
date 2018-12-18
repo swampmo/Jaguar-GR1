@@ -86,7 +86,7 @@
   <animation>
     <type>rotate</type>
     <object-name>intverriere</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>canopy/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1 </ind><dep> 60 </dep></entry>
