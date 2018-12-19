@@ -93,23 +93,17 @@
         <desc>Change Radar Distances (10, 20 40)</desc>
       </key>
       <key>
-       <name>L</name>
-       <desc>Deploy combat slats once 9 degrees twice 23 degrees</desc>
-      </key>
-      <key>
-       <name>l</name>
-       <desc>Retract combat slats once 9 degrees twice 0 degrees</desc>
-      </key>
-      <key>
        <name>u</name>
        <desc>Toggle Refueling Probe</desc>
       </key>  
-      <line>Afterburners engage when throttle moves past 75%</line>
-      <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
+      <line>Slats deploy before flaps will manually deploy slats with flap key "]" watch indicator for flaps to deploy.</line>
+      <line>Takeoff with 3 notches of flaps/15 degrees. after takeoff retract flaps key "[" use combat slats as needed.</line>
+      <line>Afterburners engage when throttle moves past 75% You will hear the mil thrust detenet click twice.</line>
+ <!--     <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
       <line>Cannons carry 150 rounds each. These can be reloaded  while on the ground by using the Jaguar menu.</line>
 	    <line>Droptanks will automatically switch when empty.</line>
       <line>Takeoff with at 15 degrees</line>
-	    <line>150 - 185 kt depending on payload.</line>
+	    <line>150 - 185 kt depending on payload.</line>-->
       </help>
   
     <multiplay>
