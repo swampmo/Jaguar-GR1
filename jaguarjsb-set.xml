@@ -64,19 +64,7 @@
       <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
     </sound>
 
-<flaps>
-<setting>0.0</setting>
-<setting>0.15</setting>
-<setting>0.25</setting>
-<setting>0.5</setting>
-<setting>1.0</setting>
-</flaps>
 
-<slats>
-<setting>0.0</setting>
-<setting>0.09</setting>
-<setting>0.23</setting>
-</slats>
 
     <ai>
       <scenario>refueling_demo_2</scenario>
@@ -578,6 +566,11 @@
 
   <!-- set up control properties for YASim -->
   <controls>
+
+     <flight>
+        <slats type="double">0</slats>
+     </flight>  
+
     <gear>
       <brake-parking type="double">1.0</brake-parking>
     </gear>
