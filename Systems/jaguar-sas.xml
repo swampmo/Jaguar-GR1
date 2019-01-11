@@ -166,7 +166,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="fbw/elevator-trim-output">
+		<fcs_function name="sas/autotrim-output">
 			<function>
 				<sum>
 					<property>/controls/flight/elevator-trim</property>

@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <system name="Aircraft control">
 
-  <property value="0">fcs/slats-deg</property>
-
   <channel name="Elevon">
    <summer name="fcs/pitch-sum">
       <!--input>fcs/elevator-cmd-norm</input-->
