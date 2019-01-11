@@ -107,7 +107,7 @@
 		<condition>
 			<equals>
 				<property>fdm/jsbsim/fcs/slats-deg</property>
-				<value>9</value>
+				<value>8.993</value>
 			</equals>
 		</condition>
 	</animation>
@@ -223,7 +223,7 @@
 			</greater-than>
 			<less-than>
 				<property>surface-positions/speedbrake-pos-norm</property>
-				<value>1</value>
+				<value>1.2</value>
 			</less-than>
 		</condition>
 	</animation>
