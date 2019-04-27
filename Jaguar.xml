@@ -60,7 +60,7 @@
    <wingspan  unit="FT" >    28.60 </wingspan>
    <wing_incidence unit="DEG"> 1.00 </wing_incidence>
    <chord     unit="FT" >    11.49 </chord>
-   <htailarea unit="FT2">    81.00 </htailarea>
+   <htailarea unit="FT2">    63.00 </htailarea>
    <htailarm  unit="FT" >    18.00 </htailarm>
    <vtailarea  unit="FT2">   30.00 </vtailarea>
    <vtailarm  unit="FT" >    16.50 </vtailarm>
