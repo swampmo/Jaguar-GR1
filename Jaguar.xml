@@ -66,8 +66,8 @@
    <vtailarm  unit="FT" >    16.50 </vtailarm>
    <location name="AERORP" unit="IN">
       <x>   65.72 </x>
--     <y>    0.00 </y>
--     <z>  -16.59 </z>
+      <y>    0.00 </y>
+      <z>  -16.59 </z>
    </location>
    <location name="EYEPOINT" unit="IN">
      <x>   132.72 </x>
