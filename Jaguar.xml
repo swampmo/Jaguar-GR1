@@ -524,7 +524,8 @@
  <system file="autoflight"/>
  <system file="jaguar-sas"/>
  <system file="Aircraftcontrol"/>
-<!-- <system file="jaguar-controls"/> -->
+ <system file="jaguar-controls"/>
+ <system file="hydraulics"/>
 <!-- <system file="ArrestorHook"/>
  <system file="DragChute"/>
  <system file="Catapult"/> -->

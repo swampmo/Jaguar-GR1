@@ -357,12 +357,8 @@
 			<input>autoflight/pitch/alt/error</input>
 			<gain>autoflight/pitch/alt/gain</gain>
 			<clipto>
-				<min>
-					<property>-autoflight/pitch/alt/max-rate-fpm</property>
-                </min>
-				<max>
-					<property>autoflight/pitch/alt/max-rate-fpm</property>
-                </max>
+				<min>-autoflight/pitch/alt/max-rate-fpm</min>
+				<max>autoflight/pitch/alt/max-rate-fpm</max>
 			</clipto>
 		</pure_gain>
 		

@@ -136,6 +136,36 @@
   </model>
   
   <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/hyd/bypasssw-l.xml</path>
+    <offsets>
+      <x-m> -3.320 </x-m>
+      <y-m>  0.0825 </y-m>
+      <z-m>  0.04 </z-m>
+	  <pitch-deg>-8</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/hyd/bypasssw-r.xml</path>
+    <offsets>
+      <x-m> -3.320 </x-m>
+      <y-m>  0.177 </y-m>
+      <z-m>  0.04 </z-m>
+	  <pitch-deg>-8</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/hyd/EHPsw.xml</path>
+    <offsets>
+      <x-m> -3.320 </x-m>
+      <y-m>  0.125 </y-m>
+      <z-m>  0.10 </z-m>
+	  <pitch-deg>-8</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/egt/exh1.xml</path>
     <offsets>
       <x-m> -3.320 </x-m>

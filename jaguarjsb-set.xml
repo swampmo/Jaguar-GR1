@@ -482,6 +482,14 @@
 			<fcs>   
 				<slats-deg>0</slats-deg>
 				<slats-cmd-deg>0</slats-cmd-deg>
+				<canopy>
+					<engage type="bool">0</engage>
+					<serviceable type="bool">1</serviceable>
+					<has-power type="bool">1</has-power>
+					<hinges>
+						<serviceable type="bool">1</serviceable>
+					</hinges>
+				</canopy>
 			</fcs>
 		</jsbsim>
 	</fdm>
