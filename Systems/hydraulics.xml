@@ -23,7 +23,7 @@
 	<property value="0">systems/hydraulics/electric-pump-running</property>
 	<property value="0">systems/hydraulics/ptu-running</property>
 	<property value="0">systems/hydraulics/electric-pump-start-request</property>
-	<property value="0">systems/electrics/dc-main-bus</property>
+	<property value="0">systems/electrical/bus/dc-emerg-busbar</property>
 	
     <channel name="Hydraulic System" execrate="30">
 		<scheduled_gain name="systems/hydraulics/number1-system-pump-bar">
@@ -65,9 +65,9 @@
         </scheduled_gain>
 		
 		<scheduled_gain name="systems/hydraulics/number2-system-electric-pump-bar">
-            <input>systems/electrics/dc-main-bus</input>
+            <input>systems/electrical/bus/dc-emerg-busbar</input>
             <table>
-                <independentVar lookup="row">systems/electrics/dc-main-bus</independentVar>
+                <independentVar lookup="row">systems/electrical/bus/dc-emerg-busbar</independentVar>
                 <independentVar lookup="column">systems/hydraulics/electric-pump-running</independentVar>
                 <tableData>
                     0      1
@@ -88,8 +88,8 @@
             </test>
 			<test  logic="AND" value="1">
 			   /controls/hydraulics/electric-pump-switch eq 0
-			   systems/hydraulics/pressure-1-valve eq 0
-			   systems/hydraulics/pressure-2-valve eq 0
+			   systems/hydraulics/pressure-1-valve eq 1
+			   systems/hydraulics/pressure-2-valve eq 1
             </test>
         </switch>
 		

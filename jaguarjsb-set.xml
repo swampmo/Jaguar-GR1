@@ -138,7 +138,7 @@
 
     <systems n="0">
       <electrical n="0">
-        <path>Aircraft/Generic/generic-electrical.xml</path>
+		<path></path> <!-- disable -->
       </electrical>
       <autopilot n="0">
         <path>Aircraft/Jaguar/Systems/autoflight-rules.xml</path>
@@ -575,7 +575,19 @@
 
   <!-- set up control properties for YASim -->
   <controls>
-
+	<electrical>
+		<external-power-connected type="bool">0</external-power-connected>
+		<battery-switch type="bool">0</battery-switch>
+		<alternator-1-switch type="int">0</alternator-1-switch>
+		<alternator-2-switch type="int">0</alternator-2-switch>
+		<tru-1-switch type="int">0</tru-1-switch>
+		<tru-2-switch type="int">0</tru-2-switch>
+		<crash-bat-switch type="bool">0</crash-bat-switch>
+		<crash-alt1-switch type="bool">0</crash-alt1-switch>
+		<crash-alt2-switch type="bool">0</crash-alt2-switch>
+		<crash-firebot-switch type="bool">0</crash-firebot-switch>
+	</electrical>
+	
      <flight>
         <slats type="double">0</slats>
      </flight>  
@@ -701,6 +713,7 @@
       <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
       <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
       <file>Aircraft/Jaguar/Nasal/autoflight.nas</file>
+      <file>Aircraft/Jaguar/Nasal/electrical.nas</file>
     </jaguar>
 	
 	 <lights>

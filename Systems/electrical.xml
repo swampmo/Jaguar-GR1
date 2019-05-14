@@ -1,0 +1,328 @@
+<?xml version="1.0"?>
+<!--
+        Description: Jaguar electrical system
+		Author: Jonathan Redpath (legoboyvdlpATgmailDOTcom)
+    -->
+
+<system name="electrical">
+
+    <property value="115">systems/electrical/normal-ac-volts</property>
+	<property value="28.5">systems/electrical/normal-dc-volts</property>
+	
+    <property value="0">systems/electrical/alternator-1-failed</property>
+    <property value="0">systems/electrical/alternator-2-failed</property>
+    <property value="0">systems/electrical/number1-trufailed</property>
+    <property value="0">systems/electrical/number2-trufailed</property>
+    <property value="0">systems/electrical/inverter-failed</property>
+    <property value="0">systems/electrical/battery-failed</property>
+	<property value="0">systems/electrical/alternator-1-offline</property>
+	<property value="0">systems/electrical/alternator-2-offline</property>
+	<property value="0">systems/electrical/tru1-offline</property>
+	<property value="0">systems/electrical/tru2-offline</property>
+	<property value="0">systems/electrical/inverter-offline</property>
+	<property value="0">systems/electrical/battery-offline</property>
+	<property value="0">systems/electrical/ac-transformer-offline</property>
+	<property value="0">systems/electrical/bus/ac-busbar-1</property>
+	<property value="0">systems/electrical/bus/ac-busbar-2</property>
+	<property value="0">systems/electrical/bus/dc-emerg-busbar</property>
+	
+    <channel name="Electrical System: AC Supply" execrate="30">
+		<scheduled_gain name="systems/electrical/alternator-1-output-volts">
+            <input>propulsion/engine[0]/n2</input>
+            <table>
+                <independentVar lookup="row">propulsion/engine[0]/n2</independentVar>
+                <independentVar lookup="column">systems/electrical/alternator-1-offline</independentVar>
+                <tableData>
+                    0       1
+                    0       0       0
+					44      0       0
+					45      110     0
+					47.5    115     0
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0 </min>
+                <max>systems/electrical/normal-ac-volts</max>
+            </clipto>
+        </scheduled_gain>
+		
+       <scheduled_gain name="systems/electrical/alternator-2-output-volts">
+            <input>propulsion/engine[1]/n2</input>
+            <table>
+                <independentVar lookup="row">propulsion/engine[1]/n2</independentVar>
+                <independentVar lookup="column">systems/electrical/alternator-2-offline</independentVar>
+                <tableData>
+                    0       1
+                    0       0       0
+					44      0       0
+					45      110     0
+					47.5    115     0
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0 </min>
+                <max>systems/electrical/normal-ac-volts</max>
+            </clipto>
+        </scheduled_gain>
+		
+		<scheduled_gain name="systems/electrical/inverter-output-volts">
+            <input>systems/electrical/bus/dc-emerg-busbar</input>
+            <table>
+                <independentVar lookup="row">systems/electrical/bus/dc-emerg-busbar</independentVar>
+                <independentVar lookup="column">systems/electrical/inverter-offline</independentVar>
+                <tableData>
+                    0       1
+                    0       0       0
+					20      0       0
+					24      110     0
+					28.5    115     0
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0 </min>
+                <max>systems/electrical/normal-ac-volts</max>
+            </clipto>
+        </scheduled_gain>
+		
+		<scheduled_gain name="systems/electrical/ac-transformer-output-volts">
+            <input>systems/electrical/bus/ac-busbar-2</input>
+            <table>
+                <independentVar lookup="row">systems/electrical/bus/ac-busbar-2</independentVar>
+                <independentVar lookup="column">systems/electrical/ac-transformer-offline</independentVar>
+                <tableData>
+                    0       1
+                    0       0       0
+					100     0       0
+					110     24      0
+					115     26      0
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0  </min>
+                <max> 26 </max>
+            </clipto>
+        </scheduled_gain>
+		
+		<scheduled_gain name="systems/electrical/external-output-volts">
+            <input>/controls/electrical/external-power-connected</input>
+            <table>
+                <independentVar lookup="row">/controls/electrical/external-power-connected</independentVar>
+                <tableData>
+                    0       0
+					1     115
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0 </min>
+                <max>systems/electrical/normal-ac-volts</max>
+            </clipto>
+        </scheduled_gain>
+		
+		<switch name="systems/electrical/alternator-1-offline">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/controls/electrical/crash-alt1-switch eq 1
+				/controls/electrical/alternator-1-switch eq -1
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/alternator-2-offline">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/controls/electrical/crash-alt2-switch eq 1
+				/controls/electrical/alternator-2-switch eq -1
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/ac-transformer-offline">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				systems/electrical/bus/ac-busbar-2 lt 110
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/inverter-offline">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/controls/electrical/battery-switch eq 0
+			</test>
+		</switch>
+	</channel>
+	
+	<channel name="Electrical System: DC Supply" execrate="30">
+		<scheduled_gain name="systems/electrical/tru1-output-volts">
+            <input>systems/electrical/bus/ac-busbar-1</input>
+            <table>
+                <independentVar lookup="row">systems/electrical/bus/ac-busbar-1</independentVar>
+                <independentVar lookup="column">systems/electrical/tru1-offline</independentVar>
+                <tableData>
+                    0       1
+                    0       0      0
+					110     24     0
+					115     28.5     0
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0 </min>
+                <max>systems/electrical/normal-dc-volts</max>
+            </clipto>
+        </scheduled_gain>
+		
+       <scheduled_gain name="systems/electrical/tru2-output-volts">
+            <input>systems/electrical/bus/ac-busbar-2</input>
+            <table>
+                <independentVar lookup="row">systems/electrical/bus/ac-busbar-2</independentVar>
+                <independentVar lookup="column">systems/electrical/tru2-offline</independentVar>
+                <tableData>
+                    0       1
+                    0       0      0
+					110     24     0
+					115     28.5     0
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0 </min>
+                <max>systems/electrical/normal-dc-volts</max>
+            </clipto>
+        </scheduled_gain>
+		
+		<scheduled_gain name="systems/electrical/battery-output-volts-to-emerg">
+            <input>systems/electrical/battery-offline</input>
+            <table>
+                <independentVar lookup="row">systems/electrical/battery-offline</independentVar>
+                <tableData>
+                    0       24
+					1       0
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0  </min>
+                <max> 24 </max>
+            </clipto>
+        </scheduled_gain>
+		
+		<switch name="systems/electrical/tru1-offline">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/controls/electrical/tru-1-switch eq -1
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/tru2-offline">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/controls/electrical/tru-2-switch eq -1
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/battery-offline">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/controls/electrical/battery-switch eq 0
+			</test>
+		</switch>
+	</channel>
+	
+	<channel name="Electrical System: AC Busbars" execrate="30">
+		<switch name="systems/electrical/bus/ac-busbar-1">
+			<default value="0"/>
+			<test logic="AND" value="systems/electrical/alternator-1-output-volts">
+				systems/electrical/alternator-1-offline eq 0
+				systems/electrical/alternator-1-output-volts ge 110
+			</test>
+			<test logic="AND" value="systems/electrical/alternator-2-output-volts">
+				systems/electrical/alternator-1-offline eq 1
+				systems/electrical/ac-busbars-coupled eq 1
+				systems/electrical/alternator-2-output-volts ge 110
+			</test>
+			<test logic="OR" value="systems/electrical/external-output-volts">
+				systems/electrical/external-output-volts ge 110
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/bus/ac-busbar-2">
+			<default value="0"/>
+			<test logic="AND" value="systems/electrical/alternator-2-output-volts">
+				systems/electrical/alternator-2-offline eq 0
+				systems/electrical/alternator-2-output-volts ge 110
+			</test>
+			<test logic="AND" value="systems/electrical/alternator-1-output-volts">
+				systems/electrical/alternator-2-offline eq 1
+				systems/electrical/ac-busbars-coupled eq 1
+				systems/electrical/alternator-1-output-volts ge 110
+			</test>
+			<test logic="OR" value="systems/electrical/external-output-volts">
+				systems/electrical/external-output-volts ge 110
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/bus/ac-busbar-emerg"> <!-- yes its 26V AC not DC -->
+			<default value="0"/>
+			<test logic="OR" value="systems/electrical/ac-transformer-output-volts">
+				systems/electrical/ac-transformer-output-volts ge 25
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/bus/ac-busbar-ess">
+			<default value="0"/>
+			<test logic="OR" value="115">
+				systems/electrical/bus/ac-busbar-1 ge 110
+				systems/electrical/bus/ac-busbar-2 ge 110
+			</test>
+			<test logic="OR" value="systems/electrical/inverter-output-volts">
+				systems/electrical/inverter-output-volts ge 110
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/ac-busbars-coupled">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				systems/electrical/alternator-1-offline eq 0
+				systems/electrical/alternator-2-offline eq 1
+				systems/electrical/external-output-volts eq 0
+			</test>
+			<test logic="AND" value="1">
+				systems/electrical/alternator-1-offline eq 1
+				systems/electrical/alternator-2-offline eq 0
+				systems/electrical/external-output-volts eq 0
+			</test>
+		</switch>
+	</channel>
+	
+	<channel name="Electrical System: DC Busbars" execrate="30">
+		<switch name="systems/electrical/bus/dc-busbar-normal">
+			<default value="0"/>
+			<test logic="AND" value="systems/electrical/tru1-output-volts">
+				systems/electrical/tru1-offline eq 0
+				systems/electrical/tru1-output-volts ge 24
+			</test>
+			<test logic="AND" value="systems/electrical/tru2-output-volts">
+				systems/electrical/tru1-offline eq 1
+				systems/electrical/tru2-output-volts ge 24
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/bus/dc-busbar-emerg">
+			<default value="0"/>
+			<test logic="AND" value="systems/electrical/tru2-output-volts">
+				systems/electrical/tru2-offline eq 0
+				systems/electrical/tru2-output-volts ge 24
+			</test>
+			<test logic="AND" value="systems/electrical/tru1-output-volts">
+				systems/electrical/tru2-offline eq 1
+				systems/electrical/tru1-output-volts ge 24
+			</test>
+			<test logic="AND" value="systems/electrical/battery-output-volts-to-emerg">
+				systems/electrical/tru2-offline eq 1
+				systems/electrical/battery-output-volts-to-emerg ge 24
+			</test>
+		</switch>
+		
+		<switch name="systems/electrical/bus/dc-busbar-battery">
+			<default value="24"/> <!-- continually connected unless crash switch active -->
+			<test logic="OR" value="0">
+				/controls/electrical/crash-bat-switch eq 1
+			</test>
+		</switch>
+	</channel>
+</system>
