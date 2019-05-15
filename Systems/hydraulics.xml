@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<!--
+        Description: Jaguar hydraulics system
+		Author: Jonathan Redpath (legoboyvdlpATgmailDOTcom)
+    -->
+
+<system name="hydraulic">
+
+    <property value="206">systems/hydraulics/normal-pressure</property>
+	<property value="145">systems/hydraulics/electric-pump-normal-pressure</property>
+	
+    <property value="0">systems/hydraulics/number1-system-pump-failed</property>
+    <property value="0">systems/hydraulics/number2-system-pump-failed</property>
+    <property value="0">systems/hydraulics/number2-elec-pump-failed</property>
+	
+	<property value="0">/controls/hydraulics/bypass-1-switch</property>
+	<property value="0">/controls/hydraulics/bypass-2-switch</property>
+	<property value="0">systems/hydraulics/bypass-1-valve</property>
+	<property value="0">systems/hydraulics/bypass-2-valve</property>
+	<property value="0">systems/hydraulics/pressure-1-valve</property>
+	<property value="0">systems/hydraulics/pressure-2-valve</property>
+	<property value="0">/controls/hydraulics/electric-pump-switch</property>
+	<property value="0">systems/hydraulics/electric-pump-running</property>
+	<property value="0">systems/hydraulics/ptu-running</property>
+	<property value="0">systems/hydraulics/electric-pump-start-request</property>
+	<property value="0">systems/electrical/bus/dc-emerg-busbar</property>
+	
+    <channel name="Hydraulic System" execrate="30">
+		<scheduled_gain name="systems/hydraulics/number1-system-pump-bar">
+            <input>propulsion/engine[0]/n2</input>
+            <table>
+                <independentVar lookup="row">propulsion/engine[0]/n2</independentVar>
+                <independentVar lookup="column">systems/hydraulics/number1-system-pump-failed</independentVar>
+                <tableData>
+                    0       1
+                    0       0       0
+					12      0       0
+					15      35      0
+                    18   	205     0
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0 </min>
+                <max>systems/hydraulics/normal-pressure</max>
+            </clipto>
+        </scheduled_gain>
+		
+        <scheduled_gain name="systems/hydraulics/number2-system-engine-pump-bar">
+            <input>propulsion/engine[1]/n2</input>
+            <table>
+                <independentVar lookup="row">propulsion/engine[1]/n2</independentVar>
+                <independentVar lookup="column">systems/hydraulics/number2-system-pump-failed</independentVar>
+                <tableData>
+                    0       1
+                    0       0       0
+					12      0       0
+					15      35      0
+                    18   	206     0
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0 </min>
+                <max>systems/hydraulics/normal-pressure</max>
+            </clipto>
+        </scheduled_gain>
+		
+		<scheduled_gain name="systems/hydraulics/number2-system-electric-pump-bar">
+            <input>systems/electrical/bus/dc-emerg-busbar</input>
+            <table>
+                <independentVar lookup="row">systems/electrical/bus/dc-emerg-busbar</independentVar>
+                <independentVar lookup="column">systems/hydraulics/electric-pump-running</independentVar>
+                <tableData>
+                    0      1
+                    0       0       0
+                    28   	0     	145
+                </tableData>
+            </table>
+            <clipto>
+                <min> 0 </min>
+                <max>systems/hydraulics/electric-pump-normal-pressure</max>
+            </clipto>
+        </scheduled_gain>
+		
+        <switch name="systems/hydraulics/electric-pump-start-request">
+            <default value="0"/>
+            <test  logic="AND" value="1">
+			   /controls/hydraulics/electric-pump-switch eq 1
+            </test>
+			<test  logic="AND" value="1">
+			   /controls/hydraulics/electric-pump-switch eq 0
+			   systems/hydraulics/pressure-1-valve eq 1
+			   systems/hydraulics/pressure-2-valve eq 1
+            </test>
+        </switch>
+		
+        <switch name="systems/hydraulics/number1-system-pressure">
+            <default value="systems/hydraulics/number1-system-pump-bar"/>
+			<test logic="AND" value="systems/hydraulics/number2-system-engine-pump-bar">
+				systems/hydraulics/ptu-running eq 1
+				systems/hydraulics/number2-system-engine-pump-bar ge 130
+			</test>
+        </switch>
+
+        <switch name="systems/hydraulics/number2-system-pressure">
+            <default value="systems/hydraulics/number2-system-engine-pump-bar"/>
+			<test logic="AND" value="systems/hydraulics/number2-system-electric-pump-bar">
+				systems/hydraulics/electric-pump-running == 1
+				systems/hydraulics/number2-system-electric-pump-bar ge 130
+			</test>
+			<test logic="AND" value="systems/hydraulics/number1-system-pump-bar">
+				systems/hydraulics/ptu-running eq 1
+				systems/hydraulics/number1-system-pump-bar ge 130
+			</test>
+        </switch>
+		
+		<switch name="systems/hydraulics/number1-system-available">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                systems/hydraulics/number1-system-pressure ge 180
+            </test>
+        </switch>
+
+        <switch name="systems/hydraulics/number2-system-available">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                systems/hydraulics/number2-system-pressure ge 180
+				systems/hydraulics/electric-pump-running eq 0
+            </test>
+			<test logic="AND" value="1">
+                systems/hydraulics/number2-system-pressure ge 130
+				systems/hydraulics/electric-pump-running eq 1
+            </test>
+        </switch>
+		
+		<switch name="systems/hydraulics/electric-pump-running">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                systems/hydraulics/electric-pump-start-request eq 1
+				systems/hydraulics/number2-elec-pump-failed ne 1
+            </test>
+        </switch>
+
+        <switch name="systems/hydraulics/system-pressure">
+            <default value="0"/>
+            <test logic="OR" value="1">
+                systems/hydraulics/number1-system-pressure ge 180
+                systems/hydraulics/number2-system-pressure ge 130
+            </test>
+        </switch>
+		
+		<switch name="systems/hydraulics/bypass-1-valve">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				propulsion/engine[0]/n1 lt 42
+				/controls/hydraulics/bypass-1-switch eq 0
+			</test>
+			<test logic="OR" value="1">
+				/controls/hydraulics/bypass-1-switch eq 1
+			</test>
+		</switch>
+		
+		<switch name="systems/hydraulics/bypass-2-valve">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				propulsion/engine[1]/n1 lt 42
+				/controls/hydraulics/bypass-2-switch eq 0
+			</test>
+			<test logic="OR" value="1">
+				/controls/hydraulics/bypass-2-switch eq 1
+			</test>
+		</switch>
+		
+		<switch name="systems/hydraulics/pressure-1-valve">
+			<default value="0"/>
+			<test logic="OR" value="1">
+                systems/hydraulics/number1-system-pressure lt 106
+			</test>
+		</switch>
+		
+		<switch name="systems/hydraulics/pressure-2-valve">
+			<default value="0"/>
+			<test logic="OR" value="1">
+                systems/hydraulics/number2-system-pressure lt 106
+			</test>
+		</switch>
+			
+		<switch name="systems/hydraulics/ptu-running">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/controls/hydraulics/bypass-1-switch eq 1
+				/controls/hydraulics/bypass-2-switch eq 1
+			</test>
+			<test logic="AND" value="1">
+				/controls/hydraulics/bypass-1-switch ge 0
+				/controls/hydraulics/bypass-2-switch ge 0
+				propulsion/engine[0]/n1 lt 42
+			</test>
+			<test logic="AND" value="1">
+				/controls/hydraulics/bypass-1-switch ge 0
+				/controls/hydraulics/bypass-2-switch ge 0
+				propulsion/engine[1]/n1 lt 42
+			</test>
+			<test logic="OR" value="0">
+				systems/hydraulics/electric-pump-running eq 1
+			</test>
+		</switch>
+    </channel>
+</system>

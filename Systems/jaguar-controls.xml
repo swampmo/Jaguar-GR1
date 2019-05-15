@@ -2,7 +2,7 @@
 
 <!-- Canopy code written by Nikolai V. Chr. for the JA37 Viggen -->
 
-<flight_control name="Jaguar FC">
+<system name="Jaguar FC">
 
     <channel execrate="4" name="Canopy">
 
@@ -40,4 +40,4 @@
         </pure_gain>
     </channel>
 
-</flight_control>
+</system>

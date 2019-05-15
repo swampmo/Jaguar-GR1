@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<path>EHPSw.ac</path>
+	
+	<animation>
+		<type>scale</type>
+		<object-name>hydSwitch</object-name>
+		<object-name>hydSwitchBase</object-name>
+		<x-offset>0.8</x-offset>
+		<y-offset>0.8</y-offset>
+		<z-offset>0.8</z-offset>
+	</animation>
+	
+	<animation>
+		<object-name>hydSwitch</object-name>
+		<type>knob</type>
+		<property>/controls/hydraulics/electric-pump-switch</property>
+		<factor>-30</factor>
+		<drag-scale-px>5</drag-scale-px>
+		<center>
+			<x-m>0.090127</x-m>
+			<z-m>0.09</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/hydraulics/electric-pump-switch</property>
+				<min>-1</min>
+				<max>1</max>				
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+</PropertyList>
+

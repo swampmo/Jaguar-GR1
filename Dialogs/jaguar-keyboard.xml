@@ -20,19 +20,21 @@
    <key n="100">
     <name>d</name>
     <desc>canopy</desc>
-    <binding>
-      <command>nasal</command>
-      <script>interpolate("canopy/position-norm", 1, 2);</script>
-    </binding>
+	<binding>
+		<command>property-assign</command>
+		<property>/fdm/jsbsim/fcs/canopy/engage</property>
+		<value>1</value>
+	</binding>
   </key>
 
   <key n="68">
     <name>D</name>
     <desc>close-canopy</desc>
     <binding>
-      <command>nasal</command>
-      <script>interpolate("canopy/position-norm", 0, 2);</script>
-    </binding>
+		<command>property-assign</command>
+		<property>/fdm/jsbsim/fcs/canopy/engage</property>
+		<value>0</value>
+	</binding>
   </key>
  
          <key n="76">
