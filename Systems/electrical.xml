@@ -11,9 +11,10 @@
 	
     <property value="0">systems/electrical/alternator-1-failed</property>
     <property value="0">systems/electrical/alternator-2-failed</property>
-    <property value="0">systems/electrical/number1-trufailed</property>
-    <property value="0">systems/electrical/number2-trufailed</property>
+    <property value="0">systems/electrical/tru1-failed</property>
+    <property value="0">systems/electrical/tru2-failed</property>
     <property value="0">systems/electrical/inverter-failed</property>
+    <property value="0">systems/electrical/transformer-failed</property>
     <property value="0">systems/electrical/battery-failed</property>
 	<property value="0">systems/electrical/alternator-1-offline</property>
 	<property value="0">systems/electrical/alternator-2-offline</property>
@@ -24,7 +25,7 @@
 	<property value="0">systems/electrical/ac-transformer-offline</property>
 	<property value="0">systems/electrical/bus/ac-busbar-1</property>
 	<property value="0">systems/electrical/bus/ac-busbar-2</property>
-	<property value="0">systems/electrical/bus/dc-emerg-busbar</property>
+	<property value="0">systems/electrical/bus/dc-busbar-emerg</property>
 	
     <channel name="Electrical System: AC Supply" execrate="30">
 		<scheduled_gain name="systems/electrical/alternator-1-output-volts">
@@ -66,9 +67,9 @@
         </scheduled_gain>
 		
 		<scheduled_gain name="systems/electrical/inverter-output-volts">
-            <input>systems/electrical/bus/dc-emerg-busbar</input>
+            <input>systems/electrical/bus/dc-busbar-emerg</input>
             <table>
-                <independentVar lookup="row">systems/electrical/bus/dc-emerg-busbar</independentVar>
+                <independentVar lookup="row">systems/electrical/bus/dc-busbar-emerg</independentVar>
                 <independentVar lookup="column">systems/electrical/inverter-offline</independentVar>
                 <tableData>
                     0       1
@@ -138,6 +139,7 @@
 			<default value="0"/>
 			<test logic="OR" value="1">
 				systems/electrical/bus/ac-busbar-2 lt 110
+				systems/electrical/transformer-failed eq 1
 			</test>
 		</switch>
 		
@@ -145,6 +147,7 @@
 			<default value="0"/>
 			<test logic="OR" value="1">
 				/controls/electrical/battery-switch eq 0
+				systems/electrical/inverter-failed eq 1
 			</test>
 		</switch>
 	</channel>
@@ -186,25 +189,11 @@
             </clipto>
         </scheduled_gain>
 		
-		<scheduled_gain name="systems/electrical/battery-output-volts-to-emerg">
-            <input>systems/electrical/battery-offline</input>
-            <table>
-                <independentVar lookup="row">systems/electrical/battery-offline</independentVar>
-                <tableData>
-                    0       24
-					1       0
-                </tableData>
-            </table>
-            <clipto>
-                <min> 0  </min>
-                <max> 24 </max>
-            </clipto>
-        </scheduled_gain>
-		
 		<switch name="systems/electrical/tru1-offline">
 			<default value="0"/>
 			<test logic="OR" value="1">
 				/controls/electrical/tru-1-switch eq -1
+				systems/electrical/tru1-failed eq 1
 			</test>
 		</switch>
 		
@@ -212,6 +201,7 @@
 			<default value="0"/>
 			<test logic="OR" value="1">
 				/controls/electrical/tru-2-switch eq -1
+				systems/electrical/tru2-failed eq 1
 			</test>
 		</switch>
 		
@@ -219,6 +209,7 @@
 			<default value="0"/>
 			<test logic="OR" value="1">
 				/controls/electrical/battery-switch eq 0
+				systems/electrical/battery-failed eq 1
 			</test>
 		</switch>
 	</channel>
@@ -259,7 +250,7 @@
 		<switch name="systems/electrical/bus/ac-busbar-emerg"> <!-- yes its 26V AC not DC -->
 			<default value="0"/>
 			<test logic="OR" value="systems/electrical/ac-transformer-output-volts">
-				systems/electrical/ac-transformer-output-volts ge 25
+				systems/electrical/ac-transformer-output-volts ge 24
 			</test>
 		</switch>
 		
@@ -312,9 +303,10 @@
 				systems/electrical/tru2-offline eq 1
 				systems/electrical/tru1-output-volts ge 24
 			</test>
-			<test logic="AND" value="systems/electrical/battery-output-volts-to-emerg">
+			<test logic="AND" value="24">
+				systems/electrical/tru1-offline eq 1
 				systems/electrical/tru2-offline eq 1
-				systems/electrical/battery-output-volts-to-emerg ge 24
+				systems/electrical/battery-offline eq 0
 			</test>
 		</switch>
 		

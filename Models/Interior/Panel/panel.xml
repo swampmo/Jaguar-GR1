@@ -473,6 +473,18 @@
     </offsets>
   </model>
   
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/elec/elec-panel.xml</path>
+    <offsets>
+      <x-m> -3.095 </x-m>
+      <y-m>  0.430 </y-m>
+      <z-m> -0.150 </z-m>
+	  <heading-deg>280</heading-deg>
+	  <roll-deg>5</roll-deg>
+	  <pitch-deg>2</pitch-deg>
+    </offsets>
+  </model>
+  
   
  <!-- misc bitn and bobs -->
 <model>

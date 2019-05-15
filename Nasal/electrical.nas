@@ -27,6 +27,7 @@ var electricalSys = {
 		setprop("/systems/electrical/outputs/bus", 0);
 		setprop("/systems/electrical/outputs/cabin-lights", 0);
 		setprop("/systems/electrical/outputs/dme", 0);
+		setprop("/systems/electrical/outputs/DG", 0);
 		setprop("/systems/electrical/outputs/efis", 0);
 		setprop("/systems/electrical/outputs/flaps", 0);
 		setprop("/systems/electrical/outputs/fuel-pump", 0);
@@ -60,6 +61,7 @@ var electricalSys = {
 		setprop("/systems/electrical/outputs/bus", 1);
 		setprop("/systems/electrical/outputs/cabin-lights", 1);
 		setprop("/systems/electrical/outputs/dme", 1);
+		setprop("/systems/electrical/outputs/DG", 1);
 		setprop("/systems/electrical/outputs/efis", 1);
 		setprop("/systems/electrical/outputs/flaps", 1);
 		setprop("/systems/electrical/outputs/fuel-pump", 1);
