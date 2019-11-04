@@ -11,7 +11,17 @@
     <!-- Objets transparents -->
   </animation>
 
-
+  <!-- nav light 
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/divers/landing-lights.xml</path>
+    <offsets>
+      <x-m> -3.338 </x-m>
+      <y-m> 0.13 </y-m>
+      <z-m>  0.156 </z-m>
+      <pitch-deg>-8</pitch-deg>
+    </offsets>
+  </model>
+-->
   <!-- Instruments -->
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/HUD/optical-sight2.xml</path>
@@ -185,6 +195,16 @@
     </offsets>
   </model>
 
+  <!--model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/flightindicator/flight-indicator.xml</path>
+    <offsets>
+      <x-m> -3.28 </x-m>
+      <y-m> -0.31 </y-m>
+      <z-m> -0.04 </z-m>
+      <pitch-deg>-38</pitch-deg>
+    </offsets>
+  </model-->
+
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/oilpressure/oilpressureL.xml</path>
     <offsets>
@@ -298,9 +318,82 @@
    <pitch-deg>-8</pitch-deg>
   </offsets>
  </model>
+<!--
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Fuel/fuel.xml</path>
+    <offsets>
+      <x-m> -3.320 </x-m>
+      <y-m>  0.250 </y-m>
+      <z-m>  0.076 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
 
- 
-   <model>
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Fuel/fuel1.xml</path>
+    <offsets>
+      <x-m> -3.329 </x-m>
+      <y-m>  0.250 </y-m>
+      <z-m>  0.129 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Fuel/fuel2.xml</path>
+    <offsets>
+      <x-m> -3.315 </x-m>
+      <y-m>  0.250 </y-m>
+      <z-m>  0.022 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Fuel/fuel3.xml</path>
+    <offsets>
+      <x-m> -3.322 </x-m>
+      <y-m>  0.305 </y-m>
+      <z-m>  0.076 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Fuel/fuel4.xml</path>
+    <offsets>
+      <x-m> -3.315 </x-m>
+      <y-m>  0.305 </y-m>
+      <z-m>  0.022 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+-->
+  <!--
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Radar/Radar/A-10-rwr.xml</path>
+    <offsets>
+      <x-m> -3.34 </x-m>
+      <y-m>  0.25 </y-m>
+      <z-m>  0.22 </z-m>
+      <roll-deg> -40 </roll-deg>
+      <yaw-deg>  -90 </yaw-deg>
+    </offsets>
+  </model>
+  -->
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Radar/radar.xml</path>
+    <offsets>
+      <x-m> -3.33 </x-m>
+      <y-m>  0.20 </y-m>
+      <z-m>  0.25 </z-m>
+      <roll-deg> -40 </roll-deg>
+      <yaw-deg>  -90 </yaw-deg>
+    </offsets>
+  </model>
+
+  <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/uhf-box/uhf-box.xml</path>
     <offsets>
       <x-m> -3.306 </x-m>
@@ -310,6 +403,15 @@
     </offsets>
   </model>
 
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/sas/A-10-sas.xml</path>
+    <offsets>
+      <x-m> -3.285 </x-m>
+      <y-m>  0.285 </y-m>
+      <z-m> -0.040 </z-m>
+      <pitch-deg>52</pitch-deg>
+    </offsets>
+  </model>
 
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/tacan/tacan.xml</path>
