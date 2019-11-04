@@ -2,6 +2,83 @@
 #### crazy dj nasal from many sources...
 #### and also, almursi work
 
+#slat flaps system
+setprop("/controls/flight/flap-lever", 0);
+setprop("/controls/flight/flaps", 0);
+setprop("/controls/flight/slats", 0);
+
+controls.flapsDown = func(step) {
+  if (step == 1) {
+    var flapLever = getprop("/controls/flight/flap-lever");
+    if (flapLever == 0) {
+      setprop("/controls/flight/flaps", 0.000);
+      setprop("/controls/flight/slats", 0.391);
+      setprop("/controls/flight/flap-lever", 1);
+      return;
+    } else if (flapLever == 1) {
+      setprop("/controls/flight/flaps", 0.000);
+      setprop("/controls/flight/slats", 1.000);
+      setprop("/controls/flight/flap-lever", 2);
+      return;
+    } else if (flapLever == 2) {
+      setprop("/controls/flight/flaps", 0.150);
+      setprop("/controls/flight/slats", 1.000);
+      setprop("/controls/flight/flap-lever", 3);
+      return;
+    } else if (flapLever == 3) {
+      setprop("/controls/flight/flaps", 0.250);
+      setprop("/controls/flight/slats", 1.000);
+      setprop("/controls/flight/flap-lever", 4);
+      return;
+    } else if (flapLever == 4) {
+      setprop("/controls/flight/flaps", 0.500);
+      setprop("/controls/flight/slats", 1.000);
+      setprop("/controls/flight/flap-lever", 5);
+      return;
+    } else if (flapLever == 5) {
+      setprop("/controls/flight/flaps", 1.000);
+      setprop("/controls/flight/slats", 1.000);
+      setprop("/controls/flight/flap-lever", 6);
+      return;
+    } 
+  } else if (step == -1) {
+    var flapLever = getprop("/controls/flight/flap-lever");
+    if (flapLever == 6) {
+      setprop("/controls/flight/flaps", 0.500);
+      setprop("/controls/flight/slats", 1.000);
+      setprop("/controls/flight/flap-lever", 5);
+      return;
+    } else if (flapLever == 5) {
+      setprop("/controls/flight/flaps", 0.250);
+      setprop("/controls/flight/slats", 1.000);
+      setprop("/controls/flight/flap-lever", 4);
+      return;
+    } else if (flapLever == 4) {
+      setprop("/controls/flight/flaps", 0.150);
+      setprop("/controls/flight/slats", 1.000);
+      setprop("/controls/flight/flap-lever", 3);
+      return;
+    } else if (flapLever == 3) {
+      setprop("/controls/flight/flaps", 0.000);
+      setprop("/controls/flight/slats", 1.000);
+      setprop("/controls/flight/flap-lever", 2);
+      return;
+    } else if (flapLever == 2) {
+      setprop("/controls/flight/flaps", 0.000);
+      setprop("/controls/flight/slats", 0.391);
+      setprop("/controls/flight/flap-lever", 1);
+      return;
+    } else if (flapLever == 1) {
+      setprop("/controls/flight/flaps", 0.000);
+      setprop("/controls/flight/slats", 0.000);
+      setprop("/controls/flight/flap-lever", 0);
+      return;
+    }
+  } else {
+    return 0;
+  }
+}
+
 
 
 
@@ -36,29 +113,6 @@ aircraft.livery.init("Aircraft/Jaguar/Models/Liveries");
 #    };
 #   setprop("/sim/alarms/stall-warning", Estado);
 #};
-
-
-## auto-slats 
-var airspeed_n = props.globals.getNode("/velocities/airspeed-kt");
-var angleoa_n = props.globals.getNode("/orientation/alpha-deg" );
-
-var auto_slats = func {      
-  var airspeed = airspeed_n.getValue();
-  var angleoa = angleoa_n.getValue();
-  var flapDown = getprop("/controls/flight/flaps");
-    if (flapDown > 0.01) {
-      setprop("/controls/flight/slats", 1.0);
-      } else if ((flapDown == 0) and (angleoa > 6)) {
-			setprop("/controls/flight/slats", 0.45);
-		} else { setprop("/controls/flight/slats", 0.0);}
-     settimer(auto_slats, 0.3);
-}
-	
-## starter
-setlistener("/sim/signals/fdm-initialized", func {
-	settimer(auto_slats, 1);
-});
-
 
 
 var controls = {
@@ -158,6 +212,4 @@ var chuteRepack = func{
 	setprop('sim/model/lightning/controls/flight/chute_jettisoned', 0);
 
 } # end func	
-
-
 

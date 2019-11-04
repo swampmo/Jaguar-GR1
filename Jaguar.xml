@@ -60,14 +60,14 @@
    <wingspan  unit="FT" >    28.60 </wingspan>
    <wing_incidence unit="DEG"> 1.00 </wing_incidence>
    <chord     unit="FT" >    11.49 </chord>
-   <htailarea unit="FT2">   115.00 </htailarea>
+   <htailarea unit="FT2">    63.00 </htailarea>
    <htailarm  unit="FT" >    18.00 </htailarm>
-   <vtailarea  unit="FT2">   70.00 </vtailarea>
+   <vtailarea  unit="FT2">   30.00 </vtailarea>
    <vtailarm  unit="FT" >    16.50 </vtailarm>
    <location name="AERORP" unit="IN">
       <x>   65.72 </x>
--     <y>    0.00 </y>
--     <z>  -16.59 </z>
+      <y>    0.00 </y>
+      <z>  -16.59 </z>
    </location>
    <location name="EYEPOINT" unit="IN">
      <x>   132.72 </x>
@@ -524,6 +524,9 @@
  <system file="autoflight"/>
  <system file="jaguar-sas"/>
  <system file="Aircraftcontrol"/>
+ <system file="jaguar-controls"/>
+ <system file="electrical"/>
+ <system file="hydraulics"/>
 <!-- <system file="ArrestorHook"/>
  <system file="DragChute"/>
  <system file="Catapult"/> -->
@@ -547,13 +550,13 @@
               -0.209    -1.03
               -0.175    -0.89
               -0.140    -0.64
-              -0.105    -0.49
+              -0.105    -1.10
               -0.070    -0.27
               -0.035    -0.15
                0.000     0.08
                0.035     0.14
                0.070     0.39
-               0.105     0.56
+               0.105     1.26
                0.140     0.94
                0.175     1.07
                0.209     1.13
@@ -657,7 +660,7 @@
        <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
-          <value> 0.0143 </value>
+          <value> 0.0235 </value>
        </product>
     </function>
 
@@ -671,9 +674,10 @@
             <tableData>
              -1.57       0.500
              -0.26       0.027
-              0.00       0.021
-              0.26       0.057
-              1.57       0.120
+              0.00       0.000
+              0.26       0.067
+              0.80			 0.450
+              1.57       1.200
             </tableData>
           </table>
        </product>
@@ -685,7 +689,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>aero/cl-squared</property>
-           <value> 0.0505 </value>
+           <value> 0.0515 </value>
          </product>
     </function>
 
@@ -699,7 +703,7 @@
             <tableData>
                 0.00    0.0000
                 0.81    0.0000
-                1.10    0.0145
+                1.10    0.0210
                 1.80    0.0120
             </tableData>
           </table>
@@ -730,7 +734,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <abs><toradians><property>fcs/elevon-left-deg</property></toradians></abs>
-           <value> 0.015 </value>
+           <value> 0.035 </value>
        </product>
     </function>
 
@@ -740,7 +744,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <abs><toradians><property>fcs/elevon-right-deg</property></toradians></abs>
-           <value> 0.015 </value>
+           <value> 0.035 </value>
        </product>
     </function>
 
@@ -867,8 +871,20 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
-           <property>aero/alpha-rad</property>
-           <value> -0.30 </value>
+         <table>
+           <independentVar lookup="row">aero/alpha-rad</independentVar>
+           <tableData>
+             -0.349     0.09743
+             -0.175    -0.00098
+              0.000     0.00501
+              0.175    -0.03967
+              0.349    -0.12421
+              0.524    -0.21577
+              0.698    -0.30868
+              0.873    -0.41504
+              1.047    -0.53339
+           </tableData>
+         </table>
        </product>
     </function>
 
@@ -1051,6 +1067,28 @@
   </axis>
 
   <axis name="YAW">
+
+<!-- Stall initiator -->
+    <function name="aero/moment/Yaw_alpha">
+       <description>Yaw moment due to alpha</description>
+       <product>
+           <property>aero/qbar-psf</property>
+           <property>metrics/Sw-sqft</property>
+           <property>metrics/bw-ft</property>
+           <property>aero/alpha-rad</property>
+           <property>fcs/gear-no-wow</property>
+           <table>
+             <independentVar lookup="row">aero/beta-rad</independentVar>
+             <independentVar lookup="column">aero/Re</independentVar>
+             <tableData>
+                         24453908 26899298
+                 -0.3491  -0.1000   0.0000
+                  0.3491   0.1000   0.0000
+             </tableData>
+           </table>
+       </product>
+    </function>
+
 
     <function name="aero/moment/Yaw_beta">
        <description>Yaw moment due to beta</description>

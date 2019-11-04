@@ -70,7 +70,7 @@
 
         <lag_filter name="fcs/elevon-left-deg">
             <input>fcs/elevon-left-cmd</input>
-            <c1>17</c1>
+            <c1>20</c1>
         </lag_filter>
 
   <fcs_function name="fcs/elevon-right-cmd">
@@ -91,7 +91,7 @@
 
         <lag_filter name="fcs/elevon-right-deg">
             <input>fcs/elevon-right-cmd</input>
-            <c1>17</c1>
+            <c1>20</c1>
         </lag_filter>
 
   </channel>
@@ -124,7 +124,7 @@
 
         <lag_filter name="fcs/spoiler-right-deg">
             <input>fcs/spoiler-right-cmd</input>
-            <c1>17</c1>
+            <c1>20</c1>
         </lag_filter>
 
   </channel>
@@ -161,8 +161,15 @@
   </channel>
 
   <channel name="Flaps">
+        <switch name="fcs/flap-cmd">
+            <default value="0"/>
+            <test value="/controls/flight/flaps">
+                 fcs/slats-deg gt 22.999              
+            </test>
+        </switch>
+ 
    <kinematic name="Flaps Control">
-    <input>fcs/flap-cmd-norm</input>
+    <input>fcs/flap-cmd</input>
     <traverse>
       <setting>
          <position>  0 </position>
@@ -195,9 +202,15 @@
   </channel>
 
   <channel name="Slats">
+        <switch name="fcs/slat-cmd">
+            <default value="/controls/flight/slats"/>
+            <test value="1">
+                 fcs/flap-pos-deg ge 0.001              
+            </test>
+        </switch>
+        
 <kinematic name="Slats Control">
-    <input>fcs/slats-cmd-deg</input>
-    <noscale/>
+    <input>fcs/slat-cmd</input>
     <traverse>
       <setting>
          <position>  0 </position>
@@ -308,4 +321,5 @@
 	
 	</channel>
 
+ 
 </system>

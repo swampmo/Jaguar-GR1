@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-	<submodel>
+<!--	<submodel>
 		<name>MK-82 impact fire</name>
 		<model>Aircraft/A-10/Models/Stores/MK-82/fire-impact.xml</model>
 		<speed>0</speed>
@@ -18,7 +18,7 @@
 		<wind>false</wind>
 		<buoyancy>32</buoyancy>
 		<life>50</life>
-	</submodel> 
+	</submodel> -->
 
 
 </PropertyList>

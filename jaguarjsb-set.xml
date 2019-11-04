@@ -3,7 +3,7 @@
 <PropertyList>
 
   <sim include="Nasal/views.xml">
- 
+
     <description>Jaguar (JSBsim)</description>
     <flight-model>jsb</flight-model>
     <aero>Jaguar</aero>
@@ -17,7 +17,7 @@
       </livery>
     </model>
 
-    <submodels> 
+    <submodels>
       <serviceable type="bool">true</serviceable>
       <path>Aircraft/Jaguar/Models/Effects/Guns/submodels.xml</path>
       <path>Aircraft/Jaguar/Models/Weapons/loads.xml</path>
@@ -64,19 +64,7 @@
       <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
     </sound>
 
-<flaps>
-<setting>0.0</setting>
-<setting>0.15</setting>
-<setting>0.25</setting>
-<setting>0.5</setting>
-<setting>1.0</setting>
-</flaps>
 
-<slats>
-<setting>0.0</setting>
-<setting>0.09</setting>
-<setting>0.23</setting>
-</slats>
 
     <ai>
       <scenario>refueling_demo_2</scenario>
@@ -86,7 +74,11 @@
       <title>Jaguar</title>
       <key>
         <name>d</name>
-        <desc>Open/Close canopy</desc>
+        <desc>Open canopy</desc>
+      </key>
+      <key>
+        <name>D</name>
+        <desc>Close canopy</desc>
       </key>
 	   <key>
         <name>e</name>
@@ -95,66 +87,58 @@
 	    <key>
         <name>q</name>
         <desc>Toggle Radar standby</desc>
-      </key>   
+      </key>
       <key>
         <name>t</name>
         <desc>Change Radar Distances (10, 20 40)</desc>
       </key>
       <key>
-       <name>L</name>
-       <desc>Deploy combat slats once 9 degrees twice 23 degrees</desc>
-      </key>
-      <key>
-       <name>l</name>
-       <desc>Retract combat slats once 9 degrees twice 0 degrees</desc>
-      </key>
-      <key>
        <name>u</name>
        <desc>Toggle Refueling Probe</desc>
-      </key>  
-      <line>Afterburners engage when throttle moves past 75%</line>
-      <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
+      </key>
+      <line>Slats deploy before flaps will manually deploy slats with flap key "]" watch indicator for flaps to deploy.</line>
+      <line>Takeoff with 3 notches of flaps/15 degrees. after takeoff retract flaps key "[" use combat slats as needed.</line>
+      <line>Afterburners engage when throttle moves past 75% You will hear the mil thrust detenet click twice.</line>
+ <!--     <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
       <line>Cannons carry 150 rounds each. These can be reloaded  while on the ground by using the Jaguar menu.</line>
 	    <line>Droptanks will automatically switch when empty.</line>
       <line>Takeoff with at 15 degrees</line>
-	    <line>150 - 185 kt depending on payload.</line>
+	    <line>150 - 185 kt depending on payload.</line>-->
       </help>
-  
+
     <multiplay>
       <chat_display>1</chat_display>
-      <generic> 
+      <generic>
         <!-- Nav lights on -->
       <int n="0" alias="/controls/switches/nav-lights" />
       <!-- Beacon on -->
       <int n="1" alias="/controls/switches/anti-collision-lights" />
-      
+
       <!-- int[2] reserved for radar -->
-      
+
       <!-- Landing lights on -->
       <int n="3" alias="/controls/switches/landing-light" />
 	    <!-- Taxi light on -->
       <int n="4" alias="/controls/switches/taxi-light" />
-	  
+
         <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
         <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
         <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
         <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
         <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
         <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
-        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/> 
 		<float n="6" type="double">0</float><!-- refuel probe   -->
         <float n="8" alias="/engines/engine[0]/augmentation" /> <!-- Reheat Left Engine -->
-	    <float n="9" alias="/engines/engine[1]/augmentation" /> <!-- Reheat Right Engine -->	
+	    <float n="9" alias="/engines/engine[1]/augmentation" /> <!-- Reheat Right Engine -->
         <float n="15" alias="/velocities/mach" /> <!-- Mach for Multiplayer Sound -->
 	    <float n="16" alias="/engines/engine[0]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
-	    <float n="17" alias="/engines/engine[1]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->		
+	    <float n="17" alias="/engines/engine[1]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
       </generic>
     </multiplay>
 
     <systems n="0">
       <electrical n="0">
-        <path>Aircraft/Generic/generic-electrical.xml</path>
+		<path></path> <!-- disable -->
       </electrical>
       <autopilot n="0">
         <path>Aircraft/Jaguar/Systems/autoflight-rules.xml</path>
@@ -163,22 +147,22 @@
         <type>probe</type>
         <serviceable type="bool">true</serviceable>
       </refuel>
-    </systems> 
+    </systems>
 
     <mp-systems>
       <radar-enabled type="bool">true</radar-enabled>
       <ecm-rwr-enabled type="bool">true</ecm-rwr-enabled>
       <combat-enabled type="bool">true</combat-enabled>
-    </mp-systems>		
+    </mp-systems>
 
     <!--
-                   (0)             (6) 
+                   (0)             (6)
                    1.L     /-\     1.R
            _________|_____/top\_____|_________
-              |     |     \___/     |    |  
+              |     |     \___/     |    |
              2.L   3.L      |      3.R  2.R
              (1)   (2)   Center    (4)  (5)
-                           (3) 
+                           (3)
     -->
     <weight n="0">
       <name>pylon1.L</name>
@@ -428,10 +412,12 @@
 
     <weight n="7">
       <name>Crew</name>
-      <weight-lb>200</weight-lb> 
+      <weight-lb>200</weight-lb> <canopy>
+         <position-norm type="double">0.0</position-norm>
+</canopy>
       <min-lb>200</min-lb>
       <max-lb>400</max-lb>
-    </weight> 
+    </weight>
 
     <current-view>
       <field-of-view>73.5</field-of-view>
@@ -469,7 +455,7 @@
                 <type>float</type>
                 <property type="string">surface-positions/speedbrake-norm</property>
             </signal>
-            
+
 			<name type="string">Sepecat Jaguar</name>
             </config>
         </flight-recorder>
@@ -477,17 +463,36 @@
         <instrumentation>
             <path>Aircraft/Jaguar/Systems/instrumentation.xml</path>
         </instrumentation>
-		
+
   </sim>
 
-<fdm>
-  <jsbsim>
-    <fcs>   
-      <slats-deg>0</slats-deg>
-      <slats-cmd-deg>0</slats-cmd-deg>
-    </fcs>
-  </jsbsim>
-</fdm>
+<canopy>
+         <position-norm type="double">0.0</position-norm>
+</canopy>
+
+	<autopilot>
+		<settings>
+			<aileron-deadzone>0.1</aileron-deadzone>
+			<elevator-deadzone>0.1</elevator-deadzone>
+		</settings>
+	</autopilot>
+
+	<fdm>
+		<jsbsim>
+			<fcs>
+				<slats-deg>0</slats-deg>
+				<slats-cmd-deg>0</slats-cmd-deg>
+				<canopy>
+					<engage type="bool">0</engage>
+					<serviceable type="bool">1</serviceable>
+					<has-power type="bool">1</has-power>
+					<hinges>
+						<serviceable type="bool">1</serviceable>
+					</hinges>
+				</canopy>
+			</fcs>
+		</jsbsim>
+	</fdm>
 
   <instrumentation>
 	<airspeed-indicator>
@@ -529,7 +534,7 @@
         <rws type="bool">true</rws>
         <tws-auto type="bool">false</tws-auto>
       </mode>
-    </radar> 
+    </radar>
 		<radar2>
 			<sweep-width-m type="double">0.0844</sweep-width-m>
 			<range-width-m type="double">0.0846</range-width-m>
@@ -570,10 +575,27 @@
 
   <!-- set up control properties for YASim -->
   <controls>
+	<electrical>
+		<external-power-connected type="bool">0</external-power-connected>
+		<battery-switch type="bool">0</battery-switch>
+		<alternator-1-switch type="int">0</alternator-1-switch>
+		<alternator-2-switch type="int">0</alternator-2-switch>
+		<tru-1-switch type="int">0</tru-1-switch>
+		<tru-2-switch type="int">0</tru-2-switch>
+		<crash-bat-switch type="bool">0</crash-bat-switch>
+		<crash-alt1-switch type="bool">0</crash-alt1-switch>
+		<crash-alt2-switch type="bool">0</crash-alt2-switch>
+		<crash-firebot-switch type="bool">0</crash-firebot-switch>
+	</electrical>
+
+     <flight>
+        <slats type="double">0</slats>
+     </flight>
+
     <gear>
       <brake-parking type="double">1.0</brake-parking>
     </gear>
-   
+
     <lighting>
 		<!--landing-lights-switch type="bool">false</landing-lights-switch>
 		<taxi-light-switch type="bool">false</taxi-light-switch>
@@ -641,8 +663,8 @@
   <input>
     <keyboard include="/Dialogs/jaguar-keyboard.xml"/>
   </input>
- 
-<!--  
+
+<!--
   <consumables>
     <fuel>
       <tank n="0">
@@ -679,7 +701,7 @@
       </tank>
     </fuel>
   </consumables> -->
-
+  <payload><armament><msg type="bool">true</msg></armament></payload>
 
   <nasal>
 
@@ -691,12 +713,13 @@
       <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
       <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
       <file>Aircraft/Jaguar/Nasal/autoflight.nas</file>
+      <file>Aircraft/Jaguar/Nasal/electrical.nas</file>
     </jaguar>
-	
+
 	 <lights>
       <file>Aircraft/Jaguar/Nasal/Lights.nas</file>
     </lights>
-	
+
     <low>
       <file>Aircraft/Jaguar/Nasal/low.nas</file>
     </low>
@@ -709,7 +732,7 @@
 		<chronograph>
 			<file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/clock/chronograph.nas</file>
 		</chronograph>
- 
+
      <rwr>
       <!-- <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> -->
       <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
@@ -717,7 +740,7 @@
     </rwr>
 
     <radar>
-      <file>Aircraft/Jaguar/Nasal/radar.nas</file> 
+      <file>Aircraft/Jaguar/Nasal/radar.nas</file>
     </radar>
 
     <radar2>
@@ -726,28 +749,28 @@
 
     <radardist>
       <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
-    </radardist> 
+    </radardist>
 
-    <aar> 
+    <aar>
       <file>Aircraft/Generic/aar.nas</file>
     </aar>
- 
+
    <damage>
      <file>Aircraft/Jaguar/Nasal/damage.nas</file>
    </damage>
 
    <blackout>
      <file>Aircraft/Jaguar/Nasal/blackout.nas</file>
-   </blackout> 
-   
+   </blackout>
+
     <radarAltimeter>
-      <file>Aircraft/Jaguar/Nasal/radaralt.nas</file> 
+      <file>Aircraft/Jaguar/Nasal/radaralt.nas</file>
     </radarAltimeter>
 
     <enav>
       <file>Aircraft/Jaguar/Nasal/enav.nas</file>
     </enav>
-	
+
     <emu>
      <file>Aircraft/Jaguar/Nasal/emu.nas</file>
     </emu>
@@ -762,16 +785,11 @@
 
      <crashandstress>
         <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
-    </crashandstress>   
-	
-    <weapons>
-		  <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
-  	</weapons>	
- 
+    </crashandstress>
+
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
     </load>
-  </nasal> 
+  </nasal>
 
 </PropertyList>
-

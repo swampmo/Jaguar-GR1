@@ -274,8 +274,8 @@ if(navStillOn) {
       
       ### the rest of your model unload embedded Nasal code ###
       livery_update.stop();
-      crew_door.unalias();
-      passenger_door.unalias();
+ #     crew_door.unalias();
+ #     passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -554,17 +554,17 @@ if(navStillOn) {
   </animation>
   
     <!-- Transparent Surfaces for Rembrandt rendering -->
-   <effect>
+ <!--  <effect>
       <inherits-from>Effects/model-transparent</inherits-from>
 		<object-name>intverriere</object-name>
 		<object-name>intvitres</object-name>
 		<object-name>intverriere</object-name>
 	    <object-name>porteAvitres</object-name>
 		<object-name>hud</object-name>
-   </effect>
+   </effect> -->
    
   <!-- Suppress in Cockpit View -->
- <animation>
+<!-- <animation>
   <type>select</type>
     <object-name>intverriere</object-name>
 	     <object-name>intvitres</object-name>
@@ -577,7 +577,7 @@ if(navStillOn) {
    </equals>
    </not>
   </condition>
- </animation>
+ </animation> -->
 
 
    <!-- Solid Surfaces for Rembrandt rendering -->
@@ -951,8 +951,8 @@ if(navStillOn) {
 	<animation>
 		<type>translate</type>
 		<object-name>slatG</object-name>
-		<property>surface-positions/slats-pos-norm</property>
-		<factor>0.17</factor>
+		<property>fdm/jsbsim/fcs/slats-deg</property>
+		<factor>0.0073913</factor>
 		<axis>
 			<x>-2.5</x>
 			<y> 0.0</y>
@@ -962,22 +962,22 @@ if(navStillOn) {
 	<animation>
 		<type>rotate</type>
 		<object-name>slatG</object-name>
-		<property>surface-positions/slats-pos-norm</property>
-		<factor>23</factor>
+		<property>fdm/jsbsim/fcs/slats-deg</property>
+		<factor>1</factor>
     <axis>
       <x1-m>  1.2826 </x1-m>
       <y1-m> -2.2890 </y1-m>
       <z1-m> -0.05 </z1-m>
       <x2-m>  2.9024 </x2-m>
       <y2-m> -4.0885 </y2-m>
-      <z2-m> -0.20 </z2-m>
+      <z2-m> -0.12 </z2-m>
     </axis>
 	</animation>
 	<animation><!-- todo best axis -->
 		<type>translate</type>
 		<object-name>slatD</object-name>
-		<property>surface-positions/slats-pos-norm</property>
-		<factor>0.17</factor>
+		<property>fdm/jsbsim/fcs/slats-deg</property>
+		<factor>0.0073913</factor>
 		<axis>
 			<x>-2.5</x>
 			<y>0.0</y>
@@ -987,15 +987,15 @@ if(navStillOn) {
 	<animation>
 		<type>rotate</type>
 		<object-name>slatD</object-name>
-		<property>surface-positions/slats-pos-norm</property>
-		<factor>-23</factor>
+		<property>fdm/jsbsim/fcs/slats-deg</property>
+		<factor>-1</factor>
     <axis>
-      <x1-m>  1.2194 </x1-m>
-      <y1-m>  2.2180 </y1-m>
-      <z1-m> -0.09 </z1-m>
-      <x2-m>  3.0029 </x2-m>
-      <y2-m>  4.1285 </y2-m>
-      <z2-m> -0.25 </z2-m>
+      <x1-m>  1.2826 </x1-m>
+      <y1-m>  2.2890 </y1-m>
+      <z1-m> -0.05 </z1-m>
+      <x2-m>  2.9024 </x2-m>
+      <y2-m>  4.0885 </y2-m>
+      <z2-m> -0.12 </z2-m>
     </axis>
 	</animation>
 
@@ -1518,7 +1518,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>Canopy</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>canopy/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1 </ind><dep> 60 </dep></entry>
@@ -1816,7 +1816,7 @@ if(navStillOn) {
   <!-- FX                                                                  -->
   <!-- ******************************************************************* -->
  	<model>
-		<path>Aircraft/Jaguar/Models/Effects/fx/fx.xml</path>
+		<path>Aircraft/Jaguar/Models/Effects/Fx/fx.xml</path>
 		<offsets>
 			<x-m> 2.00 </x-m>
 			<y-m> 0.00 </y-m>
