@@ -7,7 +7,7 @@ MATERIAL "ac3dmat12.002" rgb 0.267 0.267 0.267  amb 0.267 0.267 0.267  emis 0.00
 MATERIAL "dkgreen" rgb 0.000 0.235 0.035  amb 0.090 0.090 0.090  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 72 trans 0.000
 MATERIAL "ac3dmat0" rgb 0.000 0.000 0.000  amb 0.000 0.000 0.000  emis 0.000 0.000 0.000  spec 0.000 0.000 0.000  shi 10 trans 0.000
 OBJECT world
-name "Blender_exporter_v2.26__RwrJag.ac"
+name "Blender_exporter_v2.25__rwr.ac"
 kids 49
 OBJECT poly
 name "a10_0"

@@ -60,10 +60,9 @@
       <splash-texture>Aircraft/Jaguar/jaguar-splash.png</splash-texture>
     </startup>
 
-  <!-- 
-  <sound>
+    <sound>
       <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
-    </sound>  -->
+    </sound>
 
 <flaps>
 <setting>0.0</setting>
@@ -101,7 +100,6 @@
        <desc>Retract combat slats once 9 degrees twice 0 degrees</desc>
       </key>
       <key>
-
        <name>u</name>
        <desc>Toggle Refueling Probe</desc>
       </key>  
@@ -490,11 +488,7 @@
 		<decision-height type="double">200</decision-height>
 		<flag-display type="int">0</flag-display>
 	</radar-altimeter>
-
     <enav n="0"><selected type="int">3</selected></enav>
-
-     <enav n="0"><selected type="int">3</selected></enav>
-
     <enav n="1">
 		<wind-display type="int">1</wind-display>
 	</enav>
@@ -504,7 +498,6 @@
 						<go-lamp type="bool">true</go-lamp>
 						<mode type="int">2</mode>
 					</tacan>
-
 
     <terrain-radar>
       <hi-elev>
@@ -678,7 +671,8 @@
 		<chronograph>
 			<file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/clock/chronograph.nas</file>
 		</chronograph>
-    <aar>
+ 
+    <aar> 
       <file>Aircraft/Generic/aar.nas</file>
     </aar>
  
