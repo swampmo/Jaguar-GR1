@@ -3,11 +3,13 @@
 <PropertyList include="bombableinclude.xml">
 
   <path>jaguar.ac</path>
-  
+
   <!-- MP sound call -->
   <sound><path>Aircraft/Jaguar/Sounds/mp-sound.xml</path></sound>
 
- 	<animation>
+
+
+	<animation>
 		<name>porteA</name>
 		<object-name>LandingLight</object-name>
 		<object-name>LandingLight.1</object-name>
@@ -141,19 +143,7 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
 
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
@@ -165,13 +155,8 @@
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
-  
+
    <!-- Bump Map Effect -->
 <effect>
     <inherits-from>Aircraft/Jaguar/Models/Effects/jag_bumpspec</inherits-from>
@@ -208,7 +193,7 @@
     <object-name>porteDB1</object-name>
     <object-name>porteA</object-name>
     <object-name>porteAG</object-name>
-    <object-name>porteAD</object-name> 
+    <object-name>porteAD</object-name>
 	<object-name>fuelProbe</object-name>
 	<object-name>fuelProbeDoorFairing</object-name>
 	<object-name>fuelProbeDoor1</object-name>
@@ -280,7 +265,7 @@
     <object-name>porteAvitres</object-name>
 	<object-name>hud</object-name>
   </animation>
-  
+
     <!-- Transparent Surfaces for Rembrandt rendering -->
    <effect>
       <inherits-from>Effects/model-transparent</inherits-from>
@@ -290,7 +275,7 @@
 	    <object-name>porteAvitres</object-name>
 		<object-name>hud</object-name>
    </effect>
-   
+
   <!-- Suppress in Cockpit View -->
  <animation>
   <type>select</type>
@@ -310,7 +295,7 @@
 
    <!-- Solid Surfaces for Rembrandt rendering -->
    <animation>
-    
+
    <object-name>fuselage</object-name>
     <object-name>dessus</object-name>
     <object-name>tourverriere</object-name>
@@ -362,13 +347,13 @@
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
-		
+
     </animation>
 
    <!-- Armament  -->
   <model>
     <path>Aircraft/Jaguar/Models/Weapons/loads.xml</path>
-  </model> 
+  </model>
 
   <!-- Interieur -->
   <model>
@@ -1353,7 +1338,7 @@
             <z2-m>-1.0120</z2-m>
         </axis>
     </animation>
-	
+
     <animation>
         <type>rotate</type>
        <object-name>fuelProbeDoor2</object-name>
@@ -1385,7 +1370,7 @@
             <z2-m>-0.2215</z2-m>
         </axis>
     </animation>
-	
+
 <!-- engine animation -->
 	<animation>
 		<type>select</type>
@@ -1448,10 +1433,10 @@
     <path>Aircraft/Jaguar/Models/Lights/LightPack.xml</path>
     <offsets>
       <x-m>0</x-m>
-      <y-m>0</y-m> 
-	    <z-m>0</z-m> 
+      <y-m>0</y-m>
+	    <z-m>0</z-m>
     </offsets>
-  </model> 
+  </model>
 
   <model>
     <name>Chute</name>
@@ -1464,7 +1449,7 @@
       <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
- 
+
 
   <!-- aircraft wash modeled in the lines below -->
   <model>
@@ -1483,7 +1468,7 @@
       <pitch-deg> 0 </pitch-deg>
     </offsets>
   </model>
- 
+
   <model>
     <name>aircraft_wash_r</name>
     <path>Aircraft/Jaguar/Models/Effects/Wash/aircraft_wash.xml</path>
@@ -1500,7 +1485,7 @@
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
-  
+
   <animation>
     <type>translate</type>
     <object-name>aircraft_wash_l</object-name>
@@ -1523,8 +1508,8 @@
     </axis>
   </animation>
 
-  
- 
+
+
   <!-- ******************************************************************* -->
   <!-- FX                                                                  -->
   <!-- ******************************************************************* -->
@@ -1535,9 +1520,9 @@
 			<y-m> 0.00 </y-m>
 			<z-m> 0.0 </z-m>
 		</offsets>
-	</model> 
-	
-	<!--model>
+	</model>
+
+	<model>
 		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour.xml</path>
 		<offsets>
 			<x-m>-2.0</x-m>
@@ -1548,7 +1533,7 @@
 			<heading-deg>25</heading-deg>
 		</offsets>
 	</model>
- 
+
  <model>
 		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour2.xml</path>
 		<offsets>
@@ -1560,7 +1545,7 @@
 			<heading-deg>45</heading-deg>
 		</offsets>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour2.xml</path>
 		<offsets>
@@ -1571,7 +1556,6 @@
 			<pitch-deg>0</pitch-deg>
 			<heading-deg>-45</heading-deg>
 		</offsets>
-	</model-->
- 
-</PropertyList>
+	</model>
 
+</PropertyList>
