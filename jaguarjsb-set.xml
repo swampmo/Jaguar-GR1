@@ -60,9 +60,10 @@
       <splash-texture>Aircraft/Jaguar/jaguar-splash.png</splash-texture>
     </startup>
 
-    <sound>
+
+   <sound>
       <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
-    </sound>
+    </sound> 
 
 
 
