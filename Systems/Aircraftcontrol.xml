@@ -109,7 +109,7 @@
 
         <lag_filter name="fcs/spoiler-left-deg">
             <input>fcs/spoiler-left-cmd</input>
-            <c1>17</c1>
+            <c1>20</c1>
         </lag_filter>
 
       <pure_gain name="fcs/spoiler-right-cmd">
