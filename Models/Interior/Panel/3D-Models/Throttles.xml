@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>Throttles.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>button</object-name>
+    <object-name>throttle</object-name>
+
+  </animation>
+
+        <animation>
+    <type>material</type>
+    <object-name>base</object-name>
+    <object-name>button</object-name>
+    <object-name>throttle</object-name>
+    <emission>
+      <factor-prop>/controls/lighting/cabin-norm</factor-prop>
+            <red>0</red>
+            <green>1</green>
+            <blue>8</blue>
+    </emission>
+  </animation>
+
+  <!-- ##############################################################Throttles ###################################################################-->
+  <animation>
+    <type>rotate</type>
+    <object-name>button</object-name>
+    <object-name>throttle</object-name>
+    <property>controls/engines/engine/throttle</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.0000</x-m>
+	<y-m>-0.3088</y-m>
+	<z-m>-0.2316</z-m>
+     </center>
+  </animation>
+
+<!-- #########################################################  AB  ############################################################################## -->
+  <!--animation>
+    <type>rotate</type>
+    <object-name>boost.lever</object-name>
+    <object-name>boost.knob</object-name>
+    <property>controls/engines/engine/wastegate</property>
+    <factor>-60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-0.48587</x-m>
+	<y-m>-0.34311</y-m>
+	<z-m>0.36020</z-m>
+     </center>
+  </animation-->
+
+  <!-- ########################################################### HotSpots  ########################################################################### -->
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>throttle</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/throttle</property>
+        <step>0.2</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>throttle</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/throttle</property>
+        <step>-0.2</step>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

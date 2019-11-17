@@ -2,29 +2,53 @@
 
 	<PropertyList>
 
-	<path>stick.ac</path>
+	<path>Jag-FS.ac</path>
 
 	<animation>
 		<type>rotate</type>
-		<object-name>stick-handle</object-name>
-		<object-name>stick-roll</object-name>
-		<object-name>stick-mast</object-name>
+		<object-name>stand</object-name>
+		<object-name>Jag-FS</object-name>
+		<object-name>Trim</object-name>
+		<object-name>Toggle</object-name>
+		<object-name>Left-Button</object-name>
+		<object-name>Low-Button</object-name>
+		<object-name>Pivot</object-name>
+		<object-name>Wings</object-name>
+		<object-name>screws</object-name>
 		<property>controls/flight/elevator</property>
-		<factor>20</factor>
-		<center><z-m>0.0153</z-m></center>
-		<axis><y>-1</y></axis>
+		<factor>15</factor>
+		<center>
+			<x-m> 0.01236</x-m>
+			<y-m> 0.00000</y-m>
+			<z-m>-0.02560</z-m>
+		</center>
+		<axis>
+             <y>-1</y> 
+         </axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
-		<object-name>stick-handle</object-name>
-		<object-name>stick-roll</object-name>
-		<property>controls/flight/aileron</property>
+		<object-name>Jag-FS</object-name>
+		<object-name>Trim</object-name>
+		<object-name>Toggle</object-name>
+		<object-name>Left-Button</object-name>
+		<object-name>Low-Button</object-name>
+		<object-name>Pivot</object-name>
+		<object-name>Wings</object-name>
+		<object-name>screws</object-name>
 		<factor>20</factor>
-		<center><z-m>0.1895</z-m></center>
-		<axis><x>-1</x></axis>
+		<property>controls/flight/aileron</property>
+		<center>
+			<x-m> 0.02625</x-m>
+			<y-m>-0.00078</y-m>
+			<z-m> 0.21748</z-m>
+        </center>
+		<axis>
+            <x>1</x>
+        </axis>
 	</animation>
-	<animation>
+	<!--animation>
 		<type>rotate</type>
 		<object-name>stick-roll</object-name>
 		<property>controls/flight/aileron</property>
@@ -39,25 +63,12 @@
 			<z-m>0.1751</z-m>
 		</center>
 		<axis><x>1</x></axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>arm-selector</object-name>
-		<property>sim/model/f-14b/controls/armament/stick-selector</property>
-		<factor>30</factor>
-		<center>
-			<x-m>0.0842</x-m>
-			<y-m>0</y-m>
-			<z-m>0.4402</z-m>
-		</center>
-		<axis><y>1</y></axis>
-	</animation>
+	</animation-->
 
 
 	<!-- Lighting -->
 	<animation> 
-		<object-name>stick</object-name>
+		<object-name>Jag-FS</object-name>
 		<type>material</type>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>

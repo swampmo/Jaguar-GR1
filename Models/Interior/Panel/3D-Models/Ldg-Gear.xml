@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>Jag-ldg-gear.ac</path>
+    <animation>
+     <object-name>gear-knob</object-name>
+      <object-name>gear-lever</object-name>
+     <object-name>gear-mount</object-name>
+   </animation>
+
+ <animation>
+  <type>material</type>
+     <object-name>gear-knob</object-name>
+      <object-name>gear-lever</object-name>
+       <object-name>gear-mount</object-name>
+        <emission>
+         <red> 1 </red>
+        <green>1 </green>
+       <blue>  1 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
+   </animation>
+
+<!-- ################################################ LdgGearLever ###################################### -->
+  <animation>
+    <type>rotate</type>
+     <object-name>gear-knob</object-name>
+      <object-name>gear-lever</object-name>
+       <property>controls/gear/gear-down</property>
+        <factor>60</factor>
+         <axis>
+          <x>0.0</x>
+           <y>1.0</y>
+          <z>0.0</z>
+         </axis>
+        <center>
+       <x-m>-3.35245</x-m>
+      <y-m>-0.32549</y-m>
+     <z-m>-0.10459</z-m>
+   </center>
+  </animation>
+
+<!--#################################################" MMB Adjustment ############################################" -->
+
+    <animation>
+     <type>pick</type>
+       <object-name>gear-knob</object-name>
+        <object-name>gear-lever</object-name>
+         <action>
+          <button>0</button>
+            <binding>
+             <command>property-toggle</command>
+              <property>controls/gear/gear-down</property>
+               </binding>
+                <binding>
+                 <command>property-assign</command>
+                <property>controls/gear/gear</property>
+              </binding>
+             <binding>
+            <command>property-toggle</command>
+          <property>sim/sound/click</property>
+        </binding>
+      </action>
+    </animation>
+
+</PropertyList>
+
+

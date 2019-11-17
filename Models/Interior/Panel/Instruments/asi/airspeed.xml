@@ -14,9 +14,9 @@
   <object-name>speed-bug</object-name>
    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-     <red>0.75</red>
-     <green>0.75</green>
-     <blue>0.75</blue>
+     <red>1</red>
+     <green>1</green>
+     <blue>1</blue>
    </emission> 
  </animation> 
 
@@ -102,9 +102,9 @@
     </entry>
   </interpolation>   
   <center>
-   <x-m>-0.0165</x-m>
-   <y-m>0.0056</y-m>
-   <z-m>-0.0092</z-m>
+   <x-m>-0.00104</x-m>
+   <y-m>-0.00004</y-m>
+   <z-m> 0.00015</z-m>
   </center>
   <axis>
    <x>-1</x>

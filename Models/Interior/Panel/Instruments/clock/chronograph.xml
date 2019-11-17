@@ -15,7 +15,6 @@
     <object-name>MinuteHand</object-name>
     <object-name>SecondHand</object-name>
     <object-name>ElapsedMinutesHand</object-name>
-
     <object-name>time-offset-left</object-name>
     <object-name>time-offset-right</object-name>
     <object-name>chronometer-button</object-name>
@@ -42,9 +41,9 @@
     <object-name>SecondHand</object-name>
     <object-name>ElapsedMinutesHand</object-name>
     <emission>
-      <red>   0.030 </red>
-      <green> 0.015 </green>
-      <blue>  0.005 </blue>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
     </emission>
   </animation>
@@ -146,7 +145,7 @@
   <animation>
     <name>time-offset-right-fine</name>
     <type>pick</type>
-    <visible>fale</visible>
+    <visible>false</visible>
     <object-name>time-offset-right</object-name>
     <action>
       <button>0</button>
@@ -177,11 +176,11 @@
     </action>
   </animation>
 
-  <!-- Chronometer Start Stop Button
+  <!-- Chronometer Start Stop Button -->
   <animation>
     <name>start-stop-reset</name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <object-name>chronometer-button</object-name>
     <action>
       <button>0</button>
@@ -191,7 +190,7 @@
         <script>chronograph.click()</script>
       </binding>
     </action>
-  </animation> -->
+  </animation>
 
 </PropertyList>
 

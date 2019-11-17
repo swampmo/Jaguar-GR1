@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+       <path>t-handel.ac</path>
+
+   <animation>
+	<type>material</type>
+	 <object-name>PBrake</object-name> 
+      <emission>
+       <red> 1 </red>
+        <green>1 </green>
+       <blue>  1 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+     </emission>
+	</animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>PBrake</object-name>
+        <property>controls/gear/brake-parking</property>
+        <factor>90</factor>
+        <axis>
+            <x> 1.0</x>
+            <y> 0.0</y>
+            <z> 0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.01382</x-m>
+            <y-m>-0.00121</y-m>
+            <z-m> 0.00206</z-m>
+        </center>
+    </animation>
+
+    <animation>
+      <type>pick</type>
+       <object-name>PBrake</object-name>
+        <visible>true</visible>
+         <action>
+          <button>0</button>
+          <binding>
+         <command>property-toggle</command>
+        <property>controls/gear/brake-parking</property> 
+       <step>1</step> 
+      </binding>
+       <binding>
+        <command>property-toggle</command>
+         <property>sim/sound/click</property>
+         </binding>
+       </action>
+     </animation>
+
+</PropertyList>
+
+

@@ -66,9 +66,9 @@
     <object-name>Alt1000</object-name>
     <object-name>Alt10000</object-name>
     <emission>
-      <red>   0.50 </red>
-      <green> 0.45 </green>
-      <blue>  0.45 </blue>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
     </emission>
   </animation>

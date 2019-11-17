@@ -45,9 +45,9 @@
         </condition>
         <emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
 		</emission>
 	</animation>
 
