@@ -386,8 +386,8 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ControlInd/slats-flaps-gear-indicator.xml</path>
     <offsets>
       <x-m> -3.359 </x-m>
-      <y-m> -0.254 </y-m>
-      <z-m> -0.161 </z-m>
+      <y-m> -0.255 </y-m>
+      <z-m> -0.150 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -497,7 +497,7 @@
  
  <model>
   
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orange light.xml</path>
+  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orangelight.xml</path>
   <offsets>
   <x-m> -3.315 </x-m>
       <y-m> -0.160 </y-m>
@@ -509,7 +509,7 @@
  
  <model>
   
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/red light.xml</path>
+  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/redlight.xml</path>
   <offsets>
   <x-m> -3.315 </x-m>
       <y-m> -0.150 </y-m>
@@ -520,7 +520,7 @@
  
  <model>
   
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orange light.xml</path>
+  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orangelight.xml</path>
   <offsets>
   <x-m> -3.315 </x-m>
       <y-m> -0.140 </y-m>
@@ -528,6 +528,7 @@
       <pitch-deg>0</pitch-deg>
   </offsets>
  </model>
+ 
  
 </PropertyList>
 

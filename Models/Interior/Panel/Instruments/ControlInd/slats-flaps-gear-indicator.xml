@@ -78,9 +78,9 @@
 		<property>surface-positions/flap-pos-norm</property>
 		<factor> 90 </factor>
 		<center>
-			<x-m> 0.0000 </x-m>
-			<y-m> 0.0200 </y-m>
-			<z-m> 0.0182 </z-m>
+			<x-m>-0.00237 </x-m>
+			<y-m> 0.01602 </y-m>
+			<z-m> 0.01495 </z-m>
 		</center>
 		<axis>
 			<x> -1 </x>

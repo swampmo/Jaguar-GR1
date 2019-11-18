@@ -7,15 +7,15 @@
   <animation>
     <object-name>base</object-name>
     <object-name>button</object-name>
-    <object-name>throttle</object-name>
-
+    <object-name>throttle-L</object-name>
+    <object-name>throttle-R</object-name>
   </animation>
 
         <animation>
     <type>material</type>
     <object-name>base</object-name>
-    <object-name>button</object-name>
-    <object-name>throttle</object-name>
+    <object-name>throttle-L</object-name>
+    <object-name>throttle-R</object-name>
     <emission>
       <factor-prop>/controls/lighting/cabin-norm</factor-prop>
             <red>0</red>
@@ -27,8 +27,7 @@
   <!-- ##############################################################Throttles ###################################################################-->
   <animation>
     <type>rotate</type>
-    <object-name>button</object-name>
-    <object-name>throttle</object-name>
+    <object-name>throttle-L</object-name>
     <property>controls/engines/engine/throttle</property>
     <factor> -60 </factor>
     <axis>
@@ -38,9 +37,28 @@
     </axis>
 
       <center>
-	<x-m>-3.0000</x-m>
-	<y-m>-0.3088</y-m>
-	<z-m>-0.2316</z-m>
+	<x-m>-2.99712</x-m>
+	<y-m>-0.32833</y-m>
+	<z-m>-0.22687</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>button</object-name>
+    <object-name>throttle-R</object-name>
+    <property>controls/engines/engine[1]/throttle</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-2.99711</x-m>
+	<y-m>-0.28905</y-m>
+	<z-m>-0.22687</z-m>
      </center>
   </animation>
 
@@ -68,7 +86,7 @@
   <animation>
     <type>pick</type>
     <visible>true</visible>
-    <object-name>throttle</object-name>
+    <object-name>throttle-L</object-name>
     <action>
       <button>0</button>
       <binding>
@@ -82,12 +100,40 @@
   <animation>
     <type>pick</type>
     <visible>true</visible>
-    <object-name>throttle</object-name>
+    <object-name>throttle-L</object-name>
     <action>
       <button>1</button>
       <binding>
         <command>property-adjust</command>
         <property>controls/engines/engine/throttle</property>
+        <step>-0.2</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>throttle-R</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine[1]/throttle</property>
+        <step>0.2</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>throttle-R</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine[1]/throttle</property>
         <step>-0.2</step>
       </binding>
     </action>

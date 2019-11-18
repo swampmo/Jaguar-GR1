@@ -5,7 +5,7 @@ MATERIAL "transparent.002" rgb 0.547 0.566 0.596  amb 0.570 0.570 0.570  emis 0.
 MATERIAL "Illuminated" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 1.000 1.000 1.000  spec 0.000 0.000 0.000  shi 64 trans 0.000
 OBJECT world
 name "Blender_exporter_v2.26__Jag-ball-compass.ac"
-kids 6
+kids 5
 OBJECT poly
 name "ball-support"
 data 12
@@ -724,9 +724,9 @@ OBJECT poly
 name "comp-cover"
 data 12
 Cylinder.002
+crease 30.0
 texture "marked-iron.png"
 texrep 1 1
-crease 30.0
 numvert 288
 0.04479 -0.0066 0.00701
 0.04454 -0.0054 0.00551
@@ -5281,12 +5281,6 @@ refs 4
 0 0.818728 0.888378
 316 0.804431 0.870957
 291 0.870955 0.804433
-kids 0
-OBJECT poly
-name "lock-nut"
-data 12
-Cylinder.004
-crease 40.0
 kids 0
 OBJECT poly
 name "Ring"
