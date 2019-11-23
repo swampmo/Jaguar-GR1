@@ -13992,7 +13992,7 @@ kids 0
 OBJECT poly
 name "throttle-L"
 data 8
-Cube.001
+Cube.006
 crease 40.0
 texture "006_RV_TEXTURE_DIRT.png"
 texrep 1 1

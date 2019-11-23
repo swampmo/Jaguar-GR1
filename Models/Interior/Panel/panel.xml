@@ -64,6 +64,16 @@
   </model>
 
   <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Call-Panel.ac</path>
+    <offsets>
+      <x-m>-0.135 </x-m>
+      <y-m>-0.045 </y-m>
+      <z-m> 0.002 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/clock/chronograph.xml</path>
     <offsets>
       <x-m> -3.330 </x-m>
@@ -260,6 +270,16 @@
   </model>
 
   <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/LH-Piece.ac</path>
+    <offsets>
+      <x-m>-2.930 </x-m>
+      <y-m>-0.350 </y-m>
+      <z-m>-0.165 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/lights/light-left-panel.xml</path>
     <offsets>
       <x-m> -2.945 </x-m>
@@ -283,11 +303,11 @@
  </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/mfd1.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/round-mfd1.xml</path>
     <offsets>
-      <x-m> -3.370 </x-m>
+      <x-m> -3.363 </x-m>
       <y-m> -0.000 </y-m>
-      <z-m>  0.075 </z-m>
+      <z-m>  0.065 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -393,6 +413,16 @@
   </model>
 
   <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Start-Panel.xml</path>
+    <offsets>
+      <x-m>-0.080 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.770 </z-m>
+      <pitch-deg>-12.05</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/standby-adi/stdby-adi.xml</path>
     <offsets>
       <x-m> -3.362 </x-m>
@@ -446,10 +476,10 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/uhf-box/uhf-box.xml</path>
     <offsets>
-      <x-m> -3.335 </x-m>
+      <x-m> -3.340 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -0.170 </z-m>
-      <pitch-deg>-33.20</pitch-deg>
+      <z-m> -0.165 </z-m>
+      <pitch-deg>-31.00</pitch-deg>
     </offsets>
   </model>
   

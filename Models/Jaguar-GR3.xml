@@ -1686,9 +1686,9 @@ if(navStillOn) {
 		<property>engines/engine[0]/n2</property>
 		<factor>5</factor>
 		<center>
-			<x-m> 0.24554</x-m>
-			<y-m>-0.47824</y-m>
-			<z-m>-0.15121</z-m>
+			<x-m> 0.24084</x-m>
+			<y-m>-0.47298</y-m>
+			<z-m>-0.14635   </z-m>
 		</center>
 		<axis>
 			<x>1.0</x>
@@ -1714,9 +1714,9 @@ if(navStillOn) {
 		<property>engines/engine[1]/n2</property>
 		<factor>5</factor>
 		<center>
-			<x-m> 0.24554</x-m>
-			<y-m> 0.47080</y-m>
-			<z-m>-0.13638</z-m>
+			<x-m> 0.24084</x-m>
+			<y-m> 0.47607</y-m>
+			<z-m>-0.13152</z-m>
 		</center>
 		<axis>
 			<x>1.0</x>

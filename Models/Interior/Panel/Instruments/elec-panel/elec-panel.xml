@@ -21,158 +21,251 @@
 	
 	<animation>
 		<object-name>BATT</object-name>
-		<type>knob</type>
+		<type>rotate</type>
 		<property>/controls/electrical/battery-switch</property>
 		<factor>-60</factor>
-		<drag-scale-px>5</drag-scale-px>
 		<center>
 			<x-m>-0.03345</x-m>
-			<y-m> 0.03980</y-m>
+			<y-m> 0.04072</y-m>
 			<z-m> 0.07928</z-m>
 		</center>
 		<axis>
-			<y>1</y>
+			<x>1</x>
 		</axis>
 		<action>
             <binding>
                 <command>property-adjust</command>
                 <property>/controls/electrical/battery-switch</property>
-                <min>-1</min>
-                <max>0</max>
+                <factor>60</factor>
             </binding>
         </action>
 	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>BATT</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/battery-switch</property>
+      </binding>
+    </action>
+  </animation>
 	
 	<animation>
 		<object-name>TR-1</object-name>
-		<type>knob</type>
+		<type>rotate</type>
 		<property>/controls/electrical/tru-1-switch</property>
-		<factor>-30</factor>
-		<drag-scale-px>5</drag-scale-px>
+		<factor>-60</factor>
 		<center>
-			<x-m>0.00037</x-m>
-			<y-m>0.03972</y-m>
-			<z-m>0.07938</z-m>
+			<x-m>0.00002</x-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.0792 8</z-m>
 		</center>
 		<axis>
-			<y>1</y>
+			<x>1</x>
 		</axis>
 		<action>
             <binding>
                 <command>property-adjust</command>
                 <property>/controls/electrical/tru-1-switch</property>
-                <min>-1</min>
-                <max>1</max>
+               <factor>60</factor>
             </binding>
         </action>
-		<release>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/electrical/tru-1-switch</property>
-                <step>0</step>
-                <min>-1</min>
-                <max>0</max>
-            </binding>
-        </release>
 	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>TR-1</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/tru-1-switch</property>
+      </binding>
+    </action>
+  </animation>
 	
 	<animation>
 		<object-name>TR-2</object-name>
-		<type>knob</type>
+		<type>rotate</type>
 		<property>/controls/electrical/tru-2-switch</property>
-		<factor>-30</factor>
-		<drag-scale-px>5</drag-scale-px>
+		<factor>-60</factor>
 		<center>
 			<x-m>0.02474</x-m>
-			<y-m>0.03980</y-m>
+			<y-m>0.04072</y-m>
 			<z-m>0.07928</z-m>
 		</center>
 		<axis>
-			<y>1</y>
+			<x>1</x>
 		</axis>
 		<action>
             <binding>
                 <command>property-adjust</command>
                 <property>/controls/electrical/tru-2-switch</property>
-                <min>-1</min>
-                <max>1</max>
+               <factor>60</factor>
             </binding>
         </action>
-		<release>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/electrical/tru-2-switch</property>
-                <step>0</step>
-                <min>-1</min>
-                <max>0</max>
-            </binding>
-        </release>
-	</animation>
+       </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>TR-2</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/tru-2-switch</property>
+      </binding>
+    </action>
+  </animation>
 	
 	<animation>
 		<object-name>ALT-1</object-name>
-		<type>knob</type>
+		<type>rotate</type>
 		<property>/controls/electrical/alternator-1-switch</property>
-		<factor>-30</factor>
-		<drag-scale-px>5</drag-scale-px>
+		<factor>-60</factor>
 		<center>
-			<x-m>0.06499</x-m>
-			<y-m>0.03980</y-m>
-			<z-m>0.07922</z-m>
+			<x-m>0.06500</x-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.07923</z-m>
 		</center>
 		<axis>
-			<y>1</y>
+			<x>1</x>
 		</axis>
 		<action>
             <binding>
                 <command>property-adjust</command>
                 <property>/controls/electrical/alternator-1-switch</property>
-                <min>-1</min>
-                <max>1</max>
             </binding>
         </action>
-		<release>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/electrical/alternator-1-switch</property>
-                <step>0</step>
-                <min>-1</min>
-                <max>0</max>
-            </binding>
-        </release>
 	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>ALT-1</object-name>
+    <factor>60</factor>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/alternator-1-switch</property>
+      </binding>
+    </action>
+  </animation>
+
 	
 	<animation>
 		<object-name>ALT-2</object-name>
-		<type>knob</type>
+		<type>rotate</type>
 		<property>/controls/electrical/alternator-2-switch</property>
-		<factor>-30</factor>
-		<drag-scale-px>5</drag-scale-px>
+		<factor>-60</factor>
 		<center>
 			<x-m>0.08971</x-m>
-			<y-m>0.03980</y-m>
-			<z-m>0.07928</z-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.07923</z-m>
 		</center>
 		<axis>
-			<y>1</y>
+			<x>1</x>
 		</axis>
 		<action>
             <binding>
                 <command>property-adjust</command>
                 <property>/controls/electrical/alternator-2-switch</property>
-                <min>-1</min>
-                <max>1</max>
             </binding>
         </action>
-		<release>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>ALT-2</object-name>
+    <factor>60</factor>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/alternator-2-switch</property>
+      </binding>
+    </action>
+  </animation>
+
+	<animation>
+		<object-name>Pitot-Heat</object-name>
+		<type>rotate</type>
+		<property>/controls/electrical/pitot-heat-switch</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>0.12517</x-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.07928</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
             <binding>
                 <command>property-adjust</command>
-                <property>/controls/electrical/alternator-2-switch</property>
-                <step>0</step>
-                <min>-1</min>
-                <max>0</max>
+                <property>/controls/electrical/pitot-heat-switch</property>
             </binding>
-        </release>
+        </action>
 	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Pitot-Heat</object-name>
+    <factor>60</factor>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/pitot-heat-switch</property>
+      </binding>
+    </action>
+  </animation>
+
+	<animation>
+		<object-name>NVG</object-name>
+		<type>rotate</type>
+		<property>/controls/electrical/nvg-switch</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>0.08971</x-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.07923</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/electrical/nvg-switch</property>
+            </binding>
+        </action>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>NVG</object-name>
+    <factor>60</factor>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/nvg-switch</property>
+      </binding>
+    </action>
+  </animation>
+
 </PropertyList>
+
+
 

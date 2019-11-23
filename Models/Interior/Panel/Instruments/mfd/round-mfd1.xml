@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList> 
+
+  <path>Jag-GR1Display.ac</path>
+
+  <animation>
+    <object-name>Bigscreen</object-name>
+    <object-name>Bright</object-name>
+    <object-name>Canvas</object-name>
+    <object-name>Glass</object-name>
+    <object-name>Lamp</object-name>
+    <object-name>Map</object-name>
+    <object-name>Mode</object-name>
+    <object-name>Mount</object-name>
+    <object-name>Scale</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Bigscreen</object-name>
+    <object-name>Bright</object-name>
+    <object-name>Canvas</object-name>
+    <object-name>Lamp</object-name>
+    <object-name>Map</object-name>
+    <object-name>Mode</object-name>
+    <object-name>Scale</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+<!--
+  <panel>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/mfd1-hotspots.xml</path>
+    <bottom-left>
+      <x-m>  0.02 </x-m>
+      <y-m> -0.10 </y-m>
+      <z-m> -0.10 </z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>  0.02 </x-m>
+      <y-m>  0.10 </y-m>
+      <z-m> -0.10 </z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>  0.02 </x-m>
+      <y-m> -0.10 </y-m>
+      <z-m>  0.10 </z-m>
+    </top-left>
+  </panel>
+-->
+  <model>
+    <name>enav</name>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/enav-w.xml</path>
+    <offsets> 
+      <x-m>  0.015 </x-m>
+      <y-m> -0.001 </y-m>
+      <z-m>  0.006 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>scale</type>
+    <object-name>enav</object-name>
+    <x-factor> 1.0 </x-factor>
+    <x-offset> 1.0 </x-offset>
+    <y-factor> 1.0 </y-factor>
+    <y-offset> 1.4 </y-offset>
+    <z-factor> 1.0 </z-factor>
+    <z-offset> 1.4 </z-offset>
+  </animation>
+
+<!-- Buttons -->
+<animation>
+  <type>pick</type>
+  <object-name>Bright</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-cycle</command>
+      <property>instrumentation/enav[0]/selected</property>
+    <value>1</value>
+    <value>2</value>
+    <value>3</value>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>Mode</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-cycle</command>
+      <property>instrumentation/enav[1]/wind-display</property>
+    <value>0</value>
+    <value>1</value>
+    </binding>
+  </action>
+</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>Scale</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[1]/radials/selected-deg</property>
+				<step>1</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					gui.popupTip(sprintf("VOR2 Radial: %d", 1 * getprop("instrumentation/nav[1]/radials/selected-deg")),3);
+				</script>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[1]/radials/selected-deg</property>
+				<step>10</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					gui.popupTip(sprintf("VOR2 Radial: %d", 1 * getprop("instrumentation/nav[1]/radials/selected-deg")),3);
+				</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>Map</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[1]/radials/selected-deg</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					gui.popupTip(sprintf("VOR2 Radial: %d", 1 * getprop("instrumentation/nav[1]/radials/selected-deg")),3);
+				</script>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[1]/radials/selected-deg</property>
+				<step>-10</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					gui.popupTip(sprintf("VOR2 Radial: %d", 1 * getprop("instrumentation/nav[1]/radials/selected-deg")),3);
+				</script>
+			</binding>
+		</action>
+	</animation>
+
+</PropertyList>
+

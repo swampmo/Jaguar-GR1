@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>Jag-start-panel.ac</path>
+
+  <animation>
+    <object-name>Air-Gen-ON</object-name>
+    <object-name>Air-Gen-light</object-name>
+    <object-name>Cont-IGN-L</object-name>
+    <object-name>Cont-IGN-R</object-name>
+    <object-name>Cont-IGN-nut-L</object-name>
+    <object-name>Cont-IGN-nut-R</object-name>
+    <object-name>ENG-srt-air-valve-open</object-name>
+    <object-name>Eng-IGN-nut</object-name>
+    <object-name>Eng-IGN-switch</object-name>
+    <object-name>ENG-srt-air-valve-closed</object-name>
+    <object-name>Engine-Start-nut</object-name>
+    <object-name>Engine-start-switch</object-name>
+    <object-name>FP-nut-L</object-name>
+    <object-name>FP-nut-R</object-name>
+    <object-name>Fuel-pump-L</object-name>
+    <object-name>Fuel-pump-R</object-name>
+    <object-name>Gen-nut</object-name>
+    <object-name>Gen-switch</object-name>
+    <object-name>LP-Cover-L</object-name>
+    <object-name>LP-Cover-R</object-name>
+    <object-name>LP-Shaft-L-OFF</object-name>
+    <object-name>LP-Shaft-L-ON</object-name>
+    <object-name>LP-Shaft-R-OFF</object-name>
+    <object-name>LP-Shaft-R-ON</object-name>
+    <object-name>LP-nut-L</object-name>
+    <object-name>LP-nut-R</object-name>
+    <object-name>LP-switch-L</object-name>
+    <object-name>LP-switch-R</object-name>
+    <object-name>Start-Panel</object-name>
+    <object-name>TGT-amps-L</object-name>
+    <object-name>TGT-amps-R</object-name>
+    <object-name>TGT-nut-L</object-name>
+    <object-name>TGT-nut-R</object-name>
+  </animation>
+
+        <animation>
+    <type>material</type>
+    <object-name>Air-Gen-ON</object-name>
+    <object-name>Air-Gen-light</object-name>
+    <object-name>Cont-IGN-L</object-name>
+    <object-name>Cont-IGN-R</object-name>
+    <object-name>Cont-IGN-nut-L</object-name>
+    <object-name>Cont-IGN-nut-R</object-name>
+    <object-name>ENG-srt-air-valve-open</object-name>
+    <object-name>Eng-IGN-nut</object-name>
+    <object-name>Eng-IGN-switch</object-name>
+    <object-name>ENG-srt-air-valve-CLOSE</object-name>
+    <object-name>Engine-Start-nut</object-name>
+    <object-name>Engine-start-switch</object-name>
+    <object-name>FP-nut-L</object-name>
+    <object-name>FP-nut-R</object-name>
+    <object-name>Fuel-pump-L</object-name>
+    <object-name>Fuel-pump-R</object-name>
+    <object-name>Gen-nut</object-name>
+    <object-name>Gen-switch</object-name>
+    <object-name>LP-Cover-L</object-name>
+    <object-name>LP-Cover-R</object-name>
+    <object-name>LP-Shaft-L-OFF</object-name>
+    <object-name>LP-Shaft-L-ON</object-name>
+    <object-name>LP-Shaft-R-OFF</object-name>
+    <object-name>LP-Shaft-R-ON</object-name>
+    <object-name>LP-nut-L</object-name>
+    <object-name>LP-nut-R</object-name>
+    <object-name>LP-switch-L</object-name>
+    <object-name>LP-switch-R</object-name>
+    <object-name>Start-Panel</object-name>
+    <object-name>TGT-amps-L</object-name>
+    <object-name>TGT-amps-R</object-name>
+    <object-name>TGT-nut-L</object-name>
+    <object-name>TGT-nut-R</object-name>
+    <emission>
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+    </emission>
+  </animation>
+
+  <!-- ############################################################## Ignition ###################################################################-->
+  <animation>
+    <type>rotate</type>
+    <object-name>Cont-IGN-L</object-name>
+    <property>controls/engines/engine/cutoff</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30555</x-m>
+	<y-m> 0.04977</y-m>
+	<z-m>-0.32958</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Cont-IGN-R</object-name>
+    <property>/controls/engines/engine[1]/cutoff</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30531</x-m>
+	<y-m> 0.07194</y-m>
+	<z-m>-0.32958</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Eng-IGN-switch</object-name>
+    <property>controls/engines/engine/ignition</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30531</x-m>
+	<y-m> 0.03185</y-m>
+	<z-m>-0.29934</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Engine-start-switch</object-name>
+    <property>controls/engines/engine/starter</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30497</x-m>
+	<y-m> 0.01876</y-m>
+	<z-m>-0.27097</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Fuel-pump-L</object-name>
+    <property>controls/engines/engine/fuel-pump</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30555</x-m>
+	<y-m> 0.04883</y-m>
+	<z-m>-0.29934</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Fuel-pump-R</object-name>
+    <property>controls/engines/engine[1]/fuel-pump[1]</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30547</x-m>
+	<y-m> 0.07100</y-m>
+	<z-m>-0.29935</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Gen-switch</object-name>
+    <property>controls/electrical/generator</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 31 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30555</x-m>
+	<y-m> 0.00569</y-m>
+	<z-m>-0.29934</z-m>
+     </center>
+  </animation> 
+
+  <animation>
+    <type>rotate</type>
+    <object-name>LP-Cover-L</object-name>
+    <property>controls/switches/LP-Cover-L</property>
+    <factor> -90 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30372</x-m>
+	<y-m> 0.04873</y-m>
+	<z-m>-0.23777</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>LP-Cover-R</object-name>
+    <property>controls/switches/LP-Cover-R</property>
+    <factor> -90 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30371</x-m>
+	<y-m> 0.06943</y-m>
+	<z-m>-0.23777</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>LP-switch-L</object-name>
+    <property>controls/switches/LP-switch-L</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30416</x-m>
+	<y-m> 0.04863</y-m>
+	<z-m>-0.25490</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>LP-switch-R</object-name>
+    <property>controls/switches/LP-switch-R</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30426</x-m>
+	<y-m> 0.06933</y-m>
+	<z-m>-0.25502</z-m>
+     </center>
+  </animation>
+
+  <!--animation>
+    <type>rotate</type>
+    <object-name>TGT-amps-L</object-name>
+    <property>controls/engines/engine/fuel-flow-gph</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30555</x-m>
+	<y-m> 0.00569</y-m>
+	<z-m>-0.36053</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TGT-amps-R</object-name>
+    <property>controls/engines/engine[1]/fuel-flow-gph</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30531</x-m>
+	<y-m> 0.03185</y-m>
+	<z-m>-0.36053</z-m>
+     </center>
+  </animation-->
+
+  <!-- ########################################################### HotSpots  ########################################################################### -->
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Cont-IGN-L</object-name>
+    <object-name>Cont-IGN-nut-L</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine/cutoff</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Cont-IGN-R</object-name>
+    <object-name>Cont-IGN-nut-R</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine[1]/cutoff</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Eng-IGN-nut</object-name>
+    <object-name>Eng-IGN-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine/ignition</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Eng-IGN-nut</object-name>
+    <object-name>Eng-IGN-switch</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine/ignition</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Engine-start-nut</object-name>
+    <object-name>Engine-start-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine/starter</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Engine-start-nut</object-name>
+    <object-name>Engine-start-switch</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine[1]/starter</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+  <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>FP-nut-L</object-name>
+    <object-name>Fuel-pump-L</object-name>
+   <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine/fuel-pump</property>
+        <step>0</step>
+      </binding>
+    </action>
+    </animation>
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+        <object-name>FP-nut-L</object-name>
+    <object-name>Fuel-pump-L</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>systems/electrical/outputs/fuel-pump</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>FP-nut-R</object-name>
+    <object-name>Fuel-pump-R</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine[1]/fuel-pump[1]</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>FP-nut-R</object-name>
+    <object-name>Fuel-pump-R</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>systems/electrical/outputs/fuel-pump[1]</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+    <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Gen-nut</object-name>
+    <object-name>Gen-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/electrical/generator</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Gen-nut</object-name>
+    <object-name>Gen-switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/electric/generator</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+    <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>LP-Cover-L</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/LP-Cover-L</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>LP-Cover-L</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/LP-Cover-L</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+    <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>LP-Cover-R</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/LP-Cover-R</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>LP-Cover-R</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/LP-Cover-R</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+    <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>LP-nut-L</object-name>
+    <object-name>LP-switch-L</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>LP-nut-L</object-name>
+    <object-name>LP-switch-L</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+    <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>LP-nut-R</object-name>
+    <object-name>LP-switch-R</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>LP-nut-R</object-name>
+    <object-name>LP-switch-R</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+    <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>TGT-amps-L</object-name>
+    <object-name>TGT-nut-L</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>TGT-amps-L</object-name>
+    <object-name>TGT-nut-L</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/fuel-flow-gph</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+    <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>TGT-amps-R</object-name>
+    <object-name>TGT-nut-R</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine[1]/fuel-flow-gph</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+  <!--animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>TGT-amps-R</object-name>
+    <object-name>TGT-nut-R</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine[1]/fuel-flow-gph</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation-->
+
+</PropertyList>
+
+

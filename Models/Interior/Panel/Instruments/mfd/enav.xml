@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <path>enav.ac</path>
+  <path>round-enav.ac</path>
  
   <!--
   <animation>
@@ -1339,9 +1339,9 @@
 		<object-name>EHSI-w-arrow</object-name>
 		<property>orientation/heading-magnetic-deg</property>
 		<center>
-			<x-m>0.016</x-m>
-			<y-m> 0.044</y-m>
-			<z-m> 0.043</z-m>
+			<x-m> 0.00236</x-m>
+			<y-m> 0.03874</y-m>
+			<z-m> 0.03798</z-m>
 		</center>
 		<axis>
 			<x> 1 </x>
@@ -1355,9 +1355,9 @@
 		<object-name>EHSI-w-arrow</object-name>
 		<property>environment/wind-from-heading-deg</property>
 		<center>
-			<x-m>0.016</x-m>
-			<y-m> 0.044</y-m>
-			<z-m> 0.043</z-m>
+			<x-m> 0.00236</x-m>
+			<y-m> 0.03874</y-m>
+			<z-m> 0.03798</z-m>
 		</center>
 		<axis>
 			<x> -1.0 </x>

@@ -37,7 +37,7 @@
 		<object-name>Pivot</object-name>
 		<object-name>Wings</object-name>
 		<object-name>screws</object-name>
-		<factor>20</factor>
+		<factor>-15</factor>
 		<property>controls/flight/aileron</property>
 		<center>
 			<x-m> 0.02625</x-m>

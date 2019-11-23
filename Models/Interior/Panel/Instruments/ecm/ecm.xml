@@ -3,6 +3,98 @@
 
 	<path>ecm.ac</path>
 
+  <animation>
+
+    <object-name>A-1-OFF</object-name>
+    <object-name>A-1-ON</object-name>
+    <object-name>OD-OFF</object-name>
+    <object-name>OD-ON</object-name>
+    <object-name>ON-OFF</object-name>
+    <object-name>TX-1-OFF</object-name>
+    <object-name>TX-1-ON</object-name>
+    <object-name>TX-2-OFF</object-name>
+    <object-name>TX-2-ON</object-name>
+    <object-name>bolt</object-name>
+    <object-name>ecm</object-name>
+    <object-name>reset-1</object-name>
+    <object-name>reset-2</object-name>
+    <object-name>reset-button</object-name>
+    <object-name>stby-1</object-name>
+    <object-name>stby-2</object-name>
+
+  </animation>
+
+        <animation>
+    <type>material</type>
+    <object-name>A-1-OFF</object-name>
+    <object-name>A-1-ON</object-name>
+    <object-name>OD-OFF</object-name>
+    <object-name>OD-ON</object-name>
+    <object-name>ON-OFF</object-name>
+    <object-name>TX-1-OFF</object-name>
+    <object-name>TX-1-ON</object-name>
+    <object-name>TX-2-OFF</object-name>
+    <object-name>TX-2-ON</object-name>
+    <object-name>ecm</object-name>
+    <object-name>reset-button</object-name>>
+    <emission>
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+    </emission>
+  </animation>
+
+        <animation>
+    <type>material</type>
+    <object-name>ON-OFF</object-name>
+    <object-name>reset-1</object-name>
+    <object-name>reset-2</object-name>
+    <object-name>stby-1</object-name>
+    <object-name>stby-2</object-name>
+    <emission>
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+            <red>0</red>
+            <green>0</green>
+            <blue>10</blue>
+    </emission>
+  </animation>
+
+	<animation>
+		<object-name>ON-OFF</object-name>
+		<type>rotate</type>
+		<property>/controls/switches/on-off-switch</property>
+		<factor>-60</factor>
+		<center>
+			<x-m> 0.03131</x-m>
+			<y-m>-0.00595</y-m>
+			<z-m> 0.04119</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/switches/on-off-switch</property>
+                <factor>60</factor>
+            </binding>
+        </action>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>ON-OFF</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/switches/on-off-switch</property>
+      </binding>
+    </action>
+  </animation>
+
 
 	
 
