@@ -56,14 +56,14 @@
     </entry>
   </interpolation>   
   <center>
-   <x-m>-0.0165</x-m>
-   <y-m>0.0056</y-m>
-   <z-m>-0.0092</z-m>
+   <x-m>-0.00000</x-m>
+   <y-m> 0.00000</y-m>
+   <z-m>-0.00000</z-m>
   </center>
   <axis>
    <x>-1</x>
-   <y>0</y>
-   <z>0</z>
+   <y> 0</y>
+   <z> 0</z>
   </axis>
  </animation>
 
