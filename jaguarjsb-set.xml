@@ -63,7 +63,7 @@
 
    <sound>
       <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
-    </sound> 
+    </sound>
 
 
 
@@ -650,16 +650,7 @@
     </turbulence>
   </environment>
 
-  <engines>
-    <engine n="0">
-      <engine-num type="int">0</engine-num>
-      <running>true</running>
-    </engine>
-    <engine n="1">
-      <engine-num type="int">1</engine-num>
-      <running>true</running>
-    </engine>
-  </engines>
+
 
   <input>
     <keyboard include="/Dialogs/jaguar-keyboard.xml"/>

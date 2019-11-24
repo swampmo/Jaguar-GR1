@@ -2,6 +2,97 @@
 
   <fx>
 
+    <!-- Whine -->
+
+       <engine>
+         <name>turbine0</name>
+         <mode>looped</mode>
+         <path>Aircraft/Jaguar/Sounds/Jaguar-whine.wav</path>
+         <condition>
+           <property>/engines/engine[0]/running</property>
+           <not>
+             <property>/sim/current-view/internal</property>
+           </not>
+         </condition>
+         <orientation>
+           <x> -1 </x>
+           <y> 0 </y>
+           <z> 0 </z>
+           <inner-angle>90</inner-angle>
+           <outer-angle>240</outer-angle>
+           <outer-gain>5</outer-gain>
+         </orientation>
+         <volume>
+           <property>engines/engine/n2</property>
+           <factor>0.09</factor>
+           <min>0.1</min>
+           <max>0.6</max>
+         </volume>
+         <pitch>
+           <property>engines/engine/n2</property>
+           <factor>0.01</factor>
+         	<min>0.5</min>
+   	      <max>0.4</max>
+         </pitch>
+       </engine>
+
+
+   	 <engine>
+         <name>turbine1</name>
+         <mode>looped</mode>
+         <path>Aircraft/Jaguar/Sounds/Jaguar-whine.wav</path>
+         <condition>
+           <property>/engines/engine[1]/running</property>
+           <not>
+             <property>/sim/current-view/internal</property>
+           </not>
+         </condition>
+         <orientation>
+           <x>-1</x>
+           <y>0</y>
+           <z>0</z>
+           <inner-angle>90</inner-angle>
+           <outer-angle>240</outer-angle>
+           <outer-gain>5</outer-gain>
+         </orientation>
+         <volume>
+           <property>engines/engine/n2</property>
+           <factor>0.09</factor>
+           <min>0.05</min>
+           <max>0.4</max>
+         </volume>
+         <pitch>
+           <property>engines/engine/n2</property>
+           <factor>0.01</factor>
+       	<min>0</min>
+   	    <max>0.9</max>
+         </pitch>
+       </engine>
+
+
+     <!-- Internal -->
+
+       <engine>
+         <name>whine-int</name>
+         <path>Aircraft/Jaguar/Sounds/f16-engine-int.wav</path>
+         <mode>looped</mode>
+         <condition>
+           <property>engines/engine[0]/running</property>
+   		        <not>
+           	<property>/sim/current-view/external</property>
+   		      <property>engines/engine/out-of-fuel</property>
+        	     </not>
+         </condition>
+         <volume>
+           <property>engines/engine[0]/n2</property>
+           <factor type="double">0.0025</factor>
+         </volume>
+         <pitch>
+           <property>/engines/engine[0]/n2</property>
+           <factor>0.02</factor>
+           <offset>-0.1</offset>
+         </pitch>
+       </engine>
 
     <squeal>
       <name>squeal</name>
@@ -59,7 +150,7 @@
             <volume>
                 <factor>0.25</factor>
             </volume>
-    </throttle-1>    
+    </throttle-1>
 
     <throttle-2>
       <name>detent2</name>
@@ -87,8 +178,8 @@
             <volume>
                 <factor>0.25</factor>
             </volume>
-    </throttle-2>    
- 
+    </throttle-2>
+
     <throttle-3>
       <name>detent3</name>
             <path>Aircraft/Jaguar/Sounds/detent.wav</path>
@@ -115,7 +206,7 @@
             <volume>
                 <factor>0.25</factor>
             </volume>
-    </throttle-3>    
+    </throttle-3>
 
     <throttle-4>
       <name>detent4</name>
@@ -139,7 +230,7 @@
             <volume>
                 <factor>0.25</factor>
             </volume>
-    </throttle-4>     
+    </throttle-4>
 
     <flap>
       <name>flaps</name>
@@ -167,7 +258,7 @@
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-    </slats>        
+    </slats>
 
     <speedbrakes>
       <name>speedbrakes</name>
@@ -179,7 +270,7 @@
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-    </speedbrakes>        
+    </speedbrakes>
 
     <speedbrakes-wind>
       <name>speedbrakes-wind</name>
@@ -197,17 +288,17 @@
                 <property>velocities/airspeed-kt</property>
                 <factor>0.001</factor>
             </volume>
-    </speedbrakes-wind>        
+    </speedbrakes-wind>
 
     <guns>
       <name>gunfire</name>
       <mode>looped</mode>
       <path>Aircraft/Jaguar/Sounds/gunfire.wav</path>
-      <condition> 
+      <condition>
         <property>controls/armament/trigger</property>
         <property>ai/submodels/submodel/count</property>
       </condition>
-      <volume> 
+      <volume>
         <factor>1.2</factor>
         <max>1.0</max>
       </volume>
@@ -282,7 +373,7 @@
             <property>/engines/engine[1]/running</property>
                 <not>
                     <property>fdm/jsbsim/gear/WOW</property>
-                </not> 
+                </not>
            <less-than>
                 <property>velocities/airspeed-kt</property>
                 <value>155</value>
@@ -298,8 +389,8 @@
         </position>
         <reference-dist>1.0</reference-dist>
         <max-dist>2.0</max-dist>
-    </stall> -->	
-	
+    </stall> -->
+
 	<!-- flyby -->
 		<flyby>
 			<name>fly-by</name>
@@ -327,7 +418,7 @@
 			</volume>
 			-->
 		</flyby>
-		
+
 		 <!-- Sonic Boom -->
   <sonicboom>
    <name>Sonic Boom</name>
@@ -348,9 +439,9 @@
     <reference-dist>600.0</reference-dist>
     <max-dist>6000.0</max-dist>
   </sonicboom>
-	
-	
-	
+
+
+
 	<voice>
   <name>Geforce-breath-vox</name>
   <path>Aircraft/Jaguar/Sounds/Geforce.wav</path>
@@ -358,7 +449,7 @@
    <greater-than>
     <property>/accelerations/pilot/z-accel-fps_sec</property>
     <value>-161</value>
-   </greater-than>   
+   </greater-than>
   </condition>
 <volume>
 <factor>0.9</factor>
@@ -372,7 +463,7 @@
    <less-than>
     <property>/accelerations/pilot/z-accel-fps_sec</property>
     <value>-225</value>
-   </less-than>   
+   </less-than>
   </condition>
 <volume>
 <factor>0.9</factor>
@@ -506,8 +597,7 @@
                 <factor>1</factor>
             </volume>
         </aircraft-creaking>
-	
-  </fx>
- 
-</PropertyList>
 
+  </fx>
+
+</PropertyList>
