@@ -150,7 +150,7 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Fuelflow/FF.xml</path>
     <offsets>
-      <x-m> -3.360 </x-m>
+      <x-m> -3.362 </x-m>
       <y-m>  0.215 </y-m>
       <z-m>  0.090 </z-m>
       <pitch-deg>0</pitch-deg>

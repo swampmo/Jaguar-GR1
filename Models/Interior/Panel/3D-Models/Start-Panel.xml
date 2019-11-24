@@ -142,7 +142,25 @@
     <type>rotate</type>
     <object-name>Engine-start-switch</object-name>
     <property>controls/engines/engine/starter</property>
-    <factor> 60 </factor>
+    <factor> -30 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30497</x-m>
+	<y-m> 0.01876</y-m>
+	<z-m>-0.27097</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Engine-start-switch</object-name>
+    <property>controls/engines/engine[1]/starter</property>
+    <factor> 30 </factor>
     <axis>
       <x> 0 </x>
       <y> 0 </y>
@@ -364,7 +382,7 @@
     </action>
   </animation>
 
-  <!--animation>
+  <animation>
     <type>pick</type>
     <visible>true</visible>
     <object-name>Eng-IGN-nut</object-name>
@@ -373,11 +391,11 @@
       <button>1</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/engines/engine/ignition</property>
+        <property>controls/engines/engine[1]/ignition</property>
         <step>0</step>
       </binding>
     </action>
-  </animation-->
+  </animation>
 
   <animation>
     <type>pick</type>
@@ -394,7 +412,7 @@
     </action>
   </animation>
 
-  <!--animation>
+  <animation>
     <type>pick</type>
     <visible>true</visible>
     <object-name>Engine-start-nut</object-name>
@@ -407,7 +425,7 @@
         <step>0</step>
       </binding>
     </action>
-  </animation-->
+  </animation>
 
   <animation>
         <type>pick</type>
