@@ -48,22 +48,42 @@
             <x>1</x>
         </axis>
 	</animation>
-	<!--animation>
-		<type>rotate</type>
-		<object-name>stick-roll</object-name>
-		<property>controls/flight/aileron</property>
-		<interpolation>
-		    <entry><ind>1</ind><dep>20</dep></entry>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>-1</ind><dep>-20</dep></entry>
-		</interpolation>
-		<center>
-			<x-m>0</x-m>
-			<y-m>-0.0536</y-m>
-			<z-m>0.1751</z-m>
-		</center>
-		<axis><x>1</x></axis>
-	</animation-->
+
+ <animation>
+  <type>translate</type>
+		<object-name>stand</object-name>
+		<object-name>Jag-FS</object-name>
+		<object-name>Trim</object-name>
+		<object-name>Toggle</object-name>
+		<object-name>Left-Button</object-name>
+		<object-name>Low-Button</object-name>
+		<object-name>Pivot</object-name>
+		<object-name>Wings</object-name>
+		<object-name>screws</object-name>
+        <object-name>Boot</object-name>
+  <property>controls/Jag-FS/fore-aft-adjust</property>
+  <factor>-0.09</factor>
+  <offset-m>0</offset-m>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+		<object-name>Boot</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+  <property>controls/Jag-FS/fore-aft-adjust</property>
+        <step>0</step>
+      </binding>
+    </action>
+  </animation>
 
 
 	<!-- Lighting -->

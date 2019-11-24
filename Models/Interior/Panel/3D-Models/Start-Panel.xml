@@ -2,11 +2,11 @@
 
 <PropertyList>
 
-  <path>Jag-start-panel.ac</path>
+  <path>Jag-start-panel-ON.ac</path>
 
   <animation>
     <object-name>Air-Gen-ON</object-name>
-    <object-name>Air-Gen-light</object-name>
+    <object-name>Air-Gen-OFF</object-name>
     <object-name>Cont-IGN-L</object-name>
     <object-name>Cont-IGN-R</object-name>
     <object-name>Cont-IGN-nut-L</object-name>
@@ -62,10 +62,10 @@
     <object-name>Gen-switch</object-name>
     <object-name>LP-Cover-L</object-name>
     <object-name>LP-Cover-R</object-name>
-    <object-name>LP-Shaft-L-OFF</object-name>
+    <!--object-name>LP-Shaft-L-OFF</object-name>
     <object-name>LP-Shaft-L-ON</object-name>
     <object-name>LP-Shaft-R-OFF</object-name>
-    <object-name>LP-Shaft-R-ON</object-name>
+    <object-name>LP-Shaft-R-ON</object-name-->
     <object-name>LP-nut-L</object-name>
     <object-name>LP-nut-R</object-name>
     <object-name>LP-switch-L</object-name>
@@ -88,7 +88,7 @@
     <type>rotate</type>
     <object-name>Cont-IGN-L</object-name>
     <property>controls/engines/engine/cutoff</property>
-    <factor> 60 </factor>
+    <factor>-60 </factor>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -106,7 +106,7 @@
     <type>rotate</type>
     <object-name>Cont-IGN-R</object-name>
     <property>/controls/engines/engine[1]/cutoff</property>
-    <factor> 60 </factor>
+    <factor>-60 </factor>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -178,7 +178,7 @@
     <type>rotate</type>
     <object-name>Fuel-pump-L</object-name>
     <property>controls/engines/engine/fuel-pump</property>
-    <factor> 60 </factor>
+    <factor>-60 </factor>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -196,7 +196,7 @@
     <type>rotate</type>
     <object-name>Fuel-pump-R</object-name>
     <property>controls/engines/engine[1]/fuel-pump[1]</property>
-    <factor> 60 </factor>
+    <factor>-60 </factor>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -299,6 +299,143 @@
 	<z-m>-0.25502</z-m>
      </center>
   </animation>
+
+
+<animation>
+ <type>select</type> 
+ <object-name>LP-Shaft-L-ON</object-name>
+ <condition>		
+  <greater-than>		
+    <property>engines/engine/running</property>
+   <value>0</value>
+  </greater-than>
+ </condition>
+ <emission>	
+  <red>1</red>	
+  <green>1</green>	
+  <blue>1</blue>
+ </emission>
+ <texture>starter.png</texture>
+</animation>
+
+<animation>
+ <type>select</type> 
+ <object-name>LP-Shaft-L-OFF</object-name>
+ <condition>		
+  <less-than-equals>		
+    <property>engines/engine/running</property>
+   <value>1</value>
+  </less-than-equals>
+ </condition>
+ <emission>	
+  <red>0</red>	
+  <green>0</green>	
+  <blue>0</blue>
+ </emission>
+ <texture>starter.png</texture>
+</animation>
+
+<animation>
+ <type>select</type> 
+ <object-name>LP-Shaft-R-ON</object-name>
+ <condition>		
+  <greater-than>		
+    <property>engines/engine[1]/running</property>
+   <value>0</value>
+  </greater-than>
+ </condition>
+ <emission>	
+  <red>1</red>	
+  <green>1</green>	
+  <blue>1</blue>
+ </emission>
+ <texture>starter.png</texture>
+</animation>
+
+<animation>
+ <type>select</type> 
+ <object-name>LP-Shaft-R-OFF</object-name>
+ <condition>		
+  <less-than-equals>		
+    <property>engines/engine[1]/running</property>
+   <value>1</value>
+  </less-than-equals>
+ </condition>
+ <emission>	
+  <red>0</red>	
+  <green>0</green>	
+  <blue>0</blue>
+ </emission>
+ <texture>starter.png</texture>
+</animation>
+
+<animation>
+ <type>select</type> 
+    <object-name>ENG-srt-air-valve-open</object-name>
+ <condition>		
+  <greater-than>		
+    <property>controls/pneumatic/APU-bleed</property>
+   <value>0</value>
+  </greater-than>
+ </condition>
+ <emission>	
+  <red>1</red>	
+  <green>1</green>	
+  <blue>1</blue>
+ </emission>
+ <texture>Neon orange.png</texture>
+</animation>
+
+<animation>
+ <type>select</type> 
+    <object-name>ENG-srt-air-valve-closed</object-name>>
+ <condition>		
+  <less-than-equals>		
+    <property>controls/pneumatic/APU-bleed</property>
+   <value>1</value>
+  </less-than-equals>
+ </condition>
+ <emission>	
+  <red>0</red>	
+  <green>0</green>	
+  <blue>0</blue>
+ </emission>
+ <texture>Neon orange.png</texture>
+</animation>
+
+<animation>
+ <type>select</type> 
+ <object-name>Air-Gen-ON</object-name>
+ <condition>		
+  <greater-than>		
+    <property>controls/pneumatic/APU-bleed</property>
+   <value>0</value>
+  </greater-than>
+ </condition>
+ <emission>	
+  <red>1</red>	
+  <green>1</green>	
+  <blue>1</blue>
+ </emission>
+ <texture>starter.png</texture>
+</animation>
+
+<animation>
+ <type>select</type> 
+ <object-name>Air-Gen-OFF</object-name>
+ <condition>		
+  <less-than-equals>		
+    <property>controls/pneumatic/APU-bleed</property>
+   <value>1</value>
+  </less-than-equals>
+ </condition>
+ <emission>	
+  <red>0</red>	
+  <green>0</green>	
+  <blue>0</blue>
+ </emission>
+ <texture>starter.png</texture>
+</animation>
 
   <!--animation>
     <type>rotate</type>
@@ -692,6 +829,17 @@
       </binding>
     </action>
   </animation-->
+ <animation>
+  <type>texture</type>
+  <shader>texture</shader>
+  <texture>starter.png</texture>
+    <object-name>LP-Shaft-L-OFF</object-name>
+  <condition>
+            <property>/engines/engine[0]/running</property>
+
+              <value>0</value>
+  </condition>
+ </animation>
 
 </PropertyList>
 
