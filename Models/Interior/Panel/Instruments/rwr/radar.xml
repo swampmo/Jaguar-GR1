@@ -7,12 +7,12 @@
 	 <object-name>radarBase</object-name>
 	 <object-name>radButtons</object-name>
 	 <object-name>navToggle</object-name>	 
-	 <emission>
-		 <red>0.2</red>
-		 <green>0.05</green>
-		 <blue>0.0</blue>
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-	 </emission> 
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
  </animation>
  
  <animation>

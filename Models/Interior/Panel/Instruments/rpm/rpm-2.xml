@@ -16,7 +16,7 @@
     <type>material</type>
     <object-name>rpm-Needle1</object-name>
     <object-name>rpm-Needle2</object-name>
-    <object-name>Face</object-name>
+    <object-name>face</object-name>
     <emission>
       <red>   0.9 </red>
       <green> 0.9 </green>

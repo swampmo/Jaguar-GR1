@@ -13,12 +13,12 @@
 	 <object-name>boreBG</object-name>	 
 	 <object-name>SearchBG</object-name>
 	 <object-name>Menu</object-name>	 
-	 <emission>
-		 <red>0.1</red>
-		 <green>0.4</green>
-		 <blue>0.1</blue>
-		 <factor-prop>controls/lighting/instruments-norm</factor-prop>
-	 </emission> 
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
  </animation>
 
  <animation>

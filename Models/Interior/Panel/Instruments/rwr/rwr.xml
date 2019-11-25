@@ -1781,12 +1781,12 @@
 				<value alias="../../../../mininal-volts"/>
 			</greater-than>
 		</condition>
-		<emission> 
-			<factor-prop alias="../../../display-lighting-intens"/>
-			<red>0.0</red>
-			<green>0.8</green>
-			<blue>0.0</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>

@@ -140,6 +140,24 @@
 
   <animation>
     <type>rotate</type>
+    <object-name>Eng-IGN-switch</object-name>
+    <property>controls/engines/engine[1]/ignition</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-3.30531</x-m>
+	<y-m> 0.03185</y-m>
+	<z-m>-0.29934</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
     <object-name>Engine-start-switch</object-name>
     <property>controls/engines/engine/starter</property>
     <factor> -30 </factor>

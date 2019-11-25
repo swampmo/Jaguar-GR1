@@ -47,7 +47,7 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/asi/airspeed.xml</path>
     <offsets>
       <x-m> -3.358 </x-m>
-      <y-m> -0.165 </y-m>
+      <y-m> -0.170 </y-m>
       <z-m>  0.155 </z-m>
       <pitch-deg>-0</pitch-deg>
     </offsets>
@@ -57,7 +57,7 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/alt/alt.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
-      <y-m> -0.175 </y-m>
+      <y-m> -0.185 </y-m>
       <z-m>  0.088 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
@@ -223,7 +223,7 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/GMeter/gmeter.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
-      <y-m>  0.105 </y-m>
+      <y-m>  0.120 </y-m>
       <z-m>  0.165 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
@@ -233,8 +233,8 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/HSI/hsi.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
-      <y-m> -0.110 </y-m>
-      <z-m>  0.090 </z-m>
+      <y-m> -0.120 </y-m>
+      <z-m>  0.080 </z-m>
       <pitch-deg>0</pitch-deg>name
     </offsets>
   </model>
@@ -244,7 +244,7 @@
     <offsets>
       <x-m> -3.113 </x-m>
       <y-m>  0.2817 </y-m>
-      <z-m> -0.187 </z-m>
+      <z-m> -0.189 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -305,9 +305,9 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/round-mfd1.xml</path>
     <offsets>
-      <x-m> -3.363 </x-m>
-      <y-m> -0.000 </y-m>
-      <z-m>  0.065 </z-m>
+      <x-m> -3.360 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.085 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -376,8 +376,8 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ralt/ralt.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
-      <y-m> -0.108 </y-m>
-      <z-m>  0.020 </z-m>
+      <y-m> -0.120 </y-m>
+      <z-m>  0.015 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -426,8 +426,8 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/standby-adi/stdby-adi.xml</path>
     <offsets>
       <x-m> -3.362 </x-m>
-      <y-m> -0.108 </y-m>
-      <z-m>  0.150 </z-m>
+      <y-m> -0.115 </y-m>
+      <z-m>  0.145 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -520,7 +520,7 @@
     <offsets>
       <x-m> -3.357 </x-m>
       <y-m>  0.260 </y-m>
-      <z-m> -0.075 </z-m>
+      <z-m> -0.055 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -530,8 +530,8 @@
   <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orangelight.xml</path>
   <offsets>
       <x-m> -3.315 </x-m>
-      <y-m> -0.165 </y-m>
-      <z-m> -0.010 </z-m>
+      <y-m> -0.185 </y-m>
+      <z-m> -0.025 </z-m>
       <pitch-deg>0</pitch-deg>
   </offsets>
  </model>
@@ -542,8 +542,8 @@
   <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/redlight.xml</path>
   <offsets>
       <x-m> -3.315 </x-m>
-      <y-m> -0.150 </y-m>
-      <z-m> -0.010 </z-m>
+      <y-m> -0.170 </y-m>
+      <z-m> -0.025 </z-m>
       <pitch-deg>0</pitch-deg>
   </offsets>
  </model>
@@ -553,8 +553,8 @@
   <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orangelight.xml</path>
   <offsets>
       <x-m> -3.315 </x-m>
-      <y-m> -0.135 </y-m>
-      <z-m> -0.010 </z-m>
+      <y-m> -0.155 </y-m>
+      <z-m> -0.025 </z-m>
       <pitch-deg>0</pitch-deg>
   </offsets>
  </model>

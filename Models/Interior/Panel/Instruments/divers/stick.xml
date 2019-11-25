@@ -90,12 +90,12 @@
 	<animation> 
 		<object-name>Jag-FS</object-name>
 		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.275</red>
-			<green>0.12</green>
-			<blue>0.05</blue>
-		</emission>
+    <emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
 	</animation>
 
 

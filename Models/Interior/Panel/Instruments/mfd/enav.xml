@@ -166,16 +166,12 @@
     <object-name>ilsllabel</object-name>
     <object-name>ilsrlabel</object-name>
     <object-name>bug</object-name>
-		<emission>
-			<!-- <factor-prop>controls/VDI/brightness</factor-prop> -->
-      <!-- <red>   0.0 </red>   -->
-      <!-- <green> 0.9 </green> -->
-      <!-- <blue>  0.0 </blue>  -->
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-      <red>   0.20 </red>
-      <green> 0.15 </green>
-      <blue>  0.15 </blue>
-		</emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
   <animation>
@@ -1442,12 +1438,12 @@
 			<green>0.1</green>
 			<blue>0.1</blue>
 		</diffuse>
-		<emission>
-			<red>0.9</red>
-			<green>0.9</green>
-			<blue>0.9</blue>
-			<factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 </PropertyList>

@@ -12,12 +12,12 @@
   <object-name>face</object-name>
   <object-name>Airspeedneedle</object-name>
   <object-name>speed-bug</object-name>
-   <emission>
+    <emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-     <red>1</red>
-     <green>1</green>
-     <blue>1</blue>
-   </emission> 
+    </emission>
  </animation> 
 
  <!-- Airspeed Needle -->

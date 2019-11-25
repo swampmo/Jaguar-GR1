@@ -18,6 +18,27 @@
 		<y-offset>0.8</y-offset>
 		<z-offset>0.8</z-offset>
 	</animation>
+
+	<animation>
+		<type>material</type>
+        <object-name>Mount</object-name>
+		<object-name>BATT</object-name>
+		<object-name>TR-1</object-name>
+		<object-name>TR-2</object-name>
+		<object-name>ALT-1</object-name>
+		<object-name>ALT-2</object-name>
+		<object-name>Pitot-Heat</object-name>
+        <object-name>NVG</object-name>
+		<x-offset>0.8</x-offset>
+		<y-offset>0.8</y-offset>
+		<z-offset>0.8</z-offset>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
+	</animation>
 	
 	<animation>
 		<object-name>BATT</object-name>

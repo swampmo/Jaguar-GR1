@@ -74,89 +74,89 @@
 	<animation>
 		<object-name>mount</object-name>
 		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>
 		<object-name>button</object-name>
 		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>
 		<object-name>scale</object-name>
 		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>
 		<object-name>bank-index</object-name>
 		<type>material</type>
-		<emission>
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-		</emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>
 		<object-name>ring</object-name>
 		<type>material</type>
-		<emission> 
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-		</emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>
 		<object-name>bkg</object-name>
 		<type>material</type>
-		<emission>
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-				<red>1</red>
-				<green>1</green>
-				<blue>1</blue>
-		</emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>
 		<object-name>drum</object-name>
 		<type>material</type>
-		<emission>
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-		</emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>
 		<object-name>plane</object-name>
 		<type>material</type>
-		<emission>
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-		</emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>

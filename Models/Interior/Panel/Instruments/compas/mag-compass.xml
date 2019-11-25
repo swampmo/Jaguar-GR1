@@ -52,9 +52,9 @@
     <object-name>Ring</object-name>
     <object-name>centre-line</object-name>
     <emission>
-      <red>   1 </red>
-      <green> 1 </green>
-      <blue>  1 </blue>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
     </emission>
   </animation>    

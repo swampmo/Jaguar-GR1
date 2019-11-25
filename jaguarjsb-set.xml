@@ -632,7 +632,7 @@
 		<switches>
 			<fuel-probe type="bool">false</fuel-probe>
 			<nav-lights type="bool">false</nav-lights>
-			<gear-lights type="int">1</gear-lights>
+			<gear-lights type="int">false</gear-lights>
 			<landlight1 alias="/sim/rendering/als-secondary-lights/use-landing-light"/>
 			<landlight1 type="bool">false</landlight1>
 			<taxilight1 alias="/sim/rendering/als-secondary-lights/use-landing-light"/>
@@ -751,9 +751,9 @@
      <file>Aircraft/Jaguar/Nasal/damage.nas</file>
    </damage>
 
-   <blackout>
+   <!--blackout>
      <file>Aircraft/Jaguar/Nasal/blackout.nas</file>
-   </blackout>
+   </blackout-->
 
     <radarAltimeter>
       <file>Aircraft/Jaguar/Nasal/radaralt.nas</file>
@@ -775,9 +775,9 @@
         <file>Aircraft/Jaguar/Nasal/failures.nas</file>
     </failures>
 
-     <crashandstress>
+     <!--crashandstress>
         <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
-    </crashandstress>
+    </crashandstress-->
 
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
