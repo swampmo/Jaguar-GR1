@@ -728,6 +728,7 @@
      <rwr>
       <!-- <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> -->
       <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
+
       <file>Aircraft/Jaguar/Nasal/MiscRwr.nas</file>
     </rwr>
 

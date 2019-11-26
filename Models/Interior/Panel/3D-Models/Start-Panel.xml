@@ -88,7 +88,7 @@
     <type>rotate</type>
     <object-name>Cont-IGN-L</object-name>
     <property>controls/engines/engine/cutoff</property>
-    <factor>-60 </factor>
+    <factor>60 </factor>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -97,8 +97,8 @@
 
       <center>
 	<x-m>-3.30555</x-m>
-	<y-m> 0.04977</y-m>
-	<z-m>-0.32958</z-m>
+	<y-m> 0.04486</y-m>
+	<z-m>-0.33877   </z-m>
      </center>
   </animation>
 
@@ -106,7 +106,7 @@
     <type>rotate</type>
     <object-name>Cont-IGN-R</object-name>
     <property>/controls/engines/engine[1]/cutoff</property>
-    <factor>-60 </factor>
+    <factor>60 </factor>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -115,8 +115,8 @@
 
       <center>
 	<x-m>-3.30531</x-m>
-	<y-m> 0.07194</y-m>
-	<z-m>-0.32958</z-m>
+	<y-m> 0.06703</y-m>
+	<z-m>-0.33877</z-m>
      </center>
   </animation>
 
@@ -505,7 +505,7 @@
         <step>0</step>
       </binding>
     </action>
-  </animation>
+  </animation>name
 
   <animation>
     <type>pick</type>
