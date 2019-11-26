@@ -3,7 +3,7 @@
 <PropertyList include="bombableinclude.xml">
 
   <path>jaguar.ac</path>
-  
+
   <!-- MP sound call -->
   <sound><path>Aircraft/Jaguar/Sounds/mp-sound.xml</path></sound>
 
@@ -20,7 +20,7 @@ var mpPath = "/ai/models/multiplayer["~ rootindex ~"]/";
 var lightsPath = mpPath~"lightpack/"; #path to the property node, where all internal values are placed
 
 props.globals.initNode(mpPath~"sim/is-MP-Aircraft", 1, "BOOL");
-      
+
 srand();
 #wherever you want to add randomization of time, use something like:  + rand()*0.05-0.025 (included by default where appropriate)
 
@@ -40,7 +40,7 @@ navStillOn = 1;
 
 
 #I need to set listener on some MP transferred properties; this doesn't seem to work well sometimes, so I mirror them to the original location on any change
-#This also simplifies work as I can use almost the same code for MP as is the local Nasal. Furthermore, I can use meaningful property names in the model XML files instead of referencing the MP properties. 
+#This also simplifies work as I can use almost the same code for MP as is the local Nasal. Furthermore, I can use meaningful property names in the model XML files instead of referencing the MP properties.
 var mpVar = {
 	new: func(propIn, propOut) {
 		var m = { parents: [mpVar] };
@@ -62,7 +62,7 @@ var mpVar = {
 	},
 };
 #init any property copy object needed in this array (anything you need to transfer over MP, but you are using the original paths in your xmls)
-#also used for properties you are using a listener on, or properties which you maybe want to manipulate during the <unload> 
+#also used for properties you are using a listener on, or properties which you maybe want to manipulate during the <unload>
 #if you're just using the pack, change the values according to the MP bindings in the -set.xml file
 #you don't need to delete the entries if the path is nil - it gets skipped automatically and the MP path is just ignored
 var mirrorValues = [
@@ -142,12 +142,12 @@ var lightCycle = {
 	},
 };
 
-#By default, the switch property is initialized to 1 (only if no value is already assigned). Don't change the class implementation! To override this, set the property manually. You don't need to care if any other code already does it for you. 
+#By default, the switch property is initialized to 1 (only if no value is already assigned). Don't change the class implementation! To override this, set the property manually. You don't need to care if any other code already does it for you.
 var navLights = nil;
 if(!navStillOn) {
 	navLights = lightCycle.new(navSwitch, lightsPath~"nav-lights-intensity");
 	### Uncomment and tune those to customize times ###
-	#navLights.fadeIn = 0.4; #fade in time 
+	#navLights.fadeIn = 0.4; #fade in time
 	#navLights.fadeOut = 0.4; #fade out time
 	#navLights.stayOn = 3 + rand()*0.05-0.025; #stable on period
 	#navLights.stayOff = 0.6; #stable off period
@@ -159,16 +159,16 @@ if(!navStillOn) {
 var beacon = nil;
 if(beaconSwitch!=nil) {
 	props.globals.initNode(beaconSwitch, 1, "BOOL");
-	beacon = aircraft.light.new(lightsPath~"beacon-state", 
+	beacon = aircraft.light.new(lightsPath~"beacon-state",
 		[0.0, 1.0 + rand()*0.05-0.025], beaconSwitch);
 }
-	
-	
+
+
 ### STROBE ###
 var strobe = nil;
 if(strobeSwitch!=nil) {
 	props.globals.initNode(strobeSwitch, 1, "BOOL");
-	strobe = aircraft.light.new(lightsPath~"strobe-state", 
+	strobe = aircraft.light.new(lightsPath~"strobe-state",
 		[0.0, 0.87 + rand()*0.05-0.025], strobeSwitch);
 }
 
@@ -190,7 +190,7 @@ var lightFadeInOut = {
 		props.globals.initNode(propSwitch, 1, "BOOL");
 		m.isOn = getprop(propSwitch);
 		props.globals.initNode(propOut, m.isOn, "DOUBLE");
-		m.listen = setlistener(propSwitch, 
+		m.listen = setlistener(propSwitch,
 			func {
 				if(m.isOn and !getprop(propSwitch)) {
 					interpolate(propOut, 0, m.fadeOut);
@@ -230,10 +230,10 @@ if(navStillOn) {
 
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-      
+
       var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
       var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -244,7 +244,7 @@ if(navStillOn) {
       mirrorTimer.stop();
       mirrorTimer = nil;
       mirrorValues = nil;
-      
+
       #cleanly destroy nav lights
       if(navStillOn) {
       	navLights.del();
@@ -255,23 +255,23 @@ if(navStillOn) {
       	if(navSwitch!=nil) navLights.cycleTimer = nil;
       	navLights = nil;
       }
-      
+
       #cleanly destroy beacon
       if(beaconSwitch!=nil) setprop(beaconSwitch, 0);
       beacon.del();
       beacon = nil;
-      
+
       #cleanly destroy strobe
       if(strobeSwitch!=nil) setprop(strobeSwitch, 0);
       strobe.del();
       strobe = nil;
-      
+
       #cleanly destroy light fade in/out animation objects
       fadeLanding.del();
       fadeTaxi.del();
       fadeProbe.del();
       fadeWhite.del();
-      
+
       ### the rest of your model unload embedded Nasal code ###
       livery_update.stop();
  #     crew_door.unalias();
@@ -443,7 +443,7 @@ if(navStillOn) {
     </shininess>
 -->
   </animation>
-  
+
    <!-- Bump Map Effect -->
 <effect>
     <inherits-from>Aircraft/Jaguar/Models/Effects/jag_bumpspec</inherits-from>
@@ -480,7 +480,7 @@ if(navStillOn) {
     <object-name>porteDB1</object-name>
     <object-name>porteA</object-name>
     <object-name>porteAG</object-name>
-    <object-name>porteAD</object-name> 
+    <object-name>porteAD</object-name>
 	<object-name>fuelProbe</object-name>
 	<object-name>fuelProbeDoorFairing</object-name>
 	<object-name>fuelProbeDoor1</object-name>
@@ -552,7 +552,7 @@ if(navStillOn) {
     <object-name>porteAvitres</object-name>
 	<object-name>hud</object-name>
   </animation>
-  
+
     <!-- Transparent Surfaces for Rembrandt rendering -->
  <!--  <effect>
       <inherits-from>Effects/model-transparent</inherits-from>
@@ -562,7 +562,7 @@ if(navStillOn) {
 	    <object-name>porteAvitres</object-name>
 		<object-name>hud</object-name>
    </effect> -->
-   
+
   <!-- Suppress in Cockpit View -->
 <!-- <animation>
   <type>select</type>
@@ -582,7 +582,7 @@ if(navStillOn) {
 
    <!-- Solid Surfaces for Rembrandt rendering -->
    <animation>
-    
+
    <object-name>fuselage</object-name>
     <object-name>dessus</object-name>
     <object-name>tourverriere</object-name>
@@ -634,10 +634,10 @@ if(navStillOn) {
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
-		
+
     </animation>
 
-  <!-- Une ombre pour OSG 
+  <!-- Une ombre pour OSG
   <model>
     <path>Aircraft/Jaguar/Models/shadow.xml</path>
     <offsets>
@@ -650,7 +650,7 @@ if(navStillOn) {
   <!-- Armament  -->
   <model>
     <path>Aircraft/Jaguar/Models/Weapons/loads.xml</path>
-  </model> 
+  </model>
 
   <!-- Interieur -->
   <model>
@@ -739,13 +739,40 @@ if(navStillOn) {
   <!-- Les flammes -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/Afterburner/EJ200-L.xml</path>
+   <name>AB_Flame 1</name>
+    <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
     <offsets>
-      <x-m>  6.2 </x-m>
-      <y-m> -0.483 </y-m>
-      <z-m> -0.572 </z-m>
+      <x-m> 5.64314   </x-m>
+      <y-m> 0.494526  </y-m>
+      <z-m> -0.49394 </z-m>
     </offsets>
   </model>
+
+  <model>
+   <name>AB_Flame 2</name>
+   <path>Aircraft/Jaguar/Models/Effects/Afterburner/afterburner.xml</path>
+   <offsets>
+    <x-m>  5.64314  </x-m>
+    <y-m> -0.497843 </y-m>
+    <z-m> -0.49953  </z-m>
+   </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>AB_Flame 1</object-name>
+    <condition>
+     <property>sim/multiplay/generic/bool[0]</property>
+    </condition>
+   </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AB_Flame 2</object-name>
+    <condition>
+     <property>sim/multiplay/generic/bool[1]</property>
+    </condition>
+   </animation>
 
  <!-- Droite -->
   <model>
@@ -1635,7 +1662,7 @@ if(navStillOn) {
             <z2-m>-1.0120</z2-m>
         </axis>
     </animation>
-	
+
     <animation>
         <type>rotate</type>
        <object-name>fuelProbeDoor2</object-name>
@@ -1667,7 +1694,7 @@ if(navStillOn) {
             <z2-m>-0.2215</z2-m>
         </axis>
     </animation>
-	
+
 <!-- engine animation -->
 	<animation>
 		<type>select</type>
@@ -1730,14 +1757,14 @@ if(navStillOn) {
     <path>Aircraft/Jaguar/Models/Lights/LightPack.xml</path>
     <offsets>
       <x-m>0</x-m>
-      <y-m>0</y-m> 
-	    <z-m>0</z-m> 
+      <y-m>0</y-m>
+	    <z-m>0</z-m>
     </offsets>
-  </model> 
+  </model>
 
 
- 
-  
+
+
 
  chute
   <model>
@@ -1751,7 +1778,7 @@ if(navStillOn) {
       <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
- 
+
 
   <!-- aircraft wash modeled in the lines below -->
   <model>
@@ -1770,7 +1797,7 @@ if(navStillOn) {
       <pitch-deg> 0 </pitch-deg>
     </offsets>
   </model>
- 
+
   <model>
     <name>aircraft_wash_r</name>
     <path>Aircraft/Jaguar/Models/Effects/Wash/aircraft_wash.xml</path>
@@ -1787,7 +1814,7 @@ if(navStillOn) {
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
-  
+
   <animation>
     <type>translate</type>
     <object-name>aircraft_wash_l</object-name>
@@ -1810,8 +1837,8 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  
- 
+
+
   <!-- ******************************************************************* -->
   <!-- FX                                                                  -->
   <!-- ******************************************************************* -->
@@ -1822,8 +1849,8 @@ if(navStillOn) {
 			<y-m> 0.00 </y-m>
 			<z-m> 0.0 </z-m>
 		</offsets>
-	</model> 
-	
+	</model>
+
 	<!--model>
 		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour.xml</path>
 		<offsets>
@@ -1835,7 +1862,7 @@ if(navStillOn) {
 			<heading-deg>25</heading-deg>
 		</offsets>
 	</model>
- 
+
  <model>
 		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour2.xml</path>
 		<offsets>
@@ -1847,7 +1874,7 @@ if(navStillOn) {
 			<heading-deg>45</heading-deg>
 		</offsets>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour2.xml</path>
 		<offsets>
@@ -1859,6 +1886,5 @@ if(navStillOn) {
 			<heading-deg>-45</heading-deg>
 		</offsets>
 	</model-->
- 
-</PropertyList>
 
+</PropertyList>
