@@ -16,7 +16,7 @@
 		<object-name>Wings</object-name>
 		<object-name>screws</object-name>
 		<property>controls/flight/elevator</property>
-		<factor>15</factor>
+		<factor>8</factor>
 		<center>
 			<x-m> 0.01236</x-m>
 			<y-m> 0.00000</y-m>
@@ -37,7 +37,7 @@
 		<object-name>Pivot</object-name>
 		<object-name>Wings</object-name>
 		<object-name>screws</object-name>
-		<factor>-15</factor>
+		<factor>-8</factor>
 		<property>controls/flight/aileron</property>
 		<center>
 			<x-m> 0.02625</x-m>
@@ -62,7 +62,7 @@
 		<object-name>screws</object-name>
         <object-name>Boot</object-name>
   <property>controls/Jag-FS/fore-aft-adjust</property>
-  <factor>-0.12</factor>
+  <factor>-0.14</factor>
   <interval-sec>0.05</interval-sec>
   <offset-m>0</offset-m>
   <axis>

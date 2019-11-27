@@ -51,9 +51,9 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/divers/stick.xml</path>
     <offsets>
-      <x-m> -3.140 </x-m>
+      <x-m> -3.200 </x-m>
       <y-m> -0.000 </y-m>
-      <z-m> -0.380 </z-m>
+      <z-m> -0.480 </z-m>
       <pitch-deg>-0</pitch-deg>
     </offsets>
   </model>
