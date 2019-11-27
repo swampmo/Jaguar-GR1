@@ -100,11 +100,11 @@
       <line>Slats deploy before flaps will manually deploy slats with flap key "]" watch indicator for flaps to deploy.</line>
       <line>Takeoff with 3 notches of flaps/15 degrees. after takeoff retract flaps key "[" use combat slats as needed.</line>
       <line>Afterburners engage when throttle moves past 75% You will hear the mil thrust detenet click twice.</line>
- <!--     <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
+      <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
       <line>Cannons carry 150 rounds each. These can be reloaded  while on the ground by using the Jaguar menu.</line>
 	    <line>Droptanks will automatically switch when empty.</line>
       <line>Takeoff with at 15 degrees</line>
-	    <line>150 - 185 kt depending on payload.</line>-->
+	    <line>150 - 185 kt depending on payload.</line>
       </help>
 
     <multiplay>
@@ -122,18 +122,21 @@
 	    <!-- Taxi light on -->
       <int n="4" alias="/controls/switches/taxi-light" />
 
-        <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
-        <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
-        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
-        <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
-        <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
-        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
-		<float n="6" type="double">0</float><!-- refuel probe   -->
-        <float n="8" alias="/engines/engine[0]/augmentation" /> <!-- Reheat Left Engine -->
+      <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
+      <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
+      <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
+      <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
+      <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
+      <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
+		  <float n="6" type="double">0</float><!-- refuel probe   -->
+      <float n="8" alias="/engines/engine[0]/augmentation" /> <!-- Reheat Left Engine -->
 	    <float n="9" alias="/engines/engine[1]/augmentation" /> <!-- Reheat Right Engine -->
-        <float n="15" alias="/velocities/mach" /> <!-- Mach for Multiplayer Sound -->
+      <float n="15" alias="/velocities/mach" /> <!-- Mach for Multiplayer Sound -->
 	    <float n="16" alias="/engines/engine[0]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
 	    <float n="17" alias="/engines/engine[1]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
+      <float n="19" type="double" alias="/controls/engines/engine/throttle"/>
+      <bool n="0" type="bool" alias="/engines/engine[0]/augmentation"/>
+      <bool n="1" type="bool" alias="/engines/engine[1]/augmentation"/>
       </generic>
     </multiplay>
 
@@ -752,9 +755,9 @@
      <file>Aircraft/Jaguar/Nasal/damage.nas</file>
    </damage>
 
-   <!--blackout>
+   <blackout>
      <file>Aircraft/Jaguar/Nasal/blackout.nas</file>
-   </blackout-->
+   </blackout>
 
     <radarAltimeter>
       <file>Aircraft/Jaguar/Nasal/radaralt.nas</file>
@@ -776,9 +779,9 @@
         <file>Aircraft/Jaguar/Nasal/failures.nas</file>
     </failures>
 
-     <!--crashandstress>
+    <crashandstress>
         <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
-    </crashandstress-->
+    </crashandstress>
 
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
