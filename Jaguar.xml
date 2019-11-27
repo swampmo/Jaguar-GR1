@@ -20,7 +20,7 @@
     stall speed:   140.00kts
     max weight:    34600.00 lb
     length:        55.30 ft
-    wing: 
+    wing:
      span:         28.60 ft
      area:         258.00 sq-ft
      mean chord:   11.49 ft
@@ -62,8 +62,8 @@
    <chord     unit="FT" >    11.49 </chord>
    <htailarea unit="FT2">    63.00 </htailarea>
    <htailarm  unit="FT" >    18.00 </htailarm>
-   <vtailarea  unit="FT2">   30.00 </vtailarea>
-   <vtailarm  unit="FT" >    16.50 </vtailarm>
+   <vtailarea  unit="FT2">   20.00 </vtailarea>
+   <vtailarm  unit="FT" >    13.50 </vtailarm>
    <location name="AERORP" unit="IN">
       <x>   65.72 </x>
       <y>    0.00 </y>
@@ -270,7 +270,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
     <contact type="STRUCTURE" name="RIGHT_HSTAB">
     <location unit="M">
      <x>   8.37068 </x>
@@ -283,7 +283,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
     <contact type="STRUCTURE" name="LEFT_HSTAB">
     <location unit="M">
      <x>  8.37068  </x>
@@ -296,7 +296,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
     <contact type="STRUCTURE" name="VSTAB">
     <location unit="M">
      <x>   4.19068 </x>
@@ -309,7 +309,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
     <contact type="STRUCTURE" name="VSTAB_REAR">
     <location unit="M">
      <x>   8.17472 </x>
@@ -322,7 +322,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
     <contact type="STRUCTURE" name="VSTAB_FRONT">
     <location unit="M">
      <x>   6.48703 </x>
@@ -335,7 +335,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
     <contact type="STRUCTURE" name="VSTAB_REAR_ANT">
     <location unit="M">
      <x>   8.35249 </x>
@@ -348,7 +348,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
     <contact type="STRUCTURE" name="VSTAB_FRONT_ANT">
     <location unit="M">
      <x>   6.48703 </x>
@@ -361,7 +361,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
     <contact type="STRUCTURE" name="REAR_UPPER_FUSELAGE">
     <location unit="M">
      <x>   3.29911 </x>
@@ -374,7 +374,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
     <contact type="STRUCTURE" name="RIGHT_WING">
     <location unit="M">
      <x>   4.19068 </x>
@@ -387,7 +387,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
     <contact type="STRUCTURE" name="CANOPY">
     <location unit="M">
      <x>  -2.87425 </x>
@@ -400,7 +400,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
       <contact type="STRUCTURE" name="NOSE_ANT">
     <location unit="M">
      <x>  -8.51017 </x>
@@ -413,7 +413,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
       <contact type="STRUCTURE" name="NOSE">
     <location unit="M">
      <x>  -6.8457 </x>
@@ -426,7 +426,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
       <contact type="STRUCTURE" name="FRONT_LOWER_FUSELAGE">
     <location unit="M">
      <x>  -2.31506 </x>
@@ -439,7 +439,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
       <contact type="STRUCTURE" name="LEFT_STRAKE_FRONT">
     <location unit="M">
      <x>  -1.10459 </x>
@@ -452,7 +452,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
       <contact type="STRUCTURE" name="LEFT_STRAKE_REAR">
     <location unit="M">
      <x>  -1.47487 </x>
@@ -465,7 +465,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
       <contact type="STRUCTURE" name="RIGHT_STRAKE_FRONT">
     <location unit="M">
      <x>  4.47618 </x>
@@ -478,7 +478,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
       <contact type="STRUCTURE" name="RIGHT_STRAKE_REAR">
     <location unit="M">
      <x>  -1.47487 </x>
@@ -491,7 +491,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
       <contact type="STRUCTURE" name="LEFT_INTAKE">
     <location unit="M">
      <x>  -2.02736 </x>
@@ -504,7 +504,7 @@
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
   </contact>
-  
+
        <contact type="STRUCTURE" name="RIGHT_INTAKE">
     <location unit="M">
      <x>  -2.02736 </x>
@@ -516,7 +516,7 @@
       <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
       <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 40000 </damping_coeff_rebound>
-  </contact> 
+  </contact>
 
  </ground_reactions>
 
@@ -617,7 +617,7 @@
            <value> 0.0135</value>
        </product>
     </function>
-    
+
         <function name="aero/force/Lift_slats">
        <description>Delta Lift due to slats</description>
        <product>
@@ -636,7 +636,7 @@
            <property>fcs/spoiler-left-deg</property>
            <value> -0.0026 </value>
        </product>
-    </function>  
+    </function>
 
     <function name="aero/force/Lift_right_spoiler">
        <description>Delta Lift due to right spoiler</description>
@@ -646,7 +646,7 @@
            <property>fcs/spoiler-right-deg</property>
            <value> -0.0026 </value>
        </product>
-    </function>  
+    </function>
 
   </axis>
 
@@ -767,7 +767,7 @@
            <value> 0.001475 </value>
          </product>
     </function>
-    
+
         <function name="aero/force/Drag_slats">
        <description>Drag due to slats</description>
          <product>
@@ -806,7 +806,7 @@
            <property>fcs/speedbrake-pos-deg</property>
            <value> 0.05 </value>
        </product>
-    </function>  
+    </function>
 
   </axis>
 
