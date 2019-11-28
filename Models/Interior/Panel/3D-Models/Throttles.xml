@@ -9,6 +9,9 @@
     <object-name>button</object-name>
     <object-name>throttle-L</object-name>
     <object-name>throttle-R</object-name>
+		<object-name>air-brakes</object-name>
+		<object-name>combat-slats-ext</object-name>
+		<object-name>combat-slats-in</object-name>
   </animation>
 
         <animation>
@@ -16,6 +19,9 @@
     <object-name>base</object-name>
     <object-name>throttle-L</object-name>
     <object-name>throttle-R</object-name>
+		<object-name>air-brakes</object-name>
+		<object-name>combat-slats-ext</object-name>
+		<object-name>combat-slats-in</object-name>
     <emission>
       <factor-prop>/controls/lighting/cabin-norm</factor-prop>
             <red>0</red>
@@ -45,7 +51,9 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>button</object-name>
+    		<object-name>air-brakes</object-name>
+		<object-name>combat-slats-ext</object-name>
+		<object-name>combat-slats-in</object-name>
     <object-name>throttle-R</object-name>
     <property>controls/engines/engine[1]/throttle</property>
     <factor> -60 </factor>
@@ -62,13 +70,31 @@
      </center>
   </animation>
 
-<!-- #########################################################  AB  ############################################################################## -->
-  <!--animation>
+<!-- #########################################################  Speed-Brakes  ############################################################################## -->
+  <animation>
     <type>rotate</type>
-    <object-name>boost.lever</object-name>
-    <object-name>boost.knob</object-name>
-    <property>controls/engines/engine/wastegate</property>
-    <factor>-60 </factor>
+    <object-name>air-brakes</object-name>
+    <property>controls/flight/speed-brakes</property>
+    <factor>-5 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+
+      <center>
+	<x-m>-2.94429</x-m>
+	<y-m>-0.26576</y-m>
+	<z-m>-0.15581</z-m>
+     </center>
+
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>combat-slats-ext</object-name>
+    <property>controls/flight/slats</property>
+    <factor>0.001 </factor>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -76,11 +102,31 @@
     </axis>
 
       <center>
-	<x-m>-0.48587</x-m>
-	<y-m>-0.34311</y-m>
-	<z-m>0.36020</z-m>
+	<x-m>-2.95015</x-m>
+	<y-m>-0.26903</y-m>
+	<z-m>-0.16434</z-m>
      </center>
-  </animation-->
+
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>combat-slats-in</object-name>
+    <property>controls/flight/slats</property>
+    <factor>-0.001 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-2.93772</x-m>
+	<y-m>-0.26879</y-m>
+	<z-m>-0.14709</z-m>
+     </center>
+
+  </animation>
 
   <!-- ########################################################### HotSpots  ########################################################################### -->
   <animation>
@@ -135,6 +181,48 @@
         <command>property-adjust</command>
         <property>controls/engines/engine[1]/throttle</property>
         <step>-0.2</step>
+      </binding>
+    </action>
+  </animation>
+
+    <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>air-brakes</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/flight/speedbrakes</property>
+        <step>1</step>
+      </binding>
+    </action>
+  </animation>
+
+    <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>combat-slats-ext</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/flight/slats</property>
+        <step>0.391</step>
+      </binding>
+    </action>
+  </animation>
+
+    <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>combat-slats-in</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/flight/slats</property>
+        <step>-0.391</step>
       </binding>
     </action>
   </animation>
