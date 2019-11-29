@@ -132,7 +132,7 @@ STBY HSI
 		<object-name>HSI.knob</object-name>
 		<property>instrumentation/nav[0]/radials/selected-deg</property>
 		<axis>
-			<x1-m>0.0062</x1-m>
+			<x1-m> 0.0062</x1-m>
 			<y1-m>-0.02107</y1-m>
 			<z1-m>-0.02266</z1-m>
 			<x2-m>-0.0062</x2-m>

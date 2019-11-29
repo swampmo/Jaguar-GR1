@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>Jag-Canopy-Lock.ac</path>
+    <animation>
+     <object-name>Canopy-Lock</object-name>
+      <object-name>Canopy-Lock-Lever</object-name>
+   </animation>
+
+ <animation>
+  <type>material</type>
+     <object-name>Canopy-Lock</object-name>
+      <object-name>Canopy-Lock-Lever</object-name>
+        <emission>
+         <red> 1 </red>
+        <green>1 </green>
+       <blue>  1 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
+   </animation>
+
+<!-- ################################################ Canopy-Lock-Lever ###################################### -->
+  <animation>
+    <type>rotate</type>
+    <object-name>Canopy-Lock-Lever</object-name>
+    <property>canopy/position-norm</property>
+      <factor>30</factor>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 60 </dep></entry>
+    </interpolation>
+         <axis>
+          <x>0.0</x>
+           <y>1.0</y>
+          <z>0.0</z>
+         </axis>
+        <center>
+       <x-m>-3.29282</x-m>
+      <y-m> 0.34862</y-m>
+     <z-m>-0.06717</z-m>
+   </center>
+  </animation>
+
+<!--#################################################" MMB Adjustment ############################################" -->
+
+    <animation>
+     <type>pick</type>
+        <object-name>Canopy-Lock-Lever</object-name>
+      <factor>30</factor>
+         <action>
+          <button>0</button>
+            <binding>
+             <command>property-toggle</command>
+               <property>fdm/jsbsim/fcs/canopy/engage</property>
+               </binding>
+                <binding>
+                 <command>property-assign</command>
+                <property>fdm/jsbsim/fcs/canopy/position-norm</property>
+              </binding>
+             <binding>
+            <command>property-toggle</command>
+          <property>sim/sound/click</property>
+        </binding>
+      </action>
+    </animation>
+
+</PropertyList>

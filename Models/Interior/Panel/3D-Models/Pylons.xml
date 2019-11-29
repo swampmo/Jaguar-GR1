@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>Pylons.ac</path>
+
+  <animation>
+    <object-name>P-0</object-name>
+    <object-name>P-1</object-name>
+    <object-name>P0-arm</object-name>
+    <object-name>P1-arm</object-name>
+    <object-name>S-0</object-name>
+    <object-name>S-1</object-name>
+    <object-name>S0-arm</object-name>
+    <object-name>S1-arm</object-name>
+    <object-name>centre-arm</object-name>
+    <object-name>centre-pylon</object-name>
+    <object-name>pylon-arm</object-name>
+    <object-name>pylon-lights</object-name>
+    <object-name>screws</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>P-0</object-name>
+    <object-name>P-1</object-name>
+    <object-name>P0-arm</object-name>
+    <object-name>P1-arm</object-name>
+    <object-name>S-0</object-name>
+    <object-name>S-1</object-name>
+    <object-name>S0-arm</object-name>
+    <object-name>S1-arm</object-name>
+    <object-name>centre</object-name>
+    <object-name>centre-arm</object-name>
+    <object-name>centre-pylon</object-name>
+    <!--object-name>pylon-arm</object-name-->
+    <object-name>pylon-lights</object-name>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+            <red>  1 </red>
+            <green>1</green>
+            <blue> 1 </blue>
+    </emission>
+  </animation>
+
+  <!-- ############################################################## Pylons ###################################################################-->
+  <animation>
+    <type>rotate</type>
+    <object-name>P0-arm</object-name>
+        <property>controls/armament/master-arm</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.32442</x-m>
+	<y-m> 0.25919</y-m>
+	<z-m>-0.17913</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>P0-arm</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/armament/master-arm</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>P-0</object-name>
+			 <property>controls/switches/P-0</property>
+    <factor> -80 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.33882</x-m>
+	<y-m> 0.25912</y-m>
+	<z-m>-0.17009</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>P-0</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <interval-sec>0.3</interval-sec>
+		 <binding>
+			 <command>property-toggle</command>
+			 <property>controls/switches/P-0</property>
+		 </binding>
+	 </action>
+</animation>
+
+        <!-- P-1 -->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>P1-arm</object-name>
+        <property>controls/armament/master-arm</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.32442</x-m>
+	<y-m> 0.27770</y-m>
+	<z-m>-0.17913</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>P1-arm</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/armament/master-arm</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>P-1</object-name>
+			 <property>controls/switches/P-1</property>
+    <factor> -80 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.33882</x-m>
+	<y-m> 0.27759</y-m>
+	<z-m>-0.17009</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>P-1</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <interval-sec>0.3</interval-sec>
+		 <binding>
+			 <command>property-toggle</command>
+			 <property>controls/switches/P-1</property>
+		 </binding>
+	 </action>
+</animation>
+
+         <!--  centre -->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>centre-arm</object-name>
+        <property>controls/armament/master-arm</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.32442</x-m>
+	<y-m> 0.29621</y-m>
+	<z-m>-0.17913</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>centre-arm</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/armament/master-arm</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>centre</object-name>
+			 <property>controls/switches/centre</property>
+    <factor> -80 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.33882</x-m>
+	<y-m> 0.29607</y-m>
+	<z-m>-0.17009</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>centre</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <interval-sec>0.3</interval-sec>
+		 <binding>
+			 <command>property-toggle</command>
+			 <property>controls/switches/centre</property>
+		 </binding>
+	 </action>
+</animation>
+
+      <!--  S-0 -->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>S0-arm</object-name>
+        <property>controls/armament/master-arm</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.32442</x-m>
+	<y-m> 0.31486</y-m>
+	<z-m>-0.17913</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>S0-arm</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/armament/master-arm</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>S-0</object-name>
+			 <property>controls/switches/S-0</property>
+    <factor> -80 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.33882</x-m>
+	<y-m> 0.31446</y-m>
+	<z-m>-0.17009</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>S-0</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <interval-sec>0.3</interval-sec>
+		 <binding>
+			 <command>property-toggle</command>
+			 <property>controls/switches/S-0</property>
+		 </binding>
+	 </action>
+</animation>
+
+       <!--  S-1  -->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>S1-arm</object-name>
+        <property>controls/armament/master-arm</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.32442</x-m>
+	<y-m> 0.33352</y-m>
+	<z-m>-0.17913</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>S1-arm</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/armament/master-arm</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>S-1</object-name>
+			 <property>controls/switches/S-1</property>
+    <factor> -80 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.33882</x-m>
+	<y-m> 0.33297</y-m>
+	<z-m>-0.17009</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>S-1</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <interval-sec>0.3</interval-sec>
+		 <binding>
+			 <command>property-toggle</command>
+			 <property>controls/switches/S-1</property>
+		 </binding>
+	 </action>
+</animation>
+
+</PropertyList>
+
+

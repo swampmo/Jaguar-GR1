@@ -31,12 +31,12 @@
 	<animation>
 		<object-name>enav</object-name>
 		<type>material</type>
-		<emission>
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.7</red>
-			<green>0.7</green>
-			<blue>0.7</blue>
-		</emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 		<diffuse>
 			<red>0.1</red>
 			<green>0.1</green>

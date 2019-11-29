@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>LH-Piece.ac</path> 
+
+    <animation>
+     <object-name>Counter-Measures</object-name>
+      <object-name>Toggle</object-name>
+     <object-name>Trigger</object-name>
+      <object-name>Main-Button</object-name>
+     <object-name>Trim</object-name>
+      <object-name>screws</object-name>
+     <object-name>side-stick</object-name>
+   </animation>
+
+ <animation>
+  <type>material</type>
+     <object-name>Counter-Measures</object-name>
+      <object-name>Toggle</object-name>
+     <object-name>Trigger</object-name>
+      <object-name>Main-Button</object-name>
+     <object-name>Trim</object-name>
+     <object-name>side-stick</object-name>
+        <emission>
+         <red> 1 </red>
+        <green>1 </green>
+       <blue>  1 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
+   </animation>
+ 
+
+</PropertyList>

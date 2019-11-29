@@ -12,12 +12,12 @@
   <object-name>face</object-name>
   <object-name>Airspeedneedle</object-name>
   <object-name>speed-bug</object-name>
-   <emission>
+    <emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-     <red>0.75</red>
-     <green>0.75</green>
-     <blue>0.75</blue>
-   </emission> 
+    </emission>
  </animation> 
 
  <!-- Airspeed Needle -->
@@ -56,14 +56,14 @@
     </entry>
   </interpolation>   
   <center>
-   <x-m>-0.0165</x-m>
-   <y-m>0.0056</y-m>
-   <z-m>-0.0092</z-m>
+   <x-m>-0.00000</x-m>
+   <y-m> 0.00000</y-m>
+   <z-m>-0.00000</z-m>
   </center>
   <axis>
    <x>-1</x>
-   <y>0</y>
-   <z>0</z>
+   <y> 0</y>
+   <z> 0</z>
   </axis>
  </animation>
 
@@ -102,9 +102,9 @@
     </entry>
   </interpolation>   
   <center>
-   <x-m>-0.0165</x-m>
-   <y-m>0.0056</y-m>
-   <z-m>-0.0092</z-m>
+   <x-m>-0.00104</x-m>
+   <y-m>-0.00004</y-m>
+   <z-m> 0.00015</z-m>
   </center>
   <axis>
    <x>-1</x>

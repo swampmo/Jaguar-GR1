@@ -2,27 +2,59 @@
 
 <PropertyList>
 
- <path>mag-compass.ac</path>
+ <path>Jag-ball-compass.ac</path>
+
+  <animation>
+    <object-name>ball-support</object-name>
+    <object-name>centre-line</object-name>
+    <object-name>comp-cover</object-name>
+    <object-name>lock-nut</object-name>
+    <object-name>Ring</object-name>
+
+    <object-name>glass</object-name>
+  </animation>
+
+
+  <!-- working for Rembrandt -->
+
+  <effect>
+    <inherits-from>Aircraft/Jaguar/Models/Effects/Glass/glass</inherits-from>
+    <object-name>glass</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>glass</object-name>
+  </effect>
+    
 
  <animation>
   <type>rotate</type>
   <object-name>Ring</object-name>
   <property>orientation/heading-magnetic-deg</property>
+
   <!--property>/instrumentation/magnetic-compass/indicated-heading-deg</property-->
   <axis>
    <x>0.0</x>
    <y>0.0</y>
    <z>1.0</z>
   </axis>
+
+  <center>
+   <x-m> 0.05589</x-m>
+   <y-m>-0.00000</y-m>
+   <z-m>-0.01698</z-m>
+  </center>
  </animation>
 
   <animation>
     <type>material</type>
     <object-name>Ring</object-name>
+    <object-name>centre-line</object-name>
     <emission>
-      <red>   0.50 </red>
-      <green> 0.25 </green>
-      <blue>  0.25 </blue>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
     </emission>
   </animation>    

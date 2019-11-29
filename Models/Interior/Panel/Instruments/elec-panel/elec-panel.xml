@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<path>elec-panel.ac</path>
+	
+	<animation>
+		<type>scale</type>
+        <object-name>Back</object-name>
+		<object-name>BATT</object-name>
+		<object-name>TR-1</object-name>
+		<object-name>TR-2</object-name>
+		<object-name>ALT-1</object-name>
+		<object-name>ALT-2</object-name>
+		<object-name>Pitot-Heat</object-name>
+		<object-name>Mount</object-name>
+        <object-name>NVG</object-name>
+		<x-offset>0.8</x-offset>
+		<y-offset>0.8</y-offset>
+		<z-offset>0.8</z-offset>
+	</animation>
+
+	<animation>
+		<type>material</type>
+        <object-name>Mount</object-name>
+		<object-name>BATT</object-name>
+		<object-name>TR-1</object-name>
+		<object-name>TR-2</object-name>
+		<object-name>ALT-1</object-name>
+		<object-name>ALT-2</object-name>
+		<object-name>Pitot-Heat</object-name>
+        <object-name>NVG</object-name>
+		<x-offset>0.8</x-offset>
+		<y-offset>0.8</y-offset>
+		<z-offset>0.8</z-offset>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
+	</animation>
+	
+	<animation>
+		<object-name>BATT</object-name>
+		<type>rotate</type>
+		<property>/controls/electrical/battery-switch</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>-0.03345</x-m>
+			<y-m> 0.04072</y-m>
+			<z-m> 0.07928</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/electrical/battery-switch</property>
+                <factor>60</factor>
+            </binding>
+        </action>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>BATT</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/battery-switch</property>
+      </binding>
+    </action>
+  </animation>
+	
+	<animation>
+		<object-name>TR-1</object-name>
+		<type>rotate</type>
+		<property>/controls/electrical/tru-1-switch</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>0.00002</x-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.0792 8</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/electrical/tru-1-switch</property>
+               <factor>60</factor>
+            </binding>
+        </action>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>TR-1</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/tru-1-switch</property>
+      </binding>
+    </action>
+  </animation>
+	
+	<animation>
+		<object-name>TR-2</object-name>
+		<type>rotate</type>
+		<property>/controls/electrical/tru-2-switch</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>0.02474</x-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.07928</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/electrical/tru-2-switch</property>
+               <factor>60</factor>
+            </binding>
+        </action>
+       </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>TR-2</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/tru-2-switch</property>
+      </binding>
+    </action>
+  </animation>
+	
+	<animation>
+		<object-name>ALT-1</object-name>
+		<type>rotate</type>
+		<property>/controls/electrical/alternator-1-switch</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>0.06500</x-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.07923</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/electrical/alternator-1-switch</property>
+            </binding>
+        </action>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>ALT-1</object-name>
+    <factor>60</factor>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/alternator-1-switch</property>
+      </binding>
+    </action>
+  </animation>
+
+	
+	<animation>
+		<object-name>ALT-2</object-name>
+		<type>rotate</type>
+		<property>/controls/electrical/alternator-2-switch</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>0.08971</x-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.07923</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/electrical/alternator-2-switch</property>
+            </binding>
+        </action>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>ALT-2</object-name>
+    <factor>60</factor>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/alternator-2-switch</property>
+      </binding>
+    </action>
+  </animation>
+
+	<animation>
+		<object-name>Pitot-Heat</object-name>
+		<type>rotate</type>
+		<property>/controls/electrical/pitot-heat-switch</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>0.12517</x-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.07928</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/electrical/pitot-heat-switch</property>
+            </binding>
+        </action>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Pitot-Heat</object-name>
+    <factor>60</factor>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/pitot-heat-switch</property>
+      </binding>
+    </action>
+  </animation>
+
+	<animation>
+		<object-name>NVG</object-name>
+		<type>rotate</type>
+		<property>/controls/electrical/nvg-switch</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>0.08971</x-m>
+			<y-m>0.04072</y-m>
+			<z-m>0.07923</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/electrical/nvg-switch</property>
+            </binding>
+        </action>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>NVG</object-name>
+    <factor>60</factor>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electrical/nvg-switch</property>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>
+
+
+

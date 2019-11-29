@@ -25,6 +25,8 @@
 		<object-name>sp-in</object-name>
 		<object-name>rw-up</object-name>
 		<object-name>sp-partial</object-name>
+		<object-name>AutoSlat-frame</object-name>
+		<object-name>AutoSlat-button</object-name>
   </animation>
 
   <animation>
@@ -50,10 +52,10 @@
 		<object-name>rw-up</object-name>
 		<object-name>sp-partial</object-name>
     <emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-      <red>   0.50 </red>
-      <green> 0.25 </green>
-      <blue>  0.25 </blue>
     </emission>
   </animation>
 
@@ -76,9 +78,9 @@
 		<property>surface-positions/flap-pos-norm</property>
 		<factor> 90 </factor>
 		<center>
-			<x-m> 0.0000 </x-m>
-			<y-m> 0.0200 </y-m>
-			<z-m> 0.0182 </z-m>
+			<x-m>-0.00237 </x-m>
+			<y-m> 0.01602 </y-m>
+			<z-m> 0.01495 </z-m>
 		</center>
 		<axis>
 			<x> -1 </x>
@@ -93,7 +95,7 @@
 		<object-name>slats-in</object-name>
 		<condition>
 			<equals>
-				<property>surface-positions/slats-pos-norm</property>
+				<property>fdm/jsbsim/fcs/slats-pos-norm</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -104,8 +106,8 @@
 		<object-name>slats-combat</object-name>
 		<condition>
 			<equals>
-				<property>surface-positions/slats-pos-norm</property>
-				<value>0.45</value>
+				<property>fdm/jsbsim/fcs/slats-deg</property>
+				<value>8.993</value>
 			</equals>
 		</condition>
 	</animation>
@@ -115,8 +117,8 @@
 		<object-name>slats-extended</object-name>
 		<condition>
 			<equals>
-				<property>surface-positions/slats-pos-norm</property>
-				<value>1</value>
+				<property>fdm/jsbsim/fcs/slats-control</property>
+				<value>23</value>
 			</equals>
 		</condition>
 	</animation>
@@ -127,7 +129,7 @@
 		<object-name>lw-up</object-name>
 		<condition>
 			<equals>
-				<property>gear/gear[0]/position-norm</property>
+				<property>fdm/jsbsim/fcs/landing-gear-control</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -138,7 +140,7 @@
 		<object-name>lw-down</object-name>
 		<condition>
 			<equals>
-				<property>gear/gear[0]/position-norm</property>
+				<property>fdm/jsbsim/fcs/landing-gear-control</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -149,7 +151,7 @@
 		<object-name>nw-up</object-name>
 		<condition>
 			<equals>
-				<property>gear/gear[1]/position-norm</property>
+				<property>fdm/jsbsim/fcs/landing-gear-control</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -160,7 +162,7 @@
 		<object-name>nw-down</object-name>
 		<condition>
 			<equals>
-				<property>gear/gear[1]/position-norm</property>
+				<property>fdm/jsbsim/fcs/landing-gear-control</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -171,7 +173,7 @@
 		<object-name>rw-up</object-name>
 		<condition>
 			<equals>
-				<property>gear/gear[2]/position-norm</property>
+				<property>fdm/jsbsim/fcs/landing-gear-control</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -182,7 +184,7 @@
 		<object-name>rw-down</object-name>
 		<condition>
 			<equals>
-				<property>gear/gear[2]/position-norm</property>
+				<property>fdm/jsbsim/fcs/landing-gear-control</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -194,7 +196,7 @@
 		<object-name>sp-in</object-name>
 		<condition>
 			<equals>
-				<property>surface-positions/speedbrake-pos-norm</property>
+				<property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -205,7 +207,7 @@
 		<object-name>sp-full</object-name>
 		<condition>
 			<equals>
-				<property>surface-positions/speedbrake-pos-norm</property>
+				<property>surface-positions/speedbrake-pos-deg</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -221,10 +223,35 @@
 			</greater-than>
 			<less-than>
 				<property>surface-positions/speedbrake-pos-norm</property>
-				<value>1</value>
+				<value>1.2</value>
 			</less-than>
 		</condition>
 	</animation>
 
+	<!--
+	<animation>
+		<type>pick</type>	
+		<object-name>autoSlat-button</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>property-toggle</command>
+				<property></property>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>autoSlat-button</object-name>
+		<emission>
+			<factor-prop></factor-prop>
+			<red>   0.50 </red>
+			<green> 0.25 </green>
+			<blue>  0.25</blue>
+		</emission>
+	</animation>
+-->
 </PropertyList>
 

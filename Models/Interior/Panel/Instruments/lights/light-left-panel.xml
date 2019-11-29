@@ -19,9 +19,9 @@
 			<z-m>-0.0020</z-m>
 		</center>
 		<axis>
-			<x>0</x>
+			<x> 0</x>
 			<y>-1</y>
-			<z>0</z>
+			<z> 0</z>
 		</axis>
 	</animation>
 
@@ -107,8 +107,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>land-switch</object-name>
-		<property>/controls/switches/gear-lights</property>
-		<factor>-25</factor>
+		<property>/controls/switches//gear-lights</property>
+		<factor>-30</factor>
 		<offset-deg>25</offset-deg>
 		<axis>
 			<y>-1</y>
@@ -160,7 +160,7 @@
 	<animation>
 		<type>pick</type>
 		<visible>true</visible>
-		<object-name>hotspot-instrument-left</object-name>
+		<object-name>hotspot-instrument-right</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>true</repeatable>
@@ -176,7 +176,7 @@
 	<animation>
 		<type>pick</type>
 		<visible>true</visible>
-		<object-name>hotspot-instrument-right</object-name>
+		<object-name>hotspot-instrument-left</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>true</repeatable>
@@ -272,124 +272,132 @@
 		</axis>
 	</animation>
 -->
-	<!-- lighting 
+
 	<animation> 
 		<object-name>mount</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>
 		<object-name>collision-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
+    </animation>
+
 	<animation>
 		<object-name>taxi-probe-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 	<animation>
+
 		<object-name>pylon-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
+
 	<animation>
 		<object-name>instrument-wheel</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
+
 	<animation>
 		<object-name>console-wheel</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
+
 	<animation>
 		<object-name>approach-index-wheel</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
+
 	<animation>
 		<object-name>tail-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
+
 	<animation>
 		<object-name>wing-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
+
 	<animation>
 		<object-name>formation-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
+
 	<animation>
 		<object-name>flood-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>
 		<object-name>light-left-panel</object-name>
 		<type>noshadow</type>
 	</animation>
--->
 
 	<!-- LoD -->
 	<animation>
@@ -399,3 +407,5 @@
 	</animation>
 
 </PropertyList>
+
+

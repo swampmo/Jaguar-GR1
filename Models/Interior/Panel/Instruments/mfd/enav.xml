@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <path>enav.ac</path>
+  <path>round-enav.ac</path>
  
   <!--
   <animation>
@@ -166,16 +166,12 @@
     <object-name>ilsllabel</object-name>
     <object-name>ilsrlabel</object-name>
     <object-name>bug</object-name>
-		<emission>
-			<!-- <factor-prop>controls/VDI/brightness</factor-prop> -->
-      <!-- <red>   0.0 </red>   -->
-      <!-- <green> 0.9 </green> -->
-      <!-- <blue>  0.0 </blue>  -->
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-      <red>   0.20 </red>
-      <green> 0.15 </green>
-      <blue>  0.15 </blue>
-		</emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
   <animation>
@@ -1339,9 +1335,9 @@
 		<object-name>EHSI-w-arrow</object-name>
 		<property>orientation/heading-magnetic-deg</property>
 		<center>
-			<x-m>0.016</x-m>
-			<y-m> 0.044</y-m>
-			<z-m> 0.043</z-m>
+			<x-m> 0.00236</x-m>
+			<y-m> 0.03874</y-m>
+			<z-m> 0.03798</z-m>
 		</center>
 		<axis>
 			<x> 1 </x>
@@ -1355,9 +1351,9 @@
 		<object-name>EHSI-w-arrow</object-name>
 		<property>environment/wind-from-heading-deg</property>
 		<center>
-			<x-m>0.016</x-m>
-			<y-m> 0.044</y-m>
-			<z-m> 0.043</z-m>
+			<x-m> 0.00236</x-m>
+			<y-m> 0.03874</y-m>
+			<z-m> 0.03798</z-m>
 		</center>
 		<axis>
 			<x> -1.0 </x>
@@ -1442,12 +1438,12 @@
 			<green>0.1</green>
 			<blue>0.1</blue>
 		</diffuse>
-		<emission>
-			<red>0.9</red>
-			<green>0.9</green>
-			<blue>0.9</blue>
-			<factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 </PropertyList>

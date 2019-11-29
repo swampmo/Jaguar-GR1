@@ -15,7 +15,7 @@
 <and>
  
 <greater-than>  
-   <property>engines/engine[0]/rpm</property>
+   <property>engines/engine[0]/n1</property>
    <value>0.5</value>
    
   </greater-than>
@@ -204,9 +204,9 @@
           <property>/sim/current-view/internal</property>
         </not>
       </condition>
-      <property>engines/engine/thrust-lbs</property>
+      <property>engines/engine/thrust_lb</property>
       <volume>
-        <property>engines/engine/thrust-lbs</property>
+        <property>engines/engine/thrust_lb</property>
         <factor>0.008</factor>       
         <min>0</min>
         <max>4.9</max>
@@ -221,7 +221,7 @@
       <name>burner lowfreq</name>
       <path>Aircraft/Jaguar/Sounds/burner-lowfreq.wav</path>
       <mode>once</mode>    
-      <property>engines/engine/afterburner</property>
+      <property>engines/engine/augmentation</property>
       <volume>
         <offset>4.9</offset>
       </volume> 
@@ -233,7 +233,7 @@
       <name>burner lowfreq loop0</name>
       <path>Aircraft/Jaguar/Sounds/engine-lowfreq.wav</path>
       <mode>looped</mode>
-      <property>engines/engine[0]/afterburner</property>
+      <property>engines/engine[0]/augmentation</property>
       <volume>
         <offset>-0.2</offset>
       </volume>
@@ -245,7 +245,7 @@
       <name>burner lowfreq loop1</name>
       <path>Aircraft/Jaguar/Sounds/engine-lowfreq.wav</path>
       <mode>looped</mode>
-      <property>engines/engine[1]/afterburner</property>
+      <property>engines/engine[1]/augmentation</property>
       <volume>
         <offset>-0.2</offset>
       </volume>
@@ -264,7 +264,7 @@
         </not>
       </condition>
       <volume>
-        <property>engines/engine[0]/afterburner</property>
+        <property>engines/engine[0]/augmentation</property>
         <factor>2</factor>
         <min>0</min>
         <max>4.5</max>
@@ -292,7 +292,7 @@
         </not>
       </condition>
       <volume>
-        <property>engines/engine[1]/afterburner</property>
+        <property>engines/engine[1]/augmentation</property>
         <factor>2</factor>
         <min>0</min>
         <max>4.5</max>
@@ -355,11 +355,11 @@
 	 	<property>/engines/engine/out-of-fuel</property>
      	</not>
 		</condition>
-			<!-- <volume>
+			 <volume>
 				<property>velocities/airspeed-kt</property>
 				<factor>0.001</factor>
 			</volume>
-			-->
+			
 		</flyby>
 
 

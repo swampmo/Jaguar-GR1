@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <path>panel.ac</path>
+  <path>Full-panel.ac</path>
 
   <animation>
     <!-- Objets opaques -->
@@ -11,187 +11,159 @@
     <!-- Objets transparents -->
   </animation>
 
-  <!-- nav light 
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/divers/landing-lights.xml</path>
-    <offsets>
-      <x-m> -3.338 </x-m>
-      <y-m> 0.13 </y-m>
-      <z-m>  0.156 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
--->
-  <!-- Instruments -->
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/HUD/optical-sight2.xml</path>
-    <offsets>
-      <x-m> -3.39 </x-m>
-      <y-m>  -0.0 </y-m>
-      <z-m>  0.25 </z-m>
-     
-    </offsets>
-  </model>
   
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ulp/ulp.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Radar/Radar/A-10-rwr.xml</path>
     <offsets>
-      <x-m> -3.32 </x-m>
-      <y-m> 0 </y-m>
-      <z-m>  -0.02</z-m>
-      <pitch-deg>-10</pitch-deg>
+      <x-m> -0.002 </x-m>
+      <y-m> -0.005 </y-m>
+      <z-m>  0.000 </z-m>
+      <roll-deg>0</roll-deg>
+      <yaw-deg>0</yaw-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/standby-adi/stdby-adi.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/sas/A-10-sas.xml</path>
     <offsets>
-      <x-m> -3.342 </x-m>
-      <y-m> 0.22 </y-m>
-      <z-m>  0.15 </z-m>
-      <pitch-deg>-8</pitch-deg>
+      <x-m> -3.170 </x-m>
+      <y-m>  0.272 </y-m>
+      <z-m> -0.148 </z-m>
+      <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
-  
-  <model>
+
+  <!--model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ai/ai.xml</path>
     <offsets>
       <x-m> -3.327 </x-m>
       <y-m> -0.11 </y-m>
       <z-m>  0.15 </z-m>
-      <pitch-deg>-8</pitch-deg>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model-->
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/asi/airspeed.xml</path>
+    <offsets>
+      <x-m> -3.358 </x-m>
+      <y-m> -0.175 </y-m>
+      <z-m>  0.150 </z-m>
+      <pitch-deg>-0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -3.360 </x-m>
+      <y-m> -0.190 </y-m>
+      <z-m>  0.080 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Call-Panel.ac</path>
+    <offsets>
+      <x-m>-0.155 </x-m>
+      <y-m>-0.050 </y-m>
+      <z-m> 0.035 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Canopy-Lock.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.008 </y-m>
+      <z-m> 0.036 </z-m>
+      <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
 
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/clock/chronograph.xml</path>
     <offsets>
-      <x-m> -3.332 </x-m>
-      <y-m> -0.34 </y-m>
-      <z-m>  0.17 </z-m>
-      <pitch-deg>-8</pitch-deg>
+      <x-m> -3.330 </x-m>
+      <y-m> -0.345 </y-m>
+      <z-m>  0.070 </z-m>
+      <pitch-deg>0</pitch-deg>
 	  <heading-deg>28</heading-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/HSI/hsi.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ecm/ecm.xml</path>
     <offsets>
-      <x-m> -3.32 </x-m>
-      <y-m> -0.11 </y-m>
-      <z-m>  0.090 </z-m>
-      <pitch-deg>-8</pitch-deg>
+      <x-m> -3.350 </x-m>
+      <y-m>  0.315 </y-m>
+      <z-m>  0.105 </z-m>
+	  <heading-deg>-25</heading-deg>
+	  <roll-deg>0</roll-deg>
+	  <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/GMeter/gmeter.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/elec-panel/elec-panel.xml</path>
     <offsets>
-      <x-m> -3.340 </x-m>
-      <y-m> 0.105 </y-m>
-      <z-m>  0.215 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-
-  
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/alt/alt.xml</path>
-    <offsets>
-      <x-m> -3.315 </x-m>
-      <y-m> -0.18 </y-m>
-      <z-m>  0.090 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/asi/airspeed.xml</path>
-    <offsets>
-      <x-m> -3.34 </x-m>
-      <y-m> -0.19 </y-m>
-      <z-m>  0.16 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rpm/rpm-1.xml</path>
-    <offsets>
-      <x-m> -3.325 </x-m>
-      <y-m>  0.130 </y-m>
-      <z-m>  0.110 </z-m>
-	  <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rpm/rpm-2.xml</path>
-    <offsets>
-      <x-m> -3.325 </x-m>
-      <y-m>  0.170 </y-m>
-      <z-m>  0.110 </z-m>
-	  <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/egt/exh1.xml</path>
-    <offsets>
-      <x-m> -3.320 </x-m>
-      <y-m>  0.130 </y-m>
-      <z-m>  0.07 </z-m>
-	  <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/egt/exh2.xml</path>
-    <offsets>
-      <x-m> -3.320 </x-m>
-      <y-m>  0.170 </y-m>
-      <z-m>  0.07 </z-m>
-	  <pitch-deg>-8</pitch-deg>
+      <x-m> -3.100 </x-m>
+      <y-m>  0.330 </y-m>
+      <z-m> -0.160 </z-m>
+	  <heading-deg>0</heading-deg>
+	  <roll-deg>0</roll-deg>
+	  <pitch-deg>-10</pitch-deg>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/epr/eprL.xml</path>
     <offsets>
-      <x-m> -3.317 </x-m>
-      <y-m>  0.130 </y-m>
-      <z-m>  0.030 </z-m>
-	  <pitch-deg>-8</pitch-deg>
+      <x-m> -3.361 </x-m>
+      <y-m>  0.133 </y-m>
+      <z-m> -0.063 </z-m>
+	  <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/epr/eprR.xml</path>
     <offsets>
-      <x-m> -3.317 </x-m>
-      <y-m>  0.170 </y-m>
-      <z-m>  0.030 </z-m>
-	  <pitch-deg>-8</pitch-deg>
+      <x-m> -3.361 </x-m>
+      <y-m>  0.178 </y-m>
+      <z-m> -0.063 </z-m>
+	  <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/egt/exh1.xml</path>
+    <offsets>
+      <x-m> -3.361 </x-m>
+      <y-m>  0.133 </y-m>
+      <z-m> -0.025 </z-m>
+	  <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
   
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Trim/trimelevator.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/egt/exh2.xml</path>
     <offsets>
-      <x-m> -3.2855 </x-m>
-      <y-m> -0.2370 </y-m>
-      <z-m> -0.0375 </z-m>
-      <pitch-deg>-38</pitch-deg>
+      <x-m> -3.361 </x-m>
+      <y-m>  0.178 </y-m>
+      <z-m> -0.025 </z-m>
+	  <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ControlInd/slats-flaps-gear-indicator.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Fuelflow/FF.xml</path>
     <offsets>
-      <x-m> -3.28 </x-m>
-      <y-m> -0.31 </y-m>
-      <z-m> -0.04 </z-m>
-      <pitch-deg>-38</pitch-deg>
+      <x-m> -3.362 </x-m>
+      <y-m>  0.215 </y-m>
+      <z-m>  0.090 </z-m>
+      <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
 
@@ -201,123 +173,10 @@
       <x-m> -3.28 </x-m>
       <y-m> -0.31 </y-m>
       <z-m> -0.04 </z-m>
-      <pitch-deg>-38</pitch-deg>
+      <pitch-deg>0</pitch-deg>
     </offsets>
   </model-->
 
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/oilpressure/oilpressureL.xml</path>
-    <offsets>
-      <x-m> -3.230 </x-m>
-      <y-m> -0.310 </y-m>
-      <z-m> -0.105 </z-m>
-      <pitch-deg>-38</pitch-deg>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/oilpressure/oilpressureR.xml</path>
-    <offsets>
-      <x-m> -3.230 </x-m>
-      <y-m> -0.250 </y-m>
-      <z-m> -0.105 </z-m>
-      <pitch-deg>-38</pitch-deg>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Fuelflow/FF.xml</path>
-    <offsets>
-      <x-m> -3.335 </x-m>
-      <y-m>  0.175 </y-m>
-      <z-m>  0.150 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/percentfuel/percentfuel.xml</path>
-    <offsets>
-      <x-m> -3.338 </x-m>
-      <y-m>  0.175 </y-m>
-      <z-m>  0.190 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <name>vertspeed</name>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
-    <offsets>
-      <x-m> -3.321 </x-m>
-      <y-m> -0.31 </y-m>
-      <z-m>  0.05 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-
-  <animation>
-    <type>scale</type>
-    <object-name>vertspeed</object-name>
-    <x-factor> 1.0 </x-factor>
-    <x-offset> 1.0 </x-offset>
-    <y-factor> 1.0 </y-factor>
-    <y-offset> 0.6 </y-offset>
-    <z-factor> 1.0 </z-factor>
-    <z-offset> 0.6 </z-offset>
-  </animation>
-
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ralt/ralt.xml</path>
-    <offsets>
-      <x-m> -3.315 </x-m>
-      <y-m> -0.1 </y-m>
-      <z-m>  0.035 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-  
-  
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/mfd1.xml</path>
-    <offsets>
-      <x-m> -3.33 </x-m>
-      <y-m>  -0.0 </y-m>
-      <z-m>  0.085 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/warn/warn.xml</path>
-    <offsets>
-      <x-m> -3.320 </x-m>
-      <y-m>  0.230 </y-m>
-      <z-m>  0.06 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ecm/ecm.xml</path>
-    <offsets>
-      <x-m> -3.32 </x-m>
-      <y-m>  0.279 </y-m>
-      <z-m>  0.11 </z-m>
-      <pitch-deg>-8</pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-  <name>compas</name>
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/compas/mag-compass.xml</path>
-  <offsets>
-   <x-m> -3.27 </x-m>
-      <y-m>  0.29 </y-m>
-      <z-m>  0.105 </z-m>
-   <pitch-deg>-8</pitch-deg>
-  </offsets>
- </model>
 <!--
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Fuel/fuel.xml</path>
@@ -369,95 +228,242 @@
     </offsets>
   </model>
 -->
-  <!--
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Radar/Radar/A-10-rwr.xml</path>
-    <offsets>
-      <x-m> -3.34 </x-m>
-      <y-m>  0.25 </y-m>
-      <z-m>  0.22 </z-m>
-      <roll-deg> -40 </roll-deg>
-      <yaw-deg>  -90 </yaw-deg>
-    </offsets>
-  </model>
-  -->
 
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Radar/radar.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/GMeter/gmeter.xml</path>
     <offsets>
-      <x-m> -3.33 </x-m>
-      <y-m>  0.20 </y-m>
-      <z-m>  0.25 </z-m>
-      <roll-deg> -40 </roll-deg>
-      <yaw-deg>  -90 </yaw-deg>
+      <x-m> -3.360 </x-m>
+      <y-m>  0.120 </y-m>
+      <z-m>  0.165 </z-m>
+      <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/uhf-box/uhf-box.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/HSI/hsi.xml</path>
     <offsets>
-      <x-m> -3.306 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.045 </z-m>
-      <pitch-deg>-5</pitch-deg>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/sas/A-10-sas.xml</path>
-    <offsets>
-      <x-m> -3.285 </x-m>
-      <y-m>  0.285 </y-m>
-      <z-m> -0.040 </z-m>
-      <pitch-deg>52</pitch-deg>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/tacan/tacan.xml</path>
-    <offsets>
-      <x-m> -3.235 </x-m>
-      <y-m>  0.285 </y-m>
-      <z-m> -0.100 </z-m>
-      <pitch-deg>52</pitch-deg>
+      <x-m> -3.360 </x-m>
+      <y-m> -0.125 </y-m>
+      <z-m>  0.080 </z-m>
+      <pitch-deg>0</pitch-deg>name
     </offsets>
   </model>
 
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ils/Jag-ils.xml</path>
     <offsets>
-      <x-m> -3.195 </x-m>
-      <y-m>  0.285 </y-m>
-      <z-m> -0.150 </z-m>
-      <pitch-deg>52</pitch-deg>
+      <x-m> -3.113 </x-m>
+      <y-m>  0.2817 </y-m>
+      <z-m> -0.149 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+ 
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Ldg-Gear.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m>-0.005 </y-m>
+      <z-m>0.015 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/LH-Front-Panel.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.030 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/LH-Piece.ac</path>
+    <offsets>
+      <x-m>-2.930 </x-m>
+      <y-m>-0.350 </y-m>
+      <z-m>-0.135 </z-m>
+      <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
 
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/lights/light-left-panel.xml</path>
     <offsets>
-      <x-m> -3.095 </x-m>
-      <y-m>  0.285 </y-m>
-      <z-m> -0.188 </z-m>
-      <pitch-deg>-1</pitch-deg>
+      <x-m> -2.945 </x-m>
+      <y-m>  0.282 </y-m>
+      <z-m> -0.146 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+  <name>compas</name>
+  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/compas/mag-compass.xml</path>
+  <offsets>
+      <x-m> -3.345 </x-m>
+      <y-m>  0.315 </y-m>
+      <z-m>  0.105 </z-m>
+    <heading-deg>-25</heading-deg>
+    <pitch-deg>0</pitch-deg>
+    <roll-deg>0</roll-deg>
+  </offsets>
+ </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/round-mfd1.xml</path>
+    <offsets>
+      <x-m> -3.360 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.085 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Nav-ECM-Master.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.025 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/oilpressure/oilpressureL.xml</path>
+    <offsets>
+      <x-m> -3.364 </x-m>
+      <y-m>  0.265 </y-m>
+      <z-m> -0.110 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/oilpressure/oilpressureR.xml</path>
+    <offsets>
+      <x-m> -3.364 </x-m>
+      <y-m>  0.322 </y-m>
+      <z-m> -0.110 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/HUD/optical-sight.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.000 </y-m>
+      <z-m>  0.000 </z-m>   
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/percentfuel/percentfuel.xml</path>
+    <offsets>
+      <x-m> -3.359 </x-m>
+      <y-m>  0.215 </y-m>
+      <z-m>  0.135 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Pylons.xml</path>
+    <offsets>
+      <x-m>  0.030 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.025 </z-m>
+      <roll-deg> 0 </roll-deg>
+      <yaw-deg>  0 </yaw-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ralt/ralt.xml</path>
+    <offsets>
+      <x-m> -3.360 </x-m>
+      <y-m> -0.125 </y-m>
+      <z-m>  0.015 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rpm/rpm-1.xml</path>
+    <offsets>
+      <x-m> -3.361 </x-m>
+      <y-m>  0.133 </y-m>
+      <z-m>  0.015 </z-m>
+	  <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
   
-  
- <!-- misc bitn and bobs -->
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rpm/rpm-2.xml</path>
+    <offsets>
+      <x-m> -3.361 </x-m>
+      <y-m>  0.178 </y-m>
+      <z-m>  0.015 </z-m>
+	  <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ControlInd/slats-flaps-gear-indicator.xml</path>
+    <offsets>
+      <x-m> -3.359 </x-m>
+      <y-m> -0.255 </y-m>
+      <z-m> -0.120 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Start-Panel.xml</path>
+    <offsets>
+      <x-m>-0.121 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.720 </z-m>
+      <pitch-deg>-12.05</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/standby-adi/stdby-adi.xml</path>
+    <offsets>
+      <x-m> -3.362 </x-m>
+      <y-m> -0.120 </y-m>
+      <z-m>  0.145 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/tacan/tacan.xml</path>
+    <offsets>
+      <x-m> -3.057 </x-m>
+      <y-m>  0.280 </y-m>
+      <z-m> -0.148 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
 <model>
   
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/t-handel.ac</path>
+  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/t-handle.xml</path>
   <offsets>
-   <x-m> -3.33 </x-m>
-      <y-m>  0.29 </y-m>
-      <z-m>  0.04 </z-m>
+      <x-m> -3.340 </x-m>
+      <y-m>  0.315 </y-m>
+      <z-m> -0.020 </z-m>
    <pitch-deg>0</pitch-deg>
   </offsets>
  </model>
- 
- <model>
-  
+
+ <!--model> 
   <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/t-handel2.ac</path>
   <offsets>
    <x-m> -3.315 </x-m>
@@ -465,41 +471,104 @@
       <z-m>  0.087 </z-m>
       <roll-deg>45</roll-deg>
   </offsets>
- </model>
+ </model-->
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Trim/trimelevator.xml</path>
+    <offsets>
+      <x-m> -3.360 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m>  0.018 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/uhf-box/uhf-box.xml</path>
+    <offsets>
+      <x-m> -3.335 </x-m>
+      <y-m> -0.005 </y-m>
+      <z-m> -0.155 </z-m>
+      <pitch-deg>-28.00</pitch-deg>
+    </offsets>
+  </model>
+  
+  <!--model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ulp/ulp.xml</path>
+    <offsets>
+      <x-m> -3.32 </x-m>
+      <y-m> 0 </y-m>
+      <z-m>  -0.02</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model-->
+  
+  <model>
+    <name>vertspeed</name>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m> -3.360 </x-m>
+      <y-m> -0.305 </y-m>
+      <z-m>  0.030 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>scale</type>
+    <object-name>vertspeed</object-name>
+    <x-factor> 1.0 </x-factor>
+    <x-offset> 1.0 </x-offset>
+    <y-factor> 1.0 </y-factor>
+    <y-offset> 0.6 </y-offset>
+    <z-factor> 1.0 </z-factor>
+    <z-offset> 0.6 </z-offset>
+  </animation>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/warn/warn.xml</path>
+    <offsets>
+      <x-m> -3.355 </x-m>
+      <y-m>  0.265 </y-m>
+      <z-m>  0.010 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
  
  <model>
   
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orangelight.ac</path>
+  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orangelight.xml</path>
   <offsets>
-  <x-m> -3.315 </x-m>
-      <y-m> -0.17 </y-m>
-      <z-m>  0.0 </z-m>
-      <pitch-deg>-8</pitch-deg>
+      <x-m> -3.315 </x-m>
+      <y-m> -0.185 </y-m>
+      <z-m> -0.025 </z-m>
+      <pitch-deg>0</pitch-deg>
   </offsets>
  </model>
  
  
  <model>
   
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/redlight.ac</path>
+  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/redlight.xml</path>
   <offsets>
-  <x-m> -3.315 </x-m>
-      <y-m> -0.16 </y-m>
-      <z-m>  0.0 </z-m>
-      <pitch-deg>-8</pitch-deg>
+      <x-m> -3.315 </x-m>
+      <y-m> -0.170 </y-m>
+      <z-m> -0.025 </z-m>
+      <pitch-deg>0</pitch-deg>
   </offsets>
  </model>
  
  <model>
   
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orangelight.ac</path>
+  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orangelight.xml</path>
   <offsets>
-  <x-m> -3.315 </x-m>
-      <y-m> -0.15 </y-m>
-      <z-m>  0.0 </z-m>
-      <pitch-deg>-8</pitch-deg>
+      <x-m> -3.315 </x-m>
+      <y-m> -0.155 </y-m>
+      <z-m> -0.025 </z-m>
+      <pitch-deg>0</pitch-deg>
   </offsets>
  </model>
+ 
  
 </PropertyList>
 

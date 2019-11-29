@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<path>orangelight.ac</path> 
+
+    <animation>
+     <object-name>mount</object-name>
+      <object-name>orange-light</object-name>
+   </animation>
+
+ <animation>
+  <type>material</type>
+     <object-name>orange-light</object-name>
+    <emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
+   </animation>
+ 
+
+</PropertyList>

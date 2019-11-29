@@ -60,10 +60,10 @@
     <object-name>lampetest</object-name>
     <object-name>lampesil</object-name>
     <emission>
-      <red>   0.50 </red>
-      <green> 0.25 </green>
-      <blue>  0.25 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
     </emission>
   </animation>
 
@@ -109,9 +109,9 @@
     </interpolation>
 -->
     <center>
-      <x-m> -0.002 </x-m>
-      <y-m> -0.056 </y-m>
-      <z-m> -0.036 </z-m>
+      <x-m> -0.00274 </x-m>
+      <y-m> -0.05636 </y-m>
+      <z-m> -0.03603 </z-m>
     </center>
     <axis>
       <x> 1 </x>
@@ -205,9 +205,9 @@
 <!-- property -->
 <!-- <factor> ? </factor> -->
     <center>
-      <x-m>  0.011 </x-m>
-      <y-m>  0.058 </y-m>
-      <z-m> -0.027 </z-m>
+      <x-m>  0.00524 </x-m>
+      <y-m>  0.05826 </y-m>
+      <z-m> -0.02651 </z-m>
     </center>
     <axis>
       <x> 1 </x>

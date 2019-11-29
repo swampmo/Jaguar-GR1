@@ -133,90 +133,90 @@
 	<animation> 
 		<object-name>mount</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation> 
 		<object-name>pitch-R-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.20</red>
-			<green>0.10</green>
-			<blue>0.05</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation> 
 		<object-name>pitch-L-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.20</red>
-			<green>0.10</green>
-			<blue>0.05</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation> 
 		<object-name>yaw-R-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.20</red>
-			<green>0.10</green>
-			<blue>0.05</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation> 
 		<object-name>yaw-L-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.20</red>
-			<green>0.10</green>
-			<blue>0.05</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 
 	<animation> 
 		<object-name>monitor-test-switch</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.13</red>
-			<green>0.09</green>
-			<blue>0.04</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation> 
 		<object-name>to-trim-button</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.13</red>
-			<green>0.09</green>
-			<blue>0.04</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation> 
 		<object-name>yaw-trim-knob</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.13</red>
-			<green>0.09</green>
-			<blue>0.04</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<!--<animation> 

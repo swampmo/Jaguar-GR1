@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>Nav-ECM-Master.ac</path>
+
+  <animation>
+    <object-name>Button</object-name>
+    <object-name>ECM-Master</object-name>
+    <object-name>Nav-Switch-1</object-name>
+    <object-name>Nav-Switch-2</object-name>
+    <object-name>nav-ecm-master</object-name>
+    <object-name>screws</object-name>
+
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Button</object-name>
+    <object-name>ECM-Master</object-name>
+    <object-name>Nav-Switch-1</object-name>
+    <object-name>Nav-Switch-2</object-name>
+    <object-name>nav-ecm-master</object-name>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+            <red>  1 </red>
+            <green>1</green>
+            <blue> 1 </blue>
+    </emission>
+  </animation>
+
+  <!-- ############################################################## Nav-ECM ###################################################################-->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Nav-Switch-1</object-name>
+    <property>controls/switches/Nav-Switch-1</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.33903</x-m>
+	<y-m> 0.37550</y-m>
+	<z-m>-0.16578</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Nav-Switch-1</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+			 <property>controls/switches/Nav-Switch-1</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Nav-Switch-2</object-name>
+    <property>controls/switches/Nav-Switch-2</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.29580</x-m>
+	<y-m> 0.37550</y-m>
+	<z-m>-0.16578</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>Nav-Switch-2</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <interval-sec>0.3</interval-sec>
+		 <binding>
+			 <command>property-toggle</command>
+			 <property>controls/switches/Nav-Switch-2</property>
+		 </binding>
+	 </action>
+</animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ECM-Master</object-name>
+			 <property>controls/switches/ECM-Master</property>
+    <factor> -60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+      <center>
+	<x-m>-3.26491</x-m>
+	<y-m> 0.36017</y-m>
+	<z-m>-0.16481</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>ECM-Master</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <interval-sec>0.3</interval-sec>
+		 <binding>
+			 <command>property-toggle</command>
+			 <property>controls/switches/ECM-Master</property>
+		 </binding>
+	 </action>
+</animation>
+
+</PropertyList>
+
+

@@ -43,12 +43,12 @@
                 <property>sim/rendering/rembrandt/enabled</property>
             </not>
         </condition>
-        <emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
+    <emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
 	</animation>
 
 	<animation>

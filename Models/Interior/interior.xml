@@ -32,18 +32,28 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/panel.xml</path>
     <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.060 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Throttles.xml</path>
+    <offsets>
+      <x-m> -0.170 </x-m>
+      <y-m> -0.035 </y-m>
+      <z-m> -0.028 </z-m>
+      <pitch-deg>-0</pitch-deg>
     </offsets>
   </model>
 
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/divers/stick.xml</path>
     <offsets>
-      <x-m> -3.25 </x-m>
-      <y-m> -00 </y-m>
-      <z-m> -0.45 </z-m>
+      <x-m> -3.200 </x-m>
+      <y-m> -0.000 </y-m>
+      <z-m> -0.480 </z-m>
       <pitch-deg>-0</pitch-deg>
     </offsets>
   </model>
@@ -51,9 +61,9 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/divers/pedals.xml</path>
     <offsets>
-      <x-m> -3.6 </x-m>
-      <y-m> -00 </y-m>
-      <z-m> -0.50 </z-m>
+      <x-m> -3.600 </x-m>
+      <y-m> -0.000 </y-m>
+      <z-m> -0.500 </z-m>
       <pitch-deg>-0</pitch-deg>
     </offsets>
   </model>
@@ -86,7 +96,7 @@
   <animation>
     <type>rotate</type>
     <object-name>intverriere</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>canopy/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1 </ind><dep> 60 </dep></entry>

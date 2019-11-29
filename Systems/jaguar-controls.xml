@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<!-- Canopy code written by Nikolai V. Chr. for the JA37 Viggen -->
+
+<system name="Jaguar FC">
+
+    <channel execrate="4" name="Canopy">
+
+        <!-- canopy get stuck if it fail -->
+        <switch name="names/canopy/tmp-engage">
+            <default value="fcs/canopy/engage"/>
+            <test logic="OR" value="fcs/canopy/pos-norm">
+                fcs/canopy/serviceable == 0
+                fcs/canopy/hinges/serviceable == 0
+                fcs/canopy/has-power == 0
+            </test>
+            <output>fcs/canopy/engageTmp</output>
+        </switch>
+
+        <kinematic name="names/canopy/pos-norm">
+            <input>fcs/canopy/engageTmp</input>
+            <traverse>
+                <setting>
+                    <position>0.0</position>
+                    <time>0.0</time>
+                </setting>
+                <setting>
+                    <position>1.0</position>
+                    <time>5.0</time>
+                </setting>
+            </traverse>
+            <output>fcs/canopy/pos-norm</output>
+        </kinematic>
+
+        <pure_gain name="names/canopy/mp">
+            <input>fcs/canopy/pos-norm</input>
+            <gain>1</gain>
+            <output>/canopy/position-norm</output>
+            <!-- used for auto MP transmit and animation -->
+        </pure_gain>
+    </channel>
+
+</system>

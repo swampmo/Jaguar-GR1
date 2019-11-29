@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>LH-Front-Panel.ac</path>
+
+  <animation>
+
+    <object-name>go-lamp</object-name>
+    <object-name>go-lamp-off</object-name>
+    <object-name>knob-1</object-name>
+    <object-name>knob-2</object-name>
+    <object-name>knob-3</object-name>
+    <object-name>knob-4</object-name>
+    <object-name>knob-5</object-name>
+    <object-name>lamp-mount</object-name>
+    <object-name>mode-switch</object-name>
+    <object-name>mount</object-name>
+    <object-name>nogo-lamp</object-name>
+    <object-name>nogo-lamp-off</object-name>
+    <object-name>red-lamp</object-name>
+    <object-name>test-base</object-name>
+    <object-name>test-button</object-name>
+    <object-name>xy-switch</object-name>
+    <object-name>Screws</object-name>
+
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>knob-1</object-name>
+    <object-name>knob-2</object-name>
+    <object-name>knob-3</object-name>
+    <object-name>knob-4</object-name>
+    <object-name>knob-5</object-name>
+    <object-name>mode-switch</object-name>
+    <object-name>mount</object-name>
+    <object-name>red-lamp</object-name>
+    <object-name>test-base</object-name>
+    <object-name>test-button</object-name>
+    <object-name>xy-switch</object-name>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+            <red>  1 </red>
+            <green>1</green>
+            <blue> 1 </blue>
+    </emission>
+
+  </animation>
+
+  <!-- ############################################################## Nav-ECM ###################################################################-->
+
+  <animation>
+    <object-name>knob-1</object-name>
+    <type>rotate</type>
+    <property>controls/fuel/dump-valve</property>
+    <factor> -90 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+      <center>
+	<x-m>-3.30901</x-m>
+	<y-m>-0.35845</y-m>
+	<z-m>-0.18336</z-m>
+     </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>knob-1</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+	     <property>controls/fuel/dump-valve</property>
+        <step>-0.5</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>knob-1</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-toggle</command>
+			 <property>controls/switches/knob-1</property>
+        <step>0.5</step>
+      </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>knob-2</object-name>
+    <property>controls/switches/knob-2</property>
+    <factor> -90 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+      <center>
+	<x-m>-3.30901</x-m>
+	<y-m>-0.33359</y-m>
+	<z-m>-0.18336</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>knob-2</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <interval-sec>0.3</interval-sec>
+		 <binding>
+			 <command>property-toggle</command>
+			 <property>controls/switches/knob-2</property>
+		 </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+	 </action>
+</animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>knob-3</object-name>
+			 <property>controls/switches/knob-3</property>
+    <factor> -90 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+      <center>
+	<x-m>-3.30901</x-m>
+	<y-m>-0.30889</y-m>
+	<z-m>-0.18336</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>knob-3</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <interval-sec>0.3</interval-sec>
+		 <binding>
+		   <command>property-toggle</command>
+			 <property>controls/switches/knob-3</property>
+		 </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+	 </action>
+</animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>knob-4</object-name>
+        <property>controls/switches/knob-4</property>
+    <factor> -90 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+      <center>
+	<x-m>-3.30901</x-m>
+	<y-m>-0.28385</y-m>
+	<z-m>-0.18336</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>knob-4</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <binding>
+			 <command>property-toggle</command>
+			 <property>controls/switches/knob-4</property>
+		 </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+	 </action>
+</animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>knob-5</object-name>
+			 <property>controls/switches/knob-5</property>
+    <factor> -90 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+      <center>
+	<x-m>-3.30901</x-m>
+	<y-m>-0.25899</y-m>
+	<z-m>-0.18336</z-m>
+     </center>
+  </animation>
+
+ <animation>
+	 <type>pick</type>
+	 <object-name>knob-5</object-name>
+	 <action>
+		 <button>0</button>
+		 <repeatable>true</repeatable>
+		 <binding>
+		   <command>property-toggle</command>
+			 <property>controls/switches/knob-5</property>
+		 </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+	 </action>
+</animation>
+
+</PropertyList>

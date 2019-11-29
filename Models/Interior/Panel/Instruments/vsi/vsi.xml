@@ -45,32 +45,32 @@
 	<animation>
 		<object-name>mount</object-name>
 		<type>material</type>
-        <emission>
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 	 <animation>
 		<object-name>face</object-name> 
 		<type>material</type>
-         <emission>
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 	<animation>
 		<object-name>needle-w</object-name> 
 		<type>material</type>
-        <emission>
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>

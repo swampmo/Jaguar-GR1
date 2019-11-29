@@ -7,35 +7,35 @@
 
   <animation> 
    <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.05</red>
-        <green>0.20</green>
-        <blue>0.05</blue>
-      </emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
   </animation>
 
 <!-- lighting -->   
 <animation> 
    <object-name>mount</object-name>
    <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.45</red>
-        <green>0.34</green>
-        <blue>0.18</blue>
-      </emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
   </animation>
 
   <animation> 
    <object-name>button</object-name>
    <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.25</red>
-        <green>0.18</green>
-        <blue>0.09</blue>
-      </emission>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
   </animation>
 
   <animation>
