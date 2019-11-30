@@ -74,7 +74,7 @@
   <animation>
     <type>rotate</type>
     <object-name>air-brakes</object-name>
-    <property>controls/flight/speed-brakes</property>
+    <property>controls/flight/speedbrakes</property>
     <factor>-5 </factor>
     <axis>
       <x> 0 </x>
@@ -83,9 +83,9 @@
     </axis>
 
       <center>
-	<x-m>-2.94429</x-m>
-	<y-m>-0.26576</y-m>
-	<z-m>-0.15581</z-m>
+	<x-m>-2.94434</x-m>
+	<y-m>-0.26868</y-m>
+	<z-m>-0.15586</z-m>
      </center>
 
   </animation>
@@ -97,7 +97,7 @@
     <factor>0.001 </factor>
     <axis>
       <x> 0 </x>
-      <y> 1 </y>
+      <y>-1 </y>
       <z> 0 </z>
     </axis>
 

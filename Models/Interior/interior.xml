@@ -42,7 +42,7 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Throttles.xml</path>
     <offsets>
       <x-m> -0.170 </x-m>
-      <y-m> -0.035 </y-m>
+      <y-m> -0.048 </y-m>
       <z-m> -0.028 </z-m>
       <pitch-deg>-0</pitch-deg>
     </offsets>
