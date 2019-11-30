@@ -16,7 +16,7 @@
 
 
  <effect>
-  <inherits-from>Aircraft/Jaguar/Models/Effects/Afterburner/afterburner</inherits-from>
+  <inherits-from>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</inherits-from>
   <object-name>Bounding_box</object-name>
  </effect>
 
