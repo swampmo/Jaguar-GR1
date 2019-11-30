@@ -1469,7 +1469,7 @@ if(navStillOn) {
     <object-name>roueA</object-name>
     <object-name>roueA-Fix</object-name>
     <object-name>roueA-Fourche</object-name>
-    <property>surface-positions/rudder-pos-norm</property>
+    <property>gear/gear/steering-norm</property>
     <factor> 55 </factor>
     <center>
       <x-m> -3.8501 </x-m>

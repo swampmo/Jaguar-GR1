@@ -8,9 +8,9 @@
   <type>scale</type>
   <object-name>Bounding_box</object-name>
   <property>sim/multiplay/generic/float[19]</property><!-- throttle pos -->
-  <x-factor>3.5</x-factor>
-  <y-factor>0.8</y-factor>
-  <z-factor>0.6</z-factor>
+  <x-factor>0.85</x-factor>
+  <y-factor>0.85</y-factor>
+  <z-factor>0.85</z-factor>
  </animation>
 
 
