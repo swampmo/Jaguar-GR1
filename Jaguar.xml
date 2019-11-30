@@ -198,7 +198,7 @@
     <location unit="M">
       <x>    -3.57038 </x>
       <y>     0 </y>
-      <z>   -2.49181 </z>
+      <z>   -2.49281 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
@@ -214,8 +214,8 @@
   <contact type="BOGEY" name="LEFT_MAIN">
     <location unit="M">
       <x>   2.08638 </x>
-      <y>   -1.47652 </y>
-      <z>   -2.3523 </z>
+      <y>   -1.42114 </y>
+      <z>   -2.40754 </z>
     </location>
     <static_friction>  0.90 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
@@ -230,9 +230,9 @@
 
   <contact type="BOGEY" name="RIGHT_MAIN">
     <location unit="M">
-      <x>   2.08638 </x>
-      <y>  1.47652 </y>
-      <z>   -2.3523 </z>
+      <x>  2.08638 </x>
+      <y>  1.42154 </y>
+      <z> -2.40754 </z>
     </location>
     <static_friction>  0.90 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>Refuel-Panel.ac</path>
+    <animation>
+     <object-name>Red-Lamp</object-name>
+      <object-name>Orange-Lamp</object-name>
+    <object-name>Orange-Lamp-Lens</object-name>
+      <object-name>Red-Lamp-Lens</object-name>
+    <object-name>Refuel</object-name>
+   </animation>
+
+ <animation>
+  <type>material</type>
+     <object-name>Red-Lamp</object-name>
+      <object-name>Orange-Lamp</object-name>
+    <object-name>Orange-Lamp-Lens</object-name>
+      <object-name>Red-Lamp-Lens</object-name>
+    <object-name>Refuel</object-name>
+
+        <emission>
+         <red> 1 </red>
+        <green>1 </green>
+       <blue>  1 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
+   </animation>
+
+<!-- ################################################ Fuel-Prboe ###################################### -->
+  <animation>
+    <type>translate</type>
+    <object-name>Refuel</object-name>
+    <property>controls/switches/fuel-probe</property>
+      <factor>-0.002</factor>
+         <axis>
+          <x> 1.0 </x>
+           <y> 0.0 </y>
+          <z> 0.0 </z>
+         </axis>
+        <center>
+       <x-m>-3.35496</x-m>
+      <y-m> 0.13167</y-m>
+     <z-m> 0.23891</z-m>
+   </center>
+  </animation>
+
+<!--#################################################" MMB Adjustment ############################################" -->
+
+    <animation>
+     <type>pick</type>
+        <object-name>Refuel</object-name>
+      <factor>0.002</factor>
+         <action>
+          <button>0</button>
+            <binding>
+             <command>property-toggle</command>
+                   <property>controls/switches/fuel-probe</property>
+               </binding>
+                <binding>
+                 <!--command>property-assign</command>
+                    <property>controls/switches/fuel-probe</property>
+              </binding>
+             <binding>
+            <command>property-toggle</command-->
+          <property>sim/sound/click</property>
+        </binding>
+      </action>
+    </animation>
+
+</PropertyList>

@@ -1402,9 +1402,9 @@ if(navStillOn) {
       <entry><ind> 1.0 </ind><dep>  0 </dep></entry>
     </interpolation>
     <center>
-      <x-m>  2.096 </x-m>
-      <y-m> -0.554 </y-m>
-      <z-m> -0.743 </z-m>
+      <x-m>  2.09601 </x-m>
+      <y-m> -0.55353 </y-m>
+      <z-m> -0.742519 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -1431,9 +1431,9 @@ if(navStillOn) {
       <entry><ind> 1.0 </ind><dep>  0 </dep></entry>
     </interpolation>
     <center>
-      <x-m>  2.096 </x-m>
-      <y-m>  0.554 </y-m>
-      <z-m> -0.743 </z-m>
+      <x-m>  2.09601 </x-m>
+      <y-m>  0.55354 </y-m>
+      <z-m> -0.74251 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -1452,9 +1452,9 @@ if(navStillOn) {
       <entry><ind> 1.0 </ind><dep>  0 </dep></entry>
     </interpolation>
     <center>
-      <x-m>  2.096 </x-m>
-      <y-m>  0.554 </y-m>
-      <z-m> -0.743 </z-m>
+      <x-m>  2.09601 </x-m>
+      <y-m>  0.55354 </y-m>
+      <z-m> -0.74251 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -1490,9 +1490,9 @@ if(navStillOn) {
     <property>gear/gear[0]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m> -3.570 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -2.227 </z-m>
+      <x-m> -3.57038 </x-m>
+      <y-m>  0.08491 </y-m>
+      <z-m> -2.22707 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -1507,9 +1507,9 @@ if(navStillOn) {
     <property>gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m>  2.086 </x-m>
-      <y-m> -1.251 </y-m>
-      <z-m> -2.031 </z-m>
+      <x-m>  2.08638 </x-m>
+      <y-m> -1.50649 </y-m>
+      <z-m> -2.027559 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -1524,9 +1524,9 @@ if(navStillOn) {
     <property>gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m>  2.086 </x-m>
-      <y-m>  1.251 </y-m>
-      <z-m> -2.031 </z-m>
+      <x-m>  2.08638 </x-m>
+      <y-m>  1.50689 </y-m>
+      <z-m> -2.02755 </z-m>
     </center>
     <axis>
       <x>  0 </x>

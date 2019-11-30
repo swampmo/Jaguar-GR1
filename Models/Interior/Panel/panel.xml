@@ -76,9 +76,9 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Canopy-Lock.xml</path>
     <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.008 </y-m>
-      <z-m> 0.036 </z-m>
+      <x-m> 0.070 </x-m>
+      <y-m>-0.008 </y-m>
+      <z-m> 0.050 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -409,6 +409,17 @@
       <y-m>  0.178 </y-m>
       <z-m>  0.015 </z-m>
 	  <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Refuel-Panel.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+      <roll-deg> 0 </roll-deg>
+      <yaw-deg>  0 </yaw-deg>
     </offsets>
   </model>
 
