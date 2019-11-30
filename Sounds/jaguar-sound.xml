@@ -115,7 +115,7 @@
           <condition>
             <and>
       <greater-than>
-       <property>engines/engine[1]/rpm</property>
+       <property>engines/engine[1]/rpmv</property>
        <value>0.5</value>
       </greater-than>
       <less-than>
