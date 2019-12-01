@@ -64,7 +64,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Call-Panel.ac</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Call-Panel.xml</path>
     <offsets>
       <x-m>-0.155 </x-m>
       <y-m>-0.048 </y-m>

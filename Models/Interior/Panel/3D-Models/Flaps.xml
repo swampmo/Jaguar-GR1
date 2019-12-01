@@ -9,10 +9,6 @@
     <object-name>Flap-Mount</object-name>
     <object-name>Over-Ride-Switch</object-name>
     <object-name>Over-Ride-Nut</object-name>
-    <object-name>Panel-Base</object-name>
-    <object-name>Texture</object-name>
-    <object-name>Lens</object-name>
-
   </animation>
       <animation>
     <type>material</type>
@@ -20,14 +16,11 @@
     <object-name>Flap-Mount</object-name>
     <object-name>Over-Ride-Switch</object-name>
     <object-name>Over-Ride-Nut</object-name>
-    <object-name>Panel-Base</object-name>
-    <object-name>Texture</object-name>
-    <object-name>Lens</object-name>
-        <emission>
-         <red> 1 </red>
-        <green>1 </green>
-       <blue>  1 </blue>
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    <emission>
+      <factor-prop>/controls/lighting/cabin-norm</factor-prop>
+            <red>1</red>
+            <green>0</green>
+            <blue>0.8</blue>
     </emission>
   </animation>
 
@@ -35,11 +28,11 @@
     <type>rotate</type>
     <object-name>Flap-Lever</object-name>
     <property>controls/flight/flaps</property>
-    <factor>-30</factor>
+    <factor>90</factor>
     <axis>
-      <x> 0.0</x>
-      <y>-1.0</y>
-      <z> 0.0</z>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
     </axis>
     <center>
      <x-m>-2.94049</x-m>
@@ -57,7 +50,7 @@
       <binding>
         <command>property-adjust</command>
         <property>controls/flight/flaps</property>
-        <step>0.1</step>
+        <step>-0.4</step>
       </binding>
     </action>
   </animation>
@@ -65,13 +58,13 @@
   <animation>
     <type>pick</type>
     <visible>true</visible>
-    <object-name>Flap-Lever</object-name>
+    <object-name>FlapLever</object-name>
     <action>
       <button>1</button>
       <binding>
         <command>property-adjust</command>
         <property>controls/flight/flaps</property>
-        <step>-0.1</step>
+        <step>0.4</step>
       </binding>
     </action>
   </animation>
