@@ -38,6 +38,8 @@
     <object-name>TGT-amps-R</object-name>
     <object-name>TGT-nut-L</object-name>
     <object-name>TGT-nut-R</object-name>
+    <object-name>Eng-1</object-name>
+    <object-name>Eng-2</object-name>
   </animation>
 
         <animation>
@@ -555,8 +557,7 @@
   <animation>
     <type>pick</type>
     <visible>true</visible>
-    <object-name>Engine-start-nut</object-name>
-    <object-name>Engine-start-switch</object-name>
+    <object-name>Eng-1</object-name>
     <action>
       <button>0</button>
       <binding>
@@ -570,10 +571,9 @@
   <animation>
     <type>pick</type>
     <visible>true</visible>
-    <object-name>Engine-start-nut</object-name>
-    <object-name>Engine-start-switch</object-name>
+    <object-name>Eng-2</object-name>
     <action>
-      <button>1</button>
+      <button>0</button>
       <binding>
         <command>property-toggle</command>
         <property>controls/engines/engine[1]/starter</property>
