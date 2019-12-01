@@ -107,16 +107,16 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>land-switch</object-name>
-		<property>/controls/switches//gear-lights</property>
+		<property>/controls/switches/landing-light</property>
 		<factor>-30</factor>
 		<offset-deg>25</offset-deg>
 		<axis>
 			<y>-1</y>
 		</axis>
 		<center>
-			<x-m>-0.0143</x-m>
-			<y-m>-0.0402</y-m>
-			<z-m>-0.0020</z-m>
+			<x-m>-0.01423</x-m>
+			<y-m>-0.03991</y-m>
+			<z-m>-0.00140</z-m>
 		</center>
 	</animation>
 

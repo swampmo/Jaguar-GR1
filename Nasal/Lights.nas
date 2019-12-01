@@ -13,7 +13,7 @@ var probeSwitch = "/controls/lighting/probe-light-switch";
 var whiteSwitch = "/controls/lighting/white-light-switch";
 
 #switch this from 1 to 0 if you want to use advanced cyclical fading animation of the the nav lights instead of being stable on when the switch is on
-navStillOn = 1;
+navStillOn = 0;
 #switch this from 0 to 1 if you want to bind the landing and taxi lights to the landing gear
 gearBind = 1;
 
@@ -169,7 +169,7 @@ if(gearBind) {
 		else{
 			if(landingSwitch!=nil) setprop(landingSwitch, 0);
 			if(taxiSwitch!=nil) setprop(taxiSwitch, 0);
-			if(gearSwitch!=nil) setprop(gearSwitch, 2);
+			if(gearSwitch!=nil) setprop(gearSwitch, 3);
 		}
 	});
 }
