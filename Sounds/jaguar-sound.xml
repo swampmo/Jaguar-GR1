@@ -4,7 +4,7 @@
 
     <!-- engine -->
 
-    <engine>
+    <!--engine>
         <name>engine-start-outside</name>
         <mode>once</mode>
         <path>Aircraft/Jaguar/Sounds/startup.wav</path>
@@ -37,9 +37,9 @@
         </pitch>
         <reference-dist>100</reference-dist>
         <max-dist>2000</max-dist>
-      </engine>
+      </engine-->
 
-  	<engine>
+  	<!--engine>
         <name>engine-start-outside1</name>
         <mode>once</mode>
         <path>Aircraft/Jaguar/Sounds/startup.wav</path>
@@ -72,18 +72,18 @@
         </pitch>
         <reference-dist>100</reference-dist>
         <max-dist>2000</max-dist>
-      </engine>
+      </engine-->
 
-      <!-- Engine start inside -->
+      <!-- Engine start inside Left  -->
 
       <engine>
-          <name>engine-start-inside</name>
+          <name>engine-start-inside-L</name>
           <mode>once</mode>
-          <path>Aircraft/Jaguar/Sounds/startup.wav</path>
+          <path>Aircraft/Jaguar/Sounds/startup-L.wav</path>
           <condition>
             <and>
     <greater-than>
-       <property>engines/engine[0]/n1</property>
+       <property>engines/engine/n1</property>
        <value>0.5</value>
       </greater-than>
       <less-than>
@@ -93,13 +93,13 @@
               </and>
     </condition>
           <volume>
-            <property>engines/engine[0]/n2</property>
+            <property>engines/engine/n1</property>
             <factor> 0.09 </factor>
             <min> 0.3 </min>
             <max> 0.5 </max>
           </volume>
           <pitch>
-            <property>engines/engine[0]/n2</property>
+            <property>engines/engine/n2</property>
             <factor> 0.01 </factor>
     	<min> 0.0 </min>
     	<max> 0.9 </max>
@@ -107,15 +107,16 @@
           <reference-dist>100</reference-dist>
           <max-dist>2000</max-dist>
         </engine>
+                                <!-- Engine start inside Right  -->
 
-    	<engine>
-          <name>engine-start-inside1</name>
+      <engine>
+          <name>engine-start-inside-R</name>
           <mode>once</mode>
-          <path>Aircraft/Jaguar/Sounds/startup.wav</path>
+          <path>Aircraft/Jaguar/Sounds/startup-R.wav</path>
           <condition>
             <and>
-      <greater-than>
-       <property>engines/engine[1]/rpmv</property>
+    <greater-than>
+       <property>engines/engine[1]/n1</property>
        <value>0.5</value>
       </greater-than>
       <less-than>
@@ -125,7 +126,7 @@
               </and>
     </condition>
           <volume>
-            <property>engines/engine[1]/n2</property>
+            <property>engines/engine[1]/n1</property>
             <factor> 0.09 </factor>
             <min> 0.3 </min>
             <max> 0.5 </max>
@@ -146,7 +147,7 @@
        <engine>
          <name>turbine0</name>
          <mode>looped</mode>
-         <path>Aircraft/Jaguar/Sounds/Jaguar-whine.wav</path>
+         <path>Aircraft/Jaguar/Sounds/Jaguar-whine-L.wav</path>
          <condition>
            <property>/engines/engine[0]/running</property>
            <not>
@@ -178,7 +179,7 @@
        <engine>
          <name>turbine1</name>
          <mode>looped</mode>
-         <path>Aircraft/Jaguar/Sounds/Jaguar-whine.wav</path>
+         <path>Aircraft/Jaguar/Sounds/Jaguar-whine-R.wav</path>
          <condition>
            <property>/engines/engine[1]/running</property>
            <not>
@@ -213,7 +214,7 @@
 
        <engine>
          <name>whine-int</name>
-         <path>Aircraft/Jaguar/Sounds/engine-int.wav</path>
+         <path>Aircraft/Jaguar/Sounds/engine-int-L.wav</path>
          <mode>looped</mode>
          <condition>
            <property>engines/engine[0]/running</property>
@@ -235,7 +236,7 @@
 
        <engine>
          <name>whine-int</name>
-         <path>Aircraft/Jaguar/Sounds/engine-int.wav</path>
+         <path>Aircraft/Jaguar/Sounds/engine-int-R.wav</path>
          <mode>looped</mode>
          <condition>
            <property>engines/engine[1]/running</property>
@@ -254,6 +255,112 @@
            <offset>-0.1</offset>
          </pitch>
        </engine>
+
+		<!-- ********************************************************************************* -->
+		<!--                                 GEARS                                             -->
+		<!-- ********************************************************************************* -->
+
+		<!--rumble>
+			<name>gear rumble</name>
+			<mode>looped</mode>
+			<path>Aircraft/Jaguar/Sounds/ground_roll.wav</path>
+			<condition>
+				<property>sim/current-view/internal</property>
+				<or>
+					<property>gear/gear[1]/wow</property>
+					<property>gear/gear[2]/wow</property>
+				</or>
+			</condition>
+			<reference-dist>30</reference-dist>
+			<max-dist>100</max-dist>
+			<position>
+				<x>1.2</x>
+				<y>0.0</y>
+				<z>-0.6</z>
+			</position>
+			<volume>
+				<property>velocities/groundspeed-kt</property>
+				<factor>.004</factor>
+			</volume>
+		</rumble>
+		<gear>
+			<name>gear</name>
+			<mode>in-transit</mode>
+			<path>Aircraft/Jaguar/Sounds/gear-transit.wav</path>
+			<property>/gear/gear/position-norm</property>
+			<volume>
+				<factor>0.5</factor>
+			</volume>
+			<pitch>
+				<internal>dt_play</internal>
+				<offset>1.0</offset>
+				<factor>-0.001</factor>
+			</pitch>
+		</gear>
+		<gear>
+			<name>gear-lock</name>
+			<path>Aircraft/Jaguar/Sounds/gear-lock.wav</path>
+			<condition>
+				<equals>
+					<property>/gear/gear/position-norm</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.5</factor>
+			</volume>
+		</gear>
+		<gear>
+			<name>gear-open</name>
+			<path>Aircraft/Jaguar/Sounds/gear-open.wav</path>
+			<condition>
+				<equals>
+					<property>/gear/gear/position-norm</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.5</factor>
+			</volume>
+		</gear>
+		<squeal>
+			<name>squeal</name>
+			<path>Aircraft/Jaguar/Sounds/touchdown.wav</path>
+			<condition>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
+				<or>
+					<property>gear/gear[1]/wow</property>
+					<property>gear/gear[2]/wow</property>
+				</or>
+			</condition>
+			<reference-dist>150</reference-dist>
+			<max-dist>500</max-dist>
+			<position>
+				<x>1.2</x>
+				<y>0.0</y>
+				<z>-0.6</z>
+			</position>
+			<volume>
+				<property>velocities/speed-down-fps</property>
+				<factor>0.05</factor>
+			</volume>
+			<volume>
+				<property>velocities/airspeed-kt</property>
+				<factor>0.01</factor>
+			</volume>
+			<volume>
+				<internal>dt_stop</internal>
+				<factor>0.05</factor>
+				<max>1.0</max>
+			</volume>
+			<pitch>
+				<property>velocities/airspeed-kt</property>
+				<factor>0.0025</factor>
+				<offset>1.2</offset>
+			</pitch>
+		</squeal>
 
     <squeal>
       <name>squeal</name>
@@ -285,7 +392,7 @@
       </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-    </squeal>
+    </squeal-->
 
 
     <throttle-1>
