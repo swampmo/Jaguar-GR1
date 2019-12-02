@@ -108,8 +108,8 @@
 		<type>rotate</type>
 		<object-name>land-switch</object-name>
 		<property>/controls/switches/landing-light</property>
-		<factor>-30</factor>
-		<offset-deg>25</offset-deg>
+		<factor>60</factor>
+		<offset-deg>0</offset-deg>
 		<axis>
 			<y>-1</y>
 		</axis>
@@ -120,9 +120,27 @@
 		</center>
 	</animation>
 
+<animation>
+ <type>select</type> 
+ <object-name>landing-light</object-name>
+ <condition>		
+  <less-than-equals>		
+    <property>control/switches/landing-light</property>
+   <value>1</value>
+  </less-than-equals>
+ </condition>
+ <emission>	
+  <red>0</red>	
+  <green>0</green>	
+  <blue>0</blue>
+ </emission>
+ <!--texture>starter.png</texture-->
+</animation>
+
 	<animation>
 		<type>pick</type>
 		<object-name>Spot.gearlight-dec</object-name>
+<factor>-30</factor>
 		<action>
 			<button>0</button>
 			<binding>
@@ -135,6 +153,7 @@
 	<animation>
 		<type>pick</type>
 		<object-name>Spot.gearlight-off</object-name>
+<factor>0</factor>
 		<action>
 			<button>0</button>
 			<binding>
@@ -147,6 +166,7 @@
 	<animation>
 		<type>pick</type>
 		<object-name>Spot.gearlight-inc</object-name>
+<factor>-60</factor>
 		<action>
 			<button>0</button>
 			<binding>

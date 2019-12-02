@@ -71,7 +71,7 @@ var electricalSys = {
 		setprop("/systems/electrical/outputs/hsi", 1);
 		setprop("/systems/electrical/outputs/instr-ignition-switch", 1);
 		setprop("/systems/electrical/outputs/instrument-lights", 1);
-		setprop("/systems/electrical/outputs/landing-lights", 1);
+		setprop("/systems/electrical/outputs/landing-lights", 0);
 		setprop("/systems/electrical/outputs/map-lights", 1);
 		setprop("/systems/electrical/outputs/mk-viii", 1);
 		setprop("/systems/electrical/outputs/nav", 1);

@@ -331,9 +331,9 @@
   </greater-than>
  </condition>
  <emission>	
-  <red>1</red>	
+  <red>0</red>	
   <green>1</green>	
-  <blue>1</blue>
+  <blue>0</blue>
  </emission>
  <texture>starter.png</texture>
 </animation>
@@ -365,9 +365,9 @@
   </greater-than>
  </condition>
  <emission>	
-  <red>1</red>	
+  <red>0</red>	
   <green>1</green>	
-  <blue>1</blue>
+  <blue>0</blue>
  </emission>
  <texture>starter.png</texture>
 </animation>
