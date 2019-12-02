@@ -6360,6 +6360,69 @@ refs 4
 56 0.25898 0.083742
 kids 0
 OBJECT poly
+name "gearlight-off"
+data 23
+Spot.gearlight-off.mesh
+crease 40.0
+texture "left-mid-panel.png"
+texrep 1 1
+numvert 4
+-0.02085 -0.00146 0.03137
+-0.02088 -0.00144 0.06697
+-0.00862 -0.00106 0.0314
+-0.00866 -0.00104 0.067
+numsurf 1
+SURF 0X20
+mat 5
+refs 4
+0 0.290805 0.783572
+1 0.258131 0.783572
+3 0.258131 0.760461
+2 0.290805 0.760461
+kids 0
+OBJECT poly
+name "gearlight-on"
+data 23
+Spot.gearlight-dec.mesh
+crease 40.0
+texture "left-mid-panel.png"
+texrep 1 1
+numvert 4
+-0.03344 -0.00151 0.03149
+-0.03357 -0.00143 0.05403
+-0.0212 -0.00153 0.03157
+-0.02134 -0.00145 0.0541
+numsurf 1
+SURF 0X20
+mat 5
+refs 4
+0 0.290805 0.783572
+1 0.258131 0.783572
+3 0.258131 0.760461
+2 0.290805 0.760461
+kids 0
+OBJECT poly
+name "gearlight-taxi"
+data 23
+Spot.gearlight-inc.mesh
+crease 40.0
+texture "left-mid-panel.png"
+texrep 1 1
+numvert 4
+-0.00853 -0.00113 0.03174
+-0.00859 -0.0011 0.05427
+0.00279 -0.00077 0.03177
+0.00273 -0.00074 0.0543
+numsurf 1
+SURF 0X20
+mat 5
+refs 4
+0 0.290805 0.783572
+1 0.258131 0.783572
+3 0.258131 0.760461
+2 0.290805 0.760461
+kids 0
+OBJECT poly
 name "hotspot-instrument-left"
 data 28
 hotspot-instrument-left.mesh
@@ -17065,69 +17128,6 @@ refs 3
 783 0.499544 0.138285
 738 0.5001 0.132439
 658 0.500695 0.138284
-kids 0
-OBJECT poly
-name "Spot.gearlight-dec"
-data 23
-Spot.gearlight-dec.mesh
-crease 40.0
-texture "left-mid-panel.png"
-texrep 1 1
-numvert 4
--0.03344 -0.00151 0.03149
--0.03357 -0.00143 0.05403
--0.0212 -0.00153 0.03157
--0.02134 -0.00145 0.0541
-numsurf 1
-SURF 0X20
-mat 5
-refs 4
-0 0.290805 0.783572
-1 0.258131 0.783572
-3 0.258131 0.760461
-2 0.290805 0.760461
-kids 0
-OBJECT poly
-name "Spot.gearlight-inc"
-data 23
-Spot.gearlight-inc.mesh
-crease 40.0
-texture "left-mid-panel.png"
-texrep 1 1
-numvert 4
--0.00853 -0.00113 0.03174
--0.00859 -0.0011 0.05427
-0.00279 -0.00077 0.03177
-0.00273 -0.00074 0.0543
-numsurf 1
-SURF 0X20
-mat 5
-refs 4
-0 0.290805 0.783572
-1 0.258131 0.783572
-3 0.258131 0.760461
-2 0.290805 0.760461
-kids 0
-OBJECT poly
-name "Spot.gearlight-off"
-data 23
-Spot.gearlight-off.mesh
-crease 40.0
-texture "left-mid-panel.png"
-texrep 1 1
-numvert 4
--0.02085 -0.00146 0.03137
--0.02088 -0.00144 0.06697
--0.00862 -0.00106 0.0314
--0.00866 -0.00104 0.067
-numsurf 1
-SURF 0X20
-mat 5
-refs 4
-0 0.290805 0.783572
-1 0.258131 0.783572
-3 0.258131 0.760461
-2 0.290805 0.760461
 kids 0
 OBJECT poly
 name "strobe-switch"

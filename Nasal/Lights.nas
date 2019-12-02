@@ -163,13 +163,13 @@ if(gearBind) {
 	setlistener("/gear/gear/position-norm", func {
 		gearPos = getprop("/gear/gear/position-norm");
 		if(gearPos==1) {
-			if(landingSwitch!=nil) setprop(landingSwitch, 1);
+			if(landingSwitch!=nil) setprop(landingSwitch, 0);
 			if(taxiSwitch!=nil) setprop(taxiSwitch, 0);
 		}
 		else{
 			if(landingSwitch!=nil) setprop(landingSwitch, 0);
 			if(taxiSwitch!=nil) setprop(taxiSwitch, 0);
-			if(gearSwitch!=nil) setprop(gearSwitch, 3);
+			if(gearSwitch!=nil) setprop(gearSwitch, 0);
 		}
 	});
 }
