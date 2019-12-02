@@ -2,78 +2,6 @@
 
   <fx>
 
-    <!-- engine -->
-
-    <!--engine>
-        <name>engine-start-outside</name>
-        <mode>once</mode>
-        <path>Aircraft/Jaguar/Sounds/startup.wav</path>
-        <condition>
-  <and>
-  <greater-than>
-     <property>engines/engine[0]/n1</property>
-     <value>0.5</value>
-    </greater-than>
-    <less-than>
-                  <property>velocities/groundspeed-kt</property>
-                  <value>1</value>
-              </less-than>
-    <not>
-     <property>/sim/current-view/internal</property>
-    </not>
-  </and>
-  </condition>
-        <volume>
-          <property>engines/engine[0]/n2</property>
-          <factor> 0.09 </factor>
-          <min> 0.3 </min>
-          <max> 0.9 </max>
-        </volume>
-        <pitch>
-          <property>engines/engine[0]/n2</property>
-          <factor> 0.01 </factor>
-  	<min> 0.0 </min>
-  	<max> 0.9 </max>
-        </pitch>
-        <reference-dist>100</reference-dist>
-        <max-dist>2000</max-dist>
-      </engine-->
-
-  	<!--engine>
-        <name>engine-start-outside1</name>
-        <mode>once</mode>
-        <path>Aircraft/Jaguar/Sounds/startup.wav</path>
-        <condition>
-  <and>
-  <greater-than>
-     <property>engines/engine[1]/rpm</property>
-     <value>0.5</value>
-    </greater-than>
-    <less-than>
-                  <property>velocities/groundspeed-kt</property>
-                  <value>1</value>
-              </less-than>
-    <not>
-     <property>/sim/current-view/internal</property>
-    </not>
-  </and>
-  </condition>
-        <volume>
-          <property>engines/engine[1]/n2</property>
-          <factor> 0.09 </factor>
-          <min> 0.3 </min>
-          <max> 0.9 </max>
-        </volume>
-        <pitch>
-          <property>engines/engine[1]/n2</property>
-          <factor> 0.01 </factor>
-  	<min> 0.0 </min>
-  	<max> 0.9 </max>
-        </pitch>
-        <reference-dist>100</reference-dist>
-        <max-dist>2000</max-dist>
-      </engine-->
-
       <!-- Engine start inside Left  -->
 
       <engine>
@@ -83,11 +11,11 @@
           <condition>
             <and>
     <greater-than>
-       <property>engines/engine/n1</property>
+       <property>engines/engine/n2</property>
        <value>0.5</value>
       </greater-than>
       <less-than>
-                    <property>velocities/groundspeed-kt</property>
+                    <property>engines/engine/running</property>
                     <value>1</value>
                 </less-than>
               </and>
@@ -116,11 +44,11 @@
           <condition>
             <and>
     <greater-than>
-       <property>engines/engine[1]/n1</property>
+       <property>engines/engine[1]/n2</property>
        <value>0.5</value>
       </greater-than>
       <less-than>
-                    <property>velocities/groundspeed-kt</property>
+                    <property>engines/engine[1]/running</property>
                     <value>1</value>
                 </less-than>
               </and>
@@ -145,7 +73,7 @@
     <!-- Whine -->
 
        <engine>
-         <name>turbine0</name>
+         <name>turbine-0</name>
          <mode>looped</mode>
          <path>Aircraft/Jaguar/Sounds/Jaguar-whine-L.wav</path>
          <condition>
@@ -177,7 +105,7 @@
        </engine>
 
        <engine>
-         <name>turbine1</name>
+         <name>turbine-1</name>
          <mode>looped</mode>
          <path>Aircraft/Jaguar/Sounds/Jaguar-whine-R.wav</path>
          <condition>
@@ -213,7 +141,7 @@
      <!-- Internal -->
 
        <engine>
-         <name>whine-int</name>
+         <name>whine-int-L</name>
          <path>Aircraft/Jaguar/Sounds/engine-int-L.wav</path>
          <mode>looped</mode>
          <condition>
@@ -235,7 +163,7 @@
        </engine>
 
        <engine>
-         <name>whine-int</name>
+         <name>whine-int-R</name>
          <path>Aircraft/Jaguar/Sounds/engine-int-R.wav</path>
          <mode>looped</mode>
          <condition>
