@@ -28,7 +28,7 @@
     <object-name>brule</object-name>
   </animation>
 
-  <!-- Rotation des fleammes des réacteurs -->
+  <!-- Rotation des flammes des réacteurs -->
   <animation>
     <type>spin</type>
     <object-name>flamme1</object-name>

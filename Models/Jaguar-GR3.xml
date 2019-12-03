@@ -736,6 +736,7 @@ if(navStillOn) {
     </offsets>
   </model>
 
+
   <!-- Les flammes -->
   <!-- Gauche -->
   <model>
@@ -777,8 +778,9 @@ if(navStillOn) {
  <!-- Droite -->
 <!--  <model>
     <path>Aircraft/Jaguar/Models/Effects/Afterburner/EJ200-R.xml</path>
+>>>>>>> bef6fd4be1249f3fb2c5b3f4c381fc771137b0cf
     <offsets>
-      <x-m>  6.2 </x-m>
+      <x-m>  5.561 </x-m>
       <y-m>  0.474 </y-m>
       <z-m> -0.572 </z-m>
     </offsets>
