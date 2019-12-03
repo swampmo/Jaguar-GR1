@@ -1,7 +1,7 @@
 # Jaguar engine controls
 #
 # AIR GEN START on/off switch
-# GENERATION START button with light
+# GENERATOR START button with light
 # ENGINE IGN on/off switch
 # Throttle stop
 # CWP BAT light comes on until air gen idle

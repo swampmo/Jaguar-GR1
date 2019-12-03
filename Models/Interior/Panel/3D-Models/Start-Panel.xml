@@ -123,7 +123,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Eng-IGN-switch</object-name>
-    <property>controls/engines/engine/ignition</property>
+    <property>/engines/eng-ign-switch</property>
     <factor> -60 </factor>
     <axis>
       <x> 0 </x>
@@ -231,7 +231,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Gen-switch</object-name>
-    <property>controls/electrical/generator</property>
+    <property>/engines/air-gen-switch</property>
     <factor> -60 </factor>
     <axis>
       <x> 0 </x>
@@ -426,8 +426,8 @@
  <object-name>Air-Gen-ON</object-name>
  <condition>		
   <greater-than>		
-    <property>controls/pneumatic/APU-bleed</property>
-   <value>0</value>
+    <property>/engines/air-gen-button-light</property>
+   <value>1</value>
   </greater-than>
  </condition>
  <emission>	
@@ -443,8 +443,8 @@
  <object-name>Air-Gen-OFF</object-name>
  <condition>		
   <less-than-equals>		
-    <property>controls/pneumatic/APU-bleed</property>
-   <value>1</value>
+    <property>/engines/air-gen-button-light</property>
+   <value>0</value>
   </less-than-equals>
  </condition>
  <emission>	
@@ -454,6 +454,24 @@
  </emission>
  <texture>starter.png</texture>
 </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>throttle-stop</object-name>
+    <property>/engines/throttle-stop</property>
+    <factor> 20 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+
+      <center>
+	<x-m>-2.97270</x-m>
+	<y-m>-0.38973</y-m>
+	<z-m>-0.18839</z-m>
+     </center>
+  </animation>
 
   <!--animation>
     <type>rotate</type>
@@ -531,7 +549,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/engines/engine/ignition</property>
+        <property>/engines/eng-ign-switch</property>
         <step>0</step>
       </binding>
     </action>
@@ -561,8 +579,8 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/engines/engine/starter</property>
-        <step>0</step>
+        <property>/engines/eng-start-switch</property>
+        <step>1</step>
       </binding>
     </action>
   </animation>
@@ -573,11 +591,11 @@
     <object-name>Engine-start-nut</object-name>
     <object-name>Engine-start-switch</object-name>
     <action>
-      <button>1</button>
+      <button>0</button>
       <binding>
-        <command>property-toggle</command>
-        <property>controls/engines/engine[1]/starter</property>
-        <step>0</step>
+        <command>property-assign</command>
+        <property>engines/eng-start-switch</property>
+        <step>-1</step>
       </binding>
     </action>
   </animation>
@@ -651,8 +669,8 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/electrical/generator</property>
-        <step>0</step>
+        <property>engines/air-gen-switch</property>
+        <value>1</value>
       </binding>
     </action>
   </animation>
@@ -769,6 +787,22 @@
         <command>property-adjust</command>
         <property>controls/engines/engine/</property>
         <step>0</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+     <visible>true</visible>
+    <object-name>throttle-stop</object-name>
+    <property>/engines/throttle-stop</property>
+    <factor> 20 </factor>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/engines/throttle-stop</property>
+        <value>1</value>
       </binding>
     </action>
   </animation>
