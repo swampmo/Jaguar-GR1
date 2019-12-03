@@ -18,6 +18,9 @@
                     <property>engines/engine/running</property>
                     <value>1</value>
                 </less-than>
+                <not>
+                 <property>/sim/current-view/external</property>
+                </not>
               </and>
     </condition>
           <volume>
@@ -42,6 +45,9 @@
           <mode>once</mode>
           <path>Aircraft/Jaguar/Sounds/startup-R.wav</path>
           <condition>
+            <not>
+             <property>/sim/current-view/external</property>
+            </not>
             <and>
     <greater-than>
        <property>engines/engine[1]/n2</property>
