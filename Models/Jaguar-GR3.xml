@@ -747,15 +747,47 @@ if(navStillOn) {
     </offsets>
   </model>
 
+<<<<<<< HEAD
  <!-- Droite -->
   <model>
     <path>Aircraft/Jaguar/Models/Effects/.flammes/flammesD.xml</path>
+=======
+  <model>
+   <name>AB_Flame 2</name>
+   <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
+   <offsets>
+    <x-m>  5.64314  </x-m>
+    <y-m> -0.497843 </y-m>
+    <z-m> -0.49953  </z-m>
+   </offsets>
+  </model>
+
+<!--  <animation>
+    <type>select</type>
+    <object-name>AB_Flame 1</object-name>
+    <condition>
+     <property>sim/multiplay/generic/bool[0]</property>
+    </condition>
+   </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AB_Flame 2</object-name>
+    <condition>
+     <property>sim/multiplay/generic/bool[1]</property>
+    </condition>
+  </animation> -->
+
+ <!-- Droite -->
+<!--  <model>
+    <path>Aircraft/Jaguar/Models/Effects/Afterburner/EJ200-R.xml</path>
+>>>>>>> bef6fd4be1249f3fb2c5b3f4c381fc771137b0cf
     <offsets>
       <x-m>  5.561 </x-m>
       <y-m>  0.474 </y-m>
       <z-m> -0.572 </z-m>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- Gauche -->
   <model>
