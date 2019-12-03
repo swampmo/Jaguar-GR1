@@ -9,7 +9,8 @@
     <object-name>button</object-name>
     <object-name>throttle-L</object-name>
     <object-name>throttle-R</object-name>
-		<object-name>air-brakes</object-name>
+		<object-name>air-brakes-ext</object-name>
+        <object-name>air-brakes-in</object-name>
 		<object-name>combat-slats-ext</object-name>
 		<object-name>combat-slats-in</object-name>
   </animation>
@@ -19,7 +20,8 @@
     <object-name>base</object-name>
     <object-name>throttle-L</object-name>
     <object-name>throttle-R</object-name>
-		<object-name>air-brakes</object-name>
+		<object-name>air-brakes-ext</object-name>
+        <object-name>air-brakes-in</object-name>
 		<object-name>combat-slats-ext</object-name>
 		<object-name>combat-slats-in</object-name>
     <emission>
@@ -51,7 +53,9 @@
 
   <animation>
     <type>rotate</type>
-    		<object-name>air-brakes</object-name>
+            <object-name>throttle-R</object-name>
+    		<object-name>air-brakes-ext</object-name>
+            <object-name>air-brakes-in</object-name>
 		<object-name>combat-slats-ext</object-name>
 		<object-name>combat-slats-in</object-name>
     <object-name>throttle-R</object-name>
@@ -73,7 +77,8 @@
 <!-- #########################################################  Speed-Brakes  ############################################################################## -->
   <animation>
     <type>rotate</type>
-    <object-name>air-brakes</object-name>
+    <object-name>air-brakes-ext</object-name>
+    <object-name>air-brakes-in</object-name>
     <property>controls/flight/speedbrakes</property>
     <factor>-5 </factor>
     <axis>
@@ -83,9 +88,9 @@
     </axis>
 
       <center>
-	<x-m>-2.94434</x-m>
+	<x-m>-2.94475</x-m>
 	<y-m>-0.26868</y-m>
-	<z-m>-0.15586</z-m>
+	<z-m>-0.15560</z-m>
      </center>
 
   </animation>
@@ -188,13 +193,27 @@
     <animation>
     <type>pick</type>
     <visible>true</visible>
-    <object-name>air-brakes</object-name>
+    <object-name>air-brakes-ext</object-name>
     <action>
       <button>0</button>
       <binding>
         <command>property-toggle</command>
         <property>controls/flight/speedbrake</property>
         <step>1</step>
+      </binding>
+    </action>
+  </animation>
+
+    <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>air-brakes-in</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/flight/speedbrake</property>
+        <step>-1</step>
       </binding>
     </action>
   </animation>
