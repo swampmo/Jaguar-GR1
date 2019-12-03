@@ -2,7 +2,91 @@
 <PropertyList>
 
 	<path>warn.ac</path>
+	  <animation>
+    <object-name>HYD-1</object-name>
+    <object-name>HYD-2</object-name>
+    <object-name>OIL-1</object-name>
+    <object-name>OIL-2</object-name>
+    <object-name>ENG-OH-1</object-name>
+    <object-name>ENG-OH-2</object-name>
+    <object-name>FLAPS</object-name>
+    <object-name>n1</object-name>
+    <object-name>n2</object-name>
+    <object-name>C/PR</object-name>
+    <object-name>OXY</object-name>
+    <object-name>Batt-Discted</object-name>
+    <object-name>DIFF</object-name>
+    <object-name>BP-1</object-name>
+    <object-name>BP-2</object-name>
+    <object-name>ALT-1</object-name>
+    <object-name>ALT-2</object-name>
+    <object-name>TR-1</object-name>
+    <object-name>TR-2</object-name>
+    <object-name>AIR-T</object-name>
+    <object-name>STAB</object-name>
+    <object-name>PITOT</object-name>
+    <object-name>F-DET</object-name>
+    <object-name>AJAX</object-name>
+    <object-name>TEST</object-name>
+    <object-name>MUTE</object-name>
+    <object-name>Mount</object-name>
+      </animation>
 
-	
+	  <animation>
+     <type>material</type> 
+    <object-name>HYD-1</object-name>
+    <object-name>HYD-2</object-name>
+    <object-name>OIL-1</object-name>
+    <object-name>OIL-2</object-name>
+    <object-name>ENG-OH-1</object-name>
+    <object-name>ENG-OH-2</object-name>
+    <object-name>FLAPS</object-name>
+    <object-name>n1</object-name>
+    <object-name>n2</object-name>
+    <object-name>C/PR</object-name>
+    <object-name>OXY</object-name>
+    <object-name>Batt-Discted</object-name>
+    <object-name>DIFF</object-name>
+    <object-name>BP-1</object-name>
+    <object-name>BP-2</object-name>
+    <object-name>ALT-1</object-name>
+    <object-name>ALT-2</object-name>
+    <object-name>TR-1</object-name>
+    <object-name>TR-2</object-name>
+    <object-name>AIR-T</object-name>
+    <object-name>STAB</object-name>
+    <object-name>PITOT</object-name>
+    <object-name>F-DET</object-name>
+    <object-name>AJAX</object-name>
+    <object-name>TEST</object-name>
+    <object-name>MUTE</object-name>
+    <object-name>Mount</object-name>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
+	</animation>
+
+<animation>
+ <type>select</type> 
+ <object-name>Batt-Discted</object-name>
+ <condition>		
+  <greater-than>		
+    <property>engines/engine/running</property>
+   <value>0</value>
+  </greater-than>
+ </condition>
+ <emission>	
+  <red>1</red>	
+  <green>0</green>	
+  <blue>0</blue>
+ </emission>
+</animation>
+
+
+
+
 
 </PropertyList>
