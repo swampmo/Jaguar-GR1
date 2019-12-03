@@ -31,6 +31,10 @@ props.globals.initNode("engines/air-gen-button", 0, "BOOL");
 props.globals.initNode("engines/eng-ign-switch", 0, "BOOL");
 props.globals.initNode("engines/throttle-stop", 1, "BOOL");# latch on throttle
 props.globals.initNode("engines/eng-start-switch", 0, "INT");# -1 = engine 1   0 = none  1 = engine 2
+props.globals.initNode("engines/air-gen-button-light", 0, "BOOL");# green
+props.globals.initNode("engines/caution-bat", 0, "BOOL");# BAT on caution warning panel
+props.globals.initNode("engines/corr-rotation", 0, "BOOL");# CORRECT ROTATION light
+props.globals.initNode("engines/air-gen-n1", 0, "INT");# rpm of starter engine
 
 var engineStartLoop = func {
 	#inputs
@@ -68,12 +72,12 @@ var engineStartLoop = func {
 			corr_rot = 1;
 		}
 		rdy_for_engine_start = 1;
-	} elsif (air_gen_on) {
-		#air_gen_rpm -= 0.03;
-		#if (air_gen_rpm < 0.2) {
-		#	air_gen_rpm = 0.2;
-		#}
-	} elsif (air_gen_rpm > 0) {
+	} elsif (air_gen_on and !eng_ign) {
+		air_gen_rpm -= 0.03;
+		if (air_gen_rpm < 0.2) {
+			air_gen_rpm = 0.2;
+		}
+	} elsif (!air_gen_on and air_gen_rpm > 0) {
 		air_gen_rpm -= 0.04;
 		if (air_gen_rpm < 0) {
 			air_gen_rpm = 0;
