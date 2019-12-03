@@ -106,7 +106,7 @@
            <property>engines/engine[0]/n2</property>
            <factor>0.01</factor>
          	<min>0.5</min>
-   	      <max>0.4</max>
+   	      <max>0.6</max>
          </pitch>
        </engine>
 
@@ -138,7 +138,7 @@
            <property>engines/engine[1]/n2</property>
            <factor>0.01</factor>
          	<min>0.5</min>
-   	      <max>0.4</max>
+   	      <max>0.6</max>
          </pitch>
        </engine>
 
@@ -194,7 +194,7 @@
 		<!--                                 GEARS                                             -->
 		<!-- ********************************************************************************* -->
 
-		<!--rumble>
+		<rumble>
 			<name>gear rumble</name>
 			<mode>looped</mode>
 			<path>Aircraft/Jaguar/Sounds/ground_roll.wav</path>
@@ -217,7 +217,8 @@
 				<factor>.004</factor>
 			</volume>
 		</rumble>
-		<gear>
+
+    <gear>
 			<name>gear</name>
 			<mode>in-transit</mode>
 			<path>Aircraft/Jaguar/Sounds/gear-transit.wav</path>
@@ -231,7 +232,8 @@
 				<factor>-0.001</factor>
 			</pitch>
 		</gear>
-		<gear>
+
+    <gear>
 			<name>gear-lock</name>
 			<path>Aircraft/Jaguar/Sounds/gear-lock.wav</path>
 			<condition>
@@ -244,8 +246,9 @@
 				<factor>0.5</factor>
 			</volume>
 		</gear>
-		<gear>
-			<name>gear-open</name>
+
+    <gear>
+	 	<name>gear-open</name>
 			<path>Aircraft/Jaguar/Sounds/gear-open.wav</path>
 			<condition>
 				<equals>
@@ -257,6 +260,7 @@
 				<factor>0.5</factor>
 			</volume>
 		</gear>
+
 		<squeal>
 			<name>squeal</name>
 			<path>Aircraft/Jaguar/Sounds/touchdown.wav</path>
@@ -326,10 +330,10 @@
       </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-    </squeal-->
+    </squeal>
 
 
-    <throttle-1>
+     <throttle-1>
       <name>detent1</name>
             <path>Aircraft/Jaguar/Sounds/detent.wav</path>
             <mode>once</mode>

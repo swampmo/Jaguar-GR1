@@ -775,14 +775,14 @@ if(navStillOn) {
   </animation> -->
 
  <!-- Droite -->
-  <model>
+<!--  <model>
     <path>Aircraft/Jaguar/Models/Effects/Afterburner/EJ200-R.xml</path>
     <offsets>
       <x-m>  6.2 </x-m>
       <y-m>  0.474 </y-m>
       <z-m> -0.572 </z-m>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- Gauche -->
   <model>
