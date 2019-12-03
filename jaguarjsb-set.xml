@@ -700,6 +700,10 @@
 
   <nasal>
 
+    <engines>
+        <file>Aircraft/Jaguar/Nasal/jag_engine.nas</file>
+   </engines>
+
     <doors>
       <file>Aircraft/Jaguar/Nasal/doors.nas</file>
     </doors>
@@ -775,9 +779,9 @@
 		  <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
     </tfs>
 
-    <failures>
+<!--    <failures>
         <file>Aircraft/Jaguar/Nasal/failures.nas</file>
-    </failures>
+    </failures> -->
 
     <crashandstress>
         <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
