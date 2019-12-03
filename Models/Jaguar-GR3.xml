@@ -758,7 +758,7 @@ if(navStillOn) {
    </offsets>
   </model>
 
-  <animation>
+<!--  <animation>
     <type>select</type>
     <object-name>AB_Flame 1</object-name>
     <condition>
@@ -772,7 +772,7 @@ if(navStillOn) {
     <condition>
      <property>sim/multiplay/generic/bool[1]</property>
     </condition>
-   </animation>
+  </animation> -->
 
  <!-- Droite -->
   <model>
