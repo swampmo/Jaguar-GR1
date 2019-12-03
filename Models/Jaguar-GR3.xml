@@ -736,22 +736,9 @@ if(navStillOn) {
     </offsets>
   </model>
 
-  <!-- Les flammes -->
-  <!-- Gauche -->
-  <model>
-    <path>Aircraft/Jaguar/Models/Effects/.flammes/flammesG.xml</path>
-    <offsets>
-      <x-m>  5.561  </x-m>
-      <y-m> -0.483  </y-m>
-      <z-m> -0.572 </z-m>
-    </offsets>
-  </model>
 
-<<<<<<< HEAD
- <!-- Droite -->
-  <model>
-    <path>Aircraft/Jaguar/Models/Effects/.flammes/flammesD.xml</path>
-=======
+
+
   <model>
    <name>AB_Flame 2</name>
    <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>

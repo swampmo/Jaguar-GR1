@@ -779,13 +779,7 @@
 		  <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
     </tfs>
 
-<<<<<<< HEAD
-<!--    <failures>
-        <file>Aircraft/Jaguar/Nasal/failures.nas</file>
-    </failures> -->
 
-=======
->>>>>>> bef6fd4be1249f3fb2c5b3f4c381fc771137b0cf
     <crashandstress>
         <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
     </crashandstress>
