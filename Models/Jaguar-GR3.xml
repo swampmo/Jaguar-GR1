@@ -739,46 +739,19 @@ if(navStillOn) {
   <!-- Les flammes -->
   <!-- Gauche -->
   <model>
-   <name>AB_Flame 1</name>
-    <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/.flammes/flammesG.xml</path>
     <offsets>
-      <x-m> 5.64314   </x-m>
-      <y-m> 0.494526  </y-m>
-      <z-m> -0.49394 </z-m>
+      <x-m>  5.561  </x-m>
+      <y-m> -0.483  </y-m>
+      <z-m> -0.572 </z-m>
     </offsets>
   </model>
 
-  <model>
-   <name>AB_Flame 2</name>
-   <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
-   <offsets>
-    <x-m>  5.64314  </x-m>
-    <y-m> -0.497843 </y-m>
-    <z-m> -0.49953  </z-m>
-   </offsets>
-  </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>AB_Flame 1</object-name>
-    <condition>
-     <property>sim/multiplay/generic/bool[0]</property>
-    </condition>
-   </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>AB_Flame 2</object-name>
-    <condition>
-     <property>sim/multiplay/generic/bool[1]</property>
-    </condition>
-   </animation>
-
  <!-- Droite -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/Afterburner/EJ200-R.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/.flammes/flammesD.xml</path>
     <offsets>
-      <x-m>  6.2 </x-m>
+      <x-m>  5.561 </x-m>
       <y-m>  0.474 </y-m>
       <z-m> -0.572 </z-m>
     </offsets>

@@ -193,7 +193,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/flight/speedbrakes</property>
+        <property>controls/flight/speedbrake</property>
         <step>1</step>
       </binding>
     </action>
@@ -208,7 +208,7 @@
       <binding>
         <command>property-toggle</command>
         <property>controls/flight/slats</property>
-        <step>0.391</step>
+        <step>0.002</step>
       </binding>
     </action>
   </animation>
@@ -222,7 +222,7 @@
       <binding>
         <command>property-adjust</command>
         <property>controls/flight/slats</property>
-        <step>-0.391</step>
+        <step>-1</step>
       </binding>
     </action>
   </animation>

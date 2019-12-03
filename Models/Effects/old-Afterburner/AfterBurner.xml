@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
 
- <path>Aircraft/Generic/Effects/Thruster/thrust_flame.ac</path>
+ <path>Aircraft/Generic/Effects/Flammes/thruster_flame.ac</path>
  <nopreview/>
 
  <animation>
@@ -16,7 +16,7 @@
 
 
  <effect>
-  <inherits-from>Aircraft/Jaguar/Models/Effects/Afterburner/afterburner</inherits-from>
+  <inherits-from>Aircraft/Jaguar/Models/Effects/flammesG.xml</inherits-from>
   <object-name>Bounding_box</object-name>
  </effect>
 
