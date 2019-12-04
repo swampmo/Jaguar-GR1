@@ -11,7 +11,7 @@
     <fuel-fraction>1</fuel-fraction>
 
     <model>
-      <path>Aircraft/Jaguar/Models/Jaguar-GR3.xml</path>
+      <path>Aircraft/Jaguar/Models/Jaguar-GR1.xml</path>
       <livery>
         <file type="string">default</file>
       </livery>
@@ -72,7 +72,8 @@
     </ai>
 
     <help>
-      <title>Jaguar</title>
+      <title>Jaguar GR1</title>
+   
       <key>
         <name>d</name>
         <desc>Open canopy</desc>
@@ -81,30 +82,43 @@
         <name>D</name>
         <desc>Close canopy</desc>
       </key>
-	   <key>
+      <key>
+        <name>]</name>
+        <desc>Deploy slats and flaps</desc>
+      </key>
+      <key>
+        <name>[</name>
+        <desc>Retract slats and flaps</desc>
+      </key>
+      <key>
+        <name>CTRL b</name>
+        <desc>Speedbrakes</desc>
+      </key>
+      <key>
         <name>e</name>
         <desc>Fire guns</desc>
       </key>
-	    <key>
-        <name>q</name>
-        <desc>Toggle Radar standby</desc>
-      </key>
-      <key>
-        <name>t</name>
-        <desc>Change Radar Distances (10, 20 40)</desc>
-      </key>
-      <key>
-       <name>u</name>
-       <desc>Toggle Refueling Probe</desc>
-      </key>
-      <line>Slats deploy before flaps will manually deploy slats with flap key "]" watch indicator for flaps to deploy.</line>
-      <line>Takeoff with 3 notches of flaps/15 degrees. after takeoff retract flaps key "[" use combat slats as needed.</line>
-      <line>Afterburners engage when throttle moves past 75% You will hear the mil thrust detenet click twice.</line>
+      <line>--------------------------------------------------------------------------------------------------------------------</line>
+      <line>Startup procedure</line>
+      <line>--------------------------------------------------------------------------------------------------------------------</line>
+      <line>Locate the ignition panel in front of the flight stick.</line>
+      <line>Click the boot of the flight stick to move it left.</line>
+      <line>Turn the Air Gen switch on then turn the ENG-ING switch o.n</line>
+      <line>Turn fuel pumps 1 and 2 on then press the green AIR-GEN START button and wait 5 seconds.</line>
+      <line>Flip engine start switch to #1 when oil pressure reaches 18 psi press the throttle stop lever on throttle controls.</line>
+      <line>Wait for green light to illuminate above engine start #1 repeat the same proccedure for engine #2.</line>
+      <line>--------------------------------------------------------------------------------------------------------------------</line>
+      <line>Takeoff procedure</line>
+      <line>--------------------------------------------------------------------------------------------------------------------</line>
+      <line>Slats deploy before flaps, this is normal for the Jaguar.</line>
+      <line>Set flaps 3 notches to 15 degrees, hold brakes and apply full throttle with rehea.t</line>
+      <line>Rotate at 130 knots to 140 knots depending on weight. Retract flaps and use combat slats as needed below 450 knots.</line>
       <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
-      <line>Cannons carry 150 rounds each. These can be reloaded  while on the ground by using the Jaguar menu.</line>
 	    <line>Droptanks will automatically switch when empty.</line>
-      <line>Takeoff with at 15 degrees</line>
-	    <line>150 - 185 kt depending on payload.</line>
+      <line>--------------------------------------------------------------------------------------------------------------------</line>
+      <line>Landing proceedure</line>
+      <line>--------------------------------------------------------------------------------------------------------------------</line>
+      <line>Deploy speedbrakes, set flaps to full aproach speed 140 knots and touch down at 120 - 135 knots depending on payload</line>
       </help>
 
     <multiplay>
