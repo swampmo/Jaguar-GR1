@@ -6,18 +6,20 @@
     <type>material</type>
     <animation>
      <object-name>mount</object-name>
+     <object-name>glass-red</object-name>
       <object-name>Red-light</object-name>
    </animation>
 
- <animation>
+ <!--animation>
   <type>material</type>
      <object-name>Red-light</object-name>
+      <object-name>glass-red</object-name>
     <emission>
       <red>   0.9 </red>
       <green> 0.9 </green>
       <blue>  0.9 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
     </emission>
-   </animation>
+   </animation-->
 
 </PropertyList>

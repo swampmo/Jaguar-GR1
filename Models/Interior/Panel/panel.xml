@@ -426,8 +426,8 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Refuel-Panel.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.000 </z-m>
+      <y-m> -0.015 </y-m>
+      <z-m> -0.010 </z-m>
       <roll-deg> 0 </roll-deg>
       <yaw-deg>  0 </yaw-deg>
     </offsets>
