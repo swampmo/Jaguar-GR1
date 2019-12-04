@@ -41,7 +41,7 @@
     <type>rotate</type>
     <object-name>throttle-L</object-name>
     <object-name>throttle-stop[0]</object-name>
-    <property>engines/throttle-pos-norm[0]</property>
+    <property>controls/engines/engine/throttle</property>
     <factor> -60 </factor>
     <axis>
       <x> 0 </x>
@@ -55,7 +55,7 @@
 	<z-m>-0.22687</z-m>
      </center>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>throttle-stop[1]</object-name>
@@ -101,7 +101,7 @@
 		<object-name>combat-slats-in</object-name>
     <object-name>throttle-R</object-name>
     <object-name>throttle-stop[1]</object-name>
-    <property>engines/throttle-pos-norm[1]</property>
+    <property>controls/engines/engine[1]/throttle</property>
     <factor> -60 </factor>
     <axis>
       <x> 0 </x>

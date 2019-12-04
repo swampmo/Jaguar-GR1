@@ -32,7 +32,7 @@
     <object-name>Mount</object-name>
       </animation>
 
-<!--	  <animation>
+	  <animation>
      <type>material</type> 
     <object-name>HYD-1</object-name>
     <object-name>HYD-2</object-name>
@@ -67,23 +67,20 @@
       <green> 0.9 </green>
       <blue>  0.9 </blue>
     </emission>
-	</animation>-->
-
-<!--<animation>
- <type>select</type> 
- <object-name>Batt-Discted</object-name>
- <condition>			
-    <property>engines/caution-bat</property>
- </condition>
-</animation>-->
+	</animation>
 
 <animation>
- <type>material</type> 
+ <type>select</type> 
  <object-name>Batt-Discted</object-name>
- <emission> 
-  <factor-prop>engines/caution-bat</factor-prop>
-  <red>1</red>  
-  <green>1</green>  
+ <condition>		
+  <greater-than>		
+    <property>engines/engine/running</property>
+   <value>0</value>
+  </greater-than>
+ </condition>
+ <emission>	
+  <red>1</red>	
+  <green>1</green>	
   <blue>1</blue>
  </emission>
 </animation>

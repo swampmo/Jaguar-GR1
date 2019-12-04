@@ -12,6 +12,10 @@ var start_1 = 0;
 var rdy_for_engine_start = 0;
 var corr_rot_0 = 0;
 var corr_rot_1 = 0;
+var throttleStop_0 = 0;
+var throttleStop_1 = 0;
+var throttle_0 = 0;
+var throttle_1 = 0;
 
 var N2_IDLE = 60;#idlen2 in engine file (which should be 39)
 var N2_IGNITE = 25.18;#ignitionn2 in engine file (which should be 15) [Wait to set it to 15 till FG 2019.2.1 due to bug in jsbsim]
@@ -52,15 +56,13 @@ var engineStartLoop = func {
 	var air_gen_start = getprop("engines/air-gen-switch");
 	var gen_start = getprop("engines/air-gen-button");
 	var eng_ign = getprop("engines/eng-ign-switch");
-	var throttleStop_0 = getprop("engines/throttle-stop[0]");
-	var throttleStop_1 = getprop("engines/throttle-stop[1]");
+	throttleStop_0 = getprop("engines/throttle-stop[0]");
+	throttleStop_1 = getprop("engines/throttle-stop[1]");
 	var eng_start = getprop("engines/eng-start-switch");
 	var fuel_0 = getprop("engines/fuel-pumps-switch[0]");
 	var fuel_1 = getprop("engines/fuel-pumps-switch[1]");
 	var n2_0 = getprop("engines/engine[0]/n2");
 	var n2_1 = getprop("engines/engine[1]/n2");
-	var throttle_0 = getprop("controls/engines/engine[0]/throttle");
-	var throttle_1 = getprop("controls/engines/engine[1]/throttle");
 	
 	
 	cwp_bat = 0;
@@ -148,18 +150,30 @@ var engineStartLoop = func {
 	setprop("controls/engines/engine[1]/cutoff", cutoff_1);
 	setprop("controls/engines/engine[0]/starter", start_0);
 	setprop("controls/engines/engine[1]/starter", start_1);
-	setprop("engines/throttle-pos-norm[0]", throttleStop_0?0:throttle_0);
-	setprop("engines/throttle-pos-norm[1]", throttleStop_1?0:throttle_1);
 	setprop("engines/air-gen-n1", air_gen_rpm*100);
 	setprop("engines/air-gen-button", 0);
 	setprop("engines/eng-start-switch", 0);
 	settimer(engineStartLoop,0.25);
 }
 
+var engineStartLoop2 = func {
+	#inputs
+	throttleStop_0 = getprop("engines/throttle-stop[0]");
+	throttleStop_1 = getprop("engines/throttle-stop[1]");
+	throttle_0 = getprop("controls/engines/engine[0]/throttle");
+	throttle_1 = getprop("controls/engines/engine[1]/throttle");
+	
+	#outputs
+	setprop("engines/throttle-pos-norm[0]", throttleStop_0?0:throttle_0*0.9+0.1);
+	setprop("engines/throttle-pos-norm[1]", throttleStop_1?0:throttle_1*0.9+0.1);
+	settimer(engineStartLoop2,0.05);
+}
+
 var main_init_listener = setlistener("sim/signals/fdm-initialized", func {
   	if (getprop("sim/signals/fdm-initialized") == 1) {
 	    removelistener(main_init_listener);
 		engineStartLoop();
+		engineStartLoop2();
 	}
 }, nil, 0);
 

@@ -89,9 +89,9 @@
   <!-- ############################################################## Ignition ###################################################################-->
   <animation>
     <type>translate</type>
-    <object-name>air-gen-button</object-name>
+    <object-name>air-gen-button-light</object-name>
     <property>/engines/air-gen-button</property>
-    <factor> 1 </factor>
+    <factor> 5 </factor>
     <axis>
       <x> 1 </x>
       <y> 0 </y>
@@ -275,30 +275,28 @@
 <animation>
  <type>select</type> 
  <object-name>LP-Shaft-L-ON</object-name>
- <condition>	  		
-    <property>engines/corr-rotation[0]</property>
+ <condition>		
+  <greater-than>		
+    <property>engines/engine/running</property>
+   <value>0</value>
+  </greater-than>
  </condition>
+ <emission>	
+  <red>1</red>	
+  <green>1</green>	
+  <blue>1</blue>
+ </emission>
+ <texture>starter.png</texture>
 </animation>
-
-<animation>
-    <type>material</type>
-    <object-name>LP-Shaft-L-ON</object-name>
-    <emission>
-      <factor-prop>engines/corr-rotation[0]</factor-prop>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-    </emission>
-    <texture>starter.png</texture>
-  </animation>
 
 <animation>
  <type>select</type> 
  <object-name>LP-Shaft-L-OFF</object-name>
  <condition>		
-  <not>		
-    <property>engines/corr-rotation[0]</property>
-   </not>
+  <less-than-equals>		
+    <property>engines/engine/running</property>
+   <value>1</value>
+  </less-than-equals>
  </condition>
  <emission>	
   <red>1</red>	
@@ -311,30 +309,11 @@
 <animation>
  <type>select</type> 
  <object-name>LP-Shaft-R-ON</object-name>
- <condition>		 
-    <property>engines/corr-rotation[1]</property>
- </condition>
-</animation>
-
-<animation>
-    <type>material</type>
-    <object-name>LP-Shaft-R-ON</object-name>
-    <emission>
-      <factor-prop>engines/corr-rotation[1]</factor-prop>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-    </emission>
-    <texture>starter.png</texture>
-  </animation>
-
-<animation>
- <type>select</type> 
- <object-name>LP-Shaft-R-OFF</object-name>
  <condition>		
-  <not>   
-    <property>engines/corr-rotation[1]</property>
-   </not>
+  <greater-than>		
+    <property>engines/engine[1]/running</property>
+   <value>0</value>
+  </greater-than>
  </condition>
  <emission>	
   <red>1</red>	
@@ -346,64 +325,39 @@
 
 <animation>
  <type>select</type> 
-    <object-name>ENG-srt-air-valve-closed</object-name>
- <condition>
-  <not>      
-    <property>engines/air-valve-open-light</property>
-  </not>
+ <object-name>LP-Shaft-R-OFF</object-name>
+ <condition>		
+  <less-than-equals>		
+    <property>engines/engine[1]/running</property>
+   <value>1</value>
+  </less-than-equals>
  </condition>
+ <emission>	
+  <red>1</red>	
+  <green>1</green>	
+  <blue>1</blue>
+ </emission>
+ <texture>starter.png</texture>
 </animation>
 
-<animation>
+<!--animation>
  <type>select</type> 
     <object-name>ENG-srt-air-valve-open</object-name>
- <condition>			
-    <property>engines/air-valve-open-light</property>
+ <condition>		
+  <greater-than>		
+    <property>controls/pneumatic/APU-bleed</property>
+   <value>0</value>
+  </greater-than>
  </condition>
-</animation>
+ <emission>	
+  <red>1</red>	
+  <green>1</green>	
+  <blue>1</blue>
+ </emission>
+ <texture>Neon orange.png</texture>
+</animation-->
 
 <animation>
-    <type>material</type>
-    <object-name>ENG-srt-air-valve-open</object-name>
-    <emission>
-      <factor-prop>engines/air-valve-open-light</factor-prop>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-    </emission>
-    <texture>Neon orange.png</texture>
-  </animation>
-  
-  <animation>
- <type>select</type> 
-    <object-name>air-gen-button</object-name>
- <condition>
-  <not>      
-    <property>engines/air-gen-button-light</property>
-  </not>
- </condition>
-</animation>
-
-<animation>
- <type>select</type> 
-    <object-name>air-gen-button-light</object-name>
- <condition>
-    <property>engines/air-gen-button-light</property>
- </condition>
-</animation>
-
-<animation>
-    <type>material</type>
-    <object-name>air-gen-button-light</object-name>
-    <emission>
-      <factor-prop>engines/air-gen-button-light</factor-prop>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-    </emission>
-  </animation>
-
-<!--<animation>
  <type>select</type> 
  <object-name>Air-Gen-OFF</object-name>
  <condition>		
@@ -435,7 +389,7 @@
   <blue>1</blue>
  </emission>
  <texture>starter.png</texture>
-</animation>-->
+</animation>
 
 
   <!--animation>
