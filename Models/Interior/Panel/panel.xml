@@ -581,7 +581,7 @@
  
  <model>
   
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orangelight.xml</path>
+  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/air-brake-light.xml</path>
   <offsets>
       <x-m> -3.315 </x-m>
       <y-m> -0.155 </y-m>

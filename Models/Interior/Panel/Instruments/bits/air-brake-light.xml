@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<path>air-brakes.ac</path> 
+
+    <animation>
+     <object-name>mount</object-name>
+     <object-name>air-brakes-off</object-name>
+      <object-name>air-brakes-on</object-name>
+   </animation>
+
+<animation>
+ <type>select</type> 
+ <object-name>air-brakes-on</object-name>
+ <condition>	  		
+    <property>controls/flight/speedbrake</property>
+    <value>1</value>
+ </condition>
+</animation>
+
+<animation>
+    <type>material</type>
+    <object-name>air-brakes-on</object-name>
+    <emission>
+      <factor-prop>controls/flight/speedbrake</factor-prop>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+    </emission>
+    <texture>Neon orange.png</texture>
+  </animation>
+ 
+
+</PropertyList>
