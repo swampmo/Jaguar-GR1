@@ -36,9 +36,9 @@
 		<value>0</value>
 	</binding>
   </key>
- 
-         <key n="76">
-            <name>L</name>
+
+         <key n="93">
+            <name>]</name>
             <desc>Deploy slats</desc>
             <repeatable>false</repeatable>
             <binding>
@@ -51,8 +51,8 @@
             </binding>
         </key>
 
-         <key n="108">
-            <name>l</name>
+         <key n="91">
+            <name>[</name>
             <desc>Retract slats</desc>
             <repeatable>false</repeatable>
             <binding>
@@ -64,24 +64,7 @@
                 <wrap>false</wrap>
             </binding>
         </key>
-  
-  <key n="123">
-     <name>}</name>
-     <desc>Engine Autostop</desc>
-    <binding>
-        <command>nasal</command>
-        <script>emu.autostop();</script>
-    </binding>
-  </key>
-  
-   <key n="125">
-     <name>}</name>
-     <desc>Engine Autostart</desc>
-    <binding>
-        <command>nasal</command>
-        <script>emu.autostart();</script>
-    </binding>
-  </key>
+
 
  <!--  <key n="76">
     <name>L</name>
@@ -91,8 +74,8 @@
        <script>hud.activate_borsight()</script>
     </binding>
   </key> -->
-  
-  <key n="84">
+
+<!--  <key n="84">
     <name>t</name>
     <desc>Active ECM</desc>
     <binding>
@@ -100,7 +83,7 @@
        <script>hud.activate_ECM()</script>
     </binding>
   </key>
-  
+
   <key n="82">
     <name>R</name>
     <desc>Active Telemeter</desc>
@@ -109,7 +92,7 @@
        <script>hud.activate_Telemeter()</script>
     </binding>
   </key>
-  
+
   <key n="116">
     <name>t</name>
     <desc>Ajusting Radar Distance</desc>
@@ -118,7 +101,7 @@
        <script>hud.switch_distance()</script>
     </binding>
   </key>
-  
+
    <key n="81">
     <name>q</name>
     <desc>Toggle radar standby mode</desc>
@@ -127,8 +110,8 @@
       <property>instrumentation/radar/display-rdr</property>
     </binding>
   </key>
-  
-  
+
+
   <key n="110">
     <name>n</name>
     <desc>Changes Target</desc>
@@ -137,7 +120,7 @@
       <script>hud.next_Target_Index()</script>
     </binding>
   </key>
-  
+
   <key n="14">
     <name>Ctrl-n</name>
     <desc>Changes Target</desc>
@@ -146,7 +129,7 @@
       <script>hud.previous_Target_Index()</script>
     </binding>
   </key>
-  
+
 	<key n="117">
 		<name>u</name>
 		<desc>Cycle through the refuelling probe switch positions</desc>
@@ -168,7 +151,7 @@
           <wrap>true</wrap>
         </binding>
   </key>
-  
+
   <key n="113">
     <name>q</name>
     <desc>Toggle radar standby mode</desc>
@@ -176,7 +159,6 @@
       <command>property-toggle</command>
       <property>instrumentation/radar/radar-standby</property>
     </binding>
-  </key>
+  </key> -->
 
 </PropertyList>
-
