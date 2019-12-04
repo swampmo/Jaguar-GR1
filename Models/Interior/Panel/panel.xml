@@ -227,18 +227,17 @@
       <z-m>  0.076 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
-  </model>
+  </model-->
 
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Fuel/fuel4.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Fuel-Probe.xml</path>
     <offsets>
-      <x-m> -3.315 </x-m>
-      <y-m>  0.305 </y-m>
-      <z-m>  0.022 </z-m>
-      <pitch-deg>0</pitch-deg>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.020 </z-m>
+      <roll-deg>-8</roll-deg>
     </offsets>
   </model>
--->
 
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/GMeter/gmeter.xml</path>

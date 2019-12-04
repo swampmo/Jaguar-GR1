@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+    <PropertyList>
+
+          <path>Jag-Fuel-Probe.ac</path>
+    <animation>
+     <object-name>fuelProbe</object-name>
+     <object-name>fuelProbeCasing</object-name>
+  </animation>
+
+   <animation>
+    <type>rotate</type>
+    <object-name>fuelProbe</object-name>
+     <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
+      <factor>140</factor>
+         <axis>
+          <x>1</x>
+           <y>0</y>
+          <z>0</z>
+         </axis>
+     <center>
+	<x-m>-4.25910</x-m>
+	<y-m> 0.30931</y-m>
+	<z-m>-0.27770</z-m>
+     </center>
+    </animation>
+
+</PropertyList>

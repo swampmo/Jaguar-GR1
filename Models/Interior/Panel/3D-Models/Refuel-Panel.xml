@@ -27,12 +27,12 @@
     </emission>
    </animation>
 
-<!-- ################################################ Fuel-Prboe ###################################### -->
+<!-- ################################################ Fuel-Probe ###################################### -->
   <animation>
     <type>translate</type>
     <object-name>Refuel</object-name>
-    <property>controls/switches/fuel-probe</property>
-      <factor>-0.002</factor>
+    <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
+      <factor>-0.003</factor>
          <axis>
           <x> 1.0 </x>
            <y> 0.0 </y>
@@ -55,14 +55,10 @@
           <button>0</button>
             <binding>
              <command>property-toggle</command>
-                   <property>controls/switches/fuel-probe</property>
+                   <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
                </binding>
-                <binding>
-                 <!--command>property-assign</command>
-                    <property>controls/switches/fuel-probe</property>
-              </binding>
              <binding>
-            <command>property-toggle</command-->
+            <command>property-toggle</command>
           <property>sim/sound/click</property>
         </binding>
       </action>

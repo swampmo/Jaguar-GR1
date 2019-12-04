@@ -89,9 +89,9 @@
   <!-- ############################################################## Ignition ###################################################################-->
   <animation>
     <type>translate</type>
-    <object-name>air-gen-button</object-name>
+    <object-name>air-gen-button-light</object-name>
     <property>/engines/air-gen-button</property>
-    <factor> 1 </factor>
+    <factor> 5 </factor>
     <axis>
       <x> 1 </x>
       <y> 0 </y>
