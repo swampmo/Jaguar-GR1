@@ -7,10 +7,9 @@
  <animation>
   <type>scale</type>
   <object-name>Bounding_box</object-name>
-  <property>sim/multiplay/generic/bool[0]</property><!-- throttle pos -->
-  <x-factor>0.85</x-factor>
-  <y-factor>0.85</y-factor>
-  <z-factor>0.85</z-factor>
+  <x-offset>0.85</x-offset><!-- length of full flame (1.0 = 3 meters) -->
+  <y-offset>0.40</y-offset><!-- Must not be more than 0.4 or flames can be seen through tail -->
+  <z-offset>0.40</z-offset><!-- Must not be more than 0.4 or flames can be seen through tail -->
  </animation>
 
 

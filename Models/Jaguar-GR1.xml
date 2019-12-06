@@ -759,23 +759,40 @@ if(navStillOn) {
    </offsets>
   </model>
 
-<animation>
-    <type>select</type>
-    <object-name>AB_flame</object-name>
-    <condition>
-     <property>sim/multiplay/generic/bool[0]</property>
-    </condition>
-   </animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>AB_flame</object-name>
-    <condition>
-     <property>sim/multiplay/generic/bool[1]</property>
-    </condition>
-  </animation>
 
  <!-- Droite -->
+  
+  <animation>
+    <type>scale</type>
+    <object-name>AB_Flame 1</object-name>
+    <property>sim/multiplay/generic/float[18]</property><!-- throttle pos 1 -->
+    <x-factor>1.0</x-factor>
+    <x-min>0.2</x-min>
+    <y-min>1.0</y-min>
+    <z-min>1.0</z-min>
+    <center>
+      <x-m> 5.64314   </x-m>
+      <y-m> 0.494526  </y-m>
+      <z-m> -0.49394 </z-m>
+    </center>
+  </animation>
+  
+  <animation>
+    <type>scale</type>
+    <object-name>AB_Flame 2</object-name>
+    <property>sim/multiplay/generic/float[19]</property><!-- throttle pos 2 -->
+    <x-factor>1.0</x-factor>
+    <x-min>0.2</x-min>
+    <y-min>1.0</y-min>
+    <z-min>1.0</z-min>
+    <center>
+      <x-m>  5.64314  </x-m>
+      <y-m> -0.497843 </y-m>
+      <z-m> -0.49953  </z-m>
+   </center>
+  </animation>
+
 
   <!-- Gauche -->
   <model>

@@ -7,7 +7,7 @@
       <engine>
           <name>engine-start-inside-L</name>
           <mode>once</mode>
-          <path>Aircraft/Jaguar/Sounds/startup-L.wav</path>
+          <path>Aircraft/Jaguar/Sounds/startup.wav</path>
           <condition>
             <and>
     <greater-than>
@@ -43,7 +43,7 @@
       <engine>
           <name>engine-start-inside-R</name>
           <mode>once</mode>
-          <path>Aircraft/Jaguar/Sounds/startup-R.wav</path>
+          <path>Aircraft/Jaguar/Sounds/startup.wav</path>
           <condition>
             <not>
              <property>/sim/current-view/external</property>
@@ -81,7 +81,7 @@
        <engine>
          <name>turbine-0</name>
          <mode>looped</mode>
-         <path>Aircraft/Jaguar/Sounds/Jaguar-whine-L.wav</path>
+         <path>Aircraft/Jaguar/Sounds/Jaguar-whine.wav</path>
          <condition>
            <property>/engines/engine[0]/running</property>
            <not>
@@ -106,14 +106,14 @@
            <property>engines/engine[0]/n2</property>
            <factor>0.01</factor>
          	<min>0.5</min>
-   	      <max>0.6</max>
+   	      <max>0.8</max>
          </pitch>
        </engine>
 
        <engine>
          <name>turbine-1</name>
          <mode>looped</mode>
-         <path>Aircraft/Jaguar/Sounds/Jaguar-whine-R.wav</path>
+         <path>Aircraft/Jaguar/Sounds/Jaguar-whine.wav</path>
          <condition>
            <property>/engines/engine[1]/running</property>
            <not>
@@ -138,7 +138,7 @@
            <property>engines/engine[1]/n2</property>
            <factor>0.01</factor>
          	<min>0.5</min>
-   	      <max>0.6</max>
+   	      <max>0.8</max>
          </pitch>
        </engine>
 
@@ -216,7 +216,7 @@
 
        <engine>
          <name>whine-int-L</name>
-         <path>Aircraft/Jaguar/Sounds/engine-int-L.wav</path>
+         <path>Aircraft/Jaguar/Sounds/engine-int.wav</path>
          <mode>looped</mode>
          <condition>
            <property>engines/engine[0]/running</property>
@@ -231,14 +231,14 @@
          </volume>
          <pitch>
            <property>/engines/engine[0]/n2</property>
-           <factor>0.02</factor>
+           <factor>0.025</factor>
            <offset>-0.1</offset>
          </pitch>
        </engine>
 
        <engine>
          <name>whine-int-R</name>
-         <path>Aircraft/Jaguar/Sounds/engine-int-R.wav</path>
+         <path>Aircraft/Jaguar/Sounds/engine-int.wav</path>
          <mode>looped</mode>
          <condition>
            <property>engines/engine[1]/running</property>
@@ -253,10 +253,18 @@
          </volume>
          <pitch>
            <property>/engines/engine[1]/n2</property>
-           <factor>0.02</factor>
+           <factor>0.025</factor>
            <offset>-0.1</offset>
          </pitch>
        </engine>
+
+
+
+
+
+
+
+
 
 		<!-- ********************************************************************************* -->
 		<!--                                 GEARS                                             -->
