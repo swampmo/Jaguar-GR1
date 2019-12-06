@@ -22,8 +22,8 @@
   <animation>
     <type>translate</type>
     <object-name>Arrest-Handle</object-name>
-  <property>systems/hook/tailhook-cmd-norm</property>
-      <factor>-0.05</factor>
+  <property>controls/gear/tailhook</property>
+      <factor>0.03</factor>
          <axis>
           <x>1</x>
            <y>0</y>
@@ -41,17 +41,13 @@
     <animation>
      <type>pick</type>
         <object-name>Arrest-Handle</object-name>
-      <factor> 0.05</factor>
+      <!--factor>0.03</factor-->
          <action>
           <button>0</button>
             <binding>
              <command>property-toggle</command>
-  <property>systems/hook/tailhook-cmd-norm</property>
+  <property>controls/gear/tailhook</property>
                </binding>
-                <binding>
-                 <command>property-assign</command>
-  <property>gear/tailhook-pos-norm</property>
-              </binding>
              <binding>
             <command>property-toggle</command>
           <property>sim/sound/click</property>
@@ -60,3 +56,4 @@
     </animation>
 
 </PropertyList>
+

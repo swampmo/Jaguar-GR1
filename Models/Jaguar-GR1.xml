@@ -326,7 +326,7 @@ if(navStillOn) {
     <object-name>porteAD</object-name>
     <object-name>anticollUp</object-name>
     <object-name>anticollDown</object-name>
-	<object-name>fuelProbe</object-name>
+	<!--object-name>fuelProbe</object-name-->
 	<object-name>fuelProbeDoorFairing</object-name>
 	<object-name>fuelProbeDoor1</object-name>
 	<object-name>fuelProbeDoor2</object-name>
@@ -393,7 +393,7 @@ if(navStillOn) {
 	<object-name>WingFenceL</object-name>
 	<object-name>WingFenceR</object-name>
 
-	<object-name>fuelProbe</object-name>
+	<!--object-name>fuelProbe</object-name-->
 	<object-name>fuelProbeDoorFairing</object-name>
 	<object-name>fuelProbeDoor1</object-name>
 	<object-name>fuelProbeDoor2</object-name>
@@ -481,7 +481,7 @@ if(navStillOn) {
     <object-name>porteA</object-name>
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
-	<object-name>fuelProbe</object-name>
+	<!--object-name>fuelProbe</object-name-->
 	<object-name>fuelProbeDoorFairing</object-name>
 	<object-name>fuelProbeDoor1</object-name>
 	<object-name>fuelProbeDoor2</object-name>
@@ -528,7 +528,7 @@ if(navStillOn) {
     <object-name>porteA</object-name>
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
-	<object-name>fuelProbe</object-name>
+	<!--object-name>fuelProbe</object-name-->
 	<object-name>fuelProbeDoorFairing</object-name>
 	<object-name>fuelProbeDoor1</object-name>
 	<object-name>fuelProbeDoor2</object-name>
@@ -618,7 +618,7 @@ if(navStillOn) {
 	<object-name>WingFenceL</object-name>
 	<object-name>WingFenceR</object-name>
 
-	<object-name>fuelProbe</object-name>
+	<!--object-name>fuelProbe</object-name-->
 	<object-name>fuelProbeDoorFairing</object-name>
 	<object-name>fuelProbeDoor1</object-name>
 	<object-name>fuelProbeDoor2</object-name>
@@ -740,7 +740,7 @@ if(navStillOn) {
   <!-- Les flammes -->
   <!-- Gauche -->
   <model>
-   <name>AB_Flame 1</name>
+   <name>AB_flame</name>
     <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
     <offsets>
       <x-m> 5.64314   </x-m>
@@ -750,7 +750,7 @@ if(navStillOn) {
   </model>
 
   <model>
-   <name>AB_Flame 2</name>
+   <name>AB_flame</name>
    <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
    <offsets>
     <x-m>  5.64314  </x-m>
@@ -759,9 +759,9 @@ if(navStillOn) {
    </offsets>
   </model>
 
-<!--  <animation>
+<animation>
     <type>select</type>
-    <object-name>AB_Flame 1</object-name>
+    <object-name>AB_flame</object-name>
     <condition>
      <property>sim/multiplay/generic/bool[0]</property>
     </condition>
@@ -769,22 +769,13 @@ if(navStillOn) {
 
   <animation>
     <type>select</type>
-    <object-name>AB_Flame 2</object-name>
+    <object-name>AB_flame</object-name>
     <condition>
      <property>sim/multiplay/generic/bool[1]</property>
     </condition>
-  </animation> -->
+  </animation>
 
  <!-- Droite -->
-<!--  <model>
-    <path>Aircraft/Jaguar/Models/Effects/Afterburner/EJ200-R.xml</path>
->>>>>>> bef6fd4be1249f3fb2c5b3f4c381fc771137b0cf
-    <offsets>
-      <x-m>  5.561 </x-m>
-      <y-m>  0.474 </y-m>
-      <z-m> -0.572 </z-m>
-    </offsets>
-  </model> -->
 
   <!-- Gauche -->
   <model>

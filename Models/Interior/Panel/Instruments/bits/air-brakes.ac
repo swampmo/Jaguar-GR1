@@ -164,6 +164,8 @@ name "mount"
 data 12
 Cylinder.004
 crease 30.0
+texture "nikkon.png
+texrep 1 1
 numvert 512
 0.00512 0.00308 0.0018
 0.00514 0.00199 0.00385

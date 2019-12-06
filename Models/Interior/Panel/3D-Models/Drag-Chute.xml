@@ -22,8 +22,8 @@
   <animation>
     <type>translate</type>
     <object-name>Drag-Chute</object-name>
-  <property>systems/chute/chute-cmd-norm</property>
-      <factor>-0.05</factor>
+  <property>sim/model/lightning/controls/flight/chute_deployed</property>
+      <factor>0.03</factor>
          <axis>
           <x>1</x>
            <y>0</y>
@@ -41,18 +41,16 @@
     <animation>
      <type>pick</type>
         <object-name>Drag-Chute</object-name>
-      <factor> 0.05</factor>
+      <factor>-0.03</factor>
          <action>
           <button>0</button>
             <binding>
              <command>property-toggle</command>
-  <!--property>systems/chute/chute-cmd-norm</property-->
-  <property>systems/chute/chute-released</property>
+  <property>sim/model/lightning/controls/flight/chute_deployed</property>
                </binding>
                 <binding>
-                 <command>property-assign</command>
-  <property>systems/chute/chute-cmd-norm</property>
-  <!--property>systems/chute/chute-released</property-->
+                 <command>property-toggle</command>
+  <property>sim/model/lightning/controls/flight/chute_jettisoned</property>
               </binding>
              <binding>
             <command>property-toggle</command>

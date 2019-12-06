@@ -1,25 +1,32 @@
 <?xml version="1.0"?>
 <PropertyList>
 
-	<path>redlight.ac</path> 
+	<path>redlight.ac</path>
 
-    <type>material</type>
     <animation>
      <object-name>mount</object-name>
-     <object-name>glass-red</object-name>
-      <object-name>Red-light</object-name>
+      <object-name>Red-Light</object-name>
+      <object-name>Red-Light-on</object-name>
    </animation>
 
- <!--animation>
-  <type>material</type>
-     <object-name>Red-light</object-name>
-      <object-name>glass-red</object-name>
-    <emission>
-      <red>   0.9 </red>
-      <green> 0.9 </green>
-      <blue>  0.9 </blue>
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-    </emission>
-   </animation-->
+<animation>
+ <type>select</type> 
+ <object-name>Red-Light-on</object-name>
+ <condition>	  		
+    <property>controls/gear/tailhook</property>
+    <value>1</value>
+ </condition>
+</animation>
+ 
+	<animation>
+		<type>material</type>
+		<object-name>Red-Light-on</object-name>
+		<emission>
+			<factor-prop>controls/gear/tailhook</factor-prop>
+			<red>1</red>
+			 <green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
 
 </PropertyList>

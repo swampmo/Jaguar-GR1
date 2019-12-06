@@ -96,7 +96,7 @@
     <type>rotate</type>
             <object-name>throttle-R</object-name>
     		<object-name>air-brakes-ext</object-name>
-            <object-name>air-brakes-in</object-name>
+            <object-name>air-brakes-off</object-name>
 		<object-name>combat-slats-ext</object-name>
 		<object-name>combat-slats-in</object-name>
     <object-name>throttle-R</object-name>
@@ -120,13 +120,13 @@
   <animation>
     <type>rotate</type>
     <object-name>air-brakes-ext</object-name>
-    <object-name>air-brakes-in</object-name>
+    <object-name>air-brakes-off</object-name>
     <property>controls/flight/speedbrakes</property>
     <factor>-5 </factor>
     <axis>
       <x> 0 </x>
       <y> 0 </y>
-      <z> 1 </z>
+      <z> -1 </z>
     </axis>
 
       <center>
@@ -269,7 +269,7 @@
       <binding>
         <command>property-toggle</command>
         <property>controls/flight/speedbrake</property>
-        <step>1</step>
+        <step>-1</step>
       </binding>
     </action>
   </animation>
@@ -277,13 +277,13 @@
     <animation>
     <type>pick</type>
     <visible>true</visible>
-    <object-name>air-brakes-in</object-name>
+    <object-name>air-brakes-off</object-name>
     <action>
       <button>0</button>
       <binding>
         <command>property-toggle</command>
         <property>controls/flight/speedbrake</property>
-        <step>-1</step>
+        <step>1</step>
       </binding>
     </action>
   </animation>
