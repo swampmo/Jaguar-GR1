@@ -37,8 +37,8 @@
 	</binding>
   </key>
 
-         <key n="93">
-            <name>]</name>
+         <key n="76">
+            <name>L</name>
             <desc>Deploy slats</desc>
             <repeatable>false</repeatable>
             <binding>
@@ -51,8 +51,8 @@
             </binding>
         </key>
 
-         <key n="91">
-            <name>[</name>
+         <key n="108">
+            <name>l</name>
             <desc>Retract slats</desc>
             <repeatable>false</repeatable>
             <binding>
@@ -64,6 +64,16 @@
                 <wrap>false</wrap>
             </binding>
         </key>
+  
+  <key n="123">
+     <name>}</name>
+     <desc>Engine Autostop</desc>
+    <binding>
+        <command>nasal</command>
+        <script>emu.autostop();</script>
+    </binding>
+  </key>
+ 
 
  <!--  <key n="76">
     <name>L</name>
