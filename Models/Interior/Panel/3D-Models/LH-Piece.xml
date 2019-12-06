@@ -6,29 +6,204 @@
 
     <animation>
      <object-name>Counter-Measures</object-name>
-      <object-name>Toggle</object-name>
-     <object-name>Trigger</object-name>
-      <object-name>Main-Button</object-name>
+      <object-name>Guides</object-name>
+     <object-name>Inter-Dim</object-name>
+     <object-name>Lts-Brt</object-name>
+      <object-name>Lts-Dim</object-name>
+      <object-name>NCU-Dim</object-name>
+     <object-name>Rudder-Trim</object-name>
+      <object-name>Rudder-Trim-nut</object-name>
+     <object-name>Toggle</object-name>
+     <object-name>Toggles</object-name>
+      <object-name>Trigger</object-name>
      <object-name>Trim</object-name>
+     <object-name>base</object-name>
+      <object-name>gearlight-off</object-name>
+     <object-name>gearlight-on</object-name>
+      <object-name>gearlight-taxi</object-name>
+     <object-name>knob-setclr-1</object-name>
+      <object-name>knob-setclr-2</object-name>
+     <object-name>land-switch</object-name>
+     <object-name>land-switch-nut</object-name>
       <object-name>screws</object-name>
      <object-name>side-stick</object-name>
+      <object-name>vitre</object-name>
    </animation>
 
- <animation>
+ <!--animation>
   <type>material</type>
      <object-name>Counter-Measures</object-name>
-      <object-name>Toggle</object-name>
-     <object-name>Trigger</object-name>
-      <object-name>Main-Button</object-name>
+      <object-name>Guides</object-name>
+     <object-name>Inter-Dim</object-name>
+      <object-name>NCU-Dim</object-name>
+     <object-name>Rudder-Trim</object-name>
+      <object-name>Rudder-Trim-nut</object-name>
+     <object-name>Toggle</object-name>
+     <object-name>Toggles</object-name>
+      <object-name>Trigger</object-name>
      <object-name>Trim</object-name>
+     <object-name>base</object-name>
+     <object-name>knob-setclr-1</object-name>
+      <object-name>knob-setclr-2</object-name>
+     <object-name>land-switch</object-name>
+     <object-name>land-switch-nut</object-name>
      <object-name>side-stick</object-name>
-        <emission>
-         <red> 1 </red>
-        <green>1 </green>
-       <blue>  1 </blue>
+      <object-name>vitre</object-name>
+    <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
     </emission>
-   </animation>
- 
+   </animation-->
+
+
+	<!-- land/taxi switch -->
+	<animation>
+		<type>rotate</type>
+		<object-name>land-switch</object-name>
+		<property>/controls/switches/landing-light</property>
+		<factor>30</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<y>-1</y>
+		</axis>
+		<center>
+			<x-m>-0.10550</x-m>
+			<y-m> 0.07446</y-m>
+			<z-m> 0.00717</z-m>
+		</center>
+	</animation>
+
+<animation>
+ <type>select</type> 
+ <object-name>landing-light</object-name>
+ <condition>		
+  <less-than-equals>		
+    <property>controls/switches/landing-light</property>
+   <value>1</value>
+  </less-than-equals>
+ </condition>
+ <emission>	
+  <red>0</red>	
+  <green>0</green>	
+  <blue>0</blue>
+ </emission>
+</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>land-switch</object-name>
+               <command>property-assign</command>
+		<property>/controls/switches/taxi-light</property>
+		<factor>-30</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<y>-1</y>
+		</axis>
+		<center>
+			<x-m>-0.10550</x-m>
+			<y-m> 0.07446</y-m>
+			<z-m> 0.00717</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>gearlight-on</object-name>
+<factor>-30</factor>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>nasal</command>
+				<script>jaguar.controls.gearLights(1);</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>gearlight-off</object-name>
+<factor>0</factor>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>nasal</command>
+				<script>jaguar.controls.gearLights(2);</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>gearlight-taxi</object-name>
+<factor>-60</factor>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>nasal</command>
+				<script>jaguar.controls.gearLights(3);</script>
+			</binding>
+		</action>
+	</animation>
+
+	<!-- Instrument Lights-->
+
+	<animation>
+		<type>knob</type>
+		<object-name>Inter-Dim</object-name>
+		<property>controls/lighting/instruments-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>336</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-0.10447</x-m>
+			<y-m> 0.07371</y-m>
+			<z-m> 0.00666</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Lts-Dim</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<interval-sec>0.1</interval-sec>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/instruments-norm</property>
+				<step>-0.1</step>
+				<min>0</min>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Lts-Brt</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<interval-sec>0.1</interval-sec>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/instruments-norm</property>
+				<step>0.1</step>
+				<max>1</max>
+			</binding>
+		</action>
+	</animation>
+
 
 </PropertyList>
+
+

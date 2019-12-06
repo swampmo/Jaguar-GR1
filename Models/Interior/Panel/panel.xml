@@ -26,9 +26,9 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/sas/A-10-sas.xml</path>
     <offsets>
-      <x-m> -3.170 </x-m>
-      <y-m>  0.272 </y-m>
-      <z-m> -0.148 </z-m>
+      <x-m> -2.803 </x-m>
+      <y-m> -0.292 </y-m>
+      <z-m> -0.152 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -273,9 +273,9 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ils/Jag-ils.xml</path>
     <offsets>
-      <x-m> -3.113 </x-m>
-      <y-m>  0.2817 </y-m>
-      <z-m> -0.149 </z-m>
+      <x-m> -2.861 </x-m>
+      <y-m> -0.295 </y-m>
+      <z-m> -0.154 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -305,7 +305,7 @@
     <offsets>
       <x-m>-2.930 </x-m>
       <y-m>-0.350 </y-m>
-      <z-m>-0.135 </z-m>
+      <z-m>-0.147 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -313,9 +313,19 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/lights/light-left-panel.xml</path>
     <offsets>
-      <x-m> -2.945 </x-m>
+      <x-m> -2.828 </x-m>
       <y-m>  0.282 </y-m>
       <z-m> -0.146 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/LH-Piece.xml</path>
+    <offsets>
+      <x-m>-2.930 </x-m>
+      <y-m>-0.350 </y-m>
+      <z-m>-0.147 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -395,9 +405,9 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Pylons.xml</path>
     <offsets>
-      <x-m>  0.030 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.025 </z-m>
+      <x-m>  0.023 </x-m>
+      <y-m> -0.025 </y-m>
+      <z-m>  0.036 </z-m>
       <roll-deg> 0 </roll-deg>
       <yaw-deg>  0 </yaw-deg>
     </offsets>
@@ -477,7 +487,7 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/tacan/tacan.xml</path>
     <offsets>
-      <x-m> -3.057 </x-m>
+      <x-m> -2.930 </x-m>
       <y-m>  0.280 </y-m>
       <z-m> -0.148 </z-m>
       <pitch-deg>0</pitch-deg>
