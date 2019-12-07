@@ -4,7 +4,7 @@
 	<path>air-brakes.ac</path> 
 
     <animation>
-     <object-name>mount</object-name>
+     <object-name>Mount</object-name>
      <object-name>air-brakes-off</object-name>
       <object-name>air-brakes-on</object-name>
    </animation>

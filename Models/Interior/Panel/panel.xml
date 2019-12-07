@@ -27,7 +27,7 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/sas/A-10-sas.xml</path>
     <offsets>
       <x-m> -2.803 </x-m>
-      <y-m> -0.292 </y-m>
+      <y-m> -0.312 </y-m>
       <z-m> -0.152 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
@@ -37,9 +37,9 @@
  <model>  
   <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/air-brake-light.xml</path>
   <offsets>
-      <x-m> -3.315 </x-m>
+      <x-m> -3.362 </x-m>
       <y-m> -0.155 </y-m>
-      <z-m> -0.025 </z-m>
+      <z-m> -0.055 </z-m>
       <pitch-deg>0</pitch-deg>
   </offsets>
  </model>
@@ -47,9 +47,9 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Arrest-Handle.xml</path>
     <offsets>
-      <x-m> -0.000 </x-m>
-      <y-m> -0.025 </y-m>
-      <z-m>  0.000 </z-m>
+      <x-m> -0.035 </x-m>
+      <y-m> -0.018 </y-m>
+      <z-m>  0.005 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -108,9 +108,9 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Drag-Chute.xml</path>
     <offsets>
-      <x-m> -0.250 </x-m>
-      <y-m> -0.015 </y-m>
-      <z-m>  0.000 </z-m>
+      <x-m> -0.280 </x-m>
+      <y-m> -0.010 </y-m>
+      <z-m> -0.010 </z-m>
       <pitch-deg>0</pitch-deg>
 	  <heading-deg>0</heading-deg>
     </offsets>
@@ -274,7 +274,7 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ils/Jag-ils.xml</path>
     <offsets>
       <x-m> -2.861 </x-m>
-      <y-m> -0.295 </y-m>
+      <y-m> -0.318 </y-m>
       <z-m> -0.154 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
@@ -300,17 +300,7 @@
     </offsets>
   </model>
 
-  <model>
-    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/LH-Piece.ac</path>
-    <offsets>
-      <x-m>-2.930 </x-m>
-      <y-m>-0.350 </y-m>
-      <z-m>-0.147 </z-m>
-      <pitch-deg>0</pitch-deg>
-    </offsets>
-  </model>
-
-  <model>
+  <!--model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/lights/light-left-panel.xml</path>
     <offsets>
       <x-m> -2.828 </x-m>
@@ -318,13 +308,13 @@
       <z-m> -0.146 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
-  </model>
+  </model-->
 
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/LH-Piece.xml</path>
     <offsets>
       <x-m>-2.930 </x-m>
-      <y-m>-0.350 </y-m>
+      <y-m>-0.376 </y-m>
       <z-m>-0.147 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
@@ -407,7 +397,7 @@
     <offsets>
       <x-m>  0.023 </x-m>
       <y-m> -0.025 </y-m>
-      <z-m>  0.036 </z-m>
+      <z-m>  0.040 </z-m>
       <roll-deg> 0 </roll-deg>
       <yaw-deg>  0 </yaw-deg>
     </offsets>
@@ -455,6 +445,18 @@
   </model>
 
   <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/seat.ac</path>
+    <offsets>
+      <x-m> -2.700 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.190 </z-m>
+	  <heading-deg>0</heading-deg>
+	  <roll-deg>0</roll-deg>
+	  <pitch-deg>-10</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ControlInd/slats-flaps-gear-indicator.xml</path>
     <offsets>
       <x-m> -3.359 </x-m>
@@ -487,9 +489,9 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/tacan/tacan.xml</path>
     <offsets>
-      <x-m> -2.930 </x-m>
+      <x-m> -2.945 </x-m>
       <y-m>  0.280 </y-m>
-      <z-m> -0.148 </z-m>
+      <z-m> -0.150 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -580,9 +582,9 @@
  <model>  
   <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/orangelight.xml</path>
   <offsets>
-      <x-m> -3.315 </x-m>
+      <x-m> -3.363 </x-m>
       <y-m> -0.185 </y-m>
-      <z-m> -0.025 </z-m>
+      <z-m> -0.055 </z-m>
       <pitch-deg>0</pitch-deg>
   </offsets>
  </model>
@@ -590,9 +592,9 @@
  <model>  
   <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/redlight.xml</path>
   <offsets>
-      <x-m> 0.050 </x-m>
+      <x-m> 0.002 </x-m>
       <y-m>-0.333 </y-m>
-      <z-m>-0.259 </z-m>
+      <z-m>-0.289 </z-m>
       <pitch-deg>0</pitch-deg>
   </offsets>
  </model>

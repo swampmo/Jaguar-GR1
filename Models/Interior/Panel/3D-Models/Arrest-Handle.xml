@@ -23,7 +23,7 @@
     <type>translate</type>
     <object-name>Arrest-Handle</object-name>
   <property>controls/gear/tailhook</property>
-      <factor>0.03</factor>
+      <factor>0.01</factor>
          <axis>
           <x>1</x>
            <y>0</y>

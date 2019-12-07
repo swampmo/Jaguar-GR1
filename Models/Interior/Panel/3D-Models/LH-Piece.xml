@@ -30,7 +30,7 @@
       <object-name>vitre</object-name>
    </animation>
 
- <!--animation>
+ <animation>
   <type>material</type>
      <object-name>Counter-Measures</object-name>
       <object-name>Guides</object-name>
@@ -55,7 +55,7 @@
       <green>1</green>
       <blue>1</blue>
     </emission>
-   </animation-->
+   </animation>
 
 
 	<!-- land/taxi switch -->
@@ -150,7 +150,7 @@
 	<!-- Instrument Lights-->
 
 	<animation>
-		<type>knob</type>
+		<type>rotate</type>
 		<object-name>Inter-Dim</object-name>
 		<property>controls/lighting/instruments-norm</property>
 		<interpolation>
@@ -158,9 +158,9 @@
 			<entry><ind>1</ind><dep>336</dep></entry>
 		</interpolation>
 		<center>
-			<x-m>-0.10447</x-m>
-			<y-m> 0.07371</y-m>
-			<z-m> 0.00666</z-m>
+			<x-m>-0.10458</x-m>
+			<y-m> 0.07403</y-m>
+			<z-m> 0.00804</z-m>
 		</center>
 		<axis>
 			<x>0</x>
