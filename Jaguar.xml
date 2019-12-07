@@ -104,7 +104,7 @@
 
  <propulsion>
 
-   <engine file="RRMK102">
+   <engine file="Adour804">
     <location unit="M">
       <x>   4.85836 </x>
       <y>   0.476846 </y>
@@ -133,7 +133,7 @@
     </thruster>
   </engine>
 
-   <engine file="RRMK102">
+   <engine file="Adour804">
     <location unit="M">
       <x>   4.85836 </x>
       <y>   -0.476846 </y>
@@ -204,8 +204,8 @@
     <dynamic_friction> 0.50 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
       <spring_coeff unit="LBS/FT"> 20000 </spring_coeff><!-- hardness of spring. Low value means gear collapses more per energy applied. High value might give jsbsim trouble. -->
-      <damping_coeff unit="LBS/FT/SEC"> 7500 </damping_coeff><!-- higher value slows down how fast the gear absorbs energy -->
-      <damping_coeff_rebound unit="LBS/FT/SEC"> 20000 </damping_coeff_rebound><!-- high value means the gear is slower to release the energy it stored when collapsed --> <!--  Nikolai V. Chr.  -->
+      <damping_coeff unit="LBS/FT/SEC"> 7000 </damping_coeff><!-- higher value slows down how fast the gear absorbs energy -->
+      <damping_coeff_rebound unit="LBS/FT/SEC"> 24000 </damping_coeff_rebound><!-- high value means the gear is slower to release the energy it stored when collapsed --> <!--  Nikolai V. Chr.  -->
     <max_steer unit="DEG"> 35.00 </max_steer>
     <brake_group> NONE </brake_group>
     <retractable> 1 </retractable>
@@ -221,7 +221,7 @@
     <dynamic_friction> 0.50 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
       <spring_coeff unit="LBS/FT"> 20000 </spring_coeff>
-      <damping_coeff unit="LBS/FT/SEC"> 8000 </damping_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 7500 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 35000 </damping_coeff_rebound>
     <max_steer unit="DEG">0</max_steer>
     <brake_group> LEFT </brake_group>
@@ -238,7 +238,7 @@
     <dynamic_friction> 0.50 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
       <spring_coeff unit="LBS/FT"> 20000 </spring_coeff>
-      <damping_coeff unit="LBS/FT/SEC"> 8000 </damping_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 7500 </damping_coeff>
       <damping_coeff_rebound unit="LBS/FT/SEC"> 35000 </damping_coeff_rebound>
     <max_steer unit="DEG">0</max_steer>
     <brake_group> RIGHT </brake_group>
