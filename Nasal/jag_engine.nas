@@ -6,7 +6,25 @@
 # MAX N1 = 100.0%
 # RPM idle = 44,350
 # RPM max = 51,275
-# auto shuts down after 10 mins
+# auto shuts down after 10 mins (must max run for 10 minutes in 30 min period)
+# 20 second to get to engine start condition
+# airbrakes must be OPEN to start it
+#
+# main engines stats: (Roll-Royce / Turbomeca Adour Mk 804)
+# compression ratio 11.0:1
+# 5260 mil lbs
+# 8000 aug lbs
+#  600 idl lbs
+# bypass 0.85
+# self sustain when N2 at 39%
+#
+# throttle:
+#  0% stop
+#  5% idle
+# 80% max mil
+# 85% min aug
+# 100% max aug
+
 
 var air_gen_rpm = 0;
 var air_gen_on = 0;
@@ -28,6 +46,7 @@ var air_gen_start_time = -1;
 var IDLE_N1      = 0.865;#normalized
 var MAX_RPM      = 51275;
 var ZERO_TO_IDLE = 12;#sec
+var IDLE_TO_MAX  = 8;#sec
 var MAX_TO_ZERO  = 3;#sec
 var MAX_PSI      = 45;
 var AUTO_SHUT_DOWN = 10*60;#sec
@@ -36,12 +55,14 @@ var AUTO_SHUT_DOWN = 10*60;#sec
 var update_time_fast = 0.05;
 var update_time_slow = 0.25;
 
-var N2_IDLE = 60;#idlen2 in engine file (which should be 39)
+var N2_IDLE = 60;#idlen2 in engine file
 var N2_IGNITE = 25.18;#ignitionn2 in engine file (which should be 15) [Wait to set it to 15 till FG 2019.2.1 due to bug in jsbsim]
 
 props.globals.initNode("engines/air-gen-switch", 0, "BOOL");
 props.globals.initNode("engines/air-gen-button", 0, "BOOL");
 props.globals.initNode("engines/eng-ign-switch", 0, "BOOL");
+props.globals.initNode("engines/lp-0-switch", 1, "BOOL");# switch with cover (after animation has been done, set this to init 0)
+props.globals.initNode("engines/lp-1-switch", 1, "BOOL");# switch with cover (after animation has been done, set this to init 0)
 props.globals.initNode("engines/throttle-stop[0]", 1, "BOOL");# latch on throttle
 props.globals.initNode("engines/throttle-stop[1]", 1, "BOOL");# latch on throttle
 props.globals.initNode("engines/eng-start-switch", 0, "INT");# -1 = engine 1   0 = none  1 = engine 2
@@ -85,17 +106,20 @@ var engineStartLoop = func {
 	var fuel_1 = getprop("engines/fuel-pumps-switch[1]");
 	var n2_0 = getprop("engines/engine[0]/n2");
 	var n2_1 = getprop("engines/engine[1]/n2");
+	var speedbrakes = getprop("controls/flight/speedbrake");
+	var lp_0 = getprop("engines/lp-0-switch");
+	var lp_1 = getprop("engines/lp-1-switch");
 	
 	
 	cwp_bat = 0;
 	
 	#air gen logic (battery powered starter engine)
-	if (!air_gen_start or (n2_0 >= N2_IDLE and n2_1 >= N2_IDLE)) {
+	if (!air_gen_start or (n2_0 >= N2_IDLE and n2_1 >= N2_IDLE) or !speedbrakes) {
 		#corr_rot_0 = 0; 
 		#corr_rot_1 = 0; 
 		air_gen_on = 0;
 		rdy_for_engine_start = 0;
-	} elsif (air_gen_start and gen_start) {
+	} elsif (air_gen_start and gen_start and speedbrakes) {
 		if (air_gen_on == 0) {
 			air_gen_start_time = getprop("sim/time/elapsed-sec");
 		}
@@ -113,7 +137,7 @@ var engineStartLoop = func {
 		}
 		cwp_bat = 1;
 	} elsif (air_gen_on and (eng_start != 0 or rdy_for_engine_start) and air_gen_rpm >= IDLE_N1) {
-		air_gen_rpm += update_time_slow*IDLE_N1/ZERO_TO_IDLE;
+		air_gen_rpm += update_time_slow*(1-IDLE_N1)/IDLE_TO_MAX;
 		if (air_gen_rpm > 1) {
 			air_gen_rpm = 1;
 		}
@@ -128,10 +152,10 @@ var engineStartLoop = func {
 	# Starting to ignition
 	if (rdy_for_engine_start) {
 		if (eng_start == -1) {
-			start_0 = throttleStop_0 and eng_ign;
+			start_0 = throttleStop_0 and eng_ign and lp_0;
 		}
 		if (eng_start == 1) {
-			start_1 = throttleStop_1 and eng_ign;
+			start_1 = throttleStop_1 and eng_ign and lp_1;
 		}
 	} else {
 		if (!eng_ign and n2_0 < N2_IDLE) {
@@ -203,10 +227,10 @@ var engineStartLoop2 = func {
 	throttle_1 = getprop("controls/engines/engine[1]/throttle");
 	
 	#outputs
-	setprop("engines/throttle-pos-norm[0]", throttleStop_0?0:throttle_0*0.9+0.1);
-	setprop("engines/throttle-pos-norm[1]", throttleStop_1?0:throttle_1*0.9+0.1);
-	setprop("engines/afterburner-length[0]", math.max(0,(throttle_0-0.77)*3)+0.31);
-	setprop("engines/afterburner-length[1]", math.max(0,(throttle_1-0.77)*3)+0.31);
+	setprop("engines/throttle-pos-norm[0]", throttleStop_0?0:throttle_0*0.95+0.05);
+	setprop("engines/throttle-pos-norm[1]", throttleStop_1?0:throttle_1*0.95+0.05);
+	setprop("engines/afterburner-length[0]", math.max(0,(throttle_0-0.85)*5)+0.25);
+	setprop("engines/afterburner-length[1]", math.max(0,(throttle_1-0.85)*5)+0.25);
 	settimer(engineStartLoop2, update_time_fast);
 }
 
