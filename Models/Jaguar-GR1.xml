@@ -288,7 +288,68 @@ if(navStillOn) {
 		<object-name>porteA_1</object-name>
 	</animation>
 
+<effect>
+<inherits-from>Effects/model-combined-deferred</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>dessus</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>air</object-name>
+    <object-name>airDoorL1</object-name>
+    <object-name>airDoorL2</object-name>
+    <object-name>airDoorR1</object-name>
+    <object-name>airDoorR2</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>sorties</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>volets</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>slatG</object-name>
+    <object-name>slatD</object-name>
+    <object-name>direction</object-name>
+    <object-name>freinG</object-name>
+    <object-name>freinD</object-name>
+    <object-name>porteGH</object-name>
+    <object-name>porteGB</object-name>
+    <object-name>porteGB1</object-name>
+    <object-name>porteDH</object-name>
+    <object-name>porteDB</object-name>
+    <object-name>porteDB1</object-name>
+    <object-name>porteA</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+    <object-name>anticollUp</object-name>
+    <object-name>anticollDown</object-name>
+	<object-name>fuelProbe</object-name>
+	<object-name>fuelProbeDoorFairing</object-name>
+	<object-name>fuelProbeDoor1</object-name>
+	<object-name>fuelProbeDoor2</object-name>
+	<object-name>WingFenceL</object-name>
+	<object-name>WingFenceR</object-name>
+	<object-name>lampeR</object-name>
+	<object-name>lampeV</object-name>
+
+    <object-name>postcomb</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>roueA</object-name>
+    <object-name>roueA-Fix</object-name>
+    <object-name>roueA-Fourche</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+    <object-name>guns</object-name>
+</effect>
   <animation>
+
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
     <object-name>dessus</object-name>
@@ -954,7 +1015,7 @@ if(navStillOn) {
     <type>rotate</type>
     <object-name>voletG</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>-15.0</factor>
+    <factor>-40.0</factor>
     <axis>
       <x1-m>  3.454 </x1-m>
       <y1-m> -2.254 </y1-m>
@@ -969,7 +1030,7 @@ if(navStillOn) {
     <type>rotate</type>
     <object-name>voletD</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>-15.0</factor>
+    <factor>-45.0</factor>
     <axis>
       <x1-m>  4.175 </x1-m>
       <y1-m>  4.160 </y1-m>
@@ -984,7 +1045,7 @@ if(navStillOn) {
     <type>rotate</type>
     <object-name>volets</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>40.0</factor>
+    <factor>45.0</factor>
     <center>
       <x-m>  3.335 </x-m>
       <y-m>  0.000 </y-m>
