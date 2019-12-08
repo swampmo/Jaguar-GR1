@@ -487,7 +487,8 @@ if(navStillOn) {
       <blue-prop>ambient/blue</blue-prop>
     </ambient>
 -->
-    <specular>
+  <!--  
+  <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
@@ -497,7 +498,7 @@ if(navStillOn) {
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
-    </emission>
+    </emission>  -->
 <!--
     <shininess>
       <shininess-prop>shininess</shininess-prop>
@@ -704,7 +705,11 @@ if(navStillOn) {
     <offsets>
       <x-m> -0.06085 </x-m>
       <y-m>  0.00000 </y-m>
-      <z-m> -2.07500 </z-m>
+      <z-m> -2.07500 </z-m>  <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
     </offsets>
   </model>
 -->
