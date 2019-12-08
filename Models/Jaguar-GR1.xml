@@ -288,8 +288,8 @@ if(navStillOn) {
 		<object-name>porteA_1</object-name>
 	</animation>
 
-<effect>
-<inherits-from>Effects/model-combined-deferred</inherits-from>
+    <effect>
+    <inherits-from>Aircraft/Jaguar/Models/Effects/fuselage</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>dessus</object-name>
     <object-name>tourverriere</object-name>
@@ -502,12 +502,13 @@ if(navStillOn) {
 <!--
     <shininess>
       <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
+    </shininess> -->
+
   </animation>
 
    <!-- Bump Map Effect -->
-<effect>
+ <!--  
+   <effect>
     <inherits-from>Aircraft/Jaguar/Models/Effects/jag_bumpspec</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>dessus</object-name>
@@ -549,11 +550,9 @@ if(navStillOn) {
 	<object-name>fuelProbeDoor2</object-name>
 	<object-name>WingFenceL</object-name>
 	<object-name>WingFenceR</object-name>
-    <!--object-name></object-name>
-    <object-name></object-name>
-	<object-name></object-name-->
- </effect>
+  </effect> -->
 
+<!--  
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
@@ -596,7 +595,7 @@ if(navStillOn) {
 	<object-name>fuelProbeDoor2</object-name>
 	<object-name>WingFenceL</object-name>
 	<object-name>WingFenceR</object-name>
-  </effect>
+  </effect> -->
 
   <animation>
     <type>shader</type>
