@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+    <PropertyList>
+
+          <path>PTR.ac</path>
+    <animation>
+     <object-name>PTR-L</object-name>
+     <object-name>PTR-R</object-name>
+     <object-name>PTR-nut</object-name>
+     <object-name>base</object-name>
+  </animation>
+
+   <animation>
+    <type>rotate</type>
+    <object-name>PTR-L</object-name>
+     <property>controls/engines/engine/reheat</property>
+      <factor>-60</factor>
+         <axis>
+          <x>1</x>
+           <y>0</y>
+          <z>0</z>
+         </axis>
+     <center>
+	<x-m>-2.92794</x-m>
+	<y-m>-0.36042</y-m>
+	<z-m>-0.07057</z-m>
+     </center>
+    </animation>
+
+   <animation>
+    <type>rotate</type>
+    <object-name>PTR-R</object-name>
+     <property>controls/engines/engine[1]/reheat</property>
+      <factor>-60</factor>
+         <axis>
+          <x>1</x>
+           <y>0</y>
+          <z>0</z>
+         </axis>
+     <center>
+	<x-m>-2.94871</x-m>
+	<y-m>-0.35042</y-m>
+	<z-m>-0.07057</z-m>
+     </center>
+    </animation>
+
+    <animation>
+     <type>pick</type>
+       <object-name>PTR-L</object-name>
+        <factor>-60</factor>
+         <action>
+          <button>0</button>
+            <binding>
+             <command>property-assign</command>
+               <property>controls/engines/engine/reheat</property>
+               </binding>
+             <binding>
+            <command>property-toggle</command>
+          <property>sim/sound/click</property>
+        </binding>
+      </action>
+    </animation>
+
+    <animation>
+     <type>pick</type>
+       <object-name>PTR-R</object-name>
+        <factor>-60</factor>
+         <action>
+          <button>0</button>
+            <binding>
+             <command>property-assign</command>
+               <property>controls/engines/engine[1]/reheat</property>
+               </binding>
+             <binding>
+            <command>property-toggle</command>
+          <property>sim/sound/click</property>
+        </binding>
+      </action>
+    </animation>
+
+</PropertyList>

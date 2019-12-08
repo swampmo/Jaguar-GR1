@@ -393,6 +393,17 @@
   </model>
 
   <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/PTR.xml</path>
+    <offsets>
+      <x-m> -0.140 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.090 </z-m>
+      <roll-deg> 0 </roll-deg>
+      <yaw-deg>  0 </yaw-deg>
+    </offsets>
+  </model>
+
+  <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Pylons.xml</path>
     <offsets>
       <x-m>  0.023 </x-m>
@@ -507,15 +518,15 @@
   </offsets>
  </model>
 
- <!--model> 
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/bits/t-handel2.ac</path>
+ <model> 
+  <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/tailhook.xml</path>
   <offsets>
-   <x-m> -3.315 </x-m>
-      <y-m> -0.27 </y-m>
-      <z-m>  0.087 </z-m>
-      <roll-deg>45</roll-deg>
+      <x-m>0.000 </x-m>
+      <y-m>0.000</y-m>
+      <z-m>0.000 </z-m>
+      <roll-deg>0</roll-deg>
   </offsets>
- </model-->
+ </model>
 
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Trim/trimelevator.xml</path>
