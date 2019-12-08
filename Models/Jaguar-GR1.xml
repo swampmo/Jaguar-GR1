@@ -288,8 +288,8 @@ if(navStillOn) {
 		<object-name>porteA_1</object-name>
 	</animation>
 
-<effect>
-<inherits-from>Effects/model-combined-deferred</inherits-from>
+    <effect>
+    <inherits-from>Aircraft/Jaguar/Models/Effects/fuselage</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>dessus</object-name>
     <object-name>tourverriere</object-name>
@@ -487,7 +487,8 @@ if(navStillOn) {
       <blue-prop>ambient/blue</blue-prop>
     </ambient>
 -->
-    <specular>
+  <!--  
+  <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
@@ -497,16 +498,17 @@ if(navStillOn) {
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
-    </emission>
+    </emission>  -->
 <!--
     <shininess>
       <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
+    </shininess> -->
+
   </animation>
 
    <!-- Bump Map Effect -->
-<effect>
+ <!--  
+   <effect>
     <inherits-from>Aircraft/Jaguar/Models/Effects/jag_bumpspec</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>dessus</object-name>
@@ -548,11 +550,9 @@ if(navStillOn) {
 	<object-name>fuelProbeDoor2</object-name>
 	<object-name>WingFenceL</object-name>
 	<object-name>WingFenceR</object-name>
-    <!--object-name></object-name>
-    <object-name></object-name>
-	<object-name></object-name-->
- </effect>
+  </effect> -->
 
+<!--  
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
@@ -595,7 +595,7 @@ if(navStillOn) {
 	<object-name>fuelProbeDoor2</object-name>
 	<object-name>WingFenceL</object-name>
 	<object-name>WingFenceR</object-name>
-  </effect>
+  </effect> -->
 
   <animation>
     <type>shader</type>
@@ -704,7 +704,11 @@ if(navStillOn) {
     <offsets>
       <x-m> -0.06085 </x-m>
       <y-m>  0.00000 </y-m>
-      <z-m> -2.07500 </z-m>
+      <z-m> -2.07500 </z-m>  <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
     </offsets>
   </model>
 -->

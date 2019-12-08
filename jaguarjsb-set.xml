@@ -65,7 +65,7 @@
       <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
     </sound>
 
-
+    <checklists include="gui/checklists.xml"/>
 
     <ai>
       <scenario>refueling_demo_2</scenario>
