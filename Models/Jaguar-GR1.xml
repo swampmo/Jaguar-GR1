@@ -1650,7 +1650,7 @@ if(navStillOn) {
     </animation>
 
 <!-- engine animation -->
-	<animation>
+	<!--animation>
 		<type>select</type>
 		<object-name>heliceL</object-name>
 		<condition>
@@ -1659,17 +1659,19 @@ if(navStillOn) {
 					<value>1</value>
 				</greater-than>
 		</condition>
-	</animation>
+	</animation-->
 
 	<animation>
 		<type>spin</type>
-		<object-name>heliceL</object-name>
+		<object-name>Helice-L-1</object-name>
+		<object-name>Helice-L-2</object-name>
+		<object-name>Nose-Cone-L</object-name>
 		<property>engines/engine[0]/n2</property>
-		<factor>5</factor>
+		<factor>1</factor>
 		<center>
-			<x-m> 0.24084</x-m>
-			<y-m>-0.55407   </y-m>
-			<z-m>-0.14635   </z-m>
+			<x-m>-0.91803</x-m>
+			<y-m>-0.67608</y-m>
+			<z-m>-0.11123</z-m>
 		</center>
 		<axis>
 			<x>1.0</x>
@@ -1678,7 +1680,7 @@ if(navStillOn) {
 		</axis>
 	</animation>
 
-	<animation>
+	<!--animation>
 		<type>select</type>
 		<object-name>heliceR</object-name>
 		<condition>
@@ -1687,17 +1689,19 @@ if(navStillOn) {
 					<value>1</value>
 				</greater-than>
 		</condition>
-	</animation>
+	</animation-->
 
 	<animation>
 		<type>spin</type>
-		<object-name>heliceR</object-name>
+		<object-name>Helice-R-1</object-name>
+		<object-name>Helice-R-2</object-name>
+		<object-name>Nose-Cone-R</object-name>
 		<property>engines/engine[1]/n2</property>
-		<factor>5</factor>
+		<factor>1</factor>
 		<center>
-			<x-m> 0.24084</x-m>
-			<y-m> 0.55329</y-m>
-			<z-m>-0.13152</z-m>
+			<x-m>-0.91803</x-m>
+			<y-m> 0.69868</y-m>
+			<z-m>-0.11123</z-m>
 		</center>
 		<axis>
 			<x>1.0</x>
