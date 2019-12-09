@@ -110,6 +110,7 @@
 
 	<animation>
 		<type>pick</type>
+     <visible>false</visible>
 		<object-name>gearlight-on</object-name>
 <factor>-30</factor>
 		<action>
@@ -123,6 +124,7 @@
 
 	<animation>
 		<type>pick</type>
+     <visible>false</visible>
 		<object-name>gearlight-off</object-name>
 <factor>0</factor>
 		<action>
@@ -136,6 +138,7 @@
 
 	<animation>
 		<type>pick</type>
+       <visible>false</visible>
 		<object-name>gearlight-taxi</object-name>
 <factor>-60</factor>
 		<action>
@@ -171,7 +174,7 @@
 
 	<animation>
 		<type>pick</type>
-		<visible>true</visible>
+		<invisible>true</invisible>
 		<object-name>Lts-Dim</object-name>
 		<action>
 			<button>0</button>
@@ -188,7 +191,7 @@
 
 	<animation>
 		<type>pick</type>
-		<visible>true</visible>
+		<invisible>true</invisible>
 		<object-name>Lts-Brt</object-name>
 		<action>
 			<button>0</button>

@@ -1,39 +1,106 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
+  <PropertyList>
+    <path>pedals.ac</path>
+        <params>
+        <aileron>/aircraft/surface-positions/aileron-pos-norm</aileron>
+        <elevator>/aircraft/surface-positions/elevator-pos-norm</elevator>
+        <rudder>/aircraft/surface-positions/rudder-pos-norm</rudder>
+    </params>
 
-	<PropertyList>
+    <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>25</max-m>
+    </animation>
+ <animation>
+  <type>translate</type>
+  <object-name>LH.Pedal</object-name>
+  <property>controls/flight/rudder</property>
+  <factor>0.04</factor>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
 
-	<path>pedals.ac</path>
+ <animation>
+  <type>rotate</type>
+  <object-name>LH.Pedal</object-name>
+  <property>controls/gear/brake-left</property>
+  <factor>-10</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+  <center>
+   <x-m> 0.06177</x-m>
+   <y-m>-0.21160</y-m>
+   <z-m>-0.02937</z-m>
+  </center>
+ </animation>
 
-	<animation>
-		<type>translate</type>
-		<object-name>CPT-L-pedal</object-name>
-		<property>controls/flight/rudder</property>
-		<factor>0.07</factor>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
+ <animation>
+  <type>translate</type>
+  <object-name>RH.Pedal</object-name>
+  <property>controls/flight/rudder</property>
+  <factor>-0.04</factor>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
 
-	<animation>
-		<type>translate</type>
-		<object-name>CPT-R-pedal</object-name>
-		<property>controls/flight/rudder</property>
-		<factor>0.07</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>RH.Pedal</object-name>
+  <property>controls/gear/brake-right</property>
+  <factor>-10</factor>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+  <center>
+   <x-m> 0.06177</x-m>
+   <y-m> 0.20347</y-m>
+   <z-m>-0.02937</z-m>
+  </center>
+ </animation>
+  <animation>
+  <type>rotate</type>
+  <object-name>RH.Hanger</object-name>
+  <property>controls/flight/rudder</property>                      
+  <factor>11</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+  <center>
+   <x-m>0.04898</x-m>
+   <y-m>0.20418</y-m>
+   <z-m>0.18930</z-m>
+  </center>
+ </animation>
 
-
-
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>5</max-m>
-	</animation>
-
+ <animation>
+  <type>rotate</type>
+  <object-name>LH.Hanger</object-name>
+  <property>controls/flight/rudder</property>       
+  <factor>-11</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+  <center>
+   <x-m> 0.04898</x-m>
+   <y-m>-0.21223</y-m>
+   <z-m> 0.18930</z-m>
+  </center>
+ </animation>
+ 
 </PropertyList>
