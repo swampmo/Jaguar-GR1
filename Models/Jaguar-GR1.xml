@@ -1668,7 +1668,7 @@ if(navStillOn) {
 		<factor>5</factor>
 		<center>
 			<x-m> 0.24084</x-m>
-			<y-m>-0.47298</y-m>
+			<y-m>-0.55407   </y-m>
 			<z-m>-0.14635   </z-m>
 		</center>
 		<axis>
@@ -1696,7 +1696,7 @@ if(navStillOn) {
 		<factor>5</factor>
 		<center>
 			<x-m> 0.24084</x-m>
-			<y-m> 0.47607</y-m>
+			<y-m> 0.55329</y-m>
 			<z-m>-0.13152</z-m>
 		</center>
 		<axis>

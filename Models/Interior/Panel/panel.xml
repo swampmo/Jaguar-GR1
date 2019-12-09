@@ -139,6 +139,32 @@
 	  <pitch-deg>-10</pitch-deg>
     </offsets>
   </model>
+
+ <!-- engine outlets -->
+ 
+ <model>
+	 <name>engine_outlet_1</name>
+	 <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/engine_outlet_1.xml</path>
+	 
+	 <offsets>
+		 <x-m>-0.090</x-m>
+		 <y-m> 0.000</y-m>
+		 <z-m> 0.060</z-m>
+		 <pitch-deg>0</pitch-deg>
+	 </offsets>
+ </model>
+ 
+ <model>
+	 <name>engine_outlet_2</name>
+	 <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/engine_outlet_2.xml</path>
+	 
+	 <offsets>
+		 <x-m>-0.090</x-m>
+		 <y-m> 0.960</y-m>
+		 <z-m> 0.060</z-m>
+		 <pitch-deg>0</pitch-deg>
+	 </offsets>
+ </model>
   
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/epr/eprL.xml</path>
