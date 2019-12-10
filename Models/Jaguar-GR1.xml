@@ -477,7 +477,7 @@ if(navStillOn) {
 
   </animation>
 
- 
+
    <!-- Solid Surfaces for Rembrandt rendering -->
    <animation>
 
@@ -672,7 +672,7 @@ if(navStillOn) {
      <property>sim/multiplay/generic/bool[1]</property>
     </condition>
   </animation>
-  
+
   <animation>
     <type>scale</type>
     <object-name>AB_Flame 1</object-name>
@@ -687,7 +687,7 @@ if(navStillOn) {
       <z-m> -0.49394 </z-m>
     </center>
   </animation>
-  
+
   <animation>
     <type>scale</type>
     <object-name>AB_Flame 2</object-name>
@@ -706,7 +706,7 @@ if(navStillOn) {
 
 
  <!-- Droite -->
-  
+
   <animation>
     <type>scale</type>
     <object-name>AB_Flame 1</object-name>
@@ -721,7 +721,7 @@ if(navStillOn) {
       <z-m> -0.49394 </z-m>
     </center>
   </animation>
-  
+
   <animation>
     <type>scale</type>
     <object-name>AB_Flame 2</object-name>
