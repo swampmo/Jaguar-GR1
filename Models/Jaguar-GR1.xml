@@ -661,7 +661,7 @@ if(navStillOn) {
     <type>select</type>
     <object-name>AB_Flame 1</object-name>
     <condition>
-     <property>sim/multiplay/generic/bool[0]</property>
+     <property>sim/multiplay/generic/bool[1]</property>
     </condition>
    </animation>
 
@@ -669,7 +669,7 @@ if(navStillOn) {
     <type>select</type>
     <object-name>AB_Flame 2</object-name>
     <condition>
-     <property>sim/multiplay/generic/bool[1]</property>
+     <property>sim/multiplay/generic/bool[0]</property>
     </condition>
   </animation>
 
