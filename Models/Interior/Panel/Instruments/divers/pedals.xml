@@ -102,5 +102,22 @@
    <z-m> 0.18930</z-m>
   </center>
  </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>RH.Hanger</object-name>
+  <object-name>LH.Hanger</object-name>
+  <object-name>LH.Pedal</object-name>
+  <object-name>RH.Pedal</object-name>
+  <property>controls/pedals/fore-aft-adjust</property>
+  <factor>-0.05</factor>
+  <axis>
+   <x>-1.0</x>
+   <y> 0.0</y>
+   <z> 0.0</z>
+  </axis>
+ </animation>
  
 </PropertyList>
+
+
