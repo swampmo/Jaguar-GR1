@@ -6,7 +6,7 @@
 
     <fileheader>
         <author>Richard Harrison</author>
-        <filecreationdate>2019-12-09</filecreationdate>
+        <filecreationdate>2019-12-10</filecreationdate>
         <version>1.0</version>
         <copyright>Copyright (C) 2019 Richard Harrison, All rights reserved</copyright>
         <description></description>
@@ -64,7 +64,7 @@ various unguided or laser-guided bombs or
 1× AN-52 nuclear bomb
 Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical targeting pod, external drop tanks for extended range/loitering time
         </note>
-        <note>Built with AeroTool 1.0.0.0: Options: AeroDetail=Full, NoNegativeBeta, WakeIterations=3</note>
+        <note>Built with AeroTool 1.0.0.0: Options: AeroDetail=Full, WakeIterations=3</note>
         <limitation></limitation>
         <reference 
             refID="ZDAT/AED/2016/01-29"
@@ -126,8 +126,8 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
     <rolling_friction>0.02</rolling_friction>
-    <spring_coeff unit="LBS/FT">13840</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">692</damping_coeff>
+    <spring_coeff unit="LBS/FT">24000</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">5376</damping_coeff>
     <max_steer unit="DEG">35</max_steer>
     <!--0: NOSE_LG-->
     <brake_group>NOSE</brake_group>
@@ -136,14 +136,14 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
   <contact type="BOGEY" name="LEFT_MLG">
     <location unit="M">
       <x>8.4069</x>
-      <y>-1.232</y>
+      <y>-1.435</y>
       <z>-1.6623</z>
     </location>
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
     <rolling_friction>0.02</rolling_friction>
-    <spring_coeff unit="LBS/FT">13840</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">692</damping_coeff>
+    <spring_coeff unit="LBS/FT">24000</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">5376</damping_coeff>
     <!--1: LEFT_MLG-->
     <brake_group>LEFT</brake_group>
     <retractable>1</retractable>
@@ -151,14 +151,14 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
   <contact type="BOGEY" name="RIGHT_MLG">
     <location unit="M">
       <x>8.4069</x>
-      <y>1.232</y>
+      <y>1.435</y>
       <z>-1.6623</z>
     </location>
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
     <rolling_friction>0.02</rolling_friction>
-    <spring_coeff unit="LBS/FT">13840</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">692</damping_coeff>
+    <spring_coeff unit="LBS/FT">24000</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">5376</damping_coeff>
     <!--2: RIGHT_MLG-->
     <brake_group>RIGHT</brake_group>
     <retractable>1</retractable>
@@ -286,8 +286,8 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
   <engine file="RRMK102">
     <location unit="M">
       <x>12.2639</x>
-      <y>-0.3894</y>
-      <z>-0.2</z>
+      <y>-0.4127</y>
+      <z>0.2</z>
     </location>
     <orient unit="DEG">
       <roll>0</roll>
@@ -295,12 +295,12 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
       <yaw>0</yaw>
     </orient>
     <feed>1</feed>
-    <feed>2</feed>
+    <feed>0</feed>
     <thruster file="direct">
       <location unit="M">
         <x>12.2639</x>
-        <y>-0.3894</y>
-        <z>-0.2</z>
+        <y>-0.4127</y>
+        <z>0.2</z>
       </location>
       <orient unit="DEG">
         <roll>0</roll>
@@ -312,21 +312,21 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
   <engine file="RRMK102">
     <location unit="M">
       <x>12.2639</x>
-      <y>0.3894</y>
-      <z>-0.2</z>
+      <y>0.4127</y>
+      <z>0.2</z>
     </location>
     <orient unit="DEG">
       <roll>0</roll>
       <pitch>0</pitch>
       <yaw>0</yaw>
     </orient>
-    <feed>0</feed>
     <feed>2</feed>
+    <feed>0</feed>
     <thruster file="direct">
       <location unit="M">
         <x>12.2639</x>
-        <y>0.3894</y>
-        <z>-0.2</z>
+        <y>0.4127</y>
+        <z>0.2</z>
       </location>
       <orient unit="DEG">
         <roll>0</roll>
@@ -345,7 +345,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
     <capacity unit="LBS">4420</capacity>
     <standpipe unit="LBS">100</standpipe>
     <contents unit="LBS">4420</contents>
-    <priority>2</priority>
+    <priority>1</priority>
   </tank>
   <tank number="1" type="FUEL">
     <!--1: LeftWingTank-->
@@ -357,7 +357,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
     <capacity unit="LBS">3470</capacity>
     <standpipe unit="LBS">100</standpipe>
     <contents unit="LBS">3470</contents>
-    <priority>1</priority>
+    <priority>2</priority>
   </tank>
   <tank number="2" type="FUEL">
     <!--2: RightWingTank-->
@@ -369,7 +369,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
     <capacity unit="LBS">3470</capacity>
     <standpipe unit="LBS">100</standpipe>
     <contents unit="LBS">3470</contents>
-    <priority>1</priority>
+    <priority>2</priority>
   </tank>
 </propulsion>
 
@@ -496,7 +496,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFXDGE">
-    <description>DRAG INCREMENT DUE TO GROUND EFFECT</description>
+    <description>DRAG DUE TO GROUND EFFECT</description>
           <table>
             <independentVar lookup="row">position/h-agl-m</independentVar>
             <independentVar lookup="column">aero/alpha-deg</independentVar>
@@ -512,7 +512,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFXDRD">
-    <description>DRAG INCREMENT DUE TO RUDDER DEFLECTION</description>
+    <description>DRAG DUE TO RUDDER DEFLECTION</description>
     <product>
           <property>fcs/rudder-pos-deg</property>
           <table>
@@ -544,7 +544,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFXDRDMN">
-    <description>DRAG CHANGE DUE TO MACH DUE TO RUDDER DEFLECTION</description>
+    <description>DRAG DUE TO MACH DUE TO RUDDER DEFLECTION</description>
     <product>
           <property>fcs/rudder-pos-deg</property>
           <table>
@@ -569,7 +569,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFXDSPL">
-    <description>DRAG INCREMENT DUE TO SPOILERS LEFT</description>
+    <description>DRAG DUE TO SPOILERS LEFT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-left-pos-deg</independentVar>
@@ -598,7 +598,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFXDSPR">
-    <description>DRAG INCREMENT DUE TO SPOILERS RIGHT</description>
+    <description>DRAG DUE TO SPOILERS RIGHT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-right-pos-deg</independentVar>
@@ -627,7 +627,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFXFLAPS">
-    <description>DRAG INCREMENT DUE TO FLAPS</description>
+    <description>DRAG DUE TO FLAPS INBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <table>
@@ -659,7 +659,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFXFLAPSOB">
-    <description>DRAG INCREMENT DUE TO OUTBOARD FLAPS</description>
+    <description>DRAG DUE TO FLAPS OUTBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <table>
@@ -691,7 +691,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFXGEAR">
-    <description>DRAG INCREMENT DUE TO GEAR</description>
+    <description>DRAG DUE TO GEAR</description>
     <product>
           <property>gear/gear-pos-norm</property>
           <table>
@@ -723,7 +723,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFXMN">
-    <description>DRAG INCREMENT DUE TO MACH</description>
+    <description>DRAG DUE TO MACH</description>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <independentVar lookup="column">aero/alpha-deg</independentVar>
@@ -774,7 +774,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFZDGE">
-    <description>LIFT INCREMENT DUE TO GROUND EFFECT</description>
+    <description>LIFT DUE TO GROUND EFFECT</description>
           <table>
             <independentVar lookup="row">position/h-agl-m</independentVar>
             <independentVar lookup="column">aero/alpha-deg</independentVar>
@@ -790,7 +790,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFZDRD">
-    <description>LIFT INCREMENT DUE TO RUDDER DEFLECTION</description>
+    <description>LIFT DUE TO RUDDER DEFLECTION</description>
     <product>
           <property>fcs/rudder-pos-deg</property>
           <table>
@@ -822,7 +822,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFZDRDMN">
-    <description>LIFT DRAG CHANGE DUE TO MACH DUE TO RUDDER DEFLECTION</description>
+    <description>LIFT DUE TO MACH DUE TO RUDDER DEFLECTION</description>
     <product>
           <property>fcs/rudder-pos-deg</property>
           <table>
@@ -847,7 +847,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFZDSPL">
-    <description>LIFT INCREMENT DUE TO SPOILERS LEFT</description>
+    <description>LIFT DUE TO SPOILERS LEFT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-left-pos-deg</independentVar>
@@ -876,7 +876,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFZDSPR">
-    <description>LIFT INCREMENT DUE TO SPOILERS RIGHT</description>
+    <description>LIFT DUE TO SPOILERS RIGHT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-right-pos-deg</independentVar>
@@ -905,7 +905,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFZFLAPS">
-    <description>LIFT INCREMENT DUE TO FLAPS</description>
+    <description>LIFT DUE TO FLAPS INBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <table>
@@ -937,7 +937,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFZFLAPSOB">
-    <description>LIFT INCREMENT DUE TO OUTBOARD FLAPS</description>
+    <description>LIFT DUE TO FLAPS OUTBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <table>
@@ -969,7 +969,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFZGEAR">
-    <description>LIFT INCREMENT DUE TO GEAR</description>
+    <description>LIFT DUE TO GEAR</description>
     <product>
           <property>gear/gear-pos-norm</property>
           <table>
@@ -1001,7 +1001,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFZMN">
-    <description>LIFT INCREMENT DUE TO MACH</description>
+    <description>LIFT DUE TO MACH</description>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <independentVar lookup="column">aero/alpha-deg</independentVar>
@@ -1052,7 +1052,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CMMALPHADOT">
-    <description>PITCH MOMENT DERIVATIVE FOR ALPHA DOT</description>
+    <description>PITCH DERIVATIVE MOMENT DUE TO ALPHA DOT</description>
     <product>
           <property>aero/alphadot-rad_sec</property>
           <table>
@@ -1082,7 +1082,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMMDGE">
-    <description>PITCHING MOMENT INCREMENT DUE TO GROUND EFFECT</description>
+    <description>PITCHING MOMENT DUE TO GROUND EFFECT</description>
           <table>
             <independentVar lookup="row">position/h-agl-m</independentVar>
             <independentVar lookup="column">aero/alpha-deg</independentVar>
@@ -1130,7 +1130,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMMDRDMN">
-    <description>PITCH MOMENT DRAG CHANGE DUE TO MACH DUE TO RUDDER DEFLECTION</description>
+    <description>PITCH MOMENT CHANGE DUE TO MACH DUE TO RUDDER DEFLECTION</description>
     <product>
           <property>fcs/rudder-pos-deg</property>
           <table>
@@ -1155,7 +1155,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMMDSPL">
-    <description>PITCHING MOMENT INCREMENT DUE TO SPOILERS LEFT</description>
+    <description>PITCHING MOMENT DUE TO SPOILERS LEFT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-left-pos-deg</independentVar>
@@ -1184,7 +1184,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CMMDSPR">
-    <description>PITCHING MOMENT INCREMENT DUE TO SPOILERS RIGHT</description>
+    <description>PITCHING MOMENT DUE TO SPOILERS RIGHT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-right-pos-deg</independentVar>
@@ -1213,7 +1213,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CMMFLAPS">
-    <description>PITCHING MOMENT INCREMENT DUE TO FLAPS</description>
+    <description>PITCHING MOMENT DUE TO FLAPS INBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <table>
@@ -1245,7 +1245,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMMFLAPSOB">
-    <description>PITCHING MOMENT INCREMENT DUE TO OUTBOARD FLAPS</description>
+    <description>PITCHING MOMENT DUE TO FLAPS OUTBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <table>
@@ -1277,7 +1277,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMMGEAR">
-    <description>PITCHING MOMENT INCREMENT DUE TO GEAR</description>
+    <description>PITCHING MOMENT DUE TO GEAR</description>
     <product>
           <property>gear/gear-pos-norm</property>
           <table>
@@ -1309,7 +1309,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMMMN">
-    <description>PITCHING MOMENT INCREMENT DUE TO MACH</description>
+    <description>PITCHING MOMENT DUE TO MACH</description>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <independentVar lookup="column">aero/alpha-deg</independentVar>
@@ -1390,7 +1390,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CMLDRD">
-    <description>ROLLING MOMENT DUE TO RUDDER DEFLECTION</description>
+    <description>ROLL MOMENT DUE TO RUDDER DEFLECTION</description>
     <product>
           <property>fcs/rudder-pos-deg</property>
           <table>
@@ -1422,7 +1422,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMLDRDMN">
-    <description>ROLLING MOMENT DRAG CHANGE DUE TO MACH DUE TO RUDDER DEFLECTION</description>
+    <description>ROLL MOMENT CHANGE DUE TO MACH DUE TO RUDDER DEFLECTION</description>
     <product>
           <property>fcs/rudder-pos-deg</property>
           <table>
@@ -1447,7 +1447,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMLDSPL">
-    <description>ROLLING MOMENT INCREMENT DUE TO SPOILERS LEFT</description>
+    <description>ROLL MOMENT DUE TO SPOILERS LEFT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-left-pos-deg</independentVar>
@@ -1476,7 +1476,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CMLDSPR">
-    <description>ROLLING MOMENT INCREMENT DUE TO SPOILERS RIGHT</description>
+    <description>ROLL MOMENT DUE TO SPOILERS RIGHT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-right-pos-deg</independentVar>
@@ -1505,7 +1505,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CMLDTD">
-    <description>ROLL MOMENT DUE TO DIFFERENTIAL TAIL DEFLECTION - CLDD</description>
+    <description>ROLL MOMENT DUE TO DIFFERENTIAL TAIL DEFLECTION</description>
     <product>
           <property>fcs/differential-elevator-pos-deg</property>
           <table>
@@ -1537,7 +1537,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMLFLAPS">
-    <description>ROLLING MOMENT INCREMENT DUE TO FLAPS</description>
+    <description>ROLL MOMENT DUE TO FLAPS INBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <property>aero/beta-deg</property>
@@ -1568,7 +1568,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMLFLAPSOB">
-    <description>ROLLING MOMENT INCREMENT DUE TO OUTBOARD FLAPS</description>
+    <description>ROLL MOMENT DUE TO FLAPS OUTBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <property>aero/beta-deg</property>
@@ -1601,7 +1601,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMLGEAR">
-    <description>ROLLING MOMENT INCREMENT DUE TO GEAR</description>
+    <description>ROLL MOMENT DUE TO GEAR</description>
     <product>
           <property>gear/gear-pos-norm</property>
           <table>
@@ -1633,7 +1633,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMLMN">
-    <description>ROLLING MOMENT INCREMENT DUE TO MACH</description>
+    <description>ROLL MOMENT DUE TO MACH</description>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <independentVar lookup="column">aero/alpha-deg</independentVar>
@@ -1685,7 +1685,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMLR">
-    <description>ROLLING MOMENT DUE TO YAW RATE</description>
+    <description>ROLL DERIVATIVE MOMENT DUE TO YAW RATE</description>
     <product>
           <property>aero/rb</property>
           <table>
@@ -1877,7 +1877,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFYDSPL">
-    <description>SIDEFORCE INCREMENT DUE TO SPOILERS LEFT</description>
+    <description>SIDEFORCE DUE TO SPOILERS LEFT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-left-pos-deg</independentVar>
@@ -1906,7 +1906,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFYDSPR">
-    <description>SIDEFORCE INCREMENT DUE TO SPOILERS RIGHT</description>
+    <description>SIDEFORCE DUE TO SPOILERS RIGHT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-right-pos-deg</independentVar>
@@ -1935,7 +1935,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFYDTD">
-    <description>SIDE FORCE DUE TO DIFFERENTIAL TAIL DEFLECTION - CYDTD</description>
+    <description>SIDE FORCE DUE TO DIFFERENTIAL TAIL DEFLECTION</description>
     <product>
           <property>fcs/differential-elevator-pos-deg</property>
           <table>
@@ -1967,7 +1967,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFYFLAPS">
-    <description>SIDEFORCE INCREMENT DUE TO FLAPS</description>
+    <description>SIDEFORCE DUE TO FLAPS INBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <property>aero/beta-deg</property>
@@ -1998,7 +1998,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFYFLAPSOB">
-    <description>SIDEFORCE INCREMENT DUE TO OUTBOARD FLAPS</description>
+    <description>SIDEFORCE DUE TO FLAPS OUTBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <property>aero/beta-deg</property>
@@ -2029,7 +2029,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFYGEAR">
-    <description>SIDEFORCE INCREMENT DUE TO GEAR</description>
+    <description>SIDEFORCE DUE TO GEAR</description>
     <product>
           <property>gear/gear-pos-norm</property>
           <property>aero/beta-deg</property>
@@ -2060,7 +2060,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFYMN">
-    <description>SIDEFORCE INCREMENT DUE TO MACH</description>
+    <description>SIDEFORCE DUE TO MACH</description>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <independentVar lookup="column">aero/alpha-deg</independentVar>
@@ -2082,7 +2082,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CFYP">
-    <description>SIDE FORCE DUE TO ROLL RATE</description>
+    <description>SIDE FORCE DERIVATIVE MOMENT DUE TO ROLL RATE</description>
     <product>
           <property>aero/pb</property>
           <table>
@@ -2112,7 +2112,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CFYR">
-    <description>SIDE FORCE DUE TO YAW RATE</description>
+    <description>SIDE FORCE DERIVATIVE MOMENT DUE TO YAW RATE</description>
     <product>
           <property>aero/rb</property>
           <table>
@@ -2393,7 +2393,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMNDRDMN">
-    <description>YAWING MOMENT DRAG CHANGE DUE TO MACH DUE TO RUDDER DEFLECTION</description>
+    <description>YAWING MOMENT CHANGE DUE TO MACH DUE TO RUDDER DEFLECTION</description>
     <product>
           <property>fcs/rudder-pos-deg</property>
           <table>
@@ -2418,7 +2418,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMNDSPL">
-    <description>YAWING MOMENT INCREMENT DUE TO SPOILERS LEFT</description>
+    <description>YAWING MOMENT DUE TO SPOILERS LEFT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-left-pos-deg</independentVar>
@@ -2447,7 +2447,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CMNDSPR">
-    <description>YAWING MOMENT INCREMENT DUE TO SPOILERS RIGHT</description>
+    <description>YAWING MOMENT DUE TO SPOILERS RIGHT</description>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/spoiler-right-pos-deg</independentVar>
@@ -2508,7 +2508,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMNFLAPS">
-    <description>YAWING MOMENT INCREMENT DUE TO FLAPS</description>
+    <description>YAWING MOMENT DUE TO FLAPS INBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <property>aero/beta-deg</property>
@@ -2539,7 +2539,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMNFLAPSOB">
-    <description>YAWING MOMENT INCREMENT DUE TO OUTBOARD FLAPS</description>
+    <description>YAWING MOMENT DUE TO FLAPS OUTBOARD</description>
     <product>
           <property>fcs/flap-pos-deg</property>
           <property>aero/beta-deg</property>
@@ -2572,7 +2572,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMNGEAR">
-    <description>YAWING MOMENT INCREMENT DUE TO GEAR</description>
+    <description>YAWING MOMENT DUE TO GEAR</description>
     <product>
           <property>gear/gear-pos-norm</property>
           <table>
@@ -2604,7 +2604,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
        </product>
     </function>
     <function name="aero/c/CMNMN">
-    <description>YAWING MOMENT INCREMENT DUE TO MACH</description>
+    <description>YAWING MOMENT DUE TO MACH</description>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <independentVar lookup="column">aero/alpha-deg</independentVar>
@@ -2626,7 +2626,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
           </table>
     </function>
     <function name="aero/c/CMNP">
-    <description>YAW MOMENT DUE TO ROLL RATE</description>
+    <description>YAW DERIVATIVE MOMENT DUE TO ROLL RATE</description>
     <product>
           <property>aero/pb</property>
           <table>
