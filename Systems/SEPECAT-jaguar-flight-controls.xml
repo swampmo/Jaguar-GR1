@@ -675,6 +675,80 @@
 
     </channel>
 
+    <channel name="Slats">
+
+        <!--<pure_gain name="Flap Slat gain">
+            <input>fcs/flap-total-dmd</input>
+            <gain>2.33333348888889925925995061733</gain>
+            <clipto>
+                <min>  0 </min>
+                <max>  1 </max>
+            </clipto>
+        </pure_gain>-->
+        
+        <switch name="fcs/slat-total-dmd">
+            <default value="0"/>
+
+            <test value="fcs/slat-total-dmd">
+                systems/hydraulics/number1-system-pressure ne 1
+            </test>
+
+            <!--<test value="fcs/flap-slat-gain">
+                fcs/flap-total-dmd gt 0
+                systems/hydraulics/number1-system-pressure ne 0
+            </test>-->
+            <test value="/controls/flight/slats">
+                systems/hydraulics/number1-system-pressure ne 0
+            </test>
+            
+            <!-- For direct control of slats
+            <test value="fcs/slat-cmd">
+                fcs/slat-cmd ne 0
+                systems/hydraulics/number1-system-pressure ne 0
+            </test>-->
+            
+            <!-- For auto control of slats
+            <test value="systems/cadc/manuv-slat-extension-cmd">
+                systems/cadc/manuv-slat-extension-cmd ne 0
+                systems/hydraulics/number1-system-pressure ne 0
+                fcs/wing-sweep-pos-deg le 50
+            </test>-->
+            <clipto>
+                <min> 0 </min>
+                <max>  1 </max>
+            </clipto>
+            <output>fcs/slat-total-dmd</output>
+        </switch>
+        
+        <kinematic name="Slats Control">
+            <input>fcs/slat-total-dmd</input>
+            <traverse>
+                <setting>
+                    <position>  0 </position>
+                    <time>      0 </time>
+                </setting>
+                <setting>
+                    <position>  1 </position>
+                    <time>      1 </time>
+                </setting>
+            </traverse>
+            <output>fcs/slat-cmd-norm</output>
+        </kinematic>
+
+        <aerosurface_scale name="Slat normalization">
+            <input>fcs/slat-cmd-norm</input>
+            <domain>
+                <min>  0 </min>
+                <max>  1 </max>
+            </domain>
+            <range>
+                <min> 0 </min>
+                <max> 23 </max>
+            </range>
+            <output>fcs/slat-pos-deg</output>
+        </aerosurface_scale>
+    </channel>
+
     <channel name="Engines">
         <scheduled_gain name="fcs/throttle-pos1">
             <!-- 5 stage non linear augmentation -->
