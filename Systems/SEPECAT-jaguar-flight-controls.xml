@@ -660,6 +660,15 @@
             <output>fcs/flap-pos-deg</output>
         </kinematic>
 
+        <pure_gain name="fcs/flap-ob-pos-deg">
+            <input>fcs/flap-pos-deg</input>
+            <gain>0.38</gain>
+            <clipto>
+                <min>  0 </min>
+                <max>  15 </max>
+            </clipto>
+        </pure_gain>
+
         <aerosurface_scale name="flap normalization">
             <input>fcs/flap-pos-deg</input>
             <domain>

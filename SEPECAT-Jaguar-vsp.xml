@@ -64,7 +64,7 @@ various unguided or laser-guided bombs or
 1× AN-52 nuclear bomb
 Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical targeting pod, external drop tanks for extended range/loitering time
         </note>
-        <note>Built with AeroTool 1.0.0.0: Options: AeroDetail=Full, NoNegativeBeta, WakeIterations=3</note>
+        <note>Built with AeroTool 1.0.0.0: Options: AeroDetail=Full, WakeIterations=3</note>
         <limitation></limitation>
         <reference 
             refID="ZDAT/AED/2016/01-29"
@@ -780,7 +780,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
     <function name="aero/c/CFXFLAPSOB">
     <description>DRAG DUE TO FLAPS OUTBOARD</description>
     <product>
-          <property>fcs/flap-pos-deg</property>
+          <property>fcs/flap-ob-pos-deg</property>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <tableData>
@@ -1175,7 +1175,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
     <function name="aero/c/CFZFLAPSOB">
     <description>LIFT DUE TO FLAPS OUTBOARD</description>
     <product>
-          <property>fcs/flap-pos-deg</property>
+          <property>fcs/flap-ob-pos-deg</property>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <tableData>
@@ -1600,29 +1600,29 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
     <function name="aero/c/CMMFLAPSOB">
     <description>PITCHING MOMENT DUE TO FLAPS OUTBOARD</description>
     <product>
-          <property>fcs/flap-pos-deg</property>
+          <property>fcs/flap-ob-pos-deg</property>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <tableData>
-                    -20		  -0.00021	
-                    -10		  -0.00021	
-                     -8		  -0.00020	
-                     -4		  -0.00019	
-                      0		  -0.00018	
-                      4		  -0.00018	
-                      8		  -0.00017	
-                     12		  -0.00015	
-                     14		  -0.00015	
-                     16		  -0.00014	
-                     20		  -0.00011	
-                     24		  -0.00009	
-                     28		  -0.00007	
-                     30		  -0.00007	
-                     35		  -0.00005	
-                     45		  -0.00005	
-                     50		  -0.00004	
-                     55		  -0.00003	
-                     60		  -0.00002	
+                    -20		  -0.00207	
+                    -10		  -0.00206	
+                     -8		  -0.00201	
+                     -4		  -0.00192	
+                      0		  -0.00183	
+                      4		  -0.00182	
+                      8		  -0.00173	
+                     12		  -0.00150	
+                     14		  -0.00148	
+                     16		  -0.00141	
+                     20		  -0.00112	
+                     24		  -0.00093	
+                     28		  -0.00071	
+                     30		  -0.00068	
+                     35		  -0.00053	
+                     45		  -0.00046	
+                     50		  -0.00043	
+                     55		  -0.00029	
+                     60		  -0.00021	
             </tableData>
           </table>
        </product>
@@ -3415,6 +3415,7 @@ Other: ECM protection pods, Reconnaissance Pod, ATLIS laser/electro-optical t
         <property caption="theta-deg">attitude/theta-deg</property>
         <property caption="differential-elevator-pos-deg">fcs/differential-elevator-pos-deg</property>
         <property caption="elevator-pos-deg">fcs/elevator-pos-deg</property>
+        <property caption="flap-ob-pos-deg">fcs/flap-ob-pos-deg</property>
         <property caption="flap-pos-deg">fcs/flap-pos-deg</property>
         <property caption="rudder-pos-deg">fcs/rudder-pos-deg</property>
         <property caption="slat-pos-deg">fcs/slat-pos-deg</property>
