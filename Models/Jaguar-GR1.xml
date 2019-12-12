@@ -644,7 +644,7 @@ if(navStillOn) {
     <offsets>
       <x-m> 5.64314   </x-m>
       <y-m> 0.494526  </y-m>
-      <z-m> -0.49394 </z-m>
+      <z-m> -0.55394 </z-m>
     </offsets>
   </model>
 
@@ -654,7 +654,7 @@ if(navStillOn) {
    <offsets>
     <x-m>  5.64314  </x-m>
     <y-m> -0.497843 </y-m>
-    <z-m> -0.49953  </z-m>
+    <z-m> -0.55953  </z-m>
    </offsets>
   </model>
 
