@@ -254,7 +254,7 @@
 	<animation>
 		<object-name>NVG</object-name>
 		<type>rotate</type>
-		<property>/sim/rendering/als-filters/use-IR-vision</property>
+		<property>/sim/rendering/als-filters/use-night-vision</property>
 		<factor>-60</factor>
 		<center>
 			<x-m>0.08971</x-m>
@@ -281,7 +281,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>//sim/rendering/als-filters/use-IR-vision</property>
+        <property>//sim/rendering/als-filters/use-night-vision</property>
       </binding>
     </action>
   </animation>
