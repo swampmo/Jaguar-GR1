@@ -47,7 +47,7 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Arrest-Handle.xml</path>
     <offsets>
-      <x-m> -0.035 </x-m>
+      <x-m> -0.050 </x-m>
       <y-m> -0.018 </y-m>
       <z-m>  0.005 </z-m>
       <pitch-deg>0</pitch-deg>
@@ -108,7 +108,7 @@
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Drag-Chute.xml</path>
     <offsets>
-      <x-m> -0.280 </x-m>
+      <x-m> -0.295 </x-m>
       <y-m> -0.010 </y-m>
       <z-m> -0.010 </z-m>
       <pitch-deg>0</pitch-deg>
@@ -311,7 +311,7 @@
     <offsets>
       <x-m> 0.000 </x-m>
       <y-m>-0.005 </y-m>
-      <z-m>0.010 </z-m>
+      <z-m>0.020 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>

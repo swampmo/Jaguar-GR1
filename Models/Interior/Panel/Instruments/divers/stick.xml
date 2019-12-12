@@ -90,6 +90,7 @@
 	<!-- Lighting -->
 	<animation> 
 		<object-name>Jag-FS</object-name>
+         <object-name>Boot</object-name>
 		<type>material</type>
     <emission>
       <red>   0.9 </red>

@@ -10,7 +10,7 @@ name "gear-knob"
 data 10
 Circle.661
 crease 40.0
-texture "dark-iron.png"
+texture "nikkon.png"
 texrep 1 1
 numvert 2308
 -3.31239 -0.07304 0.32575

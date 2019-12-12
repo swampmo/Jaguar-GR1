@@ -254,7 +254,7 @@
 	<animation>
 		<object-name>NVG</object-name>
 		<type>rotate</type>
-		<property>/controls/electrical/nvg-switch</property>
+		<property>/sim/rendering/als-filters/use-IR-vision</property>
 		<factor>-60</factor>
 		<center>
 			<x-m>0.08971</x-m>
@@ -281,7 +281,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/electrical/nvg-switch</property>
+        <property>//sim/rendering/als-filters/use-IR-vision</property>
       </binding>
     </action>
   </animation>
