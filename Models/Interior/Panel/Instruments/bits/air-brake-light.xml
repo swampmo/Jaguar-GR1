@@ -6,7 +6,6 @@
     <animation>
      <object-name>Mount</object-name>
      <object-name>air-brakes-off</object-name>
-      <object-name>air-brakes-on</object-name>
    </animation>
 
 <animation>

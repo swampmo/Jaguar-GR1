@@ -11,8 +11,7 @@
     <object-name>throttle-R</object-name>
     <object-name>throttle-stop[0]</object-name>
     <object-name>throttle-stop[1]</object-name>
-		<object-name>air-brakes-ext</object-name>
-        <object-name>air-brakes-in</object-name>
+		<object-name>AirBrakes</object-name>
 		<object-name>combat-slats-ext</object-name>
 		<object-name>combat-slats-in</object-name>
   </animation>
@@ -24,8 +23,7 @@
     <object-name>throttle-R</object-name>
     <object-name>throttle-stop[0]</object-name>
     <object-name>throttle-stop[1]</object-name>
-		<object-name>air-brakes-ext</object-name>
-        <object-name>air-brakes-in</object-name>
+		<object-name>AirBrakes</object-name>
 		<object-name>combat-slats-ext</object-name>
 		<object-name>combat-slats-in</object-name>
     <emission>
@@ -95,8 +93,7 @@
   <animation>
     <type>rotate</type>
             <object-name>throttle-R</object-name>
-    		<object-name>air-brakes-ext</object-name>
-            <object-name>air-brakes-off</object-name>
+    		<object-name>AirBrakes</object-name>
 		<object-name>combat-slats-ext</object-name>
 		<object-name>combat-slats-in</object-name>
     <object-name>throttle-R</object-name>
@@ -117,16 +114,34 @@
   </animation>
 
 <!-- #########################################################  Speed-Brakes  ############################################################################## -->
-  <animation>
+  <!--animation>
     <type>rotate</type>
     <object-name>air-brakes-ext</object-name>
-    <object-name>air-brakes-off</object-name>
-    <property>controls/flight/speedbrakes</property>
-    <factor>-5 </factor>
+    <property>fcs/speedbrake-pos-deg</property>
+    <factor>5</factor>
     <axis>
       <x> 0 </x>
       <y> 0 </y>
       <z> -1 </z>
+    </axis>
+
+      <center>
+	<x-m>-2.94475</x-m>
+	<y-m>-0.26868</y-m>
+	<z-m>-0.15560</z-m>
+     </center>
+
+  </animation-->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AirBrakes</object-name>
+    <property>/fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
+    <factor>-5</factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z>-1 </z>
     </axis>
 
       <center>
@@ -263,21 +278,7 @@
     <animation>
     <type>pick</type>
     <visible>true</visible>
-    <object-name>air-brakes-ext</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-toggle</command>
-        <property>controls/flight/speedbrake</property>
-        <step>-1</step>
-      </binding>
-    </action>
-  </animation>
-
-    <animation>
-    <type>pick</type>
-    <visible>true</visible>
-    <object-name>air-brakes-off</object-name>
+    <object-name>AirBrakes</object-name>
     <action>
       <button>0</button>
       <binding>
