@@ -63,7 +63,7 @@
         <object-name>Boot</object-name>
   <property>controls/Jag-FS/fore-aft-adjust</property>
   <factor>-0.14</factor>
-  <interval-sec>0.05</interval-sec>
+  <time-sec>0.05</time-sec>
   <offset-m>0</offset-m>
   <axis>
    <x>0</x>
@@ -81,7 +81,7 @@
       <binding>
         <command>property-toggle</command>
   <property>controls/Jag-FS/fore-aft-adjust</property>
-  <interval-sec>0.05</interval-sec>
+  <time-sec>0.05</time-sec>
       </binding>
     </action>
   </animation>

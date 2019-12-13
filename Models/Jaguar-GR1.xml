@@ -1667,8 +1667,8 @@ if(navStillOn) {
 		<object-name>Helice-L-1</object-name>
 		<object-name>Helice-L-2</object-name>
 		<object-name>Nose-Cone-L</object-name>
-		<property>engines/engine[0]/n2</property>
-		<factor>1</factor>
+		<property>engines/engine[0]/n1</property>
+		<factor>25</factor>
 		<center>
 			<x-m>-0.91803</x-m>
 			<y-m>-0.67608</y-m>
@@ -1697,8 +1697,8 @@ if(navStillOn) {
 		<object-name>Helice-R-1</object-name>
 		<object-name>Helice-R-2</object-name>
 		<object-name>Nose-Cone-R</object-name>
-		<property>engines/engine[1]/n2</property>
-		<factor>1</factor>
+		<property>engines/engine[1]/n1</property>
+		<factor>25</factor>
 		<center>
 			<x-m>-0.91803</x-m>
 			<y-m> 0.69868</y-m>

@@ -254,8 +254,8 @@
 	<animation>
 		<object-name>NVG</object-name>
 		<type>rotate</type>
-		<property>/sim/rendering/als-filters/use-filters</property>
-		<factor>60</factor>
+		<property>/sim/rendering/als-filters/use-night-vision</property>
+		<factor>-60</factor>
 		<center>
 			<x-m>0.08971</x-m>
 			<y-m>0.04072</y-m>
@@ -266,7 +266,7 @@
 		</axis>
 		<action>
             <binding>
-                <command>property-assign</command>
+                <command>property-adjust</command>
                 <property>//sim/rendering/als-filters/use-filtering</property>
             </binding>
         </action>
@@ -276,7 +276,7 @@
     <type>pick</type>
     <visible>true</visible>
     <object-name>NVG</object-name>
-    <factor>-60</factor>
+    <factor>60</factor>
     <action>
       <button>0</button>
       <binding>
