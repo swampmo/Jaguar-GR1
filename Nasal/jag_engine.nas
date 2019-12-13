@@ -2,13 +2,15 @@
 #
 # starter engine stats: (Air generator: Microturbo Saphir 007)
 # 50 HP , 45 PSI , 0.415 Kg/sec
-# IDLE N1 = 86.5% (12 seconds)
-# MAX N1 = 100.0%
+# IDLE N1 = 86.5% (15 seconds)
+# MAX N1 = 100.0% (3.5 sec later)
 # RPM idle = 44,350
 # RPM max = 51,275
 # auto shuts down after 10 mins (must max run for 10 minutes in 30 min period)
-# 20 second to get to engine start condition
+# 20 second to get main engine started (probably to the 39%)
 # airbrakes must be OPEN to start it
+# 10 seconds after engine start 1 or 2 and corr rotation not, shut down air gen.
+# when auto shuts down due to 39% its to idle, not fully down.
 #
 # main engines stats: (Roll-Royce / Turbomeca Adour Mk 804)
 # compression ratio 11.0:1
@@ -45,8 +47,8 @@ var air_gen_start_time = -1;
 # air generator key numbers
 var IDLE_N1      = 0.865;#normalized
 var MAX_RPM      = 51275;
-var ZERO_TO_IDLE = 12;#sec
-var IDLE_TO_MAX  = 8;#sec
+var ZERO_TO_IDLE = 15;#sec
+var IDLE_TO_MAX  = 3.5;#sec
 var MAX_TO_ZERO  = 3;#sec
 var MAX_PSI      = 45;
 var AUTO_SHUT_DOWN = 10*60;#sec
@@ -55,7 +57,8 @@ var AUTO_SHUT_DOWN = 10*60;#sec
 var update_time_fast = 0.05;
 var update_time_slow = 0.25;
 
-var N2_IDLE = 60;#idlen2 in engine file
+var N2_IDLE = 55;#idlen2 in engine file
+var N2_SELFSUSTAIN = 39;
 var N2_IGNITE = 25.18;#ignitionn2 in engine file (which should be 15) [Wait to set it to 15 till FG 2019.2.1 due to bug in jsbsim]
 
 props.globals.initNode("engines/air-gen-switch", 0, "BOOL");
@@ -157,31 +160,32 @@ var engineStartLoop = func {
 		if (eng_start == 1) {
 			start_1 = throttleStop_1 and eng_ign and lp_1;
 		}
-	} else {
-		if (!eng_ign and n2_0 < N2_IDLE) {
-			cutoff_0 = 1;
-			start_0 = 0;
-		}
-		if (!eng_ign and n2_1 < N2_IDLE) {
-			cutoff_1 = 1;
-			start_1 = 0;
-		}
-		if (!air_gen_on and n2_0 < N2_IGNITE) {
-			start_0 = 0;
-		}
-		if (!air_gen_on and n2_1 < N2_IGNITE) {
-			start_1 = 0;
-		}
 	}
 	
-	#ignition to idle
-	if (start_0) {
+	# abort engine start
+	if (!eng_ign and n2_0 < N2_SELFSUSTAIN) {
+		cutoff_0 = 1;
+		start_0 = 0;
+	}
+	if (!eng_ign and n2_1 < N2_SELFSUSTAIN) {
+		cutoff_1 = 1;
+		start_1 = 0;
+	}	
+	if (!air_gen_on and n2_0 < N2_SELFSUSTAIN) {
+		start_0 = 0;
+	}
+	if (!air_gen_on and n2_1 < N2_SELFSUSTAIN) {
+		start_1 = 0;
+	}
+	
+	#ignition to running
+	if (start_0 or n2_0 >= N2_IDLE) {
 		#if (n2_0 >= N2_IGNITE and air_gen_rpm == 1 and n2_0 < N2_IDLE) {
 		#	corr_rot_0 = 1;
 		#}
 		cutoff_0 = !(!throttleStop_0 and fuel_0);
 	}
-	if (start_1) {
+	if (start_1 or n2_1 >= N2_IDLE) {
 		#if (n2_1 >= N2_IGNITE and air_gen_rpm == 1 and n2_1 < N2_IDLE) {
 		#	corr_rot_1 = 1;
 		#}
@@ -191,15 +195,13 @@ var engineStartLoop = func {
 	# running
 	if (n2_0 >= N2_IDLE) {
 		start_0 = 0;
-		cutoff_0 = !(!throttleStop_0 and fuel_0);
 	}
 	if (n2_1 >= N2_IDLE) {
 		start_1 = 0;
-		cutoff_1 = !(!throttleStop_1 and fuel_1);
 	}
 	
-	corr_rot_0 = n2_0 < N2_IDLE and n2_0 >= N2_IGNITE and start_0;
-	corr_rot_1 = n2_1 < N2_IDLE and n2_1 >= N2_IGNITE and start_1;
+	corr_rot_0 = n2_0 < N2_SELFSUSTAIN and n2_0 >= N2_IGNITE and start_0;
+	corr_rot_1 = n2_1 < N2_SELFSUSTAIN and n2_1 >= N2_IGNITE and start_1;
 	
 	#outputs
 	setprop("engines/air-gen-button-light", air_gen_on);
