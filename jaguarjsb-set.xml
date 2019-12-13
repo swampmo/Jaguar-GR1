@@ -162,10 +162,6 @@
       <autopilot n="0">
         <path>Aircraft/Jaguar/Systems/autoflight-rules.xml</path>
       </autopilot>
-      <refuel n="0">
-        <type>probe</type>
-        <serviceable type="bool">true</serviceable>
-      </refuel>
     </systems>
 
     <mp-systems>
@@ -485,6 +481,24 @@
 
   </sim>
 
+ <instrumentation>
+  <radar>
+   <range type="int" archive="y">20</range>
+   <minimized type="bool" archive="y">false</minimized>
+  </radar>
+ </instrumentation>
+
+ <systems>
+  <refuel>
+   <type>probe</type>
+   <serviceable type="bool">true</serviceable>
+   <max-fuel-transfer-lbs-min>6000</max-fuel-transfer-lbs-min>
+   <offset-x-m>0</offset-x-m>
+   <offset-y-m>0</offset-y-m>
+   <offset-z-m>0</offset-z-m>
+  </refuel>
+ </systems>
+
       <engines>
         <afterburner-length type="double" n="0">0.2</afterburner-length>
         <afterburner-length type="double" n="1">0.2</afterburner-length>
@@ -771,9 +785,9 @@
       <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
     </radardist>
 
-    <aar>
-      <file>Aircraft/Generic/aar.nas</file>
-    </aar>
+     <aar>
+         <file>Aircraft/Generic/aar.nas</file>
+     </aar>
 
    <damage>
      <file>Aircraft/Jaguar/Nasal/damage.nas</file>
