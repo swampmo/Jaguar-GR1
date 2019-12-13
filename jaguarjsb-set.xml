@@ -500,6 +500,13 @@
 			<elevator-deadzone>0.1</elevator-deadzone>
 		</settings>
 	</autopilot>
+  
+  <jaguar>
+    <displays>
+      <live-map type="bool">true</live-map>
+      <scale type="int">0</scale>
+    </displays>
+  </jaguar>
 
 	<fdm>
 		<jsbsim>
@@ -807,6 +814,10 @@
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
     </load>
+    
+    <mm>
+      <file>Aircraft/Jaguar/Nasal/moving-map.nas</file>
+    </mm>
   </nasal>
 
 </PropertyList>
