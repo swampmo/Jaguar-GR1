@@ -28,9 +28,9 @@
 		<object-name>combat-slats-in</object-name>
     <emission>
       <factor-prop>/controls/lighting/instruments-norm</factor-prop>
-            <red>.5</red>
-            <green>.8</green>
-            <blue>.6</blue>
+            <red>0.8</red>
+            <green>0.8</green>
+            <blue>0.8</blue>
     </emission>
   </animation>
 
