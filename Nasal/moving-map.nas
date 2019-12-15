@@ -206,10 +206,10 @@ var MM = {
 		me.selfSymbol = me.rootCenter.createChild("path")
 			  .moveTo(0, 0)
 			  .lineTo(0, 2)
-		      .moveTo(0, -14)
-		      .lineTo(13, 8)
-		      .lineTo(-13, 8)
-		      .lineTo(0, -14)
+		      .moveTo(0, -16)
+		      .lineTo(11, 8)
+		      .lineTo(-11, 8)
+		      .lineTo(0, -16)
 		      .setColor(COLOR_RED)
 		      .set("z-index", 10)
 		      .setStrokeLineWidth(w*2);
@@ -692,8 +692,9 @@ var MM = {
 		}
 
 		#me.mapRot.setRotation(-me.input.heading.getValue()*D2R);
-		me.mapCenter.setRotation(-me.input.heading.getValue()*D2R);#switched to direct rotation to try and solve issue with approach line not updating fast.
-		me.mapCenter.update();
+		#me.mapCenter.setRotation(-me.input.heading.getValue()*D2R);#switched to direct rotation to try and solve issue with approach line not updating fast.
+		me.rootCenter.setRotation(me.input.heading.getValue()*D2R);
+		#me.mapCenter.update();
 	},
 };
 
