@@ -1,15 +1,15 @@
 AC3Db
-MATERIAL "Material.002" rgb 0.640 0.640 0.640  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 12 trans 0.000
-MATERIAL "Material.007" rgb 0.640 0.640 0.640  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 12 trans 0.000
-MATERIAL "Material.005" rgb 0.640 0.640 0.640  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 12 trans 0.000
-MATERIAL "Material.001" rgb 0.640 0.640 0.640  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 12 trans 0.000
+MATERIAL "Material.008" rgb 0.640 0.640 0.640  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 12 trans 0.000
+MATERIAL "Material.011" rgb 0.640 0.640 0.640  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 12 trans 0.000
+MATERIAL "Material.009" rgb 0.640 0.640 0.640  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 12 trans 0.000
+MATERIAL "Material.010" rgb 0.640 0.640 0.640  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 12 trans 0.000
 OBJECT world
 name "Blender_exporter_v2.26__orangelight.ac"
-kids 3
+kids 4
 OBJECT poly
 name "mount"
 data 12
-Cylinder.010
+Cylinder.015
 crease 30.0
 texture "nikkon.png"
 texrep 1 1
@@ -3441,9 +3441,69 @@ refs 4
 201 0.667466 0.253619
 kids 0
 OBJECT poly
+name "NWS-label"
+data 5
+Plane
+crease 40.0
+texture "Etiquette-2.png"
+texrep 1 1
+numvert 8
+0.00187 0.0081 0.00482
+0.00187 0.00446 0.00482
+0.00187 0.0081 -0.00275
+0.00187 0.00446 -0.00275
+0.00173 0.00805 0.00487
+0.00173 0.00437 0.00487
+0.00173 0.00805 -0.0028
+0.00173 0.00437 -0.0028
+numsurf 6
+SURF 0X0
+mat 1
+refs 4
+0 0.030892 0.934368
+1 0.030892 0.855202
+3 0.120481 0.855202
+2 0.120481 0.934368
+SURF 0X0
+mat 1
+refs 4
+4 0 0
+6 0 0
+7 0 0
+5 0 0
+SURF 0X0
+mat 1
+refs 4
+1 0 0
+5 0 0
+7 0 0
+3 0 0
+SURF 0X0
+mat 1
+refs 4
+2 0 0
+6 0 0
+4 0 0
+0 0 0
+SURF 0X0
+mat 1
+refs 4
+3 0 0
+7 0 0
+6 0 0
+2 0 0
+SURF 0X0
+mat 1
+refs 4
+0 0 0
+4 0 0
+5 0 0
+1 0 0
+kids 0
+OBJECT poly
 name "NWS-off"
 data 12
-Cylinder.008
+Cylinder.016
 crease 30.0
 texture "Neon orange.png"
 texrep 1 1
@@ -3520,7 +3580,7 @@ kids 0
 OBJECT poly
 name "NWS-on"
 data 12
-Cylinder.009
+Cylinder.017
 crease 30.0
 texture "Neon orange.png"
 texrep 1 1
