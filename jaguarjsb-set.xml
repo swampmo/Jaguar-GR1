@@ -164,6 +164,11 @@
       </autopilot>
     </systems>
 
+   <ai>
+     <scenario n="100">wingman_Jauguar_demo</scenario>
+   </ai>
+
+
     <mp-systems>
       <radar-enabled type="bool">true</radar-enabled>
       <ecm-rwr-enabled type="bool">true</ecm-rwr-enabled>
@@ -763,6 +768,10 @@
     <low>
       <file>Aircraft/Jaguar/Nasal/low.nas</file>
     </low>
+
+   <formation>
+     <file>Aircraft/Generic/formation.nas</file>
+   </formation>
 
     <guns>
       <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
