@@ -71,6 +71,10 @@
       <scenario>refueling_demo_2</scenario>
     </ai>
 
+   <ai>
+     <scenario n="100">wingman_Jauguar_demo</scenario>
+   </ai>
+
     <help>
       <title>Jaguar GR1</title>
    
@@ -163,10 +167,6 @@
         <path>Aircraft/Jaguar/Systems/autoflight-rules.xml</path>
       </autopilot>
     </systems>
-
-   <ai>
-     <scenario n="100">wingman_Jauguar_demo</scenario>
-   </ai>
 
 
     <mp-systems>

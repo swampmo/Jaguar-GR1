@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<PropertyList include="bombableinclude.xml">
+<PropertyList>
 
   <path>jaguar.ac</path>
 
-  <!-- MP sound call -->
-  <sound><path>Aircraft/Jaguar/Sounds/mp-sound.xml</path></sound>
 
   <nasal>
     <load>
@@ -479,107 +477,30 @@ if(navStillOn) {
   </animation>
 
 
-   <!-- Solid Surfaces for Rembrandt rendering -->
-   <animation>
-
-   <object-name>fuselage</object-name>
-    <object-name>dessus</object-name>
-    <object-name>tourverriere</object-name>
-    <object-name>ailes</object-name>
-    <object-name>ailes2</object-name>
-    <object-name>derive</object-name>
-    <object-name>profondeurG</object-name>
-    <object-name>profondeurD</object-name>
-    <object-name>air</object-name>
-    <object-name>airDoorL1</object-name>
-    <object-name>airDoorL2</object-name>
-    <object-name>airDoorR1</object-name>
-    <object-name>airDoorR2</object-name>
-    <object-name>moteurs</object-name>
-    <object-name>sorties</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>volets</object-name>
-    <object-name>voletG</object-name>
-    <object-name>voletD</object-name>
-    <object-name>direction</object-name>
-    <object-name>freinG</object-name>
-    <object-name>freinD</object-name>
-    <object-name>porteGH</object-name>
-    <object-name>porteGB</object-name>
-    <object-name>porteGB1</object-name>
-    <object-name>porteDH</object-name>
-    <object-name>porteDB</object-name>
-    <object-name>porteDB1</object-name>
-    <object-name>porteA</object-name>
-    <object-name>porteAG</object-name>
-    <object-name>porteAD</object-name>
-	<object-name>WingFenceL</object-name>
-	<object-name>WingFenceR</object-name>
-
-	<!--object-name>fuelProbe</object-name-->
-	<object-name>fuelProbeDoorFairing</object-name>
-	<object-name>fuelProbeDoor1</object-name>
-	<object-name>fuelProbeDoor2</object-name>
-    <object-name>postcomb</object-name>
-    <object-name>axeAH</object-name>
-    <object-name>roueA</object-name>
-    <object-name>roueA-Fix</object-name>
-    <object-name>roueA-Fourche</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>roueG</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>roueD</object-name>
-    <object-name>guns</object-name>
-
-    </animation>
-
-  <!-- Une ombre pour OSG
-  <model>
-    <path>Aircraft/Jaguar/Models/shadow.xml</path>
-    <offsets>
-      <x-m> -0.06085 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -2.07500 </z-m>
-    </offsets>
-  </model>
--->
   <!-- Armament  -->
   <model>
     <path>Aircraft/Jaguar/Models/Weapons/loads.xml</path>
   </model>
 
-  <!-- Interieur -->
   <model>
-    <path>Aircraft/Jaguar/Models/Interior/interior_wingmen.xml</path>
-  </model>
-
-  <!-- Effets de tir -->
-  <!-- Gauche -->
-  <model>
-    <path>Aircraft/Jaguar/Models/Effects/Guns/fire.xml</path>
+    <name>Pilote</name>
+    <path>Aircraft/Jaguar/Models/Pilot/pilot.xml</path>
     <offsets>
-      <x-m> -2.364 </x-m>
-      <y-m> -0.569 </y-m>
-      <z-m> -0.936 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> 100 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
+      <x-m> -2.736 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.097 </z-m>
     </offsets>
   </model>
 
-  <!-- Droit -->
-  <model>
-    <path>Aircraft/Jaguar/Models/Effects/Guns/fire.xml</path>
+   <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/seat.ac</path>
     <offsets>
-      <x-m> -2.364 </x-m>
-      <y-m>  0.569 </y-m>
-      <z-m> -0.936 </z-m>
-     <roll-deg>    0 </roll-deg>
-      <pitch-deg> 100 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
+      <x-m> -2.700 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.190 </z-m>
+	  <heading-deg>0</heading-deg>
+	  <roll-deg>0</roll-deg>
+	  <pitch-deg>-10</pitch-deg>
     </offsets>
   </model>
 
@@ -1650,17 +1571,6 @@ if(navStillOn) {
         </axis>
     </animation>
 
-<!-- engine animation -->
-	<!--animation>
-		<type>select</type>
-		<object-name>heliceL</object-name>
-		<condition>
-				<greater-than>
-					<property>engines/engine[0]/n1</property>
-					<value>1</value>
-				</greater-than>
-		</condition>
-	</animation-->
 
 	<animation>
 		<type>spin</type>
@@ -1681,16 +1591,6 @@ if(navStillOn) {
 		</axis>
 	</animation>
 
-	<!--animation>
-		<type>select</type>
-		<object-name>heliceR</object-name>
-		<condition>
-				<greater-than>
-					<property>engines/engine[1]/n1</property>
-					<value>1</value>
-				</greater-than>
-		</condition>
-	</animation-->
 
 	<animation>
 		<type>spin</type>
@@ -1720,24 +1620,6 @@ if(navStillOn) {
 	    <z-m>0</z-m>
     </offsets>
   </model>
-
-
-
-
-
- chute
-  <model>
-    <name>Chute</name>
-    <path>Aircraft/Jaguar/Models/Effects/Chute/chute.xml</path>
-    <offsets>
-      <x-m>        -8 </x-m>
-      <y-m>         0 </y-m>
-      <z-m>        -1 </z-m>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
-  </model>
-
 
   <!-- aircraft wash modeled in the lines below -->
   <model>
@@ -1810,40 +1692,5 @@ if(navStillOn) {
 		</offsets>
 	</model>
 
-	<!--model>
-		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour.xml</path>
-		<offsets>
-			<x-m>-2.0</x-m>
-			<y-m>0</y-m>
-			<z-m>0.9</z-m>
-			<roll-deg>0</roll-deg>
-			<pitch-deg>0</pitch-deg>
-			<heading-deg>25</heading-deg>
-		</offsets>
-	</model>
-
- <model>
-		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour2.xml</path>
-		<offsets>
-			<x-m>2.0</x-m>
-			<y-m>-1.8</y-m>
-			<z-m>0.9</z-m>
-			<roll-deg>0</roll-deg>
-			<pitch-deg>0</pitch-deg>
-			<heading-deg>45</heading-deg>
-		</offsets>
-	</model>
-
-	<model>
-		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour2.xml</path>
-		<offsets>
-			<x-m>2.0</x-m>
-			<y-m>1.8</y-m>
-			<z-m>0.9</z-m>
-			<roll-deg>0</roll-deg>
-			<pitch-deg>0</pitch-deg>
-			<heading-deg>-45</heading-deg>
-		</offsets>
-	</model-->
 
 </PropertyList>
