@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>Call-Panel.ac</path>
+
+  <animation>
+    <object-name>Flap-Lever</object-name>
+    <object-name>Flap-Mount</object-name>
+    <object-name>Over-Ride-Switch</object-name>
+    <object-name>Over-Ride-Nut</object-name>
+    <object-name>Panel-Base</object-name>
+    <object-name>Texture</object-name>
+    <object-name>Lens</object-name>
+
+  </animation>
+      <animation>
+    <type>material</type>
+    <object-name>Flap-Lever</object-name>
+    <object-name>Flap-Mount</object-name>
+    <object-name>Over-Ride-Switch</object-name>
+    <object-name>Over-Ride-Nut</object-name>
+    <object-name>Panel-Base</object-name>
+    <object-name>Texture</object-name>
+    <object-name>Lens</object-name>
+        <emission>
+         <red> 1 </red>
+        <green>1 </green>
+       <blue>  1 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Flap-Lever</object-name>
+    <property>controls/flight/flaps</property>
+    <factor>-30</factor>
+    <axis>
+      <x> 0.0</x>
+      <y>-1.0</y>
+      <z> 0.0</z>
+    </axis>
+    <center>
+     <x-m>-2.94049</x-m>
+     <y-m>-0.18845</y-m>
+     <z-m>-0.24166</z-m>
+   </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Flap-Lever</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/flight/flaps</property>
+        <step>0.1</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Flap-Lever</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/flight/flaps</property>
+        <step>-0.1</step>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

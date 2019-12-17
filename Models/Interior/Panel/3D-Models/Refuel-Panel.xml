@@ -4,22 +4,21 @@
 
   <path>Refuel-Panel.ac</path>
     <animation>
-     <object-name>Red-Lamp</object-name>
-      <object-name>Orange-Lamp</object-name>
-    <object-name>Orange-Lamp-Lens</object-name>
-      <object-name>Red-Lamp-Lens</object-name>
-    <object-name>Refuel</object-name>
-   </animation>
+     <object-name>Red-Light-off</object-name>
+      <object-name>Green-Light-off</object-name>
+       <object-name>Red-Light-on</object-name>
+        <object-name>Green-Light-on</object-name>
+       <object-name>Refuel</object-name>
+      <object-name>mount-g</object-name>
+     <object-name>mount-r</object-name>
+    </animation>
 
  <animation>
   <type>material</type>
-     <object-name>Red-Lamp</object-name>
-      <object-name>Orange-Lamp</object-name>
-    <object-name>Orange-Lamp-Lens</object-name>
-      <object-name>Red-Lamp-Lens</object-name>
     <object-name>Refuel</object-name>
-
-        <emission>
+    <object-name>mount-g</object-name>
+      <object-name>mount-r</object-name>
+       <emission>
          <red> 1 </red>
         <green>1 </green>
        <blue>  1 </blue>
@@ -27,45 +26,65 @@
     </emission>
    </animation>
 
-<!-- ################################################ Fuel-Prboe ###################################### -->
+<!-- ################################################ Fuel-Probe ###################################### -->
   <animation>
     <type>translate</type>
     <object-name>Refuel</object-name>
-    <property>controls/switches/fuel-probe</property>
-      <factor>-0.002</factor>
+     <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
+      <factor>-0.003</factor>
          <axis>
           <x> 1.0 </x>
            <y> 0.0 </y>
           <z> 0.0 </z>
          </axis>
         <center>
-       <x-m>-3.35496</x-m>
-      <y-m> 0.13167</y-m>
-     <z-m> 0.23891</z-m>
+       <x-m>-3.35678</x-m>
+      <y-m> 0.13503</y-m>
+     <z-m> 0.23543</z-m>
    </center>
+  </animation>
+
+ <animation>
+  <type>select</type> 
+   <object-name>Red-Light-on</object-name>
+    <condition>	  		
+    <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
+   <value>1</value>
+  </condition>
+ </animation>
+
+  <animation>
+     <type>material</type>
+      <object-name>Red-Light-on</object-name>
+       <emission>
+        <factor-prop>fdm/jsbsim/systems/refuel-armed/fuel-probe</factor-prop>
+         <value>1</value>
+           <red>1</red>
+          <green>1</green>
+        <blue>1</blue>
+     </emission>
+    <texture>nikkon.png</texture>
   </animation>
 
 <!--#################################################" MMB Adjustment ############################################" -->
 
     <animation>
      <type>pick</type>
-        <object-name>Refuel</object-name>
-      <factor>0.002</factor>
+       <object-name>Refuel</object-name>
+        <factor>0.002</factor>
          <action>
           <button>0</button>
             <binding>
              <command>property-toggle</command>
-                   <property>controls/switches/fuel-probe</property>
+               <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
                </binding>
-                <binding>
-                 <!--command>property-assign</command>
-                    <property>controls/switches/fuel-probe</property>
-              </binding>
              <binding>
-            <command>property-toggle</command-->
+            <command>property-toggle</command>
           <property>sim/sound/click</property>
         </binding>
       </action>
     </animation>
 
 </PropertyList>
+
+

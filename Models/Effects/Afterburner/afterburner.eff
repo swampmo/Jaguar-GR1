@@ -15,7 +15,7 @@
       <flame_color_low_b type="float">0.139</flame_color_low_b>
       <flame_color_low_g type="float">0.100</flame_color_low_g>
       <flame_color_low_r type="float">0.917</flame_color_low_r>
-      <flame_radius_fraction type="float">0.45</flame_radius_fraction>
+      <flame_radius_fraction type="float">1.0</flame_radius_fraction>
       <noise_scale type="float">0.6</noise_scale>
       <noise_strength type="float">0.6</noise_strength>
       <thrust_collimation type="float">-0.05</thrust_collimation>

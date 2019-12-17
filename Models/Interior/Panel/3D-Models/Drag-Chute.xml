@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>Drag-Chute.ac</path>
+    <animation>
+     <object-name>Drag-chute</object-name>
+   </animation>
+
+ <animation>
+  <type>material</type>
+     <object-name>Drag-Chute</object-name>
+        <emission>
+         <red> 1 </red>
+        <green>1 </green>
+       <blue>  1 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    </emission>
+   </animation>
+
+<!-- ################################################ Drag-Chute ###################################### -->
+  <animation>
+    <type>translate</type>
+    <object-name>Drag-Chute</object-name>
+  <property>sim/model/lightning/controls/flight/chute_deployed</property>
+      <factor>0.01</factor>
+         <axis>
+          <x>1</x>
+           <y>0</y>
+          <z>0</z>
+         </axis>
+        <center>
+       <x-m>-3.20650</x-m>
+      <y-m>-0.32780</y-m>
+     <z-m> 0.01041</z-m>
+   </center>
+  </animation>
+
+<!--#################################################" MMB Adjustment ############################################" -->
+
+    <animation>
+     <type>pick</type>
+        <object-name>Drag-Chute</object-name>
+      <factor>-0.01</factor>
+         <action>
+          <button>0</button>
+            <binding>
+             <command>property-toggle</command>
+  <property>sim/model/lightning/controls/flight/chute_deployed</property>
+               </binding>
+                <binding>
+                 <command>property-toggle</command>
+  <property>sim/model/lightning/controls/flight/chute_jettisoned</property>
+              </binding>
+             <binding>
+            <command>property-toggle</command>
+          <property>sim/sound/click</property>
+        </binding>
+      </action>
+    </animation>
+
+</PropertyList>
