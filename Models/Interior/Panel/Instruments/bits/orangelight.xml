@@ -5,12 +5,14 @@
 
     <animation>
      <object-name>mount</object-name>
-      <object-name>orange-light</object-name>
+      <object-name>NWS-off</object-name>
+      <object-name>NWS-on</object-name>
    </animation>
 
  <animation>
   <type>material</type>
-     <object-name>orange-light</object-name>
+     <object-name>mount</object-name>
+     <object-name>NWS-off</object-name>
     <emission>
       <red>   0.9 </red>
       <green> 0.9 </green>

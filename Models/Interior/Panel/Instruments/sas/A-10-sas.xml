@@ -12,9 +12,9 @@
 		<property>fdm/jsbsim/sas/yaw-l</property>
 		<factor>60</factor>
 		<center>
-			<x-m>-0.0213</x-m>
-			<y-m>0.0178</y-m>
-			<z-m>0.0000</z-m>
+			<x-m>-0.01747</x-m>
+			<y-m>-0.04312</y-m>
+			<z-m> 0.00190</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -42,9 +42,9 @@
 		<property>fdm/jsbsim/sas/yaw-r</property>
 		<factor>60</factor>
 		<center>
-			<x-m>-0.0213</x-m>
-			<y-m>0.0537</y-m>
-			<z-m>0.0000</z-m>
+			<x-m>-0.01747</x-m>
+			<y-m>0.01262</y-m>
+			<z-m>0.00190</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -73,9 +73,9 @@
 		<property>fdm/jsbsim/sas/pitch-l</property>
 		<factor>60</factor>
 		<center>
-			<x-m>-0.0213</x-m>
-			<y-m>0.0178</y-m>
-			<z-m>0.0000</z-m>
+			<x-m>-0.01747</x-m>
+			<y-m> 0.01637</y-m>
+			<z-m> 0.00190</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -103,9 +103,9 @@
 		<property>fdm/jsbsim/sas/pitch-r</property>
 		<factor>60</factor>
 		<center>
-			<x-m>-0.0213</x-m>
-			<y-m>0.0537</y-m>
-			<z-m>0.0000</z-m>
+			<x-m>-0.01747</x-m>
+			<y-m> 0.04692</y-m>
+			<z-m> 0.00190</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -123,6 +123,61 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>fdm/jsbsim/sas/pitch-r</property>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<object-name>yaw-trim-knob</object-name>
+		<type>rotate</type>
+		<property>fdm/jsbsim/sas/yaw-trim</property>
+		<factor>60</factor>
+		<center>
+			<x-m> 0.01990</x-m>
+			<y-m>-0.03532</y-m>
+			<z-m> 0.00082</z-m>
+		</center>
+		<axis>
+			<x> 0</x>
+			<y> 0</y>
+			<z> 1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+          <visible>false</visible>
+		<object-name>YT-L</object-name>
+		<factor>-30</factor>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>fdm/jsbsim/sas/yaw-trim</property>
+				<step>-0.05</step>
+                        <min>0</min>
+                        <max>1</max>
+                        <factor>0.04</factor>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+         <visible>false</visible>
+		<object-name>YT-R</object-name>
+		<factor>30</factor>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>fdm/jsbsim/sas/yaw-trim</property>
+				<step>0.05</step>
+                        <min>0</min>
+                        <max>1</max>
+                        <factor>0.04</factor>
 			</binding>
 		</action>
 	</animation>

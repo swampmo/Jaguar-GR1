@@ -25,8 +25,8 @@
 		<object-name>sp-in</object-name>
 		<object-name>rw-up</object-name>
 		<object-name>sp-partial</object-name>
-		<object-name>AutoSlat-frame</object-name>
-		<object-name>AutoSlat-button</object-name>
+		<object-name>autoSlat-frame</object-name>
+		<object-name>autoSlat-button</object-name>
   </animation>
 
   <animation>
@@ -228,7 +228,7 @@
 		</condition>
 	</animation>
 
-	<!--
+	
 	<animation>
 		<type>pick</type>	
 		<object-name>autoSlat-button</object-name>
@@ -237,7 +237,7 @@
 			<button>0</button>
 			<binding>
 				<command>property-toggle</command>
-				<property></property>
+				<property>controls/flight/slats</property>
 			</binding>
 		</action>
 	</animation>
@@ -246,12 +246,12 @@
 		<type>material</type>
 		<object-name>autoSlat-button</object-name>
 		<emission>
-			<factor-prop></factor-prop>
-			<red>   0.50 </red>
-			<green> 0.25 </green>
-			<blue>  0.25</blue>
+			<factor-prop>controls/flight/slats</factor-prop>
+			<red>   1 </red>
+			 <green>  1</green>
+			<blue>  1</blue>
 		</emission>
 	</animation>
--->
+
 </PropertyList>
 

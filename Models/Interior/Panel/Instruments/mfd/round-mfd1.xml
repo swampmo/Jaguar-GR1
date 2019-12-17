@@ -2,7 +2,7 @@
 
 <PropertyList> 
 
-  <path>Jag-GR1Display.ac</path>
+  <path>../../3D-Models/Jag-GR1Display.ac</path>
 
   <animation>
     <object-name>Bigscreen</object-name>
@@ -52,7 +52,7 @@
     </top-left>
   </panel>
 -->
-  <model>
+<!--  <model>
     <name>enav</name>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/enav-w.xml</path>
     <offsets> 
@@ -71,7 +71,7 @@
     <y-offset> 1.4 </y-offset>
     <z-factor> 1.0 </z-factor>
     <z-offset> 1.4 </z-offset>
-  </animation>
+  </animation>-->
 
 <!-- Buttons -->
 <animation>
@@ -90,6 +90,36 @@
   </action>
 </animation>
 
+<animation>
+    <type>pick</type>
+    <object-name>Scale</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>mm.toggleScale();</script>
+      </binding>
+    </action>
+</animation>
+<animation>
+        <type>rotate</type>
+        <object-name>Scale</object-name>
+        <property>jaguar/displays/scale</property>
+        <offset-deg>0</offset-deg>
+        <factor>90</factor>
+        <center>
+            <x-m>  0.00 </x-m>
+            <y-m>  -0.077396 </y-m>
+            <z-m>  -0.057092 </z-m>
+        </center>
+        <axis>
+            <x> 1.0 </x>
+            <y> 0.0 </y>
+            <z> 0.0 </z>
+        </axis>
+    </animation>
+<!--
 <animation>
   <type>pick</type>
   <object-name>Mode</object-name>
@@ -185,7 +215,7 @@
 				</script>
 			</binding>
 		</action>
-	</animation>
+	</animation>-->
 
 </PropertyList>
 
