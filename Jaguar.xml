@@ -168,8 +168,8 @@
      <y>     0.00 </y>
      <z>   -16.59 </z>
      </location>
-     <capacity unit="LBS"> 2100.0 </capacity>
-     <contents unit="LBS"> 1193.70 </contents>
+     <capacity unit="LBS"> 1558.67</capacity>
+     <contents unit="LBS"> 1558.67 </contents>
   </tank>
   <tank type="FUEL" number="1">
      <location unit="IN">
@@ -177,17 +177,78 @@
      <y>     0.00 </y>
      <z>   -16.59 </z>
      </location>
-     <capacity unit="LBS"> 2100.0 </capacity>
-     <contents unit="LBS"> 1193.70 </contents>
+     <capacity unit="LBS"> 864.212 </capacity>
+     <contents unit="LBS"> 864.212 </contents>
   </tank>
+
   <tank type="FUEL" number="2">
      <location unit="IN">
      <x>   65.60 </x>
      <y>     0.00 </y>
      <z>   -16.59 </z>
      </location>
-     <capacity unit="LBS"> 3600.0 </capacity>
-     <contents unit="LBS"> 1193.70 </contents>
+     <capacity unit="LBS"> 1146.4 </capacity>
+     <contents unit="LBS"> 1146.4 </contents>
+  </tank>
+
+  <tank type="FUEL" number="3">
+     <location unit="IN">
+     <x>   65.60 </x>
+     <y>     0.00 </y>
+     <z>   -16.59 </z>
+     </location>
+     <capacity unit="LBS"> 1962.11 </capacity>
+     <contents unit="LBS"> 1962.11 </contents>
+  </tank>
+
+  <tank type="FUEL" number="4">
+     <location unit="IN">
+     <x>   65.60 </x>
+     <y>     0.00 </y>
+     <z>   -16.59 </z>
+     </location>
+     <capacity unit="LBS"> 820.12 </capacity>
+     <contents unit="LBS"> 820.12 </contents>
+  </tank>
+
+  <tank type="FUEL" number="5">
+     <location unit="IN">
+     <x>   65.60 </x>
+     <y>     0.00 </y>
+     <z>   -16.59 </z>
+     </location>
+     <capacity unit="LBS"> 820.12 </capacity>
+     <contents unit="LBS"> 820.12 </contents>
+  </tank>
+
+  <tank type="FUEL" number="6">
+     <location unit="IN">
+     <x>   65.60 </x>
+     <y>     0.00 </y>
+     <z>   -16.59 </z>
+     </location>
+     <capacity unit="LBS">  2037 </capacity>
+     <contents unit="LBS"> 0 </contents>
+  </tank>
+
+  <tank type="FUEL" number="7">
+     <location unit="IN">
+     <x>   65.60 </x>
+     <y>     0.00 </y>
+     <z>   -16.59 </z>
+     </location>
+     <capacity unit="LBS">  2037 </capacity>
+     <contents unit="LBS"> 0 </contents>
+  </tank>
+
+  <tank type="FUEL" number="8">
+     <location unit="IN">
+     <x>   65.60 </x>
+     <y>     0.00 </y>
+     <z>   -16.59 </z>
+     </location>
+     <capacity unit="LBS"> 2037 </capacity>
+     <contents unit="LBS"> 0 </contents>
   </tank>
 
  </propulsion>

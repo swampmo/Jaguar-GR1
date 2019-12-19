@@ -705,43 +705,42 @@
     <keyboard include="/Dialogs/jaguar-keyboard.xml"/>
   </input>
 
-<!--
-  <consumables>
-    <fuel>
-      <tank n="0">
-        <tank-num type="int">0</tank-num>
-        <level-gal_us archive="y">2200</level-gal_us>
-      </tank>
-      <tank n="1">
-        <tank-num type="int">1</tank-num>
-        <level-gal_us archive="y">2200</level-gal_us>
-      </tank>
-      <tank n="2">
-        <tank-num type="int">2</tank-num>
-        <level-gal_us archive="y">1031</level-gal_us>
-      </tank>
-      <tank n="3">
-        <tank-num type="int">3</tank-num>
-        <level-gal_us archive="y">1031</level-gal_us>
-      </tank>
-      <tank n="4">
-        <tank-num type="int">4</tank-num>
-        <level-gal_us archive="y">1031</level-gal_us>
-      </tank>
-      <tank n="5">
-        <name>left-Tank</name>
-        <selected type="bool">false</selected>
-      </tank>
-      <tank n="6">
-        <name>Center-tank</name>
-        <selected type="bool">false</selected>
-      </tank>
-      <tank n="7">
-        <name>right-Tank</name>
-        <selected type="bool">false</selected>
-      </tank>
-    </fuel>
-  </consumables> -->
+<consumables>
+        <fuel>
+            <tank n="0">
+                <name>Fuselage Front Tank</name>
+            </tank>
+            <tank n="1">
+                <name>Fuselage Center Tank 1</name>
+            </tank>
+            <tank n="2">
+                <name>Fuselage Center Tank 2</name>
+            </tank>
+            <tank n="3">
+                <name>Fuselage Rear Tank</name>
+            </tank>
+            <tank n="4">
+                <name>Left Wing Tank</name>
+            </tank>
+            <tank n="5">
+                <name>Right Wing Tank</name>
+            </tank>
+            <tank n="6">
+                <name>Left Wing Drop Tank</name>
+                <jettisoned type="bool">false</jettisoned>
+            </tank>
+            <tank n="7">
+                <name>Right Wing Drop Tank</name>
+                <jettisoned type="bool">false</jettisoned>
+            </tank>
+            <tank n="8">
+                <name>Center Drop Tank</name>
+                <jettisoned type="bool">false</jettisoned>
+            </tank>
+        </fuel>
+    </consumables>
+
+
   <payload><armament><msg type="bool">true</msg></armament></payload>
 
   <nasal>
