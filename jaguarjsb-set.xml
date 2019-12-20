@@ -71,6 +71,10 @@
       <scenario>refueling_demo_2</scenario>
     </ai>
 
+   <ai>
+     <scenario n="100">wingman_Jauguar_demo</scenario>
+   </ai>
+
     <help>
       <title>Jaguar GR1</title>
    
@@ -163,6 +167,7 @@
         <path>Aircraft/Jaguar/Systems/autoflight-rules.xml</path>
       </autopilot>
     </systems>
+
 
     <mp-systems>
       <radar-enabled type="bool">true</radar-enabled>
@@ -763,6 +768,10 @@
     <low>
       <file>Aircraft/Jaguar/Nasal/low.nas</file>
     </low>
+
+   <formation>
+     <file>Aircraft/Generic/formation.nas</file>
+   </formation>
 
     <guns>
       <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
