@@ -3,7 +3,7 @@
   <property value="0">systems/hook/tailhook-cmd-norm</property>
   <property value="  4.44">systems/hook/tailhook-length-ft</property>
   <property value=" -2.00">systems/hook/tailhook-pos-min-deg</property>
-  <property value=" 42.00">systems/hook/tailhook-pos-max-deg</property>
+  <property value=" 53.00">systems/hook/tailhook-pos-max-deg</property>
   <property value="603.88">systems/hook/tailhook-offset-x-in</property>
   <property value="  0.00">systems/hook/tailhook-offset-y-in</property>
   <property value="-13.27">systems/hook/tailhook-offset-z-in</property>

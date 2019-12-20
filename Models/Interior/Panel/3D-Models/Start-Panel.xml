@@ -434,6 +434,7 @@
     <visible>true</visible>
     <object-name>air-gen-button</object-name>
     <object-name>air-gen-button-light</object-name>
+    <object-name>air-gen-start</object-name>
     <action>
       <button>0</button>
       <binding>
