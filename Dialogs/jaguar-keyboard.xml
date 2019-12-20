@@ -74,14 +74,7 @@
     </binding>
   </key>
  
-   <key n="9">
-     <name>Ctrl-I</name>
-     <desc>Show configuration dialog</desc>
-     <binding>
-       <command>nasal</command>
-       <script>formation.formation_dialog.toggle()</script>
-     </binding>
-   </key>
+
 
  <!--  <key n="76">
     <name>L</name>
