@@ -103,14 +103,19 @@
         <desc>Fire guns</desc>
       </key>
       <line>--------------------------------------------------------------------------------------------------------------------</line>
-      <line>Startup procedure</line>
+      <line>Jaguar Startup</line>
       <line>--------------------------------------------------------------------------------------------------------------------</line>
-      <line>Locate the ignition panel in front of the flight stick.</line>
-      <line>Click the boot of the flight stick to move it left.</line>
-      <line>Turn the Air Gen switch ON then turn the ENG-ING switch ON</line>
-      <line>Turn fuel pumps 1 and 2 ON then press the green AIR-GEN START button and wait 5 seconds.</line>
-      <line>Flip engine start switch to #1 when oil pressure reaches 18 psi press the throttle stop lever on throttle controls.</line>
-      <line>Wait for green light to illuminate above engine start #1 repeat the same proccedure for engine #2.</line>
+      <line>Click rocker switch on side of Throttles (Airbrakes on, Orange light on panel)</line>
+        <line>Click stick boot</line>
+      <line>Click 7 switches almost in a line for nav Lights and engine start</line>
+        <line>Click green light/button</line>
+      <line>When Batt light goes out</line>
+        <line>Click BOTH engines, 1 + 2</line>
+      <line>Click BOTH throttle stops</line>
+        <line>Click stick boot</line>
+      <line>When engines running at better than 20 Lbs oil pressure</line>
+        <line>Click rocker switch on throttle</line>
+      <line>Handle in front of Stick is Pedal Adjust</line>
       <line>--------------------------------------------------------------------------------------------------------------------</line>
       <line>Takeoff procedure</line>
       <line>--------------------------------------------------------------------------------------------------------------------</line>
