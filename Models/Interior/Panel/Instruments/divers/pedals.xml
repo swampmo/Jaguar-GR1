@@ -109,6 +109,8 @@
   <object-name>LH.Hanger</object-name>
   <object-name>LH.Pedal</object-name>
   <object-name>RH.Pedal</object-name>
+  <object-name>LH.Pivot</object-name>
+  <object-name>RH.Pivot</object-name>
   <property>controls/pedals/fore-aft-adjust</property>
   <factor>-0.05</factor>
   <axis>
