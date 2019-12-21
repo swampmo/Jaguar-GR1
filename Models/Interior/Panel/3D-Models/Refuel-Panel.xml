@@ -11,6 +11,8 @@
        <object-name>Refuel</object-name>
       <object-name>mount-g</object-name>
      <object-name>mount-r</object-name>
+      <object-name>contact-label</object-name>
+     <object-name>deployed-label</object-name>
     </animation>
 
  <animation>
@@ -18,6 +20,8 @@
     <object-name>Refuel</object-name>
     <object-name>mount-g</object-name>
       <object-name>mount-r</object-name>
+      <object-name>contact-label</object-name>
+     <object-name>deployed-label</object-name>
        <emission>
          <red> 1 </red>
         <green>1 </green>
