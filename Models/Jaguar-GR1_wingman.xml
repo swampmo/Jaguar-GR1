@@ -470,7 +470,7 @@ if(navStillOn) {
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
 
-    <property-base>sim/model/livery</property-base>
+    <property-base>/sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
 
@@ -583,7 +583,7 @@ if(navStillOn) {
     <type>select</type>
     <object-name>AB_Flame 1</object-name>
     <condition>
-     <property>sim/multiplay/generic/bool[1]</property>
+     <property>/sim/multiplay/generic/bool[1]</property>
     </condition>
    </animation>
 
@@ -591,14 +591,14 @@ if(navStillOn) {
     <type>select</type>
     <object-name>AB_Flame 2</object-name>
     <condition>
-     <property>sim/multiplay/generic/bool[0]</property>
+     <property>/sim/multiplay/generic/bool[0]</property>
     </condition>
   </animation>
 
   <animation>
     <type>scale</type>
     <object-name>AB_Flame 1</object-name>
-    <property>sim/multiplay/generic/float[18]</property><!-- throttle pos 1 -->
+    <property>/sim/multiplay/generic/float[18]</property><!-- throttle pos 1 -->
     <x-factor>1.0</x-factor>
     <x-min>0.2</x-min>
     <y-min>1.0</y-min>
@@ -613,7 +613,7 @@ if(navStillOn) {
   <animation>
     <type>scale</type>
     <object-name>AB_Flame 2</object-name>
-    <property>sim/multiplay/generic/float[19]</property><!-- throttle pos 2 -->
+    <property>/sim/multiplay/generic/float[19]</property><!-- throttle pos 2 -->
     <x-factor>1.0</x-factor>
     <x-min>0.2</x-min>
     <y-min>1.0</y-min>
@@ -632,7 +632,7 @@ if(navStillOn) {
   <animation>
     <type>scale</type>
     <object-name>AB_Flame 1</object-name>
-    <property>sim/multiplay/generic/float[18]</property><!-- throttle pos 1 -->
+    <property>/sim/multiplay/generic/float[18]</property><!-- throttle pos 1 -->
     <x-factor>1.0</x-factor>
     <x-min>0.2</x-min>
     <y-min>1.0</y-min>
@@ -647,7 +647,7 @@ if(navStillOn) {
   <animation>
     <type>scale</type>
     <object-name>AB_Flame 2</object-name>
-    <property>sim/multiplay/generic/float[19]</property><!-- throttle pos 2 -->
+    <property>/sim/multiplay/generic/float[19]</property><!-- throttle pos 2 -->
     <x-factor>1.0</x-factor>
     <x-min>0.2</x-min>
     <y-min>1.0</y-min>
@@ -714,7 +714,7 @@ if(navStillOn) {
     <condition>
       <not>
         <equals>
-          <property>gear/gear[0]/position-norm</property>
+          <property>/gear/gear[0]/position-norm</property>
           <value>0</value>
         </equals>
       </not>
@@ -742,7 +742,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>profondeurG</object-name>
-    <property>fdm/jsbsim/fcs/elevon-left-deg</property>
+    <property>/fdm/jsbsim/fcs/elevon-left-deg</property>
     <factor>-1</factor>
     <axis>
       <x1-m>  6.433 </x1-m>
@@ -757,7 +757,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>profondeurD</object-name>
-    <property>fdm/jsbsim/fcs/elevon-right-deg</property>
+    <property>/fdm/jsbsim/fcs/elevon-right-deg</property>
     <factor>-1</factor>
     <axis>
       <x1-m>  7.548 </x1-m>
@@ -775,7 +775,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
-    <property>fdm/jsbsim/fcs/spoiler-left-deg</property>
+    <property>/fdm/jsbsim/fcs/spoiler-left-deg</property>
     <factor>1</factor>
     <axis>
       <x1-m>  3.075 </x1-m>
@@ -790,7 +790,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>
-    <property>fdm/jsbsim/fcs/spoiler-right-deg</property>
+    <property>/fdm/jsbsim/fcs/spoiler-right-deg</property>
     <factor>1</factor>
     <axis>
       <x1-m>  3.696 </x1-m>
@@ -854,7 +854,7 @@ if(navStillOn) {
 	<animation>
 		<type>translate</type>
 		<object-name>slatG</object-name>
-		<property>fdm/jsbsim/fcs/slats-deg</property>
+		<property>/fdm/jsbsim/fcs/slats-deg</property>
 		<factor>0.0073913</factor>
 		<axis>
 			<x>-2.5</x>
@@ -865,7 +865,7 @@ if(navStillOn) {
 	<animation>
 		<type>rotate</type>
 		<object-name>slatG</object-name>
-		<property>fdm/jsbsim/fcs/slats-deg</property>
+		<property>/fdm/jsbsim/fcs/slats-deg</property>
 		<factor>1</factor>
     <axis>
       <x1-m>  1.2826 </x1-m>
@@ -879,7 +879,7 @@ if(navStillOn) {
 	<animation><!-- todo best axis -->
 		<type>translate</type>
 		<object-name>slatD</object-name>
-		<property>fdm/jsbsim/fcs/slats-deg</property>
+		<property>/fdm/jsbsim/fcs/slats-deg</property>
 		<factor>0.0073913</factor>
 		<axis>
 			<x>-2.5</x>
@@ -890,7 +890,7 @@ if(navStillOn) {
 	<animation>
 		<type>rotate</type>
 		<object-name>slatD</object-name>
-		<property>fdm/jsbsim/fcs/slats-deg</property>
+		<property>/fdm/jsbsim/fcs/slats-deg</property>
 		<factor>-1</factor>
     <axis>
       <x1-m>  1.2826 </x1-m>
@@ -905,7 +905,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>freinG</object-name>
-    <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
+    <property>/fdm/jsbsim/fcs/speedbrake-pos-deg</property>
     <factor> -65 </factor>
     <axis>
       <x1-m>  2.655 </x1-m>
@@ -920,7 +920,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>freinD</object-name>
-    <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
+    <property>/fdm/jsbsim/fcs/speedbrake-pos-deg</property>
     <factor> 65 </factor>
     <axis>
       <x1-m>  2.655 </x1-m>
@@ -937,7 +937,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorR1</object-name>
-	<property>engines/engine[1]/thrust_lb</property>
+	<property>/engines/engine[1]/thrust_lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>   0 </dep></entry>
@@ -961,7 +961,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorR2</object-name>
-	<property>engines/engine[1]/thrust_lb</property>
+	<property>/engines/engine[1]/thrust_lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>   0 </dep></entry>
@@ -985,7 +985,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorL1</object-name>
-	<property>engines/engine[0]/thrust_lb</property>
+	<property>/engines/engine[0]/thrust_lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>    0 </dep></entry>
@@ -1009,7 +1009,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>airDoorL2</object-name>
-	<property>engines/engine[0]/thrust_lb</property>
+	<property>/engines/engine[0]/thrust_lb</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
       <entry><ind> 0.5 </ind><dep>    0 </dep></entry>
@@ -1034,7 +1034,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>porteA</object-name>
-    <property>gear/gear[0]/position-norm</property>
+    <property>/gear/gear[0]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1.0 </ind><dep> 70 </dep></entry>
@@ -1054,7 +1054,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>porteAG</object-name>
-    <property>gear/gear[0]/position-norm</property>
+    <property>/gear/gear[0]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.15 </ind><dep> -70 </dep></entry>
@@ -1074,7 +1074,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>porteAD</object-name>
-    <property>gear/gear[0]/position-norm</property>
+    <property>/gear/gear[0]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
       <entry><ind> 0.15 </ind><dep> 70 </dep></entry>
@@ -1094,7 +1094,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>porteGH</object-name>
-    <property>gear/gear[1]/position-norm</property>
+    <property>/gear/gear[1]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.15 </ind><dep> -70 </dep></entry>
@@ -1114,7 +1114,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>porteGB1</object-name>
-    <property>gear/gear[1]/position-norm</property>
+    <property>/gear/gear[1]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
       <entry><ind> 0.3 </ind><dep> 105 </dep></entry>
@@ -1133,7 +1133,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>porteGB</object-name>
-    <property>gear/gear[1]/position-norm</property>
+    <property>/gear/gear[1]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
       <entry><ind> 0.3 </ind><dep> 105 </dep></entry>
@@ -1153,7 +1153,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>porteDH</object-name>
-    <property>gear/gear[2]/position-norm</property>
+    <property>/gear/gear[2]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
       <entry><ind> 0.15 </ind><dep> 70 </dep></entry>
@@ -1173,7 +1173,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>porteDB1</object-name>
-    <property>gear/gear[2]/position-norm</property>
+    <property>/gear/gear[2]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.3 </ind><dep> -105 </dep></entry>
@@ -1192,7 +1192,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>porteDB</object-name>
-    <property>gear/gear[2]/position-norm</property>
+    <property>/gear/gear[2]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.3 </ind><dep> -105 </dep></entry>
@@ -1222,7 +1222,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>TrainAvant</object-name>
-    <property>gear/gear[0]/position-norm</property>
+    <property>/gear/gear[0]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> -65 </dep></entry>
       <entry><ind> 1.0 </ind><dep>   0 </dep></entry>
@@ -1250,7 +1250,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>TrainGauche</object-name>
-    <property>gear/gear[1]/position-norm</property>
+    <property>/gear/gear[1]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> -40 </dep></entry>
       <entry><ind> 0.3 </ind><dep> -40 </dep></entry>
@@ -1271,7 +1271,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>TrainGauche</object-name>
-    <property>gear/gear[1]/position-norm</property>
+    <property>/gear/gear[1]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> 95 </dep></entry>
       <entry><ind> 0.5 </ind><dep> 95 </dep></entry>
@@ -1300,7 +1300,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>TrainDroit</object-name>
-    <property>gear/gear[2]/position-norm</property>
+    <property>/gear/gear[2]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> 40 </dep></entry>
       <entry><ind> 0.3 </ind><dep> 40 </dep></entry>
@@ -1321,7 +1321,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>TrainDroit</object-name>
-    <property>gear/gear[2]/position-norm</property>
+    <property>/gear/gear[2]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> 95 </dep></entry>
       <entry><ind> 0.5 </ind><dep> 95 </dep></entry>
@@ -1345,7 +1345,7 @@ if(navStillOn) {
     <object-name>roueA</object-name>
     <object-name>roueA-Fix</object-name>
     <object-name>roueA-Fourche</object-name>
-    <property>gear/gear/steering-norm</property>
+    <property>/gear/gear/steering-norm</property>
     <factor> 55 </factor>
     <center>
       <x-m> -3.8501 </x-m>
@@ -1363,7 +1363,7 @@ if(navStillOn) {
   <animation>
     <type>spin</type>
     <object-name>roueA</object-name>
-    <property>gear/gear[0]/rollspeed-ms</property>
+    <property>/gear/gear[0]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x-m> -3.57038 </x-m>
@@ -1380,7 +1380,7 @@ if(navStillOn) {
   <animation>
     <type>spin</type>
     <object-name>roueG</object-name>
-    <property>gear/gear[1]/rollspeed-ms</property>
+    <property>/gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x-m>  2.08638 </x-m>
@@ -1397,7 +1397,7 @@ if(navStillOn) {
   <animation>
     <type>spin</type>
     <object-name>roueD</object-name>
-    <property>gear/gear[1]/rollspeed-ms</property>
+    <property>/gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x-m>  2.08638 </x-m>
@@ -1627,7 +1627,7 @@ if(navStillOn) {
     <path>Aircraft/Jaguar/Models/Effects/Wash/aircraft_wash.xml</path>
     <condition>
     <equals>
-    <property>controls/state/low_level</property>
+    <property>/controls/state/low_level</property>
     <value>1</value>
     </equals>
     </condition>
@@ -1644,7 +1644,7 @@ if(navStillOn) {
     <path>Aircraft/Jaguar/Models/Effects/Wash/aircraft_wash.xml</path>
     <condition>
       <equals>
-        <property>controls/state/low_level</property>
+        <property>/controls/state/low_level</property>
         <value>1</value>
       </equals>
     </condition>
@@ -1663,7 +1663,7 @@ if(navStillOn) {
     <property>position/altitude-agl-ft</property>
     <condition>
       <equals>
-        <property>controls/state/low_level</property>
+        <property>/controls/state/low_level</property>
         <value>1</value>
       </equals>
     </condition>
