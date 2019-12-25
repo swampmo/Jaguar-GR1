@@ -49,6 +49,8 @@
      <object-name>land-switch-nut</object-name>
      <object-name>side-stick</object-name>
       <object-name>vitre</object-name>
+     <object-name>PanelLight-label</object-name>
+      <object-name>LDG-TAXI-LABEL</object-name>
     <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
       <red>1</red>
