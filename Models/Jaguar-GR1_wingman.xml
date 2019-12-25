@@ -385,7 +385,6 @@ if(navStillOn) {
     <object-name>porteAD</object-name>
     <object-name>anticollUp</object-name>
     <object-name>anticollDown</object-name>
-	<!--object-name>fuelProbe</object-name-->
 	<object-name>fuelProbeDoorFairing</object-name>
 	<object-name>fuelProbeDoor1</object-name>
 	<object-name>fuelProbeDoor2</object-name>
@@ -393,7 +392,6 @@ if(navStillOn) {
 	<object-name>WingFenceR</object-name>
 	<object-name>lampeR</object-name>
 	<object-name>lampeV</object-name>
-
     <object-name>postcomb</object-name>
     <object-name>axeAH</object-name>
     <object-name>roueA</object-name>
@@ -451,9 +449,6 @@ if(navStillOn) {
     <object-name>porteAD</object-name>
 	<object-name>WingFenceL</object-name>
 	<object-name>WingFenceR</object-name>
-
-	<!--object-name>fuelProbe</object-name-->
-
 	<object-name>fuelProbeDoorFairing</object-name>
 	<object-name>fuelProbeDoor1</object-name>
 	<object-name>fuelProbeDoor2</object-name>
@@ -504,8 +499,8 @@ if(navStillOn) {
     </offsets>
   </model>
 
-  <!-- Effets sur le sol -->
-  <!-- Roue avant -->
+  <!-- Ground Effects -->
+  <!-- Front Wheel -->
   <model>
     <path>Aircraft/Jaguar/Models/Effects/Ground/ground0.xml</path>
     <offsets>
@@ -515,7 +510,7 @@ if(navStillOn) {
     </offsets>
   </model>
 
-  <!-- Roue gauche -->
+  <!-- Left Wheel -->
   <model>
     <path>Aircraft/Jaguar/Models/Effects/Ground/ground1.xml</path>
     <offsets>
@@ -525,7 +520,7 @@ if(navStillOn) {
     </offsets>
   </model>
 
-  <!-- Roue droite -->
+  <!-- Right Wheel -->
   <model>
     <path>Aircraft/Jaguar/Models/Effects/Ground/ground2.xml</path>
     <offsets>
@@ -535,8 +530,8 @@ if(navStillOn) {
     </offsets>
   </model>
 
-  <!-- Poussière -->
-  <!-- Gauche -->
+  <!-- Dust -->
+  <!-- Left -->
   <model>
     <path>Aircraft/Jaguar/Models/Effects/Smoke/smokeL.xml</path>
     <offsets>
@@ -546,7 +541,7 @@ if(navStillOn) {
     </offsets>
   </model>
 
-  <!-- Droite -->
+  <!-- Right -->
   <model>
     <path>Aircraft/Jaguar/Models/Effects/Smoke/smokeR.xml</path>
     <offsets>
@@ -557,8 +552,8 @@ if(navStillOn) {
   </model>
 
 
-  <!-- Les flammes -->
-  <!-- Gauche -->
+  <!-- Flames -->
+  <!-- Left -->
   <model>
    <name>AB_Flame 1</name>
     <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
@@ -627,7 +622,7 @@ if(navStillOn) {
 
 
 
- <!-- Droite -->
+ <!-- Right -->
 
   <animation>
     <type>scale</type>
@@ -660,7 +655,7 @@ if(navStillOn) {
   </animation>
 
 
-  <!-- Gauche -->
+  <!-- Left -->
   <model>
     <path>Aircraft/Jaguar/Models/Effects/Tiptrail/tiptrail.xml</path>
     <offsets>
@@ -670,7 +665,7 @@ if(navStillOn) {
     </offsets>
   </model>
 
-  <!-- Droite -->
+  <!-- Right -->
   <model>
     <path>Aircraft/Jaguar/Models/Effects/Tiptrail/tiptrail.xml</path>
     <offsets>
@@ -680,7 +675,7 @@ if(navStillOn) {
     </offsets>
   </model>
 
-  <!-- Gauche -->
+  <!-- Left -->
   <model>
     <path>Aircraft/Jaguar/Models/Effects/Trail/trailL.xml</path>
     <offsets>
@@ -690,7 +685,7 @@ if(navStillOn) {
     </offsets>
   </model>
 
-  <!-- Droite -->
+  <!-- Right -->
   <model>
     <path>Aircraft/Jaguar/Models/Effects/Trail/trailR.xml</path>
     <offsets>
@@ -700,7 +695,7 @@ if(navStillOn) {
     </offsets>
   </model>
 
-  <!-- Rentré des roues Temporairement disparition/apparition des roues -->
+  <!-- Temporary appearance/disappearance of ldg gear Wheels -->
   <animation>
     <type>select</type>
     <object-name>axeAH</object-name>
@@ -721,7 +716,7 @@ if(navStillOn) {
     </condition>
   </animation>
 
-  <!-- Gouverne de direction -->
+  <!-- Rudder -->
   <animation>
     <type>rotate</type>
     <object-name>direction</object-name>
@@ -737,7 +732,7 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  <!-- Gouverne de profondeur -->
+  <!-- Elevators -->
 
   <animation>
     <type>rotate</type>
@@ -771,7 +766,7 @@ if(navStillOn) {
 
 
 
-  <!-- Animations des ailerons -->
+  <!-- Aileron Animation -->
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
@@ -802,7 +797,7 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  <!-- Volets -->
+  <!-- Flaps -->
   <animation>
     <type>rotate</type>
     <object-name>voletG</object-name>
@@ -932,7 +927,7 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  <!-- Animation des entrees d'air additionnelles -->
+  <!-- Air Inlet Flap Animation -->
 
   <animation>
     <type>rotate</type>
@@ -1030,7 +1025,7 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  <!-- Animation des portes des trains -->
+  <!-- Animation of Gear Doors -->
   <animation>
     <type>rotate</type>
     <object-name>porteA</object-name>
@@ -1209,8 +1204,8 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  <!-- Rentré des roues -->
-  <!-- Train avant -->
+  <!-- Gear Up -->
+  <!-- Front Ldg Gear -->
   <animation>
     <name>TrainAvant</name>
     <object-name>roueA</object-name>
@@ -1239,7 +1234,7 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  <!-- Train gauche -->
+  <!-- Left Ldg Gear -->
   <animation>
     <name>TrainGauche</name>
     <object-name>roueG</object-name>
@@ -1289,7 +1284,7 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  <!-- Train droit -->
+  <!-- Right Ldg Gear -->
   <animation>
     <name>TrainDroit</name>
     <object-name>roueD</object-name>
@@ -1339,7 +1334,7 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  <!-- Rotation de la roue avant en fonction de la gouverne de direction -->
+  <!-- Nose Wheel Steering with the Rudder -->
   <animation>
     <type>rotate</type>
     <object-name>roueA</object-name>
@@ -1359,7 +1354,7 @@ if(navStillOn) {
     </axis>
   </animation>
 
-  <!-- Rotation des roues lors du roulage -->
+  <!-- Wheel Rotation when Rolling -->
   <animation>
     <type>spin</type>
     <object-name>roueA</object-name>

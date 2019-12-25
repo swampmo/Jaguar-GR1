@@ -70,6 +70,28 @@
     <texture>nikkon.png</texture>
   </animation>
 
+ <animation>
+  <type>select</type> 
+   <object-name>Green-Light-on</object-name>
+    <condition>	  		
+    <property>/systems/refuel/contact</property>
+   <value>1</value>
+  </condition>
+ </animation>
+
+  <animation>
+     <type>material</type>
+      <object-name>Green-Light-on</object-name>
+       <emission>
+        <factor-prop>/systems/refuel/contact</factor-prop>
+         <value>1</value>
+           <red>1</red>
+          <green>1</green>
+        <blue>1</blue>
+     </emission>
+    <texture>nikkon.png</texture>
+  </animation>
+
 <!--#################################################" MMB Adjustment ############################################" -->
 
     <animation>

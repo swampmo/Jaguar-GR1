@@ -980,12 +980,21 @@ if(navStillOn) {
       <z2-m> -0.12 </z2-m>
     </axis>
 	</animation>
-
+                <!-- Speed-Brakes -->
   <animation>
     <type>rotate</type>
     <object-name>freinG</object-name>
     <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
-    <factor> -65 </factor>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0.0</dep>
+		 </entry>
+		 <entry>
+			 <ind>1.0</ind>
+			 <dep>-65.0</dep>
+		 </entry>
+	 </interpolation>
     <axis>
       <x1-m>  2.655 </x1-m>
       <y1-m> -0.707 </y1-m>
@@ -1000,7 +1009,16 @@ if(navStillOn) {
     <type>rotate</type>
     <object-name>freinD</object-name>
     <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
-    <factor> 65 </factor>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0.0</dep>
+		 </entry>
+		 <entry>
+			 <ind>1.0</ind>
+			 <dep>65.0</dep>
+		 </entry>
+	 </interpolation>
     <axis>
       <x1-m>  2.655 </x1-m>
       <y1-m>  0.707 </y1-m>
@@ -1681,17 +1699,6 @@ if(navStillOn) {
 		</axis>
 	</animation>
 
-	<!--animation>
-		<type>select</type>
-		<object-name>heliceR</object-name>
-		<condition>
-				<greater-than>
-					<property>engines/engine[1]/n1</property>
-					<value>1</value>
-				</greater-than>
-		</condition>
-	</animation-->
-
 	<animation>
 		<type>spin</type>
 		<object-name>Helice-R-1</object-name>
@@ -1720,10 +1727,6 @@ if(navStillOn) {
 	    <z-m>0</z-m>
     </offsets>
   </model>
-
-
-
-
 
  chute
   <model>
