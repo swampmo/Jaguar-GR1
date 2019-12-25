@@ -147,7 +147,7 @@
 	 <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/engine_outlet_1.xml</path>
 	 
 	 <offsets>
-		 <x-m>-0.090</x-m>
+		 <x-m>-0.060</x-m>
 		 <y-m> 0.000</y-m>
 		 <z-m> 0.060</z-m>
 		 <pitch-deg>0</pitch-deg>
@@ -159,7 +159,7 @@
 	 <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/engine_outlet_2.xml</path>
 	 
 	 <offsets>
-		 <x-m>-0.090</x-m>
+		 <x-m>-0.060</x-m>
 		 <y-m> 0.960</y-m>
 		 <z-m> 0.060</z-m>
 		 <pitch-deg>0</pitch-deg>
@@ -586,15 +586,15 @@
     </offsets>
   </model>
   
-  <!--model>
+  <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ulp/ulp.xml</path>
     <offsets>
-      <x-m> -3.32 </x-m>
-      <y-m> 0 </y-m>
-      <z-m>  -0.02</z-m>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000</z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
-  </model-->
+  </model>
   
   <model>
     <name>vertspeed</name>

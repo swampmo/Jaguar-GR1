@@ -2,7 +2,78 @@
 <PropertyList>
 
 	<path>ulp.ac</path>
+  <animation>
+    <object-name>COM</object-name>
+    <object-name>DR</object-name>
+    <object-name>GPS</object-name>
+    <object-name>GS</object-name>
+    <object-name>LL</object-name>
+    <object-name>MV</object-name>
+    <object-name>NE</object-name>
+    <object-name>PP</object-name>
+    <object-name>STS</object-name>
+    <object-name>TAC</object-name>
+    <object-name>TX</object-name>
+    <object-name>TXT</object-name>
+    <object-name>UTM</object-name>
+    <object-name>WND</object-name>
+    <object-name>button0</object-name>
+    <object-name>button1</object-name>
+    <object-name>button2</object-name>
+    <object-name>button3</object-name>
+    <object-name>button4</object-name>
+    <object-name>button5</object-name>
+    <object-name>button6</object-name>
+    <object-name>button7</object-name>
+    <object-name>button8</object-name>
+    <object-name>button9</object-name>
+    <object-name>clr</object-name>
+    <object-name>ent</object-name>
+    <object-name>greenbulb</object-name>
+    <object-name>knob</object-name>
+    <object-name>nextwpt</object-name>
+    <object-name>setwpt</object-name>
+  </animation>
 
+  <animation>
+   <type>material</type>
+    <object-name>COM</object-name>
+    <object-name>DR</object-name>
+    <object-name>GPS</object-name>
+    <object-name>GS</object-name>
+    <object-name>LL</object-name>
+    <object-name>MV</object-name>
+    <object-name>NE</object-name>
+    <object-name>PP</object-name>
+    <object-name>STS</object-name>
+    <object-name>TAC</object-name>
+    <object-name>TX</object-name>
+    <object-name>TXT</object-name>
+    <object-name>UTM</object-name>
+    <object-name>WND</object-name>
+    <object-name>button0</object-name>
+    <object-name>button1</object-name>
+    <object-name>button2</object-name>
+    <object-name>button3</object-name>
+    <object-name>button4</object-name>
+    <object-name>button5</object-name>
+    <object-name>button6</object-name>
+    <object-name>button7</object-name>
+    <object-name>button8</object-name>
+    <object-name>button9</object-name>
+    <object-name>clr</object-name>
+    <object-name>ent</object-name>
+    <object-name>greenbulb</object-name>
+    <object-name>knob</object-name>
+    <object-name>nextwpt</object-name>
+    <object-name>setwpt</object-name>
+    <emission>
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+    </emission>
+  </animation>
 	
 
 </PropertyList>
