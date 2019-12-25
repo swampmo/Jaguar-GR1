@@ -62,6 +62,8 @@
         <object-name>^5</object-name>
         <object-name>bos3</object-name>
         <object-name>max</object-name>
+        <object-name>greenbulbs</object-name>
+        <object-name>°</object-name>
 		<object-name>optical-device</object-name>
     <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>

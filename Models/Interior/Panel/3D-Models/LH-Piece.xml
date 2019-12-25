@@ -28,6 +28,8 @@
       <object-name>screws</object-name>
      <object-name>side-stick</object-name>
       <object-name>vitre</object-name>
+     <object-name>PanelLight-Label</object-name>
+      <object-name>LDG-TAXI-LABEL</object-name>
    </animation>
 
  <animation>
@@ -40,7 +42,6 @@
       <object-name>Rudder-Trim-nut</object-name>
      <object-name>Toggle</object-name>
      <object-name>Toggles</object-name>
-      <object-name>Trigger</object-name>
      <object-name>Trim</object-name>
      <object-name>base</object-name>
      <object-name>knob-setclr-1</object-name>
@@ -49,13 +50,13 @@
      <object-name>land-switch-nut</object-name>
      <object-name>side-stick</object-name>
       <object-name>vitre</object-name>
-     <object-name>PanelLight-label</object-name>
+     <object-name>PanelLight-Label</object-name>
       <object-name>LDG-TAXI-LABEL</object-name>
     <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-      <red>1</red>
-      <green>1</green>
-      <blue>1</blue>
+      <red>0.9</red>
+      <green>0.9</green>
+      <blue>0.9</blue>
     </emission>
    </animation>
 
@@ -176,7 +177,7 @@
 
 	<animation>
 		<type>pick</type>
-		<invisible>true</invisible>
+		<visible>false</visible>
 		<object-name>Lts-Dim</object-name>
 		<action>
 			<button>0</button>
@@ -193,7 +194,7 @@
 
 	<animation>
 		<type>pick</type>
-		<invisible>true</invisible>
+		<visible>false</visible>
 		<object-name>Lts-Brt</object-name>
 		<action>
 			<button>0</button>
