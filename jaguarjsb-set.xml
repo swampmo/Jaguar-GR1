@@ -793,6 +793,10 @@
       <file>Aircraft/Jaguar/Nasal/MiscRwr.nas</file>
     </rwr>
 
+    <hud>
+      <file>Aircraft/Jaguar/Nasal/hud.nas</file>
+    </hud>
+
     <radar>
       <file>Aircraft/Jaguar/Nasal/radar.nas</file>
     </radar>
