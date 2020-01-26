@@ -44,7 +44,7 @@ All measurements below are in English measurements (feet/pounds), per the FG wik
  <submodel>
     <name>M-61 20 mm cannon</name>
     <model>Aircraft/Jaguar/Models/Effects/guns/apibullet-tracer.xml</model>
-    <trigger>controls/armament/trigger</trigger>
+    <trigger>controls/armament/trigger-gun</trigger>
     <speed>3380.0</speed>
     <repeat>true</repeat>
     <delay>0.3</delay>
@@ -69,7 +69,7 @@ All measurements below are in English measurements (feet/pounds), per the FG wik
   <submodel>
     <name>M-61 20 mm cannon</name>
     <model>Aircraft/Jaguar/Models/Effects/guns/apibullet-tracer.xml</model>
-    <trigger>controls/armament/trigger</trigger>
+    <trigger>controls/armament/trigger-gun</trigger>
     <speed>3380.0</speed>
     <repeat>true</repeat>
     <delay>0.3</delay>

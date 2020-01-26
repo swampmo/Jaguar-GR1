@@ -17,7 +17,7 @@
         <label>Reload Gun</label>
         <binding>
           <command>nasal</command>
-          <script>guns.reload_Cannon()</script>
+          <script>pylons.cannon_load();</script>
         </binding>
       </item>
 
