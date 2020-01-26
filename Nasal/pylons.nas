@@ -118,3 +118,13 @@ var bore = 0;
 if (fcs!=nil) {
     bore_loop();
 }
+
+
+
+
+# swamp TODO list:
+#
+# find coords of each pylon and enter them into the abov pylon declarations
+# add JSB pointmasses for those coords
+# add more weapons, fuel tanks and smokewinders. Plus get correct loadout options for each pylon
+# 
