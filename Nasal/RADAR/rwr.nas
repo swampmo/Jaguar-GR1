@@ -19,9 +19,11 @@ RWRCanvas = {
         rwr.fadeTime = 7;#seconds
         rwr.rootCenter = root.createChild("group")
                 .setTranslation(center[0],center[1]);
+        rwr.rootCenter.setRotation(-45*D2R);
         var rootOffset = root.createChild("group")
                 .setTranslation(center[0]-diameter/2,center[1]-diameter/2);
-        
+        rootOffset.setCenter(diameter/2,diameter/2);        
+        rootOffset.setRotation(-45*D2R);
 #        root.createChild("path")
 #           .moveTo(0, diameter/2)
 #           .arcSmallCW(diameter/2, diameter/2, 0, diameter, 0)
@@ -377,7 +379,7 @@ RWRCanvas = {
             } else {
                 continue;
             }
-            if (me.contact[0].get_range() > 170) {
+            if (me.contact[0].get_range() > 110) {
                 continue;
             }
             me.dev = -geo.normdeg180(me.contact[0].get_bearing()-getprop("orientation/heading-deg"))+90;
