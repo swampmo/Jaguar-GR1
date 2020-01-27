@@ -1753,12 +1753,6 @@
 			<file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/clock/chronograph.nas</file>
 		</chronograph>
 
-     <rwr>
-      <!-- <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> -->
-      <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
-
-      <file>Aircraft/Jaguar/Nasal/MiscRwr.nas</file>
-    </rwr>
 
     <hud>
       <file>Aircraft/Jaguar/Nasal/hud.nas</file>
@@ -1773,6 +1767,10 @@
       <file>Aircraft/Jaguar/Nasal/RADAR/target_class.nas</file>
       <file>Aircraft/Jaguar/Nasal/RADAR/radarTool.nas</file>
     </radar>
+    
+    <rwr>
+      <file>Aircraft/Jaguar/Nasal/RADAR/rwr.nas</file>
+    </rwr>
     
     <myradar>
       <file>Aircraft/Jaguar/Nasal/RADAR/main.nas</file>

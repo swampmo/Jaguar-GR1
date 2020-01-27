@@ -340,7 +340,7 @@ var Radar = {
         var loop_Update = func() {
             
             #rwr stuff
-            if (rwr.rwr != nil) {
+            if (rwr.rwr != nil) {#rwr.rwr
               if (size(rwrList)>0) {
                 rwr.rwr.update(rwrList,"normal");
               } else {
@@ -1314,7 +1314,7 @@ var RWR_APG = {
 #             print("Will test  : "~ me.u.get_Callsign()~" as Type: " ~ me.u.type);
             me.rn = me.u.get_range();
             me.l16 = 0;
-            if (me.u.isFriend() or me.rn > 150) {
+            if (me.u.isFriend() or me.rn > 110) {
                 me.l16 = 1;
             }
             me.bearing = geo.aircraft_position().course_to(me.u.get_Coord());
@@ -1324,7 +1324,9 @@ var RWR_APG = {
             me.inv_bearing =  me.bearing+180;
             me.deviation = me.inv_bearing - me.heading;
             me.dev = math.abs(geo.normdeg180(me.deviation));
-            if (me.u.get_display()) {
+            if (!me.NotBeyondHorizon(me.u) or !me.isNotBehindTerrain(me.u)) {
+                me.show = 0;
+            } elsif (me.u.get_display()) {
                 me.show = 1;#in radar cone
             } elsif(me.HasTransponderOn(me.u)){
               # transponder on
@@ -1335,7 +1337,7 @@ var RWR_APG = {
               me.rwrTargetAzimuth = me.TargetWhichRadarAzimut(me.u);
               #print(me.rwrTargetAzimuth);
               
-              if (((me.rdrAct != nil and me.rdrAct.getValue()!=1) or me.rdrAct == nil) and math.abs(geo.normdeg180(me.deviation)) < me.rwrTargetAzimuth and me.NotBeyondHorizon(me.u) and me.isNotBehindTerrain(me.u) ) {
+              if (((me.rdrAct != nil and me.rdrAct.getValue()!=1) or me.rdrAct == nil) and math.abs(geo.normdeg180(me.deviation)) < 60) {
                   # we detect its radar is pointed at us and active
                   me.show = 1;
               }
@@ -1345,7 +1347,7 @@ var RWR_APG = {
             
             if (me.show == 1) {
                 me.threat = 0;
-                if (me.u.get_model() != "missile_frigate" and me.u.propNode.getName() != "carrier" and me.u.get_model() != "fleet" and me.u.get_model() != "buk-m2") {
+                if (me.u.get_model() != "missile_frigate" and me.u.propNode.getName() != "carrier" and me.u.get_model() != "fleet" and me.u.get_model() != "buk-m2" and me.u.get_model() != "s-300") {
                     me.threat += ((180-me.dev)/180)*0.30;
                     me.spd = (60-me.u.get_Speed())/60;
                     me.threat -= me.spd>0?me.spd:0;
@@ -1355,7 +1357,7 @@ var RWR_APG = {
                     me.threat += 0.30;
                 }
                 me.danger = 50;
-                if (me.u.get_model() == "missile_frigate" or me.u.get_model() == "fleet") {
+                if (me.u.get_model() == "missile_frigate" or me.u.get_model() == "fleet" or me.u.get_model() == "s-300") {
                     me.danger = 75
                 } elsif (me.u.get_model() == "buk-m2") {
                     me.danger = 35;
