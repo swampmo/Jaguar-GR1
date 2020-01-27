@@ -146,7 +146,7 @@ var RadarTool = {
       #print("In the doppler");
       if(pylons.fcs.getSelectedWeapon() != nil){
         #print("pylons.fcs.getSelectedWeapon() != nil");
-        if(pylons.fcs.getSelectedWeapon().type != "30mm Cannon"){
+        if(pylons.fcs.getSelectedWeapon().type != "20mm Cannon"){
           #print("pylons.fcs.getSelectedWeapon().guidance:" ~pylons.fcs.getSelectedWeapon().guidance);
           if(pylons.fcs.getSelectedWeapon().guidance =="radiation"){
             #print( "Is radiating :" ~ SelectedObject.isRadiating(me.MyCoord));

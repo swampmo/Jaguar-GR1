@@ -340,7 +340,7 @@ var Radar = {
         var loop_Update = func() {
             
             #rwr stuff
-            if (rwr.rwr != nil) {
+            if (nil != nil) {#rwr.rwr
               if (size(rwrList)>0) {
                 rwr.rwr.update(rwrList,"normal");
               } else {
