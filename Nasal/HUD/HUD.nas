@@ -1481,7 +1481,7 @@ var HUD = {
   
   # flight path vector (FPV)
   display_Fpv:func(){
-    me.fpvCalc = HudMath.getFlightPathIndicatorPosWind();
+    me.fpvCalc = HudMath.getFlightPathIndicatorPos();
     me.fpv.setTranslation(me.fpvCalc);
     if(me.input.AutopilotStatus.getValue()=="AP1"){
       me.AutopilotStar.setTranslation(me.fpvCalc);
