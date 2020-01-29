@@ -174,6 +174,8 @@ var HUD = {
     m.MaxTarget = 30;
     
     m.myGreen = [m.red,m.green,m.blue,1];
+    m.myLineWidth = 1.4;
+    m.myFontSize = 1.2;
     
 #     .setColor(m.myGreen)
     
@@ -189,7 +191,7 @@ var HUD = {
         m.canvas.createGroup()
                 .setTranslation(HudMath.getCenterOrigin())
                 .set("font", "LiberationFonts/LiberationMono-Regular.ttf")
-                .setDouble("character-size", 18)
+                .setDouble("character-size",m.myFontSize* 18)
                 .setDouble("character-aspect-ration", 0.9);
 #     m.root.setColor(m.red,m.green,m.blue,1);
 
@@ -202,7 +204,7 @@ var HUD = {
             .setAlignment("center-center")
             .setTranslation(0, 70)
             .setColor(m.myGreen)
-            .setDouble("character-size", 42);
+            .setDouble("character-size",m.myFontSize* 42);
             
             
     #fpv
@@ -217,12 +219,12 @@ var HUD = {
         .horiz(-40)
         .moveTo(0, -15)
         .vert(-15)
-        .setStrokeLineWidth(4);
+        .setStrokeLineWidth(m.myLineWidth*4);
         
   m.AutopilotStar = m.root.createChild("text")
     .setColor(m.myGreen)
     .setTranslation(150,0)
-    .setDouble("character-size", 50)
+    .setDouble("character-size",m.myFontSize* 50)
     .setAlignment("center-center")
     .setText("*"); 
         
@@ -232,7 +234,7 @@ var HUD = {
   m.HouseSize = 4;
   m.HeadingHouse = m.root.createChild("path")
     .setColor(m.myGreen)
-    .setStrokeLineWidth(5)
+    .setStrokeLineWidth(m.myLineWidth*5)
     .moveTo(-20,0)
     .vert(-30)
     .lineTo(0,-50)
@@ -247,14 +249,14 @@ var HUD = {
   m.LeftChevron = m.chevronGroup.createChild("text")
   .setColor(m.myGreen)
   .setTranslation(-150,0)
-  .setDouble("character-size", 60)
+  .setDouble("character-size",m.myFontSize* 60)
   .setAlignment("center-center")
   .setText(">");    
   
   m.RightChevron = m.chevronGroup.createChild("text")
     .setColor(m.myGreen)
     .setTranslation(150,0)
-    .setDouble("character-size", 60)
+    .setDouble("character-size",m.myFontSize* 60)
     .setAlignment("center-center")
     .setText("<");   
    
@@ -266,7 +268,7 @@ var HUD = {
       .horiz(40)
       .moveTo(0, -20)
       .vert(40)
-      .setStrokeLineWidth(4);
+      .setStrokeLineWidth(m.myLineWidth*4);
                    
                    
     #WP cross
@@ -280,7 +282,7 @@ var HUD = {
       .vert(12)
       .moveTo(0, 8)
       .vert(12)
-      .setStrokeLineWidth(4);
+      .setStrokeLineWidth(m.myLineWidth*4);
                    
 
                    
@@ -295,7 +297,7 @@ var HUD = {
       .setColor(m.myGreen)
       .moveTo(-1000, 0)
       .horiz(2000)
-      .setStrokeLineWidth(4);
+      .setStrokeLineWidth(m.myLineWidth*4);
                    
     #ILS stuff
     m.ILS_Scale_dependant = m.horizon_sub_group.createChild("group");
@@ -305,7 +307,7 @@ var HUD = {
       .setColor(m.myGreen)
       .move(0,0)
       .vert(-30)
-      .setStrokeLineWidth(6);   
+      .setStrokeLineWidth(m.myLineWidth*6);   
                     
     m.ILS_localizer_deviation = m.ILS_Scale_dependant.createChild("path")
       .setColor(m.myGreen)
@@ -313,7 +315,7 @@ var HUD = {
       .vert(1500)
       .setStrokeDashArray([30, 30, 30, 30, 30]) 
       #.setCenter(0.0)
-      .setStrokeLineWidth(5);                  
+      .setStrokeLineWidth(m.myLineWidth*5);                  
     m.ILS_localizer_deviation.setCenter(0,0);
     
     #Part of the ILS not dependant of the SCALE
@@ -325,20 +327,20 @@ var HUD = {
       .horiz(50)
       .vert(-50)
       .horiz(-50)
-      .setStrokeLineWidth(6);
+      .setStrokeLineWidth(m.myLineWidth*6);
     #Landing Brackets
     m.brackets = m.ILS_Scale_Independant.createChild("group");
     m.LeftBracket = m.brackets.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(-140,0)
-      .setDouble("character-size", 60)
+      .setDouble("character-size",m.myFontSize* 60)
       .setAlignment("center-center")
       .setText("]");    
   
     m.RightBracket = m.brackets.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(140,0)
-      .setDouble("character-size", 60)
+      .setDouble("character-size",m.myFontSize* 60)
       .setAlignment("center-center")
       .setText("["); 
     
@@ -355,14 +357,14 @@ var HUD = {
           .setColor(m.myGreen)
           .setAlignment("right-center")
           .setTranslation(-m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*myladder)
-          .setDouble("character-size", 30)
+          .setDouble("character-size",m.myFontSize* 30)
           .setText(myladder);
         #Text bellow 0 left
         m.horizon_sub_group.createChild("text")
           .setColor(m.myGreen)
           .setAlignment("left-center")
           .setTranslation(m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*myladder)
-          .setDouble("character-size", 30)
+          .setDouble("character-size",m.myFontSize* 30)
           .setText(myladder);
 
         #Text above 0 left         
@@ -370,14 +372,14 @@ var HUD = {
           .setColor(m.myGreen)
           .setAlignment("right-center")
           .setTranslation(-m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*-myladder)
-          .setDouble("character-size", 30)
+          .setDouble("character-size",m.myFontSize* 30)
           .setText(myladder); 
         #Text above 0 right   
         m.horizon_sub_group.createChild("text")
           .setColor(m.myGreen)
           .setAlignment("left-center")
           .setTranslation(m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*-myladder)
-          .setDouble("character-size", 30)
+          .setDouble("character-size",m.myFontSize* 30)
           .setText(myladder);
       }
       
@@ -387,46 +389,46 @@ var HUD = {
       .setColor(m.myGreen)
       .moveTo(-m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*myladder)
       .vert(-m.maxladderspan/15)
-      .setStrokeLineWidth(4); 
+      .setStrokeLineWidth(m.myLineWidth*4); 
                    
     m.horizon_sub_group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(-m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*myladder)
       .horiz(m.maxladderspan*2/15)
-      .setStrokeLineWidth(4);             
+      .setStrokeLineWidth(m.myLineWidth*4);             
     m.horizon_sub_group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(-abs(m.maxladderspan - m.maxladderspan*2/15*2), HudMath.getPixelPerDegreeAvg(m.ladderScale)*myladder)
       .horiz(m.maxladderspan*2/15)
-      .setStrokeLineWidth(4);    
+      .setStrokeLineWidth(m.myLineWidth*4);    
     m.horizon_sub_group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(-abs(m.maxladderspan - m.maxladderspan*2/15*4), HudMath.getPixelPerDegreeAvg(m.ladderScale)*myladder)
       .horiz(m.maxladderspan*2/15)
-      .setStrokeLineWidth(4);
+      .setStrokeLineWidth(m.myLineWidth*4);
                   
     #half line (rigt part)       ------------------   
     m.horizon_sub_group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*myladder)
       .vert(-m.maxladderspan/15)
-      .setStrokeLineWidth(4); 
+      .setStrokeLineWidth(m.myLineWidth*4); 
                    
     m.horizon_sub_group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*myladder)
       .horiz(-m.maxladderspan*2/15)
-      .setStrokeLineWidth(4);             
+      .setStrokeLineWidth(m.myLineWidth*4);             
     m.horizon_sub_group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(abs(m.maxladderspan - m.maxladderspan*2/15*2), HudMath.getPixelPerDegreeAvg(m.ladderScale)*myladder)
       .horiz(-m.maxladderspan*2/15)
-      .setStrokeLineWidth(4);    
+      .setStrokeLineWidth(m.myLineWidth*4);    
     m.horizon_sub_group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(abs(m.maxladderspan - m.maxladderspan*2/15*4), HudMath.getPixelPerDegreeAvg(m.ladderScale)*myladder)
       .horiz(-m.maxladderspan*2/15)
-      .setStrokeLineWidth(4);              
+      .setStrokeLineWidth(m.myLineWidth*4);              
                   
                   
   
@@ -436,25 +438,25 @@ var HUD = {
       .setColor(m.myGreen)
       .moveTo(-m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*-myladder)
       .vert(m.maxladderspan/15)
-      .setStrokeLineWidth(4); 
+      .setStrokeLineWidth(m.myLineWidth*4); 
                    
     m.horizon_sub_group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(-m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*-myladder)
       .horiz(m.maxladderspan/3*2)
-      .setStrokeLineWidth(4);             
+      .setStrokeLineWidth(m.myLineWidth*4);             
           
     #half line (rigt part)       ------------------           
     m.horizon_sub_group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*-myladder)
       .horiz(-m.maxladderspan/3*2)
-      .setStrokeLineWidth(4);            
+      .setStrokeLineWidth(m.myLineWidth*4);            
     m.horizon_sub_group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(m.maxladderspan, HudMath.getPixelPerDegreeAvg(m.ladderScale)*-myladder)
       .vert(m.maxladderspan/15)
-      .setStrokeLineWidth(4); 
+      .setStrokeLineWidth(m.myLineWidth*4); 
                    
 
    }           
@@ -467,36 +469,36 @@ var HUD = {
       .horiz(m.maxladderspan)
       .moveTo(0, 0)
       .vert(-m.maxladderspan/15*2)
-      .setStrokeLineWidth(6);
+      .setStrokeLineWidth(m.myLineWidth*6);
     
 #     m.InvertedT = m.root.createChild("path")
 #                       .moveTo(-m.maxladderspan/2, HudMath.getCenterPosFromDegs(0,-13)[1])
 #                       .horiz(m.maxladderspan)
 #                       .moveTo(0, HudMath.getCenterPosFromDegs(0,-13)[1])
 #                       .vert(-m.maxladderspan/15*2)
-#                       .setStrokeLineWidth(4);  
+#                       .setStrokeLineWidth(m.myLineWidth*4);  
                    
                    
     #m.horizon_sub_group.createChild("path")
                    #.moveTo(-100, HudMath.getPixelPerDegreeAvg(5)*-5)
                    #.horiz(200)
-                   #.setStrokeLineWidth(4);               
+                   #.setStrokeLineWidth(m.myLineWidth*4);               
  #   m.horizon_sub_group.createChild("path")
 #                   .moveTo(-100, HudMath.getPixelPerDegreeAvg(10)*10)
 #                   .horiz(200)
-#                   .setStrokeLineWidth(4);
+#                   .setStrokeLineWidth(m.myLineWidth*4);
 #    m.horizon_sub_group.createChild("path")
 #                   .moveTo(-100, HudMath.getPixelPerDegreeAvg(10)*-10)
 #                   .horiz(200)
-#                   .setStrokeLineWidth(4);
+#                   .setStrokeLineWidth(m.myLineWidth*4);
 #    m.horizon_sub_group.createChild("path")
 #                   .moveTo(-100, HudMath.getPixelPerDegreeAvg(15)*15)
 #                   .horiz(200)
-#                   .setStrokeLineWidth(4);
+#                   .setStrokeLineWidth(m.myLineWidth*4);
 #    m.horizon_sub_group.createChild("path")
 #                   .moveTo(-100, HudMath.getPixelPerDegreeAvg(15)*-15)
 #                   .horiz(200)
-#                   .setStrokeLineWidth(4);
+#                   .setStrokeLineWidth(m.myLineWidth*4);
               
     m.headScaleTickSpacing = 45;           
     m.headScaleVerticalPlace = -450;
@@ -526,14 +528,14 @@ var HUD = {
     .vert(-5)
     .moveTo(m.headScaleTickSpacing*3, m.headScaleVerticalPlace)
     .vert(-5)
-    .setStrokeLineWidth(5)
+    .setStrokeLineWidth(m.myLineWidth*5)
     .show();
     
     #Heading middle number on horizon line
     me.hdgMH = m.headingScaleGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(0,m.headScaleVerticalPlace -15)
-      .setDouble("character-size", 30)
+      .setDouble("character-size",m.myFontSize* 30)
       .setAlignment("center-bottom")
       .setText("0"); 
                    
@@ -541,7 +543,7 @@ var HUD = {
       me.hdgLH = m.headingScaleGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation(-m.headScaleTickSpacing*2,m.headScaleVerticalPlace -15)
-        .setDouble("character-size", 30)
+        .setDouble("character-size",m.myFontSize* 30)
         .setAlignment("center-bottom")
         .setText("350");           
 
@@ -549,7 +551,7 @@ var HUD = {
       me.hdgRH = m.headingScaleGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation(m.headScaleTickSpacing*2,m.headScaleVerticalPlace -15)
-        .setDouble("character-size", 30)
+        .setDouble("character-size",m.myFontSize* 30)
         .setAlignment("center-bottom")
         .setText("10");    
           
@@ -557,7 +559,7 @@ var HUD = {
       me.hdgRRH = m.headingScaleGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation(m.headScaleTickSpacing*4,m.headScaleVerticalPlace -15)
-        .setDouble("character-size", 30)
+        .setDouble("character-size",m.myFontSize* 30)
         .setAlignment("center-bottom")
         .setText("20");          
 
@@ -567,7 +569,7 @@ var HUD = {
     m.TriangleSize = 4;
     m.head_scale_route_pointer = m.headingStuff.createChild("path")
       .setColor(m.myGreen)
-      .setStrokeLineWidth(3)
+      .setStrokeLineWidth(m.myLineWidth*3)
       .moveTo(0, m.headScaleVerticalPlace)
       .lineTo(m.TriangleSize*-5/2, (m.headScaleVerticalPlace)+(m.TriangleSize*5))
       .lineTo(m.TriangleSize*5/2,(m.headScaleVerticalPlace)+(m.TriangleSize*5))
@@ -578,7 +580,7 @@ var HUD = {
     #a line representthe middle and the actual heading
     m.heading_pointer_line = m.headingStuff.createChild("path")
       .setColor(m.myGreen)
-      .setStrokeLineWidth(4)
+      .setStrokeLineWidth(m.myLineWidth*4)
       .moveTo(0, m.headScaleVerticalPlace + 2)
       .vert(20);
     
@@ -588,14 +590,14 @@ var HUD = {
     me.Speed = m.speedAltGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(- m.maxladderspan,m.headScaleVerticalPlace)
-      .setDouble("character-size", 50)
+      .setDouble("character-size",m.myFontSize* 50)
       .setAlignment("right-bottom")
       .setText("0"); 
           
     me.Speed_Mach = m.speedAltGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(- m.maxladderspan,m.headScaleVerticalPlace+25)
-      .setDouble("character-size", 30)
+      .setDouble("character-size",m.myFontSize* 30)
       .setAlignment("right-bottom")
       .setText("0"); 
           
@@ -603,7 +605,7 @@ var HUD = {
      # Heading right right number on horizon line
      me.hundred_feet_Alt = m.speedAltGroup.createChild("text")
           .setTranslation(m.maxladderspan + 60 ,m.headScaleVerticalPlace)
-          .setDouble("character-size", 50)
+          .setDouble("character-size",m.myFontSize* 50)
           .setAlignment("right-bottom")
           .setText("0");   
       
@@ -612,7 +614,7 @@ var HUD = {
      me.feet_Alt = m.speedAltGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(m.maxladderspan + 60,m.headScaleVerticalPlace)
-      .setDouble("character-size", 30)
+      .setDouble("character-size",m.myFontSize* 30)
       .setAlignment("left-bottom")
       .setText("00");  
           
@@ -621,7 +623,7 @@ var HUD = {
      me.groundAlt = m.speedAltGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(m.maxladderspan + 95,m.headScaleVerticalPlace+25)
-      .setDouble("character-size", 30)
+      .setDouble("character-size",m.myFontSize* 30)
       .setAlignment("right-bottom")
       .setText("*****"); 
       
@@ -629,7 +631,7 @@ var HUD = {
      me.theH = m.speedAltGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(m.maxladderspan + 100,m.headScaleVerticalPlace+25)
-      .setDouble("character-size", 30)
+      .setDouble("character-size",m.myFontSize* 30)
       .setAlignment("left-bottom")
       .setText("H");  
           
@@ -639,7 +641,7 @@ var HUD = {
     m.alpha = m.alphaGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(- m.maxladderspan-70,m.headScaleVerticalPlace+50)
-      .setDouble("character-size", 40)
+      .setDouble("character-size",m.myFontSize* 40)
       .setAlignment("right-center")
       .setText("α");
           
@@ -647,7 +649,7 @@ var HUD = {
     m.aoa = m.alphaGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(- m.maxladderspan-50,m.headScaleVerticalPlace+50)
-      .setDouble("character-size", 30)
+      .setDouble("character-size",m.myFontSize* 30)
       .setAlignment("left-center")
       .setText("0.0");
     
@@ -656,14 +658,14 @@ var HUD = {
     m.gload_Text = m.alphaGloadGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(- m.maxladderspan-50,-120)
-      .setDouble("character-size", 35)
+      .setDouble("character-size",m.myFontSize* 35)
       .setAlignment("right-center")
       .setText("0.0");
       
     m.alpha_Text = m.alphaGloadGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(- m.maxladderspan-50,-90)
-      .setDouble("character-size", 35)
+      .setDouble("character-size",m.myFontSize* 35)
       .setAlignment("right-center")
       .setText("0.0");  
       
@@ -672,7 +674,7 @@ var HUD = {
     m.loads_Type_text = m.root.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(- m.maxladderspan-90,-150)
-      .setDouble("character-size", 35)
+      .setDouble("character-size",m.myFontSize* 35)
       .setAlignment("right-center")
       .setText("0.0");  
     m.loads_Type_text.hide();
@@ -683,14 +685,14 @@ var HUD = {
     m.Left_bullet_Count = m.bullet_CountGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(-m.maxladderspan+60,100)
-      .setDouble("character-size", 35)
+      .setDouble("character-size",m.myFontSize* 35)
       .setFont("LiberationFonts/LiberationMono-Bold.ttf")
       .setAlignment("center-center")
       .setText("0.0");  
     m.Right_bullet_Count = m.bullet_CountGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(m.maxladderspan-60,100)
-      .setDouble("character-size", 35)
+      .setDouble("character-size",m.myFontSize* 35)
       .setFont("LiberationFonts/LiberationMono-Bold.ttf")
       .setAlignment("center-center")
       .setText("0.0");  
@@ -701,21 +703,21 @@ var HUD = {
     m.Left_pylons = m.pylons_Group.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(-m.maxladderspan+60,100)
-      .setDouble("character-size", 35)
+      .setDouble("character-size",m.myFontSize* 35)
       .setFont("LiberationFonts/LiberationMono-Bold.ttf")
       .setAlignment("center-center")
       .setText("L");  
     m.Right_pylons = m.pylons_Group.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(m.maxladderspan-60,100)
-      .setDouble("character-size", 35)
+      .setDouble("character-size",m.myFontSize* 35)
       .setFont("LiberationFonts/LiberationMono-Bold.ttf")
       .setAlignment("center-center")
       .setText("R");
     m.Center_pylons = m.pylons_Group.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(0,100)
-      .setDouble("character-size", 35)
+      .setDouble("character-size",m.myFontSize* 35)
       .setFont("LiberationFonts/LiberationMono-Bold.ttf")
       .setAlignment("center-center")
       .setText("C");  
@@ -728,19 +730,19 @@ var HUD = {
       .moveTo(-m.maxladderspan+60+25, 100)
       .arcSmallCW(25,25, 0, -50, 0)
       .arcSmallCW(25,25, 0, 50, 0)
-      .setStrokeLineWidth(5);
+      .setStrokeLineWidth(m.myLineWidth*5);
     m.RightCircle = m.pylons_Circle_Group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(m.maxladderspan-60+25, 100)
       .arcSmallCW(25,25, 0, -50, 0)
       .arcSmallCW(25,25, 0, 50, 0)
-      .setStrokeLineWidth(5);
+      .setStrokeLineWidth(m.myLineWidth*5);
     m.CenterCircle = m.pylons_Circle_Group.createChild("path")
       .setColor(m.myGreen)
       .moveTo(25, 100)
       .arcSmallCW(25,25, 0, -50, 0)
       .arcSmallCW(25,25, 0, 50, 0)
-      .setStrokeLineWidth(5);
+      .setStrokeLineWidth(m.myLineWidth*5);
     m.pylons_Circle_Group.hide();
     
     
@@ -751,7 +753,7 @@ var HUD = {
       m.acceleration_Box = m.accBoxGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(0,0)
-      .setDouble("character-size", 35)
+      .setDouble("character-size",m.myFontSize* 35)
       .setAlignment("center-center")
       .setText("0.00"); 
       
@@ -762,7 +764,7 @@ var HUD = {
         .vert(50)
         .horiz(-140)
         .vert(-50)
-        .setStrokeLineWidth(4);         
+        .setStrokeLineWidth(m.myLineWidth*4);         
       m.accBoxGroup.setTranslation(0,m.headScaleVerticalPlace*2/5);
       
       #Waypoint Group
@@ -774,20 +776,20 @@ var HUD = {
       m.waypointDistSimple = m.waypointSimpleGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation( m.maxladderspan + 45 ,m.headScaleVerticalPlace*2/5)
-        .setDouble("character-size", 30)
+        .setDouble("character-size",m.myFontSize* 30)
         .setAlignment("right-center")
         .setText("0");    
       # N
 #       m.waypointNSimple = m.waypointSimpleGroup.createChild("text")
 #         .setTranslation( m.maxladderspan + 65 ,m.headScaleVerticalPlace*2/5)
-#         .setDouble("character-size", 30)
+#         .setDouble("character-size",m.myFontSize* 30)
 #         .setAlignment("center-center")
 #         .setText("N");     
       #next Waypoint NUMBER
       m.waypointNumberSimple = m.waypointSimpleGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation( m.maxladderspan + 85 ,m.headScaleVerticalPlace*2/5)
-        .setDouble("character-size", 30)
+        .setDouble("character-size",m.myFontSize* 30)
         .setAlignment("left-center")
         .setText("00"); 
       
@@ -795,13 +797,13 @@ var HUD = {
       m.waypointDist = m.waypointGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation( m.maxladderspan + 80 ,m.headScaleVerticalPlace*2/5)
-        .setDouble("character-size", 30)
+        .setDouble("character-size",m.myFontSize* 30)
         .setAlignment("left-center")
         .setText("0");    
       # N
 #       m.waypointN = m.waypointGroup.createChild("text")
 #         .setTranslation( m.maxladderspan + 120 ,m.headScaleVerticalPlace*2/5)
-#         .setDouble("character-size", 30)
+#         .setDouble("character-size",m.myFontSize* 30)
 #         .setAlignment("left-center")
 #         .setText("N");   
         
@@ -809,20 +811,20 @@ var HUD = {
       m.waypointNumber = m.waypointGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation( m.maxladderspan + 80 ,m.headScaleVerticalPlace*2/5-25)
-        .setDouble("character-size", 30)
+        .setDouble("character-size",m.myFontSize* 30)
         .setAlignment("left-center")
         .setText("00");     
       #bull eye
 #       m.BE = m.waypointGroup.createChild("text")
 #         .setTranslation( m.maxladderspan + 55 ,m.headScaleVerticalPlace*2/5-25)
-#         .setDouble("character-size", 30)
+#         .setDouble("character-size",m.myFontSize* 30)
 #         .setAlignment("right-center")
 #         .setText("BE");
         
       m.DEST = m.waypointGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation( m.maxladderspan + 55 ,m.headScaleVerticalPlace*2/5-25)
-        .setDouble("character-size", 30)
+        .setDouble("character-size",m.myFontSize* 30)
         .setAlignment("right-center")
         .setText("DEST");
         
@@ -830,7 +832,7 @@ var HUD = {
       m.waypointHeading = m.waypointGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation( m.maxladderspan + 65 ,m.headScaleVerticalPlace*2/5)
-        .setDouble("character-size", 30)
+        .setDouble("character-size",m.myFontSize* 30)
         .setAlignment("right-center")
         .setText("000/"); 
 
@@ -914,35 +916,35 @@ var HUD = {
 #         .moveTo(15, 0)
 #         .arcSmallCW(15,15, 0, -30, 0)
 #         .arcSmallCW(15,15, 0, 30, 0)
-#         .setStrokeLineWidth(4)
+#         .setStrokeLineWidth(m.myLineWidth*4)
 #         ;
 #   
 #     m.myRunwayBeginLeft = m.myRunwayGroup.createChild("path")
 #         .moveTo(15, 0)
 #         .arcSmallCW(15,15, 0, -30, 0)
 #         .arcSmallCW(15,15, 0, 30, 0)
-#         .setStrokeLineWidth(4)
+#         .setStrokeLineWidth(m.myLineWidth*4)
 #         ;
 #         
 #     m.myRunwayBeginRight = m.myRunwayGroup.createChild("path")
 #         .moveTo(15, 0)
 #         .arcSmallCW(15,15, 0, -30, 0)
 #         .arcSmallCW(15,15, 0, 30, 0)
-#         .setStrokeLineWidth(4)
+#         .setStrokeLineWidth(m.myLineWidth*4)
 #         ;
 #     
 #      m.myRunwayEndRight = m.myRunwayGroup.createChild("path")
 #         .moveTo(15, 0)
 #         .arcSmallCW(15,15, 0, -30, 0)
 #         .arcSmallCW(15,15, 0, 30, 0)
-#         .setStrokeLineWidth(4)
+#         .setStrokeLineWidth(m.myLineWidth*4)
 #         ;
 # 
 #      m.myRunwayEndLeft = m.myRunwayGroup.createChild("path")
 #         .moveTo(15, 0)
 #         .arcSmallCW(15,15, 0, -30, 0)
 #         .arcSmallCW(15,15, 0, 30, 0)
-#         .setStrokeLineWidth(4)
+#         .setStrokeLineWidth(m.myLineWidth*4)
 #         ;    
 #       
    ##################################### Target Circle ####################################
@@ -954,7 +956,7 @@ var HUD = {
         .moveTo(25, 0)
         .arcSmallCW(25,25, 0, -50, 0)
         .arcSmallCW(25,25, 0, 50, 0)
-        .setStrokeLineWidth(5)
+        .setStrokeLineWidth(m.myLineWidth*5)
         .hide()
         ;
       append(m.targetArray, myCircle);
@@ -972,7 +974,7 @@ var HUD = {
           .setTranslation(15, -10)
           .setAlignment("left-center")
           .setFont("LiberationFonts/LiberationSansNarrow-Bold.ttf")
-          .setFontSize(26)
+          .setFontSize(m.myFontSize*26)
           .setColor(0,180,0,0.9)
           .hide()
           .setText("VOID");
@@ -991,7 +993,7 @@ var HUD = {
     # le triangle donne le cap relatif
         m.triangle = m.TriangleGroupe.createChild("path")
           .setColor(m.myGreen)
-          .setStrokeLineWidth(3)
+          .setStrokeLineWidth(m.myLineWidth*3)
           .moveTo(0, TriangleSize*-1)
           .lineTo(TriangleSize*0.866, TriangleSize*0.5)
           .lineTo(TriangleSize*-0.866, TriangleSize*0.5)
@@ -1000,7 +1002,7 @@ var HUD = {
     
         m.triangle2 = m.TriangleGroupe.createChild("path")
           .setColor(m.myGreen)
-          .setStrokeLineWidth(3)
+          .setStrokeLineWidth(m.myLineWidth*3)
           .moveTo(0, TriangleSize*-1)
           .lineTo(TriangleSize*0.866, TriangleSize*0.5)
           .lineTo(TriangleSize*-0.866, TriangleSize*0.5)
@@ -1019,7 +1021,7 @@ var HUD = {
       .horiz(50)
       .vert(-50)
       .horiz(-50)
-      .setStrokeLineWidth(6);
+      .setStrokeLineWidth(m.myLineWidth*6);
       
     m.Locked_Square_Dash  = m.Square_Group.createChild("path")
       .setColor(m.myGreen)
@@ -1029,7 +1031,7 @@ var HUD = {
       .vert(-50)
       .horiz(-50)
       .setStrokeDashArray([10,10])
-      .setStrokeLineWidth(5);  
+      .setStrokeLineWidth(m.myLineWidth*5);  
     m.Square_Group.hide();    
       
     
@@ -1039,17 +1041,17 @@ var HUD = {
       .setColor(m.myGreen)
       .moveTo(210,0)
       .horiz(-30)
-      .setStrokeLineWidth(6); 
+      .setStrokeLineWidth(m.myLineWidth*6); 
     m.MinFireRange = m.missileFireRange.createChild("path")
       .setColor(m.myGreen)
       .moveTo(210,0)
       .horiz(-30)
-      .setStrokeLineWidth(6); 
+      .setStrokeLineWidth(m.myLineWidth*6); 
     m.NEZFireRange = m.missileFireRange.createChild("path")
       .setColor(m.myGreen)
       .moveTo(215,0)
       .horiz(-40)
-      .setStrokeLineWidth(4);   
+      .setStrokeLineWidth(m.myLineWidth*4);   
     m.missileFireRange.hide();
       
     
@@ -1063,21 +1065,21 @@ var HUD = {
       .moveTo(200,m.distanceToTargetLineMin)
       .vert(m.distanceToTargetLineMax-m.distanceToTargetLineMin)
       .horiz(30)
-      .setStrokeLineWidth(5); 
+      .setStrokeLineWidth(m.myLineWidth*5); 
     
     m.distanceToTargetLineTextGroup = m.distanceToTargetLineGroup.createChild("group");
       
     m.distanceToTargetLineChevron = m.distanceToTargetLineTextGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(200,0)
-      .setDouble("character-size", 60)
+      .setDouble("character-size",m.myFontSize* 60)
       .setAlignment("left-center")
       .setText("<"); 
       
     m.distanceToTargetLineChevronText = m.distanceToTargetLineTextGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(230,0)
-      .setDouble("character-size", 40)
+      .setDouble("character-size",m.myFontSize* 40)
       .setAlignment("left-center")
       .setText("x");
     
@@ -1089,7 +1091,7 @@ var HUD = {
 #       .moveTo(-8*mr,0)
 #       .arcSmallCW(8*mr,8*mr, 0, 8*mr*2, 0)
 #       .arcSmallCW(8*mr,8*mr, 0, -8*mr*2, 0)
-#       .setStrokeLineWidth(1)
+#       .setStrokeLineWidth(m.myLineWidth*1)
 #       .setColor(0,1,0).hide();
 #       append(obj.total, obj.ASC);  
       
@@ -1976,7 +1978,7 @@ var HUD = {
     .lineTo(me.MyRunwayCoordCornerEndRightTripos)
     .lineTo(me.MyRunwayCoordCornerEndLeftTripos)
     .lineTo(me.MyRunwayCoordCornerLeftTripos)
-    .setStrokeLineWidth(4);
+    .setStrokeLineWidth(me.myLineWidth*4);
     
     me.myRunwayGroup.update();
     
@@ -2131,7 +2133,7 @@ var HUD = {
                         .setColor(me.myGreen)
                         .moveTo(me.eegsLeftX[i], me.eegsLeftY[i])
                         .lineTo(me.eegsLeftX[i+1], me.eegsLeftY[i+1])
-                        .setStrokeLineWidth(4);
+                        .setStrokeLineWidth(me.myLineWidth*4);
                     if (i==0) {
                       me.fnnl.setStrokeDashArray([5,5]);
                     }
@@ -2153,7 +2155,7 @@ var HUD = {
                           .moveTo(me.eegsRightX[0]+40, me.eegsRightY[0])  
                           .lineTo(me.eegsRightX[0]+55, me.eegsRightY[0])
                           .setColor(me.myGreen)
-                          .setStrokeLineWidth(4);
+                          .setStrokeLineWidth(me.myLineWidth*4);
                           
                           
                     #drawing mini and centra point 
@@ -2163,7 +2165,7 @@ var HUD = {
                           .lineTo(me.eegsRightX[0], me.eegsRightY[0]-55)
                           .setCenter(me.eegsRightX[0],me.eegsRightY[0])
                           .setColor(me.myGreen)
-                          .setStrokeLineWidth(4)
+                          .setStrokeLineWidth(me.myLineWidth*4)
                           .setRotation(me.EEGSdeg);
                     }
                     
@@ -2172,20 +2174,20 @@ var HUD = {
                           .setColor(me.myGreen)
                           .moveTo(me.eegsRightX[0], me.eegsRightY[0]-40)
                           .arcSmallCW(40,40,0,me.EEGSdegPos[0],me.EEGSdegPos[1])
-                          .setStrokeLineWidth(4);
+                          .setStrokeLineWidth(me.myLineWidth*4);
                     } elsif (me.EEGSdeg>=360*D2R) {
                       me.eegsGroup.createChild("path")
                           .setColor(me.myGreen)
                           .moveTo(me.eegsRightX[0], me.eegsRightY[0]-40)
                           .arcSmallCW(40,40,0,0,80)
                           .arcSmallCW(40,40,0,0,-80)
-                          .setStrokeLineWidth(4);
+                          .setStrokeLineWidth(me.myLineWidth*4);
                     } else {
                       me.eegsGroup.createChild("path")
                           .setColor(me.myGreen)
                           .moveTo(me.eegsRightX[0], me.eegsRightY[0]-40)
                           .arcLargeCW(40,40,0,me.EEGSdegPos[0],me.EEGSdegPos[1])
-                          .setStrokeLineWidth(4);
+                          .setStrokeLineWidth(me.myLineWidth*4);
                     }
                 }
                 if (me.drawEEGS300 and !me.drawEEGSPipper) {
@@ -2194,7 +2196,7 @@ var HUD = {
                         .setColor(me.myGreen)
                         .moveTo(me.eegsRightX[1]-halfspan, me.eegsRightY[1])
                         .horiz(halfspan*2)
-                        .setStrokeLineWidth(4);
+                        .setStrokeLineWidth(me.myLineWidth*4);
                 }
                 if (me.drawEEGS600 and !me.drawEEGSPipper) {
                     var halfspan = math.atan2(me.wingspanFT*0.5,600*M2FT)*R2D*HudMath.getPixelPerDegreeAvg(2.0);#35ft average fighter wingspan
@@ -2202,7 +2204,7 @@ var HUD = {
                         .setColor(me.myGreen)
                         .moveTo(me.eegsRightX[2]-halfspan, me.eegsRightY[2])
                         .horiz(halfspan*2)
-                        .setStrokeLineWidth(4);
+                        .setStrokeLineWidth(me.myLineWidth*4);
                 }                
                 me.eegsGroup.update();
             }
