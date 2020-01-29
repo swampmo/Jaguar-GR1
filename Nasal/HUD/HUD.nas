@@ -167,13 +167,13 @@ var HUD = {
     m.MaxX = 512; #the canvas is 420 *2;
     m.MaxY = 512; #the canvas is 420 *2;
     
-    m.red = 0.3;
+    m.red = 0.2;
     m.green = 1.0;
-    m.blue = 0.3;
+    m.blue = 0.2;
     
     m.MaxTarget = 30;
     
-    m.myGreen = [0.5,1.0,0.5,1];
+    m.myGreen = [m.red,m.green,m.blue,1];
     
 #     .setColor(m.myGreen)
     
