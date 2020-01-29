@@ -164,7 +164,7 @@ var HUD = {
     m.min = -m.viewPlacement * 0.846;
     m.max = m.viewPlacement * 0.846;
 
-    m.MaxX = 420; #the canvas is 420 *2;
+    m.MaxX = 512; #the canvas is 420 *2;
     m.MaxY = 512; #the canvas is 420 *2;
     
     m.red = 0.3;
