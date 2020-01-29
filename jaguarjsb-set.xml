@@ -25,38 +25,7 @@
       <path>Aircraft/Jaguar/Systems/sub_lancer.xml</path>
     </submodels>
 
-	<hud>
-      <path n="1">Aircraft/Jaguar/Hud/hud.xml</path>
-      <visibility n="1">true</visibility>
-	  <palette>
-    <color n="0">
-     <alpha type="float">0.85</alpha>
-     <antialiased type="bool">true</antialiased>
-     <brightness type="float">0.85</brightness>
-     <transparent type="bool">true</transparent>
-     <red type="float">0.38</red>
-     <green type="float">1.0</green>
-     <blue type="float">0.22</blue>
-    </color>
-    <color n="1">
-     <alpha type="float">0.85</alpha>
-     <antialiased type="bool">true</antialiased>
-     <brightness type="float">0.85</brightness>
-     <transparent type="bool">true</transparent>
-     <red type="float">1.0</red>
-     <green type="float">0.2</green>
-     <blue type="float">0.0</blue>
-    </color>
-   </palette>
-     <clipping>
-            <left type="double">-65</left>
-            <right type="double">65</right>
-            <top type="double">40</top>
-            <bottom type="double">-100</bottom>
-         </clipping>
-    </hud>
-
-    <startup>
+	    <startup>
       <splash-texture>Aircraft/Jaguar/jaguar-splash.png</splash-texture>
     </startup>
 
@@ -1752,11 +1721,6 @@
 		<chronograph>
 			<file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/clock/chronograph.nas</file>
 		</chronograph>
-
-
-    <hud>
-      <file>Aircraft/Jaguar/Nasal/hud.nas</file>
-    </hud>
     
     <rcs>
       <file>Aircraft/Jaguar/Nasal/rcs.nas</file>
@@ -1775,6 +1739,11 @@
     <myradar>
       <file>Aircraft/Jaguar/Nasal/RADAR/main.nas</file>
     </myradar>
+    
+    <hud>
+      <file>Aircraft/Jaguar/Nasal/HUD/hud_math.nas</file>
+      <file>Aircraft/Jaguar/Nasal/HUD/HUD.nas</file>
+    </hud>
     
     <armament>
             <file>Aircraft/Jaguar/Nasal/guided-missiles.nas</file><!-- must be before station-manager -->
