@@ -164,7 +164,7 @@ var HUD = {
     m.min = -m.viewPlacement * 0.846;
     m.max = m.viewPlacement * 0.846;
 
-    m.MaxX = 420; #the canvas is 420 *2;
+    m.MaxX = 512; #the canvas is 420 *2;
     m.MaxY = 512; #the canvas is 420 *2;
     
     m.red = 0.3;
@@ -1481,7 +1481,7 @@ var HUD = {
   
   # flight path vector (FPV)
   display_Fpv:func(){
-    me.fpvCalc = HudMath.getFlightPathIndicatorPosWind();
+    me.fpvCalc = HudMath.getFlightPathIndicatorPos();
     me.fpv.setTranslation(me.fpvCalc);
     if(me.input.AutopilotStatus.getValue()=="AP1"){
       me.AutopilotStar.setTranslation(me.fpvCalc);
