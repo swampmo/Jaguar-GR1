@@ -24,10 +24,10 @@
     <internal archive="y">true</internal>
     <config>
       <x-offset-m archive="y" type="double">  0.000 </x-offset-m>	<!-- Right -->
-      <y-offset-m archive="y" type="double">  0.410 </y-offset-m>	<!-- Up    -->
-      <z-offset-m archive="y" type="double"> -2.771 </z-offset-m>	<!-- Back  -->
+      <y-offset-m archive="y" type="double">  0.400 </y-offset-m>	<!-- Up    -->
+      <z-offset-m archive="y" type="double"> -2.850 </z-offset-m>	<!-- Back  -->
       <pitch-offset-deg> -18 </pitch-offset-deg>
-      <default-field-of-view-deg> 83.5 </default-field-of-view-deg>
+      <default-field-of-view-deg> 87.5 </default-field-of-view-deg>
     </config>
   </view>
   
