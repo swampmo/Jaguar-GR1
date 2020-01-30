@@ -604,7 +604,7 @@ var HUD = {
 
      # Heading right right number on horizon line
      me.hundred_feet_Alt = m.speedAltGroup.createChild("text")
-          .setTranslation(m.maxladderspan + 60 ,m.headScaleVerticalPlace)
+          .setTranslation(m.maxladderspan + 100 ,m.headScaleVerticalPlace)
           .setDouble("character-size",m.myFontSize* 50)
           .setAlignment("right-bottom")
           .setText("0");   
@@ -613,7 +613,7 @@ var HUD = {
      # Heading right right number on horizon line
      me.feet_Alt = m.speedAltGroup.createChild("text")
       .setColor(m.myGreen)
-      .setTranslation(m.maxladderspan + 60,m.headScaleVerticalPlace)
+      .setTranslation(m.maxladderspan + 100,m.headScaleVerticalPlace)
       .setDouble("character-size",m.myFontSize* 30)
       .setAlignment("left-bottom")
       .setText("00");  
