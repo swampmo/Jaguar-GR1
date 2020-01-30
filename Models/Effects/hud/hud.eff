@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <name>Aircraft/Jaguar/Models/Effects/hud/hud</name>
+  <inherits-from>Effects/hud</inherits-from>
+  <parameters>
+    <overlay-color type="vec3d" n="0"> 0.5 1.0 0.6</overlay-color>
+    <glass-tint type="vec4d" n="0"> 0.2 1.0 0.2 1.0</glass-tint>
+  </parameters>
+
+</PropertyList>
