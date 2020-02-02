@@ -39,27 +39,31 @@ var pylonSets = {
 # sets. The first in the list is the default. Earlier in the list means higher up in dropdown menu.
 # These are not strictly needed in F-14 beside from the Empty, since it uses a custom payload dialog, but there for good measure.
 var pylon1set = [pylonSets.empty, pylonSets.aim9];
-var pylon2set = [pylonSets.empty, pylonSets.m83];
+var pylon2set = [pylonSets.empty, pylonSets.m83, pylonSets.aim9];
 var pylon3set = [pylonSets.empty, pylonSets.m83];
 var pylon4set = [pylonSets.empty, pylonSets.m83];
-var pylon5set = [pylonSets.empty, pylonSets.aim9];
+var pylon5set = [pylonSets.empty, pylonSets.m83];
+var pylon6set = [pylonSets.empty, pylonSets.m83, pylonSets.aim9];
+var pylon7set = [pylonSets.empty, pylonSets.aim9];
 
 # pylons
-pylonI = stations.InternalStation.new("Internal gun mount", 5, [pylonSets.mm20], props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[5]",1));
-pylon1 = stations.Pylon.new("Pylon 1",      0, [0.4795,-3.6717,-1.0600], pylon1set,  0, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[0]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[0]",1),func{return 1});
+pylonI = stations.InternalStation.new("Internal gun mount", 7, [pylonSets.mm20], props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[5]",1));
+pylon1 = stations.Pylon.new("Pylon Left Top",      0, [0.4795,-3.6717,-1.0600], pylon1set,  0, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[0]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[0]",1),func{return 1});
 pylon2 = stations.Pylon.new("Pylon 2",      1, [0.4795,-3.7800,-1.5700], pylon2set,  1, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[1]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[1]",1),func{return 1});
 pylon3 = stations.Pylon.new("Pylon 3",      2, [-2,0,-1.4333],           pylon3set,  2, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[2]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[2]",1),func{return 1});
 pylon4 = stations.Pylon.new("Pylon 4",      3, [-2,-1.0,-1.4333],        pylon4set,  3, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[3]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[3]",1),func{return 1});
 pylon5 = stations.Pylon.new("Pylon 5",      4, [ 2,-1.0,-1.4333],        pylon5set,  4, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[4]",1),func{return 1});
+pylon6 = stations.Pylon.new("Pylon 6",      5, [ 2,-1.0,-1.4333],        pylon6set,  5, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[4]",1),func{return 1});
+pylon7 = stations.Pylon.new("Pylon Right Top",      6, [ 2,-1.0,-1.4333],        pylon7set,  6, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[4]",1),func{return 1});
 
 #pylon1.forceRail = 1;# set the missiles mounted on this pylon on a rail.
 #pylon9.forceRail = 1;
 
-var pylons = [pylonI,pylon1,pylon2,pylon3,pylon4,pylon5];
+var pylons = [pylonI,pylon1,pylon2,pylon3,pylon4,pylon5,pylon6,pylon7];
 
 # The order of first vector in this line is the default pylon order weapons is released in.
 # The order of second vector in this line is the order cycle key would cycle through the weapons (but since the f-14 dont have that the order is not important):
-fcs = fc.FireControl.new(pylons, [0,1,5,2,4,3], ["20mm Cannon","AIM-9","MK-83"]);
+fcs = fc.FireControl.new(pylons, [0,1,7,2,6,3,5,4], ["20mm Cannon","AIM-9","MK-83"]);
 
 #print("** Pylon & fire control system started. **");
 var getDLZ = func {
