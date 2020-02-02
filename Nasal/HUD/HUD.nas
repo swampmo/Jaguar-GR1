@@ -842,7 +842,7 @@ var HUD = {
     m.radarStuffGroup = m.root.createChild("group");
     
     
-    #eegs funnel:
+    #SSLC snake gun sight: (not LCOS, SNAP or EEGS)
     #time * vectorSize >= 1.5
     
     m.eegsGroup = m.root.createChild("group");
