@@ -1521,11 +1521,13 @@ var HUD = {
     }else{
       me.AutopilotStar.hide();
     }
-    me.speedAltGroup.setTranslation(0, math.min(375,math.max(-356,me.fpvCalc[1]))+356);
+    
     if (me.input.MasterArm.getValue()) {
       me.headingStuff.setTranslation(0,0);
+      me.speedAltGroup.setTranslation(0, math.min(375,math.max(-300,me.fpvCalc[1]))+356);
     } else {
       me.headingStuff.setTranslation(0,math.min(300,math.max(-356,me.fpvCalc[1]))+612);
+      me.speedAltGroup.setTranslation(0, math.min(375,math.max(-356,me.fpvCalc[1]))+356);
     }
   },
   
