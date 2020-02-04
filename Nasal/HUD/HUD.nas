@@ -167,9 +167,9 @@ var HUD = {
     m.MaxX = 512; #the canvas is 420 *2;
     m.MaxY = 512; #the canvas is 420 *2;
     
-    m.red = 0.2;
+    m.red = 0.1;
     m.green = 1.0;
-    m.blue = 0.2;
+    m.blue = 0.1;
     
     m.MaxTarget = 30;
     
@@ -1521,11 +1521,13 @@ var HUD = {
     }else{
       me.AutopilotStar.hide();
     }
-    me.speedAltGroup.setTranslation(0, math.min(375,math.max(-356,me.fpvCalc[1]))+356);
+    
     if (me.input.MasterArm.getValue()) {
       me.headingStuff.setTranslation(0,0);
+      me.speedAltGroup.setTranslation(0, math.min(375,math.max(-300,me.fpvCalc[1]))+356);
     } else {
       me.headingStuff.setTranslation(0,math.min(300,math.max(-356,me.fpvCalc[1]))+612);
+      me.speedAltGroup.setTranslation(0, math.min(375,math.max(-356,me.fpvCalc[1]))+356);
     }
   },
   
