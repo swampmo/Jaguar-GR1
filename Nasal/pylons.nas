@@ -59,11 +59,11 @@ pylon7 = stations.Pylon.new("Pylon Right Top",      6, [ 2,-1.0,-1.4333],       
 #pylon1.forceRail = 1;# set the missiles mounted on this pylon on a rail.
 #pylon9.forceRail = 1;
 
-var pylons = [pylonI,pylon1,pylon2,pylon3,pylon4,pylon5,pylon6,pylon7];
+var pylons = [pylon1,pylon2,pylon3,pylon4,pylon5,pylon6,pylon7,pylonI];
 
 # The order of first vector in this line is the default pylon order weapons is released in.
 # The order of second vector in this line is the order cycle key would cycle through the weapons (but since the f-14 dont have that the order is not important):
-fcs = fc.FireControl.new(pylons, [0,1,7,2,6,3,5,4], ["20mm Cannon","AIM-9","MK-83"]);
+fcs = fc.FireControl.new(pylons, [0,6,1,5,2,4,3,7], ["20mm Cannon","AIM-9","MK-83"]);
 
 #print("** Pylon & fire control system started. **");
 var getDLZ = func {
