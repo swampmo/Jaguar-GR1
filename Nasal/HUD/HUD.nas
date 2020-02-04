@@ -197,6 +197,9 @@ var HUD = {
 
     m.text =
       m.root.createChild("group");
+      
+      m.rootLine =
+      m.root.createChild("group");
             
             
     m.Fire_GBU =
@@ -220,6 +223,12 @@ var HUD = {
         .moveTo(0, -15)
         .vert(-15)
         .setStrokeLineWidth(m.myLineWidth*4);
+  m.fpvL = m.root.createChild("text")
+            .setAlignment("left-bottom")
+            .setTranslation(0, 0)
+            .setColor(m.myGreen)
+            .setText("L")
+            .setDouble("character-size",m.myFontSize* 42);
         
   m.AutopilotStar = m.root.createChild("text")
     .setColor(m.myGreen)
@@ -507,7 +516,7 @@ var HUD = {
 
     
      m.headingStuff.set("clip-frame", canvas.Element.LOCAL);
-     m.headingStuff.set("clip", "rect(-500px, 150px, -400px, -150px)");# top,right,bottom,left
+     m.headingStuff.set("clip", "rect(-600px, 150px, -400px, -150px)");# top,right,bottom,left
     
     
     m.head_scale = m.headingScaleGroup.createChild("path")
@@ -535,7 +544,7 @@ var HUD = {
     me.hdgMH = m.headingScaleGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(0,m.headScaleVerticalPlace -15)
-      .setDouble("character-size",m.myFontSize* 30)
+      .setDouble("character-size",m.myFontSize* 50)
       .setAlignment("center-bottom")
       .setText("0"); 
                    
@@ -543,7 +552,7 @@ var HUD = {
       me.hdgLH = m.headingScaleGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation(-m.headScaleTickSpacing*2,m.headScaleVerticalPlace -15)
-        .setDouble("character-size",m.myFontSize* 30)
+        .setDouble("character-size",m.myFontSize* 50)
         .setAlignment("center-bottom")
         .setText("350");           
 
@@ -551,7 +560,7 @@ var HUD = {
       me.hdgRH = m.headingScaleGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation(m.headScaleTickSpacing*2,m.headScaleVerticalPlace -15)
-        .setDouble("character-size",m.myFontSize* 30)
+        .setDouble("character-size",m.myFontSize* 50)
         .setAlignment("center-bottom")
         .setText("10");    
           
@@ -559,7 +568,7 @@ var HUD = {
       me.hdgRRH = m.headingScaleGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation(m.headScaleTickSpacing*4,m.headScaleVerticalPlace -15)
-        .setDouble("character-size",m.myFontSize* 30)
+        .setDouble("character-size",m.myFontSize* 50)
         .setAlignment("center-bottom")
         .setText("20");          
 
@@ -589,14 +598,14 @@ var HUD = {
      # Heading right right number on horizon line
     me.Speed = m.speedAltGroup.createChild("text")
       .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan,m.headScaleVerticalPlace)
+      .setTranslation(- m.maxladderspan+100,m.headScaleVerticalPlace)
       .setDouble("character-size",m.myFontSize* 50)
       .setAlignment("right-bottom")
       .setText("0"); 
           
     me.Speed_Mach = m.speedAltGroup.createChild("text")
       .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan,m.headScaleVerticalPlace+25)
+      .setTranslation(- m.maxladderspan+100,m.headScaleVerticalPlace+25)
       .setDouble("character-size",m.myFontSize* 30)
       .setAlignment("right-bottom")
       .setText("0"); 
@@ -604,36 +613,36 @@ var HUD = {
 
      # Heading right right number on horizon line
      me.hundred_feet_Alt = m.speedAltGroup.createChild("text")
-          .setTranslation(m.maxladderspan + 100 ,m.headScaleVerticalPlace)
+          .setTranslation(m.maxladderspan - 0 ,m.headScaleVerticalPlace)
           .setDouble("character-size",m.myFontSize* 50)
           .setAlignment("right-bottom")
           .setText("0");   
       
 
      # Heading right right number on horizon line
-     me.feet_Alt = m.speedAltGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(m.maxladderspan + 100,m.headScaleVerticalPlace)
-      .setDouble("character-size",m.myFontSize* 30)
-      .setAlignment("left-bottom")
-      .setText("00");  
+#     me.feet_Alt = m.speedAltGroup.createChild("text")
+#      .setColor(m.myGreen)
+#      .setTranslation(m.maxladderspan + 0,m.headScaleVerticalPlace)
+#      .setDouble("character-size",m.myFontSize* 30)
+#      .setAlignment("left-bottom")
+#      .setText("00");  
           
           
      # Heading right right number on horizon line
-     me.groundAlt = m.speedAltGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(m.maxladderspan + 95,m.headScaleVerticalPlace+25)
-      .setDouble("character-size",m.myFontSize* 30)
-      .setAlignment("right-bottom")
-      .setText("*****"); 
+#     me.groundAlt = m.speedAltGroup.createChild("text")
+#      .setColor(m.myGreen)
+#      .setTranslation(m.maxladderspan - 5,m.headScaleVerticalPlace+25)
+#      .setDouble("character-size",m.myFontSize* 30)
+#      .setAlignment("right-bottom")
+#      .setText("*****"); 
       
          # Heading right right number on horizon line
-     me.theH = m.speedAltGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(m.maxladderspan + 100,m.headScaleVerticalPlace+25)
-      .setDouble("character-size",m.myFontSize* 30)
-      .setAlignment("left-bottom")
-      .setText("H");  
+#     me.theH = m.speedAltGroup.createChild("text")
+#      .setColor(m.myGreen)
+#      .setTranslation(m.maxladderspan + 0,m.headScaleVerticalPlace+25)
+#      .setDouble("character-size",m.myFontSize* 30)
+#      .setAlignment("left-bottom")
+#      .setText("H");  
           
     m.alphaGroup = m.root.createChild("group");      
   
@@ -1110,9 +1119,11 @@ var HUD = {
     m.pylonsSide_hash = {
       0 : "L",
       1 : "L",
-      2 : "C",
-      3 : "R",
+      2 : "L",
+      3 : "C",
       4 : "R",
+      5 : "R",
+      6 : "R",
     };
     
     m.input = {
@@ -1163,6 +1174,7 @@ var HUD = {
     foreach(var name; keys(m.input))
       m.input[name] = props.globals.getNode(m.input[name], 1);
     
+    m.low = 1;
     return m;
   },
   update: func()
@@ -1194,7 +1206,7 @@ var HUD = {
     me.Fire_GBU.setText("Fire");
     me.showFire_GBU = 0;
     
-    
+    me.low = 0;
     if(me.selectedWeap != nil and me.input.MasterArm.getValue()){
       if (me.selectedWeap.type == "MK-83") {
         var ccip = me.selectedWeap.getCCIPadv(16,0.1);
@@ -1202,8 +1214,20 @@ var HUD = {
           me.targetArray[0].show();
           var c = HudMath.getPosFromCoord(ccip[0]);
           me.targetArray[0].setTranslation(c);
+          if (me["fpvCalc"] != nil) {
+            me.rootLine.removeAllChildren();
+            me.rootLine.createChild("path")
+              .setColor(me.myGreen)
+              .moveTo(me.fpvCalc)
+              .lineTo(c)
+              .setStrokeLineWidth(me.myLineWidth*4);
+            me.rootLine.show();
+            me.rootLine.update();
+          }
+          me.low = !ccip[1];
         } else {
           me.targetArray[0].hide();
+          me.rootLine.hide();
         }        
       } elsif (me.selectedWeap.type == "AIM-9") {
         var seeker = me.selectedWeap.getSeekerInfo();
@@ -1214,6 +1238,7 @@ var HUD = {
         } else {
           me.targetArray[0].hide();
         }        
+        me.rootLine.hide();
       } elsif(me.selectedWeap.type != "20mm Cannon"){
         #Doing the math only for bombs
         if(me.selectedWeap.stage_1_duration+me.selectedWeap.stage_2_duration == 0){
@@ -1235,13 +1260,16 @@ var HUD = {
           }
         }
         me.targetArray[0].hide();
+        me.rootLine.hide();
       }else{
         me.targetArray[0].hide();
+        me.rootLine.hide();
         me.eegsShow=me.input.MasterArm.getValue();
-      }
+      }      
     } else {
           me.targetArray[0].hide();
-        }
+          me.rootLine.hide();
+    }
     
     me.Fire_GBU.setVisible(me.showFire_GBU);
     
@@ -1300,7 +1328,7 @@ var HUD = {
     me.display_Acceleration_Box();
 
     #display_radarAltimeter
-    me.display_radarAltimeter();
+ #   me.display_radarAltimeter();
             
     #Display speedAltGroup
     me.display_speedAltGroup();
@@ -1485,11 +1513,19 @@ var HUD = {
   display_Fpv:func(){
     me.fpvCalc = HudMath.getFlightPathIndicatorPos();
     me.fpv.setTranslation(me.fpvCalc);
+    me.fpvL.setVisible(me.low);
+    me.fpvL.setTranslation(me.fpvCalc[0],me.fpvCalc[1]-20);#CCIP Too low indicator
     if(me.input.AutopilotStatus.getValue()=="AP1"){
       me.AutopilotStar.setTranslation(me.fpvCalc);
       me.AutopilotStar.show();
     }else{
       me.AutopilotStar.hide();
+    }
+    me.speedAltGroup.setTranslation(0, math.min(375,math.max(-356,me.fpvCalc[1]))+356);
+    if (me.input.MasterArm.getValue()) {
+      me.headingStuff.setTranslation(0,0);
+    } else {
+      me.headingStuff.setTranslation(0,math.min(300,math.max(-356,me.fpvCalc[1]))+612);
     }
   },
   
@@ -1543,11 +1579,15 @@ var HUD = {
 #       if(me.input.hdgDisplay.getValue()){
 #         me.heading = me.input.hdgReal.getValue();
 #       }else{
-#         me.heading = me.input.hdg.getValue();
+         me.heading = me.input.hdg.getValue();
 #       }
-      #headOffset = -(geo.normdeg180(me.heading - me.input.hdgBug.getValue() ))*me.headScaleTickSpacing/5;
-      #me.head_scale_route_pointer.setTranslation(headOffset,0);
-      me.head_scale_route_pointer.hide();
+      if (me.heading != nil and me.input.hdgBug.getValue() != nil) {
+        headOffset = -(geo.normdeg180(me.heading - me.input.hdgBug.getValue() ))*me.headScaleTickSpacing/5;
+        me.head_scale_route_pointer.setTranslation(headOffset,0);
+        me.head_scale_route_pointer.setVisible(me.input.NextWayNum.getValue()!=-1 and me.input.distNextWay.getValue() != nil);
+        } else {
+          me.head_scale_route_pointer.setVisible(0);
+        }
       me.headingScaleGroup.update();
   },
   
@@ -1573,15 +1613,22 @@ var HUD = {
       } 
       
     #print("Alt:",me.input.alt.getValue()," Calcul:" ,int(((me.input.alt.getValue()/100) - int(me.input.alt.getValue()/100))*100));
-    me.feet_Alt.setText(sprintf("%02d",abs(int(((me.input.alt_instru.getValue()/100) - int(me.input.alt_instru.getValue()/100))*100))));
-    if(me.input.alt_instru.getValue()>0){
-      me.hundred_feet_Alt.setText(sprintf("%d",abs(int((me.input.alt_instru.getValue()/100)))));
+    #me.feet_Alt.setText(sprintf("%02d",abs(int(((me.input.alt_instru.getValue()/100) - int(me.input.alt_instru.getValue()/100))*100))));
+#    if(me.input.alt_instru.getValue()>0){
+      
+#    }else{
+#      me.hundred_feet_Alt.setText(sprintf("%5d",abs(int((me.input.alt_instru.getValue()/100)))));
+#    }
+    if( me.input.rad_alt.getValue() < 5000) { #Or be selected be a special swith not yet done # Only show below 5000AGL
+      if(abs(me.input.pitch.getValue())<20 and abs(me.input.roll.getValue())<20){ #if the angle is above 20° the radar do not work
+        me.hundred_feet_Alt.setText(sprintf("R%04d", me.input.rad_alt.getValue()));#The radar should show 0 when on Ground      
+      }else{
+        me.hundred_feet_Alt.setText(sprintf("%5d",me.input.alt_instru.getValue()));
+      }
     }else{
-      me.hundred_feet_Alt.setText(sprintf("-%d",abs(int((me.input.alt_instru.getValue()/100)))));
+      me.hundred_feet_Alt.setText(sprintf("%5d",me.input.alt_instru.getValue()));
     }
-    
-    me.speedAltGroup.update();
-    
+    me.speedAltGroup.update();    
   },
   
   display_radarAltimeter:func(){
