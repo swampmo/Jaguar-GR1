@@ -666,9 +666,9 @@ var HUD = {
     m.alphaGloadGroup = m.root.createChild("group");  
     m.gload_Text = m.alphaGloadGroup.createChild("text")
       .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan-50,-120)
+      .setTranslation(300,-356)
       .setDouble("character-size",m.myFontSize* 35)
-      .setAlignment("right-center")
+      .setAlignment("left-center")
       .setText("0.0");
       
     m.alpha_Text = m.alphaGloadGroup.createChild("text")
@@ -1777,13 +1777,13 @@ var HUD = {
   },
   
   display_gload:func(){
-    if(0 and me.input.MasterArm.getValue()){
-      me.gload_Text.setText(sprintf("%0.1fG",me.input.gload.getValue()));
-      me.alpha_Text.setText(sprintf("%0.1fα",me.input.alpha.getValue()));
-      me.alphaGloadGroup.show();
+    if(me.input.gload.getValue()>=2.0 or me.input.gload.getValue()<=0.0){
+      me.gload_Text.setText(sprintf("%0.1f",me.input.gload.getValue()));
     }else{
-      me.alphaGloadGroup.hide();
+      me.gload_Text.setText("");
     }
+    me.alphaGloadGroup.show();
+    me.alpha_Text.setText("");
   },
   
   display_loadsType:func{
