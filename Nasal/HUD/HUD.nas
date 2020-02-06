@@ -682,7 +682,7 @@ var HUD = {
       
     m.loads_Type_text = m.root.createChild("text")
       .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan-90,-150)
+      .setTranslation(- m.maxladderspan-90,0)
       .setDouble("character-size",m.myFontSize* 35)
       .setAlignment("right-center")
       .setText("0.0");  
@@ -956,6 +956,90 @@ var HUD = {
 #         .setStrokeLineWidth(m.myLineWidth*4)
 #         ;    
 #       
+    
+    #VSI indicator
+    var dotRadius = 5;
+    m.root.createChild("path")
+      .setColor(m.myGreen)
+      .moveTo(300, -300)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(300, -250)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(300, -200)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(300, -150)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(300, -100)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(300, -50)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(300,  0)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .setColorFill(m.myGreen)
+      .setStrokeLineWidth(1);
+      
+    m.root.createChild("path")
+      .setColor(m.myGreen)
+      .moveTo(300,-200)
+      .horiz(30)
+      .vert(125)
+      .setStrokeLineWidth(m.myLineWidth*4);
+      
+    m.vsiArrow = m.root.createChild("path")
+      .setColor(m.myGreen)
+      .moveTo(300,-200)
+      .lineTo(300+35,-215)
+      .moveTo(300,-200)
+      .lineTo(300+35,-185)
+      .setStrokeLineWidth(m.myLineWidth*4);
+      
+  # AoA indicator
+  
+    m.root.createChild("path")
+      .setColor(m.myGreen)
+      .moveTo(-300, -300)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(-300, -250)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(-300, -200)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(-300, -150)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(-300, -100)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .moveTo(-300, -50)
+      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+      .setColorFill(m.myGreen)
+      .setStrokeLineWidth(1);
+      
+    m.root.createChild("path")
+      .setColor(m.myGreen)
+      .moveTo(-300,-50)
+      .horiz(30)
+      .vert(-150)
+      .setStrokeLineWidth(m.myLineWidth*4);
+      
+    m.AoAArrow = m.root.createChild("path")
+      .setColor(m.myGreen)
+      .moveTo(-300,-200)
+      .lineTo(-300+35,-215)
+      .moveTo(-300,-200)
+      .lineTo(-300+35,-185)
+      .setStrokeLineWidth(m.myLineWidth*4);
+  
    ##################################### Target Circle ####################################
     m.targetArray = [];
     m.circle_group2 = m.radarStuffGroup.createChild("group");
@@ -1354,6 +1438,9 @@ var HUD = {
     #Display Route dist and waypoint number
     me.display_Waypoint();
     
+    me.display_vsi();
+    me.display_aoa();
+    
     #me.hdg.hide();
     #me.groundspeed.hide();  
     #me.rad_alt.hide();
@@ -1462,6 +1549,17 @@ var HUD = {
       me.ILS_Scale_Independant.hide();
     }
   },
+  
+  display_vsi: func () {
+    var fps = me.input.vs.getValue();
+    me.vsiArrow.setTranslation(0,-fps);
+  },
+  
+  display_aoa: func () {
+    var aoa = me.input.alpha.getValue();
+    me.AoAArrow.setTranslation(0,aoa*10);
+  },
+  
   getHeadingToDisplay:func(){
     
       if(me.input.hdgDisplay.getValue()){
@@ -1657,7 +1755,7 @@ var HUD = {
     }
   },
   display_alpha:func(){
-    if(me.input.gearPos.getValue() < 1 and abs(me.input.alpha.getValue())>2 and me.input.MasterArm.getValue() == 0){
+    if(0 and me.input.gearPos.getValue() < 1 and abs(me.input.alpha.getValue())>2 and me.input.MasterArm.getValue() == 0){
       me.aoa.setText(sprintf("%0.1f",me.input.alpha.getValue()));
       me.alphaGroup.show();
     }else{
@@ -1666,7 +1764,7 @@ var HUD = {
   },
   
   display_gload:func(){
-    if(me.input.MasterArm.getValue()){
+    if(0 and me.input.MasterArm.getValue()){
       me.gload_Text.setText(sprintf("%0.1fG",me.input.gload.getValue()));
       me.alpha_Text.setText(sprintf("%0.1fα",me.input.alpha.getValue()));
       me.alphaGloadGroup.show();
