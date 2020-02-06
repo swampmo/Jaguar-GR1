@@ -1157,6 +1157,14 @@ var HUD = {
       .setStrokeLineWidth(m.myLineWidth*4);   
     m.missileFireRange.hide();
       
+    m.pullUp = m.root.createChild("path")
+      .setColor(m.myGreen)
+      .moveTo(200,200)
+      .lineTo(-200,-200)
+      .moveTo(-200,200)
+      .lineTo(200,-200)
+      .hide()
+      .setStrokeLineWidth(m.myLineWidth*4);
     
     m.distanceToTargetLineGroup = m.root.createChild("group");
     m.distanceToTargetLineMin = -100;
@@ -1528,6 +1536,54 @@ var HUD = {
     } elsif (!me.eegsShow and me.eegsLoop.isRunning) {
         me.eegsLoop.stop();
     }
+    
+    # Terrain warning:
+    var timeC = 15;
+    if ((getprop("velocities/speed-east-fps") != 0 or getprop("velocities/speed-north-fps") != 0) and getprop("fdm/jsbsim/gear/unit[0]/WOW") != 1 and
+          getprop("fdm/jsbsim/gear/unit[1]/WOW") != 1 and (
+         (getprop("fdm/jsbsim/gear/gear-pos-norm")<1)
+      or (getprop("fdm/jsbsim/gear/gear-pos-norm")>0.99 and getprop("/position/altitude-agl-ft") > 164)
+      )) {
+      me.start = geo.aircraft_position();
+
+      me.speed_down_fps  = getprop("velocities/speed-down-fps");
+      me.speed_east_fps  = getprop("velocities/speed-east-fps");
+      me.speed_north_fps = getprop("velocities/speed-north-fps");
+      me.speed_horz_fps  = math.sqrt((me.speed_east_fps*me.speed_east_fps)+(me.speed_north_fps*me.speed_north_fps));
+      me.speed_fps       = math.sqrt((me.speed_horz_fps*me.speed_horz_fps)+(me.speed_down_fps*me.speed_down_fps));
+      me.headingc = 0;
+      if (me.speed_north_fps >= 0) {
+        me.headingc -= math.acos(me.speed_east_fps/me.speed_horz_fps)*R2D - 90;
+      } else {
+        me.headingc -= -math.acos(me.speed_east_fps/me.speed_horz_fps)*R2D - 90;
+      }
+      me.headingc = geo.normdeg(me.heading);
+      #cos(90-heading)*horz = east
+      #acos(east/horz) - 90 = -head
+
+      me.end = geo.Coord.new(me.start);
+      me.end.apply_course_distance(me.heading, me.speed_horz_fps*FT2M);
+      me.end.set_alt(me.end.alt()-me.speed_down_fps*FT2M);
+
+      me.dir_x = me.end.x()-me.start.x();
+      me.dir_y = me.end.y()-me.start.y();
+      me.dir_z = me.end.z()-me.start.z();
+      me.xyz = {"x":me.start.x(),  "y":me.start.y(),  "z":me.start.z()};
+      me.dir = {"x":me.dir_x,      "y":me.dir_y,      "z":me.dir_z};
+
+      me.geod = get_cart_ground_intersection(me.xyz, me.dir);
+      if (me.geod != nil) {
+        me.end.set_latlon(me.geod.lat, me.geod.lon, me.geod.elevation);
+        me.dist = me.start.direct_distance_to(me.end)*M2FT;
+        me.time = me.dist / me.speed_fps;
+        timeC = me.time;
+      }
+    }
+    if (timeC < 8) {
+      me.pullUp.show();
+    } else {
+      me.pullUp.hide();
+    }
 
     settimer(func me.update(), 0.05);
   },
@@ -1568,6 +1624,9 @@ var HUD = {
   
   display_aoa: func () {
     var aoa = me.input.alpha.getValue();
+    if (aoa>25) aoa = 25;
+    if (aoa<-15) aoa = -15;
+    if (me.input.gs.getValue()<5) aoa = 0;
     me.AoAArrow.setTranslation(0,-aoa*10);
     me.AoAScale.setScale(1,aoa/15);
     
