@@ -989,7 +989,12 @@ var HUD = {
       .setColor(m.myGreen)
       .moveTo(300,-200)
       .horiz(30)
-      .vert(125)
+      .setStrokeLineWidth(m.myLineWidth*4);
+      
+    m.vsiScale = m.root.createChild("path")
+      .setColor(m.myGreen)
+      .setTranslation(330,-200)
+      .vert(200)
       .setStrokeLineWidth(m.myLineWidth*4);
       
     m.vsiArrow = m.root.createChild("path")
@@ -1029,15 +1034,20 @@ var HUD = {
       .setColor(m.myGreen)
       .moveTo(-300,-50)
       .horiz(30)
+      .setStrokeLineWidth(m.myLineWidth*4);
+      
+    m.AoAScale = m.root.createChild("path")
+      .setColor(m.myGreen)
       .vert(-150)
+      .setTranslation(-270,-50)
       .setStrokeLineWidth(m.myLineWidth*4);
       
     m.AoAArrow = m.root.createChild("path")
       .setColor(m.myGreen)
-      .moveTo(-300,-200)
-      .lineTo(-300+35,-215)
-      .moveTo(-300,-200)
-      .lineTo(-300+35,-185)
+      .moveTo(-300,-50)
+      .lineTo(-300+35,-65)
+      .moveTo(-300,-50)
+      .lineTo(-300+35,-35)
       .setStrokeLineWidth(m.myLineWidth*4);
   
    ##################################### Target Circle ####################################
@@ -1553,11 +1563,14 @@ var HUD = {
   display_vsi: func () {
     var fps = me.input.vs.getValue();
     me.vsiArrow.setTranslation(0,-fps);
+    me.vsiScale.setScale(1,-fps/200);
   },
   
   display_aoa: func () {
     var aoa = me.input.alpha.getValue();
-    me.AoAArrow.setTranslation(0,aoa*10);
+    me.AoAArrow.setTranslation(0,-aoa*10);
+    me.AoAScale.setScale(1,aoa/15);
+    
   },
   
   getHeadingToDisplay:func(){
