@@ -13,24 +13,26 @@ var msgC = "Please land before refueling.";
 var cannon = stations.SubModelWeapon.new("20mm Cannon", 0.254, 150, [0,1], [], props.globals.getNode("controls/armament/trigger-gun",1), 0, nil,0);
 cannon.typeShort = "GUN";
 cannon.brevity = "Guns guns";
-#var fuelTank267Left = stations.FuelTank.new("L External", "TK267", 8, 370, "sim/model/f-14b/wingtankL");
-#var fuelTank267Right = stations.FuelTank.new("R External", "TK267", 9, 370, "sim/model/f-14b/wingtankR");
 
-#var smokewinderWhite1 = stations.Smoker.new("Smokewinder White", "SmokeW", "sim/model/f-14b/fx/smoke-mnt-left");
-#var smokewinderWhite10 = stations.Smoker.new("Smokewinder White", "SmokeW", "sim/model/f-14b/fx/smoke-mnt-right");
+var fuelTankCenter1200 = stations.FuelTank.new("Center 1200 L Tank", "TK1200", 8, 317, "jaguar/ventraltank1200");
+var fuelTankLeft1200 = stations.FuelTank.new("Left 1200 L Tank", "TK1200", 6, 317, "jaguar/wingtankL1200");
+var fuelTankRight1200 = stations.FuelTank.new("Right 1200 L Tank", "TK1200", 7, 317, "jaguar/wingtankR1200");
 
 var pylonSets = {
 	empty: {name: "Empty", content: [], fireOrder: [], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 1},
 	mm20:  {name: "20mm Cannon", content: [cannon], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
 
-    m83:  {name: "MK-83", content: ["MK-83"], fireOrder: [0], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    m83:  {name: "1 x MK-83", content: ["MK-83"], fireOrder: [0], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    m83d:  {name: "2 x MK-83", content: ["MK-83","MK-83"], fireOrder: [0,1], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    c87:  {name: "1 x CBU-87", content: ["CBU-87"], fireOrder: [0], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
     
     # 340 = outer pylon
 #	smokeWL: {name: "Smokewinder White", content: [smokewinderWhite1], fireOrder: [0], launcherDragArea: -0.05, launcherMass: 53+340, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
 #	smokeWR: {name: "Smokewinder White", content: [smokewinderWhite10], fireOrder: [0], launcherDragArea: -0.05, launcherMass: 53+340, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
 
-#	fuel26L: {name: "267 Gal Fuel tank", content: [fuelTank267Left], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
-#	fuel26R: {name: "267 Gal Fuel tank", content: [fuelTank267Right], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
+	fuel12L: {name: "1200 L Fuel tank", content: [fuelTankLeft1200], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
+	fuel12R: {name: "1200 L Fuel tank", content: [fuelTankRight1200], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
+    fuel12C: {name: "1200 L Fuel tank", content: [fuelTankCenter1200], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
 
     # A/A weapons on non-wing pylons:
 	aim9:    {name: "AIM-9",   content: ["AIM-9"], fireOrder: [0], launcherDragArea: -0.025, launcherMass: 53, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
@@ -39,11 +41,11 @@ var pylonSets = {
 # sets. The first in the list is the default. Earlier in the list means higher up in dropdown menu.
 # These are not strictly needed in F-14 beside from the Empty, since it uses a custom payload dialog, but there for good measure.
 var pylon1set = [pylonSets.empty, pylonSets.aim9];
-var pylon2set = [pylonSets.empty, pylonSets.m83, pylonSets.aim9];
-var pylon3set = [pylonSets.empty, pylonSets.m83];
-var pylon4set = [pylonSets.empty, pylonSets.m83];
-var pylon5set = [pylonSets.empty, pylonSets.m83];
-var pylon6set = [pylonSets.empty, pylonSets.m83, pylonSets.aim9];
+var pylon2set = [pylonSets.empty, pylonSets.m83, pylonSets.c87, pylonSets.aim9];
+var pylon3set = [pylonSets.empty, pylonSets.m83, pylonSets.c87, pylonSets.m83d,pylonSets.fuel12L];
+var pylon4set = [pylonSets.empty, pylonSets.m83, pylonSets.c87,pylonSets.fuel12C];
+var pylon5set = [pylonSets.empty, pylonSets.m83, pylonSets.m83d, pylonSets.c87,pylonSets.fuel12R];
+var pylon6set = [pylonSets.empty, pylonSets.m83, pylonSets.c87, pylonSets.aim9];
 var pylon7set = [pylonSets.empty, pylonSets.aim9];
 
 # pylons
@@ -63,7 +65,7 @@ var pylons = [pylon1,pylon2,pylon3,pylon4,pylon5,pylon6,pylon7,pylonI];
 
 # The order of first vector in this line is the default pylon order weapons is released in.
 # The order of second vector in this line is the order cycle key would cycle through the weapons (but since the f-14 dont have that the order is not important):
-fcs = fc.FireControl.new(pylons, [0,6,1,5,2,4,3,7], ["20mm Cannon","AIM-9","MK-83"]);
+fcs = fc.FireControl.new(pylons, [0,6,1,5,2,4,3,7], ["20mm Cannon","AIM-9","MK-83", "CBU-87"]);
 
 #print("** Pylon & fire control system started. **");
 var getDLZ = func {

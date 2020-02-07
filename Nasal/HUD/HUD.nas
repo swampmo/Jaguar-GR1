@@ -1215,6 +1215,7 @@ var HUD = {
     m.loads_hash =  {
      "20mm Cannon":"GUN",
      "MK-83": "MK83",
+     "CBU-87": "CB87",
      "AIM-9": "AIM9",
     };
     
@@ -1310,7 +1311,7 @@ var HUD = {
     
     me.low = 0;
     if(me.selectedWeap != nil and me.input.MasterArm.getValue()){
-      if (me.selectedWeap.type == "MK-83") {
+      if (me.selectedWeap.type == "MK-83" or me.selectedWeap.type == "CBU-87") {
         var ccip = me.selectedWeap.getCCIPadv(16,0.1);
         if (ccip != nil) {
           me.targetArray[0].show();
