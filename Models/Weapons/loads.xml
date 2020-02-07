@@ -37,17 +37,23 @@
         <type>select</type>
         <object-name>left-AIM-9-pos-1</object-name>
         <condition>
-            <equals>
-      <property>payload/armament/station/id-0-type</property>
-      <value>AIM-9</value>
-    </equals>
-    <greater-than>
-      <property>payload/armament/station/id-0-count</property>
-      <value>0</value>
-    </greater-than>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-0-type</property>
+                    <value>AIM-9</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-0-type</property>
+                    <value>MAGIC-2</value>
+                </equals>
+            </or>
+            <greater-than>
+                <property>payload/armament/station/id-0-count</property>
+                <value>0</value>
+            </greater-than>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>left-ALQ-101-pos-1</name>
         <path>Aircraft/Jaguar/Models/Weapons/alq101.xml</path>
         <offsets>
@@ -89,17 +95,23 @@
         <type>select</type>
         <object-name>left-AIM-9-pos-2</object-name>
         <condition>
-            <equals>
-      <property>payload/armament/station/id-1-type</property>
-      <value>AIM-9</value>
-    </equals>
-    <greater-than>
-      <property>payload/armament/station/id-1-count</property>
-      <value>0</value>
-    </greater-than>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-1-type</property>
+                    <value>AIM-9</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-1-type</property>
+                    <value>MAGIC-2</value>
+                </equals>
+            </or>
+            <greater-than>
+                <property>payload/armament/station/id-1-count</property>
+                <value>0</value>
+            </greater-than>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>left-GBU-pos-2</name>
         <path>Aircraft/Jaguar/Models/Weapons/gbu16.xml</path>
         <offsets>
@@ -140,16 +152,16 @@
         <object-name>left-MK82-pos-2</object-name>
         <condition>
             <equals>
-              <property>payload/armament/station/id-1-type</property>
-              <value>MK-83</value>
+                <property>payload/armament/station/id-1-type</property>
+                <value>MK-83</value>
             </equals>
             <equals>
-              <property>payload/armament/station/id-1-count</property>
-              <value>1</value>
+                <property>payload/armament/station/id-1-count</property>
+                <value>1</value>
             </equals>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>left-ALARM-pos-2</name>
         <path>Aircraft/Jaguar/Models/Weapons/alarm.xml</path>
         <offsets>
@@ -202,7 +214,7 @@
         </condition>
     </animation>-->
     <!-- station left 3 -->
-<!--    <model>
+    <!--    <model>
         <name>left-Tank</name>
         <path>Aircraft/Jaguar/Models/Weapons/tank1000.xml</path>
         <offsets>
@@ -245,7 +257,7 @@
             <property>jaguar/wingtankL1200</property>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>left-GBU-pos-3</name>
         <path>Aircraft/Jaguar/Models/Weapons/gbu16.xml</path>
         <offsets>
@@ -286,12 +298,12 @@
         <object-name>left-MK-82-pos-3</object-name>
         <condition>
             <equals>
-              <property>payload/armament/station/id-2-type</property>
-              <value>MK-83</value>
+                <property>payload/armament/station/id-2-type</property>
+                <value>MK-83</value>
             </equals>
             <equals>
-              <property>payload/armament/station/id-2-count</property>
-              <value>1</value>
+                <property>payload/armament/station/id-2-count</property>
+                <value>1</value>
             </equals>
         </condition>
     </animation>
@@ -310,16 +322,16 @@
         <object-name>left-MK82x2-pos-3</object-name>
         <condition>
             <equals>
-              <property>payload/armament/station/id-2-type</property>
-              <value>MK-83</value>
+                <property>payload/armament/station/id-2-type</property>
+                <value>MK-83</value>
             </equals>
             <greater-than>
-              <property>payload/armament/station/id-2-count</property>
-              <value>1</value>
+                <property>payload/armament/station/id-2-count</property>
+                <value>1</value>
             </greater-than>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>left-ALARM-pos-3</name>
         <path>Aircraft/Jaguar/Models/Weapons/alarm.xml</path>
         <offsets>
@@ -386,8 +398,7 @@
         <type>select</type>
         <object-name>1000 l Droptank</object-name>
         <condition>
-                    <property>jaguar/ventraltank1200</property>
-                    
+            <property>jaguar/ventraltank1200</property>
         </condition>
     </animation>
     <model>
@@ -405,16 +416,16 @@
         <object-name>2x-MK-82</object-name>
         <condition>
             <equals>
-              <property>payload/armament/station/id-3-type</property>
-              <value>MK-83</value>
+                <property>payload/armament/station/id-3-type</property>
+                <value>MK-83</value>
             </equals>
             <greater-than>
-              <property>payload/armament/station/id-3-count</property>
-              <value>0</value>
+                <property>payload/armament/station/id-3-count</property>
+                <value>0</value>
             </greater-than>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>Center-ALARM</name>
         <path>Aircraft/Jaguar/Models/Weapons/alarm.xml</path>
         <offsets>
@@ -467,7 +478,7 @@
         </condition>
     </animation>-->
     <!-- station right 3 -->
-<!--    <model>
+    <!--    <model>
         <name>right-Tank</name>
         <path>Aircraft/Jaguar/Models/Weapons/tank1000.xml</path>
         <offsets>
@@ -510,7 +521,7 @@
             <property>jaguar/wingtankR1200</property>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>right-GBU-pos-3</name>
         <path>Aircraft/Jaguar/Models/Weapons/gbu16.xml</path>
         <offsets>
@@ -551,12 +562,12 @@
         <object-name>right-MK-82-pos-3</object-name>
         <condition>
             <equals>
-              <property>payload/armament/station/id-4-type</property>
-              <value>MK-83</value>
+                <property>payload/armament/station/id-4-type</property>
+                <value>MK-83</value>
             </equals>
             <equals>
-              <property>payload/armament/station/id-4-count</property>
-              <value>1</value>
+                <property>payload/armament/station/id-4-count</property>
+                <value>1</value>
             </equals>
         </condition>
     </animation>
@@ -575,16 +586,16 @@
         <object-name>right-MK82x2-pos-3</object-name>
         <condition>
             <equals>
-              <property>payload/armament/station/id-4-type</property>
-              <value>MK-83</value>
+                <property>payload/armament/station/id-4-type</property>
+                <value>MK-83</value>
             </equals>
             <greater-than>
-              <property>payload/armament/station/id-4-count</property>
-              <value>1</value>
+                <property>payload/armament/station/id-4-count</property>
+                <value>1</value>
             </greater-than>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>Right-ALARM-pos-3</name>
         <path>Aircraft/Jaguar/Models/Weapons/alarm.xml</path>
         <offsets>
@@ -651,17 +662,23 @@
         <type>select</type>
         <object-name>right-AIM-9-pos-2</object-name>
         <condition>
-            <equals>
-      <property>payload/armament/station/id-5-type</property>
-      <value>AIM-9</value>
-    </equals>
-    <greater-than>
-      <property>payload/armament/station/id-5-count</property>
-      <value>0</value>
-    </greater-than>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-5-type</property>
+                    <value>AIM-9</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-5-type</property>
+                    <value>MAGIC-2</value>
+                </equals>
+            </or>
+            <greater-than>
+                <property>payload/armament/station/id-5-count</property>
+                <value>0</value>
+            </greater-than>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>right-GBU-pos-2</name>
         <path>Aircraft/Jaguar/Models/Weapons/gbu16.xml</path>
         <offsets>
@@ -702,16 +719,16 @@
         <object-name>right-MK82-pos-2</object-name>
         <condition>
             <equals>
-              <property>payload/armament/station/id-5-type</property>
-              <value>MK-83</value>
+                <property>payload/armament/station/id-5-type</property>
+                <value>MK-83</value>
             </equals>
             <equals>
-              <property>payload/armament/station/id-5-count</property>
-              <value>1</value>
+                <property>payload/armament/station/id-5-count</property>
+                <value>1</value>
             </equals>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>right-ALARM-pos-2</name>
         <path>Aircraft/Jaguar/Models/Weapons/alarm.xml</path>
         <offsets>
@@ -778,17 +795,23 @@
         <type>select</type>
         <object-name>right-AIM-9-pos-1</object-name>
         <condition>
-            <equals>
-      <property>payload/armament/station/id-6-type</property>
-      <value>AIM-9</value>
-    </equals>
-    <greater-than>
-      <property>payload/armament/station/id-6-count</property>
-      <value>0</value>
-    </greater-than>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-6-type</property>
+                    <value>AIM-9</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-6-type</property>
+                    <value>MAGIC-2</value>
+                </equals>
+            </or>
+            <greater-than>
+                <property>payload/armament/station/id-6-count</property>
+                <value>0</value>
+            </greater-than>
         </condition>
     </animation>
-<!--    <model>
+    <!--    <model>
         <name>right-ALQ-101-pos-1</name>
         <path>Aircraft/Jaguar/Models/Weapons/alq101.xml</path>
         <offsets>
