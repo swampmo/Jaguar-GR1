@@ -4,46 +4,84 @@
 
 <PropertyList>
 
-	<name>MK-83</name>
-	<path>MK-83.ac</path>
+	<name>CBU-87</name>
+	<path>CBU-87.ac</path>
 
 	<animation>
 		<type>select</type>
-		<object-name>MK-83_Shell</object-name>
-      	<object-name>MK-83_TailFins</object-name>
-      	<object-name>MK-83_Detonator</object-name>>
-      	<object-name>MK-83_Mounts</object-name>
+		<object-name>CBU-87frontsection</object-name>
+      	<object-name>CBU-87mounts</object-name>
+      	<object-name>CBU-87panelLH</object-name>
+      	<object-name>CBU-87panelRH</object-name>
+      	<object-name>CBU-87wing1</object-name>
+      	<object-name>CBU-87wing2</object-name>
+      	<object-name>CBU-87wing3</object-name>
+      	<object-name>CBU-87wing4</object-name>
+      	<object-name>CBU-87wingbase</object-name>
 		<condition>
-			<property>payload/armament/mk-83/flags/msl-id-0</property>
+			<property>payload/armament/cbu-87/flags/msl-id-300</property>
 		</condition>
 	</animation>
 
 	<animation>
-		<type>select</type>
-      	<object-name>MK-83_Wiring</object-name>
-		<condition>
-		<not>
-			<property>payload/armament/mk-83/flags/msl-id-0</property>
-		</not>
-		</condition>
-	</animation>
-
-	<animation>
-  		<type>rotate</type>
-  		<object-name>MK-83_Detonator</object-name>
-  		<factor>900</factor>
-  		<property>sim/time/elapsed-sec</property>
-  		<center>
-  		 <x-m>0</x-m>
-   		 <y-m>0</y-m>
-   		 <z-m>0</z-m>
-  		</center>
-  		<axis>
-   		 <x>1</x>
-   		 <y>0</y>
-   		 <z>0</z>
-  		</axis>
- 	</animation>
+  <type>rotate</type>
+  <object-name>CBU-87wing1</object-name>
+  <property>payload/armament/cbu-87/flags/deploy-id-300</property>
+  <factor>90</factor>
+  <axis>
+   <x1-m>1.13712</x1-m>
+   <y1-m>-0.14522</y1-m>
+   <z1-m>0.12254</z1-m>
+   <x2-m>1.13712</x2-m>
+   <y2-m>-0.12867</y2-m>
+   <z2-m>0.13992</z2-m>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>CBU-87wing2</object-name>
+  <property>payload/armament/cbu-87/flags/deploy-id-300</property>
+  <factor>-90</factor>
+  <axis>
+   <x1-m>1.13712</x1-m>
+   <y1-m>0.14522</y1-m>
+   <z1-m>0.12254</z1-m>
+   <x2-m>1.13712</x2-m>
+   <y2-m>0.12867</y2-m>
+   <z2-m>0.13992</z2-m>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>CBU-87wing3</object-name>
+  <property>payload/armament/cbu-87/flags/deploy-id-300</property>
+  <factor>90</factor>
+  <axis>
+   <x1-m>1.13712</x1-m>
+   <y1-m>0.14522</y1-m>
+   <z1-m>-0.12254</z1-m>
+   <x2-m>1.13712</x2-m>
+   <y2-m>0.12867</y2-m>
+   <z2-m>-0.13992</z2-m>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>CBU-87wing4</object-name>
+  <property>payload/armament/cbu-87/flags/deploy-id-300</property>
+  <factor>-90</factor>
+  <axis>
+   <x1-m>1.13712</x1-m>
+   <y1-m>-0.14522</y1-m>
+   <z1-m>-0.12254</z1-m>
+   <x2-m>1.13712</x2-m>
+   <y2-m>-0.12867</y2-m>
+   <z2-m>-0.13992</z2-m>
+  </axis>
+ </animation>
 
 	 <particlesystem>
 		   <name>explosion</name>
@@ -53,23 +91,27 @@
 		   <lighting type="bool">false</lighting>
 
 		   <condition>
-		         <property>payload/armament/mk-83/flags/explode-id-0</property>
+		         <property>payload/armament/cbu-87/flags/explode-id-300</property>
 		   </condition>
 
 		   <attach>world</attach>
 
 		   <placer>
-		     <type>point</type> 
+		     <type>sector</type>                                                    
+		    <radius-min-m>0</radius-min-m>
+		    <radius-max-m>180</radius-max-m>
+		    <!--<phi-min-deg>float</phi-min-deg>
+		    <phi-max-deg>float</phi-max-deg>-->
 		   </placer>
 
 		   <shooter>
-		     <theta-min-deg>-180</theta-min-deg>
-		     <theta-max-deg>180</theta-max-deg>
+		     <theta-min-deg>-10</theta-min-deg>
+		     <theta-max-deg>10</theta-max-deg>
 		     <phi-min-deg>-180</phi-min-deg>
 		     <phi-max-deg>180</phi-max-deg>
 		     <speed-mps>
-		       <value>500</value>
-		       <spread>80</spread>
+		       <value>10</value>
+		       <spread>5</spread>
 		     </speed-mps>
 		     <rotation-speed>
 		       <x-min-deg-sec>0</x-min-deg-sec>
@@ -83,8 +125,8 @@
 
 		   <counter>
 		     <particles-per-sec>
-		       <value>30</value>
-		       <spread>10</spread>
+		       <value>200</value>
+		       <spread>15</spread>
 		     </particles-per-sec>
 		   </counter>
 		      
@@ -99,7 +141,7 @@
 		         <alpha><value> 1 </value></alpha>
 		       </color>
 		       <size>
-		         <value>4</value>
+		         <value>5</value>
 		       </size>
 		     </start>
 
@@ -111,17 +153,17 @@
 		         <alpha><value> 0.1 </value></alpha>
 		       </color>
 		       <size>
-		         <value>200</value>
+		         <value>15</value>
 		       </size>
 		     </end>
 
 		     <life-sec>
-		       <value>0.5</value>
+		       <value>3</value>
 		     </life-sec>
 		        
 		     <mass-kg>  5 </mass-kg>
 		     <radius-m> 0.5 </radius-m>
-		   </particle>
+   			</particle>
 
 		   <program>
 		     <fluid>               air  </fluid>
@@ -139,13 +181,17 @@
 		   <lighting type="bool">false</lighting>
 
 		   <condition>
-		         <property>payload/armament/mk-83/flags/explode-smoke-id-0</property>
+		         <property>payload/armament/cbu-87/flags/explode-smoke-id-300</property>
 		   </condition>
 
 		   <attach>world</attach>
 
 		   <placer>
-		     <type>point</type> 
+		     <type>sector</type>                                                    
+		    <radius-min-m>0</radius-min-m>
+		    <radius-max-m>240</radius-max-m>
+		    <!--<phi-min-deg>float</phi-min-deg>
+		    <phi-max-deg>float</phi-max-deg>-->
 		   </placer>
 
 		   <shooter>
@@ -154,8 +200,8 @@
 		     <phi-min-deg>-180</phi-min-deg>
 		     <phi-max-deg>180</phi-max-deg>
 		     <speed-mps>
-		       <value>500</value>
-		       <spread>60</spread>
+		       <value>10</value>
+		       <spread>5</spread>
 		     </speed-mps>
 		     <rotation-speed>
 		       <x-min-deg-sec>0</x-min-deg-sec>
@@ -169,8 +215,8 @@
 
 		   <counter>
 		     <particles-per-sec>
-		       <value>50</value>
-		       <spread>10</spread>
+		       <value>200</value>
+		       <spread>15</spread>
 		     </particles-per-sec>
 		   </counter>
 		      
@@ -185,7 +231,7 @@
 		         <alpha><value> 0.5 </value></alpha>
 		       </color>
 		       <size>
-		         <value>20</value>
+		         <value>15</value>
 		       </size>
 		     </start>
 
@@ -197,12 +243,12 @@
 		         <alpha><value> 0.04 </value></alpha>
 		       </color>
 		       <size>
-		         <value>240</value>
+		         <value>20</value>
 		       </size>
 		     </end>
 
 		     <life-sec>
-		       <value>40</value>
+		       <value>45</value>
 		     </life-sec>
 		        
 		     <mass-kg>  5 </mass-kg>
@@ -218,11 +264,15 @@
 		 </particlesystem>
 
 	<animation>
-  		<object-name>MK-83_Shell</object-name>
-      	<object-name>MK-83_TailFins</object-name>
-      	<object-name>MK-83_Detonator</object-name>
-      	<object-name>MK-83_Wiring</object-name>
-      	<object-name>MK-83_Mounts</object-name>
+  		<object-name>CBU-87frontsection</object-name>
+      	<object-name>CBU-87mounts</object-name>
+      	<object-name>CBU-87panelLH</object-name>
+      	<object-name>CBU-87panelRH</object-name>
+      	<object-name>CBU-87wing1</object-name>
+      	<object-name>CBU-87wing2</object-name>
+      	<object-name>CBU-87wing3</object-name>
+      	<object-name>CBU-87wing4</object-name>
+      	<object-name>CBU-87wingbase</object-name>
   		<enable-hot type="bool">false</enable-hot>
  	</animation>
 

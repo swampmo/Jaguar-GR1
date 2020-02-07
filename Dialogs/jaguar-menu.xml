@@ -22,7 +22,7 @@
       </item>
 
 
-	 <item n="2">
+<!--	 <item n="2">
         <label>No load</label>
         <binding>
           <command>nasal</command>
@@ -100,7 +100,7 @@
           <command>nasal</command>
           <script>load.antishiplong()</script>
         </binding>
-      </item>
+      </item>-->
 	 </menu>
 
   </default>
