@@ -4,8 +4,5 @@
 
   <path>baeAlarm.ac</path>
 
-  <animation>
-    <object-name>Alarm</object-name>
-  </animation>
 
 </PropertyList>

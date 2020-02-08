@@ -1217,6 +1217,7 @@ var HUD = {
      "MK-83": "MK83",
      "CBU-87": "CB87",
      "AIM-9": "AIM9",
+     "MAGIC-2": "MAJIC",
     };
     
     m.pylonsSide_hash = {
@@ -1332,7 +1333,7 @@ var HUD = {
           me.targetArray[0].hide();
           me.rootLine.hide();
         }        
-      } elsif (me.selectedWeap.type == "AIM-9") {
+      } elsif (me.selectedWeap.type == "AIM-9" or me.selectedWeap.type == "MAGIC-2") {
         var seeker = me.selectedWeap.getSeekerInfo();
         if (seeker != nil) {
           me.targetArray[0].show();

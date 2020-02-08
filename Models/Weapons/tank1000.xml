@@ -4,8 +4,5 @@
 
   <path>Aircraft/Jaguar/Models/Weapons/tank1000.ac</path>
 
-  <animation>
-    <object-name>tank1000</object-name>
-  </animation>
 
 </PropertyList>
