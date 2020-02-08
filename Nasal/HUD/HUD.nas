@@ -1726,7 +1726,7 @@ var HUD = {
         
         #print(me.houseTranslation/(me.headScaleTickSpacing/5));
         
-        me.HeadingHouse.setTranslation(clamp(me.houseTranslation,-me.maxladderspan,me.maxladderspan),me.fpvCalc[1]);
+        me.HeadingHouse.setTranslation(clamp(me.houseTranslation,-me.maxladderspan,me.maxladderspan),clamp(me.fpvCalc[1],-450,450));
         if(abs(me.houseTranslation/(me.headScaleTickSpacing/5))>90){
           me.HeadingHouse.setRotation(me.horizStuff[1]+(180* D2R));
         }else{
