@@ -20,6 +20,10 @@ var fuelTankLeft1200 = stations.FuelTank.new("Left 1200 L Tank", "TK1200", 6, 31
 var fuelTankCenter1200 = stations.FuelTank.new("Center 1200 L Tank", "TK1200", 8, 317, "jaguar/ventraltank1200");
 var fuelTankRight1200 = stations.FuelTank.new("Right 1200 L Tank", "TK1200", 7, 317, "jaguar/wingtankR1200");
 
+fuelTankLeft1200.del();
+fuelTankCenter1200.del();
+fuelTankRight1200.del();
+
 var pylonSets = {
 	empty: {name: "Empty", content: [], fireOrder: [], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 1},
 	mm20:  {name: "20mm Cannon", content: [cannon], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},

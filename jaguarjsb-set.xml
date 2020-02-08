@@ -711,16 +711,22 @@
                 <name>Right Wing Tank</name>
             </tank>
             <tank n="6">
-                <name>Left Wing Drop Tank</name>
-                <jettisoned type="bool">false</jettisoned>
+                <name>Not attached</name>
+                <selected type="bool">false</selected>
+                <capacity-gal_us type="double">0</capacity-gal_us>
+                <level-norm type="double">0</level-norm>
             </tank>
             <tank n="7">
-                <name>Right Wing Drop Tank</name>
-                <jettisoned type="bool">false</jettisoned>
+                <name>Not attached</name>
+                <selected type="bool">false</selected>
+                <capacity-gal_us type="double">0</capacity-gal_us>
+                <level-norm type="double">0</level-norm>
             </tank>
             <tank n="8">
-                <name>Center Drop Tank</name>
-                <jettisoned type="bool">false</jettisoned>
+                <name>Not attached</name>
+                <selected type="bool">false</selected>
+                <capacity-gal_us type="double">0</capacity-gal_us>
+                <level-norm type="double">0</level-norm>
             </tank>
         </fuel>
     </consumables>
