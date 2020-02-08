@@ -1213,11 +1213,14 @@ var HUD = {
     m.root.setColor(m.red,m.green,m.blue,1);
     
     m.loads_hash =  {
-     "20mm Cannon":"GUN",
+     "30mm Cannon":"GUN",
      "MK-83": "MK83",
+     "MK-83HD": "HD83",
      "CBU-87": "CB87",
      "AIM-9": "AIM9",
-     "MAGIC-2": "MAJIC",
+     "MAGIC-2": "MAJIC2",
+     "Majic": "MAJIC",
+     "BL755": "BL"
     };
     
     m.pylonsSide_hash = {
@@ -1312,7 +1315,7 @@ var HUD = {
     
     me.low = 0;
     if(me.selectedWeap != nil and me.input.MasterArm.getValue()){
-      if (me.selectedWeap.type == "MK-83" or me.selectedWeap.type == "CBU-87") {
+      if (me.selectedWeap.type == "MK-83" or me.selectedWeap.type == "CBU-87" or me.selectedWeap.type == "BL755" or me.selectedWeap.type == "MK-83HD") {
         var ccip = me.selectedWeap.getCCIPadv(16,0.1);
         if (ccip != nil) {
           me.targetArray[0].show();
@@ -1333,7 +1336,7 @@ var HUD = {
           me.targetArray[0].hide();
           me.rootLine.hide();
         }        
-      } elsif (me.selectedWeap.type == "AIM-9" or me.selectedWeap.type == "MAGIC-2") {
+      } elsif (me.selectedWeap.type == "AIM-9" or me.selectedWeap.type == "MAGIC-2" or me.selectedWeap.type == "Majic") {
         var seeker = me.selectedWeap.getSeekerInfo();
         if (seeker != nil) {
           me.targetArray[0].show();
@@ -1343,7 +1346,7 @@ var HUD = {
           me.targetArray[0].hide();
         }        
         me.rootLine.hide();
-      } elsif(me.selectedWeap.type != "20mm Cannon"){
+      } elsif(me.selectedWeap.type != "30mm Cannon"){
         #Doing the math only for bombs
         if(me.selectedWeap.stage_1_duration+me.selectedWeap.stage_2_duration == 0){
           
@@ -1862,7 +1865,7 @@ var HUD = {
 #       print("Test");
 #       print("Test:" ~ me.loads_hash[me.selectedWeap.type] ~ " : " ~ pylons.fcs.getAmmo());
 #       print("Test:" ~ me.selectedWeap.type ~ " : " ~ pylons.fcs.getAmmo());
-      if(me.selectedWeap.type == "20mm Cannon"){
+      if(me.selectedWeap.type == "30mm Cannon"){
 #         print(me.loads_hash[me.selectedWeap.type] ~ " : " ~ pylons.fcs.getAmmo());
         me.Left_bullet_Count.setText(sprintf("%3d", pylons.fcs.getAmmo()/2));
         me.Right_bullet_Count.setText(sprintf("%3d", pylons.fcs.getAmmo()/2));
@@ -1887,7 +1890,7 @@ var HUD = {
     #Showing the circle around the L or R if the weapons is under the wings.
     #A circle around a C is also done for center loads, but I couldn't find any docs on that, so it is conjecture
     if(me.input.MasterArm.getValue() and me.selectedWeap != nil){
-      if(me.selectedWeap.type != "20mm Cannon"){
+      if(me.selectedWeap.type != "30mm Cannon"){
         me.pylons_Group.show();
         me.pylons_Circle_Group.show();
 #          print("Type:"~me.loads_hash[me.selectedWeap.type]);
@@ -2100,7 +2103,7 @@ var HUD = {
     if(me.selectedWeap != nil and me.input.MasterArm.getValue()){
         
         #Testings
-        if(me.selectedWeap.type != "20mm Cannon"){ 
+        if(me.selectedWeap.type != "30mm Cannon"){ 
             if(me.selectedWeap.class == "A" and me.selectedWeap.parents[0] == armament.AIM){
             #Taking back the DLZ
             
@@ -2219,7 +2222,7 @@ var HUD = {
   displayBoreCross:func(){
     #maybe it should be a different cross.
     if(me.input.MasterArm.getValue() and pylons.fcs.getSelectedWeapon() !=nil){   
-      if(me.selectedWeap.type == "20mm Cannon"){#if weapons selected
+      if(me.selectedWeap.type == "30mm Cannon"){#if weapons selected
         me.boreCross.setTranslation(HudMath.getBorePosSlanted());
         me.boreCross.show();
       }else{

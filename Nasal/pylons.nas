@@ -12,7 +12,7 @@ var msgA = "If you need to repair now, then use Menu-Location-SelectAirport inst
 var msgB = "Please land before changing payload.";
 var msgC = "Please land before refueling.";
 
-var cannon = stations.SubModelWeapon.new("20mm Cannon", 0.254, 150, [0,1], [], props.globals.getNode("controls/armament/trigger-gun",1), 0, nil,0);
+var cannon = stations.SubModelWeapon.new("30mm Cannon", 0.254, 150, [0,1], [], props.globals.getNode("controls/armament/trigger-gun",1), 0, nil,0);
 cannon.typeShort = "GUN";
 cannon.brevity = "Guns guns";
 
@@ -24,14 +24,24 @@ fuelTankLeft1200.del();
 fuelTankCenter1200.del();
 fuelTankRight1200.del();
 
+# 
+# Matra R550 Majic: 14.5kg fuel, M2.5 above, 2 sec burn, 12kg warhead, 35G, rear aspect, 1.6 s arm, 500m minimum, 5km for non afterburner target, 25 sec selfd., 89kg mass, 164mm diam
+# Bl799:
+
+
+
 var pylonSets = {
 	empty: {name: "Empty", content: [], fireOrder: [], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 1},
 	mm20:  {name: "20mm Cannon", content: [cannon], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
 
     m83:  {name: "1 x MK-83", content: ["MK-83"], fireOrder: [0], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
     m83d:  {name: "2 x MK-83", content: ["MK-83","MK-83"], fireOrder: [0,1], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    m83h:  {name: "1 x MK-83HD", content: ["MK-83HD"], fireOrder: [0], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    m83hd:  {name: "2 x MK-83HD", content: ["MK-83HD","MK-83HD"], fireOrder: [0,1], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
     c87:  {name: "1 x CBU-87", content: ["CBU-87"], fireOrder: [0], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
     c87d:  {name: "2 x CBU-87", content: ["CBU-87","CBU-87"], fireOrder: [0,1], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    bl:  {name: "1 x BL755", content: ["BL755"], fireOrder: [0], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    bld:  {name: "2 x BL755", content: ["BL755","BL755"], fireOrder: [0,1], launcherDragArea: 0.005, launcherMass: 300, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
     
     # 340 = outer pylon
 #	smokeWL: {name: "Smokewinder White", content: [smokewinderWhite1], fireOrder: [0], launcherDragArea: -0.05, launcherMass: 53+340, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
@@ -43,18 +53,18 @@ var pylonSets = {
 
     # A/A weapons on non-wing pylons:
 	aim9:    {name: "AIM-9",   content: ["AIM-9"], fireOrder: [0], launcherDragArea: -0.025, launcherMass: 53, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
-    majic:    {name: "MAGIC-2",   content: ["MAGIC-2"], fireOrder: [0], launcherDragArea: -0.025, launcherMass: 53, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
+    majic:    {name: "Majic",   content: ["Majic"], fireOrder: [0], launcherDragArea: -0.025, launcherMass: 53, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
 };
 
 # sets. The first in the list is the default. Earlier in the list means higher up in dropdown menu.
 # These are not strictly needed in F-14 beside from the Empty, since it uses a custom payload dialog, but there for good measure.
-var pylon1set = [pylonSets.empty, pylonSets.aim9, pylonSets.majic];
-var pylon2set = [pylonSets.empty, pylonSets.aim9, pylonSets.majic, pylonSets.m83, pylonSets.c87];
-var pylon3set = [pylonSets.empty, pylonSets.m83, pylonSets.m83d, pylonSets.c87, pylonSets.c87d, pylonSets.fuel12L];
-var pylon4set = [pylonSets.empty, pylonSets.m83, pylonSets.c87, pylonSets.fuel12C];
-var pylon5set = [pylonSets.empty, pylonSets.m83, pylonSets.m83d, pylonSets.c87, pylonSets.c87d, pylonSets.fuel12R];
-var pylon6set = [pylonSets.empty, pylonSets.aim9, pylonSets.majic, pylonSets.m83, pylonSets.c87];
-var pylon7set = [pylonSets.empty, pylonSets.aim9, pylonSets.majic];
+var pylon1set = [pylonSets.empty, pylonSets.majic];
+var pylon2set = [pylonSets.empty, pylonSets.majic, pylonSets.m83, pylonSets.m83h, pylonSets.c87, pylonSets.bl];
+var pylon3set = [pylonSets.empty, pylonSets.m83, pylonSets.m83h, pylonSets.m83d, pylonSets.m83hd, pylonSets.c87, pylonSets.c87d, pylonSets.bl, pylonSets.bld, pylonSets.fuel12L];
+var pylon4set = [pylonSets.empty, pylonSets.m83, pylonSets.m83h, pylonSets.c87, pylonSets.bl, pylonSets.fuel12C];
+var pylon5set = [pylonSets.empty, pylonSets.m83, pylonSets.m83h, pylonSets.m83d, pylonSets.m83hd, pylonSets.c87, pylonSets.c87d, pylonSets.bl, pylonSets.bld, pylonSets.fuel12R];
+var pylon6set = [pylonSets.empty, pylonSets.majic, pylonSets.m83, pylonSets.m83h, pylonSets.c87, pylonSets.bl];
+var pylon7set = [pylonSets.empty, pylonSets.majic];
 
 # pylons
 pylonI = stations.InternalStation.new("Internal gun mount", 7, [pylonSets.mm20], props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[5]",1));
@@ -73,7 +83,7 @@ var pylons = [pylon1,pylon2,pylon3,pylon4,pylon5,pylon6,pylon7,pylonI];
 
 # The order of first vector in this line is the default pylon order weapons is released in.
 # The order of second vector in this line is the order cycle key would cycle through the weapons (but since the f-14 dont have that the order is not important):
-fcs = fc.FireControl.new(pylons, [0,6,1,5,2,4,3,7], ["20mm Cannon", "AIM-9", "MAGIC-2", "MK-83", "CBU-87"]);
+fcs = fc.FireControl.new(pylons, [0,6,1,5,2,4,3,7], ["20mm Cannon", "Majic", "MK-83", "MK-83HD", "CBU-87", "BL755"]);
 
 #print("** Pylon & fire control system started. **");
 var getDLZ = func {
@@ -114,7 +124,7 @@ var bore_loop = func {
     if (fcs != nil) {
         var standby = 1;#getprop("sim/multiplay/generic/int[2]");
         var aim = fcs.getSelectedWeapon();
-        if (aim != nil and (aim.type == "AIM-9" or aim.type == "MAGIC-2")) {
+        if (aim != nil and (aim.type == "AIM-9" or aim.type == "MAGIC-2" or aim.type == "Majic")) {
             if (standby == 1) {
                 #aim.setBore(1);
                 aim.setContacts(radar.completeList);
