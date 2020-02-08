@@ -33,9 +33,9 @@ var pylonSets = {
 #	smokeWL: {name: "Smokewinder White", content: [smokewinderWhite1], fireOrder: [0], launcherDragArea: -0.05, launcherMass: 53+340, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
 #	smokeWR: {name: "Smokewinder White", content: [smokewinderWhite10], fireOrder: [0], launcherDragArea: -0.05, launcherMass: 53+340, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
 
-	fuel12L: {name: "1200 L Fuel tank", content: [fuelTankLeft1200], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
-	fuel12R: {name: "1200 L Fuel tank", content: [fuelTankRight1200], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
-    fuel12C: {name: "1200 L Fuel tank", content: [fuelTankCenter1200], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
+	fuel12L: {name: "1200 L Ext. Fuel tank", content: [fuelTankLeft1200], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
+	fuel12R: {name: "1200 L Ext. Fuel tank", content: [fuelTankRight1200], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
+    fuel12C: {name: "1200 L Ext. Fuel tank", content: [fuelTankCenter1200], fireOrder: [0], launcherDragArea: 0.35, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
 
     # A/A weapons on non-wing pylons:
 	aim9:    {name: "AIM-9",   content: ["AIM-9"], fireOrder: [0], launcherDragArea: -0.025, launcherMass: 53, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
@@ -54,13 +54,13 @@ var pylon7set = [pylonSets.empty, pylonSets.aim9, pylonSets.majic];
 
 # pylons
 pylonI = stations.InternalStation.new("Internal gun mount", 7, [pylonSets.mm20], props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[5]",1));
-pylon1 = stations.Pylon.new("Pylon Left Top",      0, [0.4795,-3.6717,-1.0600], pylon1set,  0, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[0]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[0]",1),func{return 1});
-pylon2 = stations.Pylon.new("Pylon 2",      1, [0.4795,-3.7800,-1.5700], pylon2set,  1, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[1]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[1]",1),func{return 1});
-pylon3 = stations.Pylon.new("Pylon 3",      2, [-2,0,-1.4333],           pylon3set,  2, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[2]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[2]",1),func{return 1});
-pylon4 = stations.Pylon.new("Pylon 4",      3, [-2,-1.0,-1.4333],        pylon4set,  3, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[3]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[3]",1),func{return 1});
-pylon5 = stations.Pylon.new("Pylon 5",      4, [ 2,-1.0,-1.4333],        pylon5set,  4, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[4]",1),func{return 1});
-pylon6 = stations.Pylon.new("Pylon 6",      5, [ 2,-1.0,-1.4333],        pylon6set,  5, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[4]",1),func{return 1});
-pylon7 = stations.Pylon.new("Pylon Right Top",      6, [ 2,-1.0,-1.4333],        pylon7set,  6, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[4]",1),func{return 1});
+pylon1 = stations.Pylon.new("Left Over Wing",             0, [2.140,-2.050, 0.260], pylon1set,  0, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[0]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[0]",1),func{return 1});
+pylon2 = stations.Pylon.new("Left Outboard Wing",         1, [2.400,-3.09, -0.520], pylon2set,  1, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[1]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[1]",1),func{return 1});
+pylon3 = stations.Pylon.new("Left Inboard Wing",          2, [2.000,-2.050,-0.430], pylon3set,  2, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[2]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[2]",1),func{return 1});
+pylon4 = stations.Pylon.new("Fuselage Pylon",             3, [0.0,   0.0,  -0.720], pylon4set,  3, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[3]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[3]",1),func{return 1});
+pylon5 = stations.Pylon.new("Right Inboard Wing",         4, [2.000, 2.050,-0.430], pylon5set,  4, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[4]",1),func{return 1});
+pylon6 = stations.Pylon.new("Right Outboard Wing",        5, [2.400, 3.09, -0.520], pylon6set,  5, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[4]",1),func{return 1});
+pylon7 = stations.Pylon.new("Right Over Wing",            6, [2.140, 2.050, 0.260], pylon7set,  6, props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",1),props.globals.getNode("fdm/jsbsim/inertia/pointmass-dragarea-sqft[4]",1),func{return 1});
 
 #pylon1.forceRail = 1;# set the missiles mounted on this pylon on a rail.
 #pylon9.forceRail = 1;
@@ -134,7 +134,6 @@ if (fcs!=nil) {
 
 # swamp TODO list:
 #
-# find coords of each pylon and enter them into the abov pylon declarations
 # add JSB pointmasses for those coords
-# add more weapons, fuel tanks and smokewinders. Plus get correct loadout options for each pylon
+# add more weapons and smokewinders. Plus get correct loadout options for each pylon
 # 

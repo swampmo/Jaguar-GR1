@@ -151,10 +151,16 @@
         <type>select</type>
         <object-name>left-MK82-pos-2</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-1-type</property>
-                <value>MK-83</value>
-            </equals>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-1-type</property>
+                    <value>MK-83</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-1-type</property>
+                    <value>CBU-87</value>
+                </equals>
+            </or>
             <equals>
                 <property>payload/armament/station/id-1-count</property>
                 <value>1</value>
@@ -297,10 +303,16 @@
         <type>select</type>
         <object-name>left-MK-82-pos-3</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-2-type</property>
-                <value>MK-83</value>
-            </equals>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-2-type</property>
+                    <value>MK-83</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-2-type</property>
+                    <value>CBU-87</value>
+                </equals>
+            </or>
             <equals>
                 <property>payload/armament/station/id-2-count</property>
                 <value>1</value>
@@ -321,10 +333,16 @@
         <type>select</type>
         <object-name>left-MK82x2-pos-3</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-2-type</property>
-                <value>MK-83</value>
-            </equals>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-2-type</property>
+                    <value>MK-83</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-2-type</property>
+                    <value>CBU-87</value>
+                </equals>
+            </or>
             <greater-than>
                 <property>payload/armament/station/id-2-count</property>
                 <value>1</value>
@@ -415,10 +433,16 @@
         <type>select</type>
         <object-name>2x-MK-82</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-3-type</property>
-                <value>MK-83</value>
-            </equals>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-3-type</property>
+                    <value>MK-83</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-3-type</property>
+                    <value>CBU-87</value>
+                </equals>
+            </or>
             <greater-than>
                 <property>payload/armament/station/id-3-count</property>
                 <value>0</value>
@@ -561,10 +585,16 @@
         <type>select</type>
         <object-name>right-MK-82-pos-3</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-4-type</property>
-                <value>MK-83</value>
-            </equals>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-4-type</property>
+                    <value>MK-83</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-4-type</property>
+                    <value>CBU-87</value>
+                </equals>
+            </or>
             <equals>
                 <property>payload/armament/station/id-4-count</property>
                 <value>1</value>
@@ -585,10 +615,16 @@
         <type>select</type>
         <object-name>right-MK82x2-pos-3</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-4-type</property>
-                <value>MK-83</value>
-            </equals>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-4-type</property>
+                    <value>MK-83</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-4-type</property>
+                    <value>CBU-87</value>
+                </equals>
+            </or>
             <greater-than>
                 <property>payload/armament/station/id-4-count</property>
                 <value>1</value>
@@ -718,10 +754,16 @@
         <type>select</type>
         <object-name>right-MK82-pos-2</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-5-type</property>
-                <value>MK-83</value>
-            </equals>
+            <or>
+                <equals>
+                    <property>payload/armament/station/id-5-type</property>
+                    <value>MK-83</value>
+                </equals>
+                <equals>
+                    <property>payload/armament/station/id-5-type</property>
+                    <value>CBU-87</value>
+                </equals>
+            </or>
             <equals>
                 <property>payload/armament/station/id-5-count</property>
                 <value>1</value>
