@@ -42,7 +42,7 @@ All measurements below are in English measurements (feet/pounds), per the FG wik
 <PropertyList>
 
  <submodel>
-    <name>M61A1 shell</name>
+    <name>Mk3Z</name>
     <model>Aircraft/Jaguar/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger-gun</trigger>
     <speed>3380.0</speed>
@@ -70,7 +70,7 @@ All measurements below are in English measurements (feet/pounds), per the FG wik
   </submodel>
   
   <submodel>
-    <name>M61A1 shell</name><!-- M-61 20 mm cannon -->
+    <name>Mk3Z</name><!-- 30 mm cannon -->
     <model>Aircraft/Jaguar/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger-gun</trigger>
     <speed>3380.0</speed>

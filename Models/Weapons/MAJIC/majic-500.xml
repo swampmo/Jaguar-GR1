@@ -3,7 +3,7 @@
     
   <model>
     <name>magic2-500</name>
-    <path>magic-2.xml</path>
+    <path>majic.xml</path>
   </model>
     
   <animation>
@@ -14,7 +14,7 @@
     <type>select</type>
     <object-name>magic2-500</object-name>
     <condition>
-        <property>payload/armament/magic-2/flags/msl-id-600</property>
+        <property>payload/armament/majic/flags/msl-id-500</property>
     </condition>
   </animation>
   
@@ -33,7 +33,7 @@
       <type>select</type>
       <object-name>flaminghot</object-name>
       <condition>
-           <property>payload/armament/magic-2/flags/msl-id-600</property>
+           <property>payload/armament/majic/flags/msl-id-500</property>
      </condition>
   </animation>
   
@@ -58,25 +58,25 @@
     <type>select</type>
     <object-name>Smoke_magic2-500</object-name>
     <condition>
-      <property>payload/armament/magic-2/flags/smoke-id-600</property>
+      <property>payload/armament/majic/flags/smoke-id-500</property>
     </condition>
   </animation>
   
   <model>
-    <name>explosionFire_magic-2-500</name>
+    <name>explosionFire_majic-500</name>
     <path>explosionFire.xml</path>
   </model>
   <model>
-    <name>explosionSmoke_magic-2-500</name>
+    <name>explosionSmoke_majic-500</name>
     <path>explosionSmoke.xml</path>
   </model>
   
     <animation>
     <type>select</type>
-    <object-name>explosionFire_magic-2-500</object-name>
-    <object-name>explosionSmoke_magic-2-500</object-name>
+    <object-name>explosionFire_majic-500</object-name>
+    <object-name>explosionSmoke_majic-500</object-name>
     <condition>
-        <property>payload/armament/magic-2/flags/explode-id-600</property>
+        <property>payload/armament/majic/flags/explode-id-500</property>
     </condition>
   </animation>
   
