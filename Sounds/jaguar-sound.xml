@@ -870,6 +870,7 @@
 
 
 
+<!--  
 	<voice>
   <name>Geforce-breath-vox</name>
   <path>Aircraft/Jaguar/Sounds/Geforce.wav</path>
@@ -896,7 +897,7 @@
 <volume>
 <factor>0.9</factor>
 </volume>
- </voice>
+ </voice> -->
 
   <!-- 
      <canopy>
