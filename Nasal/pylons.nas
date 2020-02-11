@@ -58,13 +58,13 @@ var pylonSets = {
 
 # sets. The first in the list is the default. Earlier in the list means higher up in dropdown menu.
 # These are not strictly needed in F-14 beside from the Empty, since it uses a custom payload dialog, but there for good measure.
-var pylon1set = [pylonSets.empty, pylonSets.majic];
-var pylon2set = [pylonSets.empty, pylonSets.majic, pylonSets.m83, pylonSets.m83h, pylonSets.c87, pylonSets.bl];
+var pylon1set = [pylonSets.empty, pylonSets.majic, pylonSets.aim9];
+var pylon2set = [pylonSets.empty, pylonSets.majic, pylonSets.aim9, pylonSets.m83, pylonSets.m83h, pylonSets.c87, pylonSets.bl];
 var pylon3set = [pylonSets.empty, pylonSets.m83, pylonSets.m83h, pylonSets.m83d, pylonSets.m83hd, pylonSets.c87, pylonSets.c87d, pylonSets.bl, pylonSets.bld, pylonSets.fuel12L];
 var pylon4set = [pylonSets.empty, pylonSets.m83, pylonSets.m83h, pylonSets.c87, pylonSets.bl, pylonSets.fuel12C];
 var pylon5set = [pylonSets.empty, pylonSets.m83, pylonSets.m83h, pylonSets.m83d, pylonSets.m83hd, pylonSets.c87, pylonSets.c87d, pylonSets.bl, pylonSets.bld, pylonSets.fuel12R];
-var pylon6set = [pylonSets.empty, pylonSets.majic, pylonSets.m83, pylonSets.m83h, pylonSets.c87, pylonSets.bl];
-var pylon7set = [pylonSets.empty, pylonSets.majic];
+var pylon6set = [pylonSets.empty, pylonSets.majic, pylonSets.aim9, pylonSets.m83, pylonSets.m83h, pylonSets.c87, pylonSets.bl];
+var pylon7set = [pylonSets.empty, pylonSets.majic, pylonSets.aim9];
 
 # pylons
 pylonI = stations.InternalStation.new("Internal gun mount", 7, [pylonSets.mm20], props.globals.getNode("fdm/jsbsim/inertia/pointmass-weight-lbs[5]",1));
@@ -83,7 +83,7 @@ var pylons = [pylon1,pylon2,pylon3,pylon4,pylon5,pylon6,pylon7,pylonI];
 
 # The order of first vector in this line is the default pylon order weapons is released in.
 # The order of second vector in this line is the order cycle key would cycle through the weapons (but since the f-14 dont have that the order is not important):
-fcs = fc.FireControl.new(pylons, [0,6,1,5,2,4,3,7], ["20mm Cannon", "Majic", "MK-83", "MK-83HD", "CBU-87", "BL755"]);
+fcs = fc.FireControl.new(pylons, [0,6,1,5,2,4,3,7], ["20mm Cannon", "Majic", "AIM-9", "MK-83", "MK-83HD", "CBU-87", "BL755"]);
 
 #print("** Pylon & fire control system started. **");
 var getDLZ = func {
