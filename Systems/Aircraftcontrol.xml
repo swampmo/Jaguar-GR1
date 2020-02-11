@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <system name="Aircraft control">
 
   <channel name="Elevon">
@@ -199,6 +199,14 @@
     </range>
     <output>fcs/flap-pos-norm</output>
    </aerosurface_scale>
+        <pure_gain name="fcs/flap-ob-pos-deg">
+            <input>fcs/flap-pos-deg</input>
+            <gain>0.38</gain>
+            <clipto>
+                <min>  0 </min>
+                <max>  15 </max>
+            </clipto>
+        </pure_gain>
   </channel>
 
   <channel name="Slats">
