@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 
 <!-- Jaguar SAS System -->
 <!-- (c) 2018 Joshua Davidson (it0uchpods) -->
@@ -6,10 +6,10 @@
 
 <system name="SAS">
 	
-	<property value="1">sas/pitch-l</property>
-	<property value="1">sas/pitch-r</property>
-	<property value="1">sas/yaw-l</property>
-	<property value="1">sas/yaw-r</property>
+	<property value="0">sas/pitch-l</property>
+	<property value="0">sas/pitch-r</property>
+	<property value="0">sas/yaw-l</property>
+	<property value="0">sas/yaw-r</property>
 	<property value="0">sas/beta-pd</property>
 	<property value="0">sas/beta-p-gain</property>
 	<property value="0">sas/beta-d-gain</property>
