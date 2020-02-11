@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -6,7 +6,7 @@
 
     <description>Jaguar (JSBsim)</description>
     <flight-model>jsb</flight-model>
-    <aero>Jaguar</aero>
+    <aero>SEPECAT-Jaguar-vsp</aero>
 
     <fuel-fraction>1</fuel-fraction>
 
