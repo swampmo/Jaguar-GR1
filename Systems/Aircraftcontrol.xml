@@ -45,6 +45,7 @@
                 450 0.0
             </tableData>
         </table>
+        <output>fcs/differential-elevator-pos-norm</output>
     </scheduled_gain> 
 
    <aerosurface_scale name="fcs/roll-pos-deg">
