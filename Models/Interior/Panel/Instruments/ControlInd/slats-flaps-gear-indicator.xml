@@ -94,10 +94,10 @@
 		<type>select</type>
 		<object-name>slats-in</object-name>
 		<condition>
-			<equals>
-				<property>fdm/jsbsim/fcs/slats-pos-norm</property>
-				<value>0</value>
-			</equals>
+			<less-than>
+				<property>fdm/jsbsim/fcs/slats-deg</property>
+				<value>1</value>
+			</less-than>
 		</condition>
 	</animation>
 
@@ -105,10 +105,16 @@
 		<type>select</type>
 		<object-name>slats-combat</object-name>
 		<condition>
-			<equals>
-				<property>fdm/jsbsim/fcs/slats-deg</property>
-				<value>8.993</value>
-			</equals>
+            <and>
+                <greater-than>
+                    <property>fdm/jsbsim/fcs/slats-deg</property>
+                    <value>0</value>
+                </greater-than>
+                <less-than>
+                    <property>fdm/jsbsim/fcs/slats-deg</property>
+                    <value>20</value>
+                </less-than>
+            </and>
 		</condition>
 	</animation>
 
@@ -116,11 +122,11 @@
 		<type>select</type>
 		<object-name>slats-extended</object-name>
 		<condition>
-			<equals>
-				<property>fdm/jsbsim/fcs/slats-control</property>
-				<value>23</value>
-			</equals>
-		</condition>
+            <greater-than>
+                <property>fdm/jsbsim/fcs/slats-deg</property>
+                <value>20</value>
+            </greater-than>
+        </condition>
 	</animation>
 
 	<!-- Landing Gear -->
@@ -228,7 +234,7 @@
 		</condition>
 	</animation>
 
-	
+	<!--
 	<animation>
 		<type>pick</type>	
 		<object-name>autoSlat-button</object-name>
@@ -252,6 +258,6 @@
 			<blue>  1</blue>
 		</emission>
 	</animation>
-
+-->
 </PropertyList>
 
