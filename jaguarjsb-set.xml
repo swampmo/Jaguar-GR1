@@ -512,8 +512,9 @@
 	<fdm>
 		<jsbsim>
 			<fcs>
-				<slats-deg>0</slats-deg>
-				<slats-cmd-deg>0</slats-cmd-deg>
+                <rudder-gearing-master-switch-85c type="double">0</rudder-gearing-master-switch-85c>
+				<slats-deg type="double">0</slats-deg>
+				<slats-cmd-deg type="double">0</slats-cmd-deg>
 				<canopy>
 					<engage type="bool">0</engage>
 					<serviceable type="bool">1</serviceable>

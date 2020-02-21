@@ -38,11 +38,18 @@
 
    <scheduled_gain name="fcs/roll-cmd">
         <input>fcs/roll-sum</input>
+        <description>Differential tailplane authority; AP 101B-3101-1EE p29, 19-20 Fig. 16</description>
         <table>
             <independentVar lookup="row">/velocities/airspeed-kt</independentVar>  
             <tableData>
-                200 1.0
-                450 0.0
+                0	1.0000
+              200	1.0000
+              250	0.8366
+              300	0.6682
+              336	0.4956
+              370	0.3343
+              400	0.1664
+              423	0.0030
             </tableData>
         </table>
         <output>fcs/differential-elevator-pos-norm</output>
@@ -189,15 +196,53 @@
 
   <channel name="Yaw">
 
-   <summer name="fcs/rudder-sum">
-      <input>/controls/flight/rudder</input>
-      <input>/controls/flight/rudder-trim</input>
-      <input>sas/yaw-output</input>
-      <clipto>
-        <min> -1 </min>
-        <max>  1 </max>
-      </clipto>
-   </summer>
+  <switch name="fcs/rudder-gearing-low">
+    <default value="1"/>
+    <!-- when switch set to auto and gear up gain is low, otherwise high -->
+
+    <test logic="AND" value="1">
+      <!-- low -->
+      fcs/rudder-gearing-master-switch-85c eq -1
+    </test>
+
+    <test logic="AND" value="0">
+      <!-- high -->
+      fcs/rudder-gearing-master-switch-85c eq 1
+    </test>
+    
+    <test logic="AND" value="0"> 
+      <!-- auto -->
+      fcs/rudder-gearing-master-switch-85c eq 0
+      gear/gear-pos-norm gt 0.4
+    </test>
+  </switch>
+
+  <fcs_function name="fcs/rudder-sum">
+    <description>Rudder angle against pedal travel (high/low gain) AP 101B-3101-1EE p23, 19-40 Fig. 13</description>
+    <function>
+      <sum>
+        <product>
+          <ifthen>
+            <gt>
+              <property>fcs/rudder-gearing-low</property>
+              <v>0</v>
+            </gt>
+            <v>0.375</v>
+            <v>1.0</v>
+          </ifthen>
+          <sum>
+            <property>/controls/flight/rudder</property>
+            <property>/controls/flight/rudder-trim</property>
+          </sum>
+        </product>
+        <property>sas/yaw-output</property>
+      </sum>   
+    </function>
+    <clipto>
+      <min> -1 </min>
+      <max>  1 </max>
+    </clipto>
+  </fcs_function>
 
     <lag_filter name="fcs/rudder-speed">
       <input>fcs/rudder-sum</input>
@@ -211,8 +256,8 @@
         <max>  1 </max>
       </domain>
       <range>
-        <min> -25 </min>
-        <max>  25 </max>
+        <min> -20 </min>
+        <max>  20 </max>
       </range>
    </aerosurface_scale>
 
