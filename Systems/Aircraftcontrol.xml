@@ -98,13 +98,70 @@
   </channel>
 
   <channel name="Spoilers">
+  
+  <!-- this function, together with spoiler-command-deg implement the lateral stick movement
+       simulation.
+       The two parts of the function are firstly to adjust the stick position to take into account the force
+       that would be required. As we don't have any way of loading the controls (i.e. statically sprung joysticks at best)
+       the only viable option is to convert the force into an equivalent position; i.e. that you will have to move the stick more 
+       to achieve the same deflection. 
+       The second part will then apply the spoiler deflection schedule resulting in a commanded spoiler position
+  -->
+  <fcs_function name="fcs/spoiler-command-norm">
+    <function>
+      <description>based on Control forces grip angle theoretical curve; AP 101B-3101-1EE p23, 19-20 Fig. 12 but adjusted to change position to force. </description>
+      <table>
+        <independentVar lookup="row">fcs/ap-roll-cmd-norm</independentVar>
+        <tableData>
+          -1.0000		-1.0000
+          -0.5026		-0.3951
+          -0.3006		-0.1419
+           0.0000		 0.0000
+           0.3006		 0.1419
+           0.5026		 0.3951
+           1.0000		 1.0000
+        </tableData>
+      </table>
+    </function>
+  </fcs_function>
+
+  <fcs_function name="fcs/spoiler-command-deg">
+    <function>
+      <description>Control column spoiler movement; AP 101B-3101-1EE p20, 19-20 Fig. 10</description>
+      <table>
+        <independentVar lookup="row">fcs/spoiler-command-norm</independentVar>
+        <tableData>
+          -1.00 	-44.95
+          -0.83 	-40.61
+          -0.67 	-34.64
+          -0.54 	-29.61
+          -0.45 	-24.68
+          -0.34 	-19.59
+          -0.24 	-14.50
+          -0.15 	-9.40
+          -0.07 	-4.31
+           0.00 	 0.00
+           0.07 	 4.31
+           0.15 	 9.40
+           0.24 	 14.50
+           0.34 	 19.59
+           0.45 	 24.68
+           0.54 	 29.61
+           0.67 	 34.64
+           0.83 	 40.61
+           1.00 	 44.95
+      </tableData>
+      </table>
+    </function>
+  </fcs_function>
+          
       <pure_gain name="fcs/spoiler-left-cmd">
         <!--input>fcs/aileron-cmd-norm</input-->
-        <input>fcs/ap-roll-cmd-norm</input>
-        <gain>-40</gain>
+        <input>fcs/spoiler-command-deg</input>
+        <gain>-1</gain>
         <clipto>
           <min>  0 </min>
-          <max>  40 </max>
+          <max>  45 </max>
         </clipto>
       </pure_gain>
 
@@ -115,11 +172,11 @@
 
       <pure_gain name="fcs/spoiler-right-cmd">
         <!--input>fcs/aileron-cmd-norm</input-->
-        <input>fcs/ap-roll-cmd-norm</input>
-        <gain>40</gain>
+        <input>fcs/spoiler-command-deg</input>
+        <gain>1</gain>
         <clipto>
           <min>  0 </min>
-          <max>  40 </max>
+          <max>  45 </max>
         </clipto>
       </pure_gain>
 
