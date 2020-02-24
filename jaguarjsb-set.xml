@@ -1959,10 +1959,11 @@
      <file>Aircraft/Jaguar/Nasal/damage.nas</file>
    </damage>
 
+<!--
    <blackout>
      <file>Aircraft/Jaguar/Nasal/blackout.nas</file>
    </blackout>
-
+-->
     <radarAltimeter>
       <file>Aircraft/Jaguar/Nasal/radaralt.nas</file>
     </radarAltimeter>
@@ -1980,10 +1981,11 @@
     </tfs>
 
 
+<!--
     <crashandstress>
         <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
     </crashandstress>
-
+-->
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
     </load>
