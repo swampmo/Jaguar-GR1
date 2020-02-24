@@ -146,9 +146,9 @@ Other:
     <z>0.965</z>
   </location>
   <location unit="M" name="VRP">
-    <x>-4.2917</x>
+    <x>1.877</x>
     <y>0</y>
-    <z>0.6</z>
+    <z>0.1</z>
   </location>
   <location unit="M" name="AERORP">
     <x>8.6247</x>
