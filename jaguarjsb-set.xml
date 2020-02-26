@@ -23,10 +23,11 @@
                     <blackout-onset-g>5.5</blackout-onset-g>
                     <blackout-complete-g>7.9</blackout-complete-g>
 
-                    <redout-onset-g>3.5</redout-onset-g>
-                    <redout-complete-g>5.5</redout-complete-g>
+                    <redout-onset-g>-2.5</redout-onset-g>
+                    <redout-complete-g>-4.5</redout-complete-g>
                 </parameters>
                 <alpha type="double">0</alpha>
+                <enabled type="bool">false</enabled>
             </redout>
         </rendering>
 
