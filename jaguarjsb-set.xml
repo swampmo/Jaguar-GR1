@@ -17,6 +17,19 @@
       </livery>
     </model>
 
+        <rendering>
+            <redout>
+                <parameters>
+                    <blackout-onset-g>5.5</blackout-onset-g>
+                    <blackout-complete-g>7.9</blackout-complete-g>
+
+                    <redout-onset-g>3.5</redout-onset-g>
+                    <redout-complete-g>5.5</redout-complete-g>
+                </parameters>
+                <alpha type="double">0</alpha>
+            </redout>
+        </rendering>
+
     <submodels>
       <serviceable type="bool">true</serviceable>
       <path>Aircraft/Jaguar/Models/Effects/Guns/submodels.xml</path>
