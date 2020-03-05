@@ -43,7 +43,6 @@
 		</scheduled_gain>
 
 		<pure_gain name="sas/pitch-output">
-			<!--input>fcs/aileron-cmd-norm</input-->
 			<input>sas/pitch-damping-2</input>
 			<gain>sas/pitch-switch</gain>
 			<clipto>
