@@ -30,11 +30,12 @@
       </clipto>
    </summer>
 
-    <!-- (Swamps notes) Automatic control of the differential tailplane gearing is by a differential computer having two channels,controls and monitoring, both of -->
-    <!-- which recieves airspeed signals from the Ajax computer and feedback signals from a gain rod position potentiometer. In short below 200 knots is maximum gain --> <!-- and therefore maximum differential tailplane is obtained. Above 200 knots the actuator progressively retracts until, when airspeed reaches 450 knots -->
-    <!-- (and above) the actuator is fully retracted to reduce gain to zero and no differenial tailplane movement occurs. -->
-    <!-- (source, Aircrew manual AP 101b-3101 & 2-15A) -->    
-
+    <!-- (Swamps notes) Automatic control of the differential tailplane gearing is by a differential computer having two channels,controls and monitoring, both of
+         which recieves airspeed signals from the Ajax computer and feedback signals from a gain rod   potentiometer. In short below 200 knots is maximum gain 
+         and therefore maximum differential tailplane is obtained. Above 200 knots the actuator progressively retracts until, when airspeed reaches 450 knots
+         (and above) the actuator is fully retracted to reduce gain to zero and no differenial tailplane movement occurs.
+         (source, Aircrew manual AP 101b-3101 & 2-15A)
+    -->
 
    <scheduled_gain name="fcs/roll-cmd">
         <input>fcs/roll-sum</input>
@@ -49,11 +50,18 @@
               336	0.4956
               370	0.3343
               400	0.1664
-              423	0.0030
+              423	0.0000
             </tableData>
         </table>
         <output>fcs/differential-elevator-pos-norm</output>
     </scheduled_gain> 
+    <aerosurface_scale name="fcs/differential-elevator-pos-deg">
+      <input>fcs/differential-elevator-pos-norm</input>
+      <range>
+        <min>  -6 </min>
+        <max>   6 </max>
+      </range>
+   </aerosurface_scale>
 
    <aerosurface_scale name="fcs/roll-pos-deg">
       <input>fcs/roll-cmd</input>
@@ -313,39 +321,42 @@
   </channel>
 
   <channel name="Slats">
-        <switch name="fcs/slat-cmd">
-            <default value="/controls/flight/slats"/>
-            <test value="1">
-                 fcs/flap-pos-deg ge 0.001              
-            </test>
-        </switch>
-        
-<kinematic name="Slats Control">
-    <input>fcs/slat-cmd</input>
-    <traverse>
-      <setting>
-         <position>  0 </position>
-         <time>      0 </time>
-      </setting>
-      <setting>
-         <position> 23 </position>
-         <time>      2 </time>
-      </setting>
-    </traverse>
-    <output>fcs/slats-deg</output>
-   </kinematic>
+    <switch name="fcs/slat-cmd">
+      <default value="/controls/flight/slats" />
+      <test value="1">
+          fcs/flap-pos-deg ge 0.001              
+      </test>
+      <test value="sas/autoslat-deg">
+        sas/autoslat-active ne 0
+      </test>
+    </switch>
 
-   <aerosurface_scale name="fcs/slats-pos-norm">
-    <input>fcs/slats-deg</input>
-    <domain>
-      <min>  0 </min>
-      <max> 23 </max>
-    </domain>
-    <range>
-      <min> 0 </min>
-      <max> 1 </max>
-    </range>
-   </aerosurface_scale>
+    <kinematic name="Slats Control">
+      <input>fcs/slat-cmd</input>
+      <traverse>
+        <setting>
+          <position>  0 </position>
+          <time>      0 </time>
+        </setting>
+        <setting>
+          <position> 23 </position>
+          <time>      2 </time>
+        </setting>
+      </traverse>
+      <output>fcs/slats-deg</output>
+    </kinematic>
+
+    <aerosurface_scale name="fcs/slats-pos-norm">
+      <input>fcs/slats-deg</input>
+      <domain>
+        <min>  0 </min>
+        <max> 23 </max>
+      </domain>
+      <range>
+        <min> 0 </min>
+        <max> 1 </max>
+      </range>
+    </aerosurface_scale>
   </channel>
   
   <channel name="Landing Gear">

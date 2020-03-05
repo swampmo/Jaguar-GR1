@@ -96,7 +96,7 @@
 		<condition>
 			<less-than>
 				<property>fdm/jsbsim/fcs/slats-deg</property>
-				<value>1</value>
+				<value>0.0001</value>
 			</less-than>
 		</condition>
 	</animation>
@@ -247,17 +247,17 @@
 			</binding>
 		</action>
 	</animation>
-
+-->
 	<animation>
 		<type>material</type>
 		<object-name>autoSlat-button</object-name>
 		<emission>
-			<factor-prop>controls/flight/slats</factor-prop>
+			<factor-prop>fdm/jsbsim/sas/autoslat-active</factor-prop>
 			<red>   1 </red>
-			 <green>  1</green>
+			<green>  1</green>
 			<blue>  1</blue>
 		</emission>
 	</animation>
--->
+
 </PropertyList>
 
