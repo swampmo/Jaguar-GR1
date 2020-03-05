@@ -22,71 +22,50 @@
 			</test>
 		</switch>
 
-		<fcs_function name="sas/pitch-damping-0">
-			<function>
-				<product>
-					<property>aero/alphadot-rad_sec</property>
-					<v>-0.6</v>
-					<p>sas/pitch-switch</p>
-					<table>
-						<independentVar lookup="row">aero/alpha-deg</independentVar>
-						<tableData>
-							-20	-0.695945
-							-10	-0.539531
-							-8	-0.500045
-							-4	-0.445698
- 							0	-0.377695
-							2	-0.417018
-							4	-0.461666
-							6	-0.428895
-							8	-0.483531
-							10	-0.512112
-							12	-0.625818
-							14	-0.654765
-							16	-0.611532
-							18	-0.646000
-							20	-0.656208
-							24	-0.525719
-							28	-0.613312
-							30	-0.635362
-							35	-0.818676
-							45	-0.484994
-							50	-0.532898
-							55	-0.289972
-							60	-0.235742
-													
-					</tableData>
-					</table>
-				</product>
-			</function>
-		</fcs_function>
-
-		<lag_filter name="sas/pitch-damping-1">
-			<input>sas/pitch-damping-0</input>
-			<c1>sas/pitch-damping-1-c1</c1>
-		</lag_filter>
-
-		<summer name="sas/pitch-output">
+ 		<washout_filter name="sas/pitch-damping-1">
+			<input>velocities/q-rad_sec</input>
+			<c1>0.475</c1>
+		</washout_filter>
+		
+		<scheduled_gain name="sas/pitch-damping-2">
 			<input>sas/pitch-damping-1</input>
+			<table>
+				<independentVar>velocities/vc-kts</independentVar>
+				<tableData>
+					150  1.421
+					950  0.8872
+				</tableData>
+			</table>
 			<clipto>
-				<min>-0.5</min>
-				<max>0.5</max>
+				<min>-0.3</min>
+				<max>0.3</max>
 			</clipto>
-		</summer>
+		</scheduled_gain>
+
+		<pure_gain name="sas/pitch-output">
+			<!--input>fcs/aileron-cmd-norm</input-->
+			<input>sas/pitch-damping-2</input>
+			<gain>sas/pitch-switch</gain>
+			<clipto>
+				<min>-0.6</min>
+				<max>0.6</max>
+			</clipto>
+		  </pure_gain>
+	
 	</channel>
 	
 	<channel name="Pitch Trim">
 		
 		<switch name="sas/autotrim-switch">
 			<default value="0"/>
-			<test logic="AND" value="1">
+			<test logic="AND" value="0">
 				velocities/q-rad_sec gt 0.0
 				position/wow eq 0
 				fcs/ap-pitch-cmd-norm le 0.05
 				fcs/ap-pitch-cmd-norm ge -0.05
 				autoflight/input/pitch-switch ne 1
 			</test>
-			<test logic="AND" value="2">
+			<test logic="AND" value="0">
 				velocities/q-rad_sec lt 0.0
 				position/wow eq 0
 				fcs/ap-pitch-cmd-norm le 0.05
