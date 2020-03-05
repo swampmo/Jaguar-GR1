@@ -6,7 +6,7 @@
 
     <fileheader>
         <author>Richard Harrison</author>
-        <filecreationdate>2020-03-01</filecreationdate>
+        <filecreationdate>2020-03-05</filecreationdate>
         <version>1.0</version>
         <copyright>Copyright (C) 2020 Richard Harrison, All rights reserved</copyright>
         <description></description>
@@ -174,15 +174,15 @@ Other:
   <contact type="BOGEY" name="NOSE_LG">
     <!--0: NOSE_LG-->
     <location unit="M">
-      <x>3.5339</x>
+      <x>3.2039</x>
       <y>0</y>
       <z>-2.2055</z>
     </location>
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
     <rolling_friction>0.02</rolling_friction>
-    <spring_coeff unit="LBS/FT">24251</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">5432.224</damping_coeff>
+    <spring_coeff unit="LBS/FT">12502</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">3000.224</damping_coeff>
     <max_steer unit="DEG">12</max_steer>
     <brake_group>NOSE</brake_group>
     <retractable>1</retractable>
@@ -191,14 +191,14 @@ Other:
     <!--1: LEFT_MLG-->
     <location unit="M">
       <x>9.2847</x>
-      <y>-1.435</y>
+      <y>-1.235</y>
       <z>-2.0778</z>
     </location>
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
     <rolling_friction>0.02</rolling_friction>
-    <spring_coeff unit="LBS/FT">24251</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">5432.224</damping_coeff>
+    <spring_coeff unit="LBS/FT">12502</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">3000.224</damping_coeff>
     <brake_group>LEFT</brake_group>
     <retractable>1</retractable>
   </contact>
@@ -206,14 +206,14 @@ Other:
     <!--2: RIGHT_MLG-->
     <location unit="M">
       <x>9.2847</x>
-      <y>1.435</y>
+      <y>1.235</y>
       <z>-2.0778</z>
     </location>
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
     <rolling_friction>0.02</rolling_friction>
-    <spring_coeff unit="LBS/FT">24251</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">5432.224</damping_coeff>
+    <spring_coeff unit="LBS/FT">12502</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">3000.224</damping_coeff>
     <brake_group>RIGHT</brake_group>
     <retractable>1</retractable>
   </contact>
@@ -1524,42 +1524,6 @@ Other:
                      60	  -0.31398	  -0.40002	  -0.46763	  -0.50942	  -0.56635	  -0.62304	  -0.61630	  -0.59395	  -0.57976	
             </tableData>
           </table>
-    </function>
-    <function name="aero/c/CMMALPHADOT">
-    <description>PITCH DERIVATIVE MOMENT DUE TO ALPHA DOT</description>
-    <product>
-          <property>aero/alphadot-rad_sec</property>
-          <table>
-            <independentVar lookup="row">aero/alpha-deg</independentVar>
-            <independentVar lookup="column">aero/beta-deg</independentVar>
-            <tableData>
-                                -20	        -15	        -10	         -7	         -5	         -2	          0	          2	          5	          7	         10	         15	         20	
-                    -20	  -0.64369	  -0.46759	  -0.74743	  -0.83416	  -0.75099	  -0.69002	  -0.75813	  -0.69040	  -0.75683	  -0.83462	  -0.75456	  -0.46473	  -0.65413	
-                    -10	  -0.50805	  -0.52792	  -0.56500	  -0.54898	  -0.57380	  -0.52776	  -0.50927	  -0.52948	  -0.57345	  -0.54807	  -0.56445	  -0.53030	  -0.50737	
-                     -8	  -0.58172	  -0.55750	  -0.50078	  -0.45671	  -0.47345	  -0.48536	  -0.38781	  -0.48546	  -0.47333	  -0.45780	  -0.50044	  -0.55716	  -0.58306	
-                     -4	  -0.58839	  -0.42593	  -0.42506	  -0.40745	  -0.39868	  -0.42519	  -0.45196	  -0.42525	  -0.39871	  -0.40839	  -0.42513	  -0.42539	  -0.58854	
-                      0	  -0.46696	  -0.41991	  -0.39064	  -0.33483	  -0.39168	  -0.31798	  -0.27204	  -0.31723	  -0.39131	  -0.33486	  -0.38763	  -0.42017	  -0.46480	
-                      2	  -0.44037	  -0.37807	  -0.42482	  -0.42057	  -0.37903	  -0.40707	  -0.52920	  -0.40681	  -0.38250	  -0.42078	  -0.42111	  -0.37793	  -0.43297	
-                      4	  -0.48035	  -0.60464	  -0.44166	  -0.41366	  -0.40205	  -0.43347	  -0.44085	  -0.43634	  -0.40351	  -0.41363	  -0.44115	  -0.60600	  -0.48435	
-                      6	  -0.54688	  -0.39628	  -0.44859	  -0.42536	  -0.31291	  -0.46655	  -0.37934	  -0.46881	  -0.31345	  -0.41715	  -0.45108	  -0.39697	  -0.55227	
-                      8	  -0.59336	  -0.40166	  -0.46377	  -0.45019	  -0.48848	  -0.47147	  -0.53034	  -0.47084	  -0.48879	  -0.45008	  -0.46486	  -0.41477	  -0.59729	
-                     10	  -0.38099	  -0.48942	  -0.47921	  -0.53720	  -0.58981	  -0.60176	  -0.51819	  -0.60119	  -0.57351	  -0.53892	  -0.47886	  -0.48938	  -0.37902	
-                     12	  -0.72541	  -0.54702	  -0.66625	  -0.66979	  -0.55282	  -0.58730	  -0.65359	  -0.56780	  -0.56198	  -0.66884	  -0.66006	  -0.54764	  -0.72713	
-                     14	  -0.58557	  -0.62661	  -0.61704	  -0.63130	  -0.68424	  -0.69581	  -0.81637	  -0.68733	  -0.69060	  -0.63981	  -0.62269	  -0.63121	  -0.58336	
-                     16	  -0.47894	  -0.53273	  -0.74592	  -0.66519	  -0.58983	  -0.66003	  -0.62678	  -0.65084	  -0.58111	  -0.66815	  -0.73970	  -0.54079	  -0.46991	
-                     18	  -0.70763	  -0.64539	  -0.66206	  -0.77971	  -0.64410	  -0.39903	  -0.67861	  -0.44696	  -0.64118	  -0.80029	  -0.64829	  -0.64932	  -0.69543	
-                     20	  -0.66437	  -0.77374	  -0.49832	  -0.65463	  -0.63058	  -0.73792	  -0.58241	  -0.73568	  -0.63753	  -0.65250	  -0.53069	  -0.77161	  -0.66073	
-                     24	  -0.56211	  -0.49270	  -0.63712	  -0.56828	  -0.37717	  -0.52723	  -0.44365	  -0.53022	  -0.39946	  -0.56047	  -0.66620	  -0.48305	  -0.58669	
-                     28	  -0.69731	  -0.39194	  -0.64865	  -0.64802	  -0.75255	  -0.56565	  -0.58667	  -0.55756	  -0.75014	  -0.63818	  -0.70141	  -0.35918	  -0.67579	
-                     30	  -0.75778	  -0.83587	  -0.45071	  -0.62280	  -0.56241	  -0.54306	  -0.70844	  -0.54638	  -0.56484	  -0.66071	  -0.45407	  -0.83858	  -0.71405	
-                     35	  -0.71052	  -0.86244	  -0.79870	  -0.68783	  -1.07421	  -0.81814	  -0.67641	  -0.84675	  -1.09285	  -0.68723	  -0.80666	  -0.85248	  -0.72857	
-                     45	  -0.22731	  -0.48972	  -0.67174	  -0.48536	  -0.44298	  -0.55639	  -0.42152	  -0.53609	  -0.43670	  -0.48516	  -0.66803	  -0.59379	  -0.29013	
-                     50	  -0.47677	  -0.35819	  -1.06174	  -0.79392	  -0.04666	  -0.31622	  -0.56467	  -0.42000	  -0.13422	  -0.81003	  -1.12352	  -0.35550	  -0.46624	
-                     55	  -0.20860	   0.24347	  -0.45284	  -0.31047	  -0.35907	  -0.57272	  -0.57862	  -0.68832	  -0.31384	  -0.26185	  -0.39983	   0.29809	  -0.16504	
-                     60	  -0.53024	  -0.69477	  -0.09947	  -0.03679	  -0.23696	   0.47823	  -0.38668	   0.05318	  -0.16044	  -0.08650	  -0.27237	  -0.80037	  -0.29146	
-            </tableData>
-          </table>
-       </product>
     </function>
     <function name="aero/c/CMMBRK">
     <description>PITCHING MOMENT DUE TO SPEEDBRAKE</description>
@@ -3996,7 +3960,6 @@ Other:
     <function name="aero/coefficients/CPITCH">
       <sum>
           <property>aero/c/CMM1</property>
-          <property>aero/c/CMMALPHADOT</property>
           <property>aero/c/CMMBRK</property>
           <property>aero/c/CMMDGE</property>
           <property>aero/c/CMMDRD</property>
@@ -4074,7 +4037,6 @@ Other:
 </aerodynamics>
     <output name="c:/temp/JSBOut.csv" type="CSV" rate="10">
         <property caption="alpha-deg">aero/alpha-deg</property>
-        <property caption="alphadot-rad_sec">aero/alphadot-rad_sec</property>
         <property caption="beta-deg">aero/beta-deg</property>
         <property caption="betadot-rad_sec">aero/betadot-rad_sec</property>
         <property caption="CFXB">aero/c/CFXB</property>
@@ -4122,7 +4084,6 @@ Other:
         <property caption="CMLP">aero/c/CMLP</property>
         <property caption="CMLR">aero/c/CMLR</property>
         <property caption="CMM1">aero/c/CMM1</property>
-        <property caption="CMMALPHADOT">aero/c/CMMALPHADOT</property>
         <property caption="CMMBRK">aero/c/CMMBRK</property>
         <property caption="CMMDGE">aero/c/CMMDGE</property>
         <property caption="CMMDRD">aero/c/CMMDRD</property>
