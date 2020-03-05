@@ -167,9 +167,9 @@ var HUD = {
     m.MaxX = 512; #the canvas is 420 *2;
     m.MaxY = 512; #the canvas is 420 *2;
     
-    m.red = 0.1;
+    m.red = 0.0;
     m.green = 1.0;
-    m.blue = 0.1;
+    m.blue = 0.0;
     
     m.MaxTarget = 30;
     
