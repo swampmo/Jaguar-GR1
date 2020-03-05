@@ -6,16 +6,11 @@
 
 <system name="SAS">
 	
-	<property value="0">sas/pitch-l</property>
-	<property value="0">sas/pitch-r</property>
-	<property value="0">sas/yaw-l</property>
-	<property value="0">sas/yaw-r</property>
-	<property value="0">sas/beta-pd</property>
-	<property value="0">sas/beta-p-gain</property>
-	<property value="0">sas/beta-d-gain</property>
+	<property value="1">sas/pitch-l</property>
+	<property value="1">sas/pitch-r</property>
+	<property value="57.142">sas/pitch-damping-1-c1</property>
 	
-	<channel name="Logic">
-		
+	<channel name="Pitch">
 		<switch name="sas/pitch-switch">
 			<default value="0"/>
 			<test value="0">
@@ -26,86 +21,58 @@
 				sas/pitch-r eq 1
 			</test>
 		</switch>
-		
-		<switch name="sas/yaw-switch">
-			<default value="0"/>
-			<test value="0">
-				position/wow eq 1
-			</test>
-			<test logic="OR" value="1">
-				sas/yaw-l eq 1
-				sas/yaw-r eq 1
-			</test>
-		</switch>
-	
-	</channel>
-	
-	<channel name="Pitch">
-		
-		<washout_filter name="sas/q-washout">
-			<input>velocities/q-rad_sec</input>
-			<c1>0.5</c1>
-		</washout_filter>
-		
-		<scheduled_gain name="sas/q-damp">
-			<input>sas/q-washout</input>
-			<table>
-				<independentVar lookup="row">velocities/vc-kts</independentVar>
-				<independentVar lookup="column">sas/pitch-switch</independentVar>
-				<tableData>
-						 0    1
-					150  0.0  0.5
-					950  0.0  0.1
-				</tableData>
-			</table>
-			<clipto>
-				<min>-0.5</min>
-				<max>0.5</max>
-			</clipto>
-		</scheduled_gain>
-		
-		<fcs_function name="sas/l-g">
+
+		<fcs_function name="sas/pitch-damping-0">
 			<function>
 				<product>
+					<property>aero/alphadot-rad_sec</property>
+					<v>-0.6</v>
+					<p>sas/pitch-switch</p>
 					<table>
-						<independentVar lookup="row">forces/load-factor</independentVar> <!-- Is inverted -->
+						<independentVar lookup="row">aero/alpha-deg</independentVar>
 						<tableData>
-							-7  0.3
-							-4  0.0
-							 1  0.0
-							 4 -0.3
-						</tableData>
+							-20	-0.695945
+							-10	-0.539531
+							-8	-0.500045
+							-4	-0.445698
+ 							0	-0.377695
+							2	-0.417018
+							4	-0.461666
+							6	-0.428895
+							8	-0.483531
+							10	-0.512112
+							12	-0.625818
+							14	-0.654765
+							16	-0.611532
+							18	-0.646000
+							20	-0.656208
+							24	-0.525719
+							28	-0.613312
+							30	-0.635362
+							35	-0.818676
+							45	-0.484994
+							50	-0.532898
+							55	-0.289972
+							60	-0.235742
+													
+					</tableData>
 					</table>
-					<table>
-						<independentVar lookup="row">/controls/flight/elevator</independentVar>
-						<tableData>
-							-1.0  1.000
-							-0.1  0.125
-							 0.1  0.125
-							 1.0  1.000
-						</tableData>
-					</table>
-					<max>
-						<property>sas/pitch-l</property>
-						<property>sas/pitch-r</property>
-					</max>
 				</product>
 			</function>
-			<clipto>
-				<min>-0.3</min>
-				<max>0.3</max>
-			</clipto>
 		</fcs_function>
-		
+
+		<lag_filter name="sas/pitch-damping-1">
+			<input>sas/pitch-damping-0</input>
+			<c1>sas/pitch-damping-1-c1</c1>
+		</lag_filter>
+
 		<summer name="sas/pitch-output">
-			<input>sas/q-damp</input>
-			<input>sas/l-g</input>
+			<input>sas/pitch-damping-1</input>
 			<clipto>
 				<min>-0.5</min>
 				<max>0.5</max>
 			</clipto>
 		</summer>
-	
 	</channel>
 	
 	<channel name="Pitch Trim">
@@ -190,119 +157,207 @@
 	
 	</channel>
 	
+	<property value="1">sas/yaw-damper-cmd</property>
+	<property value="1.352">sas/yaw-v1-c1</property>
+	<property value="0.601">sas/yaw-v1-c2</property>
+	<property value="3.333">sas/yaw-v2-c1</property>
+	<property value="0.143">sas/yaw-v3-c1</property>
+	<property value="1.502">sas/yaw-v5-c</property>
+	<property value="0.955">sas/yaw-v6-c</property>
+	<property value="100.0">sas/yaw-v7-c1</property>
+
+	<property value="0">sas/yaw-active</property>
+
 	<channel name="Yaw">
-		
-		<washout_filter name="sas/r-washout">
-			<input>velocities/r-rad_sec</input>
-			<c1>0.5</c1>
-		</washout_filter>
-		
-		<scheduled_gain name="sas/r-damp">
-			<input>sas/r-washout</input>
-			<table>
-				<independentVar lookup="row">velocities/vc-kts</independentVar>
-				<independentVar lookup="column">sas/yaw-switch</independentVar>
-				<tableData>
-						 0    1
-					150  0.0 -7.0
-					950  0.0 -0.5
+		<!-- switch to determine if yaw damper active -->
+		<switch name="sas/yaw-switch">
+			<default value="0" />
+			<test value="0">
+				position/wow eq 1
+			</test>
+			<test logic="OR" value="1">
+				sas/yaw-damper-cmd ne 0
+			</test>
+		</switch>
+
+		<!-- preset lookup of r -->
+		<fcs_function name="sas/yaw-rate-predicted-rad_sec">
+			<function>
+				<table>
+					<independentVar lookup="row">attitude/phi-deg</independentVar>
+					<independentVar lookup="column">velocities/vc-kts</independentVar>
+					<tableData>
+								 200         300         400         500         600         700
+					-90    -0.118243   -0.059850   -0.054086   -0.028030   -0.024050   -0.021370
+					-70    -0.090518   -0.057120   -0.046700   -0.024690   -0.023860   -0.021940
+					-35    -0.075220   -0.054476   -0.021474   -0.018000   -0.015763   -0.012543
+					-20    -0.060116   -0.020270   -0.012572   -0.013590   -0.008988   -0.007700
+					-10    -0.044000   -0.010830   -0.007897   -0.005505   -0.005166   -0.004334
+					  0     0.000000    0.000000    0.000000    0.000000    0.000000    0.000000
+					 10     0.044000    0.010830    0.007897    0.005505    0.005166    0.004334
+					 20     0.060116    0.020270    0.012572    0.013590    0.008988    0.007700
+					 35     0.075220    0.054476    0.021474    0.018000    0.015763    0.012543
+					 70     0.090518    0.057120    0.046700    0.024690    0.023860    0.021940
+					 90     0.118243    0.059850    0.054086    0.028030    0.024050    0.021370
 				</tableData>
-			</table>
-			<clipto>
-				<min>-0.5</min>
-				<max>0.5</max>
-			</clipto>
-		</scheduled_gain>
-		
-		<fcs_function name="sas/l-r">
+				</table>
+			</function>
+		</fcs_function>
+
+		<!-- reference for r -->
+		<fcs_function name="sas/yaw-v0">
+			<function>
+				<difference>
+					<property>velocities/r-rad_sec</property>
+					<property>sas/yaw-rate-predicted-rad_sec</property>
+				</difference>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="sas/yaw-v1">
 			<function>
 				<product>
+					<property>sas/yaw-v0</property>
+					<property>sas/yaw-v1-c1</property>
 					<table>
-						<independentVar lookup="row">velocities/r-rad_sec</independentVar>
-						<independentVar lookup="column">attitude/roll-rad</independentVar>
+						<independentVar lookup="row">velocities/vc-kts</independentVar>
 						<tableData>
-							           -3.141590 -2.356190 -0.785398  0.000000  0.785398  2.356190  3.141590
-							-0.2094390  1.0       0.0       0.0       1.0       0.0       0.0       1.0
-							-0.1396260  0.4       0.0       0.0       0.4       0.0       0.0       0.4
-							-0.1047195  0.0       0.0       0.0       0.0       0.0       0.0       0.0
-							 0.0000000  0.0       0.0       0.0       0.0       0.0       0.0       0.0
-							 0.1047195  0.0       0.0       0.0       0.0       0.0       0.0       0.0
-							 0.1396260 -0.4       0.0       0.0      -0.4       0.0       0.0      -0.4
-							 0.2094390 -1.0       0.0       0.0      -1.0       0.0       0.0      -1.0
+							100 1.0
+							200 0.6
+							300 0.3
+							400 0.31
+							600 0.1
 						</tableData>
 					</table>
-					<table>
-						<independentVar lookup="row">velocities/mach</independentVar>
-						<tableData>
-							0.5  0.950
-							1.0  0.450
-							1.5  0.250
-							2.0  0.150
-						</tableData>
-					</table>
-					<max>
-						<property>sas/yaw-l</property>
-						<property>sas/yaw-r</property>
-					</max>
 				</product>
 			</function>
 		</fcs_function>
-		
-		<fcs_function name="sas/beta-p-gain">
+
+		<lag_filter name="sas/yaw-v2">
+			<input>sas/yaw-v1</input>
+			<c1>sas/yaw-v2-c1</c1>
+		</lag_filter>
+
+		<washout_filter name="sas/yaw-v3">
+			<input>sas/yaw-v2</input>
+			<c1>sas/yaw-v3-c1</c1>
+		</washout_filter>
+
+		<!-- Feedback loop from output -->
+		<lag_filter name="sas/yaw-v7-value">
+			<input>sas/yaw-v6</input>
+			<c1>sas/yaw-v7-c1</c1>
+		</lag_filter>
+
+		<fcs_function name="sas/yaw-v6">
 			<function>
-				<table>
-					<independentVar lookup="row">velocities/vc-kts</independentVar>
-					<tableData>
-						150  3.2
-						950  0.4
-					</tableData>
-				</table>
+				<product>
+					<property>sas/yaw-v5</property>
+					<property>sas/yaw-v6-c</property>
+				</product>
 			</function>
 		</fcs_function>
-		
-		<fcs_function name="sas/beta-d-gain">
+
+		<!-- uses yaw-v-active as initial condition -->
+		<fcs_function name="sas/yaw-v7">
 			<function>
-				<table>
-					<independentVar lookup="row">velocities/vc-kts</independentVar>
-					<tableData>
-						150  5.0
-						950  0.7
-					</tableData>
-				</table>
+				<ifthen>
+					<or>
+						<eq>
+							<property>sas/yaw-v-active</property>
+							<v>0</v>
+						</eq>
+						<lt>
+							<property>sim-time-sec</property>
+							<v>0.5</v>
+						</lt>
+					</or>
+					<property>sas/yaw-v3</property>
+					<property>sas/yaw-v7-value</property>
+				</ifthen>
 			</function>
 		</fcs_function>
-		
-		<switch name="sas/beta">
-			<default value="0"/>
-			<test logic="AND" value="aero/beta-rad">
-				/controls/flight/rudder le 0.02
-				/controls/flight/rudder ge -0.02
-				sas/yaw-switch eq 1
-			</test>
-		</switch>
-		
-		<pid name="sas/beta-pd-v"> <!-- Only P and D are used -->
-			<input>sas/beta</input>
-			<kp>sas/beta-p-gain</kp>
-			<ki>0.0</ki>
-			<kd>sas/beta-d-gain</kd>
-			<output>sas/beta-pd</output>
+		<!-- End feedback from output -->
+
+		<fcs_function name="sas/yaw-v5">
+			<function>
+				<product>
+					<difference>
+						<property>sas/yaw-v3</property>
+						<property>sas/yaw-v7</property>
+					</difference>
+					<property>sas/yaw-v5-c</property>
+				</product>
+			</function>
 			<clipto>
-				<min>-0.3</min>
-				<max>0.3</max>
+				<min>-4</min>
+				<max>4</max>
 			</clipto>
-		</pid>
-		
-		<summer name="sas/yaw-output">
-			<input>sas/r-damp</input>
-			<input>sas/l-r</input>
-			<input>sas/beta-pd</input>
+		</fcs_function>
+
+		<!-- active flag - needed for initial reset -->
+		<fcs_function name="sas/yaw-v-active">
+			<function>
+				<ifthen>
+					<eq>
+						<property>sas/yaw-switch</property>
+						<v>0</v>
+					</eq>
+					<value>0</value>
+					<value>1</value>
+				</ifthen>
+			</function>
+			<output>sas/yaw-active</output>
+		</fcs_function>
+
+		<fcs_function name="sas/yaw-output">
+			<function>
+				<ifthen>
+					<eq>
+						<property>sas/yaw-switch</property>
+						<v>0</v>
+					</eq>
+					<value>0</value>
+					<property>-sas/yaw-v7</property>
+					>
+				</ifthen>
+			</function>
 			<clipto>
-				<min>-0.5</min>
-				<max>0.5</max>
+				<min>-4</min>
+				<max>4</max>
 			</clipto>
-		</summer>
-	
+		</fcs_function>
+
 	</channel>
 
+	<!-- 
+		Roll stability is a roll damper.
+		Maximum spoiler is 45deg;  gives pitch up of 1deg nose up
+	-->
+	<channel name="autoslats">
+		<switch name="sas/autoslat-active">
+			<default value="0" />
+			<test logic="AND" value="1">
+			aero/alpha-deg gt 4
+			velocities/vc-kts lt 580
+			/controls/flight/flaps eq 0
+		</test>
+		</switch>
+
+		<fcs_function name="sas/autoslat-deg">
+			<function>
+				<product>
+					<property>sas/autoslat-active</property>
+					<table>
+						<independentVar lookup="row">aero/alpha-deg</independentVar>
+						<tableData>
+					 4   0
+					 7   0.391
+				</tableData>
+					</table>
+				</product>
+			</function>
+		</fcs_function>
+
+	</channel>
 </system>
