@@ -148,7 +148,7 @@ Other:
   <location unit="M" name="VRP">
     <x>1.877</x>
     <y>0</y>
-    <z>0.1</z>
+    <z>0.25</z>
   </location>
   <location unit="M" name="AERORP">
     <x>8.6247</x>
@@ -176,13 +176,13 @@ Other:
     <location unit="M">
       <x>3.2039</x>
       <y>0</y>
-      <z>-2.2055</z>
+      <z>-2.1844</z>
     </location>
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
     <rolling_friction>0.02</rolling_friction>
-    <spring_coeff unit="LBS/FT">12502</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">3000.224</damping_coeff>
+    <spring_coeff unit="LBS/FT">12125.5</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">2910.12</damping_coeff>
     <max_steer unit="DEG">12</max_steer>
     <brake_group>NOSE</brake_group>
     <retractable>1</retractable>
@@ -197,8 +197,8 @@ Other:
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
     <rolling_friction>0.02</rolling_friction>
-    <spring_coeff unit="LBS/FT">12502</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">3000.224</damping_coeff>
+    <spring_coeff unit="LBS/FT">48502</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">2910.12</damping_coeff>
     <brake_group>LEFT</brake_group>
     <retractable>1</retractable>
   </contact>
@@ -212,127 +212,164 @@ Other:
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
     <rolling_friction>0.02</rolling_friction>
-    <spring_coeff unit="LBS/FT">12502</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">3000.224</damping_coeff>
+    <spring_coeff unit="LBS/FT">48502</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">2910.12</damping_coeff>
     <brake_group>RIGHT</brake_group>
     <retractable>1</retractable>
   </contact>
   <contact type="STRUCTURE" name="NOSE">
     <!--3: NOSE-->
     <location unit="M">
-      <x>0</x>
+      <x>0.3</x>
       <y>0</y>
-      <z>0</z>
+      <z>0.89</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
     <rolling_friction>1.413</rolling_friction>
-    <spring_coeff unit="LBS/FT">6300</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">1400</damping_coeff>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
   </contact>
   <contact type="STRUCTURE" name="FRONT_LOWER_FUSELAGE">
     <!--4: FRONT_LOWER_FUSELAGE-->
     <location unit="M">
       <x>1.65</x>
       <y>0</y>
-      <z>-0.164</z>
+      <z>-1.0473164</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
     <rolling_friction>1.413</rolling_friction>
-    <spring_coeff unit="LBS/FT">6300</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">1400</damping_coeff>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
   </contact>
   <contact type="STRUCTURE" name="CANOPY">
     <!--5: CANOPY-->
     <location unit="M">
-      <x>4.24</x>
+      <x>4.0976</x>
       <y>0</y>
-      <z>1.3078</z>
+      <z>1.028</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
     <rolling_friction>1.413</rolling_friction>
-    <spring_coeff unit="LBS/FT">6300</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">1400</damping_coeff>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
   </contact>
   <contact type="STRUCTURE" name="REAR_UPPER_FUSELAGE">
     <!--6: REAR_UPPER_FUSELAGE-->
     <location unit="M">
-      <x>10.1598</x>
+      <x>11.492</x>
       <y>0</y>
-      <z>1.0113</z>
+      <z>1.02</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
     <rolling_friction>1.413</rolling_friction>
-    <spring_coeff unit="LBS/FT">6300</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">1400</damping_coeff>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
+  </contact>
+  <contact type="STRUCTURE" name="REAR_LEFT_LOWER_FUSELAGE">
+    <!--7: REAR_LEFT_LOWER_FUSELAGE-->
+    <location unit="M">
+      <x>11.782</x>
+      <y>-0.7</y>
+      <z>-1.323</z>
+    </location>
+    <static_friction>1.2</static_friction>
+    <dynamic_friction>1.212</dynamic_friction>
+    <rolling_friction>1.413</rolling_friction>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
+  </contact>
+  <contact type="STRUCTURE" name="REAR_RIGHT_LOWER_FUSELAGE">
+    <!--8: REAR_RIGHT_LOWER_FUSELAGE-->
+    <location unit="M">
+      <x>11.782</x>
+      <y>0.7</y>
+      <z>-1.323</z>
+    </location>
+    <static_friction>1.2</static_friction>
+    <dynamic_friction>1.212</dynamic_friction>
+    <rolling_friction>1.413</rolling_friction>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
   </contact>
   <contact type="STRUCTURE" name="LEFT_WING">
-    <!--7: LEFT_WING-->
+    <!--9: LEFT_WING-->
     <location unit="M">
-      <x>10.6</x>
-      <y>-4.179</y>
-      <z>0.3545</z>
+      <x>11.2312</x>
+      <y>-4.879</y>
+      <z>0.09</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
     <rolling_friction>1.413</rolling_friction>
-    <spring_coeff unit="LBS/FT">6300</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">1400</damping_coeff>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
   </contact>
   <contact type="STRUCTURE" name="RIGHT_WING">
-    <!--8: RIGHT_WING-->
+    <!--10: RIGHT_WING-->
     <location unit="M">
-      <x>10.6</x>
-      <y>4.179</y>
-      <z>0.3545</z>
+      <x>11.2312</x>
+      <y>4.879</y>
+      <z>0.09</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
     <rolling_friction>1.413</rolling_friction>
-    <spring_coeff unit="LBS/FT">6300</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">1400</damping_coeff>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
   </contact>
   <contact type="STRUCTURE" name="LEFT_HTAIL">
-    <!--9: LEFT_HTAIL-->
+    <!--11: LEFT_HTAIL-->
     <location unit="M">
-      <x>14.025</x>
-      <y>-2.1215</y>
-      <z>0.7267</z>
+      <x>16.021</x>
+      <y>-2.4215</y>
+      <z>0</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
     <rolling_friction>1.413</rolling_friction>
-    <spring_coeff unit="LBS/FT">6300</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">1400</damping_coeff>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
   </contact>
   <contact type="STRUCTURE" name="RIGHT_HTAIL">
-    <!--10: RIGHT_HTAIL-->
+    <!--12: RIGHT_HTAIL-->
     <location unit="M">
-      <x>14.025</x>
-      <y>2.1215</y>
-      <z>0.7267</z>
+      <x>16.021</x>
+      <y>2.4215</y>
+      <z>0</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
     <rolling_friction>1.413</rolling_friction>
-    <spring_coeff unit="LBS/FT">6300</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">1400</damping_coeff>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
   </contact>
   <contact type="STRUCTURE" name="VTAIL">
-    <!--11: VTAIL-->
+    <!--13: VTAIL-->
     <location unit="M">
-      <x>14.2226</x>
+      <x>15.717</x>
       <y>0</y>
-      <z>2.726</z>
+      <z>2.126</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
     <rolling_friction>1.413</rolling_friction>
-    <spring_coeff unit="LBS/FT">6300</spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">1400</damping_coeff>
+    <spring_coeff unit="LBS/FT">97004</spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">9700.4</damping_coeff>
+    <damping_coeff_rebound unit="LBS/FT/SEC">48502</damping_coeff_rebound>
   </contact>
 </ground_reactions>
 
@@ -2356,7 +2393,7 @@ Other:
     <function name="aero/c/CMLDTD">
     <description>ROLL MOMENT DUE TO DIFFERENTIAL TAIL DEFLECTION</description>
     <product>
-          <property>fcs/differential-elevator-pos-norm</property>
+          <property>fcs/differential-elevator-pos-deg</property>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/pitch-pos-deg</independentVar>
@@ -2938,35 +2975,35 @@ Other:
     <function name="aero/c/CFYDTD">
     <description>SIDE FORCE DUE TO DIFFERENTIAL TAIL DEFLECTION</description>
     <product>
-          <property>fcs/differential-elevator-pos-norm</property>
+          <property>fcs/differential-elevator-pos-deg</property>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/pitch-pos-deg</independentVar>
             <tableData>
                                 -25	        -20	        -15	        -10	         -5	          0	          5	         10	         15	
-                    -20	  -0.00224	  -0.00296	  -0.00329	  -0.00352	  -0.00366	  -0.00368	  -0.00359	  -0.00309	  -0.00176	
-                    -10	  -0.00263	  -0.00293	  -0.00275	  -0.00326	  -0.00347	  -0.00352	  -0.00343	  -0.00309	  -0.00216	
-                     -8	  -0.00341	  -0.00270	  -0.00308	  -0.00327	  -0.00346	  -0.00345	  -0.00339	  -0.00309	  -0.00223	
-                     -4	  -0.00314	  -0.00294	  -0.00346	  -0.00337	  -0.00340	  -0.00344	  -0.00328	  -0.00307	  -0.00220	
-                      0	  -0.00218	  -0.00296	  -0.00330	  -0.00332	  -0.00339	  -0.00349	  -0.00320	  -0.00297	  -0.00207	
-                      2	  -0.00266	  -0.00280	  -0.00299	  -0.00348	  -0.00333	  -0.00339	  -0.00324	  -0.00282	  -0.00251	
-                      4	  -0.00230	  -0.00286	  -0.00298	  -0.00331	  -0.00340	  -0.00347	  -0.00312	  -0.00280	  -0.00174	
-                      6	  -0.00253	  -0.00273	  -0.00309	  -0.00368	  -0.00351	  -0.00359	  -0.00507	  -0.00259	  -0.00191	
-                      8	  -0.00248	  -0.00267	  -0.00320	  -0.00328	  -0.00348	  -0.00359	  -0.00377	  -0.00271	  -0.00222	
-                     10	  -0.00226	  -0.00283	  -0.00306	  -0.00333	  -0.00342	  -0.00340	  -0.00341	  -0.00418	  -0.00089	
-                     12	  -0.00235	  -0.00269	  -0.00311	  -0.00324	  -0.00348	  -0.00358	  -0.00367	  -0.00439	  -0.00331	
-                     14	  -0.00237	  -0.00262	  -0.00307	  -0.00318	  -0.00347	  -0.00339	  -0.00346	  -0.00354	  -0.00434	
-                     16	  -0.00227	  -0.00259	  -0.00299	  -0.00325	  -0.00346	  -0.00361	  -0.00351	  -0.00377	  -0.00397	
-                     18	  -0.00225	  -0.00259	  -0.00282	  -0.00319	  -0.00348	  -0.00351	  -0.00363	  -0.00348	  -0.00330	
-                     20	  -0.00228	  -0.00258	  -0.00290	  -0.00319	  -0.00355	  -0.00368	  -0.00366	  -0.00362	  -0.00300	
-                     24	  -0.00213	  -0.00243	  -0.00289	  -0.00323	  -0.00360	  -0.00372	  -0.00355	  -0.00351	  -0.00329	
-                     28	  -0.00262	  -0.00283	  -0.00307	  -0.00372	  -0.00387	  -0.00417	  -0.00402	  -0.00396	  -0.00372	
-                     30	  -0.00201	  -0.00168	  -0.00360	  -0.00363	  -0.00348	  -0.00366	  -0.00399	  -0.00357	  -0.00305	
-                     35	  -0.00129	  -0.00185	  -0.00266	  -0.00294	  -0.00355	  -0.00382	  -0.00395	  -0.00359	  -0.00334	
-                     45	  -0.00130	  -0.00218	  -0.00293	  -0.00345	  -0.00340	  -0.00447	  -0.00435	  -0.00483	  -0.00372	
-                     50	  -0.00159	  -0.00102	  -0.00296	  -0.00272	  -0.00295	  -0.00367	  -0.00487	  -0.00321	  -0.00389	
-                     55	  -0.00240	  -0.00135	  -0.00099	  -0.00268	  -0.00255	  -0.00431	  -0.00512	  -0.00468	  -0.00428	
-                     60	  -0.00088	  -0.00010	  -0.00292	  -0.00142	  -0.00289	  -0.00483	  -0.00590	  -0.00469	  -0.00362	
+                    -20	  -0.01341	  -0.01775	  -0.01973	  -0.02109	  -0.02193	  -0.02207	  -0.02155	  -0.01852	  -0.01058	
+                    -10	  -0.01580	  -0.01756	  -0.01652	  -0.01958	  -0.02082	  -0.02109	  -0.02058	  -0.01853	  -0.01295	
+                     -8	  -0.02048	  -0.01618	  -0.01846	  -0.01964	  -0.02075	  -0.02068	  -0.02031	  -0.01853	  -0.01338	
+                     -4	  -0.01885	  -0.01761	  -0.02073	  -0.02020	  -0.02040	  -0.02063	  -0.01965	  -0.01839	  -0.01317	
+                      0	  -0.01310	  -0.01775	  -0.01981	  -0.01994	  -0.02033	  -0.02092	  -0.01921	  -0.01780	  -0.01240	
+                      2	  -0.01596	  -0.01678	  -0.01792	  -0.02090	  -0.01999	  -0.02032	  -0.01942	  -0.01691	  -0.01506	
+                      4	  -0.01381	  -0.01713	  -0.01786	  -0.01988	  -0.02037	  -0.02080	  -0.01870	  -0.01681	  -0.01045	
+                      6	  -0.01519	  -0.01636	  -0.01855	  -0.02209	  -0.02108	  -0.02151	  -0.03042	  -0.01556	  -0.01144	
+                      8	  -0.01490	  -0.01599	  -0.01918	  -0.01969	  -0.02089	  -0.02152	  -0.02259	  -0.01625	  -0.01330	
+                     10	  -0.01357	  -0.01695	  -0.01838	  -0.01998	  -0.02051	  -0.02040	  -0.02047	  -0.02506	  -0.00533	
+                     12	  -0.01409	  -0.01616	  -0.01863	  -0.01943	  -0.02088	  -0.02148	  -0.02199	  -0.02635	  -0.01983	
+                     14	  -0.01422	  -0.01574	  -0.01839	  -0.01906	  -0.02084	  -0.02034	  -0.02076	  -0.02123	  -0.02603	
+                     16	  -0.01360	  -0.01556	  -0.01795	  -0.01947	  -0.02075	  -0.02166	  -0.02104	  -0.02261	  -0.02381	
+                     18	  -0.01352	  -0.01554	  -0.01693	  -0.01913	  -0.02085	  -0.02104	  -0.02177	  -0.02086	  -0.01981	
+                     20	  -0.01366	  -0.01547	  -0.01737	  -0.01916	  -0.02130	  -0.02205	  -0.02198	  -0.02170	  -0.01802	
+                     24	  -0.01277	  -0.01457	  -0.01732	  -0.01939	  -0.02158	  -0.02231	  -0.02132	  -0.02104	  -0.01972	
+                     28	  -0.01573	  -0.01698	  -0.01842	  -0.02231	  -0.02320	  -0.02503	  -0.02413	  -0.02373	  -0.02229	
+                     30	  -0.01208	  -0.01007	  -0.02157	  -0.02180	  -0.02085	  -0.02193	  -0.02394	  -0.02141	  -0.01827	
+                     35	  -0.00776	  -0.01109	  -0.01593	  -0.01762	  -0.02130	  -0.02292	  -0.02370	  -0.02154	  -0.02005	
+                     45	  -0.00777	  -0.01308	  -0.01758	  -0.02068	  -0.02037	  -0.02681	  -0.02608	  -0.02900	  -0.02234	
+                     50	  -0.00953	  -0.00612	  -0.01774	  -0.01630	  -0.01770	  -0.02203	  -0.02921	  -0.01925	  -0.02331	
+                     55	  -0.01439	  -0.00810	  -0.00593	  -0.01609	  -0.01530	  -0.02583	  -0.03074	  -0.02807	  -0.02567	
+                     60	  -0.00526	  -0.00061	  -0.01749	  -0.00851	  -0.01735	  -0.02895	  -0.03540	  -0.02814	  -0.02170	
             </tableData>
           </table>
        </product>
@@ -3717,7 +3754,7 @@ Other:
     <function name="aero/c/CMNDTD">
     <description>YAWING MOMENT DUE TO DIFFERENTIAL TAIL DEFLECTION</description>
     <product>
-          <property>fcs/differential-elevator-pos-norm</property>
+          <property>fcs/differential-elevator-pos-deg</property>
           <table>
             <independentVar lookup="row">aero/alpha-deg</independentVar>
             <independentVar lookup="column">fcs/pitch-pos-deg</independentVar>
@@ -4123,7 +4160,7 @@ Other:
         <property caption="phi-deg">attitude/phi-deg</property>
         <property caption="psi-deg">attitude/psi-deg</property>
         <property caption="theta-deg">attitude/theta-deg</property>
-        <property caption="differential-elevator-pos-norm">fcs/differential-elevator-pos-norm</property>
+        <property caption="differential-elevator-pos-deg">fcs/differential-elevator-pos-deg</property>
         <property caption="flap-ob-pos-deg">fcs/flap-ob-pos-deg</property>
         <property caption="flap-pos-deg">fcs/flap-pos-deg</property>
         <property caption="pitch-pos-deg">fcs/pitch-pos-deg</property>
