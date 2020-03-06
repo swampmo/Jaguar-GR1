@@ -16,10 +16,10 @@
 	<property value="0">autoflight/input/vs-active</property>
 	<property value="0">autoflight/pitch/vs/pid</property>
 	
-	<property value="10.5">autoflight/roll/heading/p-gain</property>
-	<property value="0.3">autoflight/roll/heading/i-gain</property>
-	<property value="-0.8">autoflight/roll/p-gain</property>		
-	<property value="-0.001">autoflight/roll/i-gain</property>		
+	<property value="3.5">autoflight/roll/heading/p-gain</property>
+	<property value="0.0">autoflight/roll/heading/i-gain</property>
+	<property value="-1.0">autoflight/roll/p-gain</property>		
+	<property value="-0.0">autoflight/roll/i-gain</property>		
 	<property value="-0.0">autoflight/roll/d-gain</property>		
 
 	<property value="3">autoflight/pitch/p-gain</property>
