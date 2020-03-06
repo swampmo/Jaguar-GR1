@@ -14,13 +14,13 @@
     <object-name>intvitres</object-name>
   </animation>
 
-  <animation>
+  <!-- <animation>
     <type>shader</type>
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>intverriere</object-name>
     <object-name>intvitres</object-name>
-  </animation>
+  </animation> -->
 
   <animation>
     <type>noshadow</type>
