@@ -6,7 +6,7 @@
 
     <fileheader>
         <author>Richard Harrison</author>
-        <filecreationdate>2020-03-05</filecreationdate>
+        <filecreationdate>2020-03-06</filecreationdate>
         <version>1.0</version>
         <copyright>Copyright (C) 2020 Richard Harrison, All rights reserved</copyright>
         <description></description>
@@ -148,7 +148,7 @@ Other:
   <location unit="M" name="VRP">
     <x>1.877</x>
     <y>0</y>
-    <z>0.25</z>
+    <z>1.25</z>
   </location>
   <location unit="M" name="AERORP">
     <x>8.6247</x>
@@ -176,14 +176,14 @@ Other:
     <location unit="M">
       <x>3.2039</x>
       <y>0</y>
-      <z>-2.1844</z>
+      <z>-1.1844</z>
     </location>
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
     <rolling_friction>0.02</rolling_friction>
     <spring_coeff unit="LBS/FT">12125.5</spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">2910.12</damping_coeff>
-    <max_steer unit="DEG">12</max_steer>
+    <max_steer unit="DEG">55</max_steer>
     <brake_group>NOSE</brake_group>
     <retractable>1</retractable>
   </contact>
@@ -191,8 +191,8 @@ Other:
     <!--1: LEFT_MLG-->
     <location unit="M">
       <x>9.2847</x>
-      <y>-1.235</y>
-      <z>-2.0778</z>
+      <y>-1.835</y>
+      <z>-1.0778</z>
     </location>
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
@@ -206,8 +206,8 @@ Other:
     <!--2: RIGHT_MLG-->
     <location unit="M">
       <x>9.2847</x>
-      <y>1.235</y>
-      <z>-2.0778</z>
+      <y>1.835</y>
+      <z>-1.0778</z>
     </location>
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
@@ -222,7 +222,7 @@ Other:
     <location unit="M">
       <x>0.3</x>
       <y>0</y>
-      <z>0.89</z>
+      <z>1.89</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -236,7 +236,7 @@ Other:
     <location unit="M">
       <x>1.65</x>
       <y>0</y>
-      <z>-1.0473164</z>
+      <z>-0.0473164</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -250,7 +250,7 @@ Other:
     <location unit="M">
       <x>4.0976</x>
       <y>0</y>
-      <z>1.028</z>
+      <z>2.028</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -264,7 +264,7 @@ Other:
     <location unit="M">
       <x>11.492</x>
       <y>0</y>
-      <z>1.02</z>
+      <z>2.02</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -278,7 +278,7 @@ Other:
     <location unit="M">
       <x>11.782</x>
       <y>-0.7</y>
-      <z>-1.323</z>
+      <z>-0.323</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -292,7 +292,7 @@ Other:
     <location unit="M">
       <x>11.782</x>
       <y>0.7</y>
-      <z>-1.323</z>
+      <z>-0.323</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -306,7 +306,7 @@ Other:
     <location unit="M">
       <x>11.2312</x>
       <y>-4.879</y>
-      <z>0.09</z>
+      <z>1.09</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -320,7 +320,7 @@ Other:
     <location unit="M">
       <x>11.2312</x>
       <y>4.879</y>
-      <z>0.09</z>
+      <z>1.09</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -334,7 +334,7 @@ Other:
     <location unit="M">
       <x>16.021</x>
       <y>-2.4215</y>
-      <z>0</z>
+      <z>1</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -348,7 +348,7 @@ Other:
     <location unit="M">
       <x>16.021</x>
       <y>2.4215</y>
-      <z>0</z>
+      <z>1</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -362,7 +362,7 @@ Other:
     <location unit="M">
       <x>15.717</x>
       <y>0</y>
-      <z>2.126</z>
+      <z>3.126</z>
     </location>
     <static_friction>1.2</static_friction>
     <dynamic_friction>1.212</dynamic_friction>
@@ -378,7 +378,7 @@ Other:
     <location unit="M">
       <x>12.916</x>
       <y>-0.4127</y>
-      <z>0.2</z>
+      <z>-0.2</z>
     </location>
     <orient unit="DEG">
       <roll>0</roll>
@@ -391,7 +391,7 @@ Other:
       <location unit="M">
         <x>12.916</x>
         <y>-0.4127</y>
-        <z>0.2</z>
+        <z>-0.2</z>
       </location>
       <orient unit="DEG">
         <roll>0</roll>
@@ -404,7 +404,7 @@ Other:
     <location unit="M">
       <x>12.916</x>
       <y>0.4127</y>
-      <z>0.2</z>
+      <z>-0.2</z>
     </location>
     <orient unit="DEG">
       <roll>0</roll>
@@ -417,7 +417,7 @@ Other:
       <location unit="M">
         <x>12.916</x>
         <y>0.4127</y>
-        <z>0.2</z>
+        <z>-0.2</z>
       </location>
       <orient unit="DEG">
         <roll>0</roll>
@@ -443,7 +443,7 @@ Other:
     <location unit="M">
       <x>9.2247</x>
       <y>-2.09</y>
-      <z>0.395</z>
+      <z>0.005</z>
     </location>
     <capacity unit="LBS">3470</capacity>
     <standpipe unit="LBS">100</standpipe>
@@ -455,7 +455,7 @@ Other:
     <location unit="M">
       <x>9.2247</x>
       <y>2.09</y>
-      <z>0.395</z>
+      <z>0.005</z>
     </location>
     <capacity unit="LBS">3470</capacity>
     <standpipe unit="LBS">100</standpipe>
