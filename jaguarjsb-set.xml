@@ -697,6 +697,11 @@
     <turbulence>
       <use-cloud-turbulence>true</use-cloud-turbulence>
     </turbulence>
+    <aircraft-effects>
+      <overlay-alpha type="double">0.45</overlay-alpha>
+      <use-overlay type="int">1</use-overlay>
+      <reflection-strength type="double">0.25</reflection-strength>
+    </aircraft-effects>
   </environment>
 
 
