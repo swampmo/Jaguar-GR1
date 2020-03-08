@@ -114,75 +114,28 @@
  </animation>
 
 <!-- Air Speed Indicator's Bug Setting -->
-	<animation>
-		<name>asi-bug-left-fine</name>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>asi-bug-left</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/airspeed-indicator/speed-limit-bug</property>
-				<step>-5</step>
-				<min>125</min>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<name>asi-bug-left-coarse</name>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>asi-bug-left</object-name>
-		<action>
-			<button>1</button>
-			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/airspeed-indicator/speed-limit-bug</property>
-				<step>-50</step>
-				<min>125</min>
-			</binding>
-		</action>
-	</animation>
+<animation>
+  <type>knob</type>
+  <object-name>button</object-name>
+  <property>sim/model/f15/instrumentation/airspeed-indicator/safe-speed-limit-bug</property>
+  <factor>0</factor>
+  <axis>
+    <object-name>button-axis</object-name>
+  </axis>
 
-	<animation>
-		<name>asi-bug-right-fine</name>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>asi-bug-right</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/airspeed-indicator/speed-limit-bug</property>
-				<step>5</step>
-				<max>7300</max>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<name>asi-bug-right-coarse</name>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>asi-bug-right</object-name>
-		<action>
-			<button>1</button>
-			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/airspeed-indicator/speed-limit-bug</property>
-				<step>50</step>
-				<max>730</max>
-			</binding>
-		</action>
-	</animation>
+  <action>
+      <binding>
+          <command>property-adjust</command>
+          <property>instrumentation/airspeed-indicator/speed-limit-bug</property>
+
+          <factor>10</factor>
+          <min>0</min>
+          <max>750</max>
+          <wrap>false</wrap>
+      </binding>
+  </action>
+</animation>
+
 
 
  <!--  Mach Digits, ones, tenths, hundredths. -->

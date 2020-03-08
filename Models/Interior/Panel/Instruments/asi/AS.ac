@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "ac3dmat1.007" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 50  trans 0
 OBJECT world
-kids 18
+kids 17
 OBJECT poly
 name "mach-flag"
 loc -0.000264588 2.97402e-05 0.0384608
@@ -88,44 +88,6 @@ refs 3
 6 0.506535 0.984277
 5 0.501753 0.964447
 4 0.511317 0.964447
-kids 0
-OBJECT poly
-name "asi-bug-left"
-data 17
-asi-bug-left.mesh
-crease 40.000000
-numvert 4
-0.00096 -0.03056 -0.02598
-0.00096 -0.03056 -0.0184
-0.00096 -0.01925 -0.0184
-0.00096 -0.01925 -0.02598
-numsurf 1
-SURF 0x10
-mat 0
-refs 4
-1 0 0
-0 0 0
-3 0 0
-2 0 0
-kids 0
-OBJECT poly
-name "asi-bug-right"
-data 18
-asi-bug-right.mesh
-crease 40.000000
-numvert 4
-0.00096 -0.01925 -0.03443
-0.00096 -0.01925 -0.02685
-0.00096 -0.03056 -0.02685
-0.00096 -0.03056 -0.03443
-numsurf 1
-SURF 0x10
-mat 0
-refs 4
-0 0 0
-1 0 0
-2 0 0
-3 0 0
 kids 0
 OBJECT poly
 name "box"
@@ -2745,21 +2707,22 @@ refs 4
 kids 0
 OBJECT poly
 name "speed-bug"
+loc 0.00076 -0.00317797 -0.000175234
 data 14
 speed-bug.mesh
 texture "airspeed.png"
 crease 40.000000
 numvert 3
-0.00076 0.02791 -0.0016
-0.00076 0.02794 0.00188
-0.00076 0.0239 6e-05
+0 0.0319576 -0.00183203
+0 0.0319919 0.00215264
+0 0.027366 6.87013e-05
 numsurf 1
 SURF 0x10
 mat 0
 refs 3
-0 0.686647 0.474818
-1 0.673544 0.474818
-2 0.680565 0.459703
+0 0.519244 0.916116
+1 0.495233 0.916116
+2 0.508099 0.877587
 kids 0
 OBJECT poly
 name "mach-drum2"
@@ -3079,4 +3042,18 @@ refs 3
 4 0.776452 0.431839
 6 0.598522 0.470606
 13 0.768669 0.0785034
+kids 0
+OBJECT poly
+name "button-axis"
+loc 0.00410234 -0.0248753 -0.0264312
+crease 45.000000
+numvert 2
+0.00654738 0 0
+-0.00654738 0 0
+numsurf 1
+SURF 0x32
+mat 0
+refs 2
+0 1 0
+1 0 1
 kids 0
