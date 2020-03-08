@@ -191,56 +191,56 @@
       <object-name>hpa-1000-drum-axis</object-name>
     </axis>
 
-                  <!-- <property>instrumentation/altimeter/setting-hpa</property> -->
-                  <expression>
-                    <product>
-                      <value>-360</value> <!--total angle of rotation-->
-              
-                      <!--part 1 - major -->
-                      <sum>
-                        <div>
-                          <mod>
-                            <floor>
-                              <div>
-                                <property>instrumentation/altimeter/setting-hpa</property>
-                                <value>1000.00</value> <!-- step -->
-                              </div>
-                            </floor>
-                            <value>10</value>
-                          </mod>
-                          <value>10</value>
-                        </div>
-              
-                        <!--part 2 - this the scroll animation as the drum goes to the next position-->
-                        <div>
-                          <max>
-                            <value>0</value>
-                            <dif>
-                              <value>10.0</value> <!--scroll-->
-                              <dif>
-                                <product>
-                                  <floor>
-                                    <div>
-                                      <property>instrumentation/altimeter/setting-hpa</property>
-                                      <value>1000.00</value> <!-- step -->
-                                    </div>
-                                  </floor>
-                                  <value>1000.00</value> <!-- step -->
-                                </product>
-                                <floor>
-                                  <dif>
-                                    <property>instrumentation/altimeter/setting-hpa</property>
-                                    <value>1000.00</value> <!-- step -->
-                                  </dif>
-                                </floor>
-                              </dif>
-                            </dif>
-                          </max>
-                          <value>1000.00</value> <!-- step -->
-                        </div>
-                      </sum>
-                    </product>
-                  </expression>
+    <!-- <property>instrumentation/altimeter/setting-hpa</property> -->
+    <expression>
+      <product>
+        <value>-360</value> <!--total angle of rotation-->
+
+        <!--part 1 - major -->
+        <sum>
+          <div>
+            <mod>
+              <floor>
+                <div>
+                  <property>instrumentation/altimeter/setting-hpa</property>
+                  <value>1000.00</value> <!-- step -->
+                </div>
+              </floor>
+              <value>10</value>
+            </mod>
+            <value>10</value>
+          </div>
+
+          <!--part 2 - this the scroll animation as the drum goes to the next position-->
+          <div>
+            <max>
+              <value>0</value>
+              <dif>
+                <value>10.0</value> <!--scroll-->
+                <dif>
+                  <product>
+                    <floor>
+                      <div>
+                        <property>instrumentation/altimeter/setting-hpa</property>
+                        <value>1000.00</value> <!-- step -->
+                      </div>
+                    </floor>
+                    <value>1000.00</value> <!-- step -->
+                  </product>
+                  <floor>
+                    <dif>
+                      <property>instrumentation/altimeter/setting-hpa</property>
+                      <value>1000.00</value> <!-- step -->
+                    </dif>
+                  </floor>
+                </dif>
+              </dif>
+            </max>
+            <value>1000.00</value> <!-- step -->
+          </div>
+        </sum>
+      </product>
+    </expression>
   </animation>
 
   <animation>
@@ -391,43 +391,6 @@
 
   </animation>
 
-
-  <animation>
-    <type>pick</type>
-    <object-name>inhg.dn</object-name>
-    <visible>0</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/altimeter/setting-inhg</property>
-        <step>-0.01</step>
-        <min>26.90</min>
-        <max>32.10</max>
-        <wrap>0</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>inhg.dn</object-name>
-    <visible>0</visible>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/altimeter/setting-inhg</property>
-        <step>-0.1</step>
-        <min>26.90</min>
-        <max>32.10</max>
-        <wrap>0</wrap>
-      </binding>
-    </action>
-  </animation>
-
   <animation>
     <type>knob</type>
     <object-name>barometric-pressure-knob</object-name>
@@ -437,15 +400,15 @@
       <object-name>barometric-pressure-knob-axis</object-name>
     </axis>
     <action>
-        <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/altimeter/setting-inhg</property>
-            <factor>0.01</factor>
-            <min>27.90</min>
-            <max>31.40</max>
-            <wrap>false</wrap>
-        </binding>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <factor>0.01</factor>
+        <min>27.90</min>
+        <max>31.40</max>
+        <wrap>false</wrap>
+      </binding>
     </action>
-</animation>
+  </animation>
 
-  </PropertyList>
+</PropertyList>
