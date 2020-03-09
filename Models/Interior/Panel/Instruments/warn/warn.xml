@@ -1,20 +1,22 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <PropertyList>
 
-	<path>warn.ac</path>
-	  <animation>
+  <path>warn.ac</path>
+
+  <animation>
+    <type>select</type>
     <object-name>HYD-1</object-name>
     <object-name>HYD-2</object-name>
     <object-name>OIL-1</object-name>
     <object-name>OIL-2</object-name>
     <object-name>ENG-OH-1</object-name>
     <object-name>ENG-OH-2</object-name>
-    <object-name>FLAPS</object-name>
+    <!-- <object-name>FLAPS</object-name> -->
     <object-name>n1</object-name>
     <object-name>n2</object-name>
     <object-name>C/PR</object-name>
     <object-name>OXY</object-name>
-    <object-name>Batt-Discted</object-name>
+    <!-- <object-name>Batt-Discted</object-name> -->
     <object-name>DIFF</object-name>
     <object-name>BP-1</object-name>
     <object-name>BP-2</object-name>
@@ -29,11 +31,13 @@
     <object-name>AJAX</object-name>
     <object-name>TEST</object-name>
     <object-name>MUTE</object-name>
-    <object-name>Mount</object-name>
-      </animation>
+    <object-name>ANN2.4</object-name>
+    <object-name>ANN1.12</object-name>
+    <!-- <object-name>Mount</object-name> -->
+  </animation>
 
-	  <animation>
-     <type>material</type> 
+  <animation>
+    <type>material</type>
     <object-name>TEST</object-name>
     <object-name>MUTE</object-name>
     <object-name>Mount</object-name>
@@ -43,31 +47,40 @@
       <green> 0.9 </green>
       <blue>  0.9 </blue>
     </emission>
-	</animation>
+  </animation>
 
-<animation>
- <type>material</type> 
- <object-name>Batt-Discted</object-name>
- <emission> 
-  <factor-prop>engines/caution-bat</factor-prop>
-  <red>1</red>  
-  <green>1</green>  
-  <blue>1</blue>
- </emission>
-</animation>
+  <animation>
+    <type>material</type>
+    <object-name>FLAPS</object-name>
+    <object-name>Batt-Discted</object-name>
+    <emission>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </emission>
+  </animation>
 
-<animation>
- <type>material</type> 
- <object-name>FLAPS</object-name>
- <emission> 
-  <factor-prop>controls/flight/flaps</factor-prop>
-  <red>1</red>  
-  <green>1</green>  
-  <blue>1</blue>
- </emission>
-</animation>
+  <animation>
+    <type>select</type>
+    <object-name>Batt-Discted</object-name>
+        <condition>
+      <greater-than>
+        <property>engines/caution-bat</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+  </animation>
 
-
+  <animation>
+    <type>select</type>
+    <object-name>FLAPS</object-name>
+    <condition>
+      <greater-than>
+        <property>controls/flight/flaps</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+  </animation>
 
 
 </PropertyList>

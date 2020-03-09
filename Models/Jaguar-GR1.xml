@@ -1734,39 +1734,21 @@ if(navStillOn) {
 
 	<animation>
 		<type>spin</type>
-		<object-name>Helice-L-1</object-name>
-		<object-name>Helice-L-2</object-name>
-		<object-name>Nose-Cone-L</object-name>
+		<object-name>engine-l-fan</object-name>
 		<property>engines/engine[0]/n1</property>
 		<factor>25</factor>
-		<center>
-			<x-m>-0.91803</x-m>
-			<y-m>-0.67608</y-m>
-			<z-m>-0.11123</z-m>
-		</center>
 		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
+      <object-name>engine-l-fan-axis</object-name>
 		</axis>
 	</animation>
 
 	<animation>
 		<type>spin</type>
-		<object-name>Helice-R-1</object-name>
-		<object-name>Helice-R-2</object-name>
-		<object-name>Nose-Cone-R</object-name>
+		<object-name>engine-r-fan</object-name>
 		<property>engines/engine[1]/n1</property>
 		<factor>25</factor>
-		<center>
-			<x-m>-0.91803</x-m>
-			<y-m> 0.69868</y-m>
-			<z-m>-0.11123</z-m>
-		</center>
 		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
+      <object-name>engine-r-fan-axis</object-name>
 		</axis>
 	</animation>
 
