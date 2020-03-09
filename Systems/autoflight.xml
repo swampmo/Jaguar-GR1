@@ -745,13 +745,35 @@
 	
 	<channel name="Control Ties">
 		
+		
 		<switch name="fcs/stick-pitch">
 			<default value="0"/>
 			<test value="fcs/elevator-cmd-norm">
 				autoflight/input/pitch-switch ne 1
 			</test>
 		</switch>
-		
+
+		<fcs_function name="fcs/stick-pitch-scheduled">
+			<description>position adjusted for position instead of force and geared for high speed operations.
+				simulation of the AJAX unit loading.
+			</description>
+			<function>
+				<table>
+					<independentVar lookup="row">fcs/stick-pitch</independentVar>
+					<independentVar lookup="column">velocities/vc-kts</independentVar>
+					<tableData>
+							    	0   	300  	500  	750
+						-1.000	-1.0000	-1.0000	-0.7500	-0.4125
+						-0.188	-0.0673	-0.0673	-0.0505	-0.0278
+						-0.001	 0.0000	 0.0000	 0.0000	 0.0000
+						 0.003	 0.0000	 0.0000	 0.0000	 0.0000
+						 0.351	 0.1964	 0.1964	 0.1473	 0.0810
+						 1.000	 1.0000	 1.0000	 0.7500	 0.4125
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+
 		<switch name="fcs/css-pitch">
 			<default value="0"/>
 			<test logic="AND" value="autoflight/ss/elevator-norm">
@@ -761,7 +783,8 @@
 		</switch>
 		
 		<summer name="fcs/ap-pitch-cmd-norm">
-			<input>fcs/stick-pitch</input>
+			<input>fcs/stick-pitch-scheduled</input>
+			<input>sas/pitch-autotrim-offset</input>
 			<input>fcs/css-pitch</input>
 			<input>autoflight/pitch/pitch-rate-demand</input>
 		</summer>
