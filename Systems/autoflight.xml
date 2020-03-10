@@ -744,33 +744,58 @@
 	</channel>
 	
 	<channel name="Control Ties">
-		
-		
-		<switch name="fcs/stick-pitch">
-			<default value="0"/>
-			<test value="fcs/elevator-cmd-norm">
-				autoflight/input/pitch-switch ne 1
-			</test>
-		</switch>
 
+		<!-- pilot stick input; need to include trim as this will then be adjusted for position based on force -->
+		<fcs_function name="fcs/stick-pitch">
+			<default value="0"/>
+			<function>
+				<ifthen>
+					<nq>
+						<property>autoflight/input/pitch-switch</property>
+						<value>1</value>
+					</nq>
+					<sum>
+						<property>fcs/pitch-trim-cmd-norm</property>
+						<property>fcs/elevator-cmd-norm</property>
+					</sum>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+
+		<!-- Stick position simulation; AJAX gearing simulation and Ricahrd's standard force to position simulation -->
 		<fcs_function name="fcs/stick-pitch-scheduled">
 			<description>position adjusted for position instead of force and geared for high speed operations.
 				simulation of the AJAX unit loading.
 			</description>
 			<function>
-				<table>
-					<independentVar lookup="row">fcs/stick-pitch</independentVar>
-					<independentVar lookup="column">velocities/vc-kts</independentVar>
-					<tableData>
-							    	0   	300  	500  	750
-						-1.000	-1.0000	-1.0000	-0.7500	-0.4125
-						-0.188	-0.0673	-0.0673	-0.0505	-0.0278
-						-0.001	 0.0000	 0.0000	 0.0000	 0.0000
-						 0.003	 0.0000	 0.0000	 0.0000	 0.0000
-						 0.351	 0.1964	 0.1964	 0.1473	 0.0810
-						 1.000	 1.0000	 1.0000	 0.7500	 0.4125
+				<product>
+					<!-- Simulation of applied force: convert to position; based on F-15 data -->
+					<table>
+						<independentVar lookup="row">fcs/stick-pitch</independentVar>
+						<independentVar lookup="column">velocities/vc-kts</independentVar>
+						<tableData>
+							    	0   	300
+						-1.000	-1.0000	-1.0000
+						-0.188	-0.0673	-0.0673
+						-0.001	 0.0000	 0.0000
+						 0.003	 0.0000	 0.0000
+						 0.351	 0.1964	 0.1964
+						 1.000	 1.0000	 1.0000
 					</tableData>
-				</table>
+					</table>
+					<!-- AJAX gearing -->
+					<table>
+						<independentVar lookup="row">velocities/vc-kts</independentVar>
+						<tableData>
+							200	1.00000
+							300	0.98392
+							400	0.68021
+							500	0.44357
+							600	0.45406
+						</tableData>	
+					</table>
+				</product>
 			</function>
 		</fcs_function>
 

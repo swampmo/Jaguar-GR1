@@ -5,7 +5,6 @@
    <summer name="fcs/pitch-sum">
       <!--input>fcs/elevator-cmd-norm</input-->
       <input>fcs/ap-pitch-cmd-norm</input>
-      <input>fcs/pitch-trim-cmd-norm</input>
       <input>sas/pitch-output</input>
       <clipto>
         <min> -1 </min>

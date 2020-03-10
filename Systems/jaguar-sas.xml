@@ -8,7 +8,7 @@
 	<property value="1">sas/pitch-l</property>
 	<property value="1">sas/pitch-r</property>
 	<property value="57.142">sas/pitch-damping-1-c1</property>
-	
+	<property value="0">fcs/pitch-autotrim-enabled</property>
     <channel name="Pitch Trim">
 		
 		<switch name="sas/pitch-autotrim-active">
@@ -18,6 +18,7 @@
 			gear/gear-pos-norm lt 1
 			fcs/ap-pitch-cmd-norm le 0.05
 			fcs/ap-pitch-cmd-norm ge -0.05
+			fcs/pitch-autotrim-enabled ne 0
 			autoflight/input/pitch-switch ne 1
 		  </test>
 		</switch>
@@ -47,21 +48,6 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="sas/autotrim-output">
-		  <function>
-			<sum>
-			  <property>/controls/flight/elevator-trim</property>
-			  <value>0</value>
-			  <!-- <property>sas/pitch-autotrim-offset</property> -->
-			</sum>
-		  </function>
-		  <clipto>
-			<min>-0.3</min>
-			<max>0.3</max>
-		  </clipto>
-		  <!-- <output>/controls/flight/elevator-trim</output> -->
-		</fcs_function>
-	  
 	  </channel>
 
 	  <channel name="Pitch">
@@ -208,8 +194,8 @@
 				</product>
 			</function>
 			<clipto>
-				<min>-4</min>
-				<max>4</max>
+				<min>-0.1</min>
+				<max>0.1</max>
 			</clipto>
 		</fcs_function>
 
@@ -237,12 +223,11 @@
 					</eq>
 					<value>0</value>
 					<property>-sas/yaw-v7</property>
-					>
 				</ifthen>
 			</function>
 			<clipto>
-				<min>-4</min>
-				<max>4</max>
+				<min>-0.1</min>
+				<max>0.1</max>
 			</clipto>
 		</fcs_function>
 
