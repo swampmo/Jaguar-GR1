@@ -424,7 +424,7 @@
 			<path>Aircraft/Jaguar/Sounds/gear-transit-internal.wav</path>
 			<property>/gear/gear/position-norm</property>
 			<volume>
-				<factor>0.5</factor>
+				<factor>0.7</factor>
 			</volume>
 			<pitch>
 				<internal>dt_play</internal>
@@ -443,7 +443,7 @@
 				</equals>
 			</condition>
 			<volume>
-				<factor>0.5</factor>
+				<factor>0.6</factor>
 			</volume>
 		</gear>
 
@@ -457,7 +457,7 @@
 				</equals>
 			</condition>
 			<volume>
-				<factor>0.5</factor>
+				<factor>0.7</factor>
 			</volume>
 		</gear>
 
@@ -644,11 +644,11 @@
       <path>Aircraft/Jaguar/Sounds/flap.wav</path>
       <property>/surface-positions/flap-pos-norm</property>
             <pitch>
-                <offset>0.55</offset>
+                <offset>0.45</offset>
                 <factor>-0.25</factor>
             </pitch>
       <volume>
-        <max>0.75</max>
+        <max>0.45</max>
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -660,7 +660,7 @@
       <path>Aircraft/Jaguar/Sounds/flap.wav</path>
       <property>fdm/jsbsim/fcs/slats-deg</property>
       <volume>
-        <max>0.45</max>
+        <max>0.10</max>
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -692,7 +692,7 @@
             </condition>
             <volume>
                 <property>velocities/airspeed-kt</property>
-                <factor>0.001</factor>
+                <factor>0.009</factor>
             </volume>
     </speedbrakes-wind>
 
