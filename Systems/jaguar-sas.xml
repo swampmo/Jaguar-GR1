@@ -4,55 +4,86 @@
 <!-- Richard Harrison (C) 2020; rewritten completely.-->
 
 <system name="SAS">
-	
+
 	<property value="1">sas/pitch-l</property>
 	<property value="1">sas/pitch-r</property>
 	<property value="57.142">sas/pitch-damping-1-c1</property>
-	<property value="0">fcs/pitch-autotrim-enabled</property>
-    <channel name="Pitch Trim">
-		
+	<property value="1">sas/pitch-autotrim-enabled</property>
+
+	<property value="3">sas/pitch-v0-c1</property>
+	<property value="0">sas/pitch-v0-c2</property>
+	<property value="11">sas/pitch-v0-c3</property>
+	<property value="32.1">sas/pitch-v0-c4</property>
+
+	<property value="75.7125">sas/pitch-autotrim-v1-c1</property>
+	
+	<channel name="Pitch">
+
 		<switch name="sas/pitch-autotrim-active">
-		  <default value="0"/>
-		  <test logic="AND" value="1">
-			position/wow eq 0
-			gear/gear-pos-norm lt 1
-			fcs/ap-pitch-cmd-norm le 0.05
-			fcs/ap-pitch-cmd-norm ge -0.05
-			fcs/pitch-autotrim-enabled ne 0
-			autoflight/input/pitch-switch ne 1
-		  </test>
+			<default value="0" />
+			<test logic="AND" value="1">
+			  gear/gear-pos-norm lt 1
+			  fcs/elevator-cmd-norm le 0.05
+			  fcs/elevator-cmd-norm ge -0.05
+			  sas/pitch-autotrim-enabled ne 0
+			  autoflight/input/pitch-switch ne 1
+			</test>
 		</switch>
-		
+
+		<lag_filter name="sas/pitch-autotrim-v1">
+			<input>velocities/q-rad_sec</input>
+			<c1>sas/pitch-autotrim-v1-c1</c1>
+		</lag_filter>
+
 		<fcs_function name="sas/pitch-autotrim-offset">
 			<function>
 				<product>
 					<property>sas/pitch-autotrim-active</property>
 					<table>
 						<!-- guts of the auto pitch trim; this is a preset table
-							 tuned to adjust pitch trim based on Qaero.
-							 In the aircraft this is done by adjusting the datum 
-							 of the AJAX unit; however this will serve the same purpose.
-						 -->
+							   tuned to adjust pitch trim based on Qaero.
+							   In the aircraft this is done by adjusting the datum 
+							   of the AJAX unit; however this will serve the same purpose.
+						   -->
 						<independentVar lookup="column">velocities/vc-kts</independentVar>
-						<independentVar lookup="row">velocities/q-rad_sec</independentVar>
+						<independentVar lookup="row">sas/pitch-autotrim-v1</independentVar>
 						<tableData>
-							                	150     	700
-								-0.1000 	-0.03100	-0.03150
-								-0.0100 	-0.00150	-0.00225
-								 0.0000 	 0.00000	 0.00000
-								 0.0100 	 0.00150	 0.00225
-								 0.1000 	 0.03100	 0.03150
-							</tableData>
+												  150     	700
+								  -0.1000 	-0.03100	-0.03150
+								  -0.0100 	-0.00150	-0.00225
+								   0.0000 	 0.00000	 0.00000
+								   0.0100 	 0.00150	 0.00225
+								   0.1000 	 0.03100	 0.03150
+							  </tableData>
 					</table>
 				</product>
 			</function>
 		</fcs_function>
-		
-	  </channel>
 
-	  <channel name="Pitch">
+		<actuator name="sas/pitch-autotrim-v2">
+			<input>sas/pitch-autotrim-v1</input>
+			<rate_limit>0.0350877192982456</rate_limit>
+			<!-- <lag>26.7</lag> -->
+		</actuator>
+
+		<fcs_function name="sas/autotrim-output">
+			<function>
+				<sum>
+					<property>/controls/flight/elevator-trim</property>
+					<value>0</value>
+					<property>sas/pitch-autotrim-offset</property>
+				</sum>
+			</function>
+			<clipto>
+				<min>-0.4</min>
+				<max>0.4</max>
+			</clipto>
+			<output>/controls/flight/elevator-trim</output>
+		</fcs_function>
+
+
 		<switch name="sas/pitch-switch">
-			<default value="0"/>
+			<default value="0" />
 			<test value="0">
 				position/wow eq 1
 			</test>
@@ -62,11 +93,11 @@
 			</test>
 		</switch>
 
- 		<washout_filter name="sas/pitch-damping-1">
+		<washout_filter name="sas/pitch-damping-1">
 			<input>velocities/q-rad_sec</input>
 			<c1>0.475</c1>
 		</washout_filter>
-		
+
 		<scheduled_gain name="sas/pitch-damping-2">
 			<input>sas/pitch-damping-1</input>
 			<table>
@@ -89,11 +120,11 @@
 				<min>-0.6</min>
 				<max>0.6</max>
 			</clipto>
-		  </pure_gain>
-	
+		</pure_gain>
+
 	</channel>
 
-	<!-- SAS YAW Chanells left/right -->
+	<!-- SAS YAW Chanels left/right -->
 	<property value="1">sas/yaw-l</property>
 	<property value="1">sas/yaw-r</property>
 
