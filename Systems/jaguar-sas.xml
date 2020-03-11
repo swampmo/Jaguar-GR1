@@ -92,22 +92,21 @@
 		  </pure_gain>
 	
 	</channel>
-	
+
+	<!-- SAS YAW Chanells left/right -->
 	<property value="1">sas/yaw-l</property>
 	<property value="1">sas/yaw-r</property>
 
-	<property value="3.12">sas/yaw-v1-c1</property>
-	<property value="3.333">sas/yaw-v2-c1</property>
-	<property value="0.4">sas/yaw-v3-c1</property>
-	<property value="0.7">sas/yaw-v5-c</property>
-	<property value="0.955">sas/yaw-v6-c</property>
-	<property value="100.0">sas/yaw-v7-c1</property>
-
-	<property value="0">sas/yaw-active</property>
-
+	<!-- Lead/Lag values -->
+	<property value="3">sas/yaw-r-c1</property>
+	<property value="0">sas/yaw-r-c2</property>
+	<property value="11">sas/yaw-r-c3</property>
+	<property value="32.1">sas/yaw-r-c4</property>
+	
 	<channel name="Yaw">
-		<!-- switch to determine if yaw damper active -->
-		<switch name="sas/yaw-switch">
+		<!-- switch to determine if yaw damper active - true when active; we don't simulate the channels so either channel
+		 being active will result in the YAW SAS being active - except when wow -->
+	<switch name="sas/yaw-switch">
 			<default value="0" />
 			<test value="0">
 				position/wow eq 1
@@ -118,101 +117,36 @@
 			</test>
 		</switch>
 
-		<fcs_function name="sas/yaw-v1">
+		<fcs_function name="sas/yaw-r-0">
 			<function>
 				<product>
-					<property>velocities/r-rad_sec</property>
-					<property>sas/yaw-v1-c1</property>
-					<table>
-						<independentVar lookup="row">velocities/vc-kts</independentVar>
-						<tableData>
-							100 1.0
-							200 0.6
-							300 0.3
-							400 0.31
-							600 0.1
-						</tableData>
-					</table>
+					<quotient>
+						<v>32.17</v>
+						<p>velocities/vt-fps</p>
+					</quotient>
+					<sin>
+						<p>attitude/phi-deg</p>
+					</sin>
 				</product>
 			</function>
 		</fcs_function>
 
-		<lag_filter name="sas/yaw-v2">
-			<input>sas/yaw-v1</input>
-			<c1>sas/yaw-v2-c1</c1>
-		</lag_filter>
-
-		<washout_filter name="sas/yaw-v3">
-			<input>sas/yaw-v2</input>
-			<c1>sas/yaw-v3-c1</c1>
-		</washout_filter>
-
-		<!-- Feedback loop from output -->
-		<lag_filter name="sas/yaw-v7-value">
-			<input>sas/yaw-v6</input>
-			<c1>sas/yaw-v7-c1</c1>
-		</lag_filter>
-
-		<fcs_function name="sas/yaw-v6">
+		<fcs_function name="sas/yaw-r-01">
 			<function>
-				<product>
-					<property>sas/yaw-v5</property>
-					<property>sas/yaw-v6-c</property>
-				</product>
+				<sum>
+					<p>sas/yaw-r-0</p>
+					<p>velocities/r-rad_sec</p>
+				</sum>
 			</function>
 		</fcs_function>
 
-		<!-- uses yaw-v-active as initial condition -->
-		<fcs_function name="sas/yaw-v7">
-			<function>
-				<ifthen>
-					<or>
-						<eq>
-							<property>sas/yaw-v-active</property>
-							<v>0</v>
-						</eq>
-						<lt>
-							<property>sim-time-sec</property>
-							<v>0.5</v>
-						</lt>
-					</or>
-					<property>sas/yaw-v3</property>
-					<property>sas/yaw-v7-value</property>
-				</ifthen>
-			</function>
-		</fcs_function>
-		<!-- End feedback from output -->
-
-		<fcs_function name="sas/yaw-v5">
-			<function>
-				<product>
-					<difference>
-						<property>sas/yaw-v3</property>
-						<property>sas/yaw-v7</property>
-					</difference>
-					<property>sas/yaw-v5-c</property>
-				</product>
-			</function>
-			<clipto>
-				<min>-0.1</min>
-				<max>0.1</max>
-			</clipto>
-		</fcs_function>
-
-		<!-- active flag - needed for initial reset -->
-		<fcs_function name="sas/yaw-v-active">
-			<function>
-				<ifthen>
-					<eq>
-						<property>sas/yaw-switch</property>
-						<v>0</v>
-					</eq>
-					<value>0</value>
-					<value>1</value>
-				</ifthen>
-			</function>
-			<output>sas/yaw-active</output>
-		</fcs_function>
+		<lead_lag_filter name="sas/yaw-r-1">
+			<input>sas/yaw-r-01</input>
+			<c1>sas/yaw-r-c1</c1>
+			<c2>sas/yaw-r-c2</c2>
+			<c3>sas/yaw-r-c3</c3>
+			<c4>sas/yaw-r-c4</c4>
+		</lead_lag_filter>
 
 		<fcs_function name="sas/yaw-output">
 			<function>
@@ -222,12 +156,18 @@
 						<v>0</v>
 					</eq>
 					<value>0</value>
-					<property>-sas/yaw-v7</property>
+					<sum>
+						<product>
+							<property>sas/yaw-r-1</property>
+							<value>1</value>
+						</product>
+						<value>0</value>
+					</sum>
 				</ifthen>
 			</function>
 			<clipto>
-				<min>-0.1</min>
-				<max>0.1</max>
+				<min>-0.3</min>
+				<max>0.3</max>
 			</clipto>
 		</fcs_function>
 
