@@ -1,12 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
   <sim include="Nasal/views.xml">
 
-    <description>Jaguar (JSBsim)</description>
-    <flight-model>jsb</flight-model>
-    <aero>Jaguar</aero>
+    <description>SEPECAT Jaguar GR1</description>
+        <tags>
+            <tag>fighter</tag>
+            <tag>jet</tag>
+            <tag>twin-engine</tag>
+            <tag>retractable-gear</tag>
+            <tag>ifr</tag>
+        </tags>
+        <rating>
+            <FDM type="int">4</FDM>
+            <systems type="int">3</systems>
+            <cockpit type="int">4</cockpit>
+            <model type="int">4</model>
+        </rating>
+
+        <author>NC-687, Emmanuel Baranger, Richard Harrison, Steve Brown</author>
+            <flight-model>jsb</flight-model>
+    <aero>SEPECAT-Jaguar-vsp</aero>
 
     <fuel-fraction>1</fuel-fraction>
 
@@ -16,6 +31,133 @@
         <file type="string">default</file>
       </livery>
     </model>
+
+    <previews>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-1.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-2.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-3.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-4.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-5.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-6.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-7.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-8.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-9.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-10.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-11.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-12.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-13.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-14.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-15.jpg</path>
+      </preview>
+
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-16.jpg</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-17.jpg</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-18.jpg</path>
+      </preview>
+      <preview>
+        <type>interior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/InteriorPreview-Jaguar-GR1-1.jpg</path>
+      </preview>
+  </previews>
+
+  <rendering>
+            <redout>
+                <parameters>
+                    <blackout-onset-g>5.5</blackout-onset-g>
+                    <blackout-complete-g>7.9</blackout-complete-g>
+
+                    <redout-onset-g>-2.5</redout-onset-g>
+                    <redout-complete-g>-4.5</redout-complete-g>
+                </parameters>
+                <alpha type="double">0</alpha>
+                <enabled type="bool">false</enabled>
+            </redout>
+        </rendering>
 
     <submodels>
       <serviceable type="bool">true</serviceable>
@@ -512,8 +654,9 @@
 	<fdm>
 		<jsbsim>
 			<fcs>
-				<slats-deg>0</slats-deg>
-				<slats-cmd-deg>0</slats-cmd-deg>
+                <rudder-gearing-master-switch-85c type="double">0</rudder-gearing-master-switch-85c>
+				<slats-deg type="double">0</slats-deg>
+				<slats-cmd-deg type="double">0</slats-cmd-deg>
 				<canopy>
 					<engage type="bool">0</engage>
 					<serviceable type="bool">1</serviceable>
@@ -682,6 +825,11 @@
     <turbulence>
       <use-cloud-turbulence>true</use-cloud-turbulence>
     </turbulence>
+    <aircraft-effects>
+      <overlay-alpha type="double">0.45</overlay-alpha>
+      <use-overlay type="int">1</use-overlay>
+      <reflection-strength type="double">0.25</reflection-strength>
+    </aircraft-effects>
   </environment>
 
 
@@ -1958,10 +2106,11 @@
      <file>Aircraft/Jaguar/Nasal/damage.nas</file>
    </damage>
 
+<!--
    <blackout>
      <file>Aircraft/Jaguar/Nasal/blackout.nas</file>
    </blackout>
-
+-->
     <radarAltimeter>
       <file>Aircraft/Jaguar/Nasal/radaralt.nas</file>
     </radarAltimeter>
@@ -1979,10 +2128,11 @@
     </tfs>
 
 
+<!--
     <crashandstress>
         <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
     </crashandstress>
-
+-->
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
     </load>

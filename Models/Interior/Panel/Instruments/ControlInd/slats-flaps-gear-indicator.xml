@@ -95,8 +95,8 @@
 		<object-name>slats-in</object-name>
 		<condition>
 			<less-than>
-				<property>fdm/jsbsim/fcs/slat-pos-deg</property>
-				<value>1</value>
+				<property>fdm/jsbsim/fcs/slats-deg</property>
+				<value>0.0001</value>
 			</less-than>
 		</condition>
 	</animation>
@@ -107,11 +107,11 @@
 		<condition>
             <and>
                 <greater-than>
-                    <property>fdm/jsbsim/fcs/slat-pos-deg</property>
+                    <property>fdm/jsbsim/fcs/slats-deg</property>
                     <value>0</value>
                 </greater-than>
                 <less-than>
-                    <property>fdm/jsbsim/fcs/slat-pos-deg</property>
+                    <property>fdm/jsbsim/fcs/slats-deg</property>
                     <value>20</value>
                 </less-than>
             </and>
@@ -123,7 +123,7 @@
 		<object-name>slats-extended</object-name>
 		<condition>
             <greater-than>
-                <property>fdm/jsbsim/fcs/slat-pos-deg</property>
+                <property>fdm/jsbsim/fcs/slats-deg</property>
                 <value>20</value>
             </greater-than>
         </condition>
@@ -234,7 +234,7 @@
 		</condition>
 	</animation>
 
-	
+	<!--
 	<animation>
 		<type>pick</type>	
 		<object-name>autoSlat-button</object-name>
@@ -247,14 +247,14 @@
 			</binding>
 		</action>
 	</animation>
-
+-->
 	<animation>
 		<type>material</type>
 		<object-name>autoSlat-button</object-name>
 		<emission>
-			<factor-prop>controls/flight/slats</factor-prop>
+			<factor-prop>fdm/jsbsim/sas/autoslat-active</factor-prop>
 			<red>   1 </red>
-			 <green>  1</green>
+			<green>  1</green>
 			<blue>  1</blue>
 		</emission>
 	</animation>

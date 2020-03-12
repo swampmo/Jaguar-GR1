@@ -1,11 +1,32 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <system name="Aircraft control">
+
+  <channel name="General Avionics" execrate="8">
+    <!-- simulation of various things that aren't specifically related to the flight controls but belong here
+         - runs at 1/8 rate *defa
+    -->
+    <fcs_function name="aero/alpha-indicated-deg-v0">
+      <description>Based on F-14; nose probe; ref ADA101648 p84; alpha_true = .8122 alphaNOSEPROBE + .797deg</description>
+      <function>
+        <product>
+          <sum>
+            <property> aero/alpha-deg </property>
+            <value> -0.797 </value>
+          </sum>
+          <value>1.231223836</value>
+        </product>
+      </function>
+    </fcs_function>
+    <lag_filter name="aero/alpha-indicated-deg">
+      <input>aero/alpha-indicated-deg-v0</input>
+      <c1>20</c1>
+    </lag_filter>
+  </channel>
 
   <channel name="Elevon">
    <summer name="fcs/pitch-sum">
       <!--input>fcs/elevator-cmd-norm</input-->
       <input>fcs/ap-pitch-cmd-norm</input>
-      <input>fcs/pitch-trim-cmd-norm</input>
       <input>sas/pitch-output</input>
       <clipto>
         <min> -1 </min>
@@ -30,22 +51,38 @@
       </clipto>
    </summer>
 
-    <!-- (Swamps notes) Automatic control of the differential tailplane gearing is by a differential computer having two channels,controls and monitoring, both of -->
-    <!-- which recieves airspeed signals from the Ajax computer and feedback signals from a gain rod position potentiometer. In short below 200 knots is maximum gain --> <!-- and therefore maximum differential tailplane is obtained. Above 200 knots the actuator progressively retracts until, when airspeed reaches 450 knots -->
-    <!-- (and above) the actuator is fully retracted to reduce gain to zero and no differenial tailplane movement occurs. -->
-    <!-- (source, Aircrew manual AP 101b-3101 & 2-15A) -->    
-
+    <!-- (Swamps notes) Automatic control of the differential tailplane gearing is by a differential computer having two channels,controls and monitoring, both of
+         which recieves airspeed signals from the Ajax computer and feedback signals from a gain rod   potentiometer. In short below 200 knots is maximum gain 
+         and therefore maximum differential tailplane is obtained. Above 200 knots the actuator progressively retracts until, when airspeed reaches 450 knots
+         (and above) the actuator is fully retracted to reduce gain to zero and no differenial tailplane movement occurs.
+         (source, Aircrew manual AP 101b-3101 & 2-15A)
+    -->
 
    <scheduled_gain name="fcs/roll-cmd">
         <input>fcs/roll-sum</input>
+        <description>Differential tailplane authority; AP 101B-3101-1EE p29, 19-20 Fig. 16</description>
         <table>
             <independentVar lookup="row">/velocities/airspeed-kt</independentVar>  
             <tableData>
-                200 1.0
-                450 0.0
+                0	1.0000
+              200	1.0000
+              250	0.8366
+              300	0.6682
+              336	0.4956
+              370	0.3343
+              400	0.1664
+              423	0.0000
             </tableData>
         </table>
+        <output>fcs/differential-elevator-pos-norm</output>
     </scheduled_gain> 
+    <aerosurface_scale name="fcs/differential-elevator-pos-deg">
+      <input>fcs/differential-elevator-pos-norm</input>
+      <range>
+        <min>  -6 </min>
+        <max>   6 </max>
+      </range>
+   </aerosurface_scale>
 
    <aerosurface_scale name="fcs/roll-pos-deg">
       <input>fcs/roll-cmd</input>
@@ -97,13 +134,70 @@
   </channel>
 
   <channel name="Spoilers">
+  
+  <!-- this function, together with spoiler-command-deg implement the lateral stick movement
+       simulation.
+       The two parts of the function are firstly to adjust the stick position to take into account the force
+       that would be required. As we don't have any way of loading the controls (i.e. statically sprung joysticks at best)
+       the only viable option is to convert the force into an equivalent position; i.e. that you will have to move the stick more 
+       to achieve the same deflection. 
+       The second part will then apply the spoiler deflection schedule resulting in a commanded spoiler position
+  -->
+  <fcs_function name="fcs/spoiler-command-norm">
+    <function>
+      <description>based on Control forces grip angle theoretical curve; AP 101B-3101-1EE p23, 19-20 Fig. 12 but adjusted to change position to force. </description>
+      <table>
+        <independentVar lookup="row">fcs/ap-roll-cmd-norm</independentVar>
+        <tableData>
+          -1.0000		-1.0000
+          -0.5026		-0.3951
+          -0.3006		-0.1419
+           0.0000		 0.0000
+           0.3006		 0.1419
+           0.5026		 0.3951
+           1.0000		 1.0000
+        </tableData>
+      </table>
+    </function>
+  </fcs_function>
+
+  <fcs_function name="fcs/spoiler-command-deg">
+    <function>
+      <description>Control column spoiler movement; AP 101B-3101-1EE p20, 19-20 Fig. 10</description>
+      <table>
+        <independentVar lookup="row">fcs/spoiler-command-norm</independentVar>
+        <tableData>
+          -1.00 	-44.95
+          -0.83 	-40.61
+          -0.67 	-34.64
+          -0.54 	-29.61
+          -0.45 	-24.68
+          -0.34 	-19.59
+          -0.24 	-14.50
+          -0.15 	-9.40
+          -0.07 	-4.31
+           0.00 	 0.00
+           0.07 	 4.31
+           0.15 	 9.40
+           0.24 	 14.50
+           0.34 	 19.59
+           0.45 	 24.68
+           0.54 	 29.61
+           0.67 	 34.64
+           0.83 	 40.61
+           1.00 	 44.95
+      </tableData>
+      </table>
+    </function>
+  </fcs_function>
+          
       <pure_gain name="fcs/spoiler-left-cmd">
         <!--input>fcs/aileron-cmd-norm</input-->
-        <input>fcs/ap-roll-cmd-norm</input>
-        <gain>-40</gain>
+        <input>fcs/spoiler-command-deg</input>
+        <gain>-1</gain>
         <clipto>
           <min>  0 </min>
-          <max>  40 </max>
+          <max>  45 </max>
         </clipto>
       </pure_gain>
 
@@ -114,11 +208,11 @@
 
       <pure_gain name="fcs/spoiler-right-cmd">
         <!--input>fcs/aileron-cmd-norm</input-->
-        <input>fcs/ap-roll-cmd-norm</input>
-        <gain>40</gain>
+        <input>fcs/spoiler-command-deg</input>
+        <gain>1</gain>
         <clipto>
           <min>  0 </min>
-          <max>  40 </max>
+          <max>  45 </max>
         </clipto>
       </pure_gain>
 
@@ -131,15 +225,53 @@
 
   <channel name="Yaw">
 
-   <summer name="fcs/rudder-sum">
-      <input>/controls/flight/rudder</input>
-      <input>/controls/flight/rudder-trim</input>
-      <input>sas/yaw-output</input>
-      <clipto>
-        <min> -1 </min>
-        <max>  1 </max>
-      </clipto>
-   </summer>
+  <switch name="fcs/rudder-gearing-low">
+    <default value="1"/>
+    <!-- when switch set to auto and gear up gain is low, otherwise high -->
+
+    <test logic="AND" value="1">
+      <!-- low -->
+      fcs/rudder-gearing-master-switch-85c eq -1
+    </test>
+
+    <test logic="AND" value="0">
+      <!-- high -->
+      fcs/rudder-gearing-master-switch-85c eq 1
+    </test>
+    
+    <test logic="AND" value="0"> 
+      <!-- auto -->
+      fcs/rudder-gearing-master-switch-85c eq 0
+      gear/gear-pos-norm gt 0.4
+    </test>
+  </switch>
+
+  <fcs_function name="fcs/rudder-sum">
+    <description>Rudder angle against pedal travel (high/low gain) AP 101B-3101-1EE p23, 19-40 Fig. 13</description>
+    <function>
+      <sum>
+        <product>
+          <ifthen>
+            <gt>
+              <property>fcs/rudder-gearing-low</property>
+              <v>0</v>
+            </gt>
+            <v>0.375</v>
+            <v>1.0</v>
+          </ifthen>
+          <sum>
+            <property>/controls/flight/rudder</property>
+            <property>/controls/flight/rudder-trim</property>
+          </sum>
+        </product>
+        <property>sas/yaw-output</property>
+      </sum>   
+    </function>
+    <clipto>
+      <min> -1 </min>
+      <max>  1 </max>
+    </clipto>
+  </fcs_function>
 
     <lag_filter name="fcs/rudder-speed">
       <input>fcs/rudder-sum</input>
@@ -153,8 +285,8 @@
         <max>  1 </max>
       </domain>
       <range>
-        <min> -25 </min>
-        <max>  25 </max>
+        <min> -20 </min>
+        <max>  20 </max>
       </range>
    </aerosurface_scale>
 
@@ -199,42 +331,53 @@
     </range>
     <output>fcs/flap-pos-norm</output>
    </aerosurface_scale>
+        <pure_gain name="fcs/flap-ob-pos-deg">
+            <input>fcs/flap-pos-deg</input>
+            <gain>0.38</gain>
+            <clipto>
+                <min>  0 </min>
+                <max>  15 </max>
+            </clipto>
+        </pure_gain>
   </channel>
 
   <channel name="Slats">
-        <switch name="fcs/slat-cmd">
-            <default value="/controls/flight/slats"/>
-            <test value="1">
-                 fcs/flap-pos-deg ge 0.001              
-            </test>
-        </switch>
-        
-<kinematic name="Slats Control">
-    <input>fcs/slat-cmd</input>
-    <traverse>
-      <setting>
-         <position>  0 </position>
-         <time>      0 </time>
-      </setting>
-      <setting>
-         <position> 23 </position>
-         <time>      2 </time>
-      </setting>
-    </traverse>
-    <output>fcs/slats-deg</output>
-   </kinematic>
+    <switch name="fcs/slat-cmd">
+      <default value="/controls/flight/slats" />
+      <test value="1">
+          fcs/flap-pos-deg ge 0.001              
+      </test>
+      <test value="sas/autoslat-deg">
+        sas/autoslat-active ne 0
+      </test>
+    </switch>
 
-   <aerosurface_scale name="fcs/slats-pos-norm">
-    <input>fcs/slats-deg</input>
-    <domain>
-      <min>  0 </min>
-      <max> 23 </max>
-    </domain>
-    <range>
-      <min> 0 </min>
-      <max> 1 </max>
-    </range>
-   </aerosurface_scale>
+    <kinematic name="Slats Control">
+      <input>fcs/slat-cmd</input>
+      <traverse>
+        <setting>
+          <position>  0 </position>
+          <time>      0 </time>
+        </setting>
+        <setting>
+          <position> 23 </position>
+          <time>      2 </time>
+        </setting>
+      </traverse>
+      <output>fcs/slats-deg</output>
+    </kinematic>
+
+    <aerosurface_scale name="fcs/slats-pos-norm">
+      <input>fcs/slats-deg</input>
+      <domain>
+        <min>  0 </min>
+        <max> 23 </max>
+      </domain>
+      <range>
+        <min> 0 </min>
+        <max> 1 </max>
+      </range>
+    </aerosurface_scale>
   </channel>
   
   <channel name="Landing Gear">
@@ -315,7 +458,29 @@
 			<output>fcs/throttle-pos-norm[1]</output>
 		</scheduled_gain>
 	
-	</channel>
+  </channel>
+  
+  <channel name="NoseWheel sterring">
+    <switch name="fcs/nws-active">
+      <default value="0" />
+      <test logic="AND" value="1">
+      /controls/gear/nose-wheel-steering ne 0
+    </test>
+    </switch>
+    <scheduled_gain name="fcs/scheduled-steer-pos-deg">
+      <input>fcs/steer-cmd-norm</input>
+      <table>
+        <independentVar lookup="row">gear/unit[0]/wheel-speed-fps</independentVar>
+        <independentVar lookup="column">fcs/nws-active</independentVar>
+        <tableData>
+                0   1
+            0   0   55
+            80  0   12
+            135 0   0
+        </tableData>
+      </table>
+      <output>fcs/steer-pos-deg</output>
+    </scheduled_gain>
+  </channel>
 
- 
 </system>

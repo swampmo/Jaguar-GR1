@@ -114,123 +114,79 @@
  </animation>
 
 <!-- Air Speed Indicator's Bug Setting -->
-	<animation>
-		<name>asi-bug-left-fine</name>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>asi-bug-left</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/airspeed-indicator/speed-limit-bug</property>
-				<step>-5</step>
-				<min>125</min>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<name>asi-bug-left-coarse</name>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>asi-bug-left</object-name>
-		<action>
-			<button>1</button>
-			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/airspeed-indicator/speed-limit-bug</property>
-				<step>-50</step>
-				<min>125</min>
-			</binding>
-		</action>
-	</animation>
+<animation>
+  <type>knob</type>
+  <object-name>button</object-name>
+  <property>sim/model/f15/instrumentation/airspeed-indicator/safe-speed-limit-bug</property>
+  <factor>0</factor>
+  <axis>
+    <object-name>button-axis</object-name>
+  </axis>
 
-	<animation>
-		<name>asi-bug-right-fine</name>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>asi-bug-right</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/airspeed-indicator/speed-limit-bug</property>
-				<step>5</step>
-				<max>7300</max>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<name>asi-bug-right-coarse</name>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>asi-bug-right</object-name>
-		<action>
-			<button>1</button>
-			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/airspeed-indicator/speed-limit-bug</property>
-				<step>50</step>
-				<max>730</max>
-			</binding>
-		</action>
-	</animation>
+  <action>
+      <binding>
+          <command>property-adjust</command>
+          <property>instrumentation/airspeed-indicator/speed-limit-bug</property>
+
+          <factor>10</factor>
+          <min>0</min>
+          <max>750</max>
+          <wrap>false</wrap>
+      </binding>
+  </action>
+</animation>
 
 
- <!--  Mach Digits -->
+
+ <!--  Mach Digits, ones, tenths, hundredths. -->
  <animation>
     <type>textranslate</type>
-    <object-name>ones</object-name>
-    <property>velocities/mach</property>
+    <object-name>mach-drum1</object-name>
+    <property>instrumentation/airspeed-indicator/indicated-mach</property>
     <factor>0.1</factor>
     <step>1</step>
-    <scroll>0.001</scroll>
+    <scroll>0.01</scroll>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
     </axis>
-  </animation>
-  <animation>
+</animation>
+
+<animation>
     <type>textranslate</type>
-    <object-name>tenths</object-name>
-    <property>velocities/mach</property>
+    <object-name>mach-drum2</object-name>
+    <property>instrumentation/airspeed-indicator/indicated-mach</property>
     <factor>1</factor>
     <step>0.1</step>
-    <scroll>0.001</scroll>
+    <scroll>0.01</scroll>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
     </axis>
-  </animation>
+</animation>
   <animation>
     <type>textranslate</type>
-    <object-name>hundredths</object-name>
-    <property>velocities/mach</property>
+    <object-name>mach-drum3</object-name>
+    <property>instrumentation/airspeed-indicator/indicated-mach</property>
     <factor>10</factor>
-    <step>0.01</step>
-    <scroll>0.001</scroll>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
     </axis>
-  </animation>
+</animation>
+<animation>
+  <type>select</type>
+  <object-name>mach-flag</object-name>
+  <condition>
+          <less-than>
+            <property>instrumentation/airspeed-indicator/indicated-mach</property>
+            <value>0.3</value>
+          </less-than>
+  </condition>
+</animation>
 
- <!-- *** LoD *** -->
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>5</max-m>
- </animation>
 
 </PropertyList>

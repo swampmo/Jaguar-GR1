@@ -41,9 +41,11 @@
     <object-name>needle</object-name>
     <property>controls/flight/elevator-trim</property>
     <interpolation>
-      <entry><ind> -1 </ind><dep> -77 </dep></entry>
+      <entry><ind> -0.60 </ind><dep> -144 </dep></entry>
+      <entry><ind> -0.22 </ind><dep> -77 </dep></entry>
       <entry><ind>  0 </ind><dep>   0 </dep></entry>
-      <entry><ind>  1 </ind><dep>  77 </dep></entry>
+      <entry><ind>  0.22 </ind><dep> 77 </dep></entry>
+      <entry><ind>  0.4 </ind><dep> 144 </dep></entry>
     </interpolation>
     <center>
       <x-m> 0.02 </x-m>

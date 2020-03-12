@@ -342,9 +342,11 @@ if(navStillOn) {
     <object-name>roueA-Fourche</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
+    <object-name>axeGBc</object-name>
     <object-name>roueG</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
+    <object-name>axeDBc</object-name>
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
 </effect>
@@ -403,9 +405,11 @@ if(navStillOn) {
     <object-name>roueA-Fourche</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
+    <object-name>axeGBc</object-name>
     <object-name>roueG</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
+    <object-name>axeDBc</object-name>
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
 
@@ -466,9 +470,11 @@ if(navStillOn) {
     <object-name>roueA-Fourche</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
+    <object-name>axeGBc</object-name>
     <object-name>roueG</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
+    <object-name>axeDBc</object-name>
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
 
@@ -528,9 +534,11 @@ if(navStillOn) {
     <object-name>roueA-Fourche</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
+    <object-name>axeGBc</object-name>
     <object-name>roueG</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
+    <object-name>axeDBc</object-name>
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
 
@@ -786,9 +794,11 @@ if(navStillOn) {
     <object-name>roueA</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
+    <object-name>axeGBc</object-name>
     <object-name>roueG</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
+    <object-name>axeDBc</object-name>
     <object-name>roueD</object-name>
     <condition>
       <not>
@@ -1342,6 +1352,7 @@ if(navStillOn) {
     <object-name>roueG</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
+    <object-name>axeGBc</object-name>
   </animation>
 
   <animation>
@@ -1392,6 +1403,7 @@ if(navStillOn) {
     <object-name>roueD</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
+    <object-name>axeDBc</object-name>
   </animation>
 
   <animation>
@@ -1442,8 +1454,7 @@ if(navStillOn) {
     <object-name>roueA</object-name>
     <object-name>roueA-Fix</object-name>
     <object-name>roueA-Fourche</object-name>
-    <property>gear/gear/steering-norm</property>
-    <factor> 55 </factor>
+    <property>fdm/jsbsim/fcs/steer-pos-deg</property>
     <center>
       <x-m> -3.8501 </x-m>
       <y-m>  0.0008 </y-m>
@@ -1455,7 +1466,48 @@ if(navStillOn) {
       <z> -1 </z>
     </axis>
   </animation>
+  <animation>
+    <type>rotate</type>
+    <property>fdm/jsbsim/gear/unit[0]/compression-ft</property>
+    <interpolation>
+      <entry><ind> -1.0 </ind><dep> 44 </dep></entry>
+      <entry><ind> 0.25 </ind><dep> 0 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> -44 </dep></entry>
+    </interpolation>
+    <object-name>roueA</object-name>
+    <object-name>roueA-Fourche</object-name>
+    <axis>
+      <object-name>roueA-Fourche-axis</object-name>
+  </axis>
+  </animation>
 
+  <animation>
+    <type>rotate</type>
+    <property>fdm/jsbsim/gear/unit[1]/compression-ft</property>
+    <interpolation>
+      <entry><ind> -0.3 </ind><dep> 44 </dep></entry>
+      <entry><ind> 1.3 </ind><dep> -44 </dep></entry>
+    </interpolation>
+    <object-name>roueG</object-name>
+    <object-name>axeGBc</object-name>
+    <axis>
+      <object-name>axeGBc-axis</object-name>
+  </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <property>fdm/jsbsim/gear/unit[2]/compression-ft</property>
+    <interpolation>
+      <entry><ind> -0.3 </ind><dep> 44 </dep></entry>
+      <entry><ind> 1.3 </ind><dep> -44 </dep></entry>
+    </interpolation>
+    <object-name>roueD</object-name>
+    <object-name>axeDBc</object-name>
+    <axis>
+      <object-name>axeDBc-axis</object-name>
+  </axis>
+  </animation>
   <!-- Rotation des roues lors du roulage -->
   <animation>
     <type>spin</type>
@@ -1682,39 +1734,21 @@ if(navStillOn) {
 
 	<animation>
 		<type>spin</type>
-		<object-name>Helice-L-1</object-name>
-		<object-name>Helice-L-2</object-name>
-		<object-name>Nose-Cone-L</object-name>
+		<object-name>engine-l-fan</object-name>
 		<property>engines/engine[0]/n1</property>
 		<factor>25</factor>
-		<center>
-			<x-m>-0.91803</x-m>
-			<y-m>-0.67608</y-m>
-			<z-m>-0.11123</z-m>
-		</center>
 		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
+      <object-name>engine-l-fan-axis</object-name>
 		</axis>
 	</animation>
 
 	<animation>
 		<type>spin</type>
-		<object-name>Helice-R-1</object-name>
-		<object-name>Helice-R-2</object-name>
-		<object-name>Nose-Cone-R</object-name>
+		<object-name>engine-r-fan</object-name>
 		<property>engines/engine[1]/n1</property>
 		<factor>25</factor>
-		<center>
-			<x-m>-0.91803</x-m>
-			<y-m> 0.69868</y-m>
-			<z-m>-0.11123</z-m>
-		</center>
 		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
+      <object-name>engine-r-fan-axis</object-name>
 		</axis>
 	</animation>
 
