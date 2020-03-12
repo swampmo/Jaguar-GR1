@@ -152,11 +152,11 @@
 			<function>
 				<product>
 					<quotient>
-						<v>32.17</v>
-						<p>velocities/vt-fps</p>
+						<property>velocities/vt-fps</property>
+						<value>32.17</value>
 					</quotient>
 					<sin>
-						<p>attitude/phi-deg</p>
+						<property>attitude/phi-deg</property>
 					</sin>
 				</product>
 			</function>
@@ -165,8 +165,8 @@
 		<fcs_function name="sas/yaw-r-01">
 			<function>
 				<sum>
-					<p>sas/yaw-r-0</p>
-					<p>velocities/r-rad_sec</p>
+					<property>sas/yaw-r-0</property>
+					<property>velocities/r-rad_sec</property>
 				</sum>
 			</function>
 		</fcs_function>
@@ -184,7 +184,7 @@
 				<ifthen>
 					<eq>
 						<property>sas/yaw-switch</property>
-						<v>0</v>
+						<value>0</value>
 					</eq>
 					<value>0</value>
 					<sum>
