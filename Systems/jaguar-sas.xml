@@ -150,15 +150,22 @@
 
 		<fcs_function name="sas/yaw-r-0">
 			<function>
-				<product>
-					<quotient>
+				<ifthen>
+					<nq>
 						<property>velocities/vt-fps</property>
-						<value>32.17</value>
-					</quotient>
-					<sin>
-						<property>attitude/phi-deg</property>
-					</sin>
-				</product>
+						<value>0</value>
+					</nq>
+					<product>
+						<quotient>
+							<value>32.17</value>
+							<property>velocities/vt-fps</property>
+						</quotient>
+						<sin>
+							<property>attitude/phi-deg</property>
+						</sin>
+					</product>
+					<value>0</value>
+				</ifthen>
 			</function>
 		</fcs_function>
 
