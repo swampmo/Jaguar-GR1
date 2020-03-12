@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -2119,11 +2119,11 @@
      <file>Aircraft/Jaguar/Nasal/damage.nas</file>
    </damage>
 
-<!--
+
    <blackout>
      <file>Aircraft/Jaguar/Nasal/blackout.nas</file>
    </blackout>
--->
+
     <radarAltimeter>
       <file>Aircraft/Jaguar/Nasal/radaralt.nas</file>
     </radarAltimeter>
