@@ -139,6 +139,11 @@
         <path>Previews/Preview-Jaguar-GR1-18.jpg</path>
       </preview>
       <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/Preview-Jaguar-GR1-19.jpg</path>
+      </preview>
+      <preview>
         <type>interior</type>
         <splash type="bool">true</splash>
         <path>Previews/InteriorPreview-Jaguar-GR1-1.jpg</path>
