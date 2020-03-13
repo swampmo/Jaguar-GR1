@@ -2140,9 +2140,10 @@
     </tfs>
 
 
+<!-- 
     <crashandstress>
         <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
-    </crashandstress>
+    </crashandstress>  -->
 
 	  <load>
       <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
