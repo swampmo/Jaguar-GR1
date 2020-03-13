@@ -654,7 +654,10 @@
 		<settings>
 			<aileron-deadzone>0.1</aileron-deadzone>
 			<elevator-deadzone>0.1</elevator-deadzone>
-		</settings>
+    </settings>
+    <locks>
+      <autothrottle-permit-augmentation type="int">0</autothrottle-permit-augmentation>
+    </locks>
 	</autopilot>
   
   <jaguar>
