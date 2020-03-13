@@ -816,7 +816,7 @@
 		
 		<switch name="fcs/stick-roll">
 			<default value="0"/>
-			<test value="fcs/aileron-cmd-norm">
+			<test value="sas/roll-cmd-output">
 				autoflight/input/roll-switch ne 1
 			</test>
 		</switch>

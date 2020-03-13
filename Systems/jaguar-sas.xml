@@ -215,6 +215,102 @@
 		Roll stability is a roll damper.
 		Maximum spoiler is 45deg;  gives pitch up of 1deg nose up
 	-->
+	<!-- SAS Roll Chanels left/right -->
+	<property value="1">sas/roll-l</property>
+	<property value="1">sas/roll-r</property>
+
+	<!-- Lead/Lag values -->
+	<!-- <property value="0">sas/roll-w-v0-c1</property>
+	<property value="0.03">sas/roll-w-v0-c2</property>
+	<property value="0.1">sas/roll-w-v0-c3</property>
+	<property value="1">sas/roll-w-v0-c4</property>
+
+	<property value="1">sas/roll-w-v1-c1</property>
+	<property value="0.0001">sas/roll-w-v3-k</property> -->
+
+	<property value="-0.2">sas/roll-p-v0-k</property>
+
+	<channel name="Roll SAS">
+		<!-- switch to determine if yaw damper active - true when active; we don't simulate the channels so either channel
+			 being active will result in the YAW SAS being active - except when wow -->
+		<switch name="sas/roll-switch">
+			<default value="0" />
+			<test value="0">
+					position/wow eq 1
+			</test>
+			<test logic="OR" value="1">
+				sas/roll-r ne 0
+				sas/roll-l ne 0
+			</test>
+			<!-- for now we'll have yaw and roll -->
+			<test logic="OR" value="0">
+				sas/yaw-r ne 0
+				sas/yaw-l ne 0
+			</test>
+		</switch>
+
+		<summer name="sas/roll-w-cmd">
+			<input>fcs/aileron-cmd-norm</input>
+			<input>fcs/roll-trim-cmd-norm</input>
+			<clipto>
+				<min> -1 </min>
+				<max>  1 </max>
+			</clipto>
+		</summer>
+
+		<!-- <lead_lag_filter name="sas/roll-w-v0">
+			<input>sas/roll-w-cmd</input>
+			<c1>sas/roll-w-v0-c1</c1>
+			<c2>sas/roll-w-v0-c2</c2>
+			<c3>sas/roll-w-v0-c3</c3>
+			<c4>sas/roll-w-v0-c4</c4>
+		</lead_lag_filter>
+		<integrator name="sas/roll-w-v1">
+			<input>sas/roll-w-v0</input>
+			<c1>sas/roll-w-v1-c1</c1>
+			<output>sas/roll-w-v1-val</output>
+		</integrator>
+		<fcs_function name="sas/roll-w-v2">
+			<function>
+				<product>
+					<sum>
+						<property>sas/roll-w-v0</property>
+						<property>sas/roll-w-v1</property>
+						<product>
+							<property>/orientation/roll-rate-degps</property>
+							<value>0.0175438596491228</value>
+						</product>
+					</sum>
+					<property>sas/roll-w-v3-k</property>
+				</product>
+			</function>
+		</fcs_function> -->
+
+		<fcs_function name="sas/roll-p-v0">
+			<function>
+				<product>
+					<property>velocities/p-rad_sec</property>
+					<property>sas/roll-p-v0-k</property>
+				</product>
+			</function>
+		</fcs_function>
+		<fcs_function name="sas/roll-cmd-output">
+			<function>
+				<ifthen>
+					<eq>
+						<property>sas/roll-switch</property>
+						<value>0</value>
+					</eq>
+					<property>sas/roll-w-cmd</property>
+					<sum>
+						<property>sas/roll-w-cmd</property>
+						<property>sas/roll-p-v0</property>
+					</sum>
+				</ifthen>
+			</function>
+		</fcs_function>
+	</channel>
+			
 	<channel name="autoslats">
 		<switch name="sas/autoslat-active">
 			<default value="0" />

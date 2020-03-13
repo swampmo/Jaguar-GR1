@@ -42,15 +42,6 @@
       </range>
    </aerosurface_scale>
 
-   <summer name="fcs/roll-sum">
-      <input>fcs/aileron-cmd-norm</input>
-      <input>fcs/roll-trim-cmd-norm</input>
-      <clipto>
-        <min> -1 </min>
-        <max>  1 </max>
-      </clipto>
-   </summer>
-
     <!-- (Swamps notes) Automatic control of the differential tailplane gearing is by a differential computer having two channels,controls and monitoring, both of
          which recieves airspeed signals from the Ajax computer and feedback signals from a gain rod   potentiometer. In short below 200 knots is maximum gain 
          and therefore maximum differential tailplane is obtained. Above 200 knots the actuator progressively retracts until, when airspeed reaches 450 knots
@@ -59,7 +50,7 @@
     -->
 
    <scheduled_gain name="fcs/roll-cmd">
-        <input>fcs/roll-sum</input>
+        <input>sas/roll-cmd-output</input>
         <description>Differential tailplane authority; AP 101B-3101-1EE p29, 19-20 Fig. 16</description>
         <table>
             <independentVar lookup="row">/velocities/airspeed-kt</independentVar>  
@@ -460,7 +451,7 @@
 	
   </channel>
   
-  <channel name="NoseWheel sterring">
+  <channel name="NoseWheel steering">
     <switch name="fcs/nws-active">
       <default value="0" />
       <test logic="AND" value="1">

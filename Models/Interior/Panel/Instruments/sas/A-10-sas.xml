@@ -10,16 +10,9 @@
 		<object-name>yaw-L-switch</object-name>
 		<type>rotate</type>
 		<property>fdm/jsbsim/sas/yaw-l</property>
-		<factor>60</factor>
-		<center>
-			<x-m>-0.01747</x-m>
-			<y-m>-0.04312</y-m>
-			<z-m> 0.00190</z-m>
-		</center>
+		<factor>-60</factor>
 		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
+			<object-name>yaw-L-switch-axis</object-name>
 		</axis>
 	</animation>
 	
@@ -40,16 +33,9 @@
 		<object-name>yaw-R-switch</object-name>
 		<type>rotate</type>
 		<property>fdm/jsbsim/sas/yaw-r</property>
-		<factor>60</factor>
-		<center>
-			<x-m>-0.01747</x-m>
-			<y-m>0.01262</y-m>
-			<z-m>0.00190</z-m>
-		</center>
+		<factor>-60</factor>
 		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
+			<object-name>yaw-R-switch-axis</object-name>
 		</axis>
 	</animation>
 	
@@ -71,16 +57,9 @@
 		<object-name>pitch-L-switch</object-name>
 		<type>rotate</type>
 		<property>fdm/jsbsim/sas/pitch-l</property>
-		<factor>60</factor>
-		<center>
-			<x-m>-0.01747</x-m>
-			<y-m> 0.01637</y-m>
-			<z-m> 0.00190</z-m>
-		</center>
+		<factor>-60</factor>
 		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
+			<object-name>pitch-L-switch-axis</object-name>
 		</axis>
 	</animation>
 	
@@ -101,16 +80,9 @@
 		<object-name>pitch-R-switch</object-name>
 		<type>rotate</type>
 		<property>fdm/jsbsim/sas/pitch-r</property>
-		<factor>60</factor>
-		<center>
-			<x-m>-0.01747</x-m>
-			<y-m> 0.04692</y-m>
-			<z-m> 0.00190</z-m>
-		</center>
+		<factor>-60</factor>
 		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
+			<object-name>pitch-R-switch-axis</object-name>
 		</axis>
 	</animation>
 	
@@ -127,60 +99,76 @@
 		</action>
 	</animation>
 
+	<!-- roll SAS switch -->
 	<animation>
-		<object-name>yaw-trim-knob</object-name>
+		<object-name>roll-L-switch</object-name>
 		<type>rotate</type>
-		<property>fdm/jsbsim/sas/yaw-trim</property>
-		<factor>60</factor>
-		<center>
-			<x-m> 0.01990</x-m>
-			<y-m>-0.03532</y-m>
-			<z-m> 0.00082</z-m>
-		</center>
+		<property>fdm/jsbsim/sas/roll-l</property>
+		<factor>-60</factor>
 		<axis>
-			<x> 0</x>
-			<y> 0</y>
-			<z> 1</z>
+			<object-name>roll-L-switch-axis</object-name>
 		</axis>
 	</animation>
-
+	
 	<animation>
 		<type>pick</type>
-          <visible>false</visible>
-		<object-name>YT-L</object-name>
-		<factor>-30</factor>
+		<object-name>roll-L-switch</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>true</repeatable>
 			<binding>
-				<command>property-adjust</command>
-				<property>fdm/jsbsim/sas/yaw-trim</property>
-				<step>-0.05</step>
-                        <min>0</min>
-                        <max>1</max>
-                        <factor>0.04</factor>
+				<command>property-toggle</command>
+				<property>fdm/jsbsim/sas/roll-l</property>
 			</binding>
 		</action>
 	</animation>
 
 	<animation>
+		<object-name>roll-R-switch</object-name>
+		<type>rotate</type>
+		<property>fdm/jsbsim/sas/roll-r</property>
+		<factor>-60</factor>
+		<axis>
+			<object-name>roll-R-switch-axis</object-name>
+		</axis>
+	</animation>
+	
+	<animation>
 		<type>pick</type>
-         <visible>false</visible>
-		<object-name>YT-R</object-name>
-		<factor>30</factor>
+		<object-name>roll-R-switch</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>true</repeatable>
 			<binding>
-				<command>property-adjust</command>
-				<property>fdm/jsbsim/sas/yaw-trim</property>
-				<step>0.05</step>
-                        <min>0</min>
-                        <max>1</max>
-                        <factor>0.04</factor>
+				<command>property-toggle</command>
+				<property>fdm/jsbsim/sas/roll-r</property>
 			</binding>
 		</action>
 	</animation>
+
+	<animation>
+		<type>knob</type>
+		<object-name>yaw-trim-knob</object-name>
+		<property>fdm/jsbsim/sas/yaw-trim</property>
+		<factor>-135</factor>
+		<axis>
+		  <object-name>yaw-trim-knob-axis</object-name>
+		</axis>
+		
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>fdm/jsbsim/sas/yaw-trim</property>
+  
+				<factor>0.1</factor>
+				<min>-1</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>		
+	  </animation>
+
+	
 
 	<!-- lighting -->
 
@@ -285,10 +273,5 @@
 		</emission>
 	</animation>-->
 
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>5</max-m>
-	</animation>
 
 </PropertyList>
