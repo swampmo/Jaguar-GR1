@@ -4420,7 +4420,6 @@ kids 0
 OBJECT poly
 name "chute_line"
 loc -16.2103 -0.134406 0.106739
-texture "intake.rgb"
 crease 45.000000
 numvert 12
 -6.69432 0 1.16415e-10
@@ -4535,7 +4534,6 @@ kids 0
 OBJECT poly
 name "canopy_anchor"
 loc 2.911 -0.134406 0.107637
-texture "intake.rgb"
 crease 45.000000
 numvert 31
 -12.1194 0 -0.226573

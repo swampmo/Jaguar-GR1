@@ -279,7 +279,17 @@ if(navStillOn) {
     </unload>
   </nasal>
 
-	<animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>TailHook</object-name>
+    <property>fdm/jsbsim/gear/tailhook-pos-norm</property>
+    <factor>53</factor>
+    <axis>
+      <object-name>TailHook-axis</object-name>
+    </axis>
+  </animation>
+
+  <animation>
 		<name>porteA</name>
 		<object-name>LandingLight</object-name>
 		<object-name>LandingLight.1</object-name>

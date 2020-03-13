@@ -3,15 +3,7 @@
 <PropertyList>
 
   <path>Full-panel.ac</path>
-
-  <animation>
-    <!-- Objets opaques -->
-    <object-name>panel</object-name>
-
-    <!-- Objets transparents -->
-  </animation>
-
-  
+ 
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Radar/Radar/A-10-rwr.xml</path>
     <offsets>
@@ -563,16 +555,6 @@
       <y-m>  0.315 </y-m>
       <z-m> -0.020 </z-m>
    <pitch-deg>0</pitch-deg>
-  </offsets>
- </model>
-
- <model> 
-  <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/tailhook.xml</path>
-  <offsets>
-      <x-m>0.000 </x-m>
-      <y-m>0.000</y-m>
-      <z-m>0.000 </z-m>
-      <roll-deg>0</roll-deg>
   </offsets>
  </model>
 

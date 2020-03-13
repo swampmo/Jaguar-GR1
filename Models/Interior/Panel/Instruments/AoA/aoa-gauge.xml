@@ -43,7 +43,8 @@
 
 	<!--lighting -->
 	<animation>
-		<object-name>mount</object-name>
+		<object-name>aoa-gauge</object-name>
+		<object-name>aoa-flag</object-name>
 		<type>material</type>
 		<condition>
 			<greater-than>
@@ -62,7 +63,7 @@
 		</emission>
 	</animation>
 
-	<animation>
+	<!-- <animation>
 		<object-name>face</object-name>
 		<type>material</type>
 		<condition>
@@ -81,9 +82,9 @@
 			<blue>0.10</blue>
 		</emission>
 	</animation>
-
+ -->
 	<animation>
-		<object-name>tape</object-name>
+		<object-name>aoa-tape</object-name>
 		<type>material</type>
 		<condition>
 			<greater-than>

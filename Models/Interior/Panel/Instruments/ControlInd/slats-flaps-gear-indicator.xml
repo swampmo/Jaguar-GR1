@@ -5,34 +5,8 @@
   <path>flaps-slats-indicator.ac</path>
 
   <animation>
-    <object-name>mount</object-name>
-    <object-name>flaps-slats-indicator</object-name>
-		<object-name>slats-maneuver</object-name>
-		<object-name>nw-unsafe</object-name>
-		<object-name>flaps</object-name>
-		<object-name>lw-unsafe</object-name>
-		<object-name>sp-power-off</object-name>
-		<object-name>rw-unsafe</object-name>
-		<object-name>slats-extended</object-name>
-		<object-name>nw-down</object-name>
-		<object-name>lw-down</object-name>
-		<object-name>sp-full</object-name>
-		<object-name>rw-down</object-name>
-		<object-name>slats-in</object-name>
-		<object-name>slats-combat</object-name>
-		<object-name>nw-up</object-name>
-		<object-name>lw-up</object-name>
-		<object-name>sp-in</object-name>
-		<object-name>rw-up</object-name>
-		<object-name>sp-partial</object-name>
-		<object-name>autoSlat-frame</object-name>
-		<object-name>autoSlat-button</object-name>
-  </animation>
-
-  <animation>
     <type>material</type>
     <object-name>mount</object-name>
-    <object-name>flaps-slats-indicator</object-name>
 		<object-name>slats-maneuver</object-name>
 		<object-name>nw-unsafe</object-name>
 		<object-name>flaps</object-name>
@@ -59,16 +33,6 @@
     </emission>
   </animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>flaps-slats-indicator</object-name>
-    <condition>
-      <equals>
-        <property>sim/current-view/name</property>
-        <value>Cockpit View</value>
-      </equals>
-    </condition>
-  </animation>
 
 	<!-- Flaps -->
 	<animation>

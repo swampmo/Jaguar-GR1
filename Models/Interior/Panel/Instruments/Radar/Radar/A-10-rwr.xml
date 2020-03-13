@@ -28,7 +28,7 @@
   </animation>
 
   <animation> 
-   <object-name>button</object-name>
+   <object-name>Adj-Knob</object-name>
    <type>material</type>
     <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
