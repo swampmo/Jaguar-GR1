@@ -5211,7 +5211,7 @@ refs 3
 153 0.0640678 0.0691129
 kids 0
 OBJECT poly
-name "rect.001"
+name "RWRScreen"
 data 8
 Mesh.036
 texture "A-10-rwr.png"
@@ -5225,10 +5225,10 @@ numsurf 1
 SURF 0x0
 mat 1
 refs 4
-2 0.00828505 0.253723
-3 0.752511 0.253723
-0 0.752511 0.997633
-1 0.00828505 0.997633
+2 0 0
+3 1 0
+0 1 1
+1 0 1
 kids 0
 OBJECT poly
 name "mount"
