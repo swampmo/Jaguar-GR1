@@ -280,7 +280,7 @@
       <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
       <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
       <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
-		  <float n="6" type="double">0</float><!-- refuel probe   -->
+		  <float n="6" type="double" alias="/fdm/jsbsim/systems/refuel/probe-pos-norm"/><!-- refuel probe   -->
       <float n="8" alias="/engines/engine[0]/augmentation" /> <!-- Reheat Left Engine -->
 	    <float n="9" alias="/engines/engine[1]/augmentation" /> <!-- Reheat Right Engine -->
       <float n="15" alias="/velocities/mach" /> <!-- Mach for Multiplayer Sound -->
@@ -670,7 +670,8 @@
 	<fdm>
 		<jsbsim>
 			<fcs>
-                <rudder-gearing-master-switch-85c type="double">0</rudder-gearing-master-switch-85c>
+        <rudder-gearing-master-switch-85c type="double">0</rudder-gearing-master-switch-85c>
+        <fuel-probe-pos-dmd type="int">0</fuel-probe-pos-dmd>
 				<slats-deg type="double">0</slats-deg>
 				<slats-cmd-deg type="double">0</slats-cmd-deg>
 				<canopy>
@@ -823,7 +824,7 @@
       <dual type="int">1</dual>
     </armament>
 		<switches>
-			<fuel-probe type="bool">false</fuel-probe>
+			<fuel-probe type="int" alias="/fdm/jsbsim/systems/refuel/probe-pos-dmd"/>
 			<nav-lights type="bool">false</nav-lights>
 			<gear-lights type="int">false</gear-lights>
 			<landlight1 alias="/sim/rendering/als-secondary-lights/use-landing-light"/>

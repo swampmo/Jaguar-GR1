@@ -81,16 +81,4 @@ var fuelTanks = func {
 	settimer(fuelTanks, 0.3);
 }
 
-var fuel_probe = func {
-   var fuel_probe_switch = getprop("controls/switches/fuel-probe");
-#    var eng1run = props.globals.getNode("/engines/engine[0]/running").getBoolValue();
-# 	var eng2run = props.globals.getNode("/engines/engine[1]/running").getBoolValue();
-#			 if ((eng1run) and (eng2run)) {
-   				if ( fuel_probe_switch == 1 ) { interpolate("/sim/multiplay/generic/float[6]", 1, 6.5); }
-   				if ( fuel_probe_switch == 0 ) { interpolate("/sim/multiplay/generic/float[6]", 0, 6.5); }
-#   }
-}
-   
-setlistener("/controls/switches/fuel-probe", fuel_probe);
-
 setlistener("/sim/signals/fdm-initialized", fuelTanks);
