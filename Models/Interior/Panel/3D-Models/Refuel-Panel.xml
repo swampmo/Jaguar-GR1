@@ -34,7 +34,7 @@
   <animation>
     <type>translate</type>
     <object-name>Refuel</object-name>
-     <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
+     <property>/controls/switches/fuel-probe</property>
       <factor>-0.003</factor>
          <axis>
           <x> 1.0 </x>
@@ -52,7 +52,7 @@
   <type>select</type> 
    <object-name>Red-Light-on</object-name>
     <condition>	  		
-    <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
+    <property>fdm/jsbsim/systems/refuel/probe-armed</property>
    <value>1</value>
   </condition>
  </animation>
@@ -61,8 +61,8 @@
      <type>material</type>
       <object-name>Red-Light-on</object-name>
        <emission>
-        <factor-prop>fdm/jsbsim/systems/refuel-armed/fuel-probe</factor-prop>
-         <value>1</value>
+        <property>fdm/jsbsim/systems/refuel/probe-armed</property>
+        <value>1</value>
            <red>1</red>
           <green>1</green>
         <blue>1</blue>
@@ -95,17 +95,17 @@
 <!--#################################################" MMB Adjustment ############################################" -->
 
     <animation>
-     <type>pick</type>
-       <object-name>Refuel</object-name>
-        <factor>0.002</factor>
-         <action>
-          <button>0</button>
-            <binding>
-             <command>property-toggle</command>
-               <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
-               </binding>
-             <binding>
-            <command>property-toggle</command>
+      <type>pick</type>
+      <object-name>Refuel</object-name>
+      <factor>0.002</factor>
+      <action>
+        <button>0</button>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/fuel-probe</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
           <property>sim/sound/click</property>
         </binding>
       </action>
