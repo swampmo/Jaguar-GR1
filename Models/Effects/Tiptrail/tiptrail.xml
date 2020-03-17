@@ -14,7 +14,7 @@
       <and>
         <greater-than>
           <property>/environment/relative-humidity</property>
-          <value>98</value>
+          <value>75</value>
         </greater-than>
         <greater-than>
           <property>/environment/temperature-degc</property>
@@ -22,7 +22,7 @@
         </greater-than>
         <greater-than>
           <property>velocities/airspeed-kt</property>
-          <value>180</value>
+          <value>150</value>
         </greater-than>
         <or>
           <or>
@@ -65,7 +65,7 @@
     <counter>
       <particles-per-sec>
         <property>/velocities/airspeed-kt</property>
-        <factor>1</factor>
+        <factor>4</factor>
         <offset>75</offset>
       </particles-per-sec>
     </counter>
@@ -102,7 +102,7 @@
       </life-sec>
 
       <mass-kg>0.01</mass-kg>
-      <radius-m>0.1</radius-m>
+      <radius-m>0.15</radius-m>
     </particle>
 
     <program>
