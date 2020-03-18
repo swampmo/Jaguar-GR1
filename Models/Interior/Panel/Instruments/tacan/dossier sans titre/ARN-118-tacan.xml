@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
 
-
-
 <PropertyList>
 	<path>ARN-118-tacan.ac</path>
 
@@ -209,7 +207,6 @@
 		</action>
 	</animation>
 
-
 	<!-- lighting -->
 	<animation>
 		<object-name>mount</object-name>
@@ -312,12 +309,6 @@
 			<green>0.35</green>
 			<blue>0.23</blue>
 		</emission>
-	</animation>
-
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>5</max-m>
 	</animation>
 
 </PropertyList>

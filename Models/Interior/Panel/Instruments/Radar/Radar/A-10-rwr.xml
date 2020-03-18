@@ -4,7 +4,6 @@
 
  <path>A-10-rwr.ac</path>
 
-
   <animation> 
    <type>material</type>
     <emission>
@@ -37,13 +36,5 @@
       <blue>  0.9 </blue>
     </emission>
   </animation>
-
-  <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>10</max-m>
- </animation>  
-
-
 
 </PropertyList>

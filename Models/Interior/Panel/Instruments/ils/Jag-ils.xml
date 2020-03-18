@@ -1,10 +1,7 @@
 <?xml version="1.0"?>
 
-
-
 <PropertyList>
 <path>Jag-ils.ac</path>
-
 
 <animation>
   <type>textranslate</type>
@@ -20,7 +17,6 @@
   </axis>
  </animation>
 
-
  <animation>
   <type>textranslate</type>
   <object-name>drum-4</object-name>
@@ -34,7 +30,6 @@
    <z>0</z>
   </axis>
  </animation>
-
 
  <animation>
   <type>textranslate</type>
@@ -63,7 +58,6 @@
    <z>0</z>
   </axis>
  </animation>
-
 
  <animation>
   <type>textranslate</type>
@@ -258,7 +252,6 @@
   </animation>
   
 
-
   <animation>
     <object-name>drum-1</object-name>
     <type>material</type>
@@ -318,12 +311,6 @@
       <green> 0.9 </green>
       <blue>  0.9 </blue>
     </emission>
-  </animation>
-
-  <animation>
-    <type>range</type>
-    <min-m>0</min-m>
-    <max-m>5</max-m>
   </animation>
 
 </PropertyList>

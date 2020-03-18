@@ -116,7 +116,6 @@
     </action>
   </animation>
 
-
 	<!-- Lighting -->
 	<animation> 
 		<object-name>Jag-FS</object-name>
@@ -129,13 +128,6 @@
       <blue>  0.9 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
     </emission>
-	</animation>
-
-
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>35</max-m>
 	</animation>
 
 </PropertyList>
