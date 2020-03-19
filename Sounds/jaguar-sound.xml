@@ -150,7 +150,7 @@
         <!-- External -->
 
        <engine>
-         <name>airgen</name>
+         <name>airgen-ext</name>
          <path>Aircraft/Jaguar/Sounds/airgenint.wav</path>
          <mode>looped</mode>
          <condition>
