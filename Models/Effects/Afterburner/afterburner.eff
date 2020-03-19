@@ -5,16 +5,16 @@
   <inherits-from>Effects/thrust-flame</inherits-from>
   <parameters>
       <base_flame_b type="float">0.835</base_flame_b>
-      <base_flame_density type="float">0.65</base_flame_density>
+      <base_flame_density type="float">0.15</base_flame_density>
       <base_flame_g type="float">0.235</base_flame_g>
       <base_flame_r type="float">0.2</base_flame_r>
       <deflection_coeff type="float">0</deflection_coeff>
       <flame_color_high_b type="float">0.157</flame_color_high_b>
       <flame_color_high_g type="float">0.895</flame_color_high_g>
-      <flame_color_high_r type="float">0.900</flame_color_high_r>
+      <flame_color_high_r type="float">0.800</flame_color_high_r>
       <flame_color_low_b type="float">0.139</flame_color_low_b>
       <flame_color_low_g type="float">0.100</flame_color_low_g>
-      <flame_color_low_r type="float">0.917</flame_color_low_r>
+      <flame_color_low_r type="float">0.817</flame_color_low_r>
       <flame_radius_fraction type="float">1.0</flame_radius_fraction>
       <noise_scale type="float">0.6</noise_scale>
       <noise_strength type="float">0.6</noise_strength>

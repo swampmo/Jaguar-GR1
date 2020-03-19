@@ -661,7 +661,7 @@ if(navStillOn) {
     <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
     <offsets>
       <x-m> 5.64314   </x-m>
-      <y-m> 0.494526  </y-m>
+      <y-m> 0.4935  </y-m>
       <z-m> -0.55394 </z-m>
     </offsets>
   </model>
@@ -671,7 +671,7 @@ if(navStillOn) {
    <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
    <offsets>
     <x-m>  5.64314  </x-m>
-    <y-m> -0.497843 </y-m>
+    <y-m> -0.4968 </y-m>
     <z-m> -0.55953  </z-m>
    </offsets>
   </model>
