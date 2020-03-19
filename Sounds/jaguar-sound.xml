@@ -120,9 +120,63 @@
          </pitch>
        </engine>
 
-
+       <engine>
+         <name>airgen</name>
+         <path>Aircraft/Jaguar/Sounds/airgenint.wav</path>
+         <mode>looped</mode>
+         <condition>
+            <greater-than>
+              <property>engines/air-gen-n1</property>
+              <value>1</value>
+            </greater-than>
+            <property>sim/current-view/internal</property>          
+         </condition>
+         <volume>
+           <property>engines/air-gen-n1</property>
+           <factor type="double">0.0075</factor>
+           <offset>0.25</offset>
+           <min>0</min>
+           <max>2</max>
+         </volume>
+         <pitch>
+           <property>engines/air-gen-n1</property>
+           <factor>0.030</factor>
+           <offset>0</offset>
+           <min>0</min>
+           <max>2</max>
+         </pitch>
+       </engine>
 
         <!-- External -->
+
+       <engine>
+         <name>airgen</name>
+         <path>Aircraft/Jaguar/Sounds/airgenint.wav</path>
+         <mode>looped</mode>
+         <condition>
+            <greater-than>
+              <property>engines/air-gen-n1</property>
+              <value>1</value>
+            </greater-than>
+           <not>
+             <property>/sim/current-view/internal</property>
+           </not>
+         </condition>
+         <volume>
+           <property>engines/air-gen-n1</property>
+           <factor type="double">0.0075</factor>
+           <offset>0.25</offset>
+           <min>0</min>
+           <max>2</max>
+         </volume>
+         <pitch>
+           <property>engines/air-gen-n1</property>
+           <factor>0.030</factor>
+           <offset>0</offset>
+           <min>0</min>
+           <max>2</max>
+         </pitch>
+       </engine>
 
        <engine>
          <name>turbine-0</name>

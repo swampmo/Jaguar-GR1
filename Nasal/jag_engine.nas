@@ -55,7 +55,7 @@ var AUTO_SHUT_DOWN = 10*60;#sec
 
 # loop times
 var update_time_fast = 0.05;
-var update_time_slow = 0.25;
+var update_time_slow = 0.05;
 
 var N2_IDLE = 55;#idlen2 in engine file
 var N2_SELFSUSTAIN = 39;
@@ -112,14 +112,14 @@ var engineStartLoop = func {
 	var speedbrakes = getprop("controls/flight/speedbrake");
 	var lp_0 = getprop("engines/lp-0-switch");
 	var lp_1 = getprop("engines/lp-1-switch");
-	
-	
+
+
 	cwp_bat = 0;
-	
+
 	#air gen logic (battery powered starter engine)
 	if (!air_gen_start or (n2_0 >= N2_IDLE and n2_1 >= N2_IDLE) or !speedbrakes) {
-		#corr_rot_0 = 0; 
-		#corr_rot_1 = 0; 
+		#corr_rot_0 = 0;
+		#corr_rot_1 = 0;
 		air_gen_on = 0;
 		rdy_for_engine_start = 0;
 	} elsif (air_gen_start and gen_start and speedbrakes) {
@@ -128,8 +128,8 @@ var engineStartLoop = func {
 		}
 		air_gen_on = 1;
 	} elsif (air_gen_start_time+AUTO_SHUT_DOWN < getprop("sim/time/elapsed-sec")) {
-		#corr_rot_0 = 0; 
-		#corr_rot_1 = 0; 
+		#corr_rot_0 = 0;
+		#corr_rot_1 = 0;
 		air_gen_on = 0;
 		rdy_for_engine_start = 0;
 	}
@@ -151,7 +151,7 @@ var engineStartLoop = func {
 			air_gen_rpm = 0;
 		}
 	}
-	
+
 	# Starting to ignition
 	if (rdy_for_engine_start) {
 		if (eng_start == -1) {
@@ -161,7 +161,7 @@ var engineStartLoop = func {
 			start_1 = throttleStop_1 and eng_ign and lp_1;
 		}
 	}
-	
+
 	# abort engine start
 	if (!eng_ign and n2_0 < N2_SELFSUSTAIN) {
 		cutoff_0 = 1;
@@ -170,14 +170,14 @@ var engineStartLoop = func {
 	if (!eng_ign and n2_1 < N2_SELFSUSTAIN) {
 		cutoff_1 = 1;
 		start_1 = 0;
-	}	
+	}
 	if (!air_gen_on and n2_0 < N2_SELFSUSTAIN) {
 		start_0 = 0;
 	}
 	if (!air_gen_on and n2_1 < N2_SELFSUSTAIN) {
 		start_1 = 0;
 	}
-	
+
 	#ignition to running
 	if (start_0 or n2_0 >= N2_IDLE) {
 		#if (n2_0 >= N2_IGNITE and air_gen_rpm == 1 and n2_0 < N2_IDLE) {
@@ -191,7 +191,7 @@ var engineStartLoop = func {
 		#}
 		cutoff_1 = !(!throttleStop_1 and fuel_1);
 	}
-	
+
 	# running
 	if (n2_0 >= N2_IDLE) {
 		start_0 = 0;
@@ -199,10 +199,10 @@ var engineStartLoop = func {
 	if (n2_1 >= N2_IDLE) {
 		start_1 = 0;
 	}
-	
+
 	corr_rot_0 = n2_0 < N2_SELFSUSTAIN and n2_0 >= N2_IGNITE and start_0;
 	corr_rot_1 = n2_1 < N2_SELFSUSTAIN and n2_1 >= N2_IGNITE and start_1;
-	
+
 	#outputs
 	setprop("engines/air-gen-button-light", air_gen_on);
 	setprop("engines/air-valve-open-light", rdy_for_engine_start and (start_0 or start_1));
@@ -227,7 +227,7 @@ var engineStartLoop2 = func {
 	throttleStop_1 = getprop("engines/throttle-stop[1]");
 	throttle_0 = getprop("controls/engines/engine[0]/throttle");
 	throttle_1 = getprop("controls/engines/engine[1]/throttle");
-	
+
 	#outputs
 	setprop("engines/throttle-pos-norm[0]", throttleStop_0?0:throttle_0*0.95+0.05);
 	setprop("engines/throttle-pos-norm[1]", throttleStop_1?0:throttle_1*0.95+0.05);
@@ -285,7 +285,7 @@ quickstart = func {
             if (startEngine) {
                 print("battery caution goes off");
                 settimer(func { print("start eng L");setprop("/engines/eng-start-switch", -1); }, 0.5);
-                settimer(func { print("start eng R");setprop("/engines/eng-start-switch", 1); }, 2.5);     
+                settimer(func { print("start eng R");setprop("/engines/eng-start-switch", 1); }, 2.5);
                 startEngine = 0;
                 removelistener(l1);
             }
