@@ -1176,7 +1176,7 @@
                 <weight-fuel-lbm type="double"> 0 </weight-fuel-lbm>
                 <drag-coeff type="double"> 0.155 </drag-coeff>
                 <cross-section-sqft type="double"> 1.07744817 </cross-section-sqft><!-- the MK83 is 357 mm diam -->
-                <arming-time-sec type="double"> 3.5 </arming-time-sec>
+                <arming-time-sec type="double"> 1.0 </arming-time-sec>
                 <min-speed-for-guiding-mach type="double"> 0 </min-speed-for-guiding-mach>
                 <self-destruct-time-sec type="double"> 10000 </self-destruct-time-sec>
                 <all-aspect type="bool">true</all-aspect>
@@ -1694,7 +1694,7 @@
                 <weight-fuel-lbm type="double"> 0 </weight-fuel-lbm>
                 <drag-coeff type="double"> 0.018 </drag-coeff>
                 <cross-section-sqft type="double"> 1.8094133 </cross-section-sqft>
-                <arming-time-sec type="double"> 3 </arming-time-sec>
+                <arming-time-sec type="double"> 1 </arming-time-sec>
                 <min-speed-for-guiding-mach type="double"> 0 </min-speed-for-guiding-mach>
                 <self-destruct-time-sec type="double"> 10000 </self-destruct-time-sec>
                 <all-aspect type="bool">true</all-aspect>
@@ -1734,7 +1734,7 @@
                 <weight-fuel-lbm type="double"> 0 </weight-fuel-lbm>
                 <drag-coeff type="double"> 0.023 </drag-coeff>
                 <cross-section-sqft type="double"> 1.8094133 </cross-section-sqft>
-                <arming-time-sec type="double"> 3 </arming-time-sec>
+                <arming-time-sec type="double"> 1 </arming-time-sec>
                 <min-speed-for-guiding-mach type="double"> 0 </min-speed-for-guiding-mach>
                 <self-destruct-time-sec type="double"> 10000 </self-destruct-time-sec>
                 <all-aspect type="bool">true</all-aspect>
