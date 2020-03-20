@@ -306,19 +306,19 @@ var Pylon = {
 		me.i = 0;
 		foreach(set ; me.sets) {
 			me.guiNode.initNode("opt["~me.i~"]/name",set.name,"STRING");
-			#if (fdm=="yasim") { commented out due to fuel dialog changes in FG2018.3
-				# due to fuel dialog has different features in yasim from jsb, this must be done:
-				me.guiNode.initNode("opt["~me.i~"]/lbs",0,"DOUBLE");
-				if (size(set.content) == 1){
-					if (typeof(set.content[0]) != "scalar"){
-						debug.dump(set.content[0]);
-						if (set.content[0]["capacity"] != nil)
-							print("set gallons to ",set.content[0]["capacity"]);
+
+			# ensure that gals is set in the option for fuel tanks - as this is required
+			# to make the payload dialog auto reload the tank after it is mounted 
+			# because the payload dialog requires /consumables/fuel/tank[#]/capacity-gal_us to
+			# be present and non zero
+			me.guiNode.initNode("opt["~me.i~"]/lbs",0,"DOUBLE");
+			if (size(set.content) == 1) {
+				if (typeof(set.content[0]) != "scalar"){
+					if (set.content[0]["capacity"] != nil)
 						me.guiNode.initNode("opt["~me.i~"]/gals",set.content[0]["capacity"],"DOUBLE");
-					}
 				}
-				set.opt = me.i;
-			#}
+			}
+			set.opt = me.i;
 			me.i += 1;
 		}
 		me.calculateSetMassForOpt();
