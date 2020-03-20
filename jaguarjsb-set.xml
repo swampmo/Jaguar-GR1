@@ -3,7 +3,7 @@
 <PropertyList>
 
   <sim include="Nasal/views.xml">
-
+    <minimum-fg-version>2016.1.0</minimum-fg-version>
     <description>SEPECAT Jaguar GR1</description>
         <tags>
             <tag>fighter</tag>
@@ -669,6 +669,11 @@
 
 	<fdm>
 		<jsbsim>
+      <inertia>
+        <tank-wing-left-fitted alias="/jaguar/wingtankL1200"/>
+        <tank-centre-fitted alias="/jaguar/ventraltank1200"/>
+        <tank-wing-right-fitted alias="/jaguar/wingtankR1200"/>
+      </inertia>
 			<fcs>
         <rudder-gearing-master-switch-85c type="double">0</rudder-gearing-master-switch-85c>
         <fuel-probe-pos-dmd type="int">0</fuel-probe-pos-dmd>
@@ -859,39 +864,42 @@
         <fuel>
             <tank n="0">
                 <name>Fuselage Front Tank</name>
+                <kill-when-empty type="bool">false</kill-when-empty>
             </tank>
             <tank n="1">
                 <name>Fuselage Center Tank 1</name>
+                <kill-when-empty type="bool">false</kill-when-empty>
             </tank>
             <tank n="2">
                 <name>Fuselage Center Tank 2</name>
+                <kill-when-empty type="bool">false</kill-when-empty>
             </tank>
             <tank n="3">
                 <name>Fuselage Rear Tank</name>
+                <kill-when-empty type="bool">false</kill-when-empty>
             </tank>
             <tank n="4">
                 <name>Left Wing Tank</name>
+                <kill-when-empty type="bool">false</kill-when-empty>
             </tank>
             <tank n="5">
                 <name>Right Wing Tank</name>
+                <kill-when-empty type="bool">false</kill-when-empty>
             </tank>
             <tank n="6">
-                <name>Not attached</name>
-                <selected type="bool">false</selected>
-                <capacity-gal_us type="double">0</capacity-gal_us>
-                <level-norm type="double">0</level-norm>
+              <name>Left 1200 L Tank</name>
+              <kill-when-empty type="bool">false</kill-when-empty>
+              <selected type="bool">false</selected >
             </tank>
             <tank n="7">
-                <name>Not attached</name>
-                <selected type="bool">false</selected>
-                <capacity-gal_us type="double">0</capacity-gal_us>
-                <level-norm type="double">0</level-norm>
+              <name>Center 1200 L Tank</name>
+              <kill-when-empty type="bool">false</kill-when-empty>
+              <selected type="bool">false</selected >
             </tank>
             <tank n="8">
-                <name>Not attached</name>
-                <selected type="bool">false</selected>
-                <capacity-gal_us type="double">0</capacity-gal_us>
-                <level-norm type="double">0</level-norm>
+              <name>Right 1200 L Tank</name>
+              <kill-when-empty type="bool">false</kill-when-empty>
+              <selected type="bool">false</selected >
             </tank>
         </fuel>
     </consumables>
