@@ -411,7 +411,7 @@
   </channel>
 
   <channel name="Speedbrake">
-   <kinematic name="Speedbrake Control">
+   <kinematic name="fcs/speedbrake-pos-deg">
      <input>fcs/speedbrake-cmd-norm</input>
      <traverse>
        <setting>
@@ -486,6 +486,59 @@
       </table>
       <output>fcs/steer-pos-deg</output>
     </scheduled_gain>
+  </channel>
+
+  <channel name="Export" execrate="2">
+    <fcs_function name="fcs/rudder-pos-norm">
+      <function>
+        <quotient>
+            <property>fcs/rudder-deg</property>
+            <value>20</value>
+        </quotient>
+      </function>
+      <output>/surface-positions/rudder-pos-norm</output>
+    </fcs_function>
+
+    <fcs_function name="fcs/left-aileron-pos-norm">
+      <function>
+        <quotient>
+            <property>fcs/spoiler-command-deg</property>
+            <value>45</value>
+        </quotient>
+      </function>
+      <output>/surface-positions/left-aileron-pos-norm</output>
+    </fcs_function>
+
+    <!-- in fact this is the offset on the tailplane -->
+    <fcs_function name="fcs/right-aileron-pos-norm">
+      <function>
+        <sum>
+          <property>fcs/differential-elevator-pos-norm</property>
+          <value>0</value>
+      </sum>
+      </function>
+      <output>/surface-positions/right-aileron-pos-norm</output>
+    </fcs_function>
+
+    <fcs_function name="fcs/elevator-pos-norm">
+      <function>
+        <quotient>
+            <property>fcs/pitch-pos-deg</property>
+            <value>25</value>
+        </quotient>
+      </function>
+      <output>/surface-positions/elevator-pos-norm</output>
+    </fcs_function>
+
+    <fcs_function name="fcs/speedbrake-pos-norm">
+      <function>
+        <quotient>
+            <property>fcs/speedbrake-pos-deg</property>
+            <value>1</value>
+        </quotient>
+      </function>
+      <output>/surface-positions/speedbrake-pos-norm</output>
+    </fcs_function>
   </channel>
 
 </system>

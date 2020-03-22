@@ -27,6 +27,7 @@
 
     <model>
       <path>Aircraft/Jaguar/Models/Jaguar-GR1.xml</path>
+      <fallback-model-index type="int">528</fallback-model-index>
       <livery>
         <file type="string">default</file>
       </livery>
@@ -288,6 +289,10 @@
 	    <float n="17" alias="/engines/engine[1]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
       <float n="18" type="double" alias="/engines/afterburner-length[0]"/>
       <float n="19" type="double" alias="/engines/afterburner-length[1]"/>
+      <float n="20" type="double" alias="/fdm/jsbsim/fcs/slats-deg"/>
+      <float n="21" type="double" alias="/fdm/jsbsim/propulsion/inlet/doorfront-position-deg"/>
+      <float n="22" type="double" alias="/fdm/jsbsim/propulsion/inlet/doorrear-position-deg"/>
+      
       <bool n="0" type="bool" alias="/engines/engine[0]/augmentation"/>
       <bool n="1" type="bool" alias="/engines/engine[1]/augmentation"/>
       </generic>
@@ -669,16 +674,17 @@
 
 	<fdm>
 		<jsbsim>
-      <inertia>
-        <tank-wing-left-fitted alias="/jaguar/wingtankL1200"/>
-        <tank-centre-fitted alias="/jaguar/ventraltank1200"/>
-        <tank-wing-right-fitted alias="/jaguar/wingtankR1200"/>
-      </inertia>
-			<fcs>
-        <rudder-gearing-master-switch-85c type="double">0</rudder-gearing-master-switch-85c>
-        <fuel-probe-pos-dmd type="int">0</fuel-probe-pos-dmd>
+	    	<inertia>
+				<tank-wing-left-fitted alias="/jaguar/wingtankL1200"/>
+				<tank-centre-fitted alias="/jaguar/ventraltank1200"/>
+				<tank-wing-right-fitted alias="/jaguar/wingtankR1200"/>
+		</inertia>
+		<fcs>
+    	    	<rudder-gearing-master-switch-85c type="double">0</rudder-gearing-master-switch-85c>
+    	    	<fuel-probe-pos-dmd type="int">0</fuel-probe-pos-dmd>
 				<slats-deg type="double">0</slats-deg>
-				<slats-cmd-deg type="double">0</slats-cmd-deg>
+	        	<slats-cmd-deg type="double">0</slats-cmd-deg>
+    	    	<speedbrake-pos-deg type="double">0</speedbrake-pos-deg>
 				<canopy>
 					<engage type="bool">0</engage>
 					<serviceable type="bool">1</serviceable>
