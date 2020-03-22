@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="/JSBSim.xsl"?>
+<?xml-stylesheet type="text/xsl" href="http://raw.githubusercontent.com/JSBSim-Team/jsbsim/master/JSBSimScript.xsl"?>
 <fdm_config name="SEPECAT-Jaguar" version="2.0" release="BETA"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:noNamespaceSchemaLocation="JSBSim.xsd">
+   xsi:noNamespaceSchemaLocation="http://raw.githubusercontent.com/JSBSim-Team/jsbsim/master/JSBSim.xsd">
 
     <fileheader>
         <author>Richard Harrison</author>
