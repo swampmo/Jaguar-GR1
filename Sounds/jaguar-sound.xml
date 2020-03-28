@@ -714,7 +714,7 @@
       <path>Aircraft/Jaguar/Sounds/flap.wav</path>
       <property>fdm/jsbsim/fcs/slats-deg</property>
       <volume>
-        <max>0.10</max>
+        <max>0.22</max>
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -726,7 +726,7 @@
       <path>Aircraft/Jaguar/Sounds/flap.wav</path>
       <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
       <volume>
-        <max>0.30</max>
+        <max>0.35</max>
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -740,13 +740,13 @@
             <condition>
                 <property>sim/current-view/internal</property>
                 <greater-than>
-                    <property>fdm/jsbsim/fcs/speedbrake-pos-norm</property>
-                    <value>0.5</value>
+                    <property>fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
+                    <value>0</value>
                 </greater-than>
             </condition>
             <volume>
                 <property>velocities/airspeed-kt</property>
-                <factor>0.009</factor>
+                <factor>0.050</factor>
             </volume>
     </speedbrakes-wind>
 
@@ -795,17 +795,17 @@
       <type>avionics</type>
       <path>Aircraft/Jaguar/Sounds/aim-9-growl.wav</path>
       <condition>
-        <property>payload/armament/aim-9/sound-on-off</property>
+        <property>payload/armament/majic/sound-on-off</property>
       </condition>
       <pitch>
-        <property>payload/armament/aim-9/sound-volume</property>
+        <property>payload/armament/majic/sound-volume</property>
         <factor>1.00</factor>
         <offset>1.60</offset>
         <min>0</min>
         <max>2</max>
       </pitch>
       <volume>
-        <property>payload/armament/aim-9/sound-volume</property>
+        <property>payload/armament/majic/sound-volume</property>
       </volume>
       <volume>
         <property>sim/current-view/internal</property>
