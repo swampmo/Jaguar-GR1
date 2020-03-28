@@ -539,7 +539,7 @@ var yaSimProp = {
 #
 # var crashCode = CrashAndStress.new([0,1,2], {"weightLbs":30000, "maxG": 12});
 #
-# var crashCode = CrashAndStress.new([0,1,2,3], {"weightLbs":20000, "maxG": 11, "minG": -5});
+# var crashCode = CrashAndStress.new([0,1,2,3], {"weightLbs":20000, "maxG": 12, "minG": -9});
 #
 # var crashCode = CrashAndStress.new([0,1,2], {"wingloadMaxLbs": 90000, "wingloadMinLbs": -45000}, ["controls/flight/aileron", "controls/flight/elevator", "controls/flight/flaps"]);
 #
@@ -557,7 +557,7 @@ var yaSimProp = {
 var crashCode = nil;
 var crash_start = func {
     removelistener(lsnr);
-    crashCode = CrashAndStress.new([0,1,2], {"weightLbs":34600, "maxG": 11}, ["controls/flight/aileron", "controls/flight/elevator", "controls/flight/flaps"]);
+    crashCode = CrashAndStress.new([0,1,2], {"weightLbs":34600, "maxG": 12}, ["controls/flight/aileron", "controls/flight/elevator", "controls/flight/flaps"]);
     crashCode.start();
 }
 
