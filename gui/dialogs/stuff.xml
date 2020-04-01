@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<!-- F-15 AFCS Dialog -->
+
+<PropertyList>
+	<name>stuff</name>
+	<layout>vbox</layout>
+
+	<group>
+		<layout>hbox</layout>
+
+		<text>
+            <halign>left</halign>
+			<label>Misc settings</label>
+		</text>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+        </button>
+	</group>
+	<hrule/>
+	
+	<group>
+		<layout>hbox</layout>
+		<default-padding>8</default-padding>
+		<text>
+			<label>Single or Pair</label>
+			<halign>right</halign>
+		</text>
+		<input>
+			<property>controls/armament/dual</property>
+			<live>true</live>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</input>				
+				
+    </group>
+    
+    <group>
+		<layout>hbox</layout>
+		<default-padding>8</default-padding>
+		<text>
+			<label>Ripple setting</label>
+			<halign>right</halign>
+		</text>
+		<input>
+			<property>controls/armament/ripple</property>
+			<live>true</live>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</input>				
+				
+    </group>
+    
+    <group>
+		<layout>hbox</layout>
+		<default-padding>8</default-padding>
+		<text>
+			<label>Ripple distance in feet</label>
+			<halign>right</halign>
+		</text>
+		<input>
+			<property>controls/armament/ripple-dist</property>
+			<live>true</live>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</input>				
+				
+    </group>
+
+</PropertyList>
