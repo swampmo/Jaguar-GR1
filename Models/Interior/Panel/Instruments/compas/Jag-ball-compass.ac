@@ -2810,7 +2810,7 @@ OBJECT poly
 name "glass"
 data 9
 vitre.001
-texture "I:/FlightGear/Aircraft/Jaguar/Models/Interior/Panel/Instruments/uhf-box/tranbg.png"
+texture "tranbg.png"
 crease 30.000000
 numvert 321
 0.05769 -0.02443 -0.01898

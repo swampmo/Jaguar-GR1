@@ -13222,7 +13222,7 @@ OBJECT poly
 name "vitre"
 data 5
 vitre
-texture "I:/FlightGear/Aircraft/Jaguar/Models/Interior/Panel/Instruments/tranbg.png"
+texture "tranbg.png"
 crease 45.000000
 numvert 17
 0.00095 -0.01135 0.02759
