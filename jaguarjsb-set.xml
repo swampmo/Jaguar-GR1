@@ -2056,10 +2056,6 @@
         <file>Aircraft/Jaguar/Nasal/jag_engine.nas</file>
    </engines>
 
-    <doors>
-      <file>Aircraft/Jaguar/Nasal/doors.nas</file>
-    </doors>
-
     <jaguar>
       <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
       <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
