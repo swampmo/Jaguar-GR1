@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 
-
 <PropertyList>
 	<path>tacan.ac</path>
 
@@ -68,6 +67,12 @@
 				<value>Y</value>
 			</equals>
 		</condition>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </emission>
 	</animation>
 
 	<animation>
@@ -81,21 +86,47 @@
 		</condition>
 	</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>go-lamp</object-name>
-		<condition>
-			<property>instrumentation/tacan/go-lamp</property>
-		</condition>
-	</animation>
+<animation>
+ <type>select</type> 
+ <object-name>go-lamp</object-name>
+ <condition>	  		
+    <property>instrumentation/tacan/mode</property>
+    <value>1</value>
+ </condition>
+</animation>
 
-	<animation>
+<animation>
+    <type>material</type>
+    <object-name>go-lamp</object-name>
+    <emission>
+      <property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+    </emission>
+    <texture>divs-instr.png</texture>
+  </animation>
+
+	<!--animation>
 		<type>select</type>
 		<object-name>nogo-lamp</object-name>
 		<condition>
-			<property>instrumentation/tacan/nogo-lamp</property>
+           <factor-prop>instrumentation/tacan/mode</factor-prop>
+        <value>0</value>
 		</condition>
-	</animation>
+	</animation-->
+
+<!--animation>
+    <type>material</type>
+    <object-name>nogo-lamp</object-name>
+    <emission>
+      <property>instrumentation/tacan/mode</property>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+    </emission>
+    <texture>divs-instr.png</texture>
+  </animation-->
 
 	<animation>
 		<type>rotate</type>
@@ -121,9 +152,9 @@
 	<animation>
 		<type>pick</type>
 		<visible>true</visible>
-		<object-name>mode-knob</object-name>
+		<object-name>hotspot-tcn-mode-left</object-name>
 		<action>
-			<button>1</button>
+			<button>0</button>
 			<repeatable>true</repeatable>
 			<interval-sec>0.3</interval-sec>
 			<binding>
@@ -137,7 +168,7 @@
 	<animation>
 		<type>pick</type>
 		<visible>true</visible>
-		<object-name>mode-knob</object-name>
+		<object-name>hotspot-tcn-mode-right</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>true</repeatable>
@@ -264,8 +295,6 @@
 		</action>
 	</animation>
 
-
-
 	<!-- lighting -->
 	<animation>
 		<object-name>mount</object-name>
@@ -321,30 +350,6 @@
       <blue>  0.9 </blue>
     </emission>
 	</animation>
-
-	<animation>
-		<object-name>go-lamp</object-name>
-		<object-name>nogo-lamp</object-name>
-		<type>material</type>
-    <emission>
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-      <red>   0.9 </red>
-      <green> 0.9 </green>
-      <blue>  0.9 </blue>
-    </emission>
-	</animation>
-
-	<!--animation>
-		<object-name>go-lamp-off</object-name>
-		<object-name>nogo-lamp-off</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.11</red>
-			<green>0.07</green>
-			<blue>0.04</blue>
-		</emission>
-	</animation-->
 
 	<animation>
 		<type>material</type>
@@ -412,13 +417,6 @@
 	<animation>
 		<object-name>tacan</object-name>
 		<type>noshadow</type>
-	</animation>
-
-
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>5</max-m>
 	</animation>
 
 </PropertyList>

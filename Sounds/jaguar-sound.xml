@@ -89,7 +89,7 @@
          </condition>
          <volume>
            <property>engines/engine[0]/n1</property>
-           <factor type="double">0.0025</factor>
+           <factor type="double">0.0035</factor>
          </volume>
          <pitch>
            <property>/engines/engine[0]/n2</property>
@@ -111,7 +111,7 @@
          </condition>
          <volume>
            <property>engines/engine[1]/n1</property>
-           <factor type="double">0.0025</factor>
+           <factor type="double">0.0035</factor>
          </volume>
          <pitch>
            <property>/engines/engine[1]/n2</property>
@@ -120,9 +120,63 @@
          </pitch>
        </engine>
 
-
+       <engine>
+         <name>airgen</name>
+         <path>Aircraft/Jaguar/Sounds/airgenint.wav</path>
+         <mode>looped</mode>
+         <condition>
+            <greater-than>
+              <property>engines/air-gen-n1</property>
+              <value>1</value>
+            </greater-than>
+            <property>sim/current-view/internal</property>          
+         </condition>
+         <volume>
+           <property>engines/air-gen-n1</property>
+           <factor type="double">0.0075</factor>
+           <offset>0.25</offset>
+           <min>0</min>
+           <max>2</max>
+         </volume>
+         <pitch>
+           <property>engines/air-gen-n1</property>
+           <factor>0.030</factor>
+           <offset>0</offset>
+           <min>0</min>
+           <max>2</max>
+         </pitch>
+       </engine>
 
         <!-- External -->
+
+       <engine>
+         <name>airgen-ext</name>
+         <path>Aircraft/Jaguar/Sounds/airgenint.wav</path>
+         <mode>looped</mode>
+         <condition>
+            <greater-than>
+              <property>engines/air-gen-n1</property>
+              <value>1</value>
+            </greater-than>
+           <not>
+             <property>/sim/current-view/internal</property>
+           </not>
+         </condition>
+         <volume>
+           <property>engines/air-gen-n1</property>
+           <factor type="double">0.0075</factor>
+           <offset>0.25</offset>
+           <min>0</min>
+           <max>2</max>
+         </volume>
+         <pitch>
+           <property>engines/air-gen-n1</property>
+           <factor>0.030</factor>
+           <offset>0</offset>
+           <min>0</min>
+           <max>2</max>
+         </pitch>
+       </engine>
 
        <engine>
          <name>turbine-0</name>
@@ -214,7 +268,7 @@
         </orientation>
         <volume>
          <property>engines/engine[0]/n1</property>
-         <factor>0.014</factor>
+         <factor>0.025</factor>
          <offset>-0.45</offset>
         </volume>
         <reference-dist>20</reference-dist>
@@ -247,7 +301,7 @@
         </orientation>
         <volume>
          <property>engines/engine[1]/n2</property>
-         <factor>0.014</factor>
+         <factor>0.025</factor>
          <offset>-0.45</offset>
         </volume>
         <reference-dist>20</reference-dist>
@@ -277,7 +331,7 @@
         <property>engines/engine/thrust_lb</property>
         <factor>0.05</factor>       
         <min>0</min>
-        <max>6</max>
+        <max>8</max>
       </volume>
     </engine>
 	
@@ -294,7 +348,7 @@
       <property>engines/engine/thrust_lb</property>
       <volume>
         <property>engines/engine/thrust_lb</property>
-        <factor>0.0003</factor>         
+        <factor>0.0006</factor>         
         <min>0</min>
         <max>1</max>
       </volume>		
@@ -314,7 +368,7 @@
         <property>engines/engine[0]/augmentation</property>
         <factor>2</factor>
         <min>0</min>
-        <max>4</max>
+        <max>1</max>
       </volume>
       <orientation>
         <x>1</x>
@@ -340,7 +394,7 @@
         <property>engines/engine[1]/augmentation</property>
         <factor>2</factor>
         <min>0</min>
-        <max>4</max>
+        <max>1</max>
       </volume>
       <orientation>
         <x>1</x>
@@ -424,7 +478,7 @@
 			<path>Aircraft/Jaguar/Sounds/gear-transit-internal.wav</path>
 			<property>/gear/gear/position-norm</property>
 			<volume>
-				<factor>0.5</factor>
+				<factor>0.7</factor>
 			</volume>
 			<pitch>
 				<internal>dt_play</internal>
@@ -443,7 +497,7 @@
 				</equals>
 			</condition>
 			<volume>
-				<factor>0.5</factor>
+				<factor>0.6</factor>
 			</volume>
 		</gear>
 
@@ -457,7 +511,7 @@
 				</equals>
 			</condition>
 			<volume>
-				<factor>0.5</factor>
+				<factor>0.7</factor>
 			</volume>
 		</gear>
 
@@ -644,11 +698,11 @@
       <path>Aircraft/Jaguar/Sounds/flap.wav</path>
       <property>/surface-positions/flap-pos-norm</property>
             <pitch>
-                <offset>0.55</offset>
+                <offset>0.45</offset>
                 <factor>-0.25</factor>
             </pitch>
       <volume>
-        <max>0.75</max>
+        <max>0.45</max>
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -660,7 +714,7 @@
       <path>Aircraft/Jaguar/Sounds/flap.wav</path>
       <property>fdm/jsbsim/fcs/slats-deg</property>
       <volume>
-        <max>0.45</max>
+        <max>0.22</max>
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -672,7 +726,7 @@
       <path>Aircraft/Jaguar/Sounds/flap.wav</path>
       <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
       <volume>
-        <max>0.30</max>
+        <max>0.35</max>
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -686,13 +740,13 @@
             <condition>
                 <property>sim/current-view/internal</property>
                 <greater-than>
-                    <property>fdm/jsbsim/fcs/speedbrake-pos-norm</property>
-                    <value>0.5</value>
+                    <property>fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
+                    <value>0</value>
                 </greater-than>
             </condition>
             <volume>
                 <property>velocities/airspeed-kt</property>
-                <factor>0.001</factor>
+                <factor>0.050</factor>
             </volume>
     </speedbrakes-wind>
 
@@ -701,7 +755,7 @@
       <mode>looped</mode>
       <path>Aircraft/Jaguar/Sounds/gunfire.wav</path>
       <condition>
-        <property>controls/armament/trigger</property>
+        <property>controls/armament/trigger-gun</property>
         <property>ai/submodels/submodel/count</property>
       </condition>
       <volume>
@@ -711,6 +765,52 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </guns>
+    
+    <lock-tone>
+      <name>aim-9-signal</name>
+      <mode>looped</mode>
+      <type>avionics</type>
+      <path>Aircraft/Jaguar/Sounds/aim-9-growl.wav</path>
+      <condition>
+        <property>payload/armament/aim-9/sound-on-off</property>
+      </condition>
+      <pitch>
+        <property>payload/armament/aim-9/sound-volume</property>
+        <factor>1.00</factor>
+        <offset>1.60</offset>
+        <min>0</min>
+        <max>2</max>
+      </pitch>
+      <volume>
+        <property>payload/armament/aim-9/sound-volume</property>
+      </volume>
+      <volume>
+        <property>sim/current-view/internal</property>
+      </volume>
+    </lock-tone>
+
+ <lock-tone>
+      <name>R550-signal</name>
+      <mode>looped</mode>
+      <type>avionics</type>
+      <path>Aircraft/Jaguar/Sounds/aim-9-growl.wav</path>
+      <condition>
+        <property>payload/armament/majic/sound-on-off</property>
+      </condition>
+      <pitch>
+        <property>payload/armament/majic/sound-volume</property>
+        <factor>1.00</factor>
+        <offset>1.60</offset>
+        <min>0</min>
+        <max>2</max>
+      </pitch>
+      <volume>
+        <property>payload/armament/majic/sound-volume</property>
+      </volume>
+      <volume>
+        <property>sim/current-view/internal</property>
+      </volume>
+    </lock-tone>
 
       <stall>
         <name>stall</name>
@@ -847,6 +947,7 @@
 
 
 
+<!--  
 	<voice>
   <name>Geforce-breath-vox</name>
   <path>Aircraft/Jaguar/Sounds/Geforce.wav</path>
@@ -873,7 +974,7 @@
 <volume>
 <factor>0.9</factor>
 </volume>
- </voice>
+ </voice> -->
 
   <!-- 
      <canopy>

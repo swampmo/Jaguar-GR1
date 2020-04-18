@@ -68,7 +68,6 @@
 		</axis>
 	</animation>
 
-
 	<!-- lighting -->
 
 	<animation>
@@ -157,12 +156,6 @@
       <green> 0.9 </green>
       <blue>  0.9 </blue>
     </emission>
-	</animation>
-
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>50</max-m>
 	</animation>
 
 </PropertyList>

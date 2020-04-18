@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
 
-
-
 <PropertyList>
 
 	<path>bomb.ac</path>
@@ -10,7 +8,6 @@
  <animation>
   <enable-hot type="bool">false</enable-hot>
  </animation>
-
 
  <animation>
   <type>select</type>
@@ -31,14 +28,6 @@
      <property>fdm/jsbsim/systems/armament/station1/released</property>
    </not>
   </condition>
- </animation>
-
-
- <!-- *** LoD *** -->
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>12000</max-m>
  </animation>
 
 </PropertyList>

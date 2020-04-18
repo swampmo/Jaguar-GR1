@@ -11,6 +11,8 @@
        <object-name>Refuel</object-name>
       <object-name>mount-g</object-name>
      <object-name>mount-r</object-name>
+      <object-name>contact-label</object-name>
+     <object-name>deployed-label</object-name>
     </animation>
 
  <animation>
@@ -18,6 +20,8 @@
     <object-name>Refuel</object-name>
     <object-name>mount-g</object-name>
       <object-name>mount-r</object-name>
+      <object-name>contact-label</object-name>
+     <object-name>deployed-label</object-name>
        <emission>
          <red> 1 </red>
         <green>1 </green>
@@ -30,7 +34,7 @@
   <animation>
     <type>translate</type>
     <object-name>Refuel</object-name>
-     <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
+     <property>/controls/switches/fuel-probe</property>
       <factor>-0.003</factor>
          <axis>
           <x> 1.0 </x>
@@ -48,7 +52,7 @@
   <type>select</type> 
    <object-name>Red-Light-on</object-name>
     <condition>	  		
-    <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
+    <property>fdm/jsbsim/systems/refuel/probe-armed</property>
    <value>1</value>
   </condition>
  </animation>
@@ -57,7 +61,29 @@
      <type>material</type>
       <object-name>Red-Light-on</object-name>
        <emission>
-        <factor-prop>fdm/jsbsim/systems/refuel-armed/fuel-probe</factor-prop>
+        <property>fdm/jsbsim/systems/refuel/probe-armed</property>
+        <value>1</value>
+           <red>1</red>
+          <green>1</green>
+        <blue>1</blue>
+     </emission>
+    <texture>nikkon.png</texture>
+  </animation>
+
+ <animation>
+  <type>select</type> 
+   <object-name>Green-Light-on</object-name>
+    <condition>	  		
+    <property>/systems/refuel/contact</property>
+   <value>1</value>
+  </condition>
+ </animation>
+
+  <animation>
+     <type>material</type>
+      <object-name>Green-Light-on</object-name>
+       <emission>
+        <factor-prop>/systems/refuel/contact</factor-prop>
          <value>1</value>
            <red>1</red>
           <green>1</green>
@@ -69,17 +95,17 @@
 <!--#################################################" MMB Adjustment ############################################" -->
 
     <animation>
-     <type>pick</type>
-       <object-name>Refuel</object-name>
-        <factor>0.002</factor>
-         <action>
-          <button>0</button>
-            <binding>
-             <command>property-toggle</command>
-               <property>fdm/jsbsim/systems/refuel-armed/fuel-probe</property>
-               </binding>
-             <binding>
-            <command>property-toggle</command>
+      <type>pick</type>
+      <object-name>Refuel</object-name>
+      <factor>0.002</factor>
+      <action>
+        <button>0</button>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/fuel-probe</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
           <property>sim/sound/click</property>
         </binding>
       </action>

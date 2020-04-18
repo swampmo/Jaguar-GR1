@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 
-<!-- McDonnell Douglas F-15 Autoflight System -->
-<!-- (c) 2018 Joshua Davidson (it0uchpods) -->
+<!-- SEPECAT Jaguar Autoflight System -->
+<!-- based on F-15 autoflight, original Jaguar version by and (c) 2018 Joshua Davidson -->
+<!-- revised / adjusted for Jaguar : 2020 Richard Harrison -->
 
 <system name="autoflight">
 	
@@ -15,12 +16,15 @@
 	<property value="0">autoflight/input/vs-active</property>
 	<property value="0">autoflight/pitch/vs/pid</property>
 	
-	<property value="0">autoflight/roll/p-gain</property>
-	<property value="0">autoflight/roll/i-gain</property>
-	<property value="0">autoflight/roll/d-gain</property>
-	<property value="0">autoflight/pitch/p-gain</property>
-	<property value="0">autoflight/pitch/i-gain</property>
-	<property value="0">autoflight/pitch/d-gain</property>
+	<property value="3.5">autoflight/roll/heading/p-gain</property>
+	<property value="0.0">autoflight/roll/heading/i-gain</property>
+	<property value="-1.0">autoflight/roll/p-gain</property>		
+	<property value="-0.0">autoflight/roll/i-gain</property>		
+	<property value="-0.0">autoflight/roll/d-gain</property>		
+
+	<property value="3">autoflight/pitch/p-gain</property>
+	<property value="0.000010">autoflight/pitch/i-gain</property>
+	<property value="0.000001">autoflight/pitch/d-gain</property>
 	
 	<channel name="Autoflight: Logic">
 		
@@ -211,7 +215,8 @@
 	
 	</channel>
 	
-	<channel name="Autoflight: Drivers">
+
+<channel name="Autoflight: Drivers">
 		
 		<!-- HDG SEL -->
 		
@@ -222,35 +227,6 @@
 				autoflight/input/hdg-active eq 1
 			</test>
 		</switch>
-		
-		<fcs_function name="autoflight/roll/heading/p-gain">
-			<function>
-				<table>
-					<independentVar lookup="row">velocities/vc-kts</independentVar>
-					<independentVar lookup="column">autoflight/roll/gain-switch</independentVar>
-					<tableData>
-						     0    1  
-						200  1.8  0.0
-						600  3.7  0.0
-						950  4.1  0.0
-					</tableData>
-				</table>
-			</function>
-		</fcs_function>
-		
-		<fcs_function name="autoflight/roll/heading/i-gain">
-			<function>
-				<table>
-					<independentVar lookup="row">velocities/vc-kts</independentVar>
-					<independentVar lookup="column">autoflight/roll/gain-switch</independentVar>
-					<tableData>
-						     0      1  
-						250  0.005  0.000
-						950  0.010  0.000
-					</tableData>
-				</table>
-			</function>
-		</fcs_function>
 		
 		<fcs_function name="autoflight/roll/heading/bank-max">
 			<function>
@@ -476,54 +452,6 @@
 			<input>-autoflight/roll/roll-rate-p</input>
 		</summer>
 		
-		<fcs_function name="autoflight/roll/p-gain">
-			<function>
-				<table>
-					<independentVar lookup="row">velocities/vc-kts</independentVar>
-					<independentVar lookup="column">autoflight/output/roll-master</independentVar>
-					<tableData>
-						     0    1  
-						200  0.0 -6.5
-						320  0.0 -3.6
-						600  0.0 -2.1
-						950  0.0 -1.1
-					</tableData>
-				</table>
-			</function>
-		</fcs_function>
-		
-		<fcs_function name="autoflight/roll/i-gain">
-			<function>
-				<table>
-					<independentVar lookup="row">velocities/vc-kts</independentVar>
-					<independentVar lookup="column">autoflight/output/roll-master</independentVar>
-					<tableData>
-						     0    1  
-						200  0.0 -0.7
-						320  0.0 -0.5
-						600  0.0 -0.4
-						950  0.0 -0.2
-					</tableData>
-				</table>
-			</function>
-		</fcs_function>
-		
-		<fcs_function name="autoflight/roll/d-gain">
-			<function>
-				<table>
-					<independentVar lookup="row">velocities/vc-kts</independentVar>
-					<independentVar lookup="column">autoflight/output/roll-master</independentVar>
-					<tableData>
-						     0     1  
-						200  0.00 -0.20
-						320  0.00 -0.10
-						600  0.00 -0.07
-						950  0.00 -0.03
-					</tableData>
-				</table>
-			</function>
-		</fcs_function>
-		
 		<switch name="autoflight/roll/trigger">
 			<default value="0"/>
 			<test value="-1">
@@ -721,7 +649,7 @@
 			<input>-autoflight/pitch/pitch-rate-p</input>
 		</summer>
 		
-		<fcs_function name="autoflight/pitch/p-gain">
+		<!-- <fcs_function name="autoflight/pitch/p-gain">
 			<function>
 				<table>
 					<independentVar lookup="row">velocities/vc-kts</independentVar>
@@ -768,7 +696,7 @@
 				</table>
 			</function>
 		</fcs_function>
-		
+		 -->
 		<switch name="autoflight/pitch/trigger">
 			<default value="0"/>
 			<test value="-1">
@@ -816,14 +744,61 @@
 	</channel>
 	
 	<channel name="Control Ties">
-		
-		<switch name="fcs/stick-pitch">
+
+		<!-- pilot stick input; need to include trim as this will then be adjusted for position based on force -->
+		<fcs_function name="fcs/stick-pitch">
 			<default value="0"/>
-			<test value="fcs/elevator-cmd-norm">
-				autoflight/input/pitch-switch ne 1
-			</test>
-		</switch>
-		
+			<function>
+				<ifthen>
+					<nq>
+						<property>autoflight/input/pitch-switch</property>
+						<value>1</value>
+					</nq>
+					<sum>
+						<property>fcs/pitch-trim-cmd-norm</property>
+						<property>fcs/elevator-cmd-norm</property>
+					</sum>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+
+		<!-- Stick position simulation; AJAX gearing simulation and Ricahrd's standard force to position simulation -->
+		<fcs_function name="fcs/stick-pitch-scheduled">
+			<description>position adjusted for position instead of force and geared for high speed operations.
+				simulation of the AJAX unit loading.
+			</description>
+			<function>
+				<product>
+					<!-- Simulation of applied force: convert to position; based on F-15 data -->
+					<table>
+						<independentVar lookup="row">fcs/stick-pitch</independentVar>
+						<independentVar lookup="column">velocities/vc-kts</independentVar>
+						<tableData>
+							    	0   	300
+						-1.000	-1.0000	-1.0000
+						-0.188	-0.0673	-0.0673
+						-0.001	 0.0000	 0.0000
+						 0.003	 0.0000	 0.0000
+						 0.351	 0.1964	 0.1964
+						 1.000	 1.0000	 1.0000
+					</tableData>
+					</table>
+					<!-- AJAX gearing -->
+					<table>
+						<independentVar lookup="row">velocities/vc-kts</independentVar>
+						<tableData>
+							200	1.00000
+							300	0.98392
+							400	0.68021
+							500	0.44357
+							600	0.45406
+						</tableData>	
+					</table>
+				</product>
+			</function>
+		</fcs_function>
+
 		<switch name="fcs/css-pitch">
 			<default value="0"/>
 			<test logic="AND" value="autoflight/ss/elevator-norm">
@@ -833,14 +808,15 @@
 		</switch>
 		
 		<summer name="fcs/ap-pitch-cmd-norm">
-			<input>fcs/stick-pitch</input>
+			<input>fcs/stick-pitch-scheduled</input>
+			<input>sas/pitch-autotrim-offset</input>
 			<input>fcs/css-pitch</input>
 			<input>autoflight/pitch/pitch-rate-demand</input>
 		</summer>
 		
 		<switch name="fcs/stick-roll">
 			<default value="0"/>
-			<test value="fcs/aileron-cmd-norm">
+			<test value="sas/roll-cmd-output">
 				autoflight/input/roll-switch ne 1
 			</test>
 		</switch>

@@ -5,23 +5,6 @@
   <path>chronograph.ac</path>
 
   <animation>
-    <object-name>mount</object-name>
-    <object-name>bkg</object-name>
-    <object-name>knob</object-name>
-    <object-name>button</object-name>
-    <object-name>disk</object-name>
-    <object-name>face</object-name>
-    <object-name>HourHand</object-name>
-    <object-name>MinuteHand</object-name>
-    <object-name>SecondHand</object-name>
-    <object-name>ElapsedMinutesHand</object-name>
-    <object-name>time-offset-left</object-name>
-    <object-name>time-offset-right</object-name>
-    <object-name>chronometer-button</object-name>
-    <object-name>vitre</object-name>
-  </animation>
-
-  <animation>
     <type>noshadow</type>
     <object-name>vitre</object-name>
   </animation>
@@ -48,16 +31,6 @@
     </emission>
   </animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>clock</object-name>
-    <condition>
-      <equals>
-        <property>sim/current-view/name</property>
-        <value>Cockpit View</value>
-      </equals>
-    </condition>
-  </animation>
 
   <animation> 
     <type>rotate</type>
@@ -109,69 +82,18 @@
 
   <!-- Clock Setting Knob -->
   <animation>
-    <name>time-offset-left-fine</name>
-    <type>pick</type>
-    <visible>true</visible>
-    <object-name>time-offset-left</object-name>
+    <type>knob</type>
+    <object-name>time-adjust-knob</object-name>
+    <property>instrumentation/clock/offset-sec</property>
+    <factor>0</factor>
+    <axis>
+      <object-name>time-adjust-knob-axis</object-name>
+    </axis>
     <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.2</interval-sec>
       <binding>
         <command>property-adjust</command>
         <property>instrumentation/clock/offset-sec</property>
-        <step>-60</step>
-      </binding>
-    </action>
-  </animation>
-
-	<animation>
-		<name>time-offset-left-hours</name>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>time-offset-left</object-name>
-		<action>
-			<button>1</button>
-			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/clock/offset-sec</property>
-				<step>-3600</step>
-			</binding>
-		</action>
-	</animation>
-
-  <animation>
-    <name>time-offset-right-fine</name>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>time-offset-right</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.2</interval-sec>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/clock/offset-sec</property>
-        <step>60</step>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <name>time-offset-right-hours</name>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>time-offset-right</object-name>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.2</interval-sec>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/clock/offset-sec</property>
-        <step>3600</step>
+        <factor>60</factor>
       </binding>
     </action>
   </animation>
@@ -180,7 +102,7 @@
   <animation>
     <name>start-stop-reset</name>
     <type>pick</type>
-    <visible>false</visible>
+    <visible>true</visible>
     <object-name>chronometer-button</object-name>
     <action>
       <button>0</button>

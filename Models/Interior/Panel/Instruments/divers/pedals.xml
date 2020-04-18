@@ -7,11 +7,6 @@
         <rudder>/aircraft/surface-positions/rudder-pos-norm</rudder>
     </params>
 
-    <animation>
-        <type>range</type>
-        <min-m>0</min-m>
-        <max-m>25</max-m>
-    </animation>
  <animation>
   <type>translate</type>
   <object-name>LH.Pedal</object-name>
@@ -109,6 +104,8 @@
   <object-name>LH.Hanger</object-name>
   <object-name>LH.Pedal</object-name>
   <object-name>RH.Pedal</object-name>
+  <object-name>LH.Pivot</object-name>
+  <object-name>RH.Pivot</object-name>
   <property>controls/pedals/fore-aft-adjust</property>
   <factor>-0.05</factor>
   <axis>
@@ -119,5 +116,4 @@
  </animation>
  
 </PropertyList>
-
 

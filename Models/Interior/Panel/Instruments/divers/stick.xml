@@ -10,7 +10,7 @@
 		<object-name>Jag-FS</object-name>
 		<object-name>Trim</object-name>
 		<object-name>Toggle</object-name>
-		<object-name>Left-Button</object-name>
+		<object-name>NWS</object-name>
 		<object-name>Low-Button</object-name>
 		<object-name>Pivot</object-name>
 		<object-name>Wings</object-name>
@@ -32,7 +32,7 @@
 		<object-name>Jag-FS</object-name>
 		<object-name>Trim</object-name>
 		<object-name>Toggle</object-name>
-		<object-name>Left-Button</object-name>
+		<object-name>NWS</object-name>
 		<object-name>Low-Button</object-name>
 		<object-name>Pivot</object-name>
 		<object-name>Wings</object-name>
@@ -55,7 +55,7 @@
 		<object-name>Jag-FS</object-name>
 		<object-name>Trim</object-name>
 		<object-name>Toggle</object-name>
-		<object-name>Left-Button</object-name>
+		<object-name>NWS</object-name>
 		<object-name>Low-Button</object-name>
 		<object-name>Pivot</object-name>
 		<object-name>Wings</object-name>
@@ -72,6 +72,24 @@
   </axis>
  </animation>
 
+ <animation>
+      <type>translate</type>
+		<object-name>NWS</object-name>
+    <property>controls/gear/nose-wheel-steering</property>
+     <factor>0.002</factor>
+       <offset-m>0</offset-m>
+		<center>
+			<x-m> 0.01555</x-m>
+			<y-m>-0.05334</y-m>
+			<z-m> 0.45418</z-m>
+        </center>
+        <axis>
+       <x>-1</x>
+      <y>-1</y>
+     <z>0</z>
+   </axis>
+  </animation>
+
   <animation>
     <type>pick</type>
     <visible>true</visible>
@@ -81,15 +99,27 @@
       <binding>
         <command>property-toggle</command>
   <property>controls/Jag-FS/fore-aft-adjust</property>
-  <time-sec>0.05</time-sec>
       </binding>
     </action>
   </animation>
 
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+		<object-name>NWS</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+    <property>controls/gear/nose-wheel-steering</property>
+      </binding>
+    </action>
+  </animation>
 
 	<!-- Lighting -->
 	<animation> 
 		<object-name>Jag-FS</object-name>
+		<object-name>NWS</object-name>
          <object-name>Boot</object-name>
 		<type>material</type>
     <emission>
@@ -98,13 +128,6 @@
       <blue>  0.9 </blue>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
     </emission>
-	</animation>
-
-
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>35</max-m>
 	</animation>
 
 </PropertyList>

@@ -2,54 +2,67 @@
 <PropertyList>
 
 	<path>optical-sight.ac</path>
-
-	<animation>
-		<type>select</type>
-		<object-name>L-fire</object-name>
-		<condition>
-			<property>sim/model/A-6E/instrumentation/warning-lights/L-fire</property>
-		</condition>
-	</animation> 
-
-	<animation>
-		<type>select</type>
-		<object-name>master-caution</object-name>
-		<condition>
-			<property>sim/model/A-6E/instrumentation/warning-lights/master-caution</property>
-		</condition>
-	</animation> 
-
-	<animation>
-		<type>select</type>
-		<object-name>R-fire</object-name>
-		<condition>
-			<property>sim/model/A-6E/instrumentation/warning-lights/R-fire</property>
-		</condition>
-	</animation> 
+	
+	<!--<effect>
+		<inherits-from>Aircraft/Jaguar/Models/Effects/hud/hud</inherits-from>
+		<object-name>hud</object-name>
+	</effect>-->
+	
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>hud</object-name>
+	</effect>
+	
 
 	<!-- lighting -->
 
-	<animation> 
+  <animation>
+   <type>material</type>
+    <object-name>0-6</object-name>
+    <object-name>A/A</object-name>
+    <object-name>A/G</object-name>
+    <object-name>CLR</object-name>
+    <object-name>CUE</object-name>
+    <object-name>ENT</object-name>
+    <object-name>GENVV</object-name>
+		<object-name>GPS</object-name>
+		<object-name>GS9</object-name>
+		<object-name>HUD</object-name>
+    <object-name>HUD-knob-low</object-name>
+    <object-name>HUD-on-off</object-name>
+    <object-name>HUD-top-knob</object-name>
+    <object-name>HUD-sw-plate</object-name>
+    <object-name>LGB</object-name>
+    <object-name>Light</object-name>
+		<object-name>MBS</object-name>
+		<object-name>MCH</object-name>
+		<object-name>Q</object-name>
+    <object-name>RAD2</object-name>
+    <object-name>REV</object-name>
+    <object-name>Safety</object-name>
+    <object-name>T1</object-name>
+    <object-name>T2</object-name>
+    <object-name>T3</object-name>
+        <object-name>TEL7</object-name>
+        <object-name>W/V4</object-name>
+        <object-name>ZT8</object-name>
+        <object-name>^5</object-name>
+        <object-name>bos3</object-name>
+        <object-name>max</object-name>
+        <object-name>greenbulbs</object-name>
+        <object-name>°</object-name>
 		<object-name>optical-device</object-name>
-		<type>material</type>
     <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
       <red>   0.9 </red>
       <green> 0.9 </green>
       <blue>  0.9 </blue>
     </emission>
-	</animation>
+  </animation>
 
 	<animation>
-		<object-name>optical-sight</object-name>
+		<object-name>hud</object-name>
 		<type>noshadow</type>
-	</animation>
-
-
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>35</max-m>
 	</animation>
 
 </PropertyList>

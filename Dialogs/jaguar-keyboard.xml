@@ -6,17 +6,50 @@
     <name>e</name>
     <desc>Guns</desc>
     <binding>
-      <command>nasal</command>
-      <script>guns.fire_MG()</script>
+      <command>property-assign</command>
+      <property>controls/armament/trigger</property>
+      <value>1</value>
     </binding>
     <mod-up>
       <binding>
-        <command>nasal</command>
-        <script>guns.stop_MG()</script>
+        <command>property-assign</command>
+        <property>controls/armament/trigger</property>
+        <value>0</value>
       </binding>
     </mod-up>
   </key>
-
+  <key n="109">
+      <name>m</name>
+      <desc>Masterarm</desc>
+      <binding>
+          <command>nasal</command>
+          <script><![CDATA[
+                  setprop("controls/armament/master-arm",!getprop("controls/armament/master-arm"));
+                  screen.log.write("Master-arm "~(getprop("controls/armament/master-arm")==0?"OFF":"ON"), 0.5, 0.5, 1);
+              
+          ]]></script>
+      </binding>
+  </key>
+<key n="119">
+                <name>w</name>
+                <desc>Cycle Weapon Type</desc>
+                <binding n="2">
+                    <command>nasal</command>
+                    <condition>
+                            <and>
+                            <not-equals>
+                                <property>sim/current-view/name</property>
+                                <value>Walk View</value>
+                            </not-equals>
+                            <not-equals>
+                                <property>sim/current-view/name</property>
+                                <value>Walker Orbit View</value>
+                            </not-equals>
+                            </and>
+                     </condition>
+                    <script>pylons.fcs.cycleLoadedWeapon();</script>
+                </binding>
+            </key>
    <key n="100">
     <name>d</name>
     <desc>canopy</desc>
@@ -74,14 +107,7 @@
     </binding>
   </key>
  
-   <key n="9">
-     <name>Ctrl-I</name>
-     <desc>Show configuration dialog</desc>
-     <binding>
-       <command>nasal</command>
-       <script>formation.formation_dialog.toggle()</script>
-     </binding>
-   </key>
+
 
  <!--  <key n="76">
     <name>L</name>

@@ -10,8 +10,11 @@
     <object-name>Over-Ride-Switch</object-name>
     <object-name>Over-Ride-Nut</object-name>
     <object-name>Panel-Base</object-name>
+    <object-name>Red-Light</object-name>
+    <object-name>Red-Light-on</object-name>
     <object-name>Texture</object-name>
-    <object-name>Lens</object-name>
+    <object-name>lamp-Holder</object-name>
+    <object-name>Gear-Down</object-name>
 
   </animation>
       <animation>
@@ -22,7 +25,8 @@
     <object-name>Over-Ride-Nut</object-name>
     <object-name>Panel-Base</object-name>
     <object-name>Texture</object-name>
-    <object-name>Lens</object-name>
+    <object-name>lamp-Holder</object-name>
+    <object-name>Gear-Down</object-name>
         <emission>
          <red> 1 </red>
         <green>1 </green>
@@ -74,6 +78,28 @@
         <step>-0.1</step>
       </binding>
     </action>
+  </animation>
+
+ <animation>
+  <type>select</type> 
+   <object-name>Red-Light-on</object-name>
+    <condition>	  		
+       <property>controls/gear/gear-down</property>
+   <value>1</value>
+  </condition>
+ </animation>
+
+  <animation>
+     <type>material</type>
+      <object-name>Red-Light-on</object-name>
+       <emission>
+        <factor-prop>controls/gear/gear-down</factor-prop>
+         <value>1</value>
+           <red>1</red>
+          <green>1</green>
+        <blue>1</blue>
+     </emission>
+    <texture>nikkon.png</texture>
   </animation>
 
 </PropertyList>

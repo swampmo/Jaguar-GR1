@@ -5,34 +5,8 @@
   <path>flaps-slats-indicator.ac</path>
 
   <animation>
-    <object-name>mount</object-name>
-    <object-name>flaps-slats-indicator</object-name>
-		<object-name>slats-maneuver</object-name>
-		<object-name>nw-unsafe</object-name>
-		<object-name>flaps</object-name>
-		<object-name>lw-unsafe</object-name>
-		<object-name>sp-power-off</object-name>
-		<object-name>rw-unsafe</object-name>
-		<object-name>slats-extended</object-name>
-		<object-name>nw-down</object-name>
-		<object-name>lw-down</object-name>
-		<object-name>sp-full</object-name>
-		<object-name>rw-down</object-name>
-		<object-name>slats-in</object-name>
-		<object-name>slats-combat</object-name>
-		<object-name>nw-up</object-name>
-		<object-name>lw-up</object-name>
-		<object-name>sp-in</object-name>
-		<object-name>rw-up</object-name>
-		<object-name>sp-partial</object-name>
-		<object-name>autoSlat-frame</object-name>
-		<object-name>autoSlat-button</object-name>
-  </animation>
-
-  <animation>
     <type>material</type>
     <object-name>mount</object-name>
-    <object-name>flaps-slats-indicator</object-name>
 		<object-name>slats-maneuver</object-name>
 		<object-name>nw-unsafe</object-name>
 		<object-name>flaps</object-name>
@@ -59,16 +33,6 @@
     </emission>
   </animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>flaps-slats-indicator</object-name>
-    <condition>
-      <equals>
-        <property>sim/current-view/name</property>
-        <value>Cockpit View</value>
-      </equals>
-    </condition>
-  </animation>
 
 	<!-- Flaps -->
 	<animation>
@@ -94,10 +58,10 @@
 		<type>select</type>
 		<object-name>slats-in</object-name>
 		<condition>
-			<equals>
-				<property>fdm/jsbsim/fcs/slats-pos-norm</property>
-				<value>0</value>
-			</equals>
+			<less-than>
+				<property>fdm/jsbsim/fcs/slats-deg</property>
+				<value>0.0001</value>
+			</less-than>
 		</condition>
 	</animation>
 
@@ -105,10 +69,16 @@
 		<type>select</type>
 		<object-name>slats-combat</object-name>
 		<condition>
-			<equals>
-				<property>fdm/jsbsim/fcs/slats-deg</property>
-				<value>8.993</value>
-			</equals>
+            <and>
+                <greater-than>
+                    <property>fdm/jsbsim/fcs/slats-deg</property>
+                    <value>0</value>
+                </greater-than>
+                <less-than>
+                    <property>fdm/jsbsim/fcs/slats-deg</property>
+                    <value>20</value>
+                </less-than>
+            </and>
 		</condition>
 	</animation>
 
@@ -116,11 +86,11 @@
 		<type>select</type>
 		<object-name>slats-extended</object-name>
 		<condition>
-			<equals>
-				<property>fdm/jsbsim/fcs/slats-control</property>
-				<value>23</value>
-			</equals>
-		</condition>
+            <greater-than>
+                <property>fdm/jsbsim/fcs/slats-deg</property>
+                <value>20</value>
+            </greater-than>
+        </condition>
 	</animation>
 
 	<!-- Landing Gear -->
@@ -228,7 +198,7 @@
 		</condition>
 	</animation>
 
-	
+	<!--
 	<animation>
 		<type>pick</type>	
 		<object-name>autoSlat-button</object-name>
@@ -241,14 +211,14 @@
 			</binding>
 		</action>
 	</animation>
-
+-->
 	<animation>
 		<type>material</type>
 		<object-name>autoSlat-button</object-name>
 		<emission>
-			<factor-prop>controls/flight/slats</factor-prop>
+			<factor-prop>fdm/jsbsim/sas/autoslat-active</factor-prop>
 			<red>   1 </red>
-			 <green>  1</green>
+			<green>  1</green>
 			<blue>  1</blue>
 		</emission>
 	</animation>

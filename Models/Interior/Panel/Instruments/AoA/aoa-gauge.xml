@@ -1,100 +1,106 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 
 <PropertyList>
 
 	<path>aoa-gauge.ac</path>
 
 	<animation>
-		<type>select</type>
-		<object-name>aoa-gauge</object-name>
-		<condition>
-			<equals>
-				<property>sim/current-view/name</property>
-				<value>Cockpit View</value>
-			</equals>
-		</condition>
-	</animation>
-
-	<animation>
 		<type>textranslate</type>
-		<object-name>tape</object-name>
-        <property>orientation/alpha-indicated-deg</property>
-        <interpolation>
-				<entry><ind>0</ind><dep>0</dep></entry> <!--clamp -->
-				<entry><ind>30.0</ind><dep>0.5</dep></entry> <!--clamp -->
+		<object-name>aoa-tape</object-name>
+		<condition>
+			<greater-than>
+				<property>fdm/jsbsim/systems/electrical/bus/ac-busbar-ess</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+		<property>instrumentation/alpha-gauge/alpha-indicated-deg</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>30</ind>
+				<dep>0.463</dep>
+			</entry>
 		</interpolation>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
+			<z>0</z>
 		</axis>
 	</animation>
-
+	<animation>
+		<type>select</type>
+		<object-name>aoa-flag</object-name>
+		<condition>
+			<less-than-equals>
+				<property>fdm/jsbsim/systems/electrical/bus/ac-busbar-ess</property>
+				<value>0</value>
+			</less-than-equals>
+		</condition>
+	</animation>
 
 	<!--lighting -->
 	<animation>
-		<object-name>mount</object-name>
+		<object-name>aoa-gauge</object-name>
+		<object-name>aoa-flag</object-name>
 		<type>material</type>
-        <condition>
-            <greater-than>
-                <property>/fdm/jsbsim/systems/electrics/ac-essential-bus1</property>
-                <value>0</value>
-            </greater-than>
-            <not>
-                <property>sim/rendering/rembrandt/enabled</property>
-            </not>
-        </condition>
-    <emission>
-      <red>   0.9 </red>
-      <green> 0.9 </green>
-      <blue>  0.9 </blue>
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-    </emission>
+		<condition>
+			<greater-than>
+				<property>fdm/jsbsim/systems/electrical/bus/ac-busbar-ess</property>
+				<value>0</value>
+			</greater-than>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
+			<red>   0.9 </red>
+			<green> 0.9 </green>
+			<blue>  0.9 </blue>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+		</emission>
 	</animation>
 
-	<animation>
-		<object-name>face</object-name> 
+	<!-- <animation>
+		<object-name>face</object-name>
 		<type>material</type>
-        <condition>
-            <greater-than>
-                <property>/fdm/jsbsim/systems/electrics/ac-essential-bus1</property>
-                <value>0</value>
-            </greater-than>
-            <not>
-                <property>sim/rendering/rembrandt/enabled</property>
-            </not>
-        </condition>
-        <emission> 
+		<condition>
+			<greater-than>
+				<property>fdm/jsbsim/systems/electrical/bus/ac-busbar-ess</property>
+				<value>0</value>
+			</greater-than>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
 			<green>0.24</green>
 			<blue>0.10</blue>
 		</emission>
 	</animation>
-
+ -->
 	<animation>
-		<object-name>tape</object-name> 
+		<object-name>aoa-tape</object-name>
 		<type>material</type>
-        <condition>
-            <greater-than>
-                <property>/fdm/jsbsim/systems/electrics/ac-essential-bus1</property>
-                <value>0</value>
-            </greater-than>
-            <not>
-                <property>sim/rendering/rembrandt/enabled</property>
-            </not>
-        </condition>
-        <emission> 
+		<condition>
+			<greater-than>
+				<property>fdm/jsbsim/systems/electrical/bus/ac-busbar-ess</property>
+				<value>0</value>
+			</greater-than>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
 			<green>0.24</green>
 			<blue>0.10</blue>
 		</emission>
-	</animation>
-
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>35</max-m>
 	</animation>
 
 </PropertyList>

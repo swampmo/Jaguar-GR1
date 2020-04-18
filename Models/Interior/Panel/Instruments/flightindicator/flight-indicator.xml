@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
 
-
-
 <PropertyList>
 	<path>flight-indicator.ac</path>
 
@@ -78,7 +76,6 @@
 		</condition>
 	</animation>
 
-
 	<animation> 
 		<type>select</type>
 		<object-name>NW-up</object-name>
@@ -142,8 +139,6 @@
 		</condition>
 	</animation>
 
-
-
 <!-- lighting -->
 
 	<animation> 
@@ -156,8 +151,6 @@
       <blue>  0.9 </blue>
     </emission>
 	</animation>
-
-
 
 	<animation> 
 		<object-name>flap-barberpole</object-name>
@@ -206,7 +199,6 @@
       <blue>  0.9 </blue>
     </emission>
 	</animation>
-
 
 	<animation> 
 		<object-name>stab-restricted</object-name>
@@ -337,16 +329,6 @@
 	<animation>
 		<object-name>flight-indicator</object-name>
 		<type>noshadow</type>
-	</animation>
-
-
-
-<!-- LOD -->
-
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>35</max-m>
 	</animation>
 
 </PropertyList>

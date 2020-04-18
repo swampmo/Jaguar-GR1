@@ -7,22 +7,35 @@
       <label>Jaguar GR1</label>
       <enabled type="bool">true</enabled>
       <item>
+        <label>Engine Start</label>
+        <binding>
+          <command>nasal</command>
+          <script>engines.quickstart()</script>
+        </binding>
+      </item>
+      <item>
         <label>Select Livery</label>
         <binding>
           <command>nasal</command>
           <script>aircraft.livery.dialog.toggle()</script>
         </binding>
       </item>
-<item n="1">
+      <item>
         <label>Reload Gun</label>
         <binding>
           <command>nasal</command>
-          <script>guns.reload_Cannon()</script>
+          <script>pylons.cannon_load();</script>
+        </binding>
+      </item>
+      <item>
+        <label>Misc</label>
+        <binding>
+          <command>dialog-show</command>
+          <dialog-name>stuff</dialog-name>
         </binding>
       </item>
 
-
-	 <item n="2">
+<!--	 <item>
         <label>No load</label>
         <binding>
           <command>nasal</command>
@@ -30,7 +43,7 @@
         </binding>
       </item>
 
-	  <item n="3">
+	  <item>
         <label>Ferry configuration</label>
         <binding>
           <command>nasal</command>
@@ -38,7 +51,7 @@
         </binding>
       </item>
 
-	  <item n="4">
+	  <item>
         <label>CAS Bombs</label>
         <binding>
           <command>nasal</command>
@@ -46,7 +59,7 @@
         </binding>
       </item>
 
-	<item n="5">
+	<item>
         <label>CAS Bombs - extended range</label>
         <binding>
           <command>nasal</command>
@@ -54,7 +67,7 @@
         </binding>
       </item>
 
-	  <item n="6">
+	  <item>
         <label>CAS LGB</label>
         <binding>
           <command>nasal</command>
@@ -62,7 +75,7 @@
         </binding>
       </item>
 
-	   <item n="7">
+	   <item>
         <label>CAS Multi mode</label>
         <binding>
           <command>nasal</command>
@@ -70,7 +83,7 @@
         </binding>
       </item>
 
-	  <item n="8">
+	  <item>
         <label>Anti Radiation</label>
         <binding>
           <command>nasal</command>
@@ -78,7 +91,7 @@
         </binding>
       </item>
 
-	  <item n="9">
+	  <item>
         <label>Anti Radiation. Extended range</label>
         <binding>
           <command>nasal</command>
@@ -86,7 +99,7 @@
         </binding>
       </item>
 
-	   <item n="10">
+	   <item>
         <label>Anti Ship</label>
         <binding>
           <command>nasal</command>
@@ -94,13 +107,13 @@
         </binding>
       </item>
 
-	   <item n="11">
+	   <item>
         <label>Anti Ship. Extended range</label>
         <binding>
           <command>nasal</command>
           <script>load.antishiplong()</script>
         </binding>
-      </item>
+      </item>-->
 	 </menu>
 
   </default>

@@ -3,15 +3,7 @@
 <PropertyList>
 
   <path>Full-panel.ac</path>
-
-  <animation>
-    <!-- Objets opaques -->
-    <object-name>panel</object-name>
-
-    <!-- Objets transparents -->
-  </animation>
-
-  
+ 
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Radar/Radar/A-10-rwr.xml</path>
     <offsets>
@@ -48,7 +40,7 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/Arrest-Handle.xml</path>
     <offsets>
       <x-m> -0.050 </x-m>
-      <y-m> -0.018 </y-m>
+      <y-m> -0.012 </y-m>
       <z-m>  0.005 </z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
@@ -140,32 +132,6 @@
     </offsets>
   </model>
 
- <!-- engine outlets -->
- 
- <model>
-	 <name>engine_outlet_1</name>
-	 <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/engine_outlet_1.xml</path>
-	 
-	 <offsets>
-		 <x-m>-0.090</x-m>
-		 <y-m> 0.000</y-m>
-		 <z-m> 0.060</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>
- </model>
- 
- <model>
-	 <name>engine_outlet_2</name>
-	 <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/engine_outlet_2.xml</path>
-	 
-	 <offsets>
-		 <x-m>-0.090</x-m>
-		 <y-m> 0.960</y-m>
-		 <z-m> 0.060</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>
- </model>
-  
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/epr/eprL.xml</path>
     <offsets>
@@ -211,6 +177,16 @@
       <x-m> -3.362 </x-m>
       <y-m>  0.215 </y-m>
       <z-m>  0.090 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/AoA/aoa-gauge.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
@@ -433,11 +409,11 @@
     <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/PTR.xml</path>
     <offsets>
       <x-m> -0.140 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.090 </z-m> 
-    <pitch-deg>  0</pitch-deg>
-      <roll-deg> 0 </roll-deg>
-      <yaw-deg>  0 </yaw-deg>
+      <y-m> -0.025 </y-m>
+      <z-m>  0.045 </z-m> 
+    <pitch-deg> 0 </pitch-deg>
+     <roll-deg> 0 </roll-deg>
+      <yaw-deg> 0 </yaw-deg>
     </offsets>
   </model>
 
@@ -556,16 +532,6 @@
   </offsets>
  </model>
 
- <model> 
-  <path>Aircraft/Jaguar/Models/Interior/Panel/3D-Models/tailhook.xml</path>
-  <offsets>
-      <x-m>0.000 </x-m>
-      <y-m>0.000</y-m>
-      <z-m>0.000 </z-m>
-      <roll-deg>0</roll-deg>
-  </offsets>
- </model>
-
   <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Trim/trimelevator.xml</path>
     <offsets>
@@ -586,15 +552,15 @@
     </offsets>
   </model>
   
-  <!--model>
+  <model>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/ulp/ulp.xml</path>
     <offsets>
-      <x-m> -3.32 </x-m>
-      <y-m> 0 </y-m>
-      <z-m>  -0.02</z-m>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000</z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
-  </model-->
+  </model>
   
   <model>
     <name>vertspeed</name>

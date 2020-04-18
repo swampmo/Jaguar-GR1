@@ -80,6 +80,29 @@
     <object-name>TGT-amps-R</object-name>
     <object-name>TGT-nut-L</object-name>
     <object-name>TGT-nut-R</object-name>
+   <object-name>coll</object-name>
+    <object-name>nav</object-name>
+    <object-name>strobe</object-name>
+    <object-name>off-panel</object-name>
+    <object-name>on-panels</object-name>
+    <object-name>lp-cocks</object-name>
+    <object-name>lp-1</object-name>
+    <object-name>lp-2</object-name>
+    <object-name>eng</object-name>
+    <object-name>start</object-name>
+    <object-name>tgt</object-name>
+    <object-name>amp</object-name>
+    <object-name>air-valve</object-name>
+    <object-name>fuel-pumps</object-name>
+    <object-name>air-gen-start</object-name>
+    <object-name>eng-start</object-name>
+    <object-name>correct</object-name>
+    <object-name>rotation</object-name>
+    <object-name>cont-ign</object-name>
+    <object-name>Eng-1</object-name>
+    <object-name>Eng-2</object-name>
+    <object-name>gen</object-name>
+    <object-name>eng-ign</object-name>
     <emission>
       <factor-prop>/controls/lighting/instruments-norm</factor-prop>
             <red>1</red>
@@ -411,6 +434,7 @@
     <visible>true</visible>
     <object-name>air-gen-button</object-name>
     <object-name>air-gen-button-light</object-name>
+    <object-name>air-gen-start</object-name>
     <action>
       <button>0</button>
       <binding>

@@ -1,28 +1,27 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 
 <PropertyList>
 
 
- <animation>
-   <path>tailhook.ac</path>
-     <object-name>tailhook</object-name>
-   </animation>
+  <animation>
+    <path>tailhook.ac</path>
+  </animation>
 
   <animation>
     <type>rotate</type>
-   <object-name>tailhook</object-name>
-      <property>/fdm/jsbsim/gear/tailhook-pos-norm</property>
-       <factor>53</factor>
-         <axis>
-          <x>0</x>
-           <y>1</y>
-          <z>0</z>
-         </axis>
-        <center>
-       <x-m> 3.98247</x-m>
+    <object-name>TailHook</object-name>
+    <property>/fdm/jsbsim/gear/tailhook-pos-norm</property>
+    <factor>53</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m> 3.98247</x-m>
       <y-m> 0.1866</y-m>
-     <z-m>-1.00444</z-m>
-   </center>
+      <z-m>-1.00444</z-m>
+    </center>
   </animation>
 
- </PropertyList>
+</PropertyList>
