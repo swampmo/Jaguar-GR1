@@ -648,7 +648,7 @@ if(navStillOn) {
   <!-- Gauche -->
   <model>
    <name>AB_Flame 1</name>
-    <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Afterburner/AfterBurner.xml</path>
     <offsets>
       <x-m> 5.64314   </x-m>
       <y-m> 0.4935  </y-m>
@@ -658,7 +658,7 @@ if(navStillOn) {
 
   <model>
    <name>AB_Flame 2</name>
-   <path>Aircraft/Jaguar/Models/Effects/Afterburner/Afterburner.xml</path>
+   <path>Aircraft/Jaguar/Models/Effects/Afterburner/AfterBurner.xml</path>
    <offsets>
     <x-m>  5.64314  </x-m>
     <y-m> -0.4968 </y-m>
