@@ -290,7 +290,6 @@ var Radar = {
               airspeed:   "/velocities/airspeed-kt",
               target_spd: "/autopilot/settings/target-speed-kt",
               acc:        "/fdm/jsbsim/accelerations/udot-ft_sec2",
-              acc_yas:    "/fdm/yasim/accelerations/a-x",
               NavFreq:    "/instrumentation/nav/frequencies/selected-mhz",
               destRunway: "/autopilot/route-manager/destination/runway",
               destAirport:"/autopilot/route-manager/destination/airport",

@@ -104,7 +104,7 @@
 
  <propulsion>
 
-   <engine file="Adour804">
+   <engine file="Adour104">
     <location unit="M">
       <x>   4.85836 </x>
       <y>   0.476846 </y>
@@ -139,7 +139,7 @@
     </thruster>
   </engine>
 
-   <engine file="Adour804">
+   <engine file="Adour104">
     <location unit="M">
       <x>   4.85836 </x>
       <y>   -0.476846 </y>
