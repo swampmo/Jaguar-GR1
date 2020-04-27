@@ -285,8 +285,8 @@
       <float n="8" alias="/engines/engine[0]/augmentation" /> <!-- Reheat Left Engine -->
 	    <float n="9" alias="/engines/engine[1]/augmentation" /> <!-- Reheat Right Engine -->
       <float n="15" alias="/velocities/mach" /> <!-- Mach for Multiplayer Sound -->
-	    <float n="16" alias="/engines/engine[0]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
-	    <float n="17" alias="/engines/engine[1]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
+	    <float n="16" alias="/engines/engine[0]/thrust_lb" /> <!-- Thrust for Multiplayer Sound -->
+	    <float n="17" alias="/engines/engine[1]/thrust_lb" /> <!-- Thrust for Multiplayer Sound -->
       <float n="18" type="double" alias="/engines/afterburner-length[0]"/>
       <float n="19" type="double" alias="/engines/afterburner-length[1]"/>
       <float n="20" type="double" alias="/fdm/jsbsim/fcs/slats-deg"/>
