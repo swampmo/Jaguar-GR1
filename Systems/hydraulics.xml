@@ -150,7 +150,7 @@
 		<switch name="systems/hydraulics/bypass-1-valve">
 			<default value="0"/>
 			<test logic="AND" value="1">
-				propulsion/engine[0]/n1 lt 42
+				propulsion/engine[0]/n2 lt 42
 				/controls/hydraulics/bypass-1-switch eq 0
 			</test>
 			<test logic="OR" value="1">
@@ -161,7 +161,7 @@
 		<switch name="systems/hydraulics/bypass-2-valve">
 			<default value="0"/>
 			<test logic="AND" value="1">
-				propulsion/engine[1]/n1 lt 42
+				propulsion/engine[1]/n2 lt 42
 				/controls/hydraulics/bypass-2-switch eq 0
 			</test>
 			<test logic="OR" value="1">
@@ -192,12 +192,12 @@
 			<test logic="AND" value="1">
 				/controls/hydraulics/bypass-1-switch ge 0
 				/controls/hydraulics/bypass-2-switch ge 0
-				propulsion/engine[0]/n1 lt 42
+				propulsion/engine[0]/n2 lt 42
 			</test>
 			<test logic="AND" value="1">
 				/controls/hydraulics/bypass-1-switch ge 0
 				/controls/hydraulics/bypass-2-switch ge 0
-				propulsion/engine[1]/n1 lt 42
+				propulsion/engine[1]/n2 lt 42
 			</test>
 			<test logic="OR" value="0">
 				systems/hydraulics/electric-pump-running eq 1

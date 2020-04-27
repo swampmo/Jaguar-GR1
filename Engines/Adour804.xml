@@ -14,7 +14,7 @@
 -->
 
 <turbine_engine name="Adour 804">
-  <milthrust>    5260.0 </milthrust>
+  <milthrust>    5280.0 </milthrust>
   <maxthrust>    8000.0 </maxthrust>
   <bypassratio>     0.850 </bypassratio>
   <tsfc>            0.650 </tsfc>
