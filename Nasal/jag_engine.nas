@@ -112,6 +112,7 @@ var engineStartLoop = func {
 	var speedbrakes = getprop("controls/flight/speedbrake");
 	var lp_0 = getprop("engines/lp-0-switch");
 	var lp_1 = getprop("engines/lp-1-switch");
+	var batt = getprop("controls/electrical/battery-switch");
 
 
 	cwp_bat = 0;
@@ -122,7 +123,7 @@ var engineStartLoop = func {
 		#corr_rot_1 = 0;
 		air_gen_on = 0;
 		rdy_for_engine_start = 0;
-	} elsif (air_gen_start and gen_start and speedbrakes) {
+	} elsif (air_gen_start and gen_start and speedbrakes and batt) {
 		if (air_gen_on == 0) {
 			air_gen_start_time = getprop("sim/time/elapsed-sec");
 		}
