@@ -2,10 +2,10 @@ setprop("/engines/throttle-stop[0]",1);
 setprop("/engines/throttle-stop[1]",1);
 
 setprop("/controls/electrical/battery-switch",1);
-setprop("/controls/electrical/tru-1-switch",1);
-setprop("/controls/electrical/tru-2-switch",1);
-setprop("/controls/electrical/alternator-1-switch",1);
-setprop("/controls/electrical/alternator-2-switch",1);
+setprop("/controls/electrical/tru-1-switch",0);
+setprop("/controls/electrical/tru-2-switch",0);
+setprop("/controls/electrical/alternator-1-switch",0);
+setprop("/controls/electrical/alternator-2-switch",0);
 setprop("/controls/electrical/pitot-heat-switch",1);
 
 setprop("/engines/eng-ign-switch", 1);
