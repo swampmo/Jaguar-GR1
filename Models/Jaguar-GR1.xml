@@ -815,7 +815,7 @@ if(navStillOn) {
     <type>rotate</type>
     <object-name>direction</object-name>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor>20</factor>
+    <factor>-20</factor>
     <axis>
       <x1-m>  7.033 </x1-m>
       <y1-m>  0.000 </y1-m>
