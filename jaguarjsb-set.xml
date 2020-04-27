@@ -781,10 +781,10 @@
 	<electrical>
 		<external-power-connected type="bool">0</external-power-connected>
 		<battery-switch type="bool">0</battery-switch>
-		<alternator-1-switch type="int">0</alternator-1-switch>
-		<alternator-2-switch type="int">0</alternator-2-switch>
-		<tru-1-switch type="int">0</tru-1-switch>
-		<tru-2-switch type="int">0</tru-2-switch>
+		<alternator-1-switch type="int">-1</alternator-1-switch>
+		<alternator-2-switch type="int">-1</alternator-2-switch>
+		<tru-1-switch type="int">-1</tru-1-switch>
+		<tru-2-switch type="int">-1</tru-2-switch>
 		<crash-bat-switch type="bool">0</crash-bat-switch>
 		<crash-alt1-switch type="bool">0</crash-alt1-switch>
 		<crash-alt2-switch type="bool">0</crash-alt2-switch>
