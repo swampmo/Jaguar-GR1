@@ -2060,7 +2060,6 @@
       <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
       <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
       <file>Aircraft/Jaguar/Nasal/autoflight.nas</file>
-      <file>Aircraft/Jaguar/Nasal/electrical.nas</file>
     </jaguar>
 
 	 <lights>
