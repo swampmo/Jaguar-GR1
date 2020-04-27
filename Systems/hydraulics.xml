@@ -23,7 +23,6 @@
 	<property value="0">systems/hydraulics/electric-pump-running</property>
 	<property value="0">systems/hydraulics/ptu-running</property>
 	<property value="0">systems/hydraulics/electric-pump-start-request</property>
-	<property value="0">systems/electrical/bus/dc-emerg-busbar</property>
 	
     <channel name="Hydraulic System" execrate="30">
 		<scheduled_gain name="systems/hydraulics/number1-system-pump-bar">
@@ -65,9 +64,9 @@
         </scheduled_gain>
 		
 		<scheduled_gain name="systems/hydraulics/number2-system-electric-pump-bar">
-            <input>systems/electrical/bus/dc-emerg-busbar</input>
+            <input>systems/electrical/bus/dc-busbar-emerg</input>
             <table>
-                <independentVar lookup="row">systems/electrical/bus/dc-emerg-busbar</independentVar>
+                <independentVar lookup="row">systems/electrical/bus/dc-busbar-emerg</independentVar>
                 <independentVar lookup="column">systems/hydraulics/electric-pump-running</independentVar>
                 <tableData>
                     0      1

@@ -20,13 +20,13 @@
     <altimeter>
         <name>altimeter</name>
         <number>0</number>
-        <suction>fdm/jsbsim/systems/electrics/ac-left-main-bus</suction>
+        <suction>fdm/jsbsim/systems/electrical/ac-left-main-bus</suction>
     </altimeter>
 
     <attitude-indicator>
         <name>attitude-indicator</name>
         <number>0</number>
-        <suction>fdm/jsbsim/systems/electrics/ac-left-main-bus</suction>
+        <suction>fdm/jsbsim/systems/electrical/ac-left-main-bus</suction>
     </attitude-indicator>
 
 
@@ -37,7 +37,7 @@
 
     <comm-radio>
         <name>comm</name>
-        <number>0</number>>
+        <number>0</number>
     </comm-radio>
 
     <comm-radio>
