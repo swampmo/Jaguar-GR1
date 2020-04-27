@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!--
-    name:                    Adour 804
+    name:                    Adour 104
     type:                    Turbine Engine
     mil thrust:              5260.0 lbf
     idl thrust:              600.0 lbf
@@ -13,9 +13,9 @@
     injected?                no
 -->
 
-<turbine_engine name="Adour 804">
-  <milthrust>    5280.0 </milthrust>
-  <maxthrust>    8000.0 </maxthrust>
+<turbine_engine name="Adour 104">
+  <milthrust>    5270.0 </milthrust>
+  <maxthrust>    7900.0 </maxthrust>
   <bypassratio>     0.850 </bypassratio>
   <tsfc>            0.650 </tsfc>
   <atsfc>           2.363 </atsfc>
