@@ -427,7 +427,7 @@ Other:
 </ground_reactions>
 
 <propulsion>
-  <engine file="Adour104">
+  <engine file="Adour804">
     <location unit="M">
       <x>12.916</x>
       <y>-0.4127</y>
@@ -460,7 +460,7 @@ Other:
       </orient>
     </thruster>
   </engine>
-  <engine file="Adour104">
+  <engine file="Adour804">
     <location unit="M">
       <x>12.916</x>
       <y>0.4127</y>
