@@ -19,7 +19,7 @@
             <model type="int">4</model>
         </rating>
 
-        <author>NC-687, Emmanuel Baranger, Steve Brown, Gary Brown, StuartC, Nikolai V. Chr., Joshua Davidson, Richard Harrison</author>
+        <author>NC-687, Emmanuel Baranger, Steve Brown, Gary Brown, Jonathan Redpath, StuartC, Nikolai V. Chr., Joshua Davidson, Richard Harrison</author>
             <flight-model>jsb</flight-model>
     <aero>SEPECAT-Jaguar-vsp</aero>
 
