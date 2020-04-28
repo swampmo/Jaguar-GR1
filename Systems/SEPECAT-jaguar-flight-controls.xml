@@ -177,7 +177,7 @@
 
     </channel>
     
-       <channel name="Spoilers">
+    <channel name="Spoilers">
         <pure_gain name="fcs/spoiler-differential-dmd">
             <input>fcs/aileron-sum-norm</input>
             <gain>0.5</gain>
@@ -188,7 +188,7 @@
             <default value="0"/>
 
             <test value="fcs/spoiler-differential-dmd">
-                systems/hydraulics/B-system-pressure ne 0
+                systems/hydraulics/number2-system-pressure ne 0
             </test>
         </switch>
 
@@ -197,7 +197,7 @@
             <default value="0"/>
 
             <test value="fcs/spoiler-ground-brake-deployed">
-                systems/hydraulics/B-system-pressure eq 0
+                systems/hydraulics/number2-system-pressure eq 0
             </test>
             <test value="1">
                 fcs/spoiler-ground-brake-deployed ne 0
@@ -205,7 +205,7 @@
             </test>
 
             <test value="1">
-                systems/hydraulics/B-system-pressure ne 0
+                systems/hydraulics/number2-system-pressure ne 0
                 fcs/spoiler-ground-brake-armed ne 0.0
                 fcs/throttle-cmd-norm[0] le 0.15
                 fcs/throttle-cmd-norm[1] le 0.15
