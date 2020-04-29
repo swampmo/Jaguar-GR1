@@ -25,6 +25,9 @@
     <object-name>Map</object-name>
     <object-name>Mode</object-name>
     <object-name>Scale</object-name>
+    <condition>
+      <property>controls/electrical/battery-switch</property>
+    </condition>
     <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
       <red>   0.9 </red>
@@ -41,6 +44,7 @@
         <property>sim/rendering/rembrandt/enabled</property>
         <value type="bool">true</value>
       </equals>
+      <property>controls/electrical/battery-switch</property>
     </condition>
     <diffuse>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
