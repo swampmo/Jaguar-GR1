@@ -244,7 +244,7 @@ Other:
     </location>
     <static_friction>1.0</static_friction>
     <dynamic_friction>0.5</dynamic_friction>
-    <rolling_friction>0.02</rolling_friction>
+    <rolling_friction>0.05</rolling_friction>
     <spring_coeff unit="LBS/FT">12125.5</spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">2910.12</damping_coeff>
     <max_steer unit="DEG">55</max_steer>
