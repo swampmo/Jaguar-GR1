@@ -9,7 +9,7 @@
     <object-name>Bright</object-name>
     <object-name>Canvas</object-name>
     <object-name>Glass</object-name>
-    <object-name>Lamp</object-name>
+    <object-name>Lamp.001</object-name>
     <object-name>Map</object-name>
     <object-name>Mode</object-name>
     <object-name>Mount</object-name>
@@ -21,7 +21,7 @@
     <object-name>Bigscreen</object-name>
     <object-name>Bright</object-name>
     <object-name>Canvas</object-name>
-    <object-name>Lamp</object-name>
+    <object-name>Lamp.001</object-name>
     <object-name>Map</object-name>
     <object-name>Mode</object-name>
     <object-name>Scale</object-name>
@@ -32,6 +32,40 @@
       <blue>  0.9 </blue>
     </emission>
   </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>Canvas</object-name>
+    <condition>
+      <equals>
+        <property>sim/rendering/rembrandt/enabled</property>
+        <value type="bool">true</value>
+      </equals>
+    </condition>
+    <diffuse>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </diffuse>
+    <ambient>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.9 </red>
+      <green> 0.9 </green>
+      <blue>  0.9 </blue>
+    </ambient>
+  </animation>
+  
+  <effect>
+   <inherits-from>Effects/model-transparent</inherits-from>
+   <object-name>Glass</object-name>
+  </effect>
+  
+  <effect>
+   <inherits-from>Effects/model-combined-deferred</inherits-from>
+   <object-name>Canvas</object-name>
+  </effect>
+  
 <!--
   <panel>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/mfd1-hotspots.xml</path>
