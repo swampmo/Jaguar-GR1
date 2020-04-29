@@ -128,7 +128,7 @@ var engineStartLoop = func {
 			air_gen_start_time = getprop("sim/time/elapsed-sec");
 		}
 		air_gen_on = 1;
-	} elsif (air_gen_start_time+AUTO_SHUT_DOWN < getprop("sim/time/elapsed-sec")) {
+	} elsif (air_gen_start_time+AUTO_SHUT_DOWN < getprop("sim/time/elapsed-sec") or !speedbrakes or !batt) {
 		#corr_rot_0 = 0;
 		#corr_rot_1 = 0;
 		air_gen_on = 0;
