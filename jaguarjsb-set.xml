@@ -589,39 +589,43 @@
     <menubar include="Dialogs/jaguar-menu.xml"/>
 
 		<flight-recorder>
-            <replay-config type="int">0</replay-config>
-            <config n="0">
-        <signals include="/Aircraft/Generic/flightrecorder/components/environment.xml"/>
-        <signals include="/Aircraft/Generic/flightrecorder/components/position.xml"/>
-        <signals include="/Aircraft/Generic/flightrecorder/components/controls.xml"/>
-        <signals include="/Aircraft/Generic/flightrecorder/components/engine-jet.xml">
-            <count type="int">2</count>
-        </signals>
-        <signals include="/Aircraft/Generic/flightrecorder/components/faults-engines.xml">
-            <count type="int">2</count>
-        </signals>
-        <signals include="/Aircraft/Generic/flightrecorder/components/tanks.xml">
-            <count type="int">3</count>
-        </signals>
-        <signals include="/Aircraft/Generic/flightrecorder/components/gear-retractable.xml">
-            <count type="int">3</count>
-        </signals>
-            <signal>
-                <type>float</type>
-                <property type="string">engines/engine/augmentation</property>
-            </signal>
-            <signal>
-                <type>float</type>
-                <property type="string">/surface-positions/speedbrake-pos-norm</property>
-            </signal>
+    <replay-config type="int">0</replay-config>
+    <config n="0">
+      <signals include="/Aircraft/Generic/flightrecorder/components/environment.xml" />
+      <signals include="/Aircraft/Generic/flightrecorder/components/position.xml" />
+      <signals include="/Aircraft/Generic/flightrecorder/components/controls.xml" />
+      <signals include="/Aircraft/Generic/flightrecorder/components/engine-jet.xml">
+        <count type="int">2</count>
+      </signals>
+      <signals include="/Aircraft/Generic/flightrecorder/components/faults-engines.xml">
+        <count type="int">2</count>
+      </signals>
+      <signals include="/Aircraft/Generic/flightrecorder/components/tanks.xml">
+        <count type="int">3</count>
+      </signals>
+      <signals include="/Aircraft/Generic/flightrecorder/components/gear-retractable.xml">
+        <count type="int">3</count>
+      </signals>
+      <signal>
+        <type>float</type>
+        <property type="string">engines/engine[0]/augmentation</property>
+      </signal>
+      <signal>
+        <type>float</type>
+        <property type="string">engines/engine[1]/augmentation</property>
+      </signal>
+      <signal>
+        <type>float</type>
+        <property type="string">/surface-positions/speedbrake-pos-norm</property>
+      </signal>
 
-			<name type="string">Sepecat Jaguar</name>
-            </config>
-        </flight-recorder>
+      <name type="string">Sepecat Jaguar</name>
+    </config>
+  </flight-recorder>
 
-        <instrumentation>
-            <path>Aircraft/Jaguar/Systems/instrumentation.xml</path>
-        </instrumentation>
+    <instrumentation>
+      <path>Aircraft/Jaguar/Systems/instrumentation.xml</path>
+    </instrumentation>
 
   </sim>
 
