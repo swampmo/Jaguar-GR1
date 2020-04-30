@@ -1031,7 +1031,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>freinG</object-name>
-    <property>surface-positions/speedbrake-pos-norm</property>
+    <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
@@ -1055,7 +1055,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>freinD</object-name>
-    <property>surface-positions/speedbrake-pos-norm</property>
+    <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
     <interpolation>
       <entry>
         <ind>0.0</ind>
