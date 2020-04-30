@@ -11,6 +11,11 @@
     <object-name>bras</object-name>
     <object-name>avantbras</object-name>
     <object-name>main</object-name>
+    <object-name>Visor</object-name>
+    <object-name>Patch</object-name>
+    <object-name>left-sh--patch</object-name>
+    <object-name>right-chest-patch</object-name>
+    <object-name>right-sh-patch</object-name>
 
     <!-- Objets transparents -->
     <object-name>lunettes</object-name>
