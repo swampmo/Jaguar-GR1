@@ -628,7 +628,7 @@
   <animation>
     <type>rotate</type>
     <object-name>freinG</object-name>
-    <property>/fdm/jsbsim/fcs/speedbrake-pos-deg</property>
+    <property>surface-positions/speedbrake-pos-norm</property>
     <factor> -65 </factor>
     <axis>
       <x1-m>  2.655 </x1-m>
@@ -643,7 +643,7 @@
   <animation>
     <type>rotate</type>
     <object-name>freinD</object-name>
-    <property>/fdm/jsbsim/fcs/speedbrake-pos-deg</property>
+    <property>surface-positions/speedbrake-pos-norm</property>
     <factor> 65 </factor>
     <axis>
       <x1-m>  2.655 </x1-m>

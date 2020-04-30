@@ -136,7 +136,7 @@
   <animation>
     <type>rotate</type>
     <object-name>AirBrakes</object-name>
-    <property>/fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
+    <property>fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
     <factor>-5</factor>
     <axis>
       <x> 0 </x>

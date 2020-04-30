@@ -724,7 +724,7 @@
       <name>speedbrakes</name>
       <mode>in-transit</mode>
       <path>Aircraft/Jaguar/Sounds/flap.wav</path>
-      <property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
+      <property>surface-positions/speedbrake-pos-norm</property>
       <volume>
         <max>0.35</max>
       </volume>

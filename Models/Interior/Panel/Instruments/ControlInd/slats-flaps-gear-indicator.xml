@@ -166,7 +166,7 @@
 		<object-name>sp-in</object-name>
 		<condition>
 			<equals>
-				<property>fdm/jsbsim/fcs/speedbrake-pos-deg</property>
+				<property>surface-positions/speedbrake-pos-norm</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -177,7 +177,7 @@
 		<object-name>sp-full</object-name>
 		<condition>
 			<equals>
-				<property>surface-positions/speedbrake-pos-deg</property>
+				<property>surface-positions/speedbrake-pos-norm</property>
 				<value>1</value>
 			</equals>
 		</condition>

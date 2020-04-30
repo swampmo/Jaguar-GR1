@@ -612,7 +612,7 @@
             </signal>
             <signal>
                 <type>float</type>
-                <property type="string">surface-positions/speedbrake-norm</property>
+                <property type="string">/surface-positions/speedbrake-pos-norm</property>
             </signal>
 
 			<name type="string">Sepecat Jaguar</name>
@@ -625,16 +625,9 @@
 
   </sim>
 
- <instrumentation>
-  <alpha-gauge>
-    <alpha-indicated-deg alias="/fdm/jsbsim/aero/alpha-indicated-deg"/>
-  </alpha-gauge>
-  <radar>
-   <range type="int" archive="y">20</range>
-   <minimized type="bool" archive="y">false</minimized>
-  </radar>
- </instrumentation>
-
+  <surface-positions>
+    <speedbrake-pos-norm alias="/fdm/jsbsim/fcs/speedbrake-pos-norm"/>
+  </surface-positions>
  <systems>
   <refuel>
    <type>probe</type>
@@ -698,7 +691,14 @@
 	</fdm>
 
   <instrumentation>
-	<airspeed-indicator>
+    <alpha-gauge>
+      <alpha-indicated-deg alias="/fdm/jsbsim/aero/alpha-indicated-deg"/>
+    </alpha-gauge>
+    <radar>
+     <range type="int" archive="y">20</range>
+     <minimized type="bool" archive="y">false</minimized>
+    </radar>
+  <airspeed-indicator>
 		<speed-limit-bug type="double">420</speed-limit-bug>
 	</airspeed-indicator>
 	<radar-altimeter>
@@ -861,8 +861,6 @@
       <reflection-strength type="double">0.25</reflection-strength>
     </aircraft-effects>
   </environment>
-
-
 
   <input>
     <keyboard include="/Dialogs/jaguar-keyboard.xml"/>
