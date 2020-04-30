@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <system name="Aircraft control">
 
   <channel name="General Avionics" execrate="8">
@@ -38,7 +38,7 @@
   </channel>
 
   <channel name="Elevon">
-   <summer name="fcs/pitch-sum">
+    <summer name="fcs/pitch-sum">
       <!--input>fcs/elevator-cmd-norm</input-->
       <input>fcs/ap-pitch-cmd-norm</input>
       <input>sas/pitch-output</input>
@@ -46,26 +46,35 @@
         <min> -1 </min>
         <max>  1 </max>
       </clipto>
-   </summer>
-
-   <aerosurface_scale name="fcs/pitch-pos-deg">
+    </summer>
+    <aerosurface_scale name="fcs/pitch-pos-deg-0">
       <input>fcs/pitch-sum</input>
       <range>
         <min>  -25 </min>
         <max>   15 </max>
       </range>
-   </aerosurface_scale>
+    </aerosurface_scale>
 
-    <!-- (Swamps notes) Automatic control of the differential tailplane gearing is by a differential computer having two channels, controls and monitoring, both of which recieves airspeed signals from the Ajax computer and feedback signals from a gain rod potentiometer. In short below 200 knots is maximum gain and therefore maximum differential tailplane is obtained. Above 200 knots the actuator progressively retracts until, when airspeed reaches 450 knots (and above) the actuator is fully retracted to reduce gain to zero and no differenial tailplane movement occurs.
+    <actuator name="fcs/pitch-pos-deg">
+      <input>fcs/pitch-pos-deg-0</input>
+      <rate_limit>76</rate_limit>
+      <output>fcs/pitch-pos-deg</output>
+    </actuator>
+
+    <!-- (Swamps notes) Automatic control of the differential tailplane gearing is by a differential computer having two channels, 
+         controls and monitoring, both of which recieves airspeed signals from the Ajax computer and feedback signals from a gain rod 
+         potentiometer. In short below 200 knots is maximum gain and therefore maximum differential tailplane is obtained. Above 200 knots the
+          actuator progressively retracts until, when airspeed reaches 450 knots (and above) the actuator is fully 
+          retracted to reduce gain to zero and no differenial tailplane movement occurs.
          (source, Aircrew manual AP 101b-3101 & 2-15A)
     -->
 
-   <scheduled_gain name="fcs/roll-cmd">
-        <input>sas/roll-cmd-output</input>
-        <description>Differential tailplane authority; AP 101B-3101-1EE p29, 19-20 Fig. 16</description>
-        <table>
-            <independentVar lookup="row">/velocities/airspeed-kt</independentVar>  
-            <tableData>
+    <scheduled_gain name="fcs/roll-cmd">
+      <input>sas/roll-cmd-output</input>
+      <description>Differential tailplane authority; AP 101B-3101-1EE p29, 19-20 Fig. 16</description>
+      <table>
+        <independentVar lookup="row">/velocities/airspeed-kt</independentVar>
+        <tableData>
                 0	1.0000
               200	1.0000
               250	0.8366
@@ -75,63 +84,32 @@
               400	0.1664
               423	0.0000
             </tableData>
-        </table>
-        <output>fcs/differential-elevator-pos-norm</output>
-    </scheduled_gain> 
+      </table>
+      <output>fcs/differential-elevator-pos-norm-0</output>
+    </scheduled_gain>
+
+    <actuator name="fcs/differential-elevator-pos-norm">
+      <input>fcs/differential-elevator-pos-norm-0</input>
+      <rate_limit>11</rate_limit>
+      <output>fcs/differential-elevator-pos-norm</output>
+    </actuator>
+
+
     <aerosurface_scale name="fcs/differential-elevator-pos-deg">
       <input>fcs/differential-elevator-pos-norm</input>
       <range>
         <min>  -6 </min>
         <max>   6 </max>
       </range>
-   </aerosurface_scale>
+    </aerosurface_scale>
 
-   <aerosurface_scale name="fcs/roll-pos-deg">
+    <aerosurface_scale name="fcs/roll-pos-deg">
       <input>fcs/roll-cmd</input>
       <range>
         <min>  -15 </min>
         <max>   15 </max>
       </range>
-   </aerosurface_scale>
-
-  <fcs_function name="fcs/elevon-left-cmd">
-      <function>
-          <sum>
-              <property>fcs/roll-pos-deg</property>
-              <property>fcs/pitch-pos-deg</property>
-          </sum>
-      </function> 
-        <clipto>
-          <min> -25 </min>
-          <max>  15 </max>       
-        </clipto>
-  </fcs_function>
-
-        <lag_filter name="fcs/elevon-left-deg">
-            <input>fcs/elevon-left-cmd</input>
-            <c1>20</c1>
-        </lag_filter>
-
-  <fcs_function name="fcs/elevon-right-cmd">
-      <function>
-          <sum>
-              <product>
-                  <property>fcs/roll-pos-deg</property>
-                  <value> -1 </value>
-              </product>
-              <property>fcs/pitch-pos-deg</property>
-          </sum>
-      </function> 
-        <clipto>
-          <min> -25 </min>
-          <max>  15 </max>       
-        </clipto>
-  </fcs_function>
-
-        <lag_filter name="fcs/elevon-right-deg">
-            <input>fcs/elevon-right-cmd</input>
-            <c1>20</c1>
-        </lag_filter>
+    </aerosurface_scale>
 
   </channel>
 
@@ -145,7 +123,7 @@
        to achieve the same deflection. 
        The second part will then apply the spoiler deflection schedule resulting in a commanded spoiler position
   -->
-  <fcs_function name="fcs/spoiler-command-norm">
+  <fcs_function name="fcs/spoiler-command-norm-0">
     <function>
       <description>based on Control forces grip angle theoretical curve; AP 101B-3101-1EE p23, 19-20 Fig. 12 but adjusted to change position to force. </description>
       <table>
@@ -162,6 +140,12 @@
       </table>
     </function>
   </fcs_function>
+  
+  <actuator name="fcs/spoiler-command-norm">
+    <input>fcs/spoiler-command-norm-0</input>
+    <rate_limit>11</rate_limit>
+    <output>fcs/spoiler-command-norm</output>
+  </actuator>
 
   <fcs_function name="fcs/spoiler-command-deg">
     <function>
@@ -475,7 +459,7 @@
       /controls/gear/nose-wheel-steering ne 0
     </test>
     </switch>
-    <scheduled_gain name="fcs/scheduled-steer-pos-deg">
+    <scheduled_gain name="fcs/scheduled-steer-pos-deg-0">
       <input>fcs/steer-cmd-norm</input>
       <table>
         <independentVar lookup="row">gear/unit[0]/wheel-speed-fps</independentVar>
@@ -487,8 +471,15 @@
             135 0   0
         </tableData>
       </table>
-      <output>fcs/steer-pos-deg</output>
+      <output>fcs/steer-pos-deg-0</output>
     </scheduled_gain>
+
+    <actuator name="fcs/steer-pos-deg">
+      <input>fcs/steer-pos-deg-0</input>
+      <rate_limit>70</rate_limit>
+      <output>fcs/steer-pos-deg</output>
+    </actuator>
+  
   </channel>
 
   <channel name="Export" execrate="2">
