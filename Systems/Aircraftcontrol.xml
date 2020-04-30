@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <system name="Aircraft control">
 
   <channel name="General Avionics" execrate="8">
@@ -56,10 +56,7 @@
       </range>
    </aerosurface_scale>
 
-    <!-- (Swamps notes) Automatic control of the differential tailplane gearing is by a differential computer having two channels,controls and monitoring, both of
-         which recieves airspeed signals from the Ajax computer and feedback signals from a gain rod   potentiometer. In short below 200 knots is maximum gain 
-         and therefore maximum differential tailplane is obtained. Above 200 knots the actuator progressively retracts until, when airspeed reaches 450 knots
-         (and above) the actuator is fully retracted to reduce gain to zero and no differenial tailplane movement occurs.
+    <!-- (Swamps notes) Automatic control of the differential tailplane gearing is by a differential computer having two channels, controls and monitoring, both of which recieves airspeed signals from the Ajax computer and feedback signals from a gain rod potentiometer. In short below 200 knots is maximum gain and therefore maximum differential tailplane is obtained. Above 200 knots the actuator progressively retracts until, when airspeed reaches 450 knots (and above) the actuator is fully retracted to reduce gain to zero and no differenial tailplane movement occurs.
          (source, Aircrew manual AP 101b-3101 & 2-15A)
     -->
 
