@@ -408,7 +408,7 @@
   </channel>
 
   <channel name="Speedbrake">
-   <kinematic name="fcs/speedbrake-pos-norm">
+   <kinematic name="fcs/speedbrake-pos-deg">
      <input>fcs/speedbrake-cmd-norm</input>
      <traverse>
        <setting>
@@ -420,9 +420,10 @@
           <time>     2 </time>
        </setting>
      </traverse>
+     <output>fcs/speedbrake-pos-deg</output>
    </kinematic>
-      <pure_gain name="fcs/speedbrake-pos-deg">
-        <input>fcs/speedbrake-pos-norm</input>
+      <pure_gain name="fcs-speed-pos-deg">
+        <input>fcs/speedbrake-pos-deg</input>
         <gain>65</gain>
       </pure_gain> 
   </channel>
@@ -525,17 +526,16 @@
       </function>
       <output>/surface-positions/elevator-pos-norm</output>
     </fcs_function>
-	
+
     <fcs_function name="fcs/speedbrake-pos-norm">
       <function>
         <quotient>
             <property>fcs/speedbrake-pos-deg</property>
-            <value>65</value>
+            <value>1</value>
         </quotient>
       </function>
       <output>/surface-positions/speedbrake-pos-norm</output>
     </fcs_function>
-
   </channel>
 
 </system>
