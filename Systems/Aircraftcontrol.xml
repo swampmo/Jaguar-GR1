@@ -527,15 +527,6 @@
       <output>/surface-positions/elevator-pos-norm</output>
     </fcs_function>
 
-    <fcs_function name="fcs/speedbrake-pos-norm">
-      <function>
-        <quotient>
-            <property>fcs/speedbrake-pos-deg</property>
-            <value>1</value>
-        </quotient>
-      </function>
-      <output>/surface-positions/speedbrake-pos-norm</output>
-    </fcs_function>
   </channel>
 
 </system>
