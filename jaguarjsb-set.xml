@@ -3,7 +3,7 @@
 <PropertyList>
 
   <sim include="Nasal/views.xml">
-    <minimum-fg-version>2016.1.0</minimum-fg-version>
+    <minimum-fg-version>2017.2.0</minimum-fg-version>
     <description>SEPECAT Jaguar GR1</description>
         <tags>
             <tag>fighter</tag>
