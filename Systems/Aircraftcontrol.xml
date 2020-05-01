@@ -3,7 +3,7 @@
 
   <channel name="General Avionics" execrate="8">
 
-    <actuator name="systems/refuel/probe-pos-norm-v">
+    <actuator name="systems/refuel/probe-pos-norm-actuator">
       <input>systems/refuel/probe-pos-dmd</input>
       <rate_limit>0.125</rate_limit>
       <output>systems/refuel/probe-pos-norm</output>
@@ -37,7 +37,7 @@
     </lag_filter>
   </channel>
 
-  <channel name="Elevon">
+  <channel name="Pitch">
     <summer name="fcs/pitch-sum">
       <!--input>fcs/elevator-cmd-norm</input-->
       <input>fcs/ap-pitch-cmd-norm</input>
@@ -88,7 +88,7 @@
       <output>fcs/differential-elevator-pos-norm-0</output>
     </scheduled_gain>
 
-    <actuator name="fcs/differential-elevator-pos-norm">
+    <actuator name="fcs/differential-elevator-pos-norm-actuator">
       <input>fcs/differential-elevator-pos-norm-0</input>
       <rate_limit>11</rate_limit>
       <output>fcs/differential-elevator-pos-norm</output>
@@ -111,9 +111,19 @@
       </range>
     </aerosurface_scale>
 
+    <fcs_function name="fcs/elevator-pos-norm">
+      <function>
+        <quotient>
+            <property>fcs/pitch-pos-deg</property>
+            <value>25</value>
+        </quotient>
+      </function>
+      <output>fcs/elevator-pos-norm</output>
+    </fcs_function>
+
   </channel>
 
-  <channel name="Spoilers">
+  <channel name="Roll">
   
   <!-- this function, together with spoiler-command-deg implement the lateral stick movement
        simulation.
@@ -141,7 +151,7 @@
     </function>
   </fcs_function>
   
-  <actuator name="fcs/spoiler-command-norm">
+  <actuator name="fcs/spoiler-command-norm-actuator">
     <input>fcs/spoiler-command-norm-0</input>
     <rate_limit>11</rate_limit>
     <output>fcs/spoiler-command-norm</output>
@@ -206,7 +216,28 @@
             <input>fcs/spoiler-right-cmd</input>
             <c1>20</c1>
         </lag_filter>
-
+    
+        <fcs_function name="fcs/left-aileron-pos-norm">
+          <function>
+            <quotient>
+                <property>fcs/spoiler-command-deg</property>
+                <value>45</value>
+            </quotient>
+          </function>
+          <output>fcs/left-aileron-pos-norm</output>
+        </fcs_function>
+      
+        <!-- in fact this is the offset on the tailplane -->
+        <fcs_function name="fcs/right-aileron-pos-norm">
+          <function>
+            <sum>
+              <property>fcs/differential-elevator-pos-norm</property>
+              <value>0</value>
+          </sum>
+          </function>
+          <output>fcs/right-aileron-pos-norm</output>
+        </fcs_function>
+      
   </channel>
 
   <channel name="Yaw">
@@ -276,7 +307,17 @@
       </range>
    </aerosurface_scale>
 
-  </channel>
+   <fcs_function name="fcs/rudder-pos-norm">
+    <function>
+      <quotient>
+          <property>fcs/rudder-deg</property>
+          <value>20</value>
+      </quotient>
+    </function>
+    <output>fcs/rudder-pos-norm</output>
+  </fcs_function>
+
+</channel>
 
   <channel name="Flaps">
         <switch name="fcs/flap-cmd">
@@ -467,63 +508,19 @@
         <tableData>
                 0   1
             0   0   55
-            80  0   12
+            80  0   4
             135 0   0
         </tableData>
       </table>
       <output>fcs/steer-pos-deg-0</output>
     </scheduled_gain>
 
-    <actuator name="fcs/steer-pos-deg">
+    <actuator name="fcs/steer-pos-deg-actuator">
       <input>fcs/steer-pos-deg-0</input>
       <rate_limit>70</rate_limit>
       <output>fcs/steer-pos-deg</output>
     </actuator>
   
-  </channel>
-
-  <channel name="Export" execrate="2">
-    <fcs_function name="fcs/rudder-pos-norm">
-      <function>
-        <quotient>
-            <property>fcs/rudder-deg</property>
-            <value>20</value>
-        </quotient>
-      </function>
-      <output>/surface-positions/rudder-pos-norm</output>
-    </fcs_function>
-
-    <fcs_function name="fcs/left-aileron-pos-norm">
-      <function>
-        <quotient>
-            <property>fcs/spoiler-command-deg</property>
-            <value>45</value>
-        </quotient>
-      </function>
-      <output>/surface-positions/left-aileron-pos-norm</output>
-    </fcs_function>
-
-    <!-- in fact this is the offset on the tailplane -->
-    <fcs_function name="fcs/right-aileron-pos-norm">
-      <function>
-        <sum>
-          <property>fcs/differential-elevator-pos-norm</property>
-          <value>0</value>
-      </sum>
-      </function>
-      <output>/surface-positions/right-aileron-pos-norm</output>
-    </fcs_function>
-
-    <fcs_function name="fcs/elevator-pos-norm">
-      <function>
-        <quotient>
-            <property>fcs/pitch-pos-deg</property>
-            <value>25</value>
-        </quotient>
-      </function>
-      <output>/surface-positions/elevator-pos-norm</output>
-    </fcs_function>
-
   </channel>
 
 </system>
