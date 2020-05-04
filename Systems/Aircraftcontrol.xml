@@ -47,13 +47,70 @@
         <max>  1 </max>
       </clipto>
     </summer>
-    <aerosurface_scale name="fcs/pitch-pos-deg-0">
-      <input>fcs/pitch-sum</input>
-      <range>
+
+
+    <!-- Limit elevator deflection based on actual differential roll: 
+      ref: Jaguar Airframe-3-3; chapter 3.6.1 Operation. 
+         3.6.1 Operation. 
+         ================
+         With the differential tailplane clutch at its maximum authority i.e. 6
+         degrees of differential tailplane for full spoiler demand. Full
+         spoiler demand will give a tailplane slab movement of 60 up for one
+         side and 6 degrees down for the opposite side. If a full tailplane
+         demand of 25 degrees is now made, there is only 19 degrees range of
+         movement available to its limit stop. In this case the remaining 6
+         degrees travel will be taken up by the spring box through the
+         differential tailplane clutch linkage.
+     -->
+
+    <fcs_function name="fcs/pitch-min-deflection">
+      <function>
+        <difference>
+          <value>-25</value>
+          <property>fcs/differential-elevator-pos-deg</property>
+        </difference>
+      </function>
+      <clipto>
         <min>  -25 </min>
-        <max>   15 </max>
-      </range>
-    </aerosurface_scale>
+        <max>  -18 </max>
+      </clipto>
+    </fcs_function>
+
+    <fcs_function name="fcs/pitch-max-deflection">
+      <function>
+        <difference>
+          <value>15</value>
+          <property>fcs/differential-elevator-pos-deg</property>
+        </difference>
+      </function>
+      <clipto>
+        <min>11</min>
+        <max>15</max>
+      </clipto>
+    </fcs_function>
+
+    <fcs_function name="fcs/pitch-pos-deg-0">
+      <function>
+        <ifthen>
+          <lt>
+            <property>fcs/pitch-sum</property>
+            <value>0</value>
+          </lt>
+          <product>
+            <property>-fcs/pitch-sum</property>
+            <property>fcs/pitch-min-deflection</property>
+          </product>
+          <product>
+            <property>fcs/pitch-sum</property>
+            <property>fcs/pitch-max-deflection</property>
+          </product>
+        </ifthen>
+      </function>
+      <clipto>
+        <min>fcs/pitch-min-deflection</min>
+        <max>fcs/pitch-max-deflection</max>
+      </clipto>
+    </fcs_function>
 
     <actuator name="fcs/pitch-pos-deg">
       <input>fcs/pitch-pos-deg-0</input>
