@@ -6,7 +6,7 @@
 
     <parameters>
         <texture n="2">
-            <image>Aircraft/Jaguar/Models/Interior/canopy-mask.png</image>
+            <image>Aircraft/Jaguar-Gr1/Models/Interior/canopy-mask.png</image>
             <type>2d</type>
             <filter>linear-mipmap-linear</filter>
             <wrap-s>clamp</wrap-s>
@@ -17,12 +17,12 @@
 	<texture n="3">
 	  <type>cubemap</type>
 	  <images>
-		  <positive-x>Aircraft/Jaguar/Models/Effects/interior/reflection/0004.png</positive-x>      <!-- px (tail) rotate 90 deg from N or S to W -->
-          <negative-x>Aircraft/Jaguar/Models/Effects/interior/reflection/0002.png</negative-x>      <!-- nx (nose) rotate 90 deg from N or S to E -->
-          <positive-y>Aircraft/Jaguar/Models/Effects/interior/reflection/0001.png</positive-y>      <!-- py (starboard/right) from N do not rotate -->
-          <negative-y>Aircraft/Jaguar/Models/Effects/interior/reflection/0003.png</negative-y>      <!-- ny (port/left) from N rotate 180 deg to S -->
-          <positive-z>Aircraft/Jaguar/Models/Effects/interior/reflection/0006.png</positive-z>      <!-- pz (top) rotate 90 deg from N or S to W -->
-          <negative-z>Aircraft/Jaguar/Models/Effects/interior/reflection/0005.png</negative-z>      <!-- nz (bottom) rotate 90 deg from N or S to W -->
+		  <positive-x>Aircraft/Jaguar-Gr1/Models/Effects/interior/reflection/0004.png</positive-x>      <!-- px (tail) rotate 90 deg from N or S to W -->
+          <negative-x>Aircraft/Jaguar-Gr1/Models/Effects/interior/reflection/0002.png</negative-x>      <!-- nx (nose) rotate 90 deg from N or S to E -->
+          <positive-y>Aircraft/Jaguar-Gr1/Models/Effects/interior/reflection/0001.png</positive-y>      <!-- py (starboard/right) from N do not rotate -->
+          <negative-y>Aircraft/Jaguar-Gr1/Models/Effects/interior/reflection/0003.png</negative-y>      <!-- ny (port/left) from N rotate 180 deg to S -->
+          <positive-z>Aircraft/Jaguar-Gr1/Models/Effects/interior/reflection/0006.png</positive-z>      <!-- pz (top) rotate 90 deg from N or S to W -->
+          <negative-z>Aircraft/Jaguar-Gr1/Models/Effects/interior/reflection/0005.png</negative-z>      <!-- nz (bottom) rotate 90 deg from N or S to W -->
       </images>
 	</texture>
 

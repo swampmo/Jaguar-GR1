@@ -4,12 +4,12 @@
 
   <model>
     <name>BeaconFlare</name>
-    <path>Aircraft/Jaguar/Models/Lights/Flares/Beacon-flare.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Flares/Beacon-flare.xml</path>
   </model>
 
   <model>
     <name>BeaconRemb</name>
-    <path>Aircraft/Jaguar/Models/Lights/Rembrandt/Beacon-remb.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Rembrandt/Beacon-remb.xml</path>
   </model>
   
   <animation>

@@ -1,4 +1,4 @@
-var livery_update = aircraft.livery_update.new("Aircraft/Jaguar/Models/Liveries", 20);
+var livery_update = aircraft.livery_update.new("Aircraft/Jaguar-Gr1/Models/Liveries", 20);
 var self = cmdarg();
 var root = cmdarg();
 var rootindex = root.getIndex();

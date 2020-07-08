@@ -4,7 +4,7 @@
 
   <submodel>
     <name>bullet splash</name>
-    <model>Aircraft/Jaguar/Models/Effects/guns/explosion.xml</model>
+    <model>Aircraft/Jaguar-Gr1/Models/Effects/guns/explosion.xml</model>
     <speed>0</speed>
     <repeat>false</repeat>
     <delay>0</delay>

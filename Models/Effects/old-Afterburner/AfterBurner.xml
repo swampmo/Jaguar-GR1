@@ -16,7 +16,7 @@
 
 
  <effect>
-  <inherits-from>Aircraft/Jaguar/Models/Effects/flammesG.xml</inherits-from>
+  <inherits-from>Aircraft/Jaguar-Gr1/Models/Effects/flammesG.xml</inherits-from>
   <object-name>Bounding_box</object-name>
  </effect>
 

@@ -43,7 +43,7 @@ All measurements below are in English measurements (feet/pounds), per the FG wik
 
  <submodel>
     <name>Mk3Z</name>
-    <model>Aircraft/Jaguar/Models/Effects/guns/apibullet-tracer.xml</model>
+    <model>Aircraft/Jaguar-Gr1/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger-gun</trigger>
     <speed>3380.0</speed>
     <repeat>true</repeat>
@@ -71,7 +71,7 @@ All measurements below are in English measurements (feet/pounds), per the FG wik
   
   <submodel>
     <name>Mk3Z</name><!-- 30 mm cannon -->
-    <model>Aircraft/Jaguar/Models/Effects/guns/apibullet-tracer.xml</model>
+    <model>Aircraft/Jaguar-Gr1/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger-gun</trigger>
     <speed>3380.0</speed>
     <repeat>true</repeat>

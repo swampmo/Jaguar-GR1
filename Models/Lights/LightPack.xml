@@ -7,7 +7,7 @@
   <!-- note: default orientation is up -->
   <model>
     <name>GreenLight</name>
-    <path>Aircraft/Jaguar/Models/Lights/GreenLight.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/GreenLight.xml</path>
     <offsets>
      <x-m>  3.21 </x-m>
       <y-m>  4.21 </y-m>
@@ -18,7 +18,7 @@
   </model>
   <model>
     <name>RedLight</name>
-    <path>Aircraft/Jaguar/Models/Lights/RedLight.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/RedLight.xml</path>
     <offsets>
       <x-m>  3.21 </x-m>
       <y-m> -4.210 </y-m>
@@ -33,7 +33,7 @@
   <!-- note: default orientation is up -->
   <model>
     <name>Beacon1</name>
-    <path>Aircraft/Jaguar/Models/Lights/Beacon.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Beacon.xml</path>
     <offsets>
      <x-m> 1.050 </x-m>
       <y-m> 0.000 </y-m> 
@@ -44,7 +44,7 @@
   <!---->
   <model>
     <name>Beacon2</name>
-    <path>Aircraft/Jaguar/Models/Lights/Beacon.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Beacon.xml</path>
     <offsets>
      <x-m>  3.600 </x-m>
       <y-m>  0.000 </y-m>
@@ -57,7 +57,7 @@
   <!-- a powerful front facing spotlight -->
   <model>
     <name>LandingLight1</name>
-    <path>Aircraft/Jaguar/Models/Lights/LandingLight.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/LandingLight.xml</path>
     <offsets>
      <x-m> -4.295 </x-m>
       <y-m> 0.163 </y-m>
@@ -68,7 +68,7 @@
   </model>
   <model>
     <name>LandingLight2</name>
-    <path>Aircraft/Jaguar/Models/Lights/TaxiLight.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/TaxiLight.xml</path>
     <offsets>
     <x-m> -4.320 </x-m>
       <y-m>  -0.163 </y-m>
@@ -79,7 +79,7 @@
   </model>
   <!--model>
     <name>LandingLight2</name>
-    <path>Aircraft/Jaguar/Models/Lights/LandingLight.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/LandingLight.xml</path>
     <offsets>
     <x-m> -4.369 </x-m>
       <y-m>  0.163 </y-m>
@@ -93,7 +93,7 @@
   <!-- a weaker front facing spotlight, often mounted on the front gear 
   <model>
     <name>TaxiLight</name>
-    <path>Aircraft/Jaguar/Models/Lights/TaxiLight.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/TaxiLight.xml</path>
     <offsets>
        <x-m>-2.9</x-m>
     <y-m>  0.000</y-m> 
@@ -120,7 +120,7 @@
   <!-- if you have an extendable/optional fuel probe, including this in its own model file makes sure the light moves/disappears together with the probe -->
   <!-- in case of extendable probe, you might want to add a select animation (to turn off the light when not fully extended), similar as for the taxi light on the front gear -->
   <!--><model>
-    <path>Aircraft/Jaguar/Models/Lights/ProbeLight.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/ProbeLight.xml</path>
     <offsets>
       <x-m>-4.4867</x-m>
       <y-m>0.4922</y-m>
@@ -135,7 +135,7 @@
 
  <model>
     <name>Strobe1</name>
-    <path>Aircraft/Jaguar/Models/Lights/Strobe.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Strobe.xml</path>
     <offsets>
      <x-m>  3.21 </x-m>
       <y-m>  4.21 </y-m>
@@ -146,7 +146,7 @@
   </model>
   <model>
     <name>Strobe2</name>
-    <path>Aircraft/Jaguar/Models/Lights/Strobe.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Strobe.xml</path>
     <offsets>
      <x-m>  3.21 </x-m>
       <y-m>  -4.21 </y-m>
@@ -162,7 +162,7 @@
   <!-- note: default orientation is up 
  <model>
     <name>WhiteLight</name>
-    <path>Aircraft/Jaguar/Models/Lights/WhiteLight.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/WhiteLight.xml</path>
     <offsets>
      <x-m>  7.43 </x-m>
       <y-m> 1.4 </y-m>

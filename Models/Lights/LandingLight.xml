@@ -4,17 +4,17 @@
 
   <model>
     <name>LandingLightFlash</name>
-    <path>Aircraft/Jaguar/Models/Lights/Flares/LandingLight-flash.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Flares/LandingLight-flash.xml</path>
   </model>
 
   <model>
     <name>LandingLightRemb</name>
-    <path>Aircraft/Jaguar/Models/Lights/Rembrandt/LandingLight-remb.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Rembrandt/LandingLight-remb.xml</path>
   </model>
   
   <model>
     <name>LandingLightCone</name>
-    <path>Aircraft/Jaguar/Models/Lights/LightCone/LandingLight-cone.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/LightCone/LandingLight-cone.xml</path>
   </model> <!-- uncomment for fake non-rembrandt cones -->
 
   <animation>

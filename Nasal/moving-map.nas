@@ -668,7 +668,7 @@ var MM = {
 					      	  		})
 					          #.done(func {print('received image ' ~ img_path); tile.set("src", img_path);})
 					          .fail(func (r) {#print('Failed to get image ' ~ img_path ~ ' ' ~ r.status ~ ': ' ~ r.reason);
-					          				tile.set("src", "Aircraft/Jaguar/Models/MovingMap/emptyTile.png");
+					          				tile.set("src", "Aircraft/Jaguar-Gr1/Models/MovingMap/emptyTile.png");
 					      					tile.update();
 					      					});
 					    } elsif (io.stat(img_path) != nil) {# cached image found, reusing
@@ -677,7 +677,7 @@ var MM = {
 					      	tile.update();
 					    } else {
 					    	# internet not allowed, so noise tile shown
-					    	tile.set("src", "Aircraft/Jaguar/Models/MovingMap/noiseTile.png");
+					    	tile.set("src", "Aircraft/Jaguar-Gr1/Models/MovingMap/noiseTile.png");
 					      	tile.update();
 					    }
 					})();

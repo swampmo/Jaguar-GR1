@@ -170,7 +170,7 @@ setlistener("/controls/engines/engine[1]/throttle", func(n) {
 
 var canopy = aircraft.door.new ("/controls/canopy/", 3);
 
-aircraft.livery.init("Aircraft/Jaguar/Models/Liveries");
+aircraft.livery.init("Aircraft/Jaguar-Gr1/Models/Liveries");
 
 
 

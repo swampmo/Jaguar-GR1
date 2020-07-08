@@ -4,17 +4,17 @@
 
   <model>
     <name>TaxiLightFlash</name>
-    <path>Aircraft/Jaguar/Models/Lights/Flares/TaxiLight-flash.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Flares/TaxiLight-flash.xml</path>
   </model>
 
   <model>
     <name>TaxiLightRemb</name>
-    <path>Aircraft/Jaguar/Models/Lights/Rembrandt/TaxiLight-remb.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Rembrandt/TaxiLight-remb.xml</path>
   </model>
 
   <model>
     <name>TaxiLightCone</name>
-    <path>Aircraft/Jaguar/Models/Lights/LightCone/TaxiLight-cone.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/LightCone/TaxiLight-cone.xml</path>
   </model><!-- uncomment for fake non-rembrandt cones -->
   
   <animation>

@@ -26,7 +26,7 @@
     <fuel-fraction>1</fuel-fraction>
 
     <model>
-      <path>Aircraft/Jaguar/Models/Jaguar-GR1.xml</path>
+      <path>Aircraft/Jaguar-Gr1/Models/Jaguar-GR1.xml</path>
       <fallback-model-index type="int">528</fallback-model-index>
       <livery>
         <file type="string">default</file>
@@ -172,19 +172,19 @@
 
     <submodels>
       <serviceable type="bool">true</serviceable>
-      <path>Aircraft/Jaguar/Models/Effects/Guns/submodels.xml</path>
-      <path>Aircraft/Jaguar/Models/Weapons/loads.xml</path>
-      <path>Aircraft/Jaguar/Models/Weapons/pylons.xml</path>
-      <path>Aircraft/Jaguar/Systems/sub_lancer.xml</path>
+      <path>Aircraft/Jaguar-Gr1/Models/Effects/Guns/submodels.xml</path>
+      <path>Aircraft/Jaguar-Gr1/Models/Weapons/loads.xml</path>
+      <path>Aircraft/Jaguar-Gr1/Models/Weapons/pylons.xml</path>
+      <path>Aircraft/Jaguar-Gr1/Systems/sub_lancer.xml</path>
     </submodels>
 
 	    <startup>
-      <splash-texture>Aircraft/Jaguar/jaguar-splash.png</splash-texture>
+      <splash-texture>Aircraft/Jaguar-Gr1/jaguar-splash.png</splash-texture>
     </startup>
 
 
    <sound>
-      <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
+      <path>Aircraft/Jaguar-Gr1/Sounds/jaguar-sound.xml</path>
     </sound>
 
   <checklists include="gui/checklists.xml"/>
@@ -303,7 +303,7 @@
 		<path></path> <!-- disable -->
       </electrical>
       <autopilot n="0">
-        <path>Aircraft/Jaguar/Systems/autoflight-rules.xml</path>
+        <path>Aircraft/Jaguar-Gr1/Systems/autoflight-rules.xml</path>
       </autopilot>
     </systems>
 
@@ -624,7 +624,7 @@
   </flight-recorder>
 
     <instrumentation>
-      <path>Aircraft/Jaguar/Systems/instrumentation.xml</path>
+      <path>Aircraft/Jaguar-Gr1/Systems/instrumentation.xml</path>
     </instrumentation>
 
   </sim>
@@ -917,7 +917,7 @@
 
   <payload>
         <armament>
-            <models type="string">Aircraft/Jaguar/Models/Weapons/</models>
+            <models type="string">Aircraft/Jaguar-Gr1/Models/Weapons/</models>
             <modelsUseCase type="bool">true</modelsUseCase>
             <modelsUpperCase type="bool">true</modelsUpperCase>
             <msg type="bool">true</msg>
@@ -2051,26 +2051,26 @@
 
   <nasal>
     <vector>
-            <file>Aircraft/Jaguar/Nasal/vector.nas</file><!-- must be before RCS, armament and radar -->
+            <file>Aircraft/Jaguar-Gr1/Nasal/vector.nas</file><!-- must be before RCS, armament and radar -->
     </vector>
 
     <engines>
-        <file>Aircraft/Jaguar/Nasal/jag_engine.nas</file>
+        <file>Aircraft/Jaguar-Gr1/Nasal/jag_engine.nas</file>
    </engines>
 
     <jaguar>
-      <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
-      <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
-      <file>Aircraft/Jaguar/Nasal/autoflight.nas</file>
-      <file>Aircraft/Jaguar/Nasal/mplights.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/Jaguar2.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/liveries.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/autoflight.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/mplights.nas</file>
     </jaguar>
 
 	 <lights>
-      <file>Aircraft/Jaguar/Nasal/Lights.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/Lights.nas</file>
     </lights>
 
     <low>
-      <file>Aircraft/Jaguar/Nasal/low.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/low.nas</file>
     </low>
 
    <formation>
@@ -2078,51 +2078,51 @@
    </formation>
 
     <guns>
-      <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
-      <file>Aircraft/Jaguar/Nasal/revi.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/weapons.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/revi.nas</file>
     </guns>
 
 		<chronograph>
-			<file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/clock/chronograph.nas</file>
+			<file>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/clock/chronograph.nas</file>
 		</chronograph>
     
     <rcs>
-      <file>Aircraft/Jaguar/Nasal/rcs.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/rcs.nas</file>
     </rcs>
 
     <radar>
-      <file>Aircraft/Jaguar/Nasal/RADAR/radar2.nas</file>
-      <file>Aircraft/Jaguar/Nasal/RADAR/target_class.nas</file>
-      <file>Aircraft/Jaguar/Nasal/RADAR/radarTool.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/RADAR/radar2.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/RADAR/target_class.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/RADAR/radarTool.nas</file>
     </radar>
     
     <rwr>
-      <file>Aircraft/Jaguar/Nasal/RADAR/rwr.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/RADAR/rwr.nas</file>
     </rwr>
     
     <myradar>
-      <file>Aircraft/Jaguar/Nasal/RADAR/main.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/RADAR/main.nas</file>
     </myradar>
     
     <hud>
-      <file>Aircraft/Jaguar/Nasal/HUD/hud_math.nas</file>
-      <file>Aircraft/Jaguar/Nasal/HUD/HUD.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/HUD/hud_math.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/HUD/HUD.nas</file>
     </hud>
     
     <armament>
-            <file>Aircraft/Jaguar/Nasal/guided-missiles.nas</file><!-- must be before station-manager -->
+            <file>Aircraft/Jaguar-Gr1/Nasal/guided-missiles.nas</file><!-- must be before station-manager -->
         </armament>
         <stations>
-            <file>Aircraft/Jaguar/Nasal/station-manager.nas</file><!-- must be before fire-control and pylons -->
+            <file>Aircraft/Jaguar-Gr1/Nasal/station-manager.nas</file><!-- must be before fire-control and pylons -->
         </stations>
         <fc>
-            <file>Aircraft/Jaguar/Nasal/fire-control.nas</file><!-- must be before pylons -->
+            <file>Aircraft/Jaguar-Gr1/Nasal/fire-control.nas</file><!-- must be before pylons -->
         </fc>
         <mps>
-            <file>Aircraft/Jaguar/Nasal/mp-stores.nas</file>
+            <file>Aircraft/Jaguar-Gr1/Nasal/mp-stores.nas</file>
         </mps>
         <pylons>
-            <file>Aircraft/Jaguar/Nasal/pylons.nas</file>
+            <file>Aircraft/Jaguar-Gr1/Nasal/pylons.nas</file>
         </pylons>
 
     <radardist>
@@ -2134,41 +2134,41 @@
      </aar>
 
    <damage>
-     <file>Aircraft/Jaguar/Nasal/damage.nas</file>
+     <file>Aircraft/Jaguar-Gr1/Nasal/damage.nas</file>
    </damage>
 
    <blackout>
-     <file>Aircraft/Jaguar/Nasal/blackout.nas</file>
+     <file>Aircraft/Jaguar-Gr1/Nasal/blackout.nas</file>
    </blackout>
 
     <radarAltimeter>
-      <file>Aircraft/Jaguar/Nasal/radaralt.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/radaralt.nas</file>
     </radarAltimeter>
 
     <enav>
-      <file>Aircraft/Jaguar/Nasal/enav.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/enav.nas</file>
     </enav>
 
     <emu>
-     <file>Aircraft/Jaguar/Nasal/emu.nas</file>
+     <file>Aircraft/Jaguar-Gr1/Nasal/emu.nas</file>
     </emu>
 
     <tfs>
-		  <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
+		  <file>Aircraft/Jaguar-Gr1/Nasal/tfs.nas</file>
     </tfs>
 
 
 
     <crashandstress>
-        <file>Aircraft/Jaguar/Nasal/crash-and-stress.nas</file>
+        <file>Aircraft/Jaguar-Gr1/Nasal/crash-and-stress.nas</file>
     </crashandstress>  
 
 	  <load>
-      <file>Aircraft/Jaguar/Nasal/ext_stores.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/ext_stores.nas</file>
     </load>
     
     <mm>
-      <file>Aircraft/Jaguar/Nasal/moving-map.nas</file>
+      <file>Aircraft/Jaguar-Gr1/Nasal/moving-map.nas</file>
     </mm>
   </nasal>
 

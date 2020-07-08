@@ -31,7 +31,7 @@ settimer(low_loop, 1);
 #var long = getprop("position/longitude-deg");
 #var lat = getprop("position/latitude-deg");
 
-#geo.put_model("Aircraft/Jaguar/Models/Effects/aircraft_wash.xml", lat, long);
+#geo.put_model("Aircraft/Jaguar-Gr1/Models/Effects/aircraft_wash.xml", lat, long);
 
 #}
 #settimer(low_model, 1);

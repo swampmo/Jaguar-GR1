@@ -2,7 +2,7 @@
 <PropertyList>
 	<model>
 		<name>enav</name>
-		<path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/enav.xml</path>
+		<path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/mfd/enav.xml</path>
 		<offsets>
 			<x-m>0.015</x-m>
 			<y-m>0.001</y-m>

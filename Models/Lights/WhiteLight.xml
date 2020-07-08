@@ -4,12 +4,12 @@
 
   <model>
     <name>WhiteLightFlare</name>
-    <path>Aircraft/Jaguar/Models/Lights/Flares/WhiteLight-flare.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Flares/WhiteLight-flare.xml</path>
   </model>
 
   <model>
     <name>WhiteLightRemb</name>
-    <path>Aircraft/Jaguar/Models/Lights/Rembrandt/WhiteLight-remb.xml</path>
+    <path>Aircraft/Jaguar-Gr1/Models/Lights/Rembrandt/WhiteLight-remb.xml</path>
   </model>
   
   <animation>

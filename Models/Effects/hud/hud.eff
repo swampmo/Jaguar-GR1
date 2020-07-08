@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <name>Aircraft/Jaguar/Models/Effects/hud/hud</name>
+  <name>Aircraft/Jaguar-Gr1/Models/Effects/hud/hud</name>
   <inherits-from>Effects/hud</inherits-from>
   <parameters>
     <overlay-color type="vec3d" n="0"> 0.2 1.0 0.25</overlay-color>
