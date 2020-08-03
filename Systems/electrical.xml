@@ -330,7 +330,6 @@
 			<output>/systems/electrical/outputs/bus</output>
 			<output>/systems/electrical/outputs/cabin-lights</output>
 			<output>/systems/electrical/outputs/dme</output>
-			<output>/systems/electrical/outputs/DG</output>
 			<output>/systems/electrical/outputs/efis</output>
 			<output>/systems/electrical/outputs/fcp-power</output>
 			<output>/systems/electrical/outputs/flaps</output>
@@ -349,10 +348,18 @@
 			<output>/systems/electrical/outputs/nav[2]</output>
 			<output>/systems/electrical/outputs/nav[3]</output>
 			<output>/systems/electrical/outputs/pitot-head</output>
-			<output>/systems/electrical/outputs/tacan</output>
 			<output>/systems/electrical/outputs/taxi-lights</output>
 			<output>/systems/electrical/outputs/transponder</output>
 			<output>/systems/electrical/outputs/turn-coordinator</output>
+		</switch>
+		
+		<switch name="systems/electrical/tacan-pwr">
+			<default value="0"/>
+			<test value="systems/electrical/bus/ac-busbar-emerg">
+				systems/electrical/bus/ac-busbar-emerg ge 0
+			</test>
+			<output>/systems/electrical/outputs/DG</output>
+			<output>/systems/electrical/outputs/tacan</output>
 		</switch>
 	</channel>
 </system>
