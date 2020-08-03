@@ -157,12 +157,10 @@
             <input>systems/electrical/bus/ac-busbar-1</input>
             <table>
                 <independentVar lookup="row">systems/electrical/bus/ac-busbar-1</independentVar>
-                <independentVar lookup="column">systems/electrical/tru1-offline</independentVar>
                 <tableData>
-                    0       1
-                    0       0      0
-					110     24     0
-					115     28.5     0
+                    0       0
+					110     24
+					115     28.5
                 </tableData>
             </table>
             <clipto>
@@ -173,14 +171,12 @@
 		
        <scheduled_gain name="systems/electrical/tru2-output-volts">
             <input>systems/electrical/bus/ac-busbar-2</input>
-            <table>
+             <table>
                 <independentVar lookup="row">systems/electrical/bus/ac-busbar-2</independentVar>
-                <independentVar lookup="column">systems/electrical/tru2-offline</independentVar>
                 <tableData>
-                    0       1
-                    0       0      0
-					110     24     0
-					115     28.5     0
+                    0       0
+					110     24
+					115     28.5
                 </tableData>
             </table>
             <clipto>
@@ -302,7 +298,7 @@
 				systems/electrical/tru2-output-volts ge 24
 			</test>
 			<test logic="AND" value="systems/electrical/tru1-output-volts">
-				systems/electrical/tru2-offline eq 1
+				systems/electrical/tru1-offline eq 0
 				systems/electrical/tru1-output-volts ge 24
 			</test>
 			<test logic="AND" value="24">

@@ -20,16 +20,15 @@
     <altimeter>
         <name>altimeter</name>
         <number>0</number>
-        <suction>fdm/jsbsim/systems/electrical/ac-left-main-bus</suction>
+        <suction>fdm/jsbsim/systems/electrical/bus/dc-busbar-emerg</suction>
     </altimeter>
 
     <attitude-indicator>
         <name>attitude-indicator</name>
         <number>0</number>
-        <suction>fdm/jsbsim/systems/electrical/ac-left-main-bus</suction>
+        <suction>fdm/jsbsim/systems/electrical/bus/dc-busbar-emerg</suction>
     </attitude-indicator>
-
-
+	
     <clock>
         <name>clock</name>
         <number>0</number>
