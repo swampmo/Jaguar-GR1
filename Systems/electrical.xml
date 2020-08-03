@@ -290,7 +290,7 @@
 				systems/electrical/tru1-output-volts ge 24
 			</test>
 			<test logic="AND" value="systems/electrical/tru2-output-volts">
-				systems/electrical/tru1-offline eq 1
+				systems/electrical/tru2-offline eq 0
 				systems/electrical/tru2-output-volts ge 24
 			</test>
 		</switch>
