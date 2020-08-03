@@ -192,6 +192,7 @@
 		<switch name="systems/electrical/tru1-offline">
 			<default value="0"/>
 			<test logic="OR" value="1">
+				systems/electrical/tru1-output-volts eq 0
 				/controls/electrical/tru-1-switch eq -1
 				systems/electrical/tru1-failed eq 1
 			</test>
@@ -200,6 +201,7 @@
 		<switch name="systems/electrical/tru2-offline">
 			<default value="0"/>
 			<test logic="OR" value="1">
+				systems/electrical/tru2-output-volts eq 0
 				/controls/electrical/tru-2-switch eq -1
 				systems/electrical/tru2-failed eq 1
 			</test>
