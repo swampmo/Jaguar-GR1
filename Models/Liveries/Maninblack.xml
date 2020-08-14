@@ -6,7 +6,7 @@
     <model>
       <livery>
         <name type="string">Man in black </name>
-        <texture>Liveries/Man in Black.png</texture>
+        <texture>Liveries/Man in black.png</texture>
 
       </livery>
     </model>
