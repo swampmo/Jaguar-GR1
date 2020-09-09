@@ -1055,30 +1055,43 @@
 
   <!-- Rentré des roues -->
   <!-- Train avant -->
+  
   <animation>
-    <name>TrainAvant</name>
+    <type>rotate</type>
+    <object-name>axeAHstrut</object-name>
     <object-name>roueA</object-name>
     <object-name>roueA-Fix</object-name>
     <object-name>roueA-Fourche</object-name>
     <object-name>axeAH</object-name>
+    <property>gear/gear[0]/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep> -85 </dep></entry>
+      <entry><ind> 1.0 </ind><dep>   0 </dep></entry>
+    </interpolation>
+    <axis>
+      <object-name>TrainAvant-axis</object-name>
+    </axis>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>TrainAvant</object-name>
+    <object-name>axeAHstrut</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
-      <entry><ind> 0.0 </ind><dep> -65 </dep></entry>
+      <entry><ind> 0.0 </ind><dep> 5 </dep></entry>
       <entry><ind> 1.0 </ind><dep>   0 </dep></entry>
     </interpolation>
-    <center>
-      <x-m> -4.271 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.776 </z-m>
-    </center>
+    <axis>
+      <object-name>axeAHstrut-axis</object-name>
+    </axis>
     <axis>
       <x> 0 </x>
-      <y> 1 </y>
+      <y> -1 </y>
       <z> 0 </z>
     </axis>
   </animation>
