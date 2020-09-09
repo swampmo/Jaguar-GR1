@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 
-<!-- F-15 AFCS Dialog -->
-
 <PropertyList>
-	<name>stuff</name>
+	<name>armament-config</name>
 	<layout>vbox</layout>
 
 	<group>
@@ -11,7 +9,7 @@
 
 		<text>
             <halign>left</halign>
-			<label>Misc settings</label>
+			<label>Armament /Configuration</label>
 		</text>
 
         <button>
@@ -80,5 +78,21 @@
 		</input>				
 				
     </group>
+	<group>
+		<layout>hbox</layout>
+
+		<text>
+			<label>Weapons MP messaging and damage:</label>
+		</text>
+
+		<checkbox>
+			<property>payload/armament/msg</property>
+			<live>true</live>
+			<binding>
+				<command>property-toggle</command>
+				<property>payload/armament/msg</property>
+			</binding>
+		</checkbox>
+	</group>
 
 </PropertyList>

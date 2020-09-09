@@ -187,7 +187,7 @@
       <path>Aircraft/Jaguar-Gr1/Sounds/jaguar-sound.xml</path>
     </sound>
 
-  <checklists include="gui/checklists.xml"/>
+  <checklists include="checklists.xml"/>
 
     <ai>
       <scenario>refueling_demo_2</scenario>
@@ -586,7 +586,7 @@
       <disable>0</disable>
     </replay>
 
-    <menubar include="Dialogs/jaguar-menu.xml"/>
+    <menubar include="gui/jaguar-menu.xml"/>
 
 		<flight-recorder>
     <replay-config type="int">0</replay-config>
@@ -867,7 +867,7 @@
   </environment>
 
   <input>
-    <keyboard include="/Dialogs/jaguar-keyboard.xml"/>
+    <keyboard include="gui/jaguar-keyboard.xml"/>
   </input>
 
 <consumables>
@@ -920,7 +920,7 @@
             <models type="string">Aircraft/Jaguar-Gr1/Models/Weapons/</models>
             <modelsUseCase type="bool">true</modelsUseCase>
             <modelsUpperCase type="bool">true</modelsUpperCase>
-            <msg type="bool">true</msg>
+            <msg type="bool">false</msg>
             <pylon-offset type="int">0</pylon-offset>
             <pylon-stations>payload</pylon-stations>
             <station-name type="string">station</station-name>

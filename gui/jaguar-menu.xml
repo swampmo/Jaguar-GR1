@@ -28,10 +28,10 @@
         </binding>
       </item>
       <item>
-        <label>Misc</label>
+        <label>Armaments</label>
         <binding>
           <command>dialog-show</command>
-          <dialog-name>stuff</dialog-name>
+          <dialog-name>armament-config</dialog-name>
         </binding>
       </item>
 
