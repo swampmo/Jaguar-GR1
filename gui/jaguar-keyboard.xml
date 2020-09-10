@@ -2,6 +2,50 @@
 
 <PropertyList>
 
+  <key n="42">
+    <name>*</name>
+    <desc>NWS toggle</desc>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/gear/nose-wheel-steering</property>
+    </binding>
+  </key>
+
+
+  <key n="68">
+    <name>D</name>
+    <desc>close-canopy</desc>
+    <binding>
+      <command>property-assign</command>
+      <property>/fdm/jsbsim/fcs/canopy/engage</property>
+      <value>0</value>
+    </binding>
+  </key>
+
+  <key n="76">
+    <name>L</name>
+    <desc>Deploy slats</desc>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-cycle</command>
+      <property>fdm/jsbsim/fcs/slats-cmd-deg</property>
+      <value type="int">0</value>
+      <value type="int">9</value>
+      <value type="int">23</value>
+      <wrap>false</wrap>
+    </binding>
+  </key>
+
+  <key n="100">
+    <name>d</name>
+    <desc>canopy</desc>
+    <binding>
+      <command>property-assign</command>
+      <property>/fdm/jsbsim/fcs/canopy/engage</property>
+      <value>1</value>
+    </binding>
+  </key>
+
   <key n="101">
     <name>e</name>
     <desc>Guns</desc>
@@ -18,98 +62,67 @@
       </binding>
     </mod-up>
   </key>
-  <key n="109">
-      <name>m</name>
-      <desc>Masterarm</desc>
-      <binding>
-          <command>nasal</command>
-          <script><![CDATA[
-                  setprop("controls/armament/master-arm",!getprop("controls/armament/master-arm"));
-                  screen.log.write("Master-arm "~(getprop("controls/armament/master-arm")==0?"OFF":"ON"), 0.5, 0.5, 1);
-              
-          ]]></script>
-      </binding>
-  </key>
-<key n="119">
-                <name>w</name>
-                <desc>Cycle Weapon Type</desc>
-                <binding n="2">
-                    <command>nasal</command>
-                    <condition>
-                            <and>
-                            <not-equals>
-                                <property>sim/current-view/name</property>
-                                <value>Walk View</value>
-                            </not-equals>
-                            <not-equals>
-                                <property>sim/current-view/name</property>
-                                <value>Walker Orbit View</value>
-                            </not-equals>
-                            </and>
-                     </condition>
-                    <script>pylons.fcs.cycleLoadedWeapon();</script>
-                </binding>
-            </key>
-   <key n="100">
-    <name>d</name>
-    <desc>canopy</desc>
-	<binding>
-		<command>property-assign</command>
-		<property>/fdm/jsbsim/fcs/canopy/engage</property>
-		<value>1</value>
-	</binding>
-  </key>
 
-  <key n="68">
-    <name>D</name>
-    <desc>close-canopy</desc>
+  <key n="108">
+    <name>l</name>
+    <desc>Retract slats</desc>
+    <repeatable>false</repeatable>
     <binding>
-		<command>property-assign</command>
-		<property>/fdm/jsbsim/fcs/canopy/engage</property>
-		<value>0</value>
-	</binding>
-  </key>
-
-         <key n="76">
-            <name>L</name>
-            <desc>Deploy slats</desc>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-cycle</command>
-                <property>fdm/jsbsim/fcs/slats-cmd-deg</property>
-                <value type="int">0</value>
-                <value type="int">9</value>
-                <value type="int">23</value>
-                <wrap>false</wrap>
-            </binding>
-        </key>
-
-         <key n="108">
-            <name>l</name>
-            <desc>Retract slats</desc>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-cycle</command>
-                <property>fdm/jsbsim/fcs/slats-cmd-deg</property>
-                <value type="int">23</value>
-                <value type="int">9</value>
-                <value type="int">0</value>
-                <wrap>false</wrap>
-            </binding>
-        </key>
-  
-  <key n="123">
-     <name>}</name>
-     <desc>Engine Autostop</desc>
-    <binding>
-        <command>nasal</command>
-        <script>emu.autostop();</script>
+      <command>property-cycle</command>
+      <property>fdm/jsbsim/fcs/slats-cmd-deg</property>
+      <value type="int">23</value>
+      <value type="int">9</value>
+      <value type="int">0</value>
+      <wrap>false</wrap>
     </binding>
   </key>
- 
+
+  <key n="109">
+    <name>m</name>
+    <desc>Masterarm</desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+        <![CDATA[
+                  setprop("controls/armament/master-arm",!getprop("controls/armament/master-arm"));
+                  screen.log.write("Master-arm "~(getprop("controls/armament/master-arm")==0?"OFF":"ON"), 0.5, 0.5, 1);
+          ]]>
+      </script>
+    </binding>
+  </key>
+
+  <key n="119">
+    <name>w</name>
+    <desc>Cycle Weapon Type</desc>
+    <binding n="2">
+      <command>nasal</command>
+      <condition>
+        <and>
+          <not-equals>
+            <property>sim/current-view/name</property>
+            <value>Walk View</value>
+          </not-equals>
+          <not-equals>
+            <property>sim/current-view/name</property>
+            <value>Walker Orbit View</value>
+          </not-equals>
+        </and>
+      </condition>
+      <script>pylons.fcs.cycleLoadedWeapon();</script>
+    </binding>
+  </key>
+
+  <key n="123">
+    <name>}</name>
+    <desc>Engine Autostop</desc>
+    <binding>
+      <command>nasal</command>
+      <script>emu.autostop();</script>
+    </binding>
+  </key>
 
 
- <!--  <key n="76">
+  <!--  <key n="76">
     <name>L</name>
     <desc>Active Target Seeking</desc>
     <binding>
@@ -118,7 +131,7 @@
     </binding>
   </key> -->
 
-<!--  <key n="84">
+  <!--  <key n="84">
     <name>t</name>
     <desc>Active ECM</desc>
     <binding>
