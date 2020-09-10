@@ -4,12 +4,12 @@
 
   <model>
     <name>ProbeLightFlash</name>
-    <path>Aircraft/Jaguar-Gr1/Models/Lights/Flares/ProbeLight-flash.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Lights/Flares/ProbeLight-flash.xml</path>
   </model>
 
   <model>
     <name>ProbeLightRemb</name>
-    <path>Aircraft/Jaguar-Gr1/Models/Lights/Rembrandt/ProbeLight-remb.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Lights/Rembrandt/ProbeLight-remb.xml</path>
   </model>
   
   <animation>

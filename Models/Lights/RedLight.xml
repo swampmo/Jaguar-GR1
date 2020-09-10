@@ -4,12 +4,12 @@
 
   <model>
     <name>RedLightFlare</name>
-    <path>Aircraft/Jaguar-Gr1/Models/Lights/Flares/RedLight-flare.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Lights/Flares/RedLight-flare.xml</path>
   </model>
 
   <model>
     <name>RedLightRemb</name>
-    <path>Aircraft/Jaguar-Gr1/Models/Lights/Rembrandt/RedLight-remb.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Lights/Rembrandt/RedLight-remb.xml</path>
   </model>
 
   <animation>

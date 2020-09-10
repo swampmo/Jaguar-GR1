@@ -72,7 +72,7 @@
   
 <!--
   <panel>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/mfd/mfd1-hotspots.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/mfd/mfd1-hotspots.xml</path>
     <bottom-left>
       <x-m>  0.02 </x-m>
       <y-m> -0.10 </y-m>
@@ -92,7 +92,7 @@
 -->
 <!--  <model>
     <name>enav</name>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/mfd/enav-w.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/mfd/enav-w.xml</path>
     <offsets> 
       <x-m>  0.015 </x-m>
       <y-m> -0.001 </y-m>

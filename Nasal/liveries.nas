@@ -1,3 +1,3 @@
-aircraft.livery.init("Aircraft/Jaguar-Gr1/Models/Liveries");
+aircraft.livery.init("Aircraft/Jaguar-GR1/Models/Liveries");
 
 

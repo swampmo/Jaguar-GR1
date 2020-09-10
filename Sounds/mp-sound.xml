@@ -10,7 +10,7 @@
 
        <engine>
          <name>airgen-ext</name>
-         <path>Aircraft/Jaguar-Gr1/Sounds/airgenint.wav</path>
+         <path>Aircraft/Jaguar-GR1/Sounds/airgenint.wav</path>
          <mode>looped</mode>
          <condition>
             <greater-than>
@@ -40,7 +40,7 @@
     <engine>
       <name>engine-start-outside</name>
       <mode>once</mode>
-      <path>Aircraft/Jaguar-Gr1/Sounds/startup.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/startup.wav</path>
       <condition>
         <and> 
        <greater-than>  
@@ -75,7 +75,7 @@
   	<engine>
       <name>engine-start-outside1</name>
       <mode>once</mode>
-      <path>Aircraft/Jaguar-Gr1/Sounds/startup.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/startup.wav</path>
       <condition>
         <and> 
       <greater-than>  
@@ -109,7 +109,7 @@
 	
   	<engine>
       <name>engine</name>
-      <path>Aircraft/Jaguar-Gr1/Sounds/jet-blast.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/jet-blast.wav</path>
       <mode>looped</mode>
       <condition>
         <property>engines/engine[0]/running</property>
@@ -142,7 +142,7 @@
 	
   	<engine>
       <name>engine1</name>
-      <path>Aircraft/Jaguar-Gr1/Sounds/jet-blast.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/jet-blast.wav</path>
       <mode>looped</mode>
       <condition>
         <property>engines/engine[1]/running</property>
@@ -177,7 +177,7 @@
       <engine>
          <name>Engine Exhaust</name>
          <mode>looped</mode>
-           <path>Aircraft/Jaguar-Gr1/Sounds/Jaguar-whine.wav</path>
+           <path>Aircraft/Jaguar-GR1/Sounds/Jaguar-whine.wav</path>
            <condition>
     	      <property>/engines/engine/running</property>
     	         <not>
@@ -216,7 +216,7 @@
   
    <engine>
       <name>thrust lowfreq exterior</name>
-      <path>Aircraft/Jaguar-Gr1/Sounds/engine-lowfreq.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/engine-lowfreq.wav</path>
       <mode>looped</mode>
       <condition>
         <property>/engines/engine/running</property>
@@ -239,7 +239,7 @@
   
    <engine>
       <name>burner lowfreq</name>
-      <path>Aircraft/Jaguar-Gr1/Sounds/burner-lowfreq.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/burner-lowfreq.wav</path>
       <mode>once</mode>    
       <property>engines/engine/augmentation</property>
       <volume>
@@ -251,7 +251,7 @@
 
     <engine>
       <name>burner lowfreq loop0</name>
-      <path>Aircraft/Jaguar-Gr1/Sounds/engine-lowfreq.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/engine-lowfreq.wav</path>
       <mode>looped</mode>
       <property>engines/engine[0]/augmentation</property>
       <volume>
@@ -263,7 +263,7 @@
 	
 	 <engine>
       <name>burner lowfreq loop1</name>
-      <path>Aircraft/Jaguar-Gr1/Sounds/engine-lowfreq.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/engine-lowfreq.wav</path>
       <mode>looped</mode>
       <property>engines/engine[1]/augmentation</property>
       <volume>
@@ -275,7 +275,7 @@
 	
     <engine>
       <name>burner loop0</name>
-      <path>Aircraft/Jaguar-Gr1/Sounds/reheat.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/reheat.wav</path>
       <mode>looped</mode>
       <condition>
         <property>/engines/engine[0]/running</property>
@@ -303,7 +303,7 @@
 	
 	   <engine>
       <name>burner loop1</name>
-      <path>Aircraft/Jaguar-Gr1/Sounds/reheat.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/reheat.wav</path>
       <mode>looped</mode>
       <condition>
         <property>/engines/engine[1]/running</property>
@@ -335,7 +335,7 @@
   <sonicboom>
    <name>Sonic Boom</name>
 	<mode>once</mode>
-   <path>Aircraft/Jaguar-Gr1/Sounds/sonicboom.wav</path>
+   <path>Aircraft/Jaguar-GR1/Sounds/sonicboom.wav</path>
    <condition>
    <and>
 	    <greater-than>
@@ -358,7 +358,7 @@
 		<flyby>
 			<name>fly-by</name>
 			<mode>looped</mode>
-			<path>Aircraft/Jaguar-Gr1/Sounds/flyby.wav</path>
+			<path>Aircraft/Jaguar-GR1/Sounds/flyby.wav</path>
 			<condition>
 			<and>
 	    <greater-than>
@@ -385,7 +385,7 @@
     <guns>
       <name>gunfire</name>
       <mode>looped</mode>
-      <path>Aircraft/Jaguar-Gr1/Sounds/gunfire.wav</path>
+      <path>Aircraft/Jaguar-GR1/Sounds/gunfire.wav</path>
       <condition> 
         <property>controls/armament/trigger</property>
         <property>ai/submodels/submodel/count</property>

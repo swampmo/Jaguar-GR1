@@ -18,7 +18,7 @@
   <!-- working for Rembrandt -->
 
   <effect>
-    <inherits-from>Aircraft/Jaguar-Gr1/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>Aircraft/Jaguar-GR1/Models/Effects/Glass/glass</inherits-from>
     <object-name>glass</object-name>
   </effect>
 
