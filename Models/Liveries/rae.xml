@@ -6,7 +6,7 @@
     <model>
       <livery>
         <name type="string">Royal Air Establishment</name>
-        <texture>Liveries/rae.png</texture>
+        <texture>Liveries/rae.jpg</texture>
 
       </livery>
     </model>
