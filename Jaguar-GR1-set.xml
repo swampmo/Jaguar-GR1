@@ -2073,7 +2073,6 @@
       <file>Aircraft/Jaguar-Gr1/Nasal/Jaguar2.nas</file>
       <file>Aircraft/Jaguar-Gr1/Nasal/liveries.nas</file>
       <file>Aircraft/Jaguar-Gr1/Nasal/autoflight.nas</file>
-      <file>Aircraft/Jaguar-Gr1/Nasal/mplights.nas</file>
     </jaguar>
 
     <lights>
