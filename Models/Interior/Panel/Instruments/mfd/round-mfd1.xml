@@ -2,7 +2,7 @@
 
 <PropertyList> 
 
-  <path>../../3D-Models/Jag-GR1Display.ac</path>
+  <path>Jag-GR1Display.ac</path>
 
   <animation>
     <object-name>Bigscreen</object-name>
@@ -256,4 +256,3 @@
 	</animation>-->
 
 </PropertyList>
-
