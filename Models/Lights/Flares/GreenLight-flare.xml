@@ -10,7 +10,7 @@
       <sum>
         <product>
           <product>
-            <property>lightpack/nav-lights-intensity</property>
+            <property>sim/multiplay/generic/float[23]</property>
             <value>-1</value>
           </product>
           <sum>

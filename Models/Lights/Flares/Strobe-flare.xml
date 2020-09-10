@@ -10,7 +10,7 @@
       <sum>
         <product>
           <product>
-            <property>lightpack/strobe-state/state</property>
+            <property>sim/multiplay/generic/bool[3]</property>
             <value>-1</value>
           </product>
           <sum>

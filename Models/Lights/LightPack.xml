@@ -2,6 +2,29 @@
 
 <PropertyList>
 
+  <!-- RJH - Sept 2020 - 
+    
+    convert lighting pack to use generic bools for state information as
+    it means that we don't need Nasal in the model file to decode the
+    light status.
+
+    Also using bools is very efficient as it is 1 bit per bool in MP transit.
+    
+    To support this add the following lines to the -set.xml in the 
+    section  <sim><multiply><generic>
+        <float n="23" type="double" alias="/lightpack/nav-lights-intensity" />
+        <float n="24" type="double" alias="/lightpack/landing-lights-intensity" />
+        <float n="25" type="double" alias="/lightpack/probe-light-intensity" />
+        <float n="26" type="double" alias="/lightpack/taxi-light-intensity" />
+        <float n="27" type="double" alias="/lightpack/white-light-intensity" />
+
+        <bool n="2" type="bool" alias="/lightpack/beacon-state/state" />
+        <bool n="3" type="bool" alias="/lightpack/strobe-state/state" />
+
+  If require the properties can easily be moved from lightpack to say sim/lightpack by 
+  simply changing the alias above and in lights.nas
+  -->
+ 
   <!-- nav lights -->
   <!-- green and red navigation lights, usually mounted on the wingtips -->
   <!-- note: default orientation is up -->

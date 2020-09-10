@@ -10,7 +10,7 @@
       <sum>
         <product>
           <product>
-            <property>lightpack/landing-lights-intensity</property>
+            <property>sim/multiplay/generic/float[24]</property>
             <value>-1</value>
           </product>
           <sum>

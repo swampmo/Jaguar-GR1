@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <path>TaxiLightCone.ac</path>
+  <path>ProbeLightCone.ac</path>
   
   <animation>
     <type>select</type>
@@ -12,16 +12,17 @@
         <property>/sim/rendering/rembrandt/enabled</property>
         <greater-than>
           <property>/sim/rendering/shaders/lights</property>
-          <value>0</value>
+          <value>1</value>
         </greater-than>
       </and>
     </condition>
   </animation>
 
+
   <animation>
     <type>light</type>
     <light-type>spot</light-type>
-    <name>TaxiR</name>
+    <name>ProbeR</name>
     <object-name>light</object-name>
     <nopreview/>
     <position>
@@ -69,19 +70,19 @@
             </product>
             <value>-1</value>
           </sum>
-          <property>sim/multiplay/generic/float[26]</property>
+          <property>sim/multiplay/generic/float[25]</property>
         </product>
       </expression>
     </dim-factor>
     <attenuation>
-      <c>0.005</c>
+      <c>0.1</c>
       <l>0.002</l>
-      <q>0.002</q>
+      <q>0.008</q>
     </attenuation>
-    <exponent>70</exponent>
-    <cutoff>45</cutoff>
-    <near-m>0.01</near-m>
-    <far-m>250</far-m>
+    <exponent>6</exponent>
+    <cutoff>70</cutoff>
+    <near-m>0.04</near-m>
+    <far-m>130</far-m>
   </animation>
 
 </PropertyList>

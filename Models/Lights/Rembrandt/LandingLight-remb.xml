@@ -69,7 +69,7 @@
             </product>
             <value>-1</value>
           </sum>
-          <property>lightpack/landing-lights-intensity</property>
+          <property>sim/multiplay/generic/float[24]</property>
         </product>
       </expression>
     </dim-factor>

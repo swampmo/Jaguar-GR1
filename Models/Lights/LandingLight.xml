@@ -24,7 +24,7 @@
     <object-name>LandingLightCone</object-name> <!-- uncomment for fake non-rembrandt cones -->
     <condition>
       <and>
-        <property>lightpack/landing-lights-intensity</property>
+        <property>sim/multiplay/generic/float[24]</property>
         <not><property>sim/crashed</property></not>
       </and>
     </condition>

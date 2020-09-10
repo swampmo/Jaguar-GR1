@@ -296,8 +296,20 @@
         <float n="21" type="double" alias="/fdm/jsbsim/propulsion/inlet/doorfront-position-deg" />
         <float n="22" type="double" alias="/fdm/jsbsim/propulsion/inlet/doorrear-position-deg" />
 
+        <!-- lighting pack -->
+        <float n="23" type="double" alias="/lightpack/nav-lights-intensity" />
+        <float n="24" type="double" alias="/lightpack/landing-lights-intensity" />
+        <float n="25" type="double" alias="/lightpack/probe-light-intensity" />
+        <float n="26" type="double" alias="/lightpack/taxi-light-intensity" />
+        <float n="27" type="double" alias="/lightpack/white-light-intensity" />
+
+        <!-- engine afterburners on/off -->
         <bool n="0" type="bool" alias="/engines/engine[0]/augmentation" />
         <bool n="1" type="bool" alias="/engines/engine[1]/augmentation" />
+
+        <!-- lighting pack -->
+        <bool n="2" type="bool" alias="/lightpack/beacon-state/state" />
+        <bool n="3" type="bool" alias="/lightpack/strobe-state/state" />
       </generic>
     </multiplay>
 

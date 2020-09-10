@@ -18,7 +18,7 @@
     <object-name>BeaconRemb</object-name>
     <condition>
       <and>
-        <property>lightpack/beacon-state/state</property>
+        <property>sim/multiplay/generic/bool[2]</property>
         <not><property>sim/crashed</property></not>
       </and>
     </condition>

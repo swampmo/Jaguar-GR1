@@ -49,7 +49,7 @@
   <animation>
      <type>scale</type>
      <object-name>flash</object-name>
-     <property>lightpack/taxi-light-intensity</property>
+     <property>sim/multiplay/generic/float[26]</property>
   </animation>
 
   <animation>

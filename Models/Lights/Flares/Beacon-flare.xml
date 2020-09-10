@@ -10,7 +10,7 @@
       <sum>
         <product>
           <product>
-            <property>lightpack/beacon-state/state</property>
+            <property>sim/multiplay/generic/bool[2]</property>
             <value>-1</value>
           </product>
           <sum>

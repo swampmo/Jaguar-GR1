@@ -18,7 +18,7 @@
     <object-name>GreenLightRemb</object-name>
     <condition>
       <and>
-        <property>lightpack/nav-lights-intensity</property>
+        <property>sim/multiplay/generic/float[23]</property>
         <not><property>sim/crashed</property></not>
       </and>
     </condition>
