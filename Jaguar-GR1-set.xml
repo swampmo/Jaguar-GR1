@@ -186,7 +186,7 @@
       <path>Aircraft/Jaguar-Gr1/Models/Effects/Guns/submodels.xml</path>
       <path>Aircraft/Jaguar-Gr1/Models/Weapons/loads.xml</path>
       <path>Aircraft/Jaguar-Gr1/Models/Weapons/pylons.xml</path>
-      <path>Aircraft/Jaguar-Gr1/Systems/sub_lancer.xml</path>
+      <path>Aircraft/Jaguar-Gr1/System/sub_lancer.xml</path>
     </submodels>
 
     <startup>
@@ -199,14 +199,6 @@
     </sound>
 
     <checklists include="checklists.xml" />
-
-    <ai>
-      <scenario>refueling_demo_2</scenario>
-    </ai>
-
-    <ai>
-      <scenario n="100">wingman_Jauguar_demo</scenario>
-    </ai>
 
     <help>
       <title>Jaguar GR1</title>

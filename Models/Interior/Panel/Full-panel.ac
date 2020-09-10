@@ -15907,7 +15907,7 @@ OBJECT poly
 name "Air-Press"
 data 17
 Cube.002.mesh.000
-texture "stripes-OFF.png"
+texture "stripes-off.png"
 crease 45.000000
 numvert 8
 -3.36021 0.09325 -0.10383
@@ -19588,7 +19588,7 @@ OBJECT poly
 name "Avant"
 data 17
 Cube.002.mesh.001
-texture "stripes-OFF.png"
+texture "stripes-off.png"
 crease 45.000000
 numvert 8
 -3.36021 0.09325 -0.16408
@@ -31684,7 +31684,7 @@ OBJECT poly
 name "Centre"
 data 17
 Cube.002.mesh.002
-texture "stripes-OFF.png"
+texture "stripes-off.png"
 crease 45.000000
 numvert 8
 -3.36021 0.08038 -0.10383
@@ -32350,7 +32350,6 @@ OBJECT poly
 name "counter-drum-1"
 data 21
 Cylinder.007.mesh.000
-texture "A-10-counter-drums.png"
 crease 35.000000
 numvert 64
 -3.34922 0.31185 -0.13513
@@ -32647,7 +32646,6 @@ OBJECT poly
 name "counter-drum-2"
 data 21
 Cylinder.008.mesh.000
-texture "A-10-counter-drums.png"
 crease 35.000000
 numvert 64
 -3.34921 0.31121 -0.14003
@@ -32944,7 +32942,6 @@ OBJECT poly
 name "counter-drum-3"
 data 21
 Cylinder.007.mesh.001
-texture "A-10-counter-drums.png"
 crease 35.000000
 numvert 64
 -3.34922 0.30984 -0.15104
@@ -33241,7 +33238,6 @@ OBJECT poly
 name "counter-drum-4"
 data 21
 Cylinder.008.mesh.001
-texture "A-10-counter-drums.png"
 crease 35.000000
 numvert 64
 -3.34921 0.30921 -0.15582
@@ -33586,13 +33582,13 @@ numvert 4
 -3.36109 0.171 -0.17616
 -3.36119 0.17795 -0.17616
 numsurf 1
-SURF 0x30
+SURF 0x10
 mat 0
 refs 4
-2 0.557128 0.792531
-3 0.557128 0.921972
-1 0.965715 0.921971
 0 0.965715 0.792531
+1 0.965715 0.921971
+3 0.557128 0.921972
+2 0.557128 0.792531
 kids 0
 OBJECT poly
 name "drum-2"
@@ -33606,7 +33602,7 @@ numvert 4
 -3.36113 0.171 -0.18039
 -3.36124 0.17795 -0.18039
 numsurf 1
-SURF 0x30
+SURF 0x10
 mat 0
 refs 4
 2 0.509572 0.688173
@@ -33626,13 +33622,13 @@ numvert 4
 -3.36118 0.171 -0.18473
 -3.36128 0.17795 -0.18473
 numsurf 1
-SURF 0x30
+SURF 0x10
 mat 0
 refs 4
-2 0.477912 0.59198
-3 0.505614 0.718099
-1 1.02545 0.719776
 0 0.997748 0.593658
+1 1.02545 0.719776
+3 0.505614 0.718099
+2 0.477912 0.59198
 kids 0
 OBJECT poly
 name "drum-4"
@@ -33646,13 +33642,13 @@ numvert 4
 -3.36118 0.171 -0.18948
 -3.36128 0.17795 -0.18948
 numsurf 1
-SURF 0x30
+SURF 0x10
 mat 0
 refs 4
-2 0.011764 0.288936
-3 0.011764 0.415264
-1 0.501933 0.415264
 0 0.501933 0.288936
+1 0.501933 0.415264
+3 0.011764 0.415264
+2 0.011764 0.288936
 kids 0
 OBJECT poly
 name "drum-5"
@@ -33666,13 +33662,13 @@ numvert 4
 -3.36118 0.171 -0.19397
 -3.36128 0.17795 -0.19397
 numsurf 1
-SURF 0x30
+SURF 0x10
 mat 0
 refs 4
-2 -0.0205 -0.006896
-3 -0.026811 0.116875
-1 0.505498 0.122263
 0 0.511808 -0.001508
+1 0.505498 0.122263
+3 -0.026811 0.116875
+2 -0.0205 -0.006896
 kids 0
 OBJECT poly
 name "eng"
@@ -132814,7 +132810,7 @@ OBJECT poly
 name "Rear"
 data 17
 Cube.002.mesh.028
-texture "stripes-OFF.png"
+texture "stripes-off.png"
 crease 45.000000
 numvert 8
 -3.36021 0.08038 -0.16408
