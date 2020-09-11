@@ -1,5 +1,3 @@
-English
-
 This Jaguar GR1 model is based on the work of Emmanuel Baranger the
 team that have been working on improving this model to OPRF standards
 are
