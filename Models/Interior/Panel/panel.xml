@@ -5,7 +5,7 @@
   <path>Full-panel.ac</path>
  
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/Radar/Radar/A-10-rwr.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/Radar/Radar/A-10-rwr.xml</path>
     <offsets>
       <x-m> -0.002 </x-m>
       <y-m> -0.005 </y-m>
@@ -16,7 +16,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/sas/A-10-sas.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/sas/A-10-sas.xml</path>
     <offsets>
       <x-m> -2.803 </x-m>
       <y-m> -0.312 </y-m>
@@ -27,7 +27,7 @@
 
 
  <model>  
-  <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/bits/air-brake-light.xml</path>
+  <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/bits/air-brake-light.xml</path>
   <offsets>
       <x-m> -3.362 </x-m>
       <y-m> -0.155 </y-m>
@@ -37,7 +37,7 @@
  </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Arrest-Handle.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Arrest-Handle.xml</path>
     <offsets>
       <x-m> -0.050 </x-m>
       <y-m> -0.012 </y-m>
@@ -47,7 +47,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/asi/airspeed.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/asi/airspeed.xml</path>
     <offsets>
       <x-m> -3.358 </x-m>
       <y-m> -0.175 </y-m>
@@ -57,7 +57,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/alt/alt.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
       <y-m> -0.190 </y-m>
@@ -67,7 +67,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Call-Panel.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Call-Panel.xml</path>
     <offsets>
       <x-m>-0.155 </x-m>
       <y-m>-0.048 </y-m>
@@ -77,7 +77,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Canopy-Lock.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Canopy-Lock.xml</path>
     <offsets>
       <x-m> 0.070 </x-m>
       <y-m>-0.008 </y-m>
@@ -87,7 +87,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/clock/chronograph.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/clock/chronograph.xml</path>
     <offsets>
       <x-m> -3.330 </x-m>
       <y-m> -0.345 </y-m>
@@ -98,7 +98,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Drag-Chute.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Drag-Chute.xml</path>
     <offsets>
       <x-m> -0.295 </x-m>
       <y-m> -0.010 </y-m>
@@ -109,7 +109,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/ecm/ecm.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/ecm/ecm.xml</path>
     <offsets>
       <x-m> -3.350 </x-m>
       <y-m>  0.315 </y-m>
@@ -121,7 +121,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/elec-panel/elec-panel.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/elec-panel/elec-panel.xml</path>
     <offsets>
       <x-m> -3.100 </x-m>
       <y-m>  0.330 </y-m>
@@ -133,7 +133,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/epr/eprL.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/epr/eprL.xml</path>
     <offsets>
       <x-m> -3.361 </x-m>
       <y-m>  0.133 </y-m>
@@ -143,7 +143,7 @@
   </model>
   
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/epr/eprR.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/epr/eprR.xml</path>
     <offsets>
       <x-m> -3.361 </x-m>
       <y-m>  0.178 </y-m>
@@ -152,7 +152,7 @@
     </offsets>
   </model>
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/egt/exh1.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/egt/exh1.xml</path>
     <offsets>
       <x-m> -3.361 </x-m>
       <y-m>  0.133 </y-m>
@@ -162,7 +162,7 @@
   </model>
   
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/egt/exh2.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/egt/exh2.xml</path>
     <offsets>
       <x-m> -3.361 </x-m>
       <y-m>  0.178 </y-m>
@@ -172,7 +172,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/Fuelflow/FF.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/Fuelflow/FF.xml</path>
     <offsets>
       <x-m> -3.362 </x-m>
       <y-m>  0.215 </y-m>
@@ -182,7 +182,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/AoA/aoa-gauge.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/AoA/aoa-gauge.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -192,7 +192,7 @@
   </model>
 
   <!--model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/flightindicator/flight-indicator.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/flightindicator/flight-indicator.xml</path>
     <offsets>
       <x-m> -3.28 </x-m>
       <y-m> -0.31 </y-m>
@@ -203,7 +203,7 @@
 
 <!--
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/Fuel/fuel.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/Fuel/fuel.xml</path>
     <offsets>
       <x-m> -3.320 </x-m>
       <y-m>  0.250 </y-m>
@@ -213,7 +213,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/Fuel/fuel1.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/Fuel/fuel1.xml</path>
     <offsets>
       <x-m> -3.329 </x-m>
       <y-m>  0.250 </y-m>
@@ -223,7 +223,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/Fuel/fuel2.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/Fuel/fuel2.xml</path>
     <offsets>
       <x-m> -3.315 </x-m>
       <y-m>  0.250 </y-m>
@@ -233,7 +233,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/Fuel/fuel3.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/Fuel/fuel3.xml</path>
     <offsets>
       <x-m> -3.322 </x-m>
       <y-m>  0.305 </y-m>
@@ -243,7 +243,7 @@
   </model-->
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Fuel-Probe.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Fuel-Probe.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
       <y-m>  0.000 </y-m>
@@ -253,7 +253,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/GMeter/gmeter.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/GMeter/gmeter.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
       <y-m>  0.120 </y-m>
@@ -263,7 +263,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/HSI/hsi.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/HSI/hsi.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
       <y-m> -0.125 </y-m>
@@ -273,7 +273,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/ils/Jag-ils.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/ils/Jag-ils.xml</path>
     <offsets>
       <x-m> -2.861 </x-m>
       <y-m> -0.318 </y-m>
@@ -283,7 +283,7 @@
   </model>
  
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Ldg-Gear.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Ldg-Gear.xml</path>
     <offsets>
       <x-m> 0.000 </x-m>
       <y-m>-0.005 </y-m>
@@ -293,7 +293,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/LH-Front-Panel.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/LH-Front-Panel.xml</path>
     <offsets>
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
@@ -303,7 +303,7 @@
   </model>
 
   <!--model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/lights/light-left-panel.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/lights/light-left-panel.xml</path>
     <offsets>
       <x-m> -2.828 </x-m>
       <y-m>  0.282 </y-m>
@@ -313,7 +313,7 @@
   </model-->
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/LH-Piece.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/LH-Piece.xml</path>
     <offsets>
       <x-m>-2.930 </x-m>
       <y-m>-0.376 </y-m>
@@ -324,7 +324,7 @@
 
   <model>
   <name>compas</name>
-  <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/compas/mag-compass.xml</path>
+  <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/compas/mag-compass.xml</path>
   <offsets>
       <x-m> -3.345 </x-m>
       <y-m>  0.315 </y-m>
@@ -336,7 +336,7 @@
  </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/mfd/round-mfd1.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/mfd/round-mfd1.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
       <y-m>  0.000 </y-m>
@@ -346,7 +346,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Nav-ECM-Master.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Nav-ECM-Master.xml</path>
     <offsets>
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
@@ -356,7 +356,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/oilpressure/oilpressureL.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/oilpressure/oilpressureL.xml</path>
     <offsets>
       <x-m> -3.364 </x-m>
       <y-m>  0.265 </y-m>
@@ -366,7 +366,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/oilpressure/oilpressureR.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/oilpressure/oilpressureR.xml</path>
     <offsets>
       <x-m> -3.364 </x-m>
       <y-m>  0.322 </y-m>
@@ -376,7 +376,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/HUD/optical-sight.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/HUD/optical-sight.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
       <y-m> -0.000 </y-m>
@@ -385,7 +385,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Pedal-Adjust.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Pedal-Adjust.xml</path>
     <offsets>
       <x-m>  0.025 </x-m>
       <y-m>  0.000 </y-m>
@@ -396,7 +396,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/percentfuel/percentfuel.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/percentfuel/percentfuel.xml</path>
     <offsets>
       <x-m> -3.359 </x-m>
       <y-m>  0.215 </y-m>
@@ -406,7 +406,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/PTR.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/PTR.xml</path>
     <offsets>
       <x-m> -0.140 </x-m>
       <y-m> -0.025 </y-m>
@@ -418,7 +418,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Pylons.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Pylons.xml</path>
     <offsets>
       <x-m>  0.023 </x-m>
       <y-m> -0.025 </y-m>
@@ -429,7 +429,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/ralt/ralt.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/ralt/ralt.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
       <y-m> -0.125 </y-m>
@@ -439,7 +439,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/rpm/rpm-1.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/rpm/rpm-1.xml</path>
     <offsets>
       <x-m> -3.361 </x-m>
       <y-m>  0.133 </y-m>
@@ -449,7 +449,7 @@
   </model>
   
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/rpm/rpm-2.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/rpm/rpm-2.xml</path>
     <offsets>
       <x-m> -3.361 </x-m>
       <y-m>  0.178 </y-m>
@@ -459,7 +459,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Refuel-Panel.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Refuel-Panel.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
       <y-m> -0.015 </y-m>
@@ -470,7 +470,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/seat.ac</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/seat.ac</path>
     <offsets>
       <x-m> -2.700 </x-m>
       <y-m>  0.000 </y-m>
@@ -482,7 +482,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/ControlInd/slats-flaps-gear-indicator.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/ControlInd/slats-flaps-gear-indicator.xml</path>
     <offsets>
       <x-m> -3.359 </x-m>
       <y-m> -0.255 </y-m>
@@ -492,7 +492,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Start-Panel.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Start-Panel.xml</path>
     <offsets>
       <x-m>-0.121 </x-m>
       <y-m> 0.000 </y-m>
@@ -502,7 +502,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/standby-adi/stdby-adi.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/standby-adi/stdby-adi.xml</path>
     <offsets>
       <x-m> -3.362 </x-m>
       <y-m> -0.120 </y-m>
@@ -512,7 +512,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/tacan/tacan.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/tacan/tacan.xml</path>
     <offsets>
       <x-m> -2.945 </x-m>
       <y-m>  0.280 </y-m>
@@ -523,7 +523,7 @@
 
 <model>
   
-  <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/bits/t-handle.xml</path>
+  <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/bits/t-handle.xml</path>
   <offsets>
       <x-m> -3.340 </x-m>
       <y-m>  0.315 </y-m>
@@ -533,7 +533,7 @@
  </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/Trim/trimelevator.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/Trim/trimelevator.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
       <y-m> -0.230 </y-m>
@@ -543,7 +543,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/uhf-box/uhf-box.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/uhf-box/uhf-box.xml</path>
     <offsets>
       <x-m> -3.335 </x-m>
       <y-m> -0.005 </y-m>
@@ -553,7 +553,7 @@
   </model>
   
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/ulp/ulp.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/ulp/ulp.xml</path>
     <offsets>
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
@@ -564,7 +564,7 @@
   
   <model>
     <name>vertspeed</name>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
     <offsets>
       <x-m> -3.360 </x-m>
       <y-m> -0.305 </y-m>
@@ -585,7 +585,7 @@
   </animation>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/warn/warn.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/warn/warn.xml</path>
     <offsets>
       <x-m> -3.355 </x-m>
       <y-m>  0.265 </y-m>
@@ -595,7 +595,7 @@
   </model>
  
  <model>  
-  <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/bits/orangelight.xml</path>
+  <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/bits/orangelight.xml</path>
   <offsets>
       <x-m> -3.363 </x-m>
       <y-m> -0.185 </y-m>
@@ -605,7 +605,7 @@
  </model>
   
  <model>  
-  <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/bits/redlight.xml</path>
+  <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/bits/redlight.xml</path>
   <offsets>
       <x-m> 0.002 </x-m>
       <y-m>-0.333 </y-m>
@@ -617,4 +617,3 @@
 
  
 </PropertyList>
-

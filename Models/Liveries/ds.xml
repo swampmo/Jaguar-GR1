@@ -6,7 +6,7 @@
     <model>
       <livery>
         <name type="string">"Diplomatic Service"</name>
-        <texture>Liveries/desert.png</texture>
+        <texture>Liveries/desert.jpg</texture>
 
       </livery>
     </model>

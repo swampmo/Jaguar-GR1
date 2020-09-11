@@ -6,7 +6,7 @@
     <model>
       <livery>
         <name type="string">Default</name>
-        <texture>texture.png</texture>
+        <texture>Liveries/default.jpg</texture>
 
       </livery>
     </model>

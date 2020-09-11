@@ -6,7 +6,7 @@
 
   <!-- Tableau de bord -->
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/panel.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/panel.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
       <y-m>  0.000 </y-m>
@@ -15,7 +15,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/3D-Models/Throttles.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/3D-Models/Throttles.xml</path>
     <offsets>
       <x-m> -0.170 </x-m>
       <y-m> -0.048 </y-m>
@@ -25,7 +25,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/divers/stick.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/divers/stick.xml</path>
     <offsets>
       <x-m> -3.200 </x-m>
       <y-m> -0.000 </y-m>
@@ -35,7 +35,7 @@
   </model>
   
   <model>
-    <path>Aircraft/Jaguar-Gr1/Models/Interior/Panel/Instruments/divers/pedals.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/divers/pedals.xml</path>
     <offsets>
       <x-m> -3.600 </x-m>
       <y-m> -0.000 </y-m>
@@ -47,7 +47,7 @@
   <!-- Pilote -->
   <model>
     <name>Pilote</name>
-    <path>Aircraft/Jaguar-Gr1/Models/Pilot/pilot.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Pilot/pilot.xml</path>
     <offsets>
       <x-m> -2.736 </x-m>
       <y-m>  0.000 </y-m>
@@ -90,10 +90,9 @@
   </animation>
   <effect>
     <name>canopyglass</name>
-    <inherits-from>Aircraft/Jaguar-Gr1/Models/Effects/canopyglass</inherits-from>
+    <inherits-from>Aircraft/Jaguar-GR1/Models/Effects/canopyglass</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intverriere</object-name>
   </effect>
 
 </PropertyList>
-
