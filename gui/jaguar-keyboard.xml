@@ -22,20 +22,6 @@
     </binding>
   </key>
 
-  <key n="76">
-    <name>L</name>
-    <desc>Deploy slats</desc>
-    <repeatable>false</repeatable>
-    <binding>
-      <command>property-cycle</command>
-      <property>fdm/jsbsim/fcs/slats-cmd-deg</property>
-      <value type="int">0</value>
-      <value type="int">9</value>
-      <value type="int">23</value>
-      <wrap>false</wrap>
-    </binding>
-  </key>
-
   <key n="100">
     <name>d</name>
     <desc>canopy</desc>
@@ -63,19 +49,6 @@
     </mod-up>
   </key>
 
-  <key n="108">
-    <name>l</name>
-    <desc>Retract slats</desc>
-    <repeatable>false</repeatable>
-    <binding>
-      <command>property-cycle</command>
-      <property>fdm/jsbsim/fcs/slats-cmd-deg</property>
-      <value type="int">23</value>
-      <value type="int">9</value>
-      <value type="int">0</value>
-      <wrap>false</wrap>
-    </binding>
-  </key>
 
   <key n="109">
     <name>m</name>

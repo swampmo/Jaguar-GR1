@@ -212,12 +212,20 @@
         <desc>Close canopy</desc>
       </key>
       <key>
+        <name>*</name>
+        <desc>Toggle nose wheel steering</desc>
+      </key>
+      <key>
+        <name>}</name>
+        <desc>Engine autostop</desc>
+      </key>
+      <key>
         <name>]</name>
-        <desc>Deploy slats and flaps</desc>
+        <desc>Deploy 2 stage slats and 4 stage flaps</desc>
       </key>
       <key>
         <name>[</name>
-        <desc>Retract slats and flaps</desc>
+        <desc>Retract 4 stage flaps and 2 stage slats</desc>
       </key>
       <key>
         <name>CTRL b</name>
@@ -253,8 +261,8 @@
       <line>Takeoff procedure</line>
       <line>--------------------------------------------------------------------------------------------------------------------</line>
       <line>Slats deploy before flaps, this is normal for the Jaguar.</line>
-      <line>Set flaps 3 notches to 15 degrees, hold brakes and apply full throttle with rehea.t</line>
-      <line>Rotate at 130 knots to 140 knots depending on weight. Retract flaps and use combat slats as needed below 450 knots.</line>
+      <line>Set flaps 3 notches to 15 degrees, hold brakes and apply full throttle with reheat.</line>
+      <line>Rotate at 130 knots to 140 knots depending on weight. Retract flaps and use slats as needed below 450 knots.</line>
       <line>Exceeding 8.5g or Lowering flaps or gear at 275kts+ may result in damage.</line>
       <line>Droptanks will automatically switch when empty.</line>
       <line>--------------------------------------------------------------------------------------------------------------------</line>
