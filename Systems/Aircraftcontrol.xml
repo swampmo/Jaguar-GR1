@@ -97,7 +97,10 @@
             <value>0</value>
           </lt>
           <product>
-            <property>-fcs/pitch-sum</property>
+            <product>
+              <property>fcs/pitch-sum</property>
+              <value>-1</value>
+            </product>
             <property>fcs/pitch-min-deflection</property>
           </product>
           <product>
