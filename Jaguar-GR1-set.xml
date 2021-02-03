@@ -318,6 +318,11 @@
         <!-- lighting pack -->
         <bool n="2" type="bool" alias="/lightpack/beacon-state/state" />
         <bool n="3" type="bool" alias="/lightpack/strobe-state/state" />
+
+        <!-- GCI -->
+        <bool n="20" type="bool" alias ="/instrumentation/gci/picture"/> <!-- gci request -->
+        <bool n="21" type="bool" alias ="/instrumentation/gci/bogeydope"/> <!-- gci request -->
+        <bool n="22" type="bool" alias ="/instrumentation/gci/cutoff"/> <!-- gci request -->
       </generic>
     </multiplay>
 
@@ -743,6 +748,11 @@
     <enav n="1">
       <wind-display type="int">1</wind-display>
     </enav>
+    <gci>
+      <picture type="bool">false</picture>
+      <bogeydope type="bool">false</bogeydope>
+      <cutoff type="bool">false</cutoff>
+    </gci>
     <tacan>
       <xy-switch type="bool">0</xy-switch>
       <nogo-lamp type="bool">false</nogo-lamp>
@@ -2199,6 +2209,7 @@
     <mm>
       <file>Aircraft/Jaguar-GR1/Nasal/moving-map.nas</file>
     </mm>
+    <gci>               <file>Aircraft/MiG-21bis/Nasal/gci-listener.nas</file>      </gci>                <!-- gci -->
   </nasal>
 
 </PropertyList>
