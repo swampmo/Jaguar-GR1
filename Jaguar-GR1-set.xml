@@ -954,6 +954,7 @@
   <payload>
     <armament>
       <models type="string">Aircraft/Jaguar-GR1/Models/Weapons/</models>
+      <MLW-count type="int">0</MLW-count>
       <modelsUseCase type="bool">true</modelsUseCase>
       <modelsUpperCase type="bool">true</modelsUpperCase>
       <msg type="bool">false</msg>
@@ -2095,6 +2096,11 @@
       <file>Aircraft/Jaguar-GR1/Nasal/vector.nas</file> <!-- must be before RCS, armament and radar -->
     </vector>
 
+    <notifications>
+      <file>Aircraft/Jaguar-GR1/Nasal/ArmamentNotification.nas</file>
+      <file>Aircraft/Jaguar-GR1/Nasal/GeoBridgedTransmitter.nas</file>
+    </notifications>
+    
     <engines>
       <file>Aircraft/Jaguar-GR1/Nasal/jag_engine.nas</file>
     </engines>

@@ -34,7 +34,14 @@
           <dialog-name>armament-config</dialog-name>
         </binding>
       </item>
-
+      <item>
+	<label>Event Log</label>
+	<binding>
+	  <command>dialog-show</command>
+	  <dialog-name>flightlog</dialog-name>
+	</binding>
+      </item>
+      
 <!--	 <item>
         <label>No load</label>
         <binding>
