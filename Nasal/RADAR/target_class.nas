@@ -13,6 +13,9 @@ var Target = {
         obj.Heading         = c.getNode("orientation/true-heading-deg");
         
         obj.Alt             = c.getNode("position/altitude-ft");
+          obj.ubody           = c.getNode("velocities/uBody-fps");
+          obj.vbody           = c.getNode("velocities/vBody-fps");
+          obj.wbody           = c.getNode("velocities/wBody-fps");
         obj.lat             = c.getNode("position/latitude-deg");
         obj.lon             = c.getNode("position/longitude-deg");
         
@@ -89,14 +92,16 @@ var Target = {
         # let us make callsign a static variable:
         if (obj.Callsign == nil or obj.Callsign.getValue() == "")
         {
+            #print("----------------------------------- FIRST CONTACT ---------------- " ~ obj.name.getValue());
             if (obj.name == nil or obj.name.getValue() == "") {
-                obj.myCallsign = obj.ModelType;# last resort. 
+                obj.myStaticCallsign = obj.ModelType;# last resort. 
             } else {
-                obj.myCallsign = obj.name.getValue();# for AI ships.
+                obj.myStaticCallsign = obj.name.getValue();# for AI ships.
             }
         } else {
-            obj.myCallsign = obj.Callsign.getValue();
+            obj.myStaticCallsign = obj.Callsign.getValue();
         }
+        #print("----------------------------------- AFTER CONTACT ---------------- " ~ obj.myStaticCallsign);
         
         obj.life = 5; #Have to be given in parameters, but now written in hard
         obj.objectDeviationDeg = 0;
@@ -162,6 +167,7 @@ var Target = {
         obj.RangeLast       = 0; 
         obj.ClosureRate     = 0;
         obj.Display_Node    = nil;
+        obj.skipDoppler     = 1;
         
         obj.ispainted       = 0;
         
@@ -170,17 +176,7 @@ var Target = {
         obj.RadarStandby    = c.getNode("sim/multiplay/generic/int[2]");
         
         obj.deviation       = nil;
-
-        
-
-#         if (obj.get_Callsign() == "GROUND_TARGET") {
-#             obj.type = armament.SURFACE;
-#         }
-# 
-#         if(obj.type  == "missile"){
-#           obj.type  = armament.ORDNANCE;
-#         }
-        
+    
         obj.type = armament.AIR;
         
         obj.model = "";
@@ -385,8 +381,10 @@ var Target = {
     },
 
     get_Callsign: func(){
-        return me.myCallsign;# callsigns are probably not dynamic, so its defined at Target creation.
+      #print("TARGET : me.name == " ~ me.name.getValue() ~ " me.myStaticCallsign:" ~ me.myStaticCallsign);
+        return me.myStaticCallsign;# callsigns are probably not dynamic, so its defined at Target creation.
         if (me.Callsign == nil or me.Callsign.getValue() == "") {
+            #print("TARGET : me.name == " ~ me.name.getValue());
             if (me.name == nil or me.name.getValue() == "") {
                 return me.get_model();
             }
@@ -746,7 +744,7 @@ var Target = {
     getUnique: func () {
       #var myIndex = me.getIndex();
        #print("getUnique:"~me.propNode.getName()~me.fname~me.Callsign.getValue());
-      return me.propNode.getName()~me.fname~me.Callsign.getValue();
+      return me.propNode.getName()~me.fname~me.get_Callsign();
       #~me.ID;
         #return me.get_type()~me.fname~me.ID;
     },
@@ -807,6 +805,11 @@ var Target = {
     isLaserPainted: func() {
         return me.ispainted; 
     },
+    
+    setVirtual: func (virt) {
+        me.virtual = virt;
+    },
+    
     isVirtual: func(){
       if(me.get_Callsign() == "GROUND_TARGET"){return 1;}else{return 0;}
     },
@@ -818,6 +821,37 @@ var Target = {
     set_model: func (mdl) {
         me.model = mdl;
     },
+     get_uBody: func {
+      var body = nil;
+      if (me.ubody != nil) {
+        body = me.ubody.getValue();
+      }
+      if(body == nil) {
+        body = me.get_Speed()*KT2FPS;
+      }
+      return body;
+    },    
+    get_vBody: func {
+      var body = nil;
+      if (me.ubody != nil) {
+        body = me.vbody.getValue();
+      }
+      if(body == nil) {
+        body = 0;
+      }
+      return body;
+    },    
+    get_wBody: func {
+      var body = nil;
+      if (me.ubody != nil) {
+        body = me.wbody.getValue();
+      }
+      if(body == nil) {
+        body = 0;
+      }
+      return body;
+    },
+    
 
     list : [],
 };

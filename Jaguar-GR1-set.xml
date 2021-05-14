@@ -2132,29 +2132,6 @@
       <file>Aircraft/Jaguar-GR1/Models/Interior/Panel/Instruments/clock/chronograph.nas</file>
     </chronograph>
 
-    <rcs>
-      <file>Aircraft/Jaguar-GR1/Nasal/rcs.nas</file>
-    </rcs>
-
-    <radar>
-      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radar2.nas</file>
-      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/target_class.nas</file>
-      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radarTool.nas</file>
-    </radar>
-
-    <rwr>
-      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/rwr.nas</file>
-    </rwr>
-
-    <myradar>
-      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/main.nas</file>
-    </myradar>
-
-    <hud>
-      <file>Aircraft/Jaguar-GR1/Nasal/HUD/hud_math.nas</file>
-      <file>Aircraft/Jaguar-GR1/Nasal/HUD/HUD.nas</file>
-    </hud>
-
     <armament>
       <file>Aircraft/Jaguar-GR1/Nasal/guided-missiles.nas</file> <!-- must be before station-manager -->
     </armament>
@@ -2174,6 +2151,29 @@
     <radardist>
       <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
     </radardist>
+
+    <radar>
+      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radar2.nas</file>
+      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/target_class.nas</file>
+      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radarTool.nas</file>
+    </radar>
+
+    <rcs>
+      <file>Aircraft/Jaguar-GR1/Nasal/rcs.nas</file>
+    </rcs>
+
+    <rwr>
+      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/rwr.nas</file>
+    </rwr>
+
+    <myradar>
+      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/main.nas</file>
+    </myradar>
+
+    <hud>
+      <file>Aircraft/Jaguar-GR1/Nasal/HUD/hud_math.nas</file>
+      <file>Aircraft/Jaguar-GR1/Nasal/HUD/HUD.nas</file>
+    </hud>
 
     <aar>
       <file>Aircraft/Generic/aar.nas</file>
@@ -2215,7 +2215,9 @@
     <mm>
       <file>Aircraft/Jaguar-GR1/Nasal/moving-map.nas</file>
     </mm>
-    <gci>               <file>Aircraft/MiG-21bis/Nasal/gci-listener.nas</file>      </gci>                <!-- gci -->
+    <gci>
+	<file>Aircraft/Jaguar-GR1/Nasal/gci-listener.nas</file>
+    </gci>                <!-- gci -->
   </nasal>
 
 </PropertyList>
