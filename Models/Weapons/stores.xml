@@ -2,6 +2,85 @@
 <PropertyList>
     <path>stores.ac</path>
 
+    <!-- pylons -->
+
+    <animation>
+	<type>select</type>
+	<object-name>pylon1.L</object-name>      
+	<condition>
+	    <not-equals>
+		<property>payload/armament/station/id-0-set</property>
+		<value>Empty</value>
+	    </not-equals>
+	</condition>
+    </animation>
+
+    <animation>
+	<type>select</type>
+	<object-name>pylon2.L</object-name>      
+	<condition>
+	    <not-equals>
+		<property>payload/armament/station/id-1-set</property>
+		<value>Empty</value>
+	    </not-equals>
+	</condition>
+    </animation>
+
+    <animation>
+	<type>select</type>
+	<object-name>pylon3.L</object-name>      
+	<condition>
+	    <not-equals>
+		<property>payload/armament/station/id-2-set</property>
+		<value>Empty</value>
+	    </not-equals>
+	</condition>
+    </animation>
+
+    <animation>
+	<type>select</type>
+	<object-name>pylon.C</object-name>      
+	<condition>
+	    <not-equals>
+		<property>payload/armament/station/id-3-set</property>
+		<value>Empty</value>
+	    </not-equals>
+	</condition>
+    </animation>
+
+    <animation>
+	<type>select</type>
+	<object-name>pylon3.R</object-name>      
+	<condition>
+	    <not-equals>
+		<property>payload/armament/station/id-4-set</property>
+		<value>Empty</value>
+	    </not-equals>
+	</condition>
+    </animation>
+
+    <animation>
+	<type>select</type>
+	<object-name>pylon2.R</object-name>      
+	<condition>
+	    <not-equals>
+		<property>payload/armament/station/id-5-set</property>
+		<value>Empty</value>
+	    </not-equals>
+	</condition>
+    </animation>
+    
+    <animation>
+	<type>select</type>
+	<object-name>pylon1.R</object-name>      
+	<condition>
+	    <not-equals>
+		<property>payload/armament/station/id-6-set</property>
+		<value>Empty</value>
+	    </not-equals>
+	</condition>
+    </animation>
+
     <!-- Left overwing pylon ID: 0 -->
     <animation>
 	<type>select</type>
