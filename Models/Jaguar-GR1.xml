@@ -294,7 +294,7 @@
 -->
   <!-- Armament  -->
   <model>
-    <path>Aircraft/Jaguar-GR1/Models/Weapons/loads.xml</path>
+    <path>Aircraft/Jaguar-GR1/Models/Weapons/stores.xml</path>
   </model>
 
   <!-- Interieur -->

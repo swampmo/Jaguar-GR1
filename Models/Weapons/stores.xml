@@ -1,0 +1,766 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <path>stores.ac</path>
+
+    <!-- Left overwing pylon ID: 0 -->
+    <animation>
+	<type>select</type>
+	<object-name>AIM-9L_0</object-name>
+	<condition>
+	    <equals>
+                <property>payload/armament/station/id-0-type</property>
+                <value>AIM-9</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-0-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>magic_0</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-0-type</property>
+                <value>Majic</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-0-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <!-- Left outboard ID: 1 -->
+    <animation>
+        <type>select</type>
+        <object-name>AIM-9L_1</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-1-type</property>
+                <value>AIM-9</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-1-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+    
+    <animation>
+        <type>select</type>
+        <object-name>magic_1</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-1-type</property>
+                <value>Majic</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-1-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>mk83_1</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-1-type</property>
+                    <value>MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-1-type</property>
+                    <value>MK-83HD</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-1-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU-87_1</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-1-type</property>
+                    <value>CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-1-type</property>
+                    <value>BL755</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-1-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <!-- Left inboard ID: 2 -->
+
+    <animation>
+        <type>select</type>
+        <object-name>mk83_2S</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>1 x MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>1 x MK-83HD</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU-87_2S</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>1 x CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>1 x BL755</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+	<type>select</type>
+	<object-name>double_rack_L</object-name>
+	<condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x MK-83HD</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x BL755</value>
+		</equals>
+	    </or>
+	</condition>
+    </animation>
+
+    
+    <animation>
+        <type>select</type>
+        <object-name>mk83_2</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x MK-83HD</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU-87_2</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x BL755</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>mk83_21</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x MK-83HD</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU-87_21</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-2-set</property>
+                    <value>2 x BL755</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+    
+    <animation>
+	<type>select</type>
+	<object-name>1500L</object-name>
+	<condition>
+	    <equals>
+		<property>payload/armament/station/id-2-set</property>
+		<value>Left 1200 L Tank</value>
+	    </equals>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>0</value>
+            </greater-than>
+	</condition>
+    </animation>
+
+    <!-- center station ID: 3 -->
+
+    <animation>
+	<type>select</type>
+	<object-name>mk83_3</object-name>
+	<condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-3-type</property>
+                    <value>MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-3-type</property>
+                    <value>MK-83HD</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-3-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+    
+    <animation>
+	<type>select</type>
+	<object-name>CBU-87_3</object-name>
+	<condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-3-type</property>
+                    <value>CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-3-type</property>
+                    <value>BL755</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-3-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+	<type>select</type>
+	<object-name>tank1000</object-name>
+	<condition>
+	    <property>jaguar/ventraltank1200</property>
+	</condition>
+    </animation>
+
+    <!-- Right inboard ID: 4 -->
+
+    
+    <animation>
+        <type>select</type>
+        <object-name>mk83_4S</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>1 x MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>1 x MK-83HD</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-4-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU-87_4S</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>1 x CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>1 x BL755</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-4-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+	<type>select</type>
+	<object-name>double_rack_R</object-name>
+	<condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x MK-83HD</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x BL755</value>
+		</equals>
+	    </or>
+	</condition>
+    </animation>
+
+    
+    <animation>
+        <type>select</type>
+        <object-name>mk83_4</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x MK-83HD</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-4-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU-87_4</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x BL755</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-4-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>mk83_41</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x MK-83HD</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-4-count</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU-87_41</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-4-set</property>
+                    <value>2 x BL755</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-4-count</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+    
+    <animation>
+	<type>select</type>
+	<object-name>1500R</object-name>
+	<condition>
+	    <equals>
+		<property>payload/armament/station/id-4-set</property>
+		<value>Right 1200 L Tank</value>
+	    </equals>
+            <greater-than>
+                <property>payload/armament/station/id-4-count</property>
+                <value>0</value>
+            </greater-than>
+	</condition>
+    </animation>
+
+    <!-- Right outboard ID: 5 -->
+
+    <animation>
+        <type>select</type>
+        <object-name>AIM-9L_5</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-5-type</property>
+                <value>AIM-9</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-5-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+    
+    <animation>
+        <type>select</type>
+        <object-name>magic_5</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-5-type</property>
+                <value>Majic</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-5-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>mk83_5</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-5-type</property>
+                    <value>MK-83</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-5-type</property>
+                    <value>MK-83HD</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-5-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU-87_5</object-name>
+        <condition>
+	    <or>
+		<equals>
+                    <property>payload/armament/station/id-5-type</property>
+                    <value>CBU-87</value>
+		</equals>
+		<equals>
+                    <property>payload/armament/station/id-5-type</property>
+                    <value>BL755</value>
+		</equals>
+	    </or>
+            <greater-than>
+                <property>payload/armament/station/id-5-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <!-- Right overwing ID: 6 -->
+
+    <animation>
+	<type>select</type>
+	<object-name>AIM-9L_6</object-name>
+	<condition>
+	    <equals>
+                <property>payload/armament/station/id-6-type</property>
+                <value>AIM-9</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-6-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>magic_6</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-6-type</property>
+                <value>Majic</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-6-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <!-- effects -->
+
+    <effect>  
+    	<inherits-from>Aircraft/f16/Models/Effects/glass/glassIR</inherits-from>  
+    	<object-name>AIM9_IRsphere</object-name> 
+    	<object-name>AIM9_IRsphere.001</object-name> 
+    	<object-name>AIM9_IRsphere.002</object-name> 
+    	<object-name>AIM9_IRsphere.003</object-name>
+	<object-name>magic.optique</object-name>
+	<object-name>magic.optique.001</object-name>
+	<object-name>magic.optique.002</object-name>
+	<object-name>magic.optique.003</object-name>
+    </effect>
+    
+    <effect>
+	<inherits-from>Aircraft/f16/Models/Effects/fuselage/model-combined-fuselage</inherits-from>
+	<parameters>
+	    <metallic type="float">0.80</metallic>
+	    <ambient-factor type="float">0.0</ambient-factor>
+	    <rain-enabled type="int">0</rain-enabled>
+	    <ambient-correction type="float">0.00</ambient-correction>
+	    <reflection-enabled type="int">0</reflection-enabled>
+	</parameters>
+	<object-name>1500L</object-name>
+	<object-name>1500R</object-name>
+	<object-name>AIM-9L_0</object-name>
+	<object-name>AIM9_Back</object-name>
+	<object-name>AIM9_Frontwing</object-name>
+	<object-name>AIM9_Mounts</object-name>
+	<object-name>AIM9_Rearwing</object-name>
+	<object-name>AIM-9L_1</object-name>
+	<object-name>AIM9_Back.003</object-name>
+	<object-name>AIM9_Frontwing.003</object-name>
+	<object-name>AIM9_Mounts.003</object-name>
+	<object-name>AIM9_Rearwing.003</object-name>
+	<object-name>AIM-9L_5</object-name>
+	<object-name>AIM9_Back.002</object-name>
+	<object-name>AIM9_Frontwing.002</object-name>
+	<object-name>AIM9_Mounts.002</object-name>
+	<object-name>AIM9_Rearwing.002</object-name>
+	<object-name>AIM-9L_6</object-name>
+	<object-name>AIM9_Back.001</object-name>
+	<object-name>AIM9_Frontwing.001</object-name>
+	<object-name>AIM9_Mounts.001</object-name>
+	<object-name>AIM9_Rearwing.001</object-name>
+	<object-name>CBU-87_1</object-name>
+	<object-name>CBU-87mounts.001</object-name>
+	<object-name>CBU-87panelLH.001</object-name>
+	<object-name>CBU-87panelRH.001</object-name>
+	<object-name>CBU-87tailend.001</object-name>
+	<object-name>CBU-87wing1.001</object-name>
+	<object-name>CBU-87wing2.001</object-name>
+	<object-name>CBU-87wing3.001</object-name>
+	<object-name>CBU-87wing4.001</object-name>
+	<object-name>CBU-87wingbase.001</object-name>
+	<object-name>CBU-87_2</object-name>
+	<object-name>CBU-87mounts.003</object-name>
+	<object-name>CBU-87mounts.005</object-name>
+	<object-name>CBU-87panelLH.003</object-name>
+	<object-name>CBU-87panelRH.003</object-name>
+	<object-name>CBU-87tailend.003</object-name>
+	<object-name>CBU-87wing1.003</object-name>
+	<object-name>CBU-87wing2.003</object-name>
+	<object-name>CBU-87wing3.003</object-name>
+	<object-name>CBU-87wing4.003</object-name>
+	<object-name>CBU-87wingbase.003</object-name>
+	<object-name>CBU-87_21</object-name>
+	<object-name>CBU-87mounts.006</object-name>
+	<object-name>CBU-87panelLH.006</object-name>
+	<object-name>CBU-87panelRH.006</object-name>
+	<object-name>CBU-87tailend.006</object-name>
+	<object-name>CBU-87wing1.006</object-name>
+	<object-name>CBU-87wing2.006</object-name>
+	<object-name>CBU-87wing3.006</object-name>
+	<object-name>CBU-87wing4.006</object-name>
+	<object-name>CBU-87wingbase.006</object-name>
+	<object-name>CBU-87_2S</object-name>
+	<object-name>CBU-87mounts.008</object-name>
+	<object-name>CBU-87panelLH.008</object-name>
+	<object-name>CBU-87panelRH.008</object-name>
+	<object-name>CBU-87tailend.008</object-name>
+	<object-name>CBU-87wing1.008</object-name>
+	<object-name>CBU-87wing2.008</object-name>
+	<object-name>CBU-87wing3.008</object-name>
+	<object-name>CBU-87wing4.008</object-name>
+	<object-name>CBU-87wingbase.008</object-name>
+	<object-name>CBU-87_3</object-name>
+	<object-name>CBU-87mounts</object-name>
+	<object-name>CBU-87panelLH</object-name>
+	<object-name>CBU-87panelRH</object-name>
+	<object-name>CBU-87tailend</object-name>
+	<object-name>CBU-87wing1</object-name>
+	<object-name>CBU-87wing2</object-name>
+	<object-name>CBU-87wing3</object-name>
+	<object-name>CBU-87wing4</object-name>
+	<object-name>CBU-87wingbase</object-name>
+	<object-name>CBU-87_4</object-name>
+	<object-name>CBU-87mounts.004</object-name>
+	<object-name>CBU-87panelLH.004</object-name>
+	<object-name>CBU-87panelRH.004</object-name>
+	<object-name>CBU-87tailend.004</object-name>
+	<object-name>CBU-87wing1.004</object-name>
+	<object-name>CBU-87wing2.004</object-name>
+	<object-name>CBU-87wing3.004</object-name>
+	<object-name>CBU-87wing4.004</object-name>
+	<object-name>CBU-87wingbase.004</object-name>
+	<object-name>CBU-87_41</object-name>
+	<object-name>CBU-87panelLH.005</object-name>
+	<object-name>CBU-87panelRH.005</object-name>
+	<object-name>CBU-87tailend.005</object-name>
+	<object-name>CBU-87wing1.005</object-name>
+	<object-name>CBU-87wing2.005</object-name>
+	<object-name>CBU-87wing3.005</object-name>
+	<object-name>CBU-87wing4.005</object-name>
+	<object-name>CBU-87wingbase.005</object-name>
+	<object-name>CBU-87_4S</object-name>
+	<object-name>CBU-87mounts.007</object-name>
+	<object-name>CBU-87panelLH.007</object-name>
+	<object-name>CBU-87panelRH.007</object-name>
+	<object-name>CBU-87tailend.007</object-name>
+	<object-name>CBU-87wing1.007</object-name>
+	<object-name>CBU-87wing2.007</object-name>
+	<object-name>CBU-87wing3.007</object-name>
+	<object-name>CBU-87wing4.007</object-name>
+	<object-name>CBU-87wingbase.007</object-name>
+	<object-name>CBU-87_5</object-name>
+	<object-name>CBU-87mounts.002</object-name>
+	<object-name>CBU-87panelLH.002</object-name>
+	<object-name>CBU-87panelRH.002</object-name>
+	<object-name>CBU-87tailend.002</object-name>
+	<object-name>CBU-87wing1.002</object-name>
+	<object-name>CBU-87wing2.002</object-name>
+	<object-name>CBU-87wing3.002</object-name>
+	<object-name>CBU-87wing4.002</object-name>
+	<object-name>CBU-87wingbase.002</object-name>
+	<object-name>double_rack_L</object-name>
+	<object-name>double_rack_R</object-name>
+	<object-name>magic_0</object-name>
+	<object-name>magic_1</object-name>
+	<object-name>magic_5</object-name>
+	<object-name>magic_6</object-name>
+	<object-name>mk83_1</object-name>
+	<object-name>mk83_2</object-name>
+	<object-name>mk83_21</object-name>
+	<object-name>mk83_2S</object-name>
+	<object-name>mk83_3</object-name>
+	<object-name>mk83_4</object-name>
+	<object-name>mk83_41</object-name>
+	<object-name>mk83_4S</object-name>
+	<object-name>mk83_5</object-name>
+	<object-name>pylon.C</object-name>
+	<object-name>pylon1.L</object-name>
+	<object-name>pylon1.R</object-name>
+	<object-name>pylon2.L</object-name>
+	<object-name>pylon2.R</object-name>
+	<object-name>pylon3.L</object-name>
+	<object-name>pylon3.R</object-name>
+	<object-name>tank1000</object-name>
+    </effect>
+
+</PropertyList>
