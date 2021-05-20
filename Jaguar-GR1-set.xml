@@ -954,6 +954,7 @@
   <payload>
     <d-config>
       <full_damage_dist_m type="double">3</full_damage_dist_m>
+      <hp_max type="double">80</hp_max>
       <use_hit_points_instead_of_failure_modes_bool
 	  type="bool">false</use_hit_points_instead_of_failure_modes_bool>
       <hitable_by_air_munitions type="bool">true</hitable_by_air_munitions>
@@ -966,6 +967,7 @@
       <auto_flare_caller type="bool">false</auto_flare_caller>
     </d-config>
     <armament>
+      <enable-craters type="bool">true</enable-craters>
       <models type="string">Aircraft/Jaguar-GR1/Models/Weapons/</models>
       <MLW-count type="int">0</MLW-count>
       <modelsUseCase type="bool">true</modelsUseCase>
