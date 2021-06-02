@@ -186,7 +186,7 @@
       <path>Aircraft/Jaguar-GR1/Models/Effects/Guns/submodels.xml</path>
       <path>Aircraft/Jaguar-GR1/Models/Weapons/loads.xml</path>
       <path>Aircraft/Jaguar-GR1/Models/Weapons/pylons.xml</path>
-      <path>Aircraft/Jaguar-GR1/System/sub_lancer.xml</path>
+      <path>Aircraft/Jaguar-GR1/Systems/sub_lancer.xml</path>
     </submodels>
 
     <startup>
@@ -1438,6 +1438,10 @@
     <gci>
 	<file>Aircraft/Jaguar-GR1/Nasal/gci-listener.nas</file>
     </gci>                <!-- gci -->
+    
+    <gun_listener>
+	<file>Aircraft/Jaguar-GR1/Nasal/gun-listener.nas</file>
+    </gun_listener>
   </nasal>
 
 </PropertyList>

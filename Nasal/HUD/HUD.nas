@@ -2437,15 +2437,15 @@ var HUD = {
             
             #calc shell positions
             
-            me.eegsMe.vel = getprop("velocities/uBody-fps")+3380.0;#3363.0 = speed
+            me.eegsMe.vel = getprop("velocities/uBody-fps")+2431.1023;#3363.0 = speed
             
-            me.eegsMe.geodPos = aircraftToCart({x:-0, y:0, z: getprop("sim/current-view/y-offset-m")});#position (meters) of gun in aircraft (x and z inverted)
+            me.eegsMe.geodPos = aircraftToCart({x:-0.936, y:0, z: -2.73});#position (meters) of gun in aircraft (x and z inverted)
             me.eegsMe.eegsPos.set_xyz(me.eegsMe.geodPos.x, me.eegsMe.geodPos.y, me.eegsMe.geodPos.z);
             me.eegsMe.altC = me.eegsMe.eegsPos.alt();
             
             me.eegsMe.rs = armament.AIM.rho_sndspeed(me.eegsMe.altC*M2FT);#simplified
             me.eegsMe.rho = me.eegsMe.rs[0];
-            me.eegsMe.mass =  0.2249/ armament.slugs_to_lbm;#0.9369635=lbs
+            me.eegsMe.mass =  0.485/ armament.slugs_to_lbm;#0.9369635=lbs
             
             #print("x,y");
             #printf("%d,%d",0,0);
@@ -2454,9 +2454,9 @@ var HUD = {
             for (var j = 0;j < me.funnelParts;j+=1) {
                 
                 #calc new speed
-                me.eegsMe.Cd = drag(me.eegsMe.vel/ me.eegsMe.rs[1],0.075);#0.193=cd
+                me.eegsMe.Cd = drag(me.eegsMe.vel/ me.eegsMe.rs[1],0.193);#0.193=cd
                 me.eegsMe.q = 0.5 * me.eegsMe.rho * me.eegsMe.vel * me.eegsMe.vel;
-                me.eegsMe.deacc = (me.eegsMe.Cd * me.eegsMe.q * 0.01051198) / me.eegsMe.mass;#0.007609=eda
+                me.eegsMe.deacc = (me.eegsMe.Cd * me.eegsMe.q * 0.00136354) / me.eegsMe.mass;#0.007609=eda
                 me.eegsMe.vel -= me.eegsMe.deacc * me.averageDt;
                 me.eegsMe.speed_down_fps       = -math.sin(me.eegsMe.pitch * D2R) * (me.eegsMe.vel);
                 me.eegsMe.speed_horizontal_fps = math.cos(me.eegsMe.pitch * D2R) * (me.eegsMe.vel);
