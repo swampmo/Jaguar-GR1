@@ -366,14 +366,12 @@ RWRCanvas = {
 
         rwr.recipient.Receive = func(notification)
         {
-	    print('Incoming notification');
             if (notification.NotificationType == "FrameNotification")
             {
                 #
                 # Link16 wingmen only visible when no other threats. So check the size of this list
                 # first and if populated use it.
-		print('updating');
-                if (notification["rwrList"] != nil and size(notification.rwrList)>0)
+	        if (notification["rwrList"] != nil and size(notification.rwrList)>0)
                   me.parent_obj.update(notification.rwrList, "normal");
                 else if (notification["rwrList16"] != nil)
                   me.parent_obj.update(notification.rwrList16, "link16");
@@ -408,9 +406,9 @@ RWRCanvas = {
         me.newsound = 0;
         me.unk = 0;
         foreach(me.contact; me.sortedlist) {
-	    print("rwr: " ~ me.contact[0].get_Callsign() ~ " " ~ me.contact[0].get_model() ~ " " ~ me.contact[1]);
+	    # print("rwr: " ~ me.contact[0].get_Callsign() ~ " " ~ me.contact[0].get_model() ~ " " ~ me.contact[1]);
             me.typ=me.lookupType[me.contact[0].get_model()];
-	    printf("type: %d, threat: %d", me.typ, me.contact[1]);
+	    # printf("type: %d, threat: %d", me.typ, me.contact[1]);
             if (me.i > me.max_icons-1) {
                 break;
             }
