@@ -178,31 +178,39 @@ RWRCanvas = {
 #                   .hide();
 #        }
 # Threat list ID:
-        rwr.AIRCRAFT_VIGGEN   = "37";
-        rwr.AIRCRAFT_EAGLE    = "15";
+
+        rwr.AIRCRAFT_WARTHOG  = "10";
         rwr.AIRCRAFT_TOMCAT   = "14";
+        rwr.AIRCRAFT_EAGLE    = "15";
+        rwr.AIRCRAFT_FALCON   = "16";
+        rwr.AIRCRAFT_FISHBED  = "21";
+        rwr.AIRCRAFT_FLANKER  = "27";
+        rwr.AIRCRAFT_FULCRUM  = "29";
+        rwr.AIRCRAFT_VIGGEN   = "37";
+        rwr.AIRCRAFT_BLACKBIRD = "71";
+        rwr.AIRCRAFT_JAGUAR   = "JA";
+        rwr.AIRCRAFT_MIRAGE   = "M2";
+        rwr.AIRCRAFT_SEARCH   = "S";
+        rwr.ASSET_AAA         = "A";
+        rwr.ASSET_VOLGA       = "2";
         rwr.ASSET_BUK         = "11";
         rwr.ASSET_GARGOYLE    = "20"; # Other namings for tracking and radar: BB, CS.
-        rwr.AIRCRAFT_FAGOT    = "MG";
-        rwr.AIRCRAFT_FISHBED  = "21";
-        rwr.AIRCRAFT_FULCRUM  = "29";
-        rwr.AIRCRAFT_FLANKER  = "27";
-        rwr.AIRCRAFT_PAKFA    = "57";
-        rwr.AIRCRAFT_MIRAGE   = "M2";
-        rwr.AIRCRAFT_FALCON   = "16";
-        rwr.AIRCRAFT_WARTHOG  = "10";
+        rwr.ASSET_PAC2        = "P";
         rwr.ASSET_FRIGATE     = "SH";
-        rwr.AIRCRAFT_SEARCH   = "S";
-        rwr.AIRCRAFT_BLACKBIRD = "71";
+        rwr.SCENARIO_OPPONENT = "28";
+        #MISC
+        rwr.AIRCRAFT_FAGOT    = "MG";
+        rwr.AIRCRAFT_FOXBAT   = "FB";
+        rwr.AIRCRAFT_FULLBACK = "34";
+        rwr.AIRCRAFT_PAKFA    = "57";
         rwr.AIRCRAFT_TYPHOON  = "EF";
         rwr.AIRCRAFT_HORNET   = "18";
         rwr.AIRCRAFT_FLAGON   = "SU";
-        rwr.SCENARIO_OPPONENT = "28";
-        rwr.AIRCRAFT_JAGUAR   = "JA";
         rwr.AIRCRAFT_PHANTOM  = "F4";
         rwr.AIRCRAFT_SKYHAWK  = "A4";
         rwr.AIRCRAFT_TIGER    = "F5";
         rwr.AIRCRAFT_TONKA    = "TO";
+        rwr.AIRCRAFT_AARDVARK = "F1";
         rwr.AIRCRAFT_RAFALE   = "RF";
         rwr.AIRCRAFT_HARRIER  = "HA";
         rwr.AIRCRAFT_HARRIERII = "AV";
@@ -217,8 +225,10 @@ RWRCanvas = {
         rwr.AIRCRAFT_GRIPEN   = "39";
         rwr.AIRCRAFT_MITTEN   = "Y1";
         rwr.AIRCRAFT_ALCA     = "LC";
-        rwr.AIRCRAFT_UNKNOWN  = "UN";
-        rwr.AIRCRAFT_UFO      = "U";
+        rwr.AIRCRAFT_SPRETNDRD = "ET";
+        rwr.AIRCRAFT_MIRAGEF1 = "M1";
+        rwr.AIRCRAFT_UNKNOWN  = "U";
+        rwr.AIRCRAFT_UFO      = "UK";
         rwr.ASSET_AI          = "AI";
         rwr.lookupType = {
         # OPRF fleet and related aircrafts:
@@ -234,6 +244,7 @@ RWRCanvas = {
                 "m2000-5":                  rwr.AIRCRAFT_MIRAGE,
                 "m2000-5B":                 rwr.AIRCRAFT_MIRAGE,
                 "MiG-21bis":                rwr.AIRCRAFT_FISHBED,
+                "MiG-21MF-75":              rwr.AIRCRAFT_FISHBED,
                 "MiG-29":                   rwr.AIRCRAFT_FULCRUM,
                 "SU-27":                    rwr.AIRCRAFT_FLANKER,
                 "EC-137R":                  rwr.AIRCRAFT_SEARCH,
@@ -247,8 +258,11 @@ RWRCanvas = {
                 "A-10":                     rwr.AIRCRAFT_WARTHOG,
                 "A-10-model":               rwr.AIRCRAFT_WARTHOG,
                 "Typhoon":                  rwr.AIRCRAFT_TYPHOON,
+                "ZSU-23-4M":                rwr.ASSET_AAA,
+                "S-75":                     rwr.ASSET_VOLGA,
                 "buk-m2":                   rwr.ASSET_BUK,
                 "s-300":                    rwr.ASSET_GARGOYLE,
+                "MIM104D":                  rwr.ASSET_PAC2,
                 "missile_frigate":          rwr.ASSET_FRIGATE,
                 "frigate":                  rwr.ASSET_FRIGATE,
                 "fleet":                    rwr.ASSET_FRIGATE,
@@ -258,6 +272,8 @@ RWRCanvas = {
                 "AI":                       rwr.ASSET_AI,
                 "SU-37":                    rwr.AIRCRAFT_FLANKER,
                 "J-11A":                    rwr.AIRCRAFT_FLANKER,
+                "daVinci_SU-34":            rwr.AIRCRAFT_FULLBACK,
+                "Su-34":                    rwr.AIRCRAFT_FULLBACK,
                 "T-50":                     rwr.AIRCRAFT_PAKFA,
                 "MiG-21Bison":              rwr.AIRCRAFT_FISHBED,
                 "Mig-29":                   rwr.AIRCRAFT_FULCRUM,
@@ -269,11 +285,17 @@ RWRCanvas = {
                 "F-16CJ":                   rwr.AIRCRAFT_FALCON,
                 "FA-18C_Hornet":            rwr.AIRCRAFT_HORNET,
                 "FA-18D_Hornet":            rwr.AIRCRAFT_HORNET,
+                "f18":                      rwr.AIRCRAFT_HORNET,
+                "F-111C":                   rwr.AIRCRAFT_AARDVARK,
                 "A-10-modelB":              rwr.AIRCRAFT_WARTHOG,
                 "Su-15":                    rwr.AIRCRAFT_FLAGON,
+                "jaguar":                   rwr.AIRCRAFT_JAGUAR,
                 "Jaguar-GR3":               rwr.AIRCRAFT_JAGUAR,
                 "E3B":                      rwr.AIRCRAFT_SEARCH,
                 "E-2C-Hawkeye":             rwr.AIRCRAFT_SEARCH,
+                "onox-awacs":               rwr.AIRCRAFT_SEARCH,
+                "u-2s":                     rwr.AIRCRAFT_SEARCH,
+                "U-2S-model":               rwr.AIRCRAFT_SEARCH,
                 "F-4S":                     rwr.AIRCRAFT_PHANTOM,
                 "F-4EJ_ADTW":               rwr.AIRCRAFT_PHANTOM,
                 "FGR2-Phantom":             rwr.AIRCRAFT_PHANTOM,
@@ -306,24 +328,36 @@ RWRCanvas = {
                 "alphajet":                 rwr.AIRCRAFT_ALPHAJET,
                 "MiG-15bis":                rwr.AIRCRAFT_FAGOT,
                 "Su-25":                    rwr.AIRCRAFT_FROGFOOT,
+                "MiG-25":                   rwr.AIRCRAFT_FOXBAT,
                 "A-6E-model":               rwr.AIRCRAFT_INTRUDER,
                 "F-117":                    rwr.AIRCRAFT_NIGHTHAWK,
                 "F-22-Raptor":              rwr.AIRCRAFT_RAPTOR,
                 "F-35A":                    rwr.AIRCRAFT_JSF,
                 "F-35B":                    rwr.AIRCRAFT_JSF,
+                "F-35C":                    rwr.AIRCRAFT_JSF,
+                "daVinci_F-35A":            rwr.AIRCRAFT_JSF,
+                "daVinci_F-35B":            rwr.AIRCRAFT_JSF,
                 "JAS-39C_Gripen":           rwr.AIRCRAFT_GRIPEN,
                 "gripen":                   rwr.AIRCRAFT_GRIPEN,
                 "Yak-130":                  rwr.AIRCRAFT_MITTEN,
                 "L-159":                    rwr.AIRCRAFT_ALCA,
+                "super-etendard":           rwr.AIRCRAFT_SPRETNDRD,
+                "Mirage_F1-model":          rwr.AIRCRAFT_MIRAGEF1,
+                "USS-NORMANDY":             rwr.ASSET_FRIGATE,
+                "USS-LakeChamplain":        rwr.ASSET_FRIGATE,
+                "USS-OliverPerry":          rwr.ASSET_FRIGATE,
+                "USS-SanAntonio":           rwr.ASSET_FRIGATE,
                 "mp-nimitz":                rwr.ASSET_FRIGATE,
                 "mp-eisenhower":            rwr.ASSET_FRIGATE,
                 "mp-vinson":                rwr.ASSET_FRIGATE,
                 "mp-clemenceau":            rwr.ASSET_FRIGATE,
                 "ufo":                      rwr.AIRCRAFT_UFO,
                 "bluebird-osg":             rwr.AIRCRAFT_UFO,
+                "Vostok-1":                 rwr.AIRCRAFT_UFO,
+                "V-1":                      rwr.AIRCRAFT_UFO,
+                "SpaceShuttle":             rwr.AIRCRAFT_UFO,
                 "F-23C_BlackWidow-II":      rwr.AIRCRAFT_UFO,
-        };
-        rwr.shownList = [];
+        };        rwr.shownList = [];
         #
         # recipient that will be registered on the global transmitter and connect this
         # subsystem to allow subsystem notifications to be received
@@ -332,11 +366,13 @@ RWRCanvas = {
 
         rwr.recipient.Receive = func(notification)
         {
+	    print('Incoming notification');
             if (notification.NotificationType == "FrameNotification")
             {
                 #
                 # Link16 wingmen only visible when no other threats. So check the size of this list
                 # first and if populated use it.
+		print('updating');
                 if (notification["rwrList"] != nil and size(notification.rwrList)>0)
                   me.parent_obj.update(notification.rwrList, "normal");
                 else if (notification["rwrList16"] != nil)
@@ -350,6 +386,10 @@ RWRCanvas = {
         return rwr;
     },
     update: func (list, type) {
+	var s = size(list);
+	if (s != 0) {
+      	   print(s);
+	}
         #printf("list %d", size(list));
         me.elapsed = getprop("sim/time/elapsed-sec");
         var sorter = func(a, b) {
@@ -368,7 +408,9 @@ RWRCanvas = {
         me.newsound = 0;
         me.unk = 0;
         foreach(me.contact; me.sortedlist) {
+	    print("rwr: " ~ me.contact[0].get_Callsign() ~ " " ~ me.contact[0].get_model() ~ " " ~ me.contact[1]);
             me.typ=me.lookupType[me.contact[0].get_model()];
+	    printf("type: %d, threat: %d", me.typ, me.contact[1]);
             if (me.i > me.max_icons-1) {
                 break;
             }
@@ -381,8 +423,8 @@ RWRCanvas = {
                     continue;
                 }
             }
-            #print("show "~me.i~" "~me.typ~" "~contact[0].get_model()~"  "~contact[1]);
-            me.threat = me.contact[1];#print(me.threat);
+            print("show "~me.i~" "~me.typ~" "~me.contact[0].get_model()~"  "~me.contact[1]);
+            me.threat = me.contact[1];
             
             if (me.threat > 0.5 and me.typ != me.AIRCRAFT_UNKNOWN and me.typ != me.ASSET_AI) {
                 me.threat = me.inner_radius;# inner circle

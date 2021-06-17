@@ -1104,6 +1104,75 @@
             </volume>
         </aircraft-creaking>
 
-  </fx>
+	<!-- RWR -->
+
+	<rwr>
+            <name>rwr-new1</name>
+            <path>Aircraft/Jaguar-GR1/Sounds/rwr-new.wav</path>
+            <mode>once</mode>
+            <type>avionics</type>
+            <condition>
+                <equals>
+                    <property>sound/rwr-new</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <volume>
+                <property>/sim/current-view/internal</property>
+                <factor>0.6</factor>
+            </volume>
+        </rwr>
+        <rwr>
+            <name>rwr-new2</name>
+            <path>Aircraft/Jaguar-GR1/Sounds/rwr-new.wav</path>
+            <mode>once</mode>
+            <type>avionics</type>
+            <condition>
+                <equals>
+                    <property>sound/rwr-new</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+            <volume>
+                <property>/sim/current-view/internal</property>
+                <factor>0.6</factor>
+            </volume>
+            <volume>
+                <property>f16/avionics/rwr-volume</property>
+            </volume>
+        </rwr>
+
+	<rwr>
+            <name>rwr-lock</name>
+            <path>Aircraft/Jaguar-GR1/Sounds/rwr-lock-03.wav</path>
+            <mode>looped</mode>
+            <type>avionics</type>
+            <condition>
+                <equals>
+                    <property>sound/rwr-lck</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <volume>
+                <property>/sim/current-view/internal</property>
+                <factor>0.60</factor>
+            </volume>
+        </rwr>
+
+        <rwr>
+            <name>incoming</name>
+            <mode>looped</mode>
+            <path>Aircraft/Jaguar-GR1/Sounds/f14-missile-approach-warn.wav</path>
+            <type>avionics</type>
+            <condition>
+                <property>payload/armament/MAW-active</property>
+            </condition>
+            <volume>
+                <property>sim/current-view/internal</property>
+                <factor>1</factor>
+            </volume>
+        </rwr>
+        
+    </fx>
 
 </PropertyList>

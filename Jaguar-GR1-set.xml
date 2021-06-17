@@ -960,7 +960,7 @@
       <hitable_by_air_munitions type="bool">true</hitable_by_air_munitions>
       <hitable_by_cannon type="bool">true</hitable_by_cannon>
       <is_fleet type="bool">false</is_fleet>
-      <rwr_to_screen type="bool">true</rwr_to_screen>
+      <rwr_to_screen type="bool">false</rwr_to_screen>
       <tacview_supported type="bool">false</tacview_supported>
       <m28_auto type="bool">false</m28_auto>
       <mlw_max type="double">0</mlw_max>

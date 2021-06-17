@@ -64,7 +64,7 @@ listOfGroundTargetNames = ["groundvehicle"];
 listOfShipNames      = ["carrier", "ship"];
 listOfAIRadarEchoes  = ["multiplayer", "tanker", "aircraft", "carrier", "ship", "missile", "groundvehicle", "Mig-28", "F-16"];
 listOfAIRadarEchoes2 = keys(weaponRadarNames);
-listOfGroundVehicleModels = ["buk-m2", "depot", "truck", "tower", "germansemidetached1","GROUND_TARGET"];
+listOfGroundVehicleModels = ["buk-m2", "MIM104D", "depot", "truck", "tower", "germansemidetached1","GROUND_TARGET"];
 #listOfGroundVehicleModels = ["GROUND_TARGET"];
 listOfShipModels          = ["frigate", "missile_frigate", "USS-LakeChamplain", "USS-NORMANDY", "USS-OliverPerry", "USS-SanAntonio"];
 # 
@@ -85,6 +85,7 @@ listOfShipModels_hash = {
 listOfGroundTargetNames_hash = {
   "groundvehicle":armament.SURFACE,
   "buk-m2":armament.SURFACE,
+  "MIM104D":armament.SURFACE,
   "depot":armament.SURFACE,
   "truck":armament.SURFACE,
   "tower":armament.SURFACE,
@@ -535,7 +536,8 @@ var Radar = {
 
                         if(size(me.tgts_list)>me.Target_Index){
                           #This shouldn't be here. See how to delete it
-                          if(me.update_u.getUnique() == me.tgts_list[me.Target_Index].getUnique() and me.update_u.getUnique() == me.Target_Callsign){
+                          if(me.update_u.getUnique() == me.tgts_list[me.Target_Index].getUnique() and me.update_u.getUnique() == me.Target_Callsign 
+                              and me.az_fld == me.focused_az_fld){
                             #print("Picasso painting");
                             me.update_u.setPainted(1);
                             armament.contact = me.tgts_list[me.Target_Index];
@@ -568,7 +570,7 @@ var Radar = {
         me.ContactsList = me.decrease_life(me.ContactsList);
         
         
-        if (armament.contact != nil and armament.contact.get_display() and getprop("controls/armament/master-arm") and armament.contact.get_Callsign() != nil and armament.contact.get_Callsign() != "") {
+        if (armament.contact != nil and armament.contact.get_display() and getprop("controls/armament/master-arm") and armament.contact.get_Callsign() != nil and armament.contact.get_Callsign() != "" and armament.contact.isPainted()) {
           #print("armament.contact.get_Callsign"~armament.contact.get_Callsign());
           setprop("sim/multiplay/generic/string[6]", left(md5(armament.contact.get_Callsign()), 4));
         } else {
@@ -837,40 +839,6 @@ var Radar = {
         return me.az_fld;
     },
 
-    next_Target_Index_Old: func(){
-      if(me.az_fld == me.focused_az_fld){  
-      if (size(me.tgts_list) > 0) {me.tgts_list[me.Target_Index].setPainted(0);}
-        me.Target_Index = me.Target_Index + 1;
-        if(me.Target_Index > (size(me.tgts_list)-1))
-        {
-            me.Target_Index = 0;
-        }
-        if (size(me.tgts_list) > 0) {
-        
-          ###  Verification of each valid elements
-          var tempo = 0;
-          foreach(tgts;me.tgts_list){
-            tempo = tgts.get_display()==1?tempo+1:tempo;
-          }
-          if(tempo ==0){
-            me.Target_Index = 0;
-            me.Target_Callsign = nil;
-            setprop("/ai/closest/range", 0);
-            return;
-          }
-          
-          if(me.tgts_list[me.Target_Index].get_display()!=1){
-            me.next_Target_Index();
-          }
-          
-          me.Target_Callsign = me.tgts_list[me.Target_Index].getUnique();
-          me.tgts_list[me.Target_Index].setPainted(1);
-        } else {
-          me.Target_Callsign = nil;
-          return
-        } 
-      }
-    },
     
     next_loop: func(index,factor){
       var number = 0;
@@ -882,40 +850,42 @@ var Radar = {
     },
     
     next_Target_Index: func(){
-      if(me.az_fld == me.focused_az_fld){
-        #Stuff to un paint previous target
-        if (size(me.tgts_list) > 0) {me.tgts_list[me.Target_Index].setPainted(0);}
-        
+      #Stuff to un paint previous target
+      if (size(me.tgts_list) > 0) {me.tgts_list[me.Target_Index].setPainted(0);}
+      
+    
         #Stuff to decrease the index
         me.Target_Index = me.next_loop(me.Target_Index, 1);
 
         #Stuff to do with new index        
         if (size(me.tgts_list) > 0) {
           me.Target_Callsign = me.tgts_list[me.Target_Index].getUnique();
-          me.tgts_list[me.Target_Index].setPainted(1);
+          if(me.az_fld == me.focused_az_fld){me.tgts_list[me.Target_Index].setPainted(1);} #If it require a focus, paint it
+          screen.log.write("Target is :" ~ me.tgts_list[me.Target_Index].get_Callsign() ~ " Painted :" ~ me.tgts_list[me.Target_Index].isPainted(), 0.0, 0.5, 1.0);
+          print("Target is :" ~ me.tgts_list[me.Target_Index].get_Callsign() ~ " Painted :" ~ me.tgts_list[me.Target_Index].isPainted());
         } else {
           me.Target_Callsign = nil;
         }
-      }
+
 
     },
     
     previous_Target_Index: func(){
-      if(me.az_fld == me.focused_az_fld){
-        #Stuff to un paint previous target
-        if (size(me.tgts_list) > 0) {me.tgts_list[me.Target_Index].setPainted(0);}
-        
+      #Stuff to un paint previous target
+      if (size(me.tgts_list) > 0) {me.tgts_list[me.Target_Index].setPainted(0);}
         #Stuff to decrease the index
         me.Target_Index = me.next_loop(me.Target_Index, -1);
         
         #Stuff to do with new index        
         if (size(me.tgts_list) > 0) {
           me.Target_Callsign = me.tgts_list[me.Target_Index].getUnique();
-          me.tgts_list[me.Target_Index].setPainted(1);
+          if(me.az_fld == me.focused_az_fld){me.tgts_list[me.Target_Index].setPainted(1);} #If it require a focus, paint it
+          screen.log.write("Target is :" ~ me.tgts_list[me.Target_Index].get_Callsign() ~ " Painted :" ~ me.tgts_list[me.Target_Index].isPainted(), 0.0, 0.5, 1.0);
+          print("Target is :" ~ me.tgts_list[me.Target_Index].get_Callsign() ~ " Painted :" ~ me.tgts_list[me.Target_Index].isPainted());
         } else {
           me.Target_Callsign = nil;
         }
-      }
+        
 
     },
 
@@ -948,35 +918,37 @@ var Radar = {
              }
             
             var MyTarget = me.tgts_list[ me.Target_Index];
-            me.tgts_list[ me.Target_Index].setPainted(1);
-            closeRange   = me.targetRange(MyTarget);
-            heading      = MyTarget.get_heading();
-            altitude     = MyTarget.get_altitude();
-            speed        = MyTarget.get_Speed();
-            callsign     = MyTarget.get_Callsign();
-            longitude    = MyTarget.get_Longitude();
-            latitude     = MyTarget.get_Latitude();
-            bearing      = me.targetBearing(MyTarget);
-            if(speed == nil)
-            {
-                speed = 0;
-            }
-            setprop("/ai/closest/range", closeRange);
-            setprop("/ai/closest/bearing", bearing);
-            setprop("/ai/closest/heading", heading);
-            setprop("/ai/closest/altitude", altitude);
-            setprop("/ai/closest/speed", speed);
-            setprop("/ai/closest/callsign", callsign);
-            setprop("/ai/closest/longitude", longitude);
-            setprop("/ai/closest/latitude", latitude);
+            
+#             me.tgts_list[ me.Target_Index].setPainted(1);#That sucks for mica
+#             closeRange   = me.targetRange(MyTarget);
+#             heading      = MyTarget.get_heading();
+#             altitude     = MyTarget.get_altitude();
+#             speed        = MyTarget.get_Speed();
+#             callsign     = MyTarget.get_Callsign();
+#             longitude    = MyTarget.get_Longitude();
+#             latitude     = MyTarget.get_Latitude();
+#             bearing      = me.targetBearing(MyTarget);
+#             if(speed == nil)
+#             {
+#                 speed = 0;
+#             }
+            #It shouldn't be use anymore
+#             setprop("/ai/closest/range", closeRange);
+#             setprop("/ai/closest/bearing", bearing);
+#             setprop("/ai/closest/heading", heading);
+#             setprop("/ai/closest/altitude", altitude);
+#             setprop("/ai/closest/speed", speed);
+#             setprop("/ai/closest/callsign", callsign);
+#             setprop("/ai/closest/longitude", longitude);
+#             setprop("/ai/closest/latitude", latitude);
         }else{
             if(me.az_fld != me.focused_az_fld){
               if (size(me.tgts_list) > 0) {
-                me.tgts_list[me.Target_Index].setPainted(0);
-                armament.contact = nil;
+#                 me.tgts_list[me.Target_Index].setPainted(0);
+#                 armament.contact = nil;
               }
             }
-            setprop("/ai/closest/range", 0);
+#             setprop("/ai/closest/range", 0);
         }
     },
     
@@ -1117,7 +1089,7 @@ var Radar = {
             return nil;#me.Target_Index = 0;
         }
         if (me.Target_Callsign == me.tgts_list[me.Target_Index].getUnique()) {
-          me.tgts_list[me.Target_Index].setPainted(1);
+          #me.tgts_list[me.Target_Index].setPainted(1); <- The fuck is that doing here
           return me.tgts_list[me.Target_Index];
         } else {
           me.Target_Callsign = nil;
@@ -1177,13 +1149,15 @@ var RWR_APG = {
         
         foreach(me.u;completeList) {
             me.cs = me.u.get_Callsign();
-#             print("Will test  : "~ me.u.get_Callsign()~" as Type: " ~ me.u.type);
+	    # print("Will test  : "~ me.u.get_Callsign()~" as Type: " ~ me.u.type);
             me.rn = me.u.get_range();
             me.l16 = 0;
             if (me.u.isFriend() or me.rn > 150) {
                 me.l16 = 1;
             }
             me.lck = me.u.propNode.getNode("sim/multiplay/generic/string[6]");
+	    var model_path = split("/", me.u.propNode.getNode("sim/model/path").getValue())[-1];
+	    me.u.model = left(model_path, size(model_path) - 4);
             if (me.lck != nil and me.lck.getValue() != nil and me.lck.getValue() != "" and size(""~me.lck.getValue())==4 and left(md5(me.myCallsign),4) == me.lck.getValue()) {
               me.act_lck = 1;
             }
@@ -1207,17 +1181,27 @@ var RWR_APG = {
               me.rwrTargetAzimuth = me.TargetWhichRadarAzimut(me.u);
               #print(me.rwrTargetAzimuth);
               
-              if (((me.rdrAct != nil and me.rdrAct.getValue()!=1) or me.rdrAct == nil) and math.abs(geo.normdeg180(me.deviation)) < me.rwrTargetAzimuth and me.NotBeyondHorizon(me.u) and me.isNotBehindTerrain(me.u) ) {
+              #if (((me.rdrAct != nil and me.rdrAct.getValue()!=1) or me.rdrAct == nil) and math.abs(geo.normdeg180(me.deviation)) < me.rwrTargetAzimuth and me.NotBeyondHorizon(me.u) and me.isNotBehindTerrain(me.u) ) {
+              if (((me.rdrAct != nil and me.rdrAct.getValue()!=1) or me.rdrAct == nil) and me.NotBeyondHorizon(me.u) and me.isNotBehindTerrain(me.u) ) {  
+                
                   # we detect its radar is pointed at us and active
                   me.show = 1;
               }
             }
-            if(!me.u.isValid()){me.show = 0;}
-            #print("should show : " ~ me.u.get_Callsign()~" as Type: " ~ me.u.type ~ " Show : "~ me.show ~ " Name:"~me.u.propNode.getName()~" Model:"~me.u.get_model() ~ " isValid:"~me.u.isValid());
+            #if(!me.u.isValid()){me.show = 0;}
+            #print("should show : " ~ me.u.get_Callsign()~" as Type: " ~ me.u.type ~ " Show : "~ me.show ~ " Name:"~me.u.propNode.getName()~" Model:"~me.u.get_model() ~ 
+              #" ModelType:"~me.u.ModelType ~ " isValid:"~me.u.isValid());
             
             if (me.show == 1) {
                 me.threat = 0;
-                if (me.u.get_model() != "missile_frigate" and me.u.propNode.getName() != "carrier" and me.u.get_model() != "fleet" and me.u.get_model() != "buk-m2") {
+                if (me.u.get_model() != "missile_frigate" and
+		    me.u.propNode.getName() != "carrier" and
+		    me.u.get_model() != "fleet" and
+		    me.u.get_model() != "buk-m2" and
+		    me.u.get_model() != "s-300" and
+		    me.u.get_model() != "MIM104D" and
+		    me.u.get_model() != "S-75" and
+		    me.u.get_model() != "ZSU-23-4M") {
                     me.threat += ((180-me.dev)/180)*0.30;
                     me.spd = (60-me.u.get_Speed())/60;
                     me.threat -= me.spd>0?me.spd:0;
@@ -1227,21 +1211,27 @@ var RWR_APG = {
                     me.threat += 0.30;
                 }
                 me.danger = 50;
-                if (me.u.get_model() == "missile_frigate" or me.u.get_model() == "fleet") {
-                    me.danger = 75
-                } elsif (me.u.get_model() == "buk-m2") {
-                    me.danger = 35;
-                } elsif (me.u.propNode.getName() == "carrier") {
-                    me.danger = 60;
-                }
+		if (me.u.get_model() == "missile_frigate" or me.u.get_model() == "fleet" or me.u.get_model() == "s-300") {
+		    me.danger = 80;
+		} elsif (me.u.get_model() == "buk-m2" or me.u.get_model() == "S-75") {
+		    me.danger = 35;
+		} elsif (me.u.get_model() == "MIM104D") {
+		    me.danger = 45;
+		} elsif (me.u.get_model() == "ZSU-23-4M") {
+		    me.danger = 7.5;
+		}
+   
+#                 if (me.u.get_model() == "MIM104D") {
+#                   printf("%d %d %d %d %d", me.rdrAct != nil and me.rdrAct.getValue()!=1, me.rdrAct == nil, me.dev < me.rwrTargetAzimuth, me.NotBeyondHorizon(me.u), me.isNotBehindTerrain(me.u));
+#                 }
                 
                 me.threat += ((me.danger-me.rn)/me.danger)>0?((me.danger-me.rn)/me.danger)*0.60:0;
                 me.clo = me.u.get_closure_rate_from_Coord(me.MyCoord);
                 me.threat += me.clo>0?(me.clo/500)*0.10:0;
-                if (me.threat > 1) me.threat = 1;
+                if (me.threat > 1 or me.act_lck) me.threat = 1;
                 #printf("%s threat:%.2f range:%d dev:%d", me.u.get_Callsign(),me.threat,me.u.get_range(),me.dev);
                 if (me.threat <= 0) continue;
-                #printf("%s threat:%.2f range:%d dev:%d", u.get_Callsign(),threat,u.get_range(),dev);
+                # printf("%s threat:%.2f range:%d dev:%d", me.u.get_Callsign(), me.threat, me.u.get_range(), me.dev);
                 if (!me.l16) {
                     append(rwrList,[me.u,me.threat]);
                 } else {
