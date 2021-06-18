@@ -330,3 +330,10 @@ setlistener("gear/gear[0]/wow",func(){wow_check()},nil,0);
 setlistener("gear/gear[1]/wow",func(){wow_check()},nil,0);
 setlistener("gear/gear[2]/wow",func(){wow_check()},nil,0);
 setlistener("payload/armament/msg",func(){dmg_check()},nil,0);
+
+# Speedbrake controls to work with default spoiler ext/retr bindings
+var SpeedBrake = props.globals.getNode("controls/flight/speedbrake", 1);
+
+setlistener("controls/flight/spoilers", func(v){
+    SpeedBrake.setValue(v.getValue());
+	    }, 1, 0);

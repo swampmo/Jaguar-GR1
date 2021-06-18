@@ -656,6 +656,10 @@
       <path>Aircraft/Jaguar-GR1/Systems/instrumentation.xml</path>
     </instrumentation>
 
+    <spoilers>
+      <setting>0</setting>
+      <setting>1</setting>
+    </spoilers>
   </sim>
 
   <surface-positions>
