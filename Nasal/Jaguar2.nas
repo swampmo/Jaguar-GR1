@@ -286,3 +286,54 @@ var chuteRepack = func{
 
 } # end func	
 
+# disable some menus in-flight when damage is on
+var wow_check = func {
+    print("menu_check");
+    var dmg = getprop("payload/armament/msg");
+    var wowstatus = getprop("fdm/jsbsim/gear/unit/WOW") and getprop("fdm/jsbsim/gear/unit[1]/WOW") and getprop("fdm/jsbsim/gear/unit[2]/WOW");
+    if (dmg) {
+	if (wowstatus) {
+            setprop("sim/menubar/default/menu[5]/item[4]/enabled",1);
+            setprop("sim/menubar/default/menu[5]/item[9]/enabled",1);
+            setprop("sim/menubar/default/menu[5]/item[10]/enabled",1);
+            setprop("sim/menubar/default/menu[5]/item[11]/enabled",1);
+	} else {
+            setprop("sim/menubar/default/menu[5]/item[4]/enabled",0);
+            setprop("sim/menubar/default/menu[5]/item[9]/enabled",0);
+            setprop("sim/menubar/default/menu[5]/item[10]/enabled",0);
+            setprop("sim/menubar/default/menu[5]/item[11]/enabled",0);
+	}
+    }
+    if (!wowstatus) {
+	setprop("sim/menubar/default/menu[10]/item[3]/enabled", 0);
+    } else {
+	setprop("sim/menubar/default/menu[10]/item[3]/enabled", 1);
+    }
+}
+var dmg_check = func {
+    print("damage_check");
+    var dmg = getprop("payload/armament/msg");
+    if (dmg) {
+        setprop("sim/menubar/default/menu[5]/item[0]/enabled",0);
+        setprop("sim/menubar/default/menu[5]/item[1]/enabled",0);
+        setprop("sim/menubar/default/menu[5]/item[2]/enabled",0);
+        setprop("sim/menubar/default/menu[7]/item[4]/enabled",0);
+    } else {
+        setprop("sim/menubar/default/menu[5]/item[0]/enabled",1);
+        setprop("sim/menubar/default/menu[5]/item[1]/enabled",1);
+        setprop("sim/menubar/default/menu[5]/item[2]/enabled",1);
+        setprop("sim/menubar/default/menu[7]/item[4]/enabled",1);
+    }
+}
+
+setlistener("gear/gear[0]/wow",func(){wow_check()},nil,0);
+setlistener("gear/gear[1]/wow",func(){wow_check()},nil,0);
+setlistener("gear/gear[2]/wow",func(){wow_check()},nil,0);
+setlistener("payload/armament/msg",func(){dmg_check()},nil,0);
+
+# Speedbrake controls to work with default spoiler ext/retr bindings
+var SpeedBrake = props.globals.getNode("controls/flight/speedbrake", 1);
+
+setlistener("controls/flight/spoilers", func(v){
+    SpeedBrake.setValue(v.getValue());
+	    }, 1, 0);

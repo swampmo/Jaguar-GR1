@@ -37,22 +37,43 @@
         <type>select</type>
         <object-name>left-AIM-9-pos-1</object-name>
         <condition>
-            <or>
-                <equals>
-                    <property>payload/armament/station/id-0-type</property>
-                    <value>AIM-9</value>
-                </equals>
-                <equals>
-                    <property>payload/armament/station/id-0-type</property>
-                    <value>Majic</value>
-                </equals>
-            </or>
+            <equals>
+                <property>payload/armament/station/id-0-type</property>
+                <value>AIM-9</value>
+            </equals>
             <greater-than>
                 <property>payload/armament/station/id-0-count</property>
                 <value>0</value>
             </greater-than>
         </condition>
     </animation>
+
+    <model>
+        <name>left-majic-pos-1</name>
+        <path>Aircraft/Jaguar-GR1/Models/Weapons/MAJIC/magic-2.xml</path>
+        <offsets>
+            <x-m>1.640</x-m>
+            <y-m>-2.050</y-m>
+            <z-m>0.290</z-m>
+            <pitch-deg>-0.865</pitch-deg>
+	    <roll-deg>180</roll-deg>
+        </offsets>
+    </model>
+    <animation>
+        <type>select</type>
+        <object-name>left-majic-pos-1</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-0-type</property>
+                <value>Majic</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-0-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
     <!--    <model>
         <name>left-ALQ-101-pos-1</name>
         <path>Aircraft/Jaguar-GR1/Models/Weapons/alq101.xml</path>
@@ -95,22 +116,42 @@
         <type>select</type>
         <object-name>left-AIM-9-pos-2</object-name>
         <condition>
-            <or>
-                <equals>
-                    <property>payload/armament/station/id-1-type</property>
-                    <value>AIM-9</value>
-                </equals>
-                <equals>
-                    <property>payload/armament/station/id-1-type</property>
-                    <value>Majic</value>
-                </equals>
-            </or>
+            <equals>
+                <property>payload/armament/station/id-1-type</property>
+                <value>AIM-9</value>
+            </equals>
             <greater-than>
                 <property>payload/armament/station/id-1-count</property>
                 <value>0</value>
             </greater-than>
         </condition>
     </animation>
+    
+    <model>
+        <name>left-majic-pos-2</name>
+        <path>Aircraft/Jaguar-GR1/Models/Weapons/MAJIC/magic-2.xml</path>
+        <offsets>
+            <x-m>2.400</x-m>
+            <y-m>-3.09</y-m>
+            <z-m>-0.520</z-m>
+            <pitch-deg>-1.1</pitch-deg>
+        </offsets>
+    </model>
+    <animation>
+        <type>select</type>
+        <object-name>left-majic-pos-2</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-1-type</property>
+                <value>Majic</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-1-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+    
     <!--    <model>
         <name>left-GBU-pos-2</name>
         <path>Aircraft/Jaguar-GR1/Models/Weapons/gbu16.xml</path>
@@ -736,7 +777,7 @@
         <name>right-AIM-9-pos-2</name>
         <path>Aircraft/Jaguar-GR1/Models/Weapons/AIM9.xml</path>
         <offsets>
-            <x-m>2.000</x-m>
+            <x-m>2.400</x-m>
             <y-m>3.09</y-m>
             <z-m>-0.520</z-m>
             <pitch-deg>-1.1</pitch-deg>
@@ -746,22 +787,44 @@
         <type>select</type>
         <object-name>right-AIM-9-pos-2</object-name>
         <condition>
-            <or>
-                <equals>
-                    <property>payload/armament/station/id-5-type</property>
-                    <value>AIM-9</value>
-                </equals>
-                <equals>
-                    <property>payload/armament/station/id-5-type</property>
-                    <value>Majic</value>
-                </equals>
-            </or>
+            <equals>
+                <property>payload/armament/station/id-5-type</property>
+                <value>AIM-9</value>
+            </equals>
             <greater-than>
                 <property>payload/armament/station/id-5-count</property>
                 <value>0</value>
             </greater-than>
         </condition>
     </animation>
+
+    
+    <model>
+        <name>right-majic-pos-2</name>
+        <path>Aircraft/Jaguar-GR1/Models/Weapons/MAJIC/magic-2.xml</path>
+        <offsets>
+            <x-m>2.400</x-m>
+            <y-m>3.09</y-m>
+            <z-m>-0.520</z-m>
+            <pitch-deg>-1.1</pitch-deg>
+        </offsets>
+    </model>
+    <animation>
+        <type>select</type>
+        <object-name>right-majic-pos-2</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-5-type</property>
+                <value>Majic</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-5-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+ 
     <!--    <model>
         <name>right-GBU-pos-2</name>
         <path>Aircraft/Jaguar-GR1/Models/Weapons/gbu16.xml</path>
@@ -893,22 +956,44 @@
         <type>select</type>
         <object-name>right-AIM-9-pos-1</object-name>
         <condition>
-            <or>
-                <equals>
-                    <property>payload/armament/station/id-6-type</property>
-                    <value>AIM-9</value>
-                </equals>
-                <equals>
-                    <property>payload/armament/station/id-6-type</property>
-                    <value>Majic</value>
-                </equals>
-            </or>
+            <equals>
+                <property>payload/armament/station/id-6-type</property>
+                <value>AIM-9</value>
+            </equals>
             <greater-than>
                 <property>payload/armament/station/id-6-count</property>
                 <value>0</value>
             </greater-than>
         </condition>
     </animation>
+
+       
+    <model>
+        <name>right-majic-pos-1</name>
+        <path>Aircraft/Jaguar-GR1/Models/Weapons/MAJIC/magic-2.xml</path>
+        <offsets>
+            <x-m>1.640</x-m>
+            <y-m>2.050</y-m>
+            <z-m>0.290</z-m>
+            <pitch-deg>-0.865</pitch-deg>
+	    <roll-deg>180</roll-deg>
+        </offsets>
+    </model>
+    <animation>
+        <type>select</type>
+        <object-name>right-majic-pos-1</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-6-type</property>
+                <value>Majic</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-6-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
     <!--    <model>
         <name>right-ALQ-101-pos-1</name>
         <path>Aircraft/Jaguar-GR1/Models/Weapons/alq101.xml</path>

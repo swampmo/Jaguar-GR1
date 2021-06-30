@@ -1,0 +1,4 @@
+People who have not directly worked on the Jaguar GR1 but it is built upon
+their work:
+- Ravenclaw007: Magic missile's 3d model
+-  Martien Van Der Plas: 3d models for AIM-9 and CBU-87

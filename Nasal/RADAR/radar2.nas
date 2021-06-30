@@ -62,9 +62,9 @@ var weaponRadarNames = {
 };
 listOfGroundTargetNames = ["groundvehicle"];
 listOfShipNames      = ["carrier", "ship"];
-listOfAIRadarEchoes  = ["multiplayer", "tanker", "aircraft", "carrier", "ship", "missile", "groundvehicle"];
+listOfAIRadarEchoes  = ["multiplayer", "tanker", "aircraft", "carrier", "ship", "missile", "groundvehicle", "Mig-28", "F-16"];
 listOfAIRadarEchoes2 = keys(weaponRadarNames);
-listOfGroundVehicleModels = ["buk-m2", "depot", "truck", "tower", "germansemidetached1","GROUND_TARGET"];
+listOfGroundVehicleModels = ["buk-m2", "MIM104D", "depot", "truck", "tower", "germansemidetached1","GROUND_TARGET"];
 #listOfGroundVehicleModels = ["GROUND_TARGET"];
 listOfShipModels          = ["frigate", "missile_frigate", "USS-LakeChamplain", "USS-NORMANDY", "USS-OliverPerry", "USS-SanAntonio"];
 # 
@@ -77,15 +77,22 @@ listOfShipModels_hash = {
   "USS-NORMANDY":"MARINE", 
   "USS-OliverPerry":"MARINE", 
   "USS-SanAntonio":"MARINE",
+  "san_antonio":"MARINE",
+  "oliver_perry":"MARINE",
+  "normandy":"MARINE",
+  "lake_champlain":"MARINE",
 };
 listOfGroundTargetNames_hash = {
-  "groundvehicle":"GROUND_TARGET",
-  "buk-m2":"GROUND_TARGET",
-  "depot":"GROUND_TARGET",
-  "truck":"GROUND_TARGET",
-  "tower":"GROUND_TARGET",
-  "germansemidetached1":"GROUND_TARGET",
-  "GROUND_TARGET":"GROUND_TARGET",
+  "groundvehicle":armament.SURFACE,
+  "buk-m2":armament.SURFACE,
+  "MIM104D":armament.SURFACE,
+  "depot":armament.SURFACE,
+  "truck":armament.SURFACE,
+  "tower":armament.SURFACE,
+  "germansemidetached1":armament.SURFACE,
+  "GROUND_TARGET":armament.SURFACE,
+  "Mig-28":armament.AIR,
+  "F-16":armament.AIR,
 };
 var shouldHaveRadarNodearray = ["tanker","aircraft","missile"];
 #   
@@ -290,6 +297,7 @@ var Radar = {
               airspeed:   "/velocities/airspeed-kt",
               target_spd: "/autopilot/settings/target-speed-kt",
               acc:        "/fdm/jsbsim/accelerations/udot-ft_sec2",
+              acc_yas:    "/fdm/yasim/accelerations/a-x",
               NavFreq:    "/instrumentation/nav/frequencies/selected-mhz",
               destRunway: "/autopilot/route-manager/destination/runway",
               destAirport:"/autopilot/route-manager/destination/airport",
@@ -339,7 +347,7 @@ var Radar = {
         var loop_Update = func() {
             
             #rwr stuff
-            if (rwr.rwr != nil) {#rwr.rwr
+            if (rwr.rwr != nil) {
               if (size(rwrList)>0) {
                 rwr.rwr.update(rwrList,"normal");
               } else {
@@ -373,6 +381,7 @@ var Radar = {
               me.ContactsList  = [];
               me.tgts_list     = [];
               me.Target_Index    = -1;
+              setprop("sim/multiplay/generic/string[6]", "");
             }
             #me.Global_janitor();
             
@@ -408,113 +417,7 @@ var Radar = {
       rwrList16 = [];
     },
 
-    scan_update_tgt_list_func:func(){
-      if(scan_update_tgt_list){
-        me.temp_raw_list = me.Mp.getChildren();
-        foreach(var c ; me.temp_raw_list)
-        {
-              # FIXME: At that time a multiplayer node may have been deleted while still
-              # existing as a displayable target in the radar targets nodes.
-              # FIXED, with janitor. 5H1N0B1
-              var type = me.type_selector(c);
-              if(c.getNode("valid") == nil or c.getNode("valid").getValue() != 1)
-              {
-                  continue;
-              }
-              
-              # the 2 following line are needed : If not, it would detects our own missiles...
-              # this will come soon
-  #             var HaveRadarNode = c.getNode("radar");
-              #print(me.check_selected_type(c));
-              #if(type == "multiplayer"
-              #    or (type == "tanker" and HaveRadarNode != nil)
-              #    or (type == "aircraft" and me.showAI == 1)
-              #    or type == "carrier"
-              #    or type == "ship"
-              #    or (type == "missile" and HaveRadarNode != nil))
-              #
-              var Tree_Name = c.getName();
-              #print("folderName:" ~ c.getName());
-              
-              
-              if(me.check_selected_type(c))
-              {
-                  # creation of the tempo object Target
-                  var u = Target.new(c,me.myTree.getPath());
-                
 
-                  folderName = c.getName();
-
-                  #print("test : " ~ c.pathNode.getValue());
-                  #print("folderName:" ~ folderName);
-                  # important Shinobi:
-                  # expand this so multiplayer that is on sea or ground is also set correct.
-                  # also consider if doppler do not see them that they are either SURFACE or MARINE, depending on if they have alt = ~ 0
-                  # notice that GROUND_TARGET is set inside Target.new().
-                  me.skipDoppler = 0;
-                  # now we test the property folder name to guess what type it is:
-                  #Should be done with an hash
-                  if(listOfShipModels_hash[folderName] != nil and u.get_altitude()<100){
-                    #print(folderName ~":Not Marine");
-                    u.setType(armament.MARINE);
-                    me.skipDoppler = 1;
-                  }
-
-                  #If not MARINE skipDoppler still == 0
-                  if(listOfGroundTargetNames_hash[folderName] != nil){
-                    u.setType(armament.SURFACE);
-                    me.skipDoppler = 0;
-                  }
-                  
-                  if(u.get_type() == 0){
-                  # now we test the model name to guess what type it is:
-                        me.pathNode = c.getNode("sim/model/path");
-                        if (me.pathNode != nil) {
-                            me.path = me.pathNode.getValue();
-                            me.model = split(".", split("/", me.path)[-1])[0];
-                            u.set_model(me.model);#used for RCS
-                            
-                            if(listOfShipModels_hash[me.model] != nil and u.get_altitude()<100){
-                              # Its a ship, Mirage ground radar will pick it up
-                              u.setType(armament.MARINE);
-                              me.skipDoppler = 1;
-                            }            
-
-                            if(listOfGroundTargetNames_hash[me.model] != nil){
-                              # its a ground vehicle, Mirage ground radar will not pick it up
-                              u.setType(armament.SURFACE);
-                              me.skipDoppler = 0;
-                            }
-                        }
-                  }
-                  #Testing if ORDNANCE
-                  if (c.getNode("missile") != nil and c.getNode("missile").getValue()) {
-                      u.setType(armament.ORDNANCE);
-                      me.skipDoppler = 0;
-#                       print("missile:"~ folderName ~":"~ "armament.ORDNANCE");
-                  }
-                  if (c.getNode("munition") != nil and c.getNode("munition").getValue()) {
-                      u.setType(armament.ORDNANCE);
-                      me.skipDoppler = 0;
-#                       print("munition:" ~ folderName ~":"~ "armament.ORDNANCE");
-                  }
-                  #Testing Ground Target
-                  if(u.get_Callsign() == "GROUND_TARGET"){
-                    u.setType(armament.SURFACE);
-                  }
-#                   if(Tree_Name != "munition"){ 
-#                     print("Test Important:");
-                    me.update_array(u,me.raw_selection);
-                    me.update_array(u,completeList);
-#                   }
-              }
-          }
-      }
-      
-      scan_update_tgt_list = 0;
-    },
-    
-    
     ############
     #  UPDATE  #
     ############
@@ -587,30 +490,18 @@ var Radar = {
 #         var raw_list = me.Mp.getChildren();
         foreach(me.update_u  ; me.raw_selection)
         {
-           
- 
-
-                
-                #print("Start Testing "~ u.get_Callsign()~"Type: " ~ u.type);
-                
                               
                 # set Check_List to void
                 me.Check_List = [];
                 # this function do all the checks and put all result of each
                 # test on an array[] named Check_List
 
-                me.go_check(me.update_u, me.skipDoppler);
+                me.go_check(me.update_u);
                 
-                #print("Complete liste after update : " ~ size(completeList));
-                #me.decrease_life(completeList);
-                #me.sorting_and_suppr(completeList);
-                
-                #Displaying Check
-                #print("Testing "~ u.get_Callsign()~"Check: " ~ me.get_check());
-                
-                #print("End Testing "~ u.get_Callsign());
-                
+                #Displaying Check                
                 # then a function just check it all
+                #print("Update targetList" ~ me.update_u.get_Callsign());
+                #print("get_type()" ~ me.update_u.get_type());
                 if(me.get_check() and me.update_u.isValid())
                 {
                                         
@@ -625,28 +516,17 @@ var Radar = {
                       me.update_u.set_all(me.MyCoord);
                       me.calculateScreen(me.update_u);
                     }
-                    
-                    #print("Update contactList");
-#                     me.ContactsList = 
+
                     me.update_array(me.update_u,me.ContactsList);
-                    #me.tempo_Index = me.find_index_inArray(u,me.ContactsList);
-                    #me.ContactsList[me.tempo_Index].set_display(1);
+
                     me.update_u.set_display(1);
-                    
-                    #if(me.tempo_Index != nil){ u = me.ContactsList[me.tempo_Index];}
-                    
-                    
+               
                     # for Target Selection
-                    # here we disable the capacity of targeting a missile. But 's possible.
-                    # CANVASARRAY => ARRAY2
+                    # here we disable the capacity of targeting a missile.
                     
-                    
-                    #print("isFriend :" ~ u.isFriend());
                     if(me.update_u.get_type != armament.ORDNANCE and !contains(weaponRadarNames, me.update_u.get_Callsign) and !me.update_u.isFriend())
                     {
                         #tgts_list => ARRAY4
-                        
-#                       print("Update targetList" ~ u.get_Callsign());
                         
                         me.TargetList_Update(me.update_u);
                         me.TargetList_AddingTarget(me.update_u);
@@ -656,7 +536,8 @@ var Radar = {
 
                         if(size(me.tgts_list)>me.Target_Index){
                           #This shouldn't be here. See how to delete it
-                          if(me.update_u.getUnique() == me.tgts_list[me.Target_Index].getUnique() and me.update_u.getUnique() == me.Target_Callsign){
+                          if(me.update_u.getUnique() == me.tgts_list[me.Target_Index].getUnique() and me.update_u.getUnique() == me.Target_Callsign 
+                              and me.az_fld == me.focused_az_fld){
                             #print("Picasso painting");
                             me.update_u.setPainted(1);
                             armament.contact = me.tgts_list[me.Target_Index];
@@ -666,7 +547,6 @@ var Radar = {
                           me.next_Target_Index();
                         }
                     }
-#                     append(CANVASARRAY, u); 
                     me.displayTarget();
                 }
                 else
@@ -674,7 +554,7 @@ var Radar = {
                     #me.tempo_Index = me.find_index_inArray(u,me.ContactsList);
                     #if(me.tempo_Index != nil){me.ContactsList[me.tempo_Index].set_display(1,me.myTree);}
                   
-                 #Here we shouldn't see the target anymore. It should disapear. So this is calling the Tempo_Janitor      
+                 #Here we shouldn't see the target anymore. It should disapear. So for that, we are calling the Tempo_Janitor      
                     if(me.update_u.get_Validity() == 1)
                     {
                         if(me.input.AbsoluteElapsedtime.getValue() - me.update_u.get_TimeLast() > me.MyTimeLimit)
@@ -684,38 +564,23 @@ var Radar = {
                     }
                     
                 }    
-#                 completeList = me.update_array_no_life_reset(u,completeList);
             }
-            #Temporary adding this in order to make the whole new firesystem work
-            #print("Update completeList");
-            
-#             if(u.get_Callsign() == "GROUND_TARGET"){
-#               if(me.inAzimuth(u,0) == 0){
-#                 u.set_display(0,me.myTree);
-#               }else{
-#                 u.set_display(1,me.myTree);
-#               }
-#             }
-            
-            
-        #For Each End
+
                 
         me.ContactsList = me.decrease_life(me.ContactsList);
-        #print("Test");
-        #me.sorting_and_suppr(me.ContactsList);
-        #me.ContactsList = me.cut_array(me.radarMaxSize,me.ContactsList);
-        #me.Global_janitor();
-        #print("Side in RADAR : "~ size(me.ContactsList));
-        #foreach(contact;me.ContactsList){
-        #  print("Last Check : " ~ contact.get_Callsign() ~" 's life : "~ contact.life);
-        #}
+        
+        
+        if (armament.contact != nil and armament.contact.get_display() and getprop("controls/armament/master-arm") and armament.contact.get_Callsign() != nil and armament.contact.get_Callsign() != "" and armament.contact.isPainted()) {
+          #print("armament.contact.get_Callsign"~armament.contact.get_Callsign());
+          setprop("sim/multiplay/generic/string[6]", left(md5(armament.contact.get_Callsign()), 4));
+        } else {
+            setprop("sim/multiplay/generic/string[6]", "");
+        }
+        
+        
 
-        #print("size(completeList) : " ~size(completeList) ~ "; size(me.ContactsList) : " ~ size(me.ContactsList));
         me.updating_now = 0;
-        
 
-        
-#         return CANVASARRAY;
     },
     
 
@@ -847,7 +712,7 @@ var Radar = {
       return me.check_selected_type_result;
     },
 
-    go_check: func(SelectedObject, skipDoppler){
+    go_check: func(SelectedObject){
         #if radar : check : InRange, inAzimuth, inElevation, NotBeyondHorizon, doppler, isNotBehindTerrain
         #if Rwr   : check : InhisRange (radardist), inHisElevation, inHisAzimuth, NotBeyondHorizon, isNotBehindTerrain
         #if heat  : check : InRange, inAzimuth, inElevation, NotBeyondHorizon, heat_sensor, isNotBehindTerrain
@@ -881,7 +746,7 @@ var Radar = {
             return;
         }
         #me.heat_sensor(SelectedObject);
-        if( me.detectionTypetab=="laser" or skipDoppler == 1)
+        if( me.detectionTypetab=="laser" or SelectedObject.skipDoppler == 1)
         {
           #print("Skip Doppler");
           append(me.Check_List, 1);
@@ -974,44 +839,6 @@ var Radar = {
         return me.az_fld;
     },
 
-    next_Target_Index_Old: func(){
-      if(me.az_fld == me.focused_az_fld){  
-      if (size(me.tgts_list) > 0) {me.tgts_list[me.Target_Index].setPainted(0);}
-        me.Target_Index = me.Target_Index + 1;
-        if(me.Target_Index > (size(me.tgts_list)-1))
-        {
-            me.Target_Index = 0;
-        }
-        if (size(me.tgts_list) > 0) {
-        
-          ###  Verification of each valid elements
-          var tempo = 0;
-          foreach(tgts;me.tgts_list){
-            tempo = tgts.get_display()==1?tempo+1:tempo;
-          }
-          if(tempo ==0){
-            me.Target_Index = 0;
-            me.Target_Callsign = nil;
-            setprop("/ai/closest/range", 0);
-            return;
-          }
-          
-          if(me.tgts_list[me.Target_Index].get_display()!=1){
-            me.next_Target_Index();
-          }
-          
-          me.Target_Callsign = me.tgts_list[me.Target_Index].getUnique();
-          me.tgts_list[me.Target_Index].setPainted(1);
-        } else {
-          me.Target_Callsign = nil;
-          return
-        } 
-      }
-        #if(me.tgts_list[me.Target_Index].get_display()!=1){
-          #me.Target_Index = me.Target_Index==0?size(me.tgts_list)-1:me.Target_Index - 1; 
-          #me.next_Target_Index();
-        #}
-    },
     
     next_loop: func(index,factor){
       var number = 0;
@@ -1023,40 +850,42 @@ var Radar = {
     },
     
     next_Target_Index: func(){
-      if(me.az_fld == me.focused_az_fld){
-        #Stuff to un paint previous target
-        if (size(me.tgts_list) > 0) {me.tgts_list[me.Target_Index].setPainted(0);}
-        
+      #Stuff to un paint previous target
+      if (size(me.tgts_list) > 0) {me.tgts_list[me.Target_Index].setPainted(0);}
+      
+    
         #Stuff to decrease the index
         me.Target_Index = me.next_loop(me.Target_Index, 1);
 
         #Stuff to do with new index        
         if (size(me.tgts_list) > 0) {
           me.Target_Callsign = me.tgts_list[me.Target_Index].getUnique();
-          me.tgts_list[me.Target_Index].setPainted(1);
+          if(me.az_fld == me.focused_az_fld){me.tgts_list[me.Target_Index].setPainted(1);} #If it require a focus, paint it
+          screen.log.write("Target is :" ~ me.tgts_list[me.Target_Index].get_Callsign() ~ " Painted :" ~ me.tgts_list[me.Target_Index].isPainted(), 0.0, 0.5, 1.0);
+          print("Target is :" ~ me.tgts_list[me.Target_Index].get_Callsign() ~ " Painted :" ~ me.tgts_list[me.Target_Index].isPainted());
         } else {
           me.Target_Callsign = nil;
         }
-      }
+
 
     },
     
     previous_Target_Index: func(){
-      if(me.az_fld == me.focused_az_fld){
-        #Stuff to un paint previous target
-        if (size(me.tgts_list) > 0) {me.tgts_list[me.Target_Index].setPainted(0);}
-        
+      #Stuff to un paint previous target
+      if (size(me.tgts_list) > 0) {me.tgts_list[me.Target_Index].setPainted(0);}
         #Stuff to decrease the index
         me.Target_Index = me.next_loop(me.Target_Index, -1);
         
         #Stuff to do with new index        
         if (size(me.tgts_list) > 0) {
           me.Target_Callsign = me.tgts_list[me.Target_Index].getUnique();
-          me.tgts_list[me.Target_Index].setPainted(1);
+          if(me.az_fld == me.focused_az_fld){me.tgts_list[me.Target_Index].setPainted(1);} #If it require a focus, paint it
+          screen.log.write("Target is :" ~ me.tgts_list[me.Target_Index].get_Callsign() ~ " Painted :" ~ me.tgts_list[me.Target_Index].isPainted(), 0.0, 0.5, 1.0);
+          print("Target is :" ~ me.tgts_list[me.Target_Index].get_Callsign() ~ " Painted :" ~ me.tgts_list[me.Target_Index].isPainted());
         } else {
           me.Target_Callsign = nil;
         }
-      }
+        
 
     },
 
@@ -1089,35 +918,37 @@ var Radar = {
              }
             
             var MyTarget = me.tgts_list[ me.Target_Index];
-            me.tgts_list[ me.Target_Index].setPainted(1);
-            closeRange   = me.targetRange(MyTarget);
-            heading      = MyTarget.get_heading();
-            altitude     = MyTarget.get_altitude();
-            speed        = MyTarget.get_Speed();
-            callsign     = MyTarget.get_Callsign();
-            longitude    = MyTarget.get_Longitude();
-            latitude     = MyTarget.get_Latitude();
-            bearing      = me.targetBearing(MyTarget);
-            if(speed == nil)
-            {
-                speed = 0;
-            }
-            setprop("/ai/closest/range", closeRange);
-            setprop("/ai/closest/bearing", bearing);
-            setprop("/ai/closest/heading", heading);
-            setprop("/ai/closest/altitude", altitude);
-            setprop("/ai/closest/speed", speed);
-            setprop("/ai/closest/callsign", callsign);
-            setprop("/ai/closest/longitude", longitude);
-            setprop("/ai/closest/latitude", latitude);
+            
+#             me.tgts_list[ me.Target_Index].setPainted(1);#That sucks for mica
+#             closeRange   = me.targetRange(MyTarget);
+#             heading      = MyTarget.get_heading();
+#             altitude     = MyTarget.get_altitude();
+#             speed        = MyTarget.get_Speed();
+#             callsign     = MyTarget.get_Callsign();
+#             longitude    = MyTarget.get_Longitude();
+#             latitude     = MyTarget.get_Latitude();
+#             bearing      = me.targetBearing(MyTarget);
+#             if(speed == nil)
+#             {
+#                 speed = 0;
+#             }
+            #It shouldn't be use anymore
+#             setprop("/ai/closest/range", closeRange);
+#             setprop("/ai/closest/bearing", bearing);
+#             setprop("/ai/closest/heading", heading);
+#             setprop("/ai/closest/altitude", altitude);
+#             setprop("/ai/closest/speed", speed);
+#             setprop("/ai/closest/callsign", callsign);
+#             setprop("/ai/closest/longitude", longitude);
+#             setprop("/ai/closest/latitude", latitude);
         }else{
             if(me.az_fld != me.focused_az_fld){
               if (size(me.tgts_list) > 0) {
-                me.tgts_list[me.Target_Index].setPainted(0);
-                armament.contact = nil;
+#                 me.tgts_list[me.Target_Index].setPainted(0);
+#                 armament.contact = nil;
               }
             }
-            setprop("/ai/closest/range", 0);
+#             setprop("/ai/closest/range", 0);
         }
     },
     
@@ -1258,7 +1089,7 @@ var Radar = {
             return nil;#me.Target_Index = 0;
         }
         if (me.Target_Callsign == me.tgts_list[me.Target_Index].getUnique()) {
-          me.tgts_list[me.Target_Index].setPainted(1);
+          #me.tgts_list[me.Target_Index].setPainted(1); <- The fuck is that doing here
           return me.tgts_list[me.Target_Index];
         } else {
           me.Target_Callsign = nil;
@@ -1308,14 +1139,30 @@ var RWR_APG = {
         rwrList16 = [];
         me.MyCoord = geo.aircraft_position();
 #         printf("clist %d", size(completeList));
+        
+        #Sound of Lock
+        #setprop("sound/rwr-lck", 0);
+        me.myCallsign = getprop("sim/multiplay/callsign");
+        me.myCallsign = size(me.myCallsign) < 8 ? me.myCallsign : left(me.myCallsign,7);
+        me.act_lck = 0;
+      
+        
         foreach(me.u;completeList) {
             me.cs = me.u.get_Callsign();
-#             print("Will test  : "~ me.u.get_Callsign()~" as Type: " ~ me.u.type);
+	    # print("Will test  : "~ me.u.get_Callsign()~" as Type: " ~ me.u.type);
             me.rn = me.u.get_range();
             me.l16 = 0;
-            if (me.u.isFriend() or me.rn > 110) {
+            if (me.u.isFriend() or me.rn > 150) {
                 me.l16 = 1;
             }
+            me.lck = me.u.propNode.getNode("sim/multiplay/generic/string[6]");
+	    var model_path = split("/", me.u.propNode.getNode("sim/model/path").getValue())[-1];
+	    me.u.model = left(model_path, size(model_path) - 4);
+            if (me.lck != nil and me.lck.getValue() != nil and me.lck.getValue() != "" and size(""~me.lck.getValue())==4 and left(md5(me.myCallsign),4) == me.lck.getValue()) {
+              me.act_lck = 1;
+            }
+            
+            
             me.bearing = geo.aircraft_position().course_to(me.u.get_Coord());
             me.trAct = me.u.propNode.getNode("instrumentation/transponder/transmitted-id");
             me.show = 0;
@@ -1323,9 +1170,7 @@ var RWR_APG = {
             me.inv_bearing =  me.bearing+180;
             me.deviation = me.inv_bearing - me.heading;
             me.dev = math.abs(geo.normdeg180(me.deviation));
-            if (!me.NotBeyondHorizon(me.u) or !me.isNotBehindTerrain(me.u)) {
-                me.show = 0;
-            } elsif (me.u.get_display()) {
+            if (me.u.get_display()) {
                 me.show = 1;#in radar cone
             } elsif(me.HasTransponderOn(me.u)){
               # transponder on
@@ -1336,17 +1181,27 @@ var RWR_APG = {
               me.rwrTargetAzimuth = me.TargetWhichRadarAzimut(me.u);
               #print(me.rwrTargetAzimuth);
               
-              if (((me.rdrAct != nil and me.rdrAct.getValue()!=1) or me.rdrAct == nil) and math.abs(geo.normdeg180(me.deviation)) < 60) {
+              #if (((me.rdrAct != nil and me.rdrAct.getValue()!=1) or me.rdrAct == nil) and math.abs(geo.normdeg180(me.deviation)) < me.rwrTargetAzimuth and me.NotBeyondHorizon(me.u) and me.isNotBehindTerrain(me.u) ) {
+              if (((me.rdrAct != nil and me.rdrAct.getValue()!=1) or me.rdrAct == nil) and me.NotBeyondHorizon(me.u) and me.isNotBehindTerrain(me.u) ) {  
+                
                   # we detect its radar is pointed at us and active
                   me.show = 1;
               }
             }
-            if(!me.u.isValid()){me.show = 0;}
-            #print("should show : " ~ me.u.get_Callsign()~" as Type: " ~ me.u.type ~ " Show : "~ me.show ~ " Name:"~me.u.propNode.getName()~" Model:"~me.u.get_model() ~ " isValid:"~me.u.isValid());
+            #if(!me.u.isValid()){me.show = 0;}
+            #print("should show : " ~ me.u.get_Callsign()~" as Type: " ~ me.u.type ~ " Show : "~ me.show ~ " Name:"~me.u.propNode.getName()~" Model:"~me.u.get_model() ~ 
+              #" ModelType:"~me.u.ModelType ~ " isValid:"~me.u.isValid());
             
             if (me.show == 1) {
                 me.threat = 0;
-                if (me.u.get_model() != "missile_frigate" and me.u.propNode.getName() != "carrier" and me.u.get_model() != "fleet" and me.u.get_model() != "buk-m2" and me.u.get_model() != "s-300") {
+                if (me.u.get_model() != "missile_frigate" and
+		    me.u.propNode.getName() != "carrier" and
+		    me.u.get_model() != "fleet" and
+		    me.u.get_model() != "buk-m2" and
+		    me.u.get_model() != "s-300" and
+		    me.u.get_model() != "MIM104D" and
+		    me.u.get_model() != "S-75" and
+		    me.u.get_model() != "ZSU-23-4M") {
                     me.threat += ((180-me.dev)/180)*0.30;
                     me.spd = (60-me.u.get_Speed())/60;
                     me.threat -= me.spd>0?me.spd:0;
@@ -1356,21 +1211,27 @@ var RWR_APG = {
                     me.threat += 0.30;
                 }
                 me.danger = 50;
-                if (me.u.get_model() == "missile_frigate" or me.u.get_model() == "fleet" or me.u.get_model() == "s-300") {
-                    me.danger = 75
-                } elsif (me.u.get_model() == "buk-m2") {
-                    me.danger = 35;
-                } elsif (me.u.propNode.getName() == "carrier") {
-                    me.danger = 60;
-                }
+		if (me.u.get_model() == "missile_frigate" or me.u.get_model() == "fleet" or me.u.get_model() == "s-300") {
+		    me.danger = 80;
+		} elsif (me.u.get_model() == "buk-m2" or me.u.get_model() == "S-75") {
+		    me.danger = 35;
+		} elsif (me.u.get_model() == "MIM104D") {
+		    me.danger = 45;
+		} elsif (me.u.get_model() == "ZSU-23-4M") {
+		    me.danger = 7.5;
+		}
+   
+#                 if (me.u.get_model() == "MIM104D") {
+#                   printf("%d %d %d %d %d", me.rdrAct != nil and me.rdrAct.getValue()!=1, me.rdrAct == nil, me.dev < me.rwrTargetAzimuth, me.NotBeyondHorizon(me.u), me.isNotBehindTerrain(me.u));
+#                 }
                 
                 me.threat += ((me.danger-me.rn)/me.danger)>0?((me.danger-me.rn)/me.danger)*0.60:0;
                 me.clo = me.u.get_closure_rate_from_Coord(me.MyCoord);
                 me.threat += me.clo>0?(me.clo/500)*0.10:0;
-                if (me.threat > 1) me.threat = 1;
+                if (me.threat > 1 or me.act_lck) me.threat = 1;
                 #printf("%s threat:%.2f range:%d dev:%d", me.u.get_Callsign(),me.threat,me.u.get_range(),me.dev);
                 if (me.threat <= 0) continue;
-                #printf("%s threat:%.2f range:%d dev:%d", u.get_Callsign(),threat,u.get_range(),dev);
+                # printf("%s threat:%.2f range:%d dev:%d", me.u.get_Callsign(), me.threat, me.u.get_range(), me.dev);
                 if (!me.l16) {
                     append(rwrList,[me.u,me.threat]);
                 } else {
@@ -1380,6 +1241,7 @@ var RWR_APG = {
                 #printf("%s ----", u.get_Callsign());
             }
         }
+        setprop("sound/rwr-lck", me.act_lck);
     },
 };
 
