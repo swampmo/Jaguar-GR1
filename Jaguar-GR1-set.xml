@@ -30,7 +30,7 @@
       <model type="int">5</model>
     </rating>
 
-    <author>Emmanuel Baranger, Steve Brown, Gary Brown, Jonathan Redpath, StuartC, NC-687, Nikolai V. Chr., Joshua Davidson, Richard Harrison</author>
+    <author>Emmanuel Baranger, Steve Brown, Gary Brown, Jonathan Redpath, StuartC, NC-687, Nikolai V. Chr., Joshua Davidson, Richard Harrison, Jüttner Domokos</author>
     <flight-model>jsb</flight-model>
     <aero>SEPECAT-Jaguar-vsp</aero>
 
