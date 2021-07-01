@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <PropertyList>
   <name>AB-flame</name>
-  <inherits-from>Aircraft/Mirage-2000/Missiles/FlamesAndSmoke/thrust-flame</inherits-from>
+  <inherits-from>Aircraft/Jaguar-GR1/Models/Weapons/FlamesAndSmoke/thrust-flame</inherits-from>
   <parameters>
     <flame_color_low_r type="float">0.9</flame_color_low_r>
     <flame_color_low_g type="float">0.5</flame_color_low_g>

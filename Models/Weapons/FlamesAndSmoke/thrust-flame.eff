@@ -138,8 +138,8 @@
       </depth>
       <vertex-program-two-side>false</vertex-program-two-side>
       <program>
-        <vertex-shader>Aircraft/Mirage-2000/Models/Effects/flammes/thrustflame-ALS.vert</vertex-shader>
-        <fragment-shader>Aircraft/Mirage-2000/Models/Effects/flammes/thrustflame-ALS.frag</fragment-shader>
+        <vertex-shader>Aircraft/Jaguar-GR1/Models/Effects/flammes/thrustflame-ALS.vert</vertex-shader>
+        <fragment-shader>Aircraft/Jaguar-GR1/Models/Effects/flammes/thrustflame-ALS.frag</fragment-shader>
         <fragment-shader>Shaders/noise.frag</fragment-shader>
       </program>
       <uniform>

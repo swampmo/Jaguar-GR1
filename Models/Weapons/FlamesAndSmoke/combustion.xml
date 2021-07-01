@@ -25,7 +25,7 @@
     </animation>-->
   
     <effect>
-      <inherits-from>Aircraft/Mirage-2000/Missiles/FlamesAndSmoke/flame</inherits-from>
+      <inherits-from>Aircraft/Jaguar-GR1/Models/Weapons/FlamesAndSmoke/flame</inherits-from>
       <object-name>Bounding_box</object-name>
     </effect>
     

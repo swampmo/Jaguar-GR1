@@ -7,15 +7,15 @@
        Diameter : 0.157 m
        Weight   : 89 kg (196.21 lb)
   -->
-  <!--path>Aircraft/Mirage-2000/Missiles/MatraR550Magic2/MatraR550Magic2.ac</path-->
-  <path>Aircraft/Mirage-2000/Missiles/Magic-2/Magic2.ac</path>
+  <!--path>Aircraft/Jaguar-GR1/Models/Weapons/MatraR550Magic2/MatraR550Magic2.ac</path-->
+  <path>Aircraft/Jaguar-GR1/Models/Weapons/MAJIC/Magic2.ac</path>
   <!--
   <animation>
 		<object-name>magic</object-name>
 		</animation>
 -->
   <effect>
-    <inherits-from>Aircraft/Mirage-2000/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>Aircraft/Jaguar-GR1/Models/Effects/Glass/glass</inherits-from>
     <object-name>magic.optique</object-name>
   </effect>
   <animation>
