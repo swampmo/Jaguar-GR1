@@ -385,10 +385,6 @@ RWRCanvas = {
     },
     update: func (list, type) {
 	var s = size(list);
-	if (s != 0) {
-      	   print(s);
-	}
-        #printf("list %d", size(list));
         me.elapsed = getprop("sim/time/elapsed-sec");
         var sorter = func(a, b) {
             if(a[1] > b[1]){
@@ -421,7 +417,6 @@ RWRCanvas = {
                     continue;
                 }
             }
-            print("show "~me.i~" "~me.typ~" "~me.contact[0].get_model()~"  "~me.contact[1]);
             me.threat = me.contact[1];
             
             if (me.threat > 0.5 and me.typ != me.AIRCRAFT_UNKNOWN and me.typ != me.ASSET_AI) {
