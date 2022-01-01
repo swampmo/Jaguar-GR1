@@ -731,6 +731,18 @@
     <alpha-gauge>
       <alpha-indicated-deg alias="/fdm/jsbsim/aero/alpha-indicated-deg" />
     </alpha-gauge>
+    <datalink>
+      <channel type="int">0</channel>
+      <power_prop type="string">engines/engine/running</power_prop>
+      <channel_prop type="string">instrumentation/datalink/channel</channel_prop>
+      <receive_period type="double">1</receive_period>
+    </datalink>
+    <iff>
+      <power_prop type="string">instrumentation/iff/power</power_prop>
+      <power type="bool">true</power>
+      <channel_prop type="string">instrumentation/iff/channel</channel_prop>
+      <channel type="string">0</channel> 
+    </iff>
     <radar>
       <range type="int" archive="y">20</range>
       <minimized type="bool" archive="y">false</minimized>
@@ -1427,7 +1439,6 @@
       <file>Aircraft/Jaguar-GR1/Nasal/tfs.nas</file>
     </tfs>
 
-
     <crashandstress>
       <file>Aircraft/Jaguar-GR1/Nasal/crash-and-stress.nas</file>
     </crashandstress>
@@ -1446,6 +1457,15 @@
     <gun_listener>
 	<file>Aircraft/Jaguar-GR1/Nasal/gun-listener.nas</file>
     </gun_listener>
+
+  <iff>
+    <file>Aircraft/Jaguar-GR1/Nasal/iff.nas</file>
+  </iff>
+
+  <datalink>
+    <file>Aircraft/Jaguar-GR1/Nasal/datalink.nas</file>
+  </datalink>
+
   </nasal>
 
 </PropertyList>
