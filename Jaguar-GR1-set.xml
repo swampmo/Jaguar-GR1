@@ -733,7 +733,7 @@
     </alpha-gauge>
     <datalink>
       <channel type="int">0</channel>
-      <power_prop type="string">engines/engine/running</power_prop>
+      <power_prop type="string">fdm/jsbsim/systems/electrical/generic-pwr</power_prop>
       <channel_prop type="string">instrumentation/datalink/channel</channel_prop>
       <receive_period type="double">1</receive_period>
     </datalink>
