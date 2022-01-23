@@ -1273,7 +1273,7 @@ var HUD = {
       ILS_gs_deg:  "/instrumentation/nav/gs-direct-deg",
       NavHeadingNeedleDeflectionILS:"/instrumentation/nav/heading-needle-deflection-norm",
       
-      MasterArm      :"/controls/armament/master-arm",
+      MasterArm      :"/controls/armament/master-arm-switch",
       TimeToTarget   :"/sim/dialog/groundtTargeting/time-to-target",
     };
     

@@ -31,7 +31,8 @@ var FireControl = {
 		fc.dropMode = 0;          # 0=ccrp, 1 = ccip
 		fc.changeListener = nil;
 		setlistener("controls/armament/trigger",func{fc.trigger();fc.updateDual()},nil,0);
-		setlistener("controls/armament/master-arm",func{fc.updateCurrent()},nil,0);
+		#setlistener("controls/armament/master-arm",func{fc.updateCurrent()},nil,0);
+		setlistener("controls/armament/master-arm-switch",func{fc.masterArmSwitch()},nil,0);
 		setlistener("controls/armament/dual",func{fc.updateDual()},nil,0);
 		return fc;
 	},
@@ -40,7 +41,7 @@ var FireControl = {
 		foreach (var p;me.pylons) {
 			var ws = p.getWeapons();
 			foreach (var w;ws) {
-				if (w.parents[0] == armament.AIM and (w.guidance == "heat" and w.target_air)) {# or w.guidance=="vision"
+				if (w != nil and w.parents[0] == armament.AIM and (w.guidance == "heat" and w.target_air)) {# or w.guidance=="vision"
 					w.setCaged(cageIt);
 				}
 			}
@@ -51,11 +52,12 @@ var FireControl = {
 		foreach (var p;me.pylons) {
 			var ws = p.getWeapons();
 			foreach (var w;ws) {
-				if (w.parents[0] == armament.AIM and (w.guidance == "heat" and w.target_air)) {# or w.guidance=="vision"
+				if (w != nil and w.parents[0] == armament.AIM and (w.guidance == "heat" and w.target_air)) {# or w.guidance=="vision"
 					return w.isCaged();
 				}
 			}
 		}
+		return 1;
 	},
 
 	toggleCage: func () {
@@ -63,7 +65,7 @@ var FireControl = {
 		foreach (var p;me.pylons) {
 			var ws = p.getWeapons();
 			foreach (var w;ws) {
-				if (w.parents[0] == armament.AIM and (w.guidance == "heat" and w.target_air)) {# or w.guidance=="vision"
+				if (w != nil and w.parents[0] == armament.AIM and (w.guidance == "heat" and w.target_air)) {# or w.guidance=="vision"
 					c = w.isCaged()?1:-1;
 					break;
 				}
@@ -77,7 +79,7 @@ var FireControl = {
 		foreach (var p;me.pylons) {
 			var ws = p.getWeapons();
 			foreach (var w;ws) {
-				if (w.parents[0] == armament.AIM and (w.guidance == "heat" and w.target_air)) {# or w.guidance=="vision"
+				if (w != nil and w.parents[0] == armament.AIM and (w.guidance == "heat" and w.target_air)) {# or w.guidance=="vision"
 					w.setAutoUncage(auto);
 				}
 			}
@@ -88,11 +90,12 @@ var FireControl = {
 		foreach (var p;me.pylons) {
 			var ws = p.getWeapons();
 			foreach (var w;ws) {
-				if (w.parents[0] == armament.AIM and (w.guidance == "heat" and w.target_air)) {# or w.guidance=="vision"
+				if (w != nil and w.parents[0] == armament.AIM and (w.guidance == "heat" and w.target_air)) {# or w.guidance=="vision"
 					return w.isAutoUncage();
 				}
 			}
 		}
+		return 1;
 	},
 
 	setXfov: func (xfov) {
@@ -513,7 +516,7 @@ var FireControl = {
 	updateAll: func {
 		# called from the stations when they change.
 		if (me.selectedType != nil) {
-			#screen.log.write("Fire-control: deselecting "~me.selectedType, 0.5, 0.5, 1);
+			screen.log.write("Fire-control: deselecting "~me.selectedType, 1, 0.5, 0.5);
 		}
 		me.noWeapon();
 	},
@@ -890,10 +893,19 @@ var FireControl = {
 		return;
 	},
 
+	masterArmSwitch: func () {
+		if (getprop("controls/armament/master-arm-switch") == pylons.ARM_ARM) {
+			setprop("controls/armament/master-arm", 1);
+		} else {
+			setprop("controls/armament/master-arm", 0);
+		}
+		me.updateCurrent();
+	},
+
 	updateCurrent: func {
 		# will start/stop current weapons depending on masterarm
 		# will also update mass (for cannon mainly)
-		if (getprop("controls/armament/master-arm")==1 and me.selected != nil) {
+		if (getprop("controls/armament/master-arm-switch")!=pylons.ARM_OFF and me.selected != nil) {
 			me.sweaps = me.getSelectedWeapons();
 			if (me.sweaps != nil) {
 				foreach(me.sweap ; me.sweaps) {
@@ -901,7 +913,7 @@ var FireControl = {
 #					print("starting a weapon");
 				}
 			}
-		} elsif (getprop("controls/armament/master-arm")==0 and me.selected != nil) {
+		} elsif (getprop("controls/armament/master-arm-switch")==pylons.ARM_OFF and me.selected != nil) {
 			me.sweaps = me.getSelectedWeapons();
 			if (me.sweaps != nil) {
 				foreach(me.sweap ; me.sweaps) {
@@ -912,7 +924,7 @@ var FireControl = {
 		if (me.selected == nil) {
 			return;
 		}
-		printDebug("FC: Masterarm "~getprop("controls/armament/master-arm"));
+		printDebug("FC: Masterarm "~getprop("controls/armament/master-arm-switch"));
 		
 		me.pylons[me.selected[0]].calculateMass();#kind of a hack to get cannon ammo changed.
 	},
@@ -1066,7 +1078,7 @@ var FireControl = {
 	getAmmo: func {
 		# return ammo count of currently selected type
 		me.count = 0;
-		foreach (p;me.pylons) {
+		foreach (var p;me.pylons) {
 			me.count += p.getAmmo(me.selectedType);
 		}
 		return me.count;
@@ -1075,7 +1087,7 @@ var FireControl = {
 	getAmmoOfType: func (type) {
 		# return ammo count of type
 		me.count = 0;
-		foreach (p;me.pylons) {
+		foreach (var p;me.pylons) {
 			me.count += p.getAmmo(type);
 		}
 		return me.count;
@@ -1084,7 +1096,7 @@ var FireControl = {
 	getAllAmmo: func (type = nil) {
         # return ammo count of all pylons in a vector
         me.ammoVector = [];
-        foreach (p;me.pylons) {
+        foreach (var p;me.pylons) {
             append(me.ammoVector, p.getAmmo(type));
         }
         return me.ammoVector;
@@ -1093,7 +1105,7 @@ var FireControl = {
 	getActiveAmmo: func {
 		# return ammo count of currently selected type that are on active pylons
 		me.count = 0;
-		foreach (p;me.pylons) {
+		foreach (var p;me.pylons) {
 			if (p.isActive()) {
 				me.count += p.getAmmo(me.selectedType);
 			}
@@ -1145,7 +1157,7 @@ var FireControl = {
 				me.ag.setContacts([]);
 			} else {
 				print("agm65 xfer");
-				me.tgp_point = ContactTGP.new("TGP-Spot",c);
+				me.tgp_point = radar_system.ContactTGP.new("TGP-Spot",c);
 				me.ag.setContacts([me.tgp_point]);
 			}
 		}
@@ -1172,8 +1184,9 @@ var printfDebug = func {if (debug == 1) call(printf,arg);};
 
 
 # This is non-generic methods, please edit it to fit your radar setup:
-var dualWeapons = ["MK-82","MK-83","MK-84","GBU-12","GBU-24","GBU-54","CBU-87","GBU-31","B61-7","B61-12", "BL755", "MK-83HD"];
+# List of weapons that can be ripple/dual dropped:
+var dualWeapons = ["MK-83","CBU-87","BL755", "MK-83HD"];
 var getCompleteRadarTargetsList = func {
-	# A list of all MP/AI aircraft/ships/surface-targets around the aircraft.
-	return radar.completeList;
+	# A list of all MP/AI aircraft/ships/surface-targets around the aircraft, including those that is outside radar line of sight etc..
+	return radar_system.getCompleteList();
 }

@@ -6,7 +6,7 @@ var hit_timer  = FALSE;
 var hit_callsign = "";
 
 var impact_listener = func {
-    var list = radar.completeList;
+    var list = radar_system.getCompleteList();
     var ballistic_name = props.globals.getNode("/ai/models/model-impact").getValue();
     var ballistic = props.globals.getNode(ballistic_name, 0);
     if (ballistic != nil and ballistic.getName() != "munition") {

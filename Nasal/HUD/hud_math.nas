@@ -2,7 +2,7 @@
 #
 # Author: Nikolai V. Chr. (FPI location code adapted from Buccaneer aircraft)
 #
-# Version 1.07
+# Version 1.09
 #
 # License: GPL 2.0
 	
@@ -57,13 +57,13 @@ var HudMath = {
 			me.centerOffsetSlantedMeter = -1*(me.length*0.5-me.boreSlantedDownFromTopMeter);#used (distance from center origin up to bore [negative number])
 			#printf("len=%.3fm angle=%.1fdeg angle2=%.1fdeg boredist=%.3fm borefromtop=%.3fm offset=%.3fm",me.length,me.slantAngle*R2D,me.slantAngleOther*R2D,me.distanceToBore,me.boreSlantedDownFromTopMeter,me.centerOffsetSlantedMeter);
 		}
-			if (initialization) {
-				# calc Y offset from HUD canvas center origin.
-				me.centerOffset = -1 * (me.canvasHeight/2 - ((me.hud3dTop - me.input.view0Z.getValue())*me.pixelPerMeterY));#TODO: use originCanvas?
-			} elsif (!me.parallax) {
-				# calc Y offset from HUD canvas center origin.
-				me.centerOffset = -1 * (me.canvasHeight/2 - ((me.hud3dTop - me.input.viewZ.getValue())*me.pixelPerMeterY));
-			}
+		if (initialization) {
+			# calc Y offset from HUD canvas center origin.
+			me.centerOffset = -1 * (me.canvasHeight/2 - ((me.hud3dTop - me.input.view0Z.getValue())*me.pixelPerMeterY));#TODO: use originCanvas?
+		} elsif (!me.parallax) {
+			# calc Y offset from HUD canvas center origin.
+			me.centerOffset = -1 * (me.canvasHeight/2 - ((me.hud3dTop - me.input.viewZ.getValue())*me.pixelPerMeterY));
+		}
 		
 	},
 	
@@ -95,14 +95,12 @@ var HudMath = {
 	
 	getBorePos: func {
 		# returns bore pos in canvas from center origin
+		if (me.slanted) {
+			return [0,me.centerOffsetSlantedMeter*me.pixelPerMeterYSlant];
+		}
 		return [0,me.centerOffset];
 	},
-	
-	getBorePosSlanted: func {
-		# returns bore pos in canvas from center origin
-		return [0,me.centerOffsetSlantedMeter*me.pixelPerMeterYSlant];
-	},
-	
+		
 	getPosFromCoord: func (gpsCoord, aircraft = nil) {
 		# return pos in canvas from center origin
 		if (aircraft== nil) {
@@ -143,8 +141,57 @@ var HudMath = {
 
 	    me.pos = me.getCenterPosFromDegs(me.dir_x,-me.dir_y);
 	    
-	    return [me.pos[0], me.pos[1]];
+	    return [me.pos[0], me.pos[1], me.dir_x,-me.dir_y];
 	},
+
+	getDevFromCoord: func (gpsCoord, viewh, viewp, hdp, aircraft=nil) {
+        # hdp is a hash containing pitch, roll, and true-heading of aircraft
+        # return pos in canvas from center origin
+        if (aircraft== nil) {
+            me.crft = geo.viewer_position();
+        } else {
+            me.crft = aircraft;
+        }
+        me.ptch = vector.Math.getPitch(me.crft, gpsCoord);
+        me.brng = me.crft.course_to(gpsCoord);
+
+        var ym = vector.Math.yawMatrix(-viewh);
+        var pm = vector.Math.pitchMatrix(-viewp);
+        var vm = vector.Math.multiplyMatrices(pm, ym);
+        me.rollM  = vector.Math.rollMatrix(-hdp.roll);
+        me.pitchM = vector.Math.pitchMatrix(-hdp.pitch);
+        me.yawM   = vector.Math.yawMatrix(hdp.heading);
+        me.rotation = vector.Math.multiplyMatrices(me.rollM, vector.Math.multiplyMatrices(me.pitchM, me.yawM));
+        me.rotation = vector.Math.multiplyMatrices(vm, me.rotation);
+
+        me.coord_x = math.cos(me.brng*D2R)*math.cos(me.ptch*D2R);
+        me.coord_y = -math.sin(me.brng*D2R)*math.cos(me.ptch*D2R);
+        me.coord_z = math.sin(me.ptch*D2R);
+        
+        var tv = [me.coord_x,me.coord_y,me.coord_z];
+        var dv = vector.Math.multiplyMatrixWithVector(me.rotation, tv);
+        var angles = vector.Math.cartesianToEuler(dv);
+
+        return [angles[0]==nil?0:angles[0],angles[1]];
+    },
+
+    getDevFromHMD: func (heading, pitch, viewh, viewp) {
+        # return pos in canvas from center origin
+        
+        var ym = vector.Math.yawMatrix(viewh);
+        var pm = vector.Math.pitchMatrix(-viewp);
+        var vm = vector.Math.multiplyMatrices(pm, ym);
+
+        me.target_x = math.cos(heading*D2R)*math.cos(pitch*D2R);
+        me.target_y = -math.sin(heading*D2R)*math.cos(pitch*D2R);
+        me.target_z = math.sin(pitch*D2R);
+        
+        var tv = [me.target_x,me.target_y,me.target_z];
+        var dv = vector.Math.multiplyMatrixWithVector(vm, tv);
+        var angles = vector.Math.cartesianToEuler(dv);
+
+        return [angles[0]==nil?0:angles[0],angles[1]];
+    },
 	
 	getPosFromDegs:  func (yaw_deg, pitch_deg) {
 		# return pos from bore
@@ -216,6 +263,7 @@ var HudMath = {
 	},
 	
 	getPolarFromCenterPos: func (x,y) {
+		# only works well when not too far from bore.
 		y -= me.centerOffset;
 		return me.getPolarFromBorePos(x,y);
 	},
@@ -298,7 +346,7 @@ var HudMath = {
 		}
 	},
 	
-	getDynamicHorizon: func (averagePoint_deg = 7.5, xMin=1,xMax=1,yMin=1,yMax=1) {
+	getDynamicHorizon: func (averagePoint_deg = 7.5, xMin=1,xMax=1,yMin=1,yMax=1,drift=1, drift_fix=0.0) {
 		# get translation and rotation for horizon line, dynamic means centered around FPI.
 		# the min max values are faction from center to edge of hud to restrict ladder movement.
 		# should be called after getFlightPathIndicatorPos/getFlightPathIndicatorPosWind.
@@ -306,8 +354,8 @@ var HudMath = {
 		
 		me.rot = -me.input.roll.getValue() * D2R;
 
-		me.pos_x_clamp = me.clamp(me.pos_x, -xMin*me.canvasWidth*0.5,xMax*me.canvasWidth*0.5);
-		me.pos_y_clamp = me.clamp(me.pos_y, -yMin*me.canvasHeight*0.5,yMax*me.canvasHeight*0.5);
+		me.pos_x_clamp = drift?me.clamp(me.pos_x, -xMin*me.canvasWidth*0.5,xMax*me.canvasWidth*0.5):0;
+		me.pos_y_clamp = drift?me.clamp(me.pos_y, -yMin*me.canvasHeight*0.5,yMax*me.canvasHeight*0.5):drift_fix*me.canvasHeight;
 
 	    # now figure out how much we move horizon group laterally, to keep FPI in middle of it.
 	    me.pos_y_rel = me.pos_y_clamp - me.getCenterOffset();

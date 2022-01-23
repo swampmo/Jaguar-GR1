@@ -280,6 +280,7 @@
         <int n="1" alias="/controls/switches/anti-collision-lights" />
 
         <!-- int[2] reserved for radar -->
+        <int type="int" n="2">  1 </int>
 
         <!-- Landing lights on -->
         <int n="3" alias="/controls/switches/landing-light" />
@@ -973,7 +974,12 @@
     <armament>
       <enable-craters type="bool">true</enable-craters>
       <models type="string">Aircraft/Jaguar-GR1/Models/Weapons/</models>
+      <MLW-bearing type="double">0</MLW-bearing>
       <MLW-count type="int">0</MLW-count>
+      <MLW-launcher type="string"></MLW-launcher>
+      <MAW-bearing type="double">0</MAW-bearing>
+      <MAW-active type="bool">false</MAW-active>
+      <spike type="bool">false</spike>
       <modelsUseCase type="bool">true</modelsUseCase>
       <modelsUpperCase type="bool">true</modelsUpperCase>
       <msg type="bool">false</msg>
@@ -1376,23 +1382,14 @@
       <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
     </radardist>
 
-    <radar>
-      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radar2.nas</file>
-      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/target_class.nas</file>
-      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radarTool.nas</file>
-    </radar>
-
-    <rcs>
-      <file>Aircraft/Jaguar-GR1/Nasal/rcs.nas</file>
-    </rcs>
+    <radar_system>
+      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radar-system.nas</file>
+      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/rwr-only.nas</file>
+    </radar_system>
 
     <rwr>
       <file>Aircraft/Jaguar-GR1/Nasal/RADAR/rwr.nas</file>
     </rwr>
-
-    <myradar>
-      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/main.nas</file>
-    </myradar>
 
     <hud>
       <file>Aircraft/Jaguar-GR1/Nasal/HUD/hud_math.nas</file>
