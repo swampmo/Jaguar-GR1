@@ -1,6 +1,6 @@
 print("*** LOADING rwr.nas ... ***");
 
-var lineWidth = 3;
+var lineWidth = 2;
 
 RWRCanvas = {
     new: func (_ident, root, center, diameter) {
@@ -179,6 +179,8 @@ RWRCanvas = {
 #        }
 # Threat list ID:
 
+        #REVISION: 2022/01/16
+        #OPRF Fleet
         rwr.AIRCRAFT_WARTHOG  = "10";
         rwr.AIRCRAFT_TOMCAT   = "14";
         rwr.AIRCRAFT_EAGLE    = "15";
@@ -201,6 +203,7 @@ RWRCanvas = {
         #MISC
         rwr.AIRCRAFT_FAGOT    = "MG";
         rwr.AIRCRAFT_FOXBAT   = "FB";
+        rwr.AIRCRAFT_FLOGGER  = "23";
         rwr.AIRCRAFT_FULLBACK = "34";
         rwr.AIRCRAFT_PAKFA    = "57";
         rwr.AIRCRAFT_TYPHOON  = "EF";
@@ -300,6 +303,8 @@ RWRCanvas = {
                 "F-4EJ_ADTW":               rwr.AIRCRAFT_PHANTOM,
                 "FGR2-Phantom":             rwr.AIRCRAFT_PHANTOM,
                 "F4J":                      rwr.AIRCRAFT_PHANTOM,
+                "F-4D":                     rwr.AIRCRAFT_PHANTOM,
+                "F-4E":                     rwr.AIRCRAFT_PHANTOM,
                 "F-4N":                     rwr.AIRCRAFT_PHANTOM,
                 "a4f":                      rwr.AIRCRAFT_SKYHAWK,
                 "A-4K":                     rwr.AIRCRAFT_SKYHAWK,
@@ -327,9 +332,11 @@ RWRCanvas = {
                 "mb339pan":                 rwr.AIRCRAFT_MB339,
                 "alphajet":                 rwr.AIRCRAFT_ALPHAJET,
                 "MiG-15bis":                rwr.AIRCRAFT_FAGOT,
+                "MiG-23MLD":                rwr.AIRCRAFT_FLOGGER,
                 "Su-25":                    rwr.AIRCRAFT_FROGFOOT,
                 "MiG-25":                   rwr.AIRCRAFT_FOXBAT,
                 "A-6E-model":               rwr.AIRCRAFT_INTRUDER,
+                "A-6E":                     rwr.AIRCRAFT_INTRUDER,
                 "F-117":                    rwr.AIRCRAFT_NIGHTHAWK,
                 "F-22-Raptor":              rwr.AIRCRAFT_RAPTOR,
                 "F-35A":                    rwr.AIRCRAFT_JSF,
@@ -357,34 +364,33 @@ RWRCanvas = {
                 "V-1":                      rwr.AIRCRAFT_UFO,
                 "SpaceShuttle":             rwr.AIRCRAFT_UFO,
                 "F-23C_BlackWidow-II":      rwr.AIRCRAFT_UFO,
-        };        rwr.shownList = [];
+        };
+        rwr.shownList = [];
         #
         # recipient that will be registered on the global transmitter and connect this
         # subsystem to allow subsystem notifications to be received
         rwr.recipient = emesary.Recipient.new(_ident);
         rwr.recipient.parent_obj = rwr;
+        rwr.vector_aicontacts = [];
 
         rwr.recipient.Receive = func(notification)
         {
             if (notification.NotificationType == "FrameNotification")
             {
-                #
-                # Link16 wingmen only visible when no other threats. So check the size of this list
-                # first and if populated use it.
-	        if (notification["rwrList"] != nil and size(notification.rwrList)>0)
-                  me.parent_obj.update(notification.rwrList, "normal");
-                else if (notification["rwrList16"] != nil)
-                  me.parent_obj.update(notification.rwrList16, "link16");
+                #printf("RWR-canvas recv: %s", notification.NotificationType);
+                me.parent_obj.update();
                 return emesary.Transmitter.ReceiptStatus_OK;
             }
+            
             return emesary.Transmitter.ReceiptStatus_NotProcessed;
         };
         emesary.GlobalTransmitter.Register(rwr.recipient);
 
         return rwr;
     },
-    update: func (list, type) {
-	var s = size(list);
+    update: func {
+        var list = radar_system.getRWRList();
+	    var s = size(list);
         me.elapsed = getprop("sim/time/elapsed-sec");
         var sorter = func(a, b) {
             if(a[1] > b[1]){
@@ -395,15 +401,15 @@ RWRCanvas = {
                 return 1; # A should after b in the returned vector
             }
         }
-        me.sortedlist = sort(list, sorter);
+        me.sortedlist = sort(list, sorter);#sort threat
         me.newList = [];
         me.i = 0;
         me.prio = 0;
         me.newsound = 0;
         me.unk = 0;
         foreach(me.contact; me.sortedlist) {
-	    # print("rwr: " ~ me.contact[0].get_Callsign() ~ " " ~ me.contact[0].get_model() ~ " " ~ me.contact[1]);
-            me.typ=me.lookupType[me.contact[0].get_model()];
+	       #print("rwr: " ~ me.contact[0].get_Callsign() ~ " " ~ me.contact[0].getModel() ~ " " ~ me.contact[1]);
+            me.typ=me.lookupType[me.contact[0].getModel()];
 	    # printf("type: %d, threat: %d", me.typ, me.contact[1]);
             if (me.i > me.max_icons-1) {
                 break;
@@ -426,10 +432,10 @@ RWRCanvas = {
             } else {
                 continue;
             }
-            if (me.contact[0].get_range() > 110) {
+            if (me.contact[0].get_range() > 130) {
                 continue;
             }
-            me.dev = -geo.normdeg180(me.contact[0].get_bearing()-getprop("orientation/heading-deg"))+90;
+            me.dev = -me.contact[2]+90;
             me.x = math.cos(me.dev*D2R)*me.threat;
             me.y = -math.sin(me.dev*D2R)*me.threat;
             me.texts[me.i].setTranslation(me.x,me.y);
@@ -440,7 +446,7 @@ RWRCanvas = {
                 me.symbol_priority.show();
                 me.prio = 1;
             }
-            if (!(me.typ == me.ASSET_GARGOYLE or me.typ == me.ASSET_BUK or me.typ == me.ASSET_FRIGATE) and me.contact[0].get_Speed()>60) {
+            if (!(me.typ == me.ASSET_GARGOYLE or me.typ == me.ASSET_AAA or me.typ == me.ASSET_VOLGA or me.typ == me.ASSET_BUK or me.typ == me.ASSET_PAC2 or me.typ == me.ASSET_FRIGATE) and me.contact[0].get_Speed()>60) {
                 #air-borne
                 me.symbol_hat[me.i].setTranslation(me.x,me.y);
                 me.symbol_hat[me.i].show();
@@ -455,7 +461,7 @@ RWRCanvas = {
             }
             me.popupNew = me.elapsed;
             foreach(me.old; me.shownList) {
-                if(me.old[0].getUnique()==me.contact[0].getUnique()) {
+                if(me.old[0].equals(me.contact[0])) {
                     me.popupNew = me.old[1];
                     break;
                 }
@@ -503,6 +509,7 @@ RWRCanvas = {
 };
 var rwr = nil;
 var cv = nil;
+var timer = nil;
 
 var main_init_listener = setlistener("sim/signals/fdm-initialized", func {
    if (getprop("sim/signals/fdm-initialized") == 1) {
@@ -519,6 +526,8 @@ var main_init_listener = setlistener("sim/signals/fdm-initialized", func {
      var root = cv.createGroup();
      rwr = RWRCanvas.new("RWRCanvas", root, [diam/2,diam/2],diam*0.9);
      removelistener(main_init_listener);
+     timer = maketimer(0.5, func rwr.update());
+     timer.start();
    }
 }, 0, 0);
 
@@ -546,3 +555,4 @@ var setGroup = func (root) {
     root.createChild("path").horiz(768).vert(576).horiz(-768).vert(-576).setColorFill(0,0,0).setColor(0,0,0);
     rwr = RWRCanvas.new("RWRCanvas",root, [768/2,576/2],576);
 };
+

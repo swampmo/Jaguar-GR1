@@ -51,7 +51,7 @@ var autostart = func {
    if ( startstatus == 0 ) {
       gui.popupTip("Autostarting...");
 	  setprop("/sim/autostart/started", 1);
-      setprop("/controls/electric/battery-switch", 1);
+      #setprop("/controls/electric/battery-switch", 1);
       settimer(engstart, 0.5);
 	  gui.popupTip("Starting Engines");
 	  }

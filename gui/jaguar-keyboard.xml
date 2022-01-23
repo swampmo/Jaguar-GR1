@@ -57,8 +57,8 @@
       <command>nasal</command>
       <script>
         <![CDATA[
-                  setprop("controls/armament/master-arm",!getprop("controls/armament/master-arm"));
-                  screen.log.write("Master-arm "~(getprop("controls/armament/master-arm")==0?"OFF":"ON"), 0.5, 0.5, 1);
+                  setprop("controls/armament/master-arm-switch",!getprop("controls/armament/master-arm-switch"));
+                  screen.log.write("Master-arm "~(getprop("controls/armament/master-arm-switch")==0?"OFF":"ON"), 0.5, 0.5, 1);
           ]]>
       </script>
     </binding>

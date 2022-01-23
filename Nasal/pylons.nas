@@ -1,3 +1,8 @@
+var ARM_SIM = -1;
+var ARM_OFF = 0;# these 3 are needed by fire-control.
+var ARM_ARM = 1;
+props.globals.getNode("controls/armament/master-arm-switch",1).setIntValue(0);
+
 var fcs = nil;
 var pylonI = nil;
 var pylon1 = nil;
@@ -128,7 +133,7 @@ var bore_loop = func {
         if (aim != nil and (aim.type == "AIM-9" or aim.type == "MAGIC-2" or aim.type == "Majic")) {
             if (standby == 1) {
                 #aim.setBore(1);
-                aim.setContacts(radar.completeList);
+                aim.setContacts(radar_system.getCompleteList());
                 aim.commandDir(0,-3.5);# the real is bored to -6 deg below real bore
                 bore = 1;
             } else {

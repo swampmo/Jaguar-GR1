@@ -1,6 +1,7 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
 MATERIAL "ac3dmat1.007" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 62.6526  trans 0
+MATERIAL "Canvas" rgb 0 0 0  amb 0.0 0.0 0.0  emis 0 0 0  spec 0 0 0  shi 62.6526  trans 0
 OBJECT world
 kids 6
 OBJECT poly
@@ -5228,7 +5229,7 @@ numvert 4
 -3.32322 0.1774 -0.270974
 numsurf 1
 SURF 0x0
-mat 1
+mat 2
 refs 4
 2 0 0
 3 1 0

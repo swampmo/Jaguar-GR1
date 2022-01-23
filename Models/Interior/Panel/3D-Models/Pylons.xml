@@ -47,7 +47,7 @@
   <animation>
     <type>rotate</type>
     <object-name>P0-arm</object-name>
-        <property>controls/armament/master-arm</property>
+        <property>controls/armament/master-arm-switch</property>
     <factor> 60 </factor>
     <axis>
       <x> 0 </x>
@@ -69,7 +69,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/armament/master-arm</property>
+        <property>controls/armament/master-arm-switch</property>
       </binding>
     </action>
   </animation>
@@ -110,7 +110,7 @@
   <animation>
     <type>rotate</type>
     <object-name>P1-arm</object-name>
-        <property>controls/armament/master-arm</property>
+        <property>controls/armament/master-arm-switch</property>
     <factor> 60 </factor>
     <axis>
       <x> 0 </x>
@@ -132,7 +132,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/armament/master-arm</property>
+        <property>controls/armament/master-arm-switch</property>
       </binding>
     </action>
   </animation>
@@ -173,7 +173,7 @@
   <animation>
     <type>rotate</type>
     <object-name>centre-arm</object-name>
-        <property>controls/armament/master-arm</property>
+        <property>controls/armament/master-arm-switch</property>
     <factor> 60 </factor>
     <axis>
       <x> 0 </x>
@@ -195,7 +195,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/armament/master-arm</property>
+        <property>controls/armament/master-arm-switch</property>
       </binding>
     </action>
   </animation>
@@ -236,7 +236,7 @@
   <animation>
     <type>rotate</type>
     <object-name>S0-arm</object-name>
-        <property>controls/armament/master-arm</property>
+        <property>controls/armament/master-arm-switch</property>
     <factor> 60 </factor>
     <axis>
       <x> 0 </x>
@@ -258,7 +258,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/armament/master-arm</property>
+        <property>controls/armament/master-arm-switch</property>
       </binding>
     </action>
   </animation>
@@ -299,7 +299,7 @@
   <animation>
     <type>rotate</type>
     <object-name>S1-arm</object-name>
-        <property>controls/armament/master-arm</property>
+        <property>controls/armament/master-arm-switch</property>
     <factor> 60 </factor>
     <axis>
       <x> 0 </x>
@@ -321,7 +321,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/armament/master-arm</property>
+        <property>controls/armament/master-arm-switch</property>
       </binding>
     </action>
   </animation>
