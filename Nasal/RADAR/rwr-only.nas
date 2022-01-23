@@ -47,7 +47,7 @@ var RWR = {
 		#       IFF info
 		#       ECM
 		#       radar on/off
-		if (!getprop("instrumentation/rwr/serviceable") and getprop("/controls/electrical/battery-switch")) {
+		if (!getprop("instrumentation/rwr/serviceable") and getprop("fdm/jsbsim/systems/electrical/generic-pwr")) {
             setprop("sound/rwr-lck", 0);
             setprop("ai/submodels/submodel[0]/flare-auto-release-cmd", 0);
             return;

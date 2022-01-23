@@ -26,7 +26,7 @@
     <object-name>Mode</object-name>
     <object-name>Scale</object-name>
     <condition>
-      <property>controls/electrical/battery-switch</property>
+      <property>fdm/jsbsim/systems/electrical/generic-pwr</property>
     </condition>
     <emission>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
@@ -44,7 +44,7 @@
         <property>sim/rendering/rembrandt/enabled</property>
         <value type="bool">true</value>
       </equals>
-      <property>controls/electrical/battery-switch</property>
+      <property>fdm/jsbsim/systems/electrical/generic-pwr</property>
     </condition>
     <diffuse>
       <factor-prop>controls/lighting/instruments-norm</factor-prop>

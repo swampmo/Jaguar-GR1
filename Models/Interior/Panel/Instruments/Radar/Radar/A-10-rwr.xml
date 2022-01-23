@@ -8,7 +8,7 @@
    <type>material</type>
    <object-name>RWRScreen</object-name>
     <emission>
-      <factor-prop>controls/electrical/battery-switch</factor-prop>
+      <factor-prop>fdm/jsbsim/systems/electrical/generic-pwr</factor-prop>
       <red>   0.9 </red>
       <green> 0.9 </green>
       <blue>  0.9 </blue>
