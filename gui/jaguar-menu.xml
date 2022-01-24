@@ -40,6 +40,13 @@
 	  <command>dialog-show</command>
 	  <dialog-name>flightlog</dialog-name>
 	</binding>
+      </item> 
+      <item>
+        <label>IFF/Datalink Settings</label>
+        <binding>
+          <command>dialog-show</command>
+          <dialog-name>iff</dialog-name>
+        </binding>
       </item>
       
 <!--	 <item>
