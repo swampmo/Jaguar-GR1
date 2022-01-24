@@ -2222,7 +2222,7 @@ var HUD = {
     #maybe it should be a different cross.
     if(me.input.MasterArm.getValue() and pylons.fcs.getSelectedWeapon() !=nil){   
       if(me.selectedWeap.type == "30mm Cannon"){#if weapons selected
-        me.boreCross.setTranslation(HudMath.getBorePosSlanted());
+        me.boreCross.setTranslation(HudMath.getBorePos());
         me.boreCross.show();
       }else{
         me.boreCross.hide();
