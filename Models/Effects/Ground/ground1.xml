@@ -4,7 +4,7 @@
 
   <particlesystem>
     <name>tyre-smoke-n</name>
-    <texture>smoke.png</texture>
+    <texture>../smoke.png</texture>
     <emissive>false</emissive>
     <lighting>false</lighting>
 
