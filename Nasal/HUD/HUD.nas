@@ -1319,7 +1319,7 @@ var HUD = {
         if (ccip != nil) {
           me.targetArray[0].show();
           var c = HudMath.getPosFromCoord(ccip[0]);
-          me.targetArray[0].setTranslation(c);
+          me.targetArray[0].setTranslation(subvec(c,0,2));
           if (me["fpvCalc"] != nil) {
             me.rootLine.removeAllChildren();
             me.rootLine.createChild("path")
@@ -2026,7 +2026,7 @@ var HUD = {
           }else{
             #Else  the circle
             me.targetArray[i].show();
-            me.targetArray[i].setTranslation(triPos);
+            me.targetArray[i].setTranslation(subvec(triPos,0,2));
           }
           #here is the text display
           me.TextInfoArray[i].show();
@@ -2183,10 +2183,10 @@ var HUD = {
     
     #Calculating the HUD coord of the runways coord
     me.MyRunwayTripos                     = HudMath.getPosFromCoord(RunwayCoord);
-    me.MyRunwayCoordCornerLeftTripos      = HudMath.getPosFromCoord(RunwaysCoordCornerLeft);
-    me.MyRunwayCoordCornerRightTripos     = HudMath.getPosFromCoord(RunwaysCoordCornerRight);
-    me.MyRunwayCoordCornerEndLeftTripos   = HudMath.getPosFromCoord(RunwaysCoordEndCornerLeft);
-    me.MyRunwayCoordCornerEndRightTripos  = HudMath.getPosFromCoord(RunwaysCoordEndCornerRight);
+    me.MyRunwayCoordCornerLeftTripos      = subvec(HudMath.getPosFromCoord(RunwaysCoordCornerLeft),0,2);
+    me.MyRunwayCoordCornerRightTripos     = subvec(HudMath.getPosFromCoord(RunwaysCoordCornerRight),0,2);
+    me.MyRunwayCoordCornerEndLeftTripos   = subvec(HudMath.getPosFromCoord(RunwaysCoordEndCornerLeft),0,2);
+    me.MyRunwayCoordCornerEndRightTripos  = subvec(HudMath.getPosFromCoord(RunwaysCoordEndCornerRight),0,2);
     
     
     
@@ -2236,7 +2236,7 @@ var HUD = {
   displayWaypointCross:func(){
     if(me.input.distNextWay.getValue()!= nil and me.input.distNextWay.getValue()<10 and me.input.gearPos.getValue() == 0 
                        and me.input.NextWayNum.getValue()!=-1 and me.NXTWP != nil and me.fp.currentWP() != nil){#if waypoint is active
-      me.WaypointCross.setTranslation(HudMath.getPosFromCoord(me.NXTWP));
+      me.WaypointCross.setTranslation(subvec(HudMath.getPosFromCoord(me.NXTWP),0,2));
       me.WaypointCross.show();
     }else{
       me.WaypointCross.hide();
