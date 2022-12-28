@@ -102,8 +102,23 @@ var Station = {
 						};
 					} elsif (me.weaponName == "AGM-158") {
 						mf = func (struct) {
-							if (struct.dist_m != -1 and struct.dist_m*M2NM < 7 and struct.guidance == "gps") {
-								return {"guidance":"vision","class":"GM","target":"nil","guidanceLaw":"PN","abort_midflight_function":1};
+							if (struct.dist_m != -1 and struct.speed_fps != 0) {
+								if (M2NM*struct.dist_m < 1.75 and struct.guidanceLaw == "direct-alt") {
+									# start terminal diving
+									return {"altitude":0,"guidanceLaw":"direct"};
+								}
+								if (M2FT*struct.dist_m/struct.speed_fps < 8 and struct.guidance == "gps") {
+									# 8s before impact switch to IR, authentic value
+									return {"guidance":"heat","guidanceLaw":"APN","altitude":0,"class":"GM","target":"closest","abort_midflight_function":1};
+								}
+								if (struct.dist_m*M2NM > 10) {
+									# 22000 ft above sealevel, authentic value
+									return {"altitude": 22000};
+								}
+								if (M2NM*struct.dist_m > 1.75 and struct.hasTarget) {
+									# Lower altitude to 5000 ft above target
+									return {"altitude_at": 5000};
+								}
 							}
 							return {};
 						};
@@ -564,7 +579,11 @@ var Pylon = {
 		if (me.currentSet.showLongTypeInsteadOfCount) {
 			foreach(me.wapny;me.weapons) {
 				if (me.wapny != nil) {
-					me.nameS = me.wapny.typeShort;
+					if (me.wapny.typeShort != nil) {
+						me.nameS = "1 "~me.wapny.typeShort;
+					} else {
+						me.nameS = "1 "~me.wapny.type;
+					}
 				}
 			}
 		} else {
@@ -572,8 +591,8 @@ var Pylon = {
 			foreach(me.weapon;me.weapons) {
 				if(me.weapon != nil) {
 					me.type = me.weapon.typeShort;
-					if (me.calcName[me.type]==nil) {
-						me.calcName[me.type]=1;
+					if (me.calcName[me.type] == nil) {
+						me.calcName[me.type] = 1;
 					} else {
 						me.calcName[me.type] += 1;
 					}
@@ -584,9 +603,11 @@ var Pylon = {
 			}
 			me.nameS = right(me.nameS, size(me.nameS)-2);#remove initial comma
 		}
-		if(me.nameS == "" and me.currentSet != nil and size(me.currentSet.content)!=0) {
+		if(me.nameS == "" and me.currentSet != nil and size(me.currentSet.content) != 0) {
+			# all launched or jettisoned
 			me.nameS = nil;
-		} elsif (me.nameS == "" and me.currentSet != nil and size(me.currentSet.content)==0) {
+		} elsif (me.nameS == "" and me.currentSet != nil and size(me.currentSet.content) == 0) {
+			# No launchable weapons
 			me.nameS = me.currentSet.name;
 		}
 		if(me.nameS == "" or me.nameS == "Empty") {
