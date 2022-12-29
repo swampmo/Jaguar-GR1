@@ -20,7 +20,7 @@
     </animation>
       
       <effect>
-            <inherits-from>Aircraft/Jaguar-GR1/Models/Armament/Weapons/AIM-120/flame</inherits-from>
+            <inherits-from>Aircraft/Jaguar-GR1/Models/Armament/Weapons/flame</inherits-from>
             <object-name>Bounding_box</object-name>
        </effect>
        
