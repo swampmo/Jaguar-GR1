@@ -11,5 +11,5 @@ are
 *  Steve Brown (general)
 *  StuartC 
 
-The main development repository can be found on github https://github.com/swampmo/Jaguar-Gr1
+The main development repository can be found on github https://github.com/swampmo/Jaguar-GR1
  
