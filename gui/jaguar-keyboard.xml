@@ -190,6 +190,15 @@
     </binding>
   </key> -->
 
+  <key n="81">
+      <name>Q</name>
+      <desc>Reset view</desc>
+      <binding>
+          <command>nasal</command>
+          <script>jaguar.resetView();</script>
+      </binding>
+  </key>
+
   <!-- GCI keys from https://raw.githubusercontent.com/l0k1/MiG-21bis/master/Systems/keyboard.xml -->
   <key n="261">
     <name>F5</name>

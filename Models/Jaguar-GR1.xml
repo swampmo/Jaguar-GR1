@@ -4,6 +4,24 @@
 
   <path>jaguar.ac</path>
 
+  <nasal>
+  <load><![CDATA[       
+
+    # this code is needed for livery changes to be visible over MP:    
+    var livery_update = aircraft.livery_update.new("Aircraft/Jaguar-GR1/Models/Liveries", 10);
+
+    # This code is needed by the fuselage shader:
+    if (!(left(getprop("sim/version/flightgear"),6) == "2020.3")) {
+        props.globals.getNode("/sim/version/compositor-support", 1).setBoolValue(1);
+    } elsif (left(getprop("sim/version/flightgear"),6) == "2020.3") {
+        props.globals.getNode("/sim/version/compositor-support", 1).setBoolValue(0);
+    }
+  ]]></load>
+  <unload><![CDATA[
+   livery_update.stop();
+  ]]></unload>
+ </nasal>
+
   <!-- MP sound call -->
   <sound><path>Aircraft/Jaguar-GR1/Sounds/mp-sound.xml</path></sound>
 

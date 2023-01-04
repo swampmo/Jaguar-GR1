@@ -17,66 +17,91 @@ var test = func (echoHeading, echoPitch, echoRoll, bearing, frontRCS) {
 };
 
 var rcs_database = {
-    "default":                  200,    #default value if target's model isn't listed
-    "f-14b":                    12,     #guess
-    "F-14D":                    12,     #guess
-    "f-14b-bs":                 0.001,   # low so it dont show up on radar
-    "F-15C":                    10,     #low end of sources
-    "F-15D":                    11,     #low end of sources
-    "F-16":                     2,      #guess
-    "f15-bs":                   0.001,   # low so it dont show up on radar
-    "JA37-Viggen":              3,      #guess
-    "AJ37-Viggen":              3,      #guess
-    "AJS37-Viggen":             3,      #guess
-    "JA37Di-Viggen":            3,      #guess
-    "m2000-5":                  1,
-    "m2000-5B":                 1,
-    "m2000-5B-backseat":        0.001,
-    "707":                      100,    #guess
-    "707-TT":                   100,    #guess
-    "EC-137D":                  110,    #guess
-    "B-1B":                     10,
-    "Blackbird-SR71A":          0.25,
-    "Blackbird-SR71B":          0.30,
-    "Blackbird-SR71A-BigTail":  0.30,
-    "ch53e":                    20,     #guess
-    "MiG-21bis":                3.5,
-    "MQ-9":                     1,      #guess
-    "KC-137R":                  100,    #guess
-    "KC-137R-RT":               100,    #guess
-    "A-10":                     23.5, 
-    "KC-10A":                   100,    #guess
-    "Typhoon":                  0.5,
-    "C-137R":                   100,    #guess
-    "RC-137R":                  100,    #guess
-    "EC-137R":                  110,    #guess
-    "c130":                     100,    #guess
-    "SH-60J":                   30,     #guess
-    "UH-60J":                   30,     #guess
-    "uh1":                      30,     #guess
-    "212-TwinHuey":             25,     #guess
-    "412-Griffin":              25,     #guess
-    "QF-4E":                    1,      #actual: 6
-    "depot":                    170,    #estimated with blender
-    "buk-m2":                   7,      #estimated with blender
-    "truck":                    1.5,    #estimated with blender
-    "missile_frigate":          450,    #estimated with blender
-    "frigate":                  450,    #estimated with blender
-    "tower":                    60,     #estimated with blender
-    "gci":                      50,     #guess
-    "FA-18C_Hornet":            1,
-    "FA-18D_Hornet":            1,
-    "F-22-Raptor":				0.002,	#actual: 0.0001
-    "F-35A":					0.001,
-    "F-35B":					0.001,  
-    "Jaguar-GR3":               6,	    #guess
+    #REVISION: 2022/12/11
+    "YF-16":                    5,      #higher because earlier blocks had larger RCS
+    "F-16CJ":                   2,      #average
+    "f16":                      2,      #average
+    "jaguar":                   6,      #guess
+    "KC135":                    100,    #guess
+    "onox-tanker":              100,    #guess
+    "A-6E":                     9,      #average
+    "EF2000":                   0.5,
+    "brsq":                     1.5,    #average (multiple sources)
+    "FA-18C_Hornet":            3.5,    #later Blocks have 1
+    "FA-18D_Hornet":            3.5,
+    "FA-18":                    3.5,
+    "FA-18E_CVW5":              1.0,
+    "F-5E-TigerII":             4,      #close to actual
+    "F-5ENinja":                4,      #close to actual
     "f-20A":                    2.5,    #low end of sources
     "f-20C":                    2.5,
     "f-20prototype":            2.5,
     "f-20bmw":                  2.5,
     "f-20-dutchdemo":           2.5,
-    "MiG-15bis":                17,     #guess
-    "G91-R1B":                  8,      #guess
+    "t38talon":                 4,
+    "F-4C":                     7,     #average
+    "F-4D":                     7,     #average
+    "F-4E":                     7,     #average
+    "F-4EJ":                    7,     #average
+    "F-4EJ_ADTW":               7,     #average
+    "F-4F":                     7,     #average
+    "F-4J":                     7,     #average
+    "F4J":                      7,     #average
+    "F-4N":                     7,     #average
+    "F-4S":                     7,     #average
+    "FGR2":                     7,     #average
+    "FGR2-Phantom":             7,     #average
+    "F-111C":                   11,
+    "daVinci_F-111G":           11,
+    "MiG-15bis":                6,     #guess
+    "MiG-21Bison":              3.5,
+    "MiG-25":                   9,     #average
+    "Mig-29":                   6,     #guess
+    "Su-15":                    6.5,   #guess
+    "Su-25":                    7,     #guess
+    "Su-34":                    8,     #should be less
+    "SU-37":                    6,     #wild guess
+    "J-11A":                    15,    #same as Su-27
+    "tu95":                     20,    #average
+    "Tu-95MR":                  20,    #average
+    "Tu-160-Blackjack":         15,
+    "G91-R1B":                  6,     #guess
+    "mb339":                    4,     #guess
+    "mb339pan":                 4,     #guess
+    "alphajet":                 4.5,   #average
+    "E-2C-Hawkeye":             22,    #average
+    "c-2a":                     20,    #average
+    "ac130":                    32,    #average
+    "C130J":                    32,    #average
+    "c130k":                    32,    #average
+    "kc130":                    32,    #average
+    "XB-70":                    21,    #average
+    # Helis:
+    "uh60_Blackhawk":           4,      #average
+    "AH-1W":                    4,      #average
+    "WAH-64_Apache":            5,      #average
+    "rah-66":                   1,      #wild guess
+    "Gazelle":                  1.5,    #guess
+    "Westland_Gazelle":         1.5,    #guess
+    "AS532-Cougar":             3,      #guess
+    "Westland_SeaKing-HAR3":    3.5,    #average
+    "Lynx-HMA8":                1,      #average
+    "Lynx_Wildcat":             1,      #average
+    "Merlin-HM1":               5,      #average
+    "OH-58D":                   0.5,    #average
+    #Stealth
+    "b2-spirit":                0.0001,  #actual: 0.0001
+    "B-2A":                     0.0001,  #actual: 0.0001
+    "F-22-Raptor":              0.0001,  #actual: 0.0001
+    "F-35A":                    0.0015,
+    "F-35B":                    0.0015,
+    "F-35C":                    0.0015,
+    "daVinci_F-35A":            0.0015,
+    "daVinci_F-35B":            0.0015,
+    "F-117":                    0.003,
+    "T-50":                     0.5,    #low end of sources
+    "u-2s":                     0.01,
+    "U-2S-model":               0.01,
 };
 
 var prevVisible = {};
@@ -116,7 +141,9 @@ var isInRadarRange = func (contact, myRadarDistance_nm, myRadarStrength_rcs) {
 var targetRCSSignal = func(targetCoord, targetModel, targetHeading, targetPitch, targetRoll, myCoord, myRadarDistance_m, myRadarStrength_rcs = 5) {
     #print(targetModel);
     var target_front_rcs = nil;
-    if ( contains(rcs_database,targetModel) ) {
+    if ( contains(rcs_oprf_database,targetModel) ) {
+        target_front_rcs = rcs_oprf_database[targetModel];
+    } elsif ( contains(rcs_database,targetModel) ) {
         target_front_rcs = rcs_database[targetModel];
     } else {
         return 1;

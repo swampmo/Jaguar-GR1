@@ -35,7 +35,7 @@ var impact_listener = func {
 
 var hitmessage = func(typeOrd) {
   #print("inside hitmessage");
-  #var phrase = typeOrd ~ " hit: " ~ hit_callsign ~ ": " ~ hits_count ~ " hits";
+  var phrase = typeOrd ~ " hit: " ~ hit_callsign ~ ": " ~ hits_count ~ " hits";
   if (getprop("payload/armament/msg") == TRUE) {
     var msg = notifications.ArmamentNotification.new("mhit", 4, -1*(damage.shells[typeOrd][0]+1));
     msg.RelativeAltitude = 0;

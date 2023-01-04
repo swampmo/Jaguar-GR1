@@ -126,5 +126,5 @@ var hitmessage = func(typeOrd) {
     if(popup == 1 or popup==nil) gui.popupTip(view.views[n].getNode("name").getValue());
 }
 		
-# setup impact listener
-setlistener("/ai/models/model-impact", impact_listener, 0, 0);
+# setup impact listener (disabled as there is already one in weapons.nas)
+#setlistener("/ai/models/model-impact", impact_listener, 0, 0);
