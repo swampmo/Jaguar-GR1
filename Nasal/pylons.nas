@@ -155,8 +155,8 @@ var ripple = func {
     fcs.setRippleMode(getprop("controls/armament/ripple"));
 };
 
-setlistener("controls/armament/ripple-dist", ripple());
-setlistener("controls/armament/ripple", ripple());
+setlistener("controls/armament/ripple-dist", ripple);
+setlistener("controls/armament/ripple", ripple);
 
 # swamp TODO list:
 #
