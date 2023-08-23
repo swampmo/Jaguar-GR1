@@ -40,7 +40,7 @@ name "back-structure"
 data 8
 Mesh.004
 crease 70.0
-texture "Tex_0004_1.png"
+texture "Tex_0004_1.jpg"
 texrep 1 1
 numvert 670
 0.32877 0.07931 -0.00416
@@ -14691,7 +14691,7 @@ name "bottle"
 data 8
 Mesh.019
 crease 45.0
-texture "Tex_0004_1.png"
+texture "Tex_0004_1.jpg"
 texrep 1 1
 numvert 495
 0.20963 -0.09886 0.15369
