@@ -1338,6 +1338,9 @@
   </payload>
 
   <nasal>
+    <hack>
+        <file>Aircraft/Jaguar-GR1/Nasal/hackCanvas.nas</file><!-- must be first -->
+    </hack>
     <vector>
       <file>Aircraft/Jaguar-GR1/Nasal/vector.nas</file> <!-- must be before RCS, armament and radar -->
     </vector>
@@ -1442,6 +1445,7 @@
 
     <crashandstress>
       <file>Aircraft/Jaguar-GR1/Nasal/crash-and-stress.nas</file>
+      <file>Aircraft/Jaguar-GR1/Nasal/crash-and-stress-custom.nas</file>
     </crashandstress>
 
     <load>
