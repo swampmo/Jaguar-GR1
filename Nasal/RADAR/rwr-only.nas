@@ -1,4 +1,9 @@
-                                                        
+var noRadarList = {
+    # These have no radar
+    depot:nil, point:nil, struct:nil, rig:nil, truck:nil, hunter:nil,
+    "alphajet":nil, "jaguar":nil, "Jaguar-GR3":nil, "A-10-modelB":nil, "Jaguar-GR1":nil, "A-10-model":nil, "A-10":nil, "G91-R1B":nil, "G91":nil, "g91":nil, "mb339":nil, "mb339pan":nil,
+};
+
 var RWR = {
 	# inherits from Radar
 	# will check radar/transponder and ground occlusion.
@@ -111,6 +116,8 @@ var RWR = {
                 if (me.threatDB[10]) me.threat += 0.30;# has me locked
                 me.threat += ((me.danger-me.rn)/me.danger)>0?((me.danger-me.rn)/me.danger)*0.60:0;# if inside danger zone then add threat, the closer the more.
                 me.threat += me.threatDB[9]>0?(me.threatDB[9]/500)*0.10:0;# more closing speed means more threat.
+                if (me.u.getModel() == "AI") me.threat = 0.01;
+                if (contains(noRadarList, me.u.getModel())) me.threat = - 1;
                 if (me.threat > me.closestThreat) me.closestThreat = me.threat;
                 #printf("A %s threat:%.2f range:%d dev:%d", me.u.get_Callsign(),me.threat,me.u.get_range(),me.deviation);
                 if (me.threat > 1) me.threat = 1;
@@ -123,7 +130,7 @@ var RWR = {
         }
 
         me.launchClose = getprop("payload/armament/MLW-launcher") != "";
-        me.incoming = getprop("payload/armament/MAW-active") or me.heatDefense > me.elapsed;
+        me.incoming = getprop("payload/armament/MAW-active") or getprop("payload/armament/MAW-semiactive") or me.heatDefense > me.elapsed;
         me.spike = getprop("payload/armament/spike")*(getprop("ai/submodels/submodel[0]/count")>15);
         me.autoFlare = me.spike?math.max(me.closestThreat*0.25,0.05):0;
 

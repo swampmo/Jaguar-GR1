@@ -179,7 +179,7 @@ RWRCanvas = {
 #        }
 # Threat list ID:
 
-        #REVISION: 2022/12/07
+        #REVISION: 2023/06/08
         #OPRF Fleet
         rwr.AIRCRAFT_WARTHOG  = "10";
         rwr.AIRCRAFT_TOMCAT   = "14";
@@ -198,7 +198,7 @@ RWRCanvas = {
         rwr.ASSET_VOLGA       = "2";
         rwr.ASSET_DUBNA       = "5";
         rwr.ASSET_2K12        = "6";
-        rwr.ASSET_BUK         = "11";
+        rwr.ASSET_BUK         = "17";
         rwr.ASSET_GARGOYLE    = "20"; # Other namings for tracking and radar: BB, CS.
         rwr.ASSET_PAC2        = "P";
         rwr.ASSET_FRIGATE     = "SH";
@@ -223,8 +223,9 @@ RWRCanvas = {
         rwr.AIRCRAFT_MB339    = "M3";
         rwr.AIRCRAFT_ALPHAJET = "AJ";
         rwr.AIRCRAFT_INTRUDER = "A6";
+        rwr.AIRCRAFT_PROWLER  = "E6";
         rwr.AIRCRAFT_FROGFOOT = "25";
-        rwr.AIRCRAFT_NIGHTHAWK = "17";
+        rwr.AIRCRAFT_NIGHTHAWK = "117";
         rwr.AIRCRAFT_RAPTOR   = "22";
         rwr.AIRCRAFT_JSF      = "35";
         rwr.AIRCRAFT_GRIPEN   = "39";
@@ -255,6 +256,7 @@ RWRCanvas = {
                 "MiG-29":                   rwr.AIRCRAFT_FULCRUM,
                 "SU-27":                    rwr.AIRCRAFT_FLANKER,
                 "EC-137R":                  rwr.AIRCRAFT_SEARCH,
+                "E-3R":                     rwr.AIRCRAFT_SEARCH,
                 "E-3":                      rwr.AIRCRAFT_SEARCH,
                 "RC-137R":                  rwr.AIRCRAFT_SEARCH,
                 "E-8R":                     rwr.AIRCRAFT_SEARCH,
@@ -353,6 +355,7 @@ RWRCanvas = {
                 "MiG-25":                   rwr.AIRCRAFT_FOXBAT,
                 "A-6E-model":               rwr.AIRCRAFT_INTRUDER,
                 "A-6E":                     rwr.AIRCRAFT_INTRUDER,
+                "ea-6b":                    rwr.AIRCRAFT_PROWLER,
                 "F-117":                    rwr.AIRCRAFT_NIGHTHAWK,
                 "F-22-Raptor":              rwr.AIRCRAFT_RAPTOR,
                 "F-35A":                    rwr.AIRCRAFT_JSF,
