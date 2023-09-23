@@ -31,6 +31,7 @@ var rcs_oprf_database = {
     "C-137R":                   100,
     "RC-137R":                  100,
     "EC-137R":                  110,
+    "E-3R":                     110,
     "E-8R":                     100,
     "KC-10A":                   90,
     "KC-10A-GE":                90,
@@ -86,5 +87,34 @@ var rcs_oprf_database = {
     "USS-NORMANDY":             450,    
     "USS-LakeChamplain":        450,    
     "USS-OliverPerry":          450,    
-    "USS-SanAntonio":           450,    
+    "USS-SanAntonio":           450,  
 };
+
+
+var ground_assets = ["depot", "ZSU-23-4M", "buk-m2", "SA-6", "S-75", "s-300", "MIM104D", "truck", "tower", "gci", "struct", "point", "hunter"];
+
+### Amend table rcs_oprf_database to use real instead of reduced ground assets RCS values.
+#
+# Ground assets have very low RCS values.
+# This is to simulate ground clutter making them very hard to spot on radar.
+# Radars which themselves simulate ground clutter (e.g. a proper ground radar)
+# may however want to use the real RCS values (without this reduction).
+# They should call this function at initialisation to do so.
+#
+var use_real_ground_RCS = func {
+    foreach (var asset; ground_assets) {
+        rcs_oprf_database[asset] *= 100;
+    }
+}
+
+
+#RADARS:
+#=======
+#JA37       40 3.2     PS 46/A
+#F14        89 3.2     AWG-9
+#F15        80 3.2     APG-63 v1
+#F16        70 3.2     APG-68
+#MIG21       ?   ?
+#E-3R      300 150 
+#AJ37        ?   ?     PS 37
+#M2000      60 3.2     RDY
