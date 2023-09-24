@@ -1403,6 +1403,7 @@
     </radardist>
 
     <radar_system>
+      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radar-system-database.nas</file>
       <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radar-system.nas</file>
       <file>Aircraft/Jaguar-GR1/Nasal/RADAR/rwr-only.nas</file>
     </radar_system>
