@@ -995,6 +995,7 @@
       <MLW-launcher type="string"></MLW-launcher>
       <MAW-bearing type="double">0</MAW-bearing>
       <MAW-active type="bool">false</MAW-active>
+      <MAW-semiactive type="bool">false</MAW-semiactive>
       <spike type="bool">false</spike>
       <modelsUseCase type="bool">true</modelsUseCase>
       <modelsUpperCase type="bool">true</modelsUpperCase>
@@ -1338,6 +1339,9 @@
   </payload>
 
   <nasal>
+    <hack>
+        <file>Aircraft/Jaguar-GR1/Nasal/hackCanvas.nas</file><!-- must be first -->
+    </hack>
     <vector>
       <file>Aircraft/Jaguar-GR1/Nasal/vector.nas</file> <!-- must be before RCS, armament and radar -->
     </vector>
@@ -1399,6 +1403,7 @@
     </radardist>
 
     <radar_system>
+      <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radar-system-database.nas</file>
       <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radar-system.nas</file>
       <file>Aircraft/Jaguar-GR1/Nasal/RADAR/rwr-only.nas</file>
     </radar_system>
@@ -1442,6 +1447,7 @@
 
     <crashandstress>
       <file>Aircraft/Jaguar-GR1/Nasal/crash-and-stress.nas</file>
+      <file>Aircraft/Jaguar-GR1/Nasal/crash-and-stress-custom.nas</file>
     </crashandstress>
 
     <load>

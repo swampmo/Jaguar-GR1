@@ -1,3 +1,5 @@
+hack.init();
+
 aircraft.rain.init();
 
 
