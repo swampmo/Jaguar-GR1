@@ -1473,6 +1473,10 @@
     <file>Aircraft/Jaguar-GR1/Nasal/datalink.nas</file>
   </datalink>
 
+  <airbases>
+    <file>Aircraft/Jaguar-GR1/Nasal/airbases.nas</file>
+  </airbases>
+
   </nasal>
 
 </PropertyList>
