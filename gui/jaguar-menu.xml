@@ -48,6 +48,13 @@
           <dialog-name>iff</dialog-name>
         </binding>
       </item>
+      <item>
+          <label>Reset to Airbase (military only)</label>
+          <binding>
+              <command>dialog-show</command>
+              <dialog-name>airbases</dialog-name>
+          </binding>
+      </item>
       
 <!--	 <item>
         <label>No load</label>
