@@ -8,7 +8,7 @@
     "path": "Nasal/guided-missiles.nas"
   },
   "radar-system": {
-    "version": "2.0.2",
+    "version": "2.0.3",
     "path": "Nasal/RADAR/radar-system.nas"
   },
   "radar-system-database": {
