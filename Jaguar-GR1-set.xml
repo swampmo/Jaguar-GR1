@@ -1025,7 +1025,7 @@
         <serviceable type="bool">true</serviceable> <!-- why is this not auto created by failure system in 2018.3?? -->
       </fire-control>
       <aim-9>
-	<type-id type="int">57</type-id>
+	      <type-id type="int">57</type-id>
         <short-name type="string">A-9L</short-name>
         <long-name type="string">AIM-9L Sidewinder</long-name>
         <vol-search type="double">0.075</vol-search>
@@ -1076,7 +1076,7 @@
         <ready-time type="double">0.5</ready-time>
       </aim-9>
       <mk-83>
-	<type-id type="int">33</type-id>
+	      <type-id type="int">33</type-id>
         <short-name type="string">B83</short-name>
         <long-name type="string">MK-83 General Purpose Bomb</long-name>
         <fire-msg type="string">Bombs away</fire-msg>
@@ -1118,7 +1118,7 @@
         <ejector-speed-fps type="double">10</ejector-speed-fps>
       </mk-83>
       <mk-83hd>
-	<type-id type="int">34</type-id>
+	      <type-id type="int">34</type-id>
         <short-name type="string">HD83</short-name>
         <long-name type="string">MK-83 High Drag General Purpose Bomb</long-name>
         <fire-msg type="string">Bombs away</fire-msg>
@@ -1160,7 +1160,7 @@
         <ejector-speed-fps type="double">10</ejector-speed-fps>
       </mk-83hd>
       <cbu-87>
-	<type-id type="int">12</type-id>
+	      <type-id type="int">12</type-id>
         <short-name type="string">CB87</short-name>
         <long-name type="string">CBU-87 Combined Effects Munition</long-name>
         <fire-msg type="string">Bombs away</fire-msg>
@@ -1201,7 +1201,7 @@
         <hit-everything-nearby type="bool">true</hit-everything-nearby>
       </cbu-87>
       <bl755>
-	<type-id type="int">11</type-id>
+	      <type-id type="int">11</type-id>
         <short-name type="string">BL755</short-name>
         <long-name type="string">BL755 Anti-armour cluster bomb</long-name>
         <fire-msg type="string">Bombs away</fire-msg>
@@ -1287,7 +1287,7 @@
         <pitch-animation-disabled type="bool">true</pitch-animation-disabled>
       </es>
       <majic>
-	<type-id type="int">64</type-id>
+	      <type-id type="int">64</type-id>
         <short-name type="string">Majic</short-name>
         <long-name type="string">Matra R550 Majic</long-name>
         <all-aspect type="bool">false</all-aspect> <!-- all or rear-only -->
