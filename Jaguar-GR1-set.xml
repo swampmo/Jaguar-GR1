@@ -1402,6 +1402,10 @@
       <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
     </radardist>
 
+    <rcs>
+      <file>Aircraft/Jaguar-GR1/Nasal/rcs_mand.nas</file>
+    </rcs>
+
     <radar_system>
       <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radar-system-database.nas</file>
       <file>Aircraft/Jaguar-GR1/Nasal/RADAR/radar-system.nas</file>
