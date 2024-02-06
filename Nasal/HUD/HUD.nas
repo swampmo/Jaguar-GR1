@@ -1325,7 +1325,7 @@ var HUD = {
             me.rootLine.createChild("path")
               .setColor(me.myGreen)
               .moveTo(me.fpvCalc)
-              .lineTo(c)
+              .lineTo(subvec(c,0,2))
               .setStrokeLineWidth(me.myLineWidth*4);
             me.rootLine.show();
             me.rootLine.update();
